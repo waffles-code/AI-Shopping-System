@@ -13,7 +13,6 @@ install:
   - git clone https://github.com/flutter/flutter.git -b stable
 
 before_script:
-  - ./flutter/bin/sudo apt-get install curl
   - ./flutter/bin/flutter doctor
 script:
   - ./flutter/bin/flutter packages get
