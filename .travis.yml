@@ -6,6 +6,12 @@ dart:
 addons:
   chrome: stable
   
+dart_task: 
+  - dartfmt 
+
+install: 
+  - git clone https://github.com/flutter/flutter.git -b stable 
+
 before_script:
   - ./flutter/bin/flutter doctor
 
