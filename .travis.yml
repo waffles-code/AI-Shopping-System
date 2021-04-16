@@ -6,11 +6,9 @@ dart:
 addons:
   chrome: stable
   
-dart_task:
-  - dartfmt
-
 before_script:
   - ./flutter/bin/flutter doctor
+
 script:
   - ./flutter/bin/flutter packages get
   - ./flutter/bin/flutter test
