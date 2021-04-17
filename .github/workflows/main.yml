@@ -40,3 +40,5 @@ jobs:
           token: 'b26ef13c-b162-4e2d-a07b-d9d4c9210db2' # not required for public repos
           files: ./coverage1.xml,./coverage2.xml # optional
           flags: unittests # optional  
+      - name: Coveralls GitHub Action
+      - uses: coverallsapp/github-action@v1.1.2
