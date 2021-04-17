@@ -14,7 +14,7 @@ A complete Flutter application written in dart with firebase implementation.
 
 AI Shopping System(AISH) implemented by "We don't byte" group is an e-commerce Web Application that allows users to shop online. 
 shoppers may purchase different types of items from the comfort of their home or any other place without physically
-visiting those stores. It allows Users to by items from multiple stores despite the location. Aish is an artificial intelligent
+visiting those stores. It allows Users to buy items from multiple stores despite their location. Aish is an artificial intelligent
 app that will feed the customers eyes what they are most interested. It may recommend products that is interested in.
 
 ## How to use the App
