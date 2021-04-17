@@ -2,6 +2,8 @@ import 'package:aishop/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
+
+// DO NOT CHANGE ANYTHING IT WILL CHANGE DESIGN COMPLETELY!!
 class SidePanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

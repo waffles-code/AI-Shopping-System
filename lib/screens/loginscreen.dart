@@ -23,7 +23,8 @@ class LoginScreen extends StatefulWidget {
 
 // ignore: must_be_immutable
 class _LoginScreenState extends State <LoginScreen>{
-
+//declare and initialize the controllers and focus on each field.
+//initialize variable to check if user is editing the specific fiels.
   late TextEditingController userEmailController;
   late FocusNode textFocusNodeEmail;
   bool _isEditingEmail = false;
@@ -50,7 +51,7 @@ class _LoginScreenState extends State <LoginScreen>{
 
   String? _validateEmail(String value) {
     value = value.trim();
-
+// validate the email input that the usr gives.
     if (userEmailController.text.isNotEmpty) {
       if (value.isEmpty) {
         return 'Email can\'t be empty';
@@ -65,7 +66,7 @@ class _LoginScreenState extends State <LoginScreen>{
 
   String? _validatePassword(String value) {
     value = value.trim();
-
+//makesure user creates a strong password
     if (userPasswordController.text.isNotEmpty) {
       if (value.isEmpty) {
         return 'Please enter password';

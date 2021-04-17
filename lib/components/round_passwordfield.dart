@@ -2,6 +2,7 @@ import 'package:aishop/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
+//password field design do not change.
 class RoundPasswordField extends StatelessWidget {
   final text;
   final press;

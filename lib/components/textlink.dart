@@ -2,6 +2,9 @@ import 'package:aishop/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
+
+//Text link for forgot password and the link to take user to register page are designed here.
+//do not change
 class TextLink extends StatelessWidget {
   final  text;
   final  press;

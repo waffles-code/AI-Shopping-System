@@ -27,7 +27,7 @@ class RegisterScreen extends StatefulWidget {
 
 //ignore: must_be_immutable
 class _RegisterScreenState extends State <RegisterScreen>{
-
+//declare and initial the cfield controllers, the focus and check if user is editing the field.
 	late TextEditingController userEmailController;
 	late FocusNode textFocusNodeEmail = FocusNode();
 	bool _isEditingEmail = false;
@@ -73,7 +73,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 
 	String? _validateEmail(String value) {
 		value = value.trim();
-
+//check user is enetring a valid email.
 		if (userEmailController.text.isNotEmpty) {
 			if (value.isEmpty) {
 				return 'Email can\'t be empty';
@@ -88,7 +88,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 
 	String? _validatePassword(String value) {
 		value = value.trim();
-
+//check user enters a strong enough password.
 		if (userPasswordController.text.isNotEmpty) {
 			if (value.isEmpty) {
 				return 'Please enter password';
@@ -103,7 +103,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 
 	String? _checkRepeatedPassword(String value) {
 		value = value.trim();
-
+//check that passwords are matching.
 		if (userConfirmPasswordController.text.isNotEmpty) {
 			if (value.isEmpty) {
 				return 'Please repeat password';

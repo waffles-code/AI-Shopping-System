@@ -2,6 +2,7 @@ import 'package:aishop/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
+//used for decor purposes
 class OrDivider extends StatelessWidget {
 
   @override

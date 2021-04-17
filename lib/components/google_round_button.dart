@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:line_icons/line_icons.dart';
 
+
+//this class is used to design the google button with a white background and a black border
+
 class GoogleRoundButton extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {

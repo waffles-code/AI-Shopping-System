@@ -2,6 +2,8 @@ import 'package:aishop/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
+
+//page title for login and sign up
 class PageTitle extends StatelessWidget {
   final text;
 

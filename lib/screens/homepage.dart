@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: black,
+        //left black panel for intro
         title: Text('AI Shopping System'),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.search, color: white,),
@@ -32,6 +33,8 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             //Header
             UserAccountsDrawerHeader(
+              //sets up drawer with user details
+              //if no user name is found the display welcome instead.
               accountName: Text(name ?? "Welcome!"),
               accountEmail: Text(userEmail!),
               currentAccountPicture: GestureDetector(
@@ -198,65 +201,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-
-/*
-class HomePage extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _HomePageState();
-  }
-}
-class _HomePageState extends State<HomePage> {
-  bool _isProcessing = false;
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        home: TextButton(
-            style: TextButton.styleFrom(
-              primary: Colors.blueGrey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-            ),
-            onPressed: _isProcessing
-                ? null
-                : () async {
-              setState(() {
-                _isProcessing = true;
-              });
-              await signOut().then((result) {
-                print(result);
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    fullscreenDialog: true,
-                    builder: (context) => HomePage(),
-                  ),
-                );
-              }).catchError((error) {
-                print('Sign Out Error: $error');
-              });
-              setState(() {
-                _isProcessing = false;
-              });
-            },
-            child: Padding(
-              padding: EdgeInsets.only(
-                top: 8.0,
-                bottom: 8.0,
-              ),
-              child: _isProcessing
-                  ? CircularProgressIndicator()
-                  : Text(
-                'Sign out',
-                style: TextStyle(
-                  fontSize: 30,
-                  color: black,
-                ),
-              ),
-            )
-        )
-    );
-  }
-}*/
