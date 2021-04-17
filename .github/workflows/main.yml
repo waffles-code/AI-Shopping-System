@@ -38,8 +38,3 @@ jobs:
       - uses: codecov/codecov-action@v1
         with:
           token: 'b26ef13c-b162-4e2d-a07b-d9d4c9210db2' # not required for public repos
-          
-      - name: Coveralls GitHub Action
-        uses: coverallsapp/github-action@v1.1.2
-        with:
-          github-token:  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
