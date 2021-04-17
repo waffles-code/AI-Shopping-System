@@ -43,4 +43,3 @@ jobs:
         uses: coverallsapp/github-action@v1.1.2
         with:
           github-token:  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
-          path-to-lcov: ./coverage/lcov.info
