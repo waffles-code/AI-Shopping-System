@@ -14,11 +14,9 @@ install:
 
 script:
   - ./flutter/bin/flutter test --coverage
-  "sbt clean coverage test"
 
 after_success:
   - coveralls-lcov.info
-  "sbt coveralls"
   
 cache:
   directories:
