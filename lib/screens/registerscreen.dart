@@ -1,3 +1,4 @@
+
 import 'package:aishop/components/google_round_button.dart';
 import 'package:aishop/components/or_divider.dart';
 import 'package:aishop/components/round_button.dart';
@@ -7,17 +8,21 @@ import 'package:aishop/components/sidepanel.dart';
 import 'package:aishop/components/textlink.dart';
 import 'package:aishop/components/title.dart';
 import 'package:aishop/screens/loginscreen.dart';
+import 'package:aishop/screens/verifyscreen.dart';
 import 'package:aishop/utils/authentication.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../theme.dart';
 import 'package:line_icons/line_icons.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'homepage.dart';
 
 
 class RegisterScreen extends StatefulWidget {
+	RegisterScreen({this.cityName});
+	final cityName;
+
 
 	@override
 	State<StatefulWidget> createState() {
@@ -31,11 +36,13 @@ class _RegisterScreenState extends State <RegisterScreen>{
 	late TextEditingController userEmailController;
 	late FocusNode textFocusNodeEmail = FocusNode();
 	bool _isEditingEmail = false;
+  final _firestore =FirebaseFirestore.instance;
 
 	late TextEditingController userPasswordController;
 	late FocusNode textFocusNodePassword = FocusNode();
 	bool _isEditingpassword = false;
 
+	String cityname="";
 	String loginStatus = "";
 	late Color loginStringColor;
 
@@ -56,6 +63,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 
 	@override
 	void initState() {
+
 		userEmailController = TextEditingController();
 		userEmailController.text = '';
 
@@ -69,6 +77,8 @@ class _RegisterScreenState extends State <RegisterScreen>{
 		userLocationController = TextEditingController();
 
 		super.initState();
+
+
 	}
 
 	String? _validateEmail(String value) {
@@ -114,8 +124,25 @@ class _RegisterScreenState extends State <RegisterScreen>{
 		return null;
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+	
+
 	@override
 	Widget build(BuildContext context) {
+
+		setState(() {
+		  cityname=widget.cityName.toString();
+		});
 		Size size = MediaQuery.of(context).size;
 		// TODO: implement build
 		return new Scaffold(
@@ -153,6 +180,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																			Expanded(
 																					child: RoundTextField(
 																						preicon: Icon(LineIcons.user),
+																						autofocus: false,
 																						margin: EdgeInsets.fromLTRB(0,0,10,0),
 																						control: userFirstNameController,
 																						text: "First Name",
@@ -166,6 +194,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																			//====================================================================================row
 																			Expanded(
 																					child: RoundTextField(
+																							autofocus: false,
 																						preicon: Icon(LineIcons.user),
 																						margin: EdgeInsets.fromLTRB(10,0,0,0),
 																						control: userLastNameController,
@@ -217,6 +246,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																					flex: 1,
 																					child:RoundTextField(
 																						focusNode: textFocusNodeBirthday,
+																							autofocus: false,
 																							onSubmitted:(value){
 																								textFocusNodeBirthday.unfocus();
 																								FocusScope.of(context).requestFocus(textFocusNodePassword);
@@ -266,9 +296,11 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																		children:<Widget>[
 																			Expanded(
 																					child: RoundPasswordField(
+
 																						icon: Icon(LineIcons.key),
 																						margin: EdgeInsets.fromLTRB(0,0,10,0),
 																						text: "Password",
+																						autofocus: false,
 																						control: userPasswordController,
 																						focusNode: textFocusNodePassword,
 																						onSubmitted:(value){
@@ -291,6 +323,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																			//====================================================================================row
 																			Expanded(
 																					child:RoundPasswordField(
+																							autofocus: false,
 																						icon: Icon(LineIcons.key),
 																						margin: EdgeInsets.fromLTRB(10,0,0,0),
 																						text: "Password",
@@ -313,12 +346,16 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																//==================================================
 																//location
 																RoundTextField(
-																	text: "Location",
+																	text: "${widget.cityName.toString()}",
 																	focusNode: textFocusNodeLocation,
+																	autofocus: false,
 																	control: userLocationController,
 																	preicon: Icon(LineIcons.mapMarker),
 																	suficon: IconButton(
-																		icon: Icon(LineIcons.searchLocation), onPressed: () {  },
+																		icon: Icon(LineIcons.searchLocation),
+																		onPressed: (){
+
+																		},
 																	),
 																),
 
@@ -332,11 +369,18 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																				userPasswordController.text
 																		).then((result) {
 																			if (result != null) {
+																				_firestore.collection('Users').add({
+																					'bday':userBirthdayController.text,
+																					'email':userEmailController.text,
+																					'fname':userFirstNameController.text,
+																					'location':userLocationController.text,
+																					'password':userPasswordController.text
+																				});
 																				setState(() {
 																					loginStatus =
 																					'You have registered successfully';
 																					loginStringColor = Colors.green;
-																					Navigator.push(context, new MaterialPageRoute(builder: (context) => HomePage()));
+																					Navigator.push(context, new MaterialPageRoute(builder: (context) => VerifyScreen()));
 																				});
 																				print(result);
 																			}

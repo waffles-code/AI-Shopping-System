@@ -157,3 +157,7 @@ Future getUser() async {
     }
   }
 }
+
+void resetPassword(String email){
+  _auth.sendPasswordResetEmail(email: email);
+}
