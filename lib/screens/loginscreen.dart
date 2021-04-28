@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     print("running location data function");
       Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high);
+          desiredAccuracy: LocationAccuracy.bestForNavigation);
       print("done with Geolocator+${position.longitude}");
     longitude= await position.longitude.toString();
     latitude= await position.latitude.toString();
