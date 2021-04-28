@@ -15,7 +15,6 @@ import 'package:aishop/utils/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:aishop/Services/networking.dart';
 import 'dart:math';
 import 'package:geocoding/geocoding.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -95,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     print("running location data function");
       Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.low);
+          desiredAccuracy: LocationAccuracy.high);
       print("done with Geolocator+${position.longitude}");
     longitude= await position.longitude.toString();
     latitude= await position.latitude.toString();
