@@ -15,8 +15,7 @@ import 'package:aishop/utils/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:line_icons/line_icons.dart';
-import 'dart:math';
-import 'package:geocoding/geocoding.dart';
+import 'package:aishop/Services/networking.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 class LoginScreen extends StatefulWidget {
@@ -98,17 +97,9 @@ class _LoginScreenState extends State<LoginScreen> {
       print("done with Geolocator+${position.longitude}");
     longitude= await position.longitude.toString();
     latitude= await position.latitude.toString();
-    List<Placemark>placemarks=await placemarkFromCoordinates(position.latitude, position.longitude);
-    Placemark place=placemarks[0];
-     String name = place.name.toString();
-    String subLocality = place.subLocality.toString();
-    String locality = place.locality.toString();
-    String administrativeArea = place.administrativeArea.toString();
-    String postalCode = place.postalCode.toString();
-    String country = place.country.toString();
-    String address = "${name}, ${subLocality}, ${locality}, ${administrativeArea} ${postalCode}, ${country}";
-    print("Street address is :   $address");
-    cityname = address;
+   NetworkHelper networkHelper= await NetworkHelper('http://api.positionstack.com/v1/reverse?access_key=5e65a2bf717cff420bade43bf75f0cec&query=$latitude,$longitude');
+    await networkHelper.getData();
+    cityname =networkHelper.cityname;
   }
 
   @override
