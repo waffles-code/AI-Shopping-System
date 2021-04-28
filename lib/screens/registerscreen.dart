@@ -373,7 +373,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																					'bday':userBirthdayController.text,
 																					'email':userEmailController.text,
 																					'fname':userFirstNameController.text,
-																					'location':userLocationController.text,
+																					'location':widget.cityName,
 																					'password':userPasswordController.text
 																				});
 																				setState(() {
