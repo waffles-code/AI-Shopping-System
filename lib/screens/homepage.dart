@@ -3,8 +3,12 @@ import 'package:aishop/edit_profile.dart';
 import 'package:aishop/settings.dart';
 import 'package:aishop/utils/authentication.dart';
 import 'package:flutter/material.dart';
+import 'package:aishop/screens/checkout.dart';
+import 'package:aishop/screens/checkoutaddress.dart';
 
 import '../theme.dart';
+import 'checkout.dart';
+import 'checkout.dart';
 import 'loginscreen.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,7 +38,13 @@ class _HomePageState extends State<HomePage> {
               Icons.shopping_cart,
               color: white,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) =>
+                          CheckOutPage()));
+            },
           ),
         ],
       ),
