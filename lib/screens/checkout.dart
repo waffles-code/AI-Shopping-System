@@ -44,6 +44,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
               body: TabBarView(
                 children: <Widget> [
                   CheckOutAddress(),
+                  CheckOutAddress(),
+                  CheckOutAddress(),
 
                 ],
 
