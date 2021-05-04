@@ -3,6 +3,9 @@ import 'package:aishop/screens/loginscreen.dart';
 import 'package:aishop/utils/authentication.dart';
 import 'package:flutter/material.dart';
 
+import 'screens/checkout.dart';
+import 'screens/loginscreen.dart';
+
 void main() {
   runApp(MyApp());
 }
