@@ -374,7 +374,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																					'email':userEmailController.text,
 																					'fname':userFirstNameController.text,
 																					'location':widget.cityName,
-																					'password':userPasswordController.text
+																					'lname':userLastNameController.text
 																				});
 																				setState(() {
 																					loginStatus =
