@@ -1,14 +1,19 @@
+import 'dart:ui';
+
 import 'package:aishop/components/horizontal_listView.dart';
 import 'package:aishop/edit_profile.dart';
+import 'package:aishop/icons/icons.dart';
 import 'package:aishop/settings.dart';
 import 'package:aishop/utils/authentication.dart';
+import 'package:aishop/widgets/beauty.dart';
+import 'package:aishop/widgets/books.dart';
+import 'package:aishop/widgets/category.dart';
+import 'package:aishop/widgets/clothes.dart';
+import 'package:aishop/widgets/kitchen.dart';
+import 'package:aishop/widgets/tech.dart';
 import 'package:flutter/material.dart';
-import 'package:aishop/screens/checkout.dart';
-import 'package:aishop/screens/checkoutaddress.dart';
 
 import '../theme.dart';
-import 'checkout.dart';
-import 'checkout.dart';
 import 'loginscreen.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,32 +27,37 @@ class _HomePageState extends State<HomePage> {
     bool _isProcessing = false;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: black,
-        //left black panel for intro
-        title: Text('AI Shopping System'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: white,
-            ),
-            onPressed: () {},
+          title: Text(
+            "AI Shopping",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
-          IconButton(
-            icon: Icon(
-              Icons.shopping_cart,
-              color: white,
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.search_outlined,
+                color: Colors.white,
+                size: 30,
+              ),
+              onPressed: () {},
             ),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                      builder: (context) =>
-                          CheckOutPage()));
-            },
-          ),
-        ],
-      ),
+            IconButton(
+              icon: Icon(
+                AIicons.wishlist,
+                color: Colors.white,
+                size: 30,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.shopping_cart_outlined,
+                color: Colors.white,
+                size: 30,
+              ),
+              onPressed: () {},
+            ),
+          ],
+          iconTheme: IconThemeData(color: Colors.white)),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
@@ -154,78 +164,84 @@ class _HomePageState extends State<HomePage> {
       //Body of the home page
       body: ListView(
         children: <Widget>[
-          //Padding widget
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text('Shop by Category',
-                style: TextStyle(fontSize: 30, fontFamily: 'Inria Serif')),
+          SizedBox(
+            height: 10,
           ),
-          //Horizontal listview for Categories
-          CategoriesHorizontalList(),
+          //category
+          Center(
+            child: Text(
+              "Categories",
+              style: TextStyle(fontSize: 40),
+            ),
+          ),
+          Cat(),
+          SizedBox(
+            height: 10,
+          ),
+          //Products
+          Center(
+              child: Text(
+            "Books",
+            style: TextStyle(fontSize: 40),
+          )),
 
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10.0, 35.0, 8.0, 8.0),
-            child: Text('Books',
-                style: TextStyle(fontSize: 30, fontFamily: 'Inria Serif')),
+          SizedBox(
+            height: 10,
           ),
-          //Horizontal listview for Books
-          BooksHorizontalList(),
-          Divider(
-            thickness: 2,
-            indent: 25,
-            endIndent: 25,
-          ),
+          Books(),
 
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text('Clothes',
-                style: TextStyle(fontSize: 30, fontFamily: 'Inria Serif')),
+          SizedBox(
+            height: 10,
           ),
-          //Horizontal listview for Clothes
-          ClothesHorizontalList(),
-          Divider(
-            thickness: 2,
-            indent: 25,
-            endIndent: 25,
-          ),
+          Center(
+              child: Text(
+            "Clothes",
+            style: TextStyle(fontSize: 40),
+          )),
 
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text('Beauty',
-                style: TextStyle(fontSize: 30, fontFamily: 'Inria Serif')),
+          SizedBox(
+            height: 10,
           ),
-          //Horizontal listview for cosmetics
-          BeautyHorizontalList(),
-          Divider(
-            thickness: 2,
-            indent: 25,
-            endIndent: 25,
+          Clothes(),
+
+          SizedBox(
+            height: 10,
           ),
 
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text('Kitchen',
-                style: TextStyle(fontSize: 30, fontFamily: 'Inria Serif')),
-          ),
-          //Horizontal listview for Kitchen
-          KitchenHorizontalList(),
-          Divider(
-            thickness: 2,
-            indent: 25,
-            endIndent: 25,
+          Center(
+              child: Text(
+            "Shoes",
+            style: TextStyle(fontSize: 40),
+          )),
+          Beauty(),
+          SizedBox(
+            height: 10,
           ),
 
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text('Tech',
-                style: TextStyle(fontSize: 30, fontFamily: 'Inria Serif')),
+          Center(
+              child: Text(
+            "Kitchen",
+            style: TextStyle(fontSize: 40),
+          )),
+          SizedBox(
+            height: 10,
           ),
-          //Horizontal listview for Tech
-          TechHorizontalList(),
-          Divider(
-            thickness: 2,
-            indent: 25,
-            endIndent: 25,
+          Kitchen(),
+          SizedBox(
+            height: 10,
+          ),
+          Center(
+              child: Text(
+            "Tech",
+            style: TextStyle(fontSize: 40),
+          )),
+          SizedBox(
+            height: 10,
+          ),
+          Tech(),
+
+          SizedBox(
+            height: 10,
           ),
         ],
       ),

@@ -1,0 +1,24 @@
+# This is a generated file; do not edit or check into version control.
+cloud_firestore=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\cloud_firestore-1.0.7\\
+cloud_firestore_web=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\cloud_firestore_web-1.0.7\\
+firebase_auth=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_auth-1.1.0\\
+firebase_auth_web=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_auth_web-1.0.6\\
+firebase_core=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core-1.1.0\\
+firebase_core_web=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core_web-1.0.2\\
+firebase_storage=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_storage-8.0.5\\
+firebase_storage_web=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_storage_web-1.0.5\\
+geocoding=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\geocoding-2.0.0\\
+geolocator=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\geolocator-7.0.3\\
+geolocator_web=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\geolocator_web-2.0.3\\
+google_sign_in=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_sign_in-5.0.2\\
+google_sign_in_web=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_sign_in_web-0.10.0\\
+path_provider=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider-2.0.1\\
+path_provider_linux=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_linux-2.0.0\\
+path_provider_macos=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_macos-2.0.0\\
+path_provider_windows=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_windows-2.0.0\\
+shared_preferences=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences-2.0.5\\
+shared_preferences_linux=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_linux-2.0.0\\
+shared_preferences_macos=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_macos-2.0.0\\
+shared_preferences_web=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_web-2.0.0\\
+shared_preferences_windows=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_windows-2.0.0\\
+sqflite=C:\\Src\\flutter_windows_2.0.4-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\sqflite-2.0.0+3\\

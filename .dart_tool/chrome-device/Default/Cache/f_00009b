@@ -1,0 +1,1838 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/rendering/paragraph.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/custom_layout.dart', 'packages/flutter/src/painting/decoration.dart', 'packages/flutter/src/material/drawer_header.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/widgets/safe_area.dart', 'packages/flutter/src/rendering/flex.dart'], (function load__packages__flutter__src__material__user_accounts_drawer_header_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__rendering__paragraph$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__custom_layout$46dart, packages__flutter__src__painting__decoration$46dart, packages__flutter__src__material__drawer_header$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__widgets__safe_area$46dart, packages__flutter__src__rendering__flex$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const debug = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const debug$ = packages__flutter__src__material__icon_button$46dart.src__material__debug;
+  const theme$ = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const material_localizations = packages__flutter__src__material__icon_button$46dart.src__material__material_localizations;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const paragraph = packages__flutter__src__rendering__paragraph$46dart.src__rendering__paragraph;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const custom_layout = packages__flutter__src__rendering__custom_layout$46dart.src__rendering__custom_layout;
+  const decoration = packages__flutter__src__painting__decoration$46dart.src__painting__decoration;
+  const drawer_header = packages__flutter__src__material__drawer_header$46dart.src__material__drawer_header;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const safe_area = packages__flutter__src__widgets__safe_area$46dart.src__widgets__safe_area;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  var user_accounts_drawer_header = Object.create(dart.library);
+  var $take = dartx.take;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $add = dartx.add;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    WidgetToPadding: () => (T.WidgetToPadding = dart.constFn(dart.fnType(basic.Padding, [framework.Widget])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: edge_insets.EdgeInsetsDirectional.prototype,
+        [EdgeInsetsDirectional_bottom]: 0,
+        [EdgeInsetsDirectional_end]: 0,
+        [EdgeInsetsDirectional_top]: 0,
+        [EdgeInsetsDirectional_start]: 8
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 8
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 19,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 21,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 21,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7], widget_inspector._Location);
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "container",
+        [_Location_column]: 19,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11], widget_inspector._Location);
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 17,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18], widget_inspector._Location);
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "top",
+        [_Location_column]: 11,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "end",
+        [_Location_column]: 11,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23], widget_inspector._Location);
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 15,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 15,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27, C[28] || CT.C28], widget_inspector._Location);
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 56,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "explicitChildNodes",
+        [_Location_column]: 13,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32], widget_inspector._Location);
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 54,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "top",
+        [_Location_column]: 11,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.constList([C[35] || CT.C35, C[36] || CT.C36], widget_inspector._Location);
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[34] || CT.C34,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39], widget_inspector._Location);
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 200000
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 2,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 2,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 150,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 17,
+        [_Location_line]: 151,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 152,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44, C[45] || CT.C45, C[46] || CT.C46], widget_inspector._Location);
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 149,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 15,
+        [_Location_line]: 148,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 149,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.constList([C[49] || CT.C49, C[50] || CT.C50], widget_inspector._Location);
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[48] || CT.C48,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 147,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "id",
+        [_Location_column]: 13,
+        [_Location_line]: 146,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 147,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.constList([C[53] || CT.C53, C[54] || CT.C54], widget_inspector._Location);
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[52] || CT.C52,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 145,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 162,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 17,
+        [_Location_line]: 163,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 164,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.constList([C[57] || CT.C57, C[58] || CT.C58, C[59] || CT.C59], widget_inspector._Location);
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[56] || CT.C56,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 161,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 15,
+        [_Location_line]: 160,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 161,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.constList([C[62] || CT.C62, C[63] || CT.C63], widget_inspector._Location);
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[61] || CT.C61,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 159,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "id",
+        [_Location_column]: 13,
+        [_Location_line]: 158,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 159,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.constList([C[66] || CT.C66, C[67] || CT.C67], widget_inspector._Location);
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[65] || CT.C65,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 157,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 29,
+        [_Location_line]: 182,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 23,
+        [_Location_line]: 183,
+        [_Location_file]: null
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "semanticLabel",
+        [_Location_column]: 23,
+        [_Location_line]: 184,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.constList([C[70] || CT.C70, C[71] || CT.C71, C[72] || CT.C72], widget_inspector._Location);
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[69] || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 181,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "angle",
+        [_Location_column]: 21,
+        [_Location_line]: 180,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 181,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.constList([C[75] || CT.C75, C[76] || CT.C76], widget_inspector._Location);
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[74] || CT.C74,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 179,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 179,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.constList([C[79] || CT.C79], widget_inspector._Location);
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[78] || CT.C78,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 178,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 17,
+        [_Location_line]: 176,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 17,
+        [_Location_line]: 177,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 178,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.constList([C[82] || CT.C82, C[83] || CT.C83, C[84] || CT.C84], widget_inspector._Location);
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[81] || CT.C81,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 175,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "container",
+        [_Location_column]: 15,
+        [_Location_line]: 172,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "button",
+        [_Location_column]: 15,
+        [_Location_line]: 173,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 15,
+        [_Location_line]: 174,
+        [_Location_file]: null
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 175,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.constList([C[87] || CT.C87, C[88] || CT.C88, C[89] || CT.C89, C[90] || CT.C90], widget_inspector._Location);
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[86] || CT.C86,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 171,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "id",
+        [_Location_column]: 13,
+        [_Location_line]: 170,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 171,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.constList([C[93] || CT.C93, C[94] || CT.C94], widget_inspector._Location);
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[92] || CT.C92,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 169,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 7,
+        [_Location_line]: 140,
+        [_Location_file]: null
+      });
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 143,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.constList([C[97] || CT.C97, C[98] || CT.C98], widget_inspector._Location);
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[96] || CT.C96,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 139,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 9,
+        [_Location_line]: 198,
+        [_Location_file]: null
+      });
+    },
+    get C102() {
+      return C[102] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 199,
+        [_Location_file]: null
+      });
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "excludeFromSemantics",
+        [_Location_column]: 9,
+        [_Location_line]: 200,
+        [_Location_file]: null
+      });
+    },
+    get C100() {
+      return C[100] = dart.constList([C[101] || CT.C101, C[102] || CT.C102, C[103] || CT.C103], widget_inspector._Location);
+    },
+    get C99() {
+      return C[99] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[100] || CT.C100,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 197,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C106() {
+      return C[106] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 7,
+        [_Location_line]: 205,
+        [_Location_file]: null
+      });
+    },
+    get C107() {
+      return C[107] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 206,
+        [_Location_file]: null
+      });
+    },
+    get C105() {
+      return C[105] = dart.constList([C[106] || CT.C106, C[107] || CT.C107], widget_inspector._Location);
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[105] || CT.C105,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 204,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C108() {
+      return C[108] = dart.const({
+        __proto__: ui.Size.prototype,
+        [OffsetBase__dy]: 56,
+        [OffsetBase__dx]: 56
+      });
+    },
+    get C109() {
+      return C[109] = dart.const({
+        __proto__: ui.TextDirection.prototype,
+        [_name]: "TextDirection.ltr",
+        index: 1
+      });
+    },
+    get C110() {
+      return C[110] = dart.const({
+        __proto__: ui.TextDirection.prototype,
+        [_name]: "TextDirection.rtl",
+        index: 0
+      });
+    },
+    get C111() {
+      return C[111] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C112() {
+      return C[112] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294967295.0
+      });
+    },
+    get C113() {
+      return C[113] = dart.const({
+        __proto__: edge_insets.EdgeInsetsDirectional.prototype,
+        [EdgeInsetsDirectional_bottom]: 0,
+        [EdgeInsetsDirectional_end]: 0,
+        [EdgeInsetsDirectional_top]: 16,
+        [EdgeInsetsDirectional_start]: 16
+      });
+    },
+    get C114() {
+      return C[114] = dart.const({
+        __proto__: edge_insets.EdgeInsetsDirectional.prototype,
+        [EdgeInsetsDirectional_bottom]: 0,
+        [EdgeInsetsDirectional_end]: 16,
+        [EdgeInsetsDirectional_top]: 0,
+        [EdgeInsetsDirectional_start]: 0
+      });
+    },
+    get C117() {
+      return C[117] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "currentAccountPicture",
+        [_Location_column]: 21,
+        [_Location_line]: 375,
+        [_Location_file]: null
+      });
+    },
+    get C118() {
+      return C[118] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "otherAccountsPictures",
+        [_Location_column]: 21,
+        [_Location_line]: 376,
+        [_Location_file]: null
+      });
+    },
+    get C116() {
+      return C[116] = dart.constList([C[117] || CT.C117, C[118] || CT.C118], widget_inspector._Location);
+    },
+    get C115() {
+      return C[115] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[116] || CT.C116,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 374,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C121() {
+      return C[121] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 19,
+        [_Location_line]: 373,
+        [_Location_file]: null
+      });
+    },
+    get C122() {
+      return C[122] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 374,
+        [_Location_file]: null
+      });
+    },
+    get C120() {
+      return C[120] = dart.constList([C[121] || CT.C121, C[122] || CT.C122], widget_inspector._Location);
+    },
+    get C119() {
+      return C[119] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[120] || CT.C120,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 372,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C125() {
+      return C[125] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 372,
+        [_Location_file]: null
+      });
+    },
+    get C124() {
+      return C[124] = dart.constList([C[125] || CT.C125], widget_inspector._Location);
+    },
+    get C123() {
+      return C[123] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[124] || CT.C124,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 371,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C128() {
+      return C[128] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "accountName",
+        [_Location_column]: 17,
+        [_Location_line]: 381,
+        [_Location_file]: null
+      });
+    },
+    get C129() {
+      return C[129] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "accountEmail",
+        [_Location_column]: 17,
+        [_Location_line]: 382,
+        [_Location_file]: null
+      });
+    },
+    get C130() {
+      return C[130] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "isOpen",
+        [_Location_column]: 17,
+        [_Location_line]: 383,
+        [_Location_file]: null
+      });
+    },
+    get C131() {
+      return C[131] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 17,
+        [_Location_line]: 384,
+        [_Location_file]: null
+      });
+    },
+    get C132() {
+      return C[132] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "arrowColor",
+        [_Location_column]: 17,
+        [_Location_line]: 385,
+        [_Location_file]: null
+      });
+    },
+    get C127() {
+      return C[127] = dart.constList([C[128] || CT.C128, C[129] || CT.C129, C[130] || CT.C130, C[131] || CT.C131, C[132] || CT.C132], widget_inspector._Location);
+    },
+    get C126() {
+      return C[126] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[127] || CT.C127,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 380,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C135() {
+      return C[135] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 369,
+        [_Location_file]: null
+      });
+    },
+    get C136() {
+      return C[136] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 370,
+        [_Location_file]: null
+      });
+    },
+    get C134() {
+      return C[134] = dart.constList([C[135] || CT.C135, C[136] || CT.C136], widget_inspector._Location);
+    },
+    get C133() {
+      return C[133] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[134] || CT.C134,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 368,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C139() {
+      return C[139] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottom",
+        [_Location_column]: 11,
+        [_Location_line]: 367,
+        [_Location_file]: null
+      });
+    },
+    get C140() {
+      return C[140] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 368,
+        [_Location_file]: null
+      });
+    },
+    get C138() {
+      return C[138] = dart.constList([C[139] || CT.C139, C[140] || CT.C140], widget_inspector._Location);
+    },
+    get C137() {
+      return C[137] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[138] || CT.C138,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 366,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C143() {
+      return C[143] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 9,
+        [_Location_line]: 361,
+        [_Location_file]: null
+      });
+    },
+    get C144() {
+      return C[144] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 9,
+        [_Location_line]: 364,
+        [_Location_file]: null
+      });
+    },
+    get C145() {
+      return C[145] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 9,
+        [_Location_line]: 365,
+        [_Location_file]: null
+      });
+    },
+    get C146() {
+      return C[146] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 366,
+        [_Location_file]: null
+      });
+    },
+    get C142() {
+      return C[142] = dart.constList([C[143] || CT.C143, C[144] || CT.C144, C[145] || CT.C145, C[146] || CT.C146], widget_inspector._Location);
+    },
+    get C141() {
+      return C[141] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[142] || CT.C142,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 360,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    },
+    get C149() {
+      return C[149] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "container",
+        [_Location_column]: 7,
+        [_Location_line]: 358,
+        [_Location_file]: null
+      });
+    },
+    get C150() {
+      return C[150] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "label",
+        [_Location_column]: 7,
+        [_Location_line]: 359,
+        [_Location_file]: null
+      });
+    },
+    get C151() {
+      return C[151] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 360,
+        [_Location_file]: null
+      });
+    },
+    get C148() {
+      return C[148] = dart.constList([C[149] || CT.C149, C[150] || CT.C150, C[151] || CT.C151], widget_inspector._Location);
+    },
+    get C147() {
+      return C[147] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[148] || CT.C148,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 357,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart"
+      });
+    }
+  }, false);
+  var C = Array(152).fill(void 0);
+  var I = [
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/user_accounts_drawer_header.dart",
+    "package:flutter/src/material/user_accounts_drawer_header.dart"
+  ];
+  var currentAccountPicture$ = dart.privateName(user_accounts_drawer_header, "_AccountPictures.currentAccountPicture");
+  var otherAccountsPictures$ = dart.privateName(user_accounts_drawer_header, "_AccountPictures.otherAccountsPictures");
+  var EdgeInsetsDirectional_bottom = dart.privateName(edge_insets, "EdgeInsetsDirectional.bottom");
+  var EdgeInsetsDirectional_end = dart.privateName(edge_insets, "EdgeInsetsDirectional.end");
+  var EdgeInsetsDirectional_top = dart.privateName(edge_insets, "EdgeInsetsDirectional.top");
+  var EdgeInsetsDirectional_start = dart.privateName(edge_insets, "EdgeInsetsDirectional.start");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  user_accounts_drawer_header._AccountPictures = class _AccountPictures extends framework.StatelessWidget {
+    get currentAccountPicture() {
+      return this[currentAccountPicture$];
+    }
+    set currentAccountPicture(value) {
+      super.currentAccountPicture = value;
+    }
+    get otherAccountsPictures() {
+      return this[otherAccountsPictures$];
+    }
+    set otherAccountsPictures(value) {
+      super.otherAccountsPictures = value;
+    }
+    build(context) {
+      let t0;
+      if (context == null) dart.nullFailed(I[0], 29, 29, "context");
+      return new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.PositionedDirectional.new({top: 0.0, end: 0.0, child: new basic.Row.new({children: (t0 = this.otherAccountsPictures, t0 == null ? T.JSArrayOfWidget().of([]) : t0)[$take](3)[$map](framework.Widget, dart.fn(picture => {
+                if (picture == null) dart.nullFailed(I[0], 36, 89, "picture");
+                return new basic.Padding.new({padding: C[0] || CT.C0, child: new basic.Semantics.new({container: true, child: new container.Container.new({padding: C[1] || CT.C1, width: 48.0, height: 48.0, child: picture, $creationLocationd_0dea112b090073317d4: C[2] || CT.C2}), $creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12});
+              }, T.WidgetToPadding()))[$toList](), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), $creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), new basic.Positioned.new({top: 0.0, child: new basic.Semantics.new({explicitChildNodes: true, child: new basic.SizedBox.new({width: 72.0, height: 72.0, child: this.currentAccountPicture, $creationLocationd_0dea112b090073317d4: C[24] || CT.C24}), $creationLocationd_0dea112b090073317d4: C[29] || CT.C29}), $creationLocationd_0dea112b090073317d4: C[33] || CT.C33})]), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37});
+    }
+  };
+  (user_accounts_drawer_header._AccountPictures.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let currentAccountPicture = opts && 'currentAccountPicture' in opts ? opts.currentAccountPicture : null;
+    let otherAccountsPictures = opts && 'otherAccountsPictures' in opts ? opts.otherAccountsPictures : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[currentAccountPicture$] = currentAccountPicture;
+    this[otherAccountsPictures$] = otherAccountsPictures;
+    user_accounts_drawer_header._AccountPictures.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = user_accounts_drawer_header._AccountPictures.prototype;
+  dart.addTypeTests(user_accounts_drawer_header._AccountPictures);
+  dart.addTypeCaches(user_accounts_drawer_header._AccountPictures);
+  dart.setMethodSignature(user_accounts_drawer_header._AccountPictures, () => ({
+    __proto__: dart.getMethods(user_accounts_drawer_header._AccountPictures.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(user_accounts_drawer_header._AccountPictures, I[1]);
+  dart.setFieldSignature(user_accounts_drawer_header._AccountPictures, () => ({
+    __proto__: dart.getFields(user_accounts_drawer_header._AccountPictures.__proto__),
+    currentAccountPicture: dart.finalFieldType(dart.nullable(framework.Widget)),
+    otherAccountsPictures: dart.finalFieldType(dart.nullable(core.List$(framework.Widget)))
+  }));
+  var accountName$ = dart.privateName(user_accounts_drawer_header, "_AccountDetails.accountName");
+  var accountEmail$ = dart.privateName(user_accounts_drawer_header, "_AccountDetails.accountEmail");
+  var onTap$ = dart.privateName(user_accounts_drawer_header, "_AccountDetails.onTap");
+  var isOpen$ = dart.privateName(user_accounts_drawer_header, "_AccountDetails.isOpen");
+  var arrowColor$ = dart.privateName(user_accounts_drawer_header, "_AccountDetails.arrowColor");
+  user_accounts_drawer_header._AccountDetails = class _AccountDetails extends framework.StatefulWidget {
+    get accountName() {
+      return this[accountName$];
+    }
+    set accountName(value) {
+      super.accountName = value;
+    }
+    get accountEmail() {
+      return this[accountEmail$];
+    }
+    set accountEmail(value) {
+      super.accountEmail = value;
+    }
+    get onTap() {
+      return this[onTap$];
+    }
+    set onTap(value) {
+      super.onTap = value;
+    }
+    get isOpen() {
+      return this[isOpen$];
+    }
+    set isOpen(value) {
+      super.isOpen = value;
+    }
+    get arrowColor() {
+      return this[arrowColor$];
+    }
+    set arrowColor(value) {
+      super.arrowColor = value;
+    }
+    createState() {
+      return new user_accounts_drawer_header._AccountDetailsState.new();
+    }
+  };
+  (user_accounts_drawer_header._AccountDetails.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let accountName = opts && 'accountName' in opts ? opts.accountName : null;
+    let accountEmail = opts && 'accountEmail' in opts ? opts.accountEmail : null;
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    let isOpen = opts && 'isOpen' in opts ? opts.isOpen : null;
+    if (isOpen == null) dart.nullFailed(I[0], 74, 19, "isOpen");
+    let arrowColor = opts && 'arrowColor' in opts ? opts.arrowColor : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[accountName$] = accountName;
+    this[accountEmail$] = accountEmail;
+    this[onTap$] = onTap;
+    this[isOpen$] = isOpen;
+    this[arrowColor$] = arrowColor;
+    user_accounts_drawer_header._AccountDetails.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = user_accounts_drawer_header._AccountDetails.prototype;
+  dart.addTypeTests(user_accounts_drawer_header._AccountDetails);
+  dart.addTypeCaches(user_accounts_drawer_header._AccountDetails);
+  dart.setMethodSignature(user_accounts_drawer_header._AccountDetails, () => ({
+    __proto__: dart.getMethods(user_accounts_drawer_header._AccountDetails.__proto__),
+    createState: dart.fnType(user_accounts_drawer_header._AccountDetailsState, [])
+  }));
+  dart.setLibraryUri(user_accounts_drawer_header._AccountDetails, I[1]);
+  dart.setFieldSignature(user_accounts_drawer_header._AccountDetails, () => ({
+    __proto__: dart.getFields(user_accounts_drawer_header._AccountDetails.__proto__),
+    accountName: dart.finalFieldType(dart.nullable(framework.Widget)),
+    accountEmail: dart.finalFieldType(dart.nullable(framework.Widget)),
+    onTap: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, []))),
+    isOpen: dart.finalFieldType(core.bool),
+    arrowColor: dart.finalFieldType(dart.nullable(ui.Color))
+  }));
+  var ___AccountDetailsState__animation = dart.privateName(user_accounts_drawer_header, "_#_AccountDetailsState#_animation");
+  var ___AccountDetailsState__controller = dart.privateName(user_accounts_drawer_header, "_#_AccountDetailsState#_controller");
+  var _animation = dart.privateName(user_accounts_drawer_header, "_animation");
+  var _controller = dart.privateName(user_accounts_drawer_header, "_controller");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  const State_SingleTickerProviderStateMixin$36 = class State_SingleTickerProviderStateMixin extends framework.State$(user_accounts_drawer_header._AccountDetails) {};
+  (State_SingleTickerProviderStateMixin$36.new = function() {
+    ticker_provider.SingleTickerProviderStateMixin$(user_accounts_drawer_header._AccountDetails)[dart.mixinNew].call(this);
+    State_SingleTickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_SingleTickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_SingleTickerProviderStateMixin$36, ticker_provider.SingleTickerProviderStateMixin$(user_accounts_drawer_header._AccountDetails));
+  user_accounts_drawer_header._AccountDetailsState = class _AccountDetailsState extends State_SingleTickerProviderStateMixin$36 {
+    get [_animation]() {
+      let t0;
+      t0 = this[___AccountDetailsState__animation];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_animation")) : t0;
+    }
+    set [_animation](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 89, 26, "null");
+      this[___AccountDetailsState__animation] = t0;
+    }
+    get [_controller]() {
+      let t1;
+      t1 = this[___AccountDetailsState__controller];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_controller")) : t1;
+    }
+    set [_controller](t1) {
+      if (t1 == null) dart.nullFailed(I[0], 90, 28, "null");
+      this[___AccountDetailsState__controller] = t1;
+    }
+    initState() {
+      let t2;
+      super.initState();
+      this[_controller] = new animation_controller.AnimationController.new({value: dart.test(this.widget.isOpen) ? 1.0 : 0.0, duration: C[40] || CT.C40, vsync: this});
+      this[_animation] = (t2 = new animations.CurvedAnimation.new({parent: this[_controller], curve: curves.Curves.fastOutSlowIn, reverseCurve: curves.Curves.fastOutSlowIn.flipped}), (() => {
+        t2.addListener(dart.fn(() => this.setState(dart.fn(() => {
+        }, T.VoidTovoid())), T.VoidTovoid()));
+        return t2;
+      })());
+    }
+    dispose() {
+      this[_controller].dispose();
+      super.dispose();
+    }
+    didUpdateWidget(oldWidget) {
+      user_accounts_drawer_header._AccountDetails.as(oldWidget);
+      if (oldWidget == null) dart.nullFailed(I[0], 116, 41, "oldWidget");
+      super.didUpdateWidget(oldWidget);
+      if (oldWidget.isOpen == this.widget.isOpen) {
+        return;
+      }
+      if (dart.test(this.widget.isOpen)) {
+        this[_controller].forward();
+      } else {
+        this[_controller].reverse();
+      }
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 131, 29, "context");
+      if (!dart.test(debug.debugCheckHasDirectionality(context))) dart.assertFailed(null, I[0], 132, 12, "debugCheckHasDirectionality(context)");
+      if (!dart.test(debug$.debugCheckHasMaterialLocalizations(context))) dart.assertFailed(null, I[0], 133, 12, "debugCheckHasMaterialLocalizations(context)");
+      if (!dart.test(debug$.debugCheckHasMaterialLocalizations(context))) dart.assertFailed(null, I[0], 134, 12, "debugCheckHasMaterialLocalizations(context)");
+      let theme = theme$.Theme.of(context);
+      let localizations = material_localizations.MaterialLocalizations.of(context);
+      let accountDetails = new basic.CustomMultiChildLayout.new({delegate: new user_accounts_drawer_header._AccountDetailsLayout.new({textDirection: basic.Directionality.of(context)}), children: (() => {
+          let t2 = T.JSArrayOfWidget().of([]);
+          if (this.widget.accountName != null) t2[$add](new basic.LayoutId.new({id: "accountName", child: new basic.Padding.new({padding: C[41] || CT.C41, child: new text.DefaultTextStyle.new({style: dart.nullCheck(theme.primaryTextTheme.bodyText1), overflow: paragraph.TextOverflow.ellipsis, child: dart.nullCheck(this.widget.accountName), $creationLocationd_0dea112b090073317d4: C[42] || CT.C42}), $creationLocationd_0dea112b090073317d4: C[47] || CT.C47}), $creationLocationd_0dea112b090073317d4: C[51] || CT.C51}));
+          if (this.widget.accountEmail != null) t2[$add](new basic.LayoutId.new({id: "accountEmail", child: new basic.Padding.new({padding: C[41] || CT.C41, child: new text.DefaultTextStyle.new({style: dart.nullCheck(theme.primaryTextTheme.bodyText2), overflow: paragraph.TextOverflow.ellipsis, child: dart.nullCheck(this.widget.accountEmail), $creationLocationd_0dea112b090073317d4: C[55] || CT.C55}), $creationLocationd_0dea112b090073317d4: C[60] || CT.C60}), $creationLocationd_0dea112b090073317d4: C[64] || CT.C64}));
+          if (this.widget.onTap != null) t2[$add](new basic.LayoutId.new({id: "dropdownIcon", child: new basic.Semantics.new({container: true, button: true, onTap: this.widget.onTap, child: new basic.SizedBox.new({height: 56, width: 56, child: new basic.Center.new({child: new basic.Transform.rotate({angle: dart.notNull(this[_animation].value) * 3.141592653589793, child: new icon.Icon.new(icons.Icons.arrow_drop_down, {color: this.widget.arrowColor, semanticLabel: dart.test(this.widget.isOpen) ? localizations.hideAccountsLabel : localizations.showAccountsLabel, $creationLocationd_0dea112b090073317d4: C[68] || CT.C68}), $creationLocationd_0dea112b090073317d4: C[73] || CT.C73}), $creationLocationd_0dea112b090073317d4: C[77] || CT.C77}), $creationLocationd_0dea112b090073317d4: C[80] || CT.C80}), $creationLocationd_0dea112b090073317d4: C[85] || CT.C85}), $creationLocationd_0dea112b090073317d4: C[91] || CT.C91}));
+          return t2;
+        })(), $creationLocationd_0dea112b090073317d4: C[95] || CT.C95});
+      if (this.widget.onTap != null) {
+        accountDetails = new ink_well.InkWell.new({onTap: this.widget.onTap, child: accountDetails, excludeFromSemantics: true, $creationLocationd_0dea112b090073317d4: C[99] || CT.C99});
+      }
+      return new basic.SizedBox.new({height: 56, child: accountDetails, $creationLocationd_0dea112b090073317d4: C[104] || CT.C104});
+    }
+  };
+  (user_accounts_drawer_header._AccountDetailsState.new = function() {
+    this[___AccountDetailsState__animation] = null;
+    this[___AccountDetailsState__controller] = null;
+    user_accounts_drawer_header._AccountDetailsState.__proto__.new.call(this);
+    ;
+  }).prototype = user_accounts_drawer_header._AccountDetailsState.prototype;
+  dart.addTypeTests(user_accounts_drawer_header._AccountDetailsState);
+  dart.addTypeCaches(user_accounts_drawer_header._AccountDetailsState);
+  dart.setMethodSignature(user_accounts_drawer_header._AccountDetailsState, () => ({
+    __proto__: dart.getMethods(user_accounts_drawer_header._AccountDetailsState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(user_accounts_drawer_header._AccountDetailsState, () => ({
+    __proto__: dart.getGetters(user_accounts_drawer_header._AccountDetailsState.__proto__),
+    [_animation]: animation.Animation$(core.double),
+    [_controller]: animation_controller.AnimationController
+  }));
+  dart.setSetterSignature(user_accounts_drawer_header._AccountDetailsState, () => ({
+    __proto__: dart.getSetters(user_accounts_drawer_header._AccountDetailsState.__proto__),
+    [_animation]: animation.Animation$(core.double),
+    [_controller]: animation_controller.AnimationController
+  }));
+  dart.setLibraryUri(user_accounts_drawer_header._AccountDetailsState, I[1]);
+  dart.setFieldSignature(user_accounts_drawer_header._AccountDetailsState, () => ({
+    __proto__: dart.getFields(user_accounts_drawer_header._AccountDetailsState.__proto__),
+    [___AccountDetailsState__animation]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
+    [___AccountDetailsState__controller]: dart.fieldType(dart.nullable(animation_controller.AnimationController))
+  }));
+  var _offsetForIcon = dart.privateName(user_accounts_drawer_header, "_offsetForIcon");
+  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
+  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
+  var _offsetForBottomLine = dart.privateName(user_accounts_drawer_header, "_offsetForBottomLine");
+  var _offsetForName = dart.privateName(user_accounts_drawer_header, "_offsetForName");
+  var _name = dart.privateName(ui, "_name");
+  user_accounts_drawer_header._AccountDetailsLayout = class _AccountDetailsLayout extends custom_layout.MultiChildLayoutDelegate {
+    performLayout(size) {
+      if (size == null) dart.nullFailed(I[0], 224, 27, "size");
+      let iconSize = null;
+      if (dart.test(this.hasChild("dropdownIcon"))) {
+        iconSize = this.layoutChild("dropdownIcon", new box.BoxConstraints.loose(size));
+        this.positionChild("dropdownIcon", this[_offsetForIcon](size, iconSize));
+      }
+      let bottomLine = dart.test(this.hasChild("accountEmail")) ? "accountEmail" : dart.test(this.hasChild("accountName")) ? "accountName" : null;
+      if (bottomLine != null) {
+        let constraintSize = iconSize == null ? size : new ui.Size.new(dart.notNull(size.width) - dart.notNull(iconSize.width), size.height);
+        iconSize == null ? iconSize = C[108] || CT.C108 : null;
+        let bottomLineSize = this.layoutChild(bottomLine, new box.BoxConstraints.loose(constraintSize));
+        let bottomLineOffset = this[_offsetForBottomLine](size, iconSize, bottomLineSize);
+        this.positionChild(bottomLine, bottomLineOffset);
+        if (bottomLine === "accountEmail" && dart.test(this.hasChild("accountName"))) {
+          let nameSize = this.layoutChild("accountName", new box.BoxConstraints.loose(constraintSize));
+          this.positionChild("accountName", this[_offsetForName](size, nameSize, bottomLineOffset));
+        }
+      }
+    }
+    shouldRelayout(oldDelegate) {
+      custom_layout.MultiChildLayoutDelegate.as(oldDelegate);
+      if (oldDelegate == null) dart.nullFailed(I[0], 252, 48, "oldDelegate");
+      return true;
+    }
+    [_offsetForIcon](size, iconSize) {
+      if (size == null) dart.nullFailed(I[0], 254, 30, "size");
+      if (iconSize == null) dart.nullFailed(I[0], 254, 41, "iconSize");
+      switch (this.textDirection) {
+        case C[109] || CT.C109:
+        {
+          return new ui.Offset.new(dart.notNull(size.width) - dart.notNull(iconSize.width), dart.notNull(size.height) - dart.notNull(iconSize.height));
+        }
+        case C[110] || CT.C110:
+        {
+          return new ui.Offset.new(0.0, dart.notNull(size.height) - dart.notNull(iconSize.height));
+        }
+      }
+    }
+    [_offsetForBottomLine](size, iconSize, bottomLineSize) {
+      if (size == null) dart.nullFailed(I[0], 263, 36, "size");
+      if (iconSize == null) dart.nullFailed(I[0], 263, 47, "iconSize");
+      if (bottomLineSize == null) dart.nullFailed(I[0], 263, 62, "bottomLineSize");
+      let y = dart.notNull(size.height) - 0.5 * dart.notNull(iconSize.height) - 0.5 * dart.notNull(bottomLineSize.height);
+      switch (this.textDirection) {
+        case C[109] || CT.C109:
+        {
+          return new ui.Offset.new(0.0, y);
+        }
+        case C[110] || CT.C110:
+        {
+          return new ui.Offset.new(dart.notNull(size.width) - dart.notNull(bottomLineSize.width), y);
+        }
+      }
+    }
+    [_offsetForName](size, nameSize, bottomLineOffset) {
+      if (size == null) dart.nullFailed(I[0], 273, 30, "size");
+      if (nameSize == null) dart.nullFailed(I[0], 273, 41, "nameSize");
+      if (bottomLineOffset == null) dart.nullFailed(I[0], 273, 58, "bottomLineOffset");
+      let y = dart.notNull(bottomLineOffset.dy) - dart.notNull(nameSize.height);
+      switch (this.textDirection) {
+        case C[109] || CT.C109:
+        {
+          return new ui.Offset.new(0.0, y);
+        }
+        case C[110] || CT.C110:
+        {
+          return new ui.Offset.new(dart.notNull(size.width) - dart.notNull(nameSize.width), y);
+        }
+      }
+    }
+  };
+  (user_accounts_drawer_header._AccountDetailsLayout.new = function(opts) {
+    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+    if (textDirection == null) dart.nullFailed(I[0], 215, 41, "textDirection");
+    this.textDirection = textDirection;
+    user_accounts_drawer_header._AccountDetailsLayout.__proto__.new.call(this);
+    ;
+  }).prototype = user_accounts_drawer_header._AccountDetailsLayout.prototype;
+  dart.addTypeTests(user_accounts_drawer_header._AccountDetailsLayout);
+  dart.addTypeCaches(user_accounts_drawer_header._AccountDetailsLayout);
+  dart.setMethodSignature(user_accounts_drawer_header._AccountDetailsLayout, () => ({
+    __proto__: dart.getMethods(user_accounts_drawer_header._AccountDetailsLayout.__proto__),
+    performLayout: dart.fnType(dart.void, [ui.Size]),
+    shouldRelayout: dart.fnType(core.bool, [dart.nullable(core.Object)]),
+    [_offsetForIcon]: dart.fnType(ui.Offset, [ui.Size, ui.Size]),
+    [_offsetForBottomLine]: dart.fnType(ui.Offset, [ui.Size, ui.Size, ui.Size]),
+    [_offsetForName]: dart.fnType(ui.Offset, [ui.Size, ui.Size, ui.Offset])
+  }));
+  dart.setLibraryUri(user_accounts_drawer_header._AccountDetailsLayout, I[1]);
+  dart.setFieldSignature(user_accounts_drawer_header._AccountDetailsLayout, () => ({
+    __proto__: dart.getFields(user_accounts_drawer_header._AccountDetailsLayout.__proto__),
+    textDirection: dart.finalFieldType(ui.TextDirection)
+  }));
+  dart.defineLazy(user_accounts_drawer_header._AccountDetailsLayout, {
+    /*user_accounts_drawer_header._AccountDetailsLayout.accountName*/get accountName() {
+      return "accountName";
+    },
+    /*user_accounts_drawer_header._AccountDetailsLayout.accountEmail*/get accountEmail() {
+      return "accountEmail";
+    },
+    /*user_accounts_drawer_header._AccountDetailsLayout.dropdownIcon*/get dropdownIcon() {
+      return "dropdownIcon";
+    }
+  }, false);
+  var decoration$ = dart.privateName(user_accounts_drawer_header, "UserAccountsDrawerHeader.decoration");
+  var margin$ = dart.privateName(user_accounts_drawer_header, "UserAccountsDrawerHeader.margin");
+  var currentAccountPicture$0 = dart.privateName(user_accounts_drawer_header, "UserAccountsDrawerHeader.currentAccountPicture");
+  var otherAccountsPictures$0 = dart.privateName(user_accounts_drawer_header, "UserAccountsDrawerHeader.otherAccountsPictures");
+  var accountName$0 = dart.privateName(user_accounts_drawer_header, "UserAccountsDrawerHeader.accountName");
+  var accountEmail$0 = dart.privateName(user_accounts_drawer_header, "UserAccountsDrawerHeader.accountEmail");
+  var onDetailsPressed$ = dart.privateName(user_accounts_drawer_header, "UserAccountsDrawerHeader.onDetailsPressed");
+  var arrowColor$0 = dart.privateName(user_accounts_drawer_header, "UserAccountsDrawerHeader.arrowColor");
+  var Color_value = dart.privateName(ui, "Color.value");
+  user_accounts_drawer_header.UserAccountsDrawerHeader = class UserAccountsDrawerHeader extends framework.StatefulWidget {
+    get decoration() {
+      return this[decoration$];
+    }
+    set decoration(value) {
+      super.decoration = value;
+    }
+    get margin() {
+      return this[margin$];
+    }
+    set margin(value) {
+      super.margin = value;
+    }
+    get currentAccountPicture() {
+      return this[currentAccountPicture$0];
+    }
+    set currentAccountPicture(value) {
+      super.currentAccountPicture = value;
+    }
+    get otherAccountsPictures() {
+      return this[otherAccountsPictures$0];
+    }
+    set otherAccountsPictures(value) {
+      super.otherAccountsPictures = value;
+    }
+    get accountName() {
+      return this[accountName$0];
+    }
+    set accountName(value) {
+      super.accountName = value;
+    }
+    get accountEmail() {
+      return this[accountEmail$0];
+    }
+    set accountEmail(value) {
+      super.accountEmail = value;
+    }
+    get onDetailsPressed() {
+      return this[onDetailsPressed$];
+    }
+    set onDetailsPressed(value) {
+      super.onDetailsPressed = value;
+    }
+    get arrowColor() {
+      return this[arrowColor$0];
+    }
+    set arrowColor(value) {
+      super.arrowColor = value;
+    }
+    createState() {
+      return new user_accounts_drawer_header._UserAccountsDrawerHeaderState.new();
+    }
+  };
+  (user_accounts_drawer_header.UserAccountsDrawerHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let decoration = opts && 'decoration' in opts ? opts.decoration : null;
+    let margin = opts && 'margin' in opts ? opts.margin : C[111] || CT.C111;
+    let currentAccountPicture = opts && 'currentAccountPicture' in opts ? opts.currentAccountPicture : null;
+    let otherAccountsPictures = opts && 'otherAccountsPictures' in opts ? opts.otherAccountsPictures : null;
+    let accountName = opts && 'accountName' in opts ? opts.accountName : null;
+    let accountEmail = opts && 'accountEmail' in opts ? opts.accountEmail : null;
+    let onDetailsPressed = opts && 'onDetailsPressed' in opts ? opts.onDetailsPressed : null;
+    let arrowColor = opts && 'arrowColor' in opts ? opts.arrowColor : C[112] || CT.C112;
+    if (arrowColor == null) dart.nullFailed(I[0], 305, 10, "arrowColor");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[decoration$] = decoration;
+    this[margin$] = margin;
+    this[currentAccountPicture$0] = currentAccountPicture;
+    this[otherAccountsPictures$0] = otherAccountsPictures;
+    this[accountName$0] = accountName;
+    this[accountEmail$0] = accountEmail;
+    this[onDetailsPressed$] = onDetailsPressed;
+    this[arrowColor$0] = arrowColor;
+    user_accounts_drawer_header.UserAccountsDrawerHeader.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = user_accounts_drawer_header.UserAccountsDrawerHeader.prototype;
+  dart.addTypeTests(user_accounts_drawer_header.UserAccountsDrawerHeader);
+  dart.addTypeCaches(user_accounts_drawer_header.UserAccountsDrawerHeader);
+  dart.setMethodSignature(user_accounts_drawer_header.UserAccountsDrawerHeader, () => ({
+    __proto__: dart.getMethods(user_accounts_drawer_header.UserAccountsDrawerHeader.__proto__),
+    createState: dart.fnType(user_accounts_drawer_header._UserAccountsDrawerHeaderState, [])
+  }));
+  dart.setLibraryUri(user_accounts_drawer_header.UserAccountsDrawerHeader, I[1]);
+  dart.setFieldSignature(user_accounts_drawer_header.UserAccountsDrawerHeader, () => ({
+    __proto__: dart.getFields(user_accounts_drawer_header.UserAccountsDrawerHeader.__proto__),
+    decoration: dart.finalFieldType(dart.nullable(decoration.Decoration)),
+    margin: dart.finalFieldType(dart.nullable(edge_insets.EdgeInsetsGeometry)),
+    currentAccountPicture: dart.finalFieldType(dart.nullable(framework.Widget)),
+    otherAccountsPictures: dart.finalFieldType(dart.nullable(core.List$(framework.Widget))),
+    accountName: dart.finalFieldType(dart.nullable(framework.Widget)),
+    accountEmail: dart.finalFieldType(dart.nullable(framework.Widget)),
+    onDetailsPressed: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, []))),
+    arrowColor: dart.finalFieldType(ui.Color)
+  }));
+  var _isOpen = dart.privateName(user_accounts_drawer_header, "_isOpen");
+  var _handleDetailsPressed = dart.privateName(user_accounts_drawer_header, "_handleDetailsPressed");
+  user_accounts_drawer_header._UserAccountsDrawerHeaderState = class _UserAccountsDrawerHeaderState extends framework.State$(user_accounts_drawer_header.UserAccountsDrawerHeader) {
+    [_handleDetailsPressed]() {
+      this.setState(dart.fn(() => {
+        this[_isOpen] = !dart.test(this[_isOpen]);
+      }, T.VoidTovoid()));
+      dart.nullCheck(this.widget.onDetailsPressed)();
+    }
+    build(context) {
+      let t3;
+      if (context == null) dart.nullFailed(I[0], 354, 29, "context");
+      if (!dart.test(debug$.debugCheckHasMaterial(context))) dart.assertFailed(null, I[0], 355, 12, "debugCheckHasMaterial(context)");
+      if (!dart.test(debug$.debugCheckHasMaterialLocalizations(context))) dart.assertFailed(null, I[0], 356, 12, "debugCheckHasMaterialLocalizations(context)");
+      return new basic.Semantics.new({container: true, label: material_localizations.MaterialLocalizations.of(context).signedInLabel, child: new drawer_header.DrawerHeader.new({decoration: (t3 = this.widget.decoration, t3 == null ? new box_decoration.BoxDecoration.new({color: theme$.Theme.of(context).primaryColor}) : t3), margin: this.widget.margin, padding: C[113] || CT.C113, child: new safe_area.SafeArea.new({bottom: false, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.stretch, children: T.JSArrayOfWidget().of([new basic.Expanded.new({child: new basic.Padding.new({padding: C[114] || CT.C114, child: new user_accounts_drawer_header._AccountPictures.new({currentAccountPicture: this.widget.currentAccountPicture, otherAccountsPictures: this.widget.otherAccountsPictures, $creationLocationd_0dea112b090073317d4: C[115] || CT.C115}), $creationLocationd_0dea112b090073317d4: C[119] || CT.C119}), $creationLocationd_0dea112b090073317d4: C[123] || CT.C123}), new user_accounts_drawer_header._AccountDetails.new({accountName: this.widget.accountName, accountEmail: this.widget.accountEmail, isOpen: this[_isOpen], onTap: this.widget.onDetailsPressed == null ? null : dart.bind(this, _handleDetailsPressed), arrowColor: this.widget.arrowColor, $creationLocationd_0dea112b090073317d4: C[126] || CT.C126})]), $creationLocationd_0dea112b090073317d4: C[133] || CT.C133}), $creationLocationd_0dea112b090073317d4: C[137] || CT.C137}), $creationLocationd_0dea112b090073317d4: C[141] || CT.C141}), $creationLocationd_0dea112b090073317d4: C[147] || CT.C147});
+    }
+  };
+  (user_accounts_drawer_header._UserAccountsDrawerHeaderState.new = function() {
+    this[_isOpen] = false;
+    user_accounts_drawer_header._UserAccountsDrawerHeaderState.__proto__.new.call(this);
+    ;
+  }).prototype = user_accounts_drawer_header._UserAccountsDrawerHeaderState.prototype;
+  dart.addTypeTests(user_accounts_drawer_header._UserAccountsDrawerHeaderState);
+  dart.addTypeCaches(user_accounts_drawer_header._UserAccountsDrawerHeaderState);
+  dart.setMethodSignature(user_accounts_drawer_header._UserAccountsDrawerHeaderState, () => ({
+    __proto__: dart.getMethods(user_accounts_drawer_header._UserAccountsDrawerHeaderState.__proto__),
+    [_handleDetailsPressed]: dart.fnType(dart.void, []),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(user_accounts_drawer_header._UserAccountsDrawerHeaderState, I[1]);
+  dart.setFieldSignature(user_accounts_drawer_header._UserAccountsDrawerHeaderState, () => ({
+    __proto__: dart.getFields(user_accounts_drawer_header._UserAccountsDrawerHeaderState.__proto__),
+    [_isOpen]: dart.fieldType(core.bool)
+  }));
+  dart.defineLazy(user_accounts_drawer_header, {
+    /*user_accounts_drawer_header._kAccountDetailsHeight*/get _kAccountDetailsHeight() {
+      return 56;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/material/user_accounts_drawer_header.dart", {
+    "package:flutter/src/material/user_accounts_drawer_header.dart": user_accounts_drawer_header
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["user_accounts_drawer_header.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;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","file":"../../../../../../../../packages/flutter/src/material/user_accounts_drawer_header.dart.lib.js"}');
+  // Exports:
+  return {
+    src__material__user_accounts_drawer_header: user_accounts_drawer_header
+  };
+}));
+
+//# sourceMappingURL=user_accounts_drawer_header.dart.lib.js.map

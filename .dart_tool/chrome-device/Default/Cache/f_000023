@@ -1,0 +1,606 @@
+define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/characters/src/characters_impl.dart', 'packages/flutter/src/rendering/proxy_box.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/listener_helpers.dart'], (function load__packages__animated_text_kit__src__animated_text_dart(dart_sdk, packages__characters__src__extensions$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__strut_style$46dart, packages__characters__src__characters_impl$46dart, packages__flutter__src__rendering__proxy_box$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__listener_helpers$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const async = dart_sdk.async;
+  const math = dart_sdk.math;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const extensions = packages__characters__src__extensions$46dart.src__extensions;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const gesture_detector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__gesture_detector;
+  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const characters = packages__characters__src__characters_impl$46dart.src__characters;
+  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  var animated_text = Object.create(dart.library);
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: ui.TextAlign.prototype,
+        [_name]: "TextAlign.start",
+        index: 4
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 9,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 9,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 9,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[2] || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 37,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 1000000
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "animation",
+        [_Location_column]: 15,
+        [_Location_line]: 173,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 15,
+        [_Location_line]: 174,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 175,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11], widget_inspector._Location);
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 172,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "behavior",
+        [_Location_column]: 7,
+        [_Location_line]: 168,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 7,
+        [_Location_line]: 169,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 170,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 167,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
+      });
+    }
+  }, false);
+  var C = Array(17).fill(void 0);
+  var I = [
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart",
+    "package:animated_text_kit/src/animated_text.dart"
+  ];
+  var text$ = dart.privateName(animated_text, "AnimatedText.text");
+  var textAlign$ = dart.privateName(animated_text, "AnimatedText.textAlign");
+  var textStyle$ = dart.privateName(animated_text, "AnimatedText.textStyle");
+  var duration$ = dart.privateName(animated_text, "AnimatedText.duration");
+  var textCharacters = dart.privateName(animated_text, "AnimatedText.textCharacters");
+  var _name = dart.privateName(ui, "_name");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  animated_text.AnimatedText = class AnimatedText extends core.Object {
+    get text() {
+      return this[text$];
+    }
+    set text(value) {
+      super.text = value;
+    }
+    get textAlign() {
+      return this[textAlign$];
+    }
+    set textAlign(value) {
+      super.textAlign = value;
+    }
+    get textStyle() {
+      return this[textStyle$];
+    }
+    set textStyle(value) {
+      super.textStyle = value;
+    }
+    get duration() {
+      return this[duration$];
+    }
+    set duration(value) {
+      super.duration = value;
+    }
+    get textCharacters() {
+      return this[textCharacters];
+    }
+    set textCharacters(value) {
+      super.textCharacters = value;
+    }
+    get remaining() {
+      return null;
+    }
+    textWidget(data) {
+      if (data == null) dart.nullFailed(I[0], 46, 28, "data");
+      return new text.Text.new(data, {textAlign: this.textAlign, style: this.textStyle, $creationLocationd_0dea112b090073317d4: C[1] || CT.C1});
+    }
+    completeText(context) {
+      if (context == null) dart.nullFailed(I[0], 54, 36, "context");
+      return this.textWidget(this.text);
+    }
+  };
+  (animated_text.AnimatedText.new = function(opts) {
+    let text = opts && 'text' in opts ? opts.text : null;
+    if (text == null) dart.nullFailed(I[0], 32, 19, "text");
+    let textAlign = opts && 'textAlign' in opts ? opts.textAlign : C[0] || CT.C0;
+    if (textAlign == null) dart.nullFailed(I[0], 33, 10, "textAlign");
+    let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
+    let duration = opts && 'duration' in opts ? opts.duration : null;
+    if (duration == null) dart.nullFailed(I[0], 35, 19, "duration");
+    this[text$] = text;
+    this[textAlign$] = textAlign;
+    this[textStyle$] = textStyle;
+    this[duration$] = duration;
+    this[textCharacters] = extensions['StringCharacters|get#characters'](text);
+    ;
+  }).prototype = animated_text.AnimatedText.prototype;
+  dart.addTypeTests(animated_text.AnimatedText);
+  dart.addTypeCaches(animated_text.AnimatedText);
+  dart.setMethodSignature(animated_text.AnimatedText, () => ({
+    __proto__: dart.getMethods(animated_text.AnimatedText.__proto__),
+    textWidget: dart.fnType(framework.Widget, [core.String]),
+    completeText: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(animated_text.AnimatedText, () => ({
+    __proto__: dart.getGetters(animated_text.AnimatedText.__proto__),
+    remaining: dart.nullable(core.Duration)
+  }));
+  dart.setLibraryUri(animated_text.AnimatedText, I[1]);
+  dart.setFieldSignature(animated_text.AnimatedText, () => ({
+    __proto__: dart.getFields(animated_text.AnimatedText.__proto__),
+    text: dart.finalFieldType(core.String),
+    textAlign: dart.finalFieldType(ui.TextAlign),
+    textStyle: dart.finalFieldType(dart.nullable(text_style.TextStyle)),
+    duration: dart.finalFieldType(core.Duration),
+    textCharacters: dart.finalFieldType(characters.Characters)
+  }));
+  var animatedTexts$ = dart.privateName(animated_text, "AnimatedTextKit.animatedTexts");
+  var pause$ = dart.privateName(animated_text, "AnimatedTextKit.pause");
+  var displayFullTextOnTap$ = dart.privateName(animated_text, "AnimatedTextKit.displayFullTextOnTap");
+  var stopPauseOnTap$ = dart.privateName(animated_text, "AnimatedTextKit.stopPauseOnTap");
+  var onTap$ = dart.privateName(animated_text, "AnimatedTextKit.onTap");
+  var onFinished$ = dart.privateName(animated_text, "AnimatedTextKit.onFinished");
+  var onNext$ = dart.privateName(animated_text, "AnimatedTextKit.onNext");
+  var onNextBeforePause$ = dart.privateName(animated_text, "AnimatedTextKit.onNextBeforePause");
+  var isRepeatingAnimation$ = dart.privateName(animated_text, "AnimatedTextKit.isRepeatingAnimation");
+  var repeatForever$ = dart.privateName(animated_text, "AnimatedTextKit.repeatForever");
+  var totalRepeatCount$ = dart.privateName(animated_text, "AnimatedTextKit.totalRepeatCount");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  animated_text.AnimatedTextKit = class AnimatedTextKit extends framework.StatefulWidget {
+    get animatedTexts() {
+      return this[animatedTexts$];
+    }
+    set animatedTexts(value) {
+      super.animatedTexts = value;
+    }
+    get pause() {
+      return this[pause$];
+    }
+    set pause(value) {
+      super.pause = value;
+    }
+    get displayFullTextOnTap() {
+      return this[displayFullTextOnTap$];
+    }
+    set displayFullTextOnTap(value) {
+      super.displayFullTextOnTap = value;
+    }
+    get stopPauseOnTap() {
+      return this[stopPauseOnTap$];
+    }
+    set stopPauseOnTap(value) {
+      super.stopPauseOnTap = value;
+    }
+    get onTap() {
+      return this[onTap$];
+    }
+    set onTap(value) {
+      super.onTap = value;
+    }
+    get onFinished() {
+      return this[onFinished$];
+    }
+    set onFinished(value) {
+      super.onFinished = value;
+    }
+    get onNext() {
+      return this[onNext$];
+    }
+    set onNext(value) {
+      super.onNext = value;
+    }
+    get onNextBeforePause() {
+      return this[onNextBeforePause$];
+    }
+    set onNextBeforePause(value) {
+      super.onNextBeforePause = value;
+    }
+    get isRepeatingAnimation() {
+      return this[isRepeatingAnimation$];
+    }
+    set isRepeatingAnimation(value) {
+      super.isRepeatingAnimation = value;
+    }
+    get repeatForever() {
+      return this[repeatForever$];
+    }
+    set repeatForever(value) {
+      super.repeatForever = value;
+    }
+    get totalRepeatCount() {
+      return this[totalRepeatCount$];
+    }
+    set totalRepeatCount(value) {
+      super.totalRepeatCount = value;
+    }
+    createState() {
+      return new animated_text._AnimatedTextKitState.new();
+    }
+  };
+  (animated_text.AnimatedTextKit.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let animatedTexts = opts && 'animatedTexts' in opts ? opts.animatedTexts : null;
+    if (animatedTexts == null) dart.nullFailed(I[0], 116, 19, "animatedTexts");
+    let pause = opts && 'pause' in opts ? opts.pause : C[6] || CT.C6;
+    if (pause == null) dart.nullFailed(I[0], 117, 10, "pause");
+    let displayFullTextOnTap = opts && 'displayFullTextOnTap' in opts ? opts.displayFullTextOnTap : false;
+    if (displayFullTextOnTap == null) dart.nullFailed(I[0], 118, 10, "displayFullTextOnTap");
+    let stopPauseOnTap = opts && 'stopPauseOnTap' in opts ? opts.stopPauseOnTap : false;
+    if (stopPauseOnTap == null) dart.nullFailed(I[0], 119, 10, "stopPauseOnTap");
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    let onNext = opts && 'onNext' in opts ? opts.onNext : null;
+    let onNextBeforePause = opts && 'onNextBeforePause' in opts ? opts.onNextBeforePause : null;
+    let onFinished = opts && 'onFinished' in opts ? opts.onFinished : null;
+    let isRepeatingAnimation = opts && 'isRepeatingAnimation' in opts ? opts.isRepeatingAnimation : true;
+    if (isRepeatingAnimation == null) dart.nullFailed(I[0], 124, 10, "isRepeatingAnimation");
+    let totalRepeatCount = opts && 'totalRepeatCount' in opts ? opts.totalRepeatCount : 3;
+    if (totalRepeatCount == null) dart.nullFailed(I[0], 125, 10, "totalRepeatCount");
+    let repeatForever = opts && 'repeatForever' in opts ? opts.repeatForever : false;
+    if (repeatForever == null) dart.nullFailed(I[0], 126, 10, "repeatForever");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[animatedTexts$] = animatedTexts;
+    this[pause$] = pause;
+    this[displayFullTextOnTap$] = displayFullTextOnTap;
+    this[stopPauseOnTap$] = stopPauseOnTap;
+    this[onTap$] = onTap;
+    this[onNext$] = onNext;
+    this[onNextBeforePause$] = onNextBeforePause;
+    this[onFinished$] = onFinished;
+    this[isRepeatingAnimation$] = isRepeatingAnimation;
+    this[totalRepeatCount$] = totalRepeatCount;
+    this[repeatForever$] = repeatForever;
+    if (!(dart.notNull(animatedTexts[$length]) > 0)) dart.assertFailed(null, I[0], 127, 16, "animatedTexts.length > 0");
+    if (!(!dart.test(isRepeatingAnimation) || dart.notNull(totalRepeatCount) > 0 || dart.test(repeatForever))) dart.assertFailed(null, I[0], 128, 16, "!isRepeatingAnimation || totalRepeatCount > 0 || repeatForever");
+    if (!(onFinished == null || !dart.test(repeatForever))) dart.assertFailed(null, I[0], 129, 16, "null == onFinished || !repeatForever");
+    animated_text.AnimatedTextKit.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = animated_text.AnimatedTextKit.prototype;
+  dart.addTypeTests(animated_text.AnimatedTextKit);
+  dart.addTypeCaches(animated_text.AnimatedTextKit);
+  dart.setMethodSignature(animated_text.AnimatedTextKit, () => ({
+    __proto__: dart.getMethods(animated_text.AnimatedTextKit.__proto__),
+    createState: dart.fnType(animated_text._AnimatedTextKitState, [])
+  }));
+  dart.setLibraryUri(animated_text.AnimatedTextKit, I[1]);
+  dart.setFieldSignature(animated_text.AnimatedTextKit, () => ({
+    __proto__: dart.getFields(animated_text.AnimatedTextKit.__proto__),
+    animatedTexts: dart.finalFieldType(core.List$(animated_text.AnimatedText)),
+    pause: dart.finalFieldType(core.Duration),
+    displayFullTextOnTap: dart.finalFieldType(core.bool),
+    stopPauseOnTap: dart.finalFieldType(core.bool),
+    onTap: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, []))),
+    onFinished: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, []))),
+    onNext: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.int, core.bool]))),
+    onNextBeforePause: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.int, core.bool]))),
+    isRepeatingAnimation: dart.finalFieldType(core.bool),
+    repeatForever: dart.finalFieldType(core.bool),
+    totalRepeatCount: dart.finalFieldType(core.int)
+  }));
+  var ___AnimatedTextKitState__controller = dart.privateName(animated_text, "_#_AnimatedTextKitState#_controller");
+  var ___AnimatedTextKitState__currentAnimatedText = dart.privateName(animated_text, "_#_AnimatedTextKitState#_currentAnimatedText");
+  var _currentRepeatCount = dart.privateName(animated_text, "_currentRepeatCount");
+  var _index = dart.privateName(animated_text, "_index");
+  var _isCurrentlyPausing = dart.privateName(animated_text, "_isCurrentlyPausing");
+  var _timer = dart.privateName(animated_text, "_timer");
+  var _controller = dart.privateName(animated_text, "_controller");
+  var _currentAnimatedText = dart.privateName(animated_text, "_currentAnimatedText");
+  var _initAnimation = dart.privateName(animated_text, "_initAnimation");
+  var _onTap = dart.privateName(animated_text, "_onTap");
+  var _isLast = dart.privateName(animated_text, "_isLast");
+  var _nextAnimation = dart.privateName(animated_text, "_nextAnimation");
+  var _animationEndCallback = dart.privateName(animated_text, "_animationEndCallback");
+  var _setPause = dart.privateName(animated_text, "_setPause");
+  const State_TickerProviderStateMixin$36 = class State_TickerProviderStateMixin extends framework.State$(animated_text.AnimatedTextKit) {};
+  (State_TickerProviderStateMixin$36.new = function() {
+    ticker_provider.TickerProviderStateMixin$(animated_text.AnimatedTextKit)[dart.mixinNew].call(this);
+    State_TickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_TickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_TickerProviderStateMixin$36, ticker_provider.TickerProviderStateMixin$(animated_text.AnimatedTextKit));
+  animated_text._AnimatedTextKitState = class _AnimatedTextKitState extends State_TickerProviderStateMixin$36 {
+    get [_controller]() {
+      let t0;
+      t0 = this[___AnimatedTextKitState__controller];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_controller")) : t0;
+    }
+    set [_controller](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 139, 28, "null");
+      this[___AnimatedTextKitState__controller] = t0;
+    }
+    get [_currentAnimatedText]() {
+      let t1;
+      t1 = this[___AnimatedTextKitState__currentAnimatedText];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_currentAnimatedText")) : t1;
+    }
+    set [_currentAnimatedText](t1) {
+      if (t1 == null) dart.nullFailed(I[0], 141, 21, "null");
+      this[___AnimatedTextKitState__currentAnimatedText] = t1;
+    }
+    initState() {
+      super.initState();
+      this[_initAnimation]();
+    }
+    dispose() {
+      let t2;
+      t2 = this[_timer];
+      t2 == null ? null : t2.cancel();
+      this[_controller].dispose();
+      super.dispose();
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 165, 29, "context");
+      let completeText = this[_currentAnimatedText].completeText(context);
+      return new gesture_detector.GestureDetector.new({behavior: proxy_box.HitTestBehavior.opaque, onTap: dart.bind(this, _onTap), child: dart.test(this[_isCurrentlyPausing]) || !dart.test(this[_controller].isAnimating) ? completeText : new transitions.AnimatedBuilder.new({animation: this[_controller], builder: dart.bind(this[_currentAnimatedText], 'animatedBuilder'), child: completeText, $creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12});
+    }
+    get [_isLast]() {
+      return this[_index] === dart.notNull(this.widget.animatedTexts[$length]) - 1;
+    }
+    [_nextAnimation]() {
+      let t2, t2$;
+      let isLast = this[_isLast];
+      this[_isCurrentlyPausing] = false;
+      t2 = this.widget.onNext;
+      t2 == null ? null : t2(this[_index], isLast);
+      if (dart.test(isLast)) {
+        if (dart.test(this.widget.isRepeatingAnimation) && (dart.test(this.widget.repeatForever) || this[_currentRepeatCount] !== dart.notNull(this.widget.totalRepeatCount) - 1)) {
+          this[_index] = 0;
+          if (!dart.test(this.widget.repeatForever)) {
+            this[_currentRepeatCount] = dart.notNull(this[_currentRepeatCount]) + 1;
+          }
+        } else {
+          t2$ = this.widget.onFinished;
+          t2$ == null ? null : t2$();
+          return;
+        }
+      } else {
+        this[_index] = dart.notNull(this[_index]) + 1;
+      }
+      if (dart.test(this.mounted)) this.setState(dart.fn(() => {
+      }, T.VoidTovoid()));
+      this[_controller].dispose();
+      this[_initAnimation]();
+    }
+    [_initAnimation]() {
+      let t2;
+      this[_currentAnimatedText] = this.widget.animatedTexts[$_get](this[_index]);
+      this[_controller] = new animation_controller.AnimationController.new({duration: this[_currentAnimatedText].duration, vsync: this});
+      this[_currentAnimatedText].initAnimation(this[_controller]);
+      t2 = this[_controller];
+      (() => {
+        t2.addStatusListener(dart.bind(this, _animationEndCallback));
+        t2.forward();
+        return t2;
+      })();
+    }
+    [_setPause]() {
+      let t2;
+      let isLast = this[_isLast];
+      this[_isCurrentlyPausing] = true;
+      if (dart.test(this.mounted)) this.setState(dart.fn(() => {
+      }, T.VoidTovoid()));
+      t2 = this.widget.onNextBeforePause;
+      t2 == null ? null : t2(this[_index], isLast);
+    }
+    [_animationEndCallback](state) {
+      if (state == null) dart.nullFailed(I[0], 239, 46, "state");
+      if (state == animation.AnimationStatus.completed) {
+        this[_setPause]();
+        if (!(this[_timer] == null || !dart.test(dart.nullCheck(this[_timer]).isActive))) dart.assertFailed(null, I[0], 242, 14, "null == _timer || !_timer!.isActive");
+        this[_timer] = async.Timer.new(this.widget.pause, dart.bind(this, _nextAnimation));
+      }
+    }
+    [_onTap]() {
+      let t2, t2$, t2$0;
+      if (dart.test(this.widget.displayFullTextOnTap)) {
+        if (dart.test(this[_isCurrentlyPausing])) {
+          if (dart.test(this.widget.stopPauseOnTap)) {
+            t2 = this[_timer];
+            t2 == null ? null : t2.cancel();
+            this[_nextAnimation]();
+          }
+        } else {
+          let left = (t2$ = this[_currentAnimatedText].remaining, t2$ == null ? this[_currentAnimatedText].duration : t2$).inMilliseconds;
+          this[_controller].stop();
+          this[_setPause]();
+          if (!(this[_timer] == null || !dart.test(dart.nullCheck(this[_timer]).isActive))) dart.assertFailed(null, I[0], 263, 16, "null == _timer || !_timer!.isActive");
+          this[_timer] = async.Timer.new(new core.Duration.new({milliseconds: math.max(core.int, this.widget.pause.inMilliseconds, left)}), dart.bind(this, _nextAnimation));
+        }
+      }
+      t2$0 = this.widget.onTap;
+      t2$0 == null ? null : t2$0();
+    }
+  };
+  (animated_text._AnimatedTextKitState.new = function() {
+    this[___AnimatedTextKitState__controller] = null;
+    this[___AnimatedTextKitState__currentAnimatedText] = null;
+    this[_currentRepeatCount] = 0;
+    this[_index] = 0;
+    this[_isCurrentlyPausing] = false;
+    this[_timer] = null;
+    animated_text._AnimatedTextKitState.__proto__.new.call(this);
+    ;
+  }).prototype = animated_text._AnimatedTextKitState.prototype;
+  dart.addTypeTests(animated_text._AnimatedTextKitState);
+  dart.addTypeCaches(animated_text._AnimatedTextKitState);
+  dart.setMethodSignature(animated_text._AnimatedTextKitState, () => ({
+    __proto__: dart.getMethods(animated_text._AnimatedTextKitState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_nextAnimation]: dart.fnType(dart.void, []),
+    [_initAnimation]: dart.fnType(dart.void, []),
+    [_setPause]: dart.fnType(dart.void, []),
+    [_animationEndCallback]: dart.fnType(dart.void, [animation.AnimationStatus]),
+    [_onTap]: dart.fnType(dart.void, [])
+  }));
+  dart.setGetterSignature(animated_text._AnimatedTextKitState, () => ({
+    __proto__: dart.getGetters(animated_text._AnimatedTextKitState.__proto__),
+    [_controller]: animation_controller.AnimationController,
+    [_currentAnimatedText]: animated_text.AnimatedText,
+    [_isLast]: core.bool
+  }));
+  dart.setSetterSignature(animated_text._AnimatedTextKitState, () => ({
+    __proto__: dart.getSetters(animated_text._AnimatedTextKitState.__proto__),
+    [_controller]: animation_controller.AnimationController,
+    [_currentAnimatedText]: animated_text.AnimatedText
+  }));
+  dart.setLibraryUri(animated_text._AnimatedTextKitState, I[1]);
+  dart.setFieldSignature(animated_text._AnimatedTextKitState, () => ({
+    __proto__: dart.getFields(animated_text._AnimatedTextKitState.__proto__),
+    [___AnimatedTextKitState__controller]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [___AnimatedTextKitState__currentAnimatedText]: dart.fieldType(dart.nullable(animated_text.AnimatedText)),
+    [_currentRepeatCount]: dart.fieldType(core.int),
+    [_index]: dart.fieldType(core.int),
+    [_isCurrentlyPausing]: dart.fieldType(core.bool),
+    [_timer]: dart.fieldType(dart.nullable(async.Timer))
+  }));
+  dart.trackLibraries("packages/animated_text_kit/src/animated_text.dart", {
+    "package:animated_text_kit/src/animated_text.dart": animated_text
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["animated_text.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/animated_text_kit/src/animated_text.dart.lib.js"}');
+  // Exports:
+  return {
+    src__animated_text: animated_text
+  };
+}));
+
+//# sourceMappingURL=animated_text.dart.lib.js.map

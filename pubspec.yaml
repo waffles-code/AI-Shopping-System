@@ -41,6 +41,9 @@ dependencies:
   flutter_spinkit: ^4.1.2
   rflutter_alert: ^2.0.2
   animated_text_kit: ^4.2.1
+  firebase_storage: ^8.0.5
+  provider: ^5.0.0
+  cached_network_image: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -52,11 +55,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/GoogleLogo.png
-    - assets/images/Book.png
-    - assets/images/Clothes.png
-    - assets/images/Garden.png
-    - assets/images/Kitchen.png
-    - assets/images/Tech.png
+
   fonts:
   - family: Inria Serif
     fonts:
@@ -67,6 +66,9 @@ flutter:
       - asset: assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf
       - asset: assets/fonts/Nunito_Sans/NunitoSans-Bold.ttf
         weight: 700
+  - family:  AIicons
+    fonts:
+      - asset: assets/fonts/AIicons.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
