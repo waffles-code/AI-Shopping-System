@@ -53,47 +53,49 @@ var Products_on_the_cart = [
 
       ),
       body: ListView.builder(
-        itemCount: Products_on_the_cart.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Single_cart_product(
-            prod_name: Products_on_the_cart[index]["name"],
-            prod_picture: Products_on_the_cart[index]["picture"],
-            prod_price: Products_on_the_cart[index]["price"],
-            prod_quantity: Products_on_the_cart[index]["quantity"],
-            prod_description: Products_on_the_cart[index]["description"],
-          );
+          itemCount: Products_on_the_cart.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Single_cart_product(
+                prod_name: Products_on_the_cart[index]["name"],
+                prod_picture: Products_on_the_cart[index]["picture"],
+                prod_price: Products_on_the_cart[index]["price"],
+                prod_quantity: Products_on_the_cart[index]["quantity"],
+                prod_description: Products_on_the_cart[index]["description"],
+              );
 
 
-          /*Card(
-            color: Color(0xB7242424),
-            child: ListTile(
-              leading: new Image.network('https://i0.wp.com/itsanenchantedlife.com/wp-content/uploads/2019/09/Pride-and-Prejudice-Books-1.png?resize=410%2C485&ssl=1',width: 80.0,height: 80.0,),
-              title: new Text("Book",style:TextStyle(color: Colors.white) ),
-              subtitle: new Column(
-                children: <Widget>[
-                  new Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: new Text("Description",style:TextStyle(color: Colors.grey))
-                      )
-                    ],
-                  ),
-                  new Container(
-                    alignment: Alignment.bottomLeft,
-                    child: new Text("x2",style:TextStyle(color: Color(0xFFFDD835)) ),
-                  ),
-                  new Container(
-                    alignment: Alignment.bottomRight,
-                    child: new Text("R100",style:TextStyle(color: Color(0xFFFDD835)) ),
-                  )
-                ],
+
+            /*Card(
+              color: Color(0xB7242424),
+              child: ListTile(
+                leading: new Image.network('https://i0.wp.com/itsanenchantedlife.com/wp-content/uploads/2019/09/Pride-and-Prejudice-Books-1.png?resize=410%2C485&ssl=1',width: 80.0,height: 80.0,),
+                title: new Text("Book",style:TextStyle(color: Colors.white) ),
+                subtitle: new Column(
+                  children: <Widget>[
+                    new Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: new Text("Description",style:TextStyle(color: Colors.grey))
+                        )
+                      ],
+                    ),
+                    new Container(
+                      alignment: Alignment.bottomLeft,
+                      child: new Text("x2",style:TextStyle(color: Color(0xFFFDD835)) ),
+                    ),
+                    new Container(
+                      alignment: Alignment.bottomRight,
+                      child: new Text("R100",style:TextStyle(color: Color(0xFFFDD835)) ),
+                    )
+                  ],
+                ),
+
               ),
+            );*/
+          },
+        ),
 
-            ),
-          );*/
-        },
-      ),
       bottomNavigationBar: new Container(
         color: Color(0xD2242424),
         child: Row(
