@@ -1,7 +1,10 @@
+import 'dart:html';
+
 import 'package:aishop/components/checkoutdelivary.dart';
 import 'package:aishop/components/checkoutpayment.dart';
 import 'package:flutter/material.dart';
-import 'package:aishop/screens/checkoutaddress.dart';
+import 'package:aishop/components/checkoutaddress.dart';
+import 'package:aishop/components/checkoutorderreview.dart';
 
 import '../components/google_round_button.dart';
 import '../components/round_button.dart';
@@ -51,18 +54,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
           ),
           Expanded(
               child: Scaffold(
-            backgroundColor: Colors.black,
-            appBar: AppBar(
-              title: Text(
-                'Order Review',
-                style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold),
-              ),
-              toolbarHeight: 100,
-              backgroundColor: Colors.white60,
-            ),
+           body: OrderReview(),
           )),
         ],
       ),
