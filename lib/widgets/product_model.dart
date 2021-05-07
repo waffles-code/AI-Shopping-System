@@ -1,3 +1,5 @@
+import 'package:aishop/components/databasemanager.dart';
+import 'package:aishop/screens/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/icons/icons.dart';
 import 'package:aishop/widgets/modal_model.dart';
@@ -22,6 +24,7 @@ class ProductCard extends StatelessWidget {
         onTap: () {
           //on tap modal pop up
           Modal(context, imgUrl, name, description, price);
+          DataService().increment(name);
         },
         splashColor: Colors.white30,
         customBorder:
@@ -72,6 +75,9 @@ class ProductCard extends StatelessWidget {
                               fontSize: 15, fontWeight: FontWeight.bold)),
                     ],
                   ),
-                ))));
+                )
+            )
+        )
+    );
   }
 }
