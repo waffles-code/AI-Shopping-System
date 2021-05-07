@@ -29,9 +29,10 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 title: Text(
                   "Checkout Page",
                   textWidthBasis: TextWidthBasis.parent,
+                  style: TextStyle(color: Colors.white),
                 ),
                 backgroundColor: Colors.black,
-                bottom: TabBar(indicatorColor: Colors.white, tabs: [
+                bottom: TabBar(indicatorColor: Colors.white,labelColor: Colors.white, tabs: [
                   Tab(
                     text: "Address",
                   ),

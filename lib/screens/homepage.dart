@@ -16,7 +16,7 @@ import 'package:aishop/widgets/tech.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/widgets/modal_model.dart';
-
+import 'package:aishop/screens/checkout.dart';
 
 import '../theme.dart';
 import 'loginscreen.dart';
@@ -136,7 +136,13 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
                 size: 30,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (context) =>
+                            CheckOutPage()));
+              },
             ),
           ],
           iconTheme: IconThemeData(color: Colors.white)),
