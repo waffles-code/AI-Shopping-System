@@ -54,7 +54,6 @@ class RoundTextField extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
         width: size.width * 0.8,
-        //height: 50,
         margin: margin,
         child:
         TextFormField(
@@ -68,6 +67,7 @@ class RoundTextField extends StatelessWidget {
           onFieldSubmitted: submitted,
           decoration:
           InputDecoration(
+            enabled: true,
               prefixIcon: preicon,
               suffixIcon: suficon,
               fillColor: white,
