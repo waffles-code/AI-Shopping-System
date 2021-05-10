@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
     bool _isProcessing = false;
     return Scaffold(
         appBar: AppBar(
-            backgroundColor: Colors.black
+            backgroundColor: Colors.black,
             title: !isSearching
                 ? Text(
                     "AI Shopping",
