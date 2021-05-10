@@ -76,6 +76,7 @@ class _HomePageState extends State<HomePage> {
     bool _isProcessing = false;
     return Scaffold(
       appBar: AppBar(
+          backgroundColor: Colors.black,
           title:
           !isSearching ?
           Text("AI Shopping",
@@ -255,83 +256,82 @@ class _HomePageState extends State<HomePage> {
       ListView(
         children: <Widget>[
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           //category
           Center(
             child: Text(
               "Categories",
-              style: TextStyle(fontSize: 40),
+              style: TextStyle(fontSize: 40, fontFamily: 'Inria Serif'),
             ),
           ),
-          Cat(),
+          Center(
+              child: Cat()),
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           //Products
           Center(
               child: Text(
             "Books",
-            style: TextStyle(fontSize: 40),
+            style: TextStyle(fontSize: 40, fontFamily: 'Inria Serif'),
           )),
 
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           Books(),
-
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           Center(
               child: Text(
             "Clothes",
-            style: TextStyle(fontSize: 40),
+            style: TextStyle(fontSize: 40, fontFamily: 'Inria Serif'),
           )),
 
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           Clothes(),
-
           SizedBox(
-            height: 10,
+            height: 20,
           ),
 
           Center(
               child: Text(
             "Shoes",
-            style: TextStyle(fontSize: 40),
+            style: TextStyle(fontSize: 40, fontFamily: 'Inria Serif'),
           )),
           Beauty(),
           SizedBox(
-            height: 10,
+            height: 20,
           ),
 
           Center(
               child: Text(
             "Kitchen",
-            style: TextStyle(fontSize: 40),
+            style: TextStyle(fontSize: 40, fontFamily: 'Inria Serif'),
           )),
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           Kitchen(),
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           Center(
               child: Text(
             "Tech",
-            style: TextStyle(fontSize: 40),
+            style: TextStyle(fontSize: 40, fontFamily: 'Inria Serif'),
           )),
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           Tech(),
 
           SizedBox(
-            height: 10,
+            height: 20,
           ),
         ],
       ):
