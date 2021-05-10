@@ -1,8 +1,6 @@
 import 'package:aishop/screens/loginscreen.dart';
 import 'package:aishop/utils/authentication.dart';
 import 'package:flutter/material.dart';
-
-import 'screens/checkout.dart';
 import 'screens/loginscreen.dart';
 
 void main() {
@@ -36,9 +34,6 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: LoginScreen(),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.grey,
-      ),
     );
   }
 }
