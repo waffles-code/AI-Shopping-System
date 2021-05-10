@@ -2,7 +2,11 @@ import 'package:aishop/utils/authentication.dart';
 import 'package:flutter/material.dart';
 
 class OrderReview extends StatelessWidget {
-  var Products_on_the_cart = [
+  var Products_on_the_cart = [];
+
+  OrderReview(this.Products_on_the_cart);
+
+ /* var Products_on_the_cart = [
     {
       "name": "Adidas Hoodie",
       "description": "Trefoil White Hoodie",
@@ -35,7 +39,7 @@ class OrderReview extends StatelessWidget {
       "price": "R 270.00",
       "quantity": "x1",
     }
-  ];
+  ];*/
 
   @override
   Widget build(BuildContext context) {
