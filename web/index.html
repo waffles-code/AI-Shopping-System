@@ -55,8 +55,13 @@
     measurementId: "G-2QFL49QVDH"
   };
   // Initialize Firebase
+  try{
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+  }
+  catch(err){
+  window.alert("Oops! Failed to load: Please check your connection and refresh.");
+  }
 
   </script>
 
