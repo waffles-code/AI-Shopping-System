@@ -35,7 +35,8 @@ Modal(context, imgUrl, name, description, price) {
                   Text(
                     "Name: " + name,
                     style: TextStyle(
-                        fontSize: 15,
+                        fontFamily: 'Inria Serif',
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white70),
                   ),
@@ -44,7 +45,8 @@ Modal(context, imgUrl, name, description, price) {
                   ),
                   Text("Price: R " + price,
                       style: TextStyle(
-                          fontSize: 15,
+                          fontFamily: 'Inria Serif',
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: Colors.white70)),
                   SizedBox(
