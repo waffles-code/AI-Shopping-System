@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:aishop/components/google_round_button.dart';
 import 'package:aishop/components/sidepanel.dart';
 import 'package:aishop/components/textlink.dart';
@@ -17,11 +15,10 @@ import 'package:geolocator/geolocator.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:aishop/Services/networking.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _LoginScreenState();
   }
 }
