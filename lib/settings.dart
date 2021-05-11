@@ -20,6 +20,7 @@ class _SettingsPageState extends State<SettingsPage> {
             'AI SHOPPING SYSTEM',
             style: TextStyle(color: Colors.white),
           ),
+          automaticallyImplyLeading: false,
           leading: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
