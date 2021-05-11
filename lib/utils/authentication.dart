@@ -1,3 +1,5 @@
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -24,10 +26,6 @@ Future<User?> registerWithEmailPassword(String email, String password) async {
     );
 
     user = userCredential.user;
-
-    /*if (!user!.emailVerified) {
-      await user.sendEmailVerification();
-    }*/
 
     if (user != null) {
       uid = user.uid;
@@ -77,9 +75,7 @@ Future<User?> signInWithEmailPassword(String email, String password) async {
 }
 
 Future<String> signOut() async {
-  if(imageUrl != null)
     await googleSignIn.signOut();
-  else
     await _auth.signOut();
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -87,7 +83,6 @@ Future<String> signOut() async {
 
   uid = null;
   userEmail = null;
-
   name = null;
   imageUrl = null;
 
@@ -116,6 +111,31 @@ Future<User?> signInWithGoogle() async {
     name = user.displayName;
     userEmail = user.email;
     imageUrl = user.photoURL;
+
+    FirebaseFirestore.instance
+        .collection('Users')
+        .doc(uid).get()
+        .then((DocumentSnapshot documentSnapshot) =>
+    {
+      if(!documentSnapshot.exists){
+        print("user added"),
+        FirebaseFirestore.instance
+            .collection('Users')
+            .doc(uid).set(
+            {
+              'fname': name!.split(" ")[0],
+              'lname':name!.split(" ")[1],
+              'email':userEmail,
+              'bday':"*missing",
+              'location': "*missing",
+            }
+        )
+      }
+      else{
+        print("user exists in database")
+      }
+    });
+
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool('auth', true);

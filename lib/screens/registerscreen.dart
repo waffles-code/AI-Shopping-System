@@ -16,13 +16,10 @@ import 'package:intl/intl.dart';
 import '../theme.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'homepage.dart';
-
 
 class RegisterScreen extends StatefulWidget {
 	RegisterScreen({this.cityName});
 	final cityName;
-
 
 	@override
 	State<StatefulWidget> createState() {
@@ -77,8 +74,6 @@ class _RegisterScreenState extends State <RegisterScreen>{
 		userLocationController = TextEditingController();
 
 		super.initState();
-
-
 	}
 
 	String? _validateEmail(String value) {
@@ -124,18 +119,6 @@ class _RegisterScreenState extends State <RegisterScreen>{
 		return null;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-	
 
 	@override
 	Widget build(BuildContext context) {
@@ -369,7 +352,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																				userPasswordController.text
 																		).then((result) {
 																			if (result != null) {
-																				_firestore.collection('Users').add({
+																				_firestore.collection('Users').doc(uid).set({
 																					'bday':userBirthdayController.text,
 																					'email':userEmailController.text,
 																					'fname':userFirstNameController.text,
