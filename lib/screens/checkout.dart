@@ -6,9 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:aishop/components/checkoutaddress.dart';
 import 'package:aishop/components/checkoutorderreview.dart';
 
-import '../components/google_round_button.dart';
-import '../components/round_button.dart';
-import '../components/round_button.dart';
 
 class CheckOutPage extends StatefulWidget {
   @override

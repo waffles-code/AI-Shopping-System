@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:aishop/icons/icons.dart';
-import 'package:aishop/widgets/books.dart';
-
 import 'category_card.dart';
 
 class Cat extends StatelessWidget {
