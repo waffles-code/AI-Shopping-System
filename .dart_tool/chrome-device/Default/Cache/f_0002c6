@@ -1,0 +1,1839 @@
+define(['dart_sdk', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/aishop/components/textlink.dart', 'packages/flutter/src/material/page.dart', 'packages/aishop/components/checkoutdelivary.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/aishop/components/first_delivary_page.dart'], (function load__packages__aishop__components__checkoutaddress_dart(dart_sdk, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__painting__alignment$46dart, packages__aishop__components__textlink$46dart, packages__flutter__src__material__page$46dart, packages__aishop__components__checkoutdelivary$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__aishop__components__first_delivary_page$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const collection = dart_sdk.collection;
+  const async = dart_sdk.async;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const list_tile = packages__flutter__src__material__icon_button$46dart.src__material__list_tile;
+  const divider = packages__flutter__src__material__icon_button$46dart.src__material__divider;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const textlink = packages__aishop__components__textlink$46dart.components__textlink;
+  const page = packages__flutter__src__material__page$46dart.src__material__page;
+  const checkoutdelivary = packages__aishop__components__checkoutdelivary$46dart.components__checkoutdelivary;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const first_delivary_page = packages__aishop__components__first_delivary_page$46dart.components__first_delivary_page;
+  var checkoutaddress = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    LinkedHashSetOfFuture: () => (T.LinkedHashSetOfFuture = dart.constFn(collection.LinkedHashSet$(async.Future)))(),
+    BuildContextToCheckOutDelivary: () => (T.BuildContextToCheckOutDelivary = dart.constFn(dart.fnType(checkoutdelivary.CheckOutDelivary, [framework.BuildContext])))(),
+    SetOfFuture: () => (T.SetOfFuture = dart.constFn(core.Set$(async.Future)))(),
+    VoidToSetOfFuture: () => (T.VoidToSetOfFuture = dart.constFn(dart.fnType(T.SetOfFuture(), [])))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    BuildContextToFirstDelivaryPage: () => (T.BuildContextToFirstDelivaryPage = dart.constFn(dart.fnType(first_delivary_page.FirstDelivaryPage, [framework.BuildContext])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 50,
+        [EdgeInsets_right]: 50,
+        [EdgeInsets_top]: 50,
+        [EdgeInsets_left]: 50
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 10,
+        [EdgeInsets_right]: 10,
+        [EdgeInsets_top]: 10,
+        [EdgeInsets_left]: 10
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 33,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 33,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 38,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 31,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 31,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9], widget_inspector._Location);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 29,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([], widget_inspector._Location);
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 43,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 33,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "align",
+        [_Location_column]: 33,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "press",
+        [_Location_column]: 33,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 38,
+        [_Location_line]: 38,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 31,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 31,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.constList([C[19] || CT.C19, C[20] || CT.C20], widget_inspector._Location);
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[18] || CT.C18,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 49,
+        [_Location_line]: 50,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 33,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 43,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24, C[25] || CT.C25], widget_inspector._Location);
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 38,
+        [_Location_line]: 50,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 29,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "subtitle",
+        [_Location_column]: 29,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "leading",
+        [_Location_column]: 29,
+        [_Location_line]: 50,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28, C[29] || CT.C29, C[30] || CT.C30], widget_inspector._Location);
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 29,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "thickness",
+        [_Location_column]: 29,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "indent",
+        [_Location_column]: 29,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "endIndent",
+        [_Location_column]: 29,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 29,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35, C[36] || CT.C36, C[37] || CT.C37], widget_inspector._Location);
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 33,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 33,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.constList([C[40] || CT.C40, C[41] || CT.C41], widget_inspector._Location);
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[39] || CT.C39,
+        [_Location_name]: null,
+        [_Location_column]: 38,
+        [_Location_line]: 62,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 31,
+        [_Location_line]: 62,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 31,
+        [_Location_line]: 67,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44, C[45] || CT.C45], widget_inspector._Location);
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 61,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 43,
+        [_Location_line]: 77,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 33,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "align",
+        [_Location_column]: 33,
+        [_Location_line]: 73,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "press",
+        [_Location_column]: 33,
+        [_Location_line]: 74,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.constList([C[49] || CT.C49, C[50] || CT.C50, C[51] || CT.C51], widget_inspector._Location);
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[48] || CT.C48,
+        [_Location_name]: null,
+        [_Location_column]: 38,
+        [_Location_line]: 70,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 31,
+        [_Location_line]: 70,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 31,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.constList([C[54] || CT.C54, C[55] || CT.C55], widget_inspector._Location);
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[53] || CT.C53,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 69,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 44,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 50,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 60,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.constList([C[58] || CT.C58, C[59] || CT.C59, C[60] || CT.C60], widget_inspector._Location);
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[57] || CT.C57,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 83,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 29,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "subtitle",
+        [_Location_column]: 29,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "leading",
+        [_Location_column]: 29,
+        [_Location_line]: 82,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.constList([C[63] || CT.C63, C[64] || CT.C64, C[65] || CT.C65], widget_inspector._Location);
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[62] || CT.C62,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 60,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 29,
+        [_Location_line]: 86,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "thickness",
+        [_Location_column]: 29,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "indent",
+        [_Location_column]: 29,
+        [_Location_line]: 88,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "endIndent",
+        [_Location_column]: 29,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 29,
+        [_Location_line]: 90,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.constList([C[68] || CT.C68, C[69] || CT.C69, C[70] || CT.C70, C[71] || CT.C71, C[72] || CT.C72], widget_inspector._Location);
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[67] || CT.C67,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 85,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 41,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.constList([C[75] || CT.C75], widget_inspector._Location);
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[74] || CT.C74,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 25,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 25,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 25,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 25,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.constList([C[78] || CT.C78, C[79] || CT.C79, C[80] || CT.C80, C[81] || CT.C81, C[82] || CT.C82, C[83] || CT.C83], widget_inspector._Location);
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[77] || CT.C77,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 20,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C85() {
+      return C[85] = dart.constList([C[86] || CT.C86], widget_inspector._Location);
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[85] || CT.C85,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 25,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.constList([C[89] || CT.C89, C[90] || CT.C90], widget_inspector._Location);
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[88] || CT.C88,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.constList([C[93] || CT.C93], widget_inspector._Location);
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[92] || CT.C92,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 15,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 31,
+        [_Location_line]: 14,
+        [_Location_file]: null
+      });
+    },
+    get C95() {
+      return C[95] = dart.constList([C[96] || CT.C96], widget_inspector._Location);
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[95] || CT.C95,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 14,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C99() {
+      return C[99] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "flex",
+        [_Location_column]: 15,
+        [_Location_line]: 13,
+        [_Location_file]: null
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 14,
+        [_Location_file]: null
+      });
+    },
+    get C98() {
+      return C[98] = dart.constList([C[99] || CT.C99, C[100] || CT.C100], widget_inspector._Location);
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[98] || CT.C98,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 12,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 101,
+        [_Location_file]: null
+      });
+    },
+    get C102() {
+      return C[102] = dart.constList([C[103] || CT.C103], widget_inspector._Location);
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[102] || CT.C102,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 100,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C106() {
+      return C[106] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 104,
+        [_Location_file]: null
+      });
+    },
+    get C107() {
+      return C[107] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "thickness",
+        [_Location_column]: 19,
+        [_Location_line]: 105,
+        [_Location_file]: null
+      });
+    },
+    get C108() {
+      return C[108] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "indent",
+        [_Location_column]: 19,
+        [_Location_line]: 106,
+        [_Location_file]: null
+      });
+    },
+    get C109() {
+      return C[109] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "endIndent",
+        [_Location_column]: 19,
+        [_Location_line]: 107,
+        [_Location_file]: null
+      });
+    },
+    get C110() {
+      return C[110] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 108,
+        [_Location_file]: null
+      });
+    },
+    get C105() {
+      return C[105] = dart.constList([C[106] || CT.C106, C[107] || CT.C107, C[108] || CT.C108, C[109] || CT.C109, C[110] || CT.C110], widget_inspector._Location);
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[105] || CT.C105,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 103,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C113() {
+      return C[113] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 111,
+        [_Location_file]: null
+      });
+    },
+    get C112() {
+      return C[112] = dart.constList([C[113] || CT.C113], widget_inspector._Location);
+    },
+    get C111() {
+      return C[111] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[112] || CT.C112,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 110,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C114() {
+      return C[114] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 122,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C117() {
+      return C[117] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 21,
+        [_Location_line]: 117,
+        [_Location_file]: null
+      });
+    },
+    get C118() {
+      return C[118] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "align",
+        [_Location_column]: 21,
+        [_Location_line]: 118,
+        [_Location_file]: null
+      });
+    },
+    get C119() {
+      return C[119] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "press",
+        [_Location_column]: 21,
+        [_Location_line]: 119,
+        [_Location_file]: null
+      });
+    },
+    get C116() {
+      return C[116] = dart.constList([C[117] || CT.C117, C[118] || CT.C118, C[119] || CT.C119], widget_inspector._Location);
+    },
+    get C115() {
+      return C[115] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[116] || CT.C116,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 116,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C122() {
+      return C[122] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 19,
+        [_Location_line]: 114,
+        [_Location_file]: null
+      });
+    },
+    get C123() {
+      return C[123] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 116,
+        [_Location_file]: null
+      });
+    },
+    get C121() {
+      return C[121] = dart.constList([C[122] || CT.C122, C[123] || CT.C123], widget_inspector._Location);
+    },
+    get C120() {
+      return C[120] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[121] || CT.C121,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 113,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C126() {
+      return C[126] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 127,
+        [_Location_file]: null
+      });
+    },
+    get C127() {
+      return C[127] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "thickness",
+        [_Location_column]: 19,
+        [_Location_line]: 128,
+        [_Location_file]: null
+      });
+    },
+    get C128() {
+      return C[128] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "indent",
+        [_Location_column]: 19,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C129() {
+      return C[129] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "endIndent",
+        [_Location_column]: 19,
+        [_Location_line]: 130,
+        [_Location_file]: null
+      });
+    },
+    get C130() {
+      return C[130] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 131,
+        [_Location_file]: null
+      });
+    },
+    get C125() {
+      return C[125] = dart.constList([C[126] || CT.C126, C[127] || CT.C127, C[128] || CT.C128, C[129] || CT.C129, C[130] || CT.C130], widget_inspector._Location);
+    },
+    get C124() {
+      return C[124] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[125] || CT.C125,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 126,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C133() {
+      return C[133] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 40,
+        [_Location_line]: 137,
+        [_Location_file]: null
+      });
+    },
+    get C134() {
+      return C[134] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "thickness",
+        [_Location_column]: 61,
+        [_Location_line]: 137,
+        [_Location_file]: null
+      });
+    },
+    get C132() {
+      return C[132] = dart.constList([C[133] || CT.C133, C[134] || CT.C134], widget_inspector._Location);
+    },
+    get C131() {
+      return C[131] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[132] || CT.C132,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 137,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C137() {
+      return C[137] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 137,
+        [_Location_file]: null
+      });
+    },
+    get C136() {
+      return C[136] = dart.constList([C[137] || CT.C137], widget_inspector._Location);
+    },
+    get C135() {
+      return C[135] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[136] || CT.C136,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 136,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C140() {
+      return C[140] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 39,
+        [_Location_line]: 140,
+        [_Location_file]: null
+      });
+    },
+    get C139() {
+      return C[139] = dart.constList([C[140] || CT.C140], widget_inspector._Location);
+    },
+    get C138() {
+      return C[138] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[139] || CT.C139,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 140,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C141() {
+      return C[141] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 20,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 20
+      });
+    },
+    get C144() {
+      return C[144] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 140,
+        [_Location_file]: null
+      });
+    },
+    get C145() {
+      return C[145] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 27,
+        [_Location_line]: 141,
+        [_Location_file]: null
+      });
+    },
+    get C143() {
+      return C[143] = dart.constList([C[144] || CT.C144, C[145] || CT.C145], widget_inspector._Location);
+    },
+    get C142() {
+      return C[142] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[143] || CT.C143,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 139,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C148() {
+      return C[148] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 42,
+        [_Location_line]: 144,
+        [_Location_file]: null
+      });
+    },
+    get C149() {
+      return C[149] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "thickness",
+        [_Location_column]: 63,
+        [_Location_line]: 144,
+        [_Location_file]: null
+      });
+    },
+    get C147() {
+      return C[147] = dart.constList([C[148] || CT.C148, C[149] || CT.C149], widget_inspector._Location);
+    },
+    get C146() {
+      return C[146] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[147] || CT.C147,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 144,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C152() {
+      return C[152] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 144,
+        [_Location_file]: null
+      });
+    },
+    get C151() {
+      return C[151] = dart.constList([C[152] || CT.C152], widget_inspector._Location);
+    },
+    get C150() {
+      return C[150] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[151] || CT.C151,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 143,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C155() {
+      return C[155] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 32,
+        [_Location_line]: 135,
+        [_Location_file]: null
+      });
+    },
+    get C154() {
+      return C[154] = dart.constList([C[155] || CT.C155], widget_inspector._Location);
+    },
+    get C153() {
+      return C[153] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[154] || CT.C154,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 135,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C158() {
+      return C[158] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 21,
+        [_Location_line]: 134,
+        [_Location_file]: null
+      });
+    },
+    get C159() {
+      return C[159] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 135,
+        [_Location_file]: null
+      });
+    },
+    get C157() {
+      return C[157] = dart.constList([C[158] || CT.C158, C[159] || CT.C159], widget_inspector._Location);
+    },
+    get C156() {
+      return C[156] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[157] || CT.C157,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 133,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C162() {
+      return C[162] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 147,
+        [_Location_file]: null
+      });
+    },
+    get C161() {
+      return C[161] = dart.constList([C[162] || CT.C162], widget_inspector._Location);
+    },
+    get C160() {
+      return C[160] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[161] || CT.C161,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 146,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C165() {
+      return C[165] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 150,
+        [_Location_file]: null
+      });
+    },
+    get C166() {
+      return C[166] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "thickness",
+        [_Location_column]: 19,
+        [_Location_line]: 151,
+        [_Location_file]: null
+      });
+    },
+    get C167() {
+      return C[167] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "indent",
+        [_Location_column]: 19,
+        [_Location_line]: 152,
+        [_Location_file]: null
+      });
+    },
+    get C168() {
+      return C[168] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "endIndent",
+        [_Location_column]: 19,
+        [_Location_line]: 153,
+        [_Location_file]: null
+      });
+    },
+    get C169() {
+      return C[169] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 154,
+        [_Location_file]: null
+      });
+    },
+    get C164() {
+      return C[164] = dart.constList([C[165] || CT.C165, C[166] || CT.C166, C[167] || CT.C167, C[168] || CT.C168, C[169] || CT.C169], widget_inspector._Location);
+    },
+    get C163() {
+      return C[163] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[164] || CT.C164,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 149,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C170() {
+      return C[170] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 165,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C173() {
+      return C[173] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 21,
+        [_Location_line]: 160,
+        [_Location_file]: null
+      });
+    },
+    get C174() {
+      return C[174] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "align",
+        [_Location_column]: 21,
+        [_Location_line]: 161,
+        [_Location_file]: null
+      });
+    },
+    get C175() {
+      return C[175] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "press",
+        [_Location_column]: 21,
+        [_Location_line]: 162,
+        [_Location_file]: null
+      });
+    },
+    get C172() {
+      return C[172] = dart.constList([C[173] || CT.C173, C[174] || CT.C174, C[175] || CT.C175], widget_inspector._Location);
+    },
+    get C171() {
+      return C[171] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[172] || CT.C172,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 159,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C178() {
+      return C[178] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 19,
+        [_Location_line]: 157,
+        [_Location_file]: null
+      });
+    },
+    get C179() {
+      return C[179] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 159,
+        [_Location_file]: null
+      });
+    },
+    get C177() {
+      return C[177] = dart.constList([C[178] || CT.C178, C[179] || CT.C179], widget_inspector._Location);
+    },
+    get C176() {
+      return C[176] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[177] || CT.C177,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 156,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C182() {
+      return C[182] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 170,
+        [_Location_file]: null
+      });
+    },
+    get C181() {
+      return C[181] = dart.constList([C[182] || CT.C182], widget_inspector._Location);
+    },
+    get C180() {
+      return C[180] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[181] || CT.C181,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 169,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C185() {
+      return C[185] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 173,
+        [_Location_file]: null
+      });
+    },
+    get C186() {
+      return C[186] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "thickness",
+        [_Location_column]: 19,
+        [_Location_line]: 174,
+        [_Location_file]: null
+      });
+    },
+    get C187() {
+      return C[187] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "indent",
+        [_Location_column]: 19,
+        [_Location_line]: 175,
+        [_Location_file]: null
+      });
+    },
+    get C188() {
+      return C[188] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "endIndent",
+        [_Location_column]: 19,
+        [_Location_line]: 176,
+        [_Location_file]: null
+      });
+    },
+    get C189() {
+      return C[189] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 177,
+        [_Location_file]: null
+      });
+    },
+    get C184() {
+      return C[184] = dart.constList([C[185] || CT.C185, C[186] || CT.C186, C[187] || CT.C187, C[188] || CT.C188, C[189] || CT.C189], widget_inspector._Location);
+    },
+    get C183() {
+      return C[183] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[184] || CT.C184,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 172,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C192() {
+      return C[192] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 180,
+        [_Location_file]: null
+      });
+    },
+    get C191() {
+      return C[191] = dart.constList([C[192] || CT.C192], widget_inspector._Location);
+    },
+    get C190() {
+      return C[190] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[191] || CT.C191,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 179,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C195() {
+      return C[195] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 15,
+        [_Location_line]: 99,
+        [_Location_file]: null
+      });
+    },
+    get C194() {
+      return C[194] = dart.constList([C[195] || CT.C195], widget_inspector._Location);
+    },
+    get C193() {
+      return C[193] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[194] || CT.C194,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 98,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C198() {
+      return C[198] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "flex",
+        [_Location_column]: 13,
+        [_Location_line]: 97,
+        [_Location_file]: null
+      });
+    },
+    get C199() {
+      return C[199] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 98,
+        [_Location_file]: null
+      });
+    },
+    get C197() {
+      return C[197] = dart.constList([C[198] || CT.C198, C[199] || CT.C199], widget_inspector._Location);
+    },
+    get C196() {
+      return C[196] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[197] || CT.C197,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 96,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C202() {
+      return C[202] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 11,
+        [_Location_file]: null
+      });
+    },
+    get C201() {
+      return C[201] = dart.constList([C[202] || CT.C202], widget_inspector._Location);
+    },
+    get C200() {
+      return C[200] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[201] || CT.C201,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 10,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    },
+    get C205() {
+      return C[205] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 10,
+        [_Location_file]: null
+      });
+    },
+    get C204() {
+      return C[204] = dart.constList([C[205] || CT.C205], widget_inspector._Location);
+    },
+    get C203() {
+      return C[203] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[204] || CT.C204,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 9,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart"
+      });
+    }
+  }, false);
+  var C = Array(206).fill(void 0);
+  var I = [
+    "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/components/checkoutaddress.dart",
+    "package:aishop/components/checkoutaddress.dart"
+  ];
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  checkoutaddress.CheckOutAddress = class CheckOutAddress extends framework.StatelessWidget {
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 8, 29, "context");
+      return new scaffold.Scaffold.new({body: new basic.Row.new({children: T.JSArrayOfWidget().of([new basic.Expanded.new({flex: 2, child: new scroll_view.ListView.new({children: T.JSArrayOfWidget().of([new container.Container.new({child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceEvenly, children: T.JSArrayOfWidget().of([new basic.Expanded.new({child: new container.Container.new({width: 450.0, height: 500.0, margin: C[0] || CT.C0, padding: C[1] || CT.C1, decoration: new box_decoration.BoxDecoration.new({border: box_border.Border.all({color: colors.Colors.black})}), child: new scroll_view.ListView.new({children: T.JSArrayOfWidget().of([new list_tile.ListTile.new({title: new basic.Align.new({child: new text.Text.new("Home", {style: new text_style.TextStyle.new({fontSize: 15.0, fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C[2] || CT.C2}), alignment: new alignment.Alignment.new(-0.95, 0.0), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), subtitle: new basic.Align.new({child: new textlink.TextLink.new({text: "11 Maclaren st,MarshallTown,Johannesburg", align: alignment.Alignment.center, press: dart.fn(() => T.LinkedHashSetOfFuture().from([navigator.Navigator.of(context).push(dart.dynamic, new page.MaterialPageRoute.new({builder: dart.fn(context => {
+                                            if (context == null) dart.nullFailed(I[0], 44, 62, "context");
+                                            return new checkoutdelivary.CheckOutDelivary.new({$creationLocationd_0dea112b090073317d4: C[10] || CT.C10});
+                                          }, T.BuildContextToCheckOutDelivary())}))]), T.VoidToSetOfFuture()), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), alignment: new alignment.Alignment.new(-0.7, 0.0), $creationLocationd_0dea112b090073317d4: C[17] || CT.C17}), leading: new icon.Icon.new(icons.Icons.house, {size: 20.0, color: colors.Colors.black, $creationLocationd_0dea112b090073317d4: C[21] || CT.C21}), $creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), new divider.Divider.new({height: 10.0, thickness: 2.0, indent: 10.0, endIndent: 10.0, color: colors.Colors.black, $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), new list_tile.ListTile.new({title: new basic.Align.new({child: new text.Text.new("Work", {style: new text_style.TextStyle.new({fontSize: 15.0, fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C[38] || CT.C38}), alignment: new alignment.Alignment.new(-0.95, 0.0), $creationLocationd_0dea112b090073317d4: C[42] || CT.C42}), subtitle: new basic.Align.new({child: new textlink.TextLink.new({text: "104 Stiemens st,Braamfontein,Johannesburg", align: alignment.Alignment.center, press: dart.fn(() => T.LinkedHashSetOfFuture().from([navigator.Navigator.of(context).push(dart.dynamic, new page.MaterialPageRoute.new({builder: dart.fn(context => {
+                                            if (context == null) dart.nullFailed(I[0], 76, 62, "context");
+                                            return new checkoutdelivary.CheckOutDelivary.new({$creationLocationd_0dea112b090073317d4: C[46] || CT.C46});
+                                          }, T.BuildContextToCheckOutDelivary())}))]), T.VoidToSetOfFuture()), $creationLocationd_0dea112b090073317d4: C[47] || CT.C47}), alignment: new alignment.Alignment.new(-0.7, 0.0), $creationLocationd_0dea112b090073317d4: C[52] || CT.C52}), leading: new icon.Icon.new(icons.Icons.work, {size: 20.0, color: colors.Colors.black, $creationLocationd_0dea112b090073317d4: C[56] || CT.C56}), $creationLocationd_0dea112b090073317d4: C[61] || CT.C61}), new divider.Divider.new({height: 10.0, thickness: 2.0, indent: 10.0, endIndent: 10.0, color: colors.Colors.black, $creationLocationd_0dea112b090073317d4: C[66] || CT.C66})]), $creationLocationd_0dea112b090073317d4: C[73] || CT.C73}), $creationLocationd_0dea112b090073317d4: C[76] || CT.C76}), $creationLocationd_0dea112b090073317d4: C[84] || CT.C84})]), $creationLocationd_0dea112b090073317d4: C[87] || CT.C87}), $creationLocationd_0dea112b090073317d4: C[91] || CT.C91})]), $creationLocationd_0dea112b090073317d4: C[94] || CT.C94}), $creationLocationd_0dea112b090073317d4: C[97] || CT.C97}), new basic.Expanded.new({flex: 2, child: new basic.Column.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: 35.0, $creationLocationd_0dea112b090073317d4: C[101] || CT.C101}), new divider.Divider.new({height: 30.0, thickness: 2.0, indent: 50.0, endIndent: 50.0, color: colors.Colors.black, $creationLocationd_0dea112b090073317d4: C[104] || CT.C104}), new basic.SizedBox.new({height: 15.0, $creationLocationd_0dea112b090073317d4: C[111] || CT.C111}), new container.Container.new({margin: new edge_insets.EdgeInsets.only({left: 0.0, top: 0.0, bottom: 0.0, right: 10.0}), child: new textlink.TextLink.new({text: "Is this your address you want to deliver to", align: alignment.Alignment.center, press: dart.fn(() => T.LinkedHashSetOfFuture().from([navigator.Navigator.of(context).push(dart.dynamic, new page.MaterialPageRoute.new({builder: dart.fn(context => {
+                            if (context == null) dart.nullFailed(I[0], 121, 50, "context");
+                            return new checkoutdelivary.CheckOutDelivary.new({$creationLocationd_0dea112b090073317d4: C[114] || CT.C114});
+                          }, T.BuildContextToCheckOutDelivary())}))]), T.VoidToSetOfFuture()), $creationLocationd_0dea112b090073317d4: C[115] || CT.C115}), $creationLocationd_0dea112b090073317d4: C[120] || CT.C120}), new divider.Divider.new({height: 35.0, thickness: 2.0, indent: 10.0, endIndent: 10.0, color: colors.Colors.black, $creationLocationd_0dea112b090073317d4: C[124] || CT.C124}), new container.Container.new({width: 430.0, child: new basic.Row.new({children: T.JSArrayOfWidget().of([new basic.Expanded.new({child: new divider.Divider.new({color: colors.Colors.black, thickness: 5.0, $creationLocationd_0dea112b090073317d4: C[131] || CT.C131}), $creationLocationd_0dea112b090073317d4: C[135] || CT.C135}), new container.Container.new({child: new text.Text.new("OR", {$creationLocationd_0dea112b090073317d4: C[138] || CT.C138}), margin: C[141] || CT.C141, $creationLocationd_0dea112b090073317d4: C[142] || CT.C142}), new basic.Expanded.new({child: new divider.Divider.new({color: colors.Colors.black, thickness: 5.0, $creationLocationd_0dea112b090073317d4: C[146] || CT.C146}), $creationLocationd_0dea112b090073317d4: C[150] || CT.C150})]), $creationLocationd_0dea112b090073317d4: C[153] || CT.C153}), $creationLocationd_0dea112b090073317d4: C[156] || CT.C156}), new basic.SizedBox.new({height: 20.0, $creationLocationd_0dea112b090073317d4: C[160] || CT.C160}), new divider.Divider.new({height: 20.0, thickness: 2.0, indent: 10.0, endIndent: 10.0, color: colors.Colors.black, $creationLocationd_0dea112b090073317d4: C[163] || CT.C163}), new container.Container.new({margin: new edge_insets.EdgeInsets.only({left: 0.0, top: 0.0, bottom: 0.0, right: 10.0}), child: new textlink.TextLink.new({text: "Add the address you want to delivart to", align: alignment.Alignment.center, press: dart.fn(() => T.LinkedHashSetOfFuture().from([navigator.Navigator.of(context).push(dart.dynamic, new page.MaterialPageRoute.new({builder: dart.fn(context => {
+                            if (context == null) dart.nullFailed(I[0], 164, 50, "context");
+                            return new first_delivary_page.FirstDelivaryPage.new({$creationLocationd_0dea112b090073317d4: C[170] || CT.C170});
+                          }, T.BuildContextToFirstDelivaryPage())}))]), T.VoidToSetOfFuture()), $creationLocationd_0dea112b090073317d4: C[171] || CT.C171}), $creationLocationd_0dea112b090073317d4: C[176] || CT.C176}), new basic.SizedBox.new({height: 15.0, $creationLocationd_0dea112b090073317d4: C[180] || CT.C180}), new divider.Divider.new({height: 30.0, thickness: 2.0, indent: 50.0, endIndent: 50.0, color: colors.Colors.black, $creationLocationd_0dea112b090073317d4: C[183] || CT.C183}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[190] || CT.C190})]), $creationLocationd_0dea112b090073317d4: C[193] || CT.C193}), $creationLocationd_0dea112b090073317d4: C[196] || CT.C196})]), $creationLocationd_0dea112b090073317d4: C[200] || CT.C200}), $creationLocationd_0dea112b090073317d4: C[203] || CT.C203});
+    }
+  };
+  (checkoutaddress.CheckOutAddress.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    checkoutaddress.CheckOutAddress.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = checkoutaddress.CheckOutAddress.prototype;
+  dart.addTypeTests(checkoutaddress.CheckOutAddress);
+  dart.addTypeCaches(checkoutaddress.CheckOutAddress);
+  dart.setMethodSignature(checkoutaddress.CheckOutAddress, () => ({
+    __proto__: dart.getMethods(checkoutaddress.CheckOutAddress.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(checkoutaddress.CheckOutAddress, I[1]);
+  dart.trackLibraries("packages/aishop/components/checkoutaddress.dart", {
+    "package:aishop/components/checkoutaddress.dart": checkoutaddress
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["checkoutaddress.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAO4B;AACxB,YAAO,kCACC,6BACc,wBAChB,8BACU,UACC,wCAA2B,wBAChC,oCACW,sCACkC,8CAC3B,wBACZ,+BACW,oCACF,eACC,kEAGI,8CACO,8BAAkB,gCAC9B,wCAA2B,wBAChC,mCACS,4BACE,kBACL,gBACO,wCACO,kBAA2B,0FAEhC,4BAAU,CAAC,MAAM,yEAEpB,4BACD,iCAED,mDACa,mCACV,cAAM,gCACD,AAAY,uBAAT,OAAO,qBAAO,yCACd;gDAAc;AACnB;qLAGD,4BAAU,CAAC,KAAK,0EAEpB,kBAAW,0BACV,aAAkB,2IAE9B,iCACU,iBACG,aACH,iBACG,aACG,gFAEhB,mCACS,4BACE,kBACL,gBACO,wCACO,kBAA2B,4FAEhC,4BAAU,CAAC,MAAM,2EAEpB,4BACD,iCAED,oDACa,mCACV,cAAM,gCACD,AAAY,uBAAT,OAAO,qBAAO,yCACd;gDAAc;AACnB;qLAGD,4BAAU,CAAC,KAAK,0EAGzB,kBAAW,yBAAY,aAAkB,2IAE/C,iCACU,iBACG,aACH,iBACG,aACG,mfAMhC,8BACQ,UACC,gCACa,wBAChB,gCACU,mEAEV,iCACU,iBACG,aACH,iBACG,aACG,kFAEhB,gCACU,mEAEV,qCACqB,uCACT,UAAU,aAAa,YAAY,eACtC,iCACC,sDACW,mCACV,cAAM,gCACD,AAAY,uBAAT,OAAO,qBAAO,yCACd;gCAAc;AACnB;yNAId,iCACU,iBACG,aACH,iBACG,aACG,kFAEhB,oCACW,cACA,6BAAsB,wBAC3B,+BACS,gCAAsB,gCAAkB,+HAEjD,oCACW,kBAAK,4JAGhB,+BACW,gCAAsB,gCAAkB,2PAEzD,gCACU,mEAEV,iCACU,iBACG,aACH,iBACG,aACG,kFAEhB,qCACqB,uCACT,UAAU,aAAa,YAAY,eACtC,iCACC,kDACW,mCACV,cAAM,gCACD,AAAY,uBAAT,OAAO,qBAAO,yCACd;gCAAc;AACnB;0NAId,gCACU,mEAEV,iCACU,iBACG,aACH,iBACG,aACG,kFAEhB,gCACU;IAQxB;;;;;;EACF","file":"../../../../../../../../../packages/aishop/components/checkoutaddress.dart.lib.js"}');
+  // Exports:
+  return {
+    components__checkoutaddress: checkoutaddress
+  };
+}));
+
+//# sourceMappingURL=checkoutaddress.dart.lib.js.map
