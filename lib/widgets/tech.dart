@@ -17,7 +17,7 @@ class Tech extends StatelessWidget {
           if (!snapshot.hasData) {
             return SizedBox(
               child: CircularProgressIndicator(
-                backgroundColor: Colors.blueGrey,
+                backgroundColor: Colors.grey,
               ),
             );
           } else {

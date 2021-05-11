@@ -101,23 +101,23 @@ class ProductCard extends StatelessWidget {
                       ),
                       Padding(
                           padding:
-                              const EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 0.0),
+                              const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 0.0),
                           child: ElevatedButton.icon(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.white,
+                              primary: Colors.black54,
                             ),
                             icon: Icon(
                               Icons.add_shopping_cart_rounded,
                               size: 20,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                             label: Text(
                               "ADD TO CART",
                               style: TextStyle(
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black),
+                                  color: Colors.white),
                             ),
                           )),
                     ],
