@@ -15,7 +15,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../theme.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class RegisterScreen extends StatefulWidget {
 	RegisterScreen({this.cityName});
@@ -33,7 +32,6 @@ class _RegisterScreenState extends State <RegisterScreen>{
 	late TextEditingController userEmailController;
 	late FocusNode textFocusNodeEmail = FocusNode();
 	bool _isEditingEmail = false;
-  final _firestore =FirebaseFirestore.instance;
 
 	late TextEditingController userPasswordController;
 	late FocusNode textFocusNodePassword = FocusNode();
@@ -124,7 +122,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 	Widget build(BuildContext context) {
 
 		setState(() {
-		  cityname=widget.cityName.toString();
+			cityname=widget.cityName.toString();
 		});
 		Size size = MediaQuery.of(context).size;
 		// TODO: implement build
@@ -177,7 +175,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																			//====================================================================================row
 																			Expanded(
 																					child: RoundTextField(
-																							autofocus: false,
+																						autofocus: false,
 																						preicon: Icon(LineIcons.user),
 																						margin: EdgeInsets.fromLTRB(10,0,0,0),
 																						control: userLastNameController,
@@ -228,7 +226,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																			Expanded(
 																					flex: 1,
 																					child:RoundTextField(
-																						focusNode: textFocusNodeBirthday,
+																							focusNode: textFocusNodeBirthday,
 																							autofocus: false,
 																							onSubmitted:(value){
 																								textFocusNodeBirthday.unfocus();
@@ -242,23 +240,23 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																							{
 																								FocusScope.of(context).unfocus(),
 																								showDatePicker(
-																									context: context,
-																									initialDate: DateTime.now(),
-																									firstDate: DateTime(DateTime.now().year - 100, 01),
-																									lastDate: DateTime.now(),
-																									builder:  (BuildContext context, picker){
+																										context: context,
+																										initialDate: DateTime.now(),
+																										firstDate: DateTime(DateTime.now().year - 100, 01),
+																										lastDate: DateTime.now(),
+																										builder:  (BuildContext context, picker){
 																											return Theme(
 																												//TODO: change colors
-																												data: ThemeData.dark().copyWith(
-																													colorScheme: ColorScheme.dark(
-																														primary: lightgrey, //highlighter
-																														onPrimary: black, //text highlighted
-																														surface: mediumblack,
-																														onSurface: white,
+																													data: ThemeData.dark().copyWith(
+																														colorScheme: ColorScheme.dark(
+																															primary: lightgrey, //highlighter
+																															onPrimary: black, //text highlighted
+																															surface: mediumblack,
+																															onSurface: white,
+																														),
+																														dialogBackgroundColor:lightblack,
 																													),
-																													dialogBackgroundColor:lightblack,
-																												),
-																												child: (picker)!);
+																													child: (picker)!);
 																										})
 																										.then((pickedDate) {
 																									if(pickedDate!=null) {
@@ -306,7 +304,7 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																			//====================================================================================row
 																			Expanded(
 																					child:RoundPasswordField(
-																							autofocus: false,
+																						autofocus: false,
 																						icon: Icon(LineIcons.key),
 																						margin: EdgeInsets.fromLTRB(10,0,0,0),
 																						text: "Password",
@@ -345,25 +343,24 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																//=============================================
 																//login button
 																RoundButton(
-																		text: "SIGNUP",
+																	text: "SIGNUP",
 																	press: () async {
 																		await registerWithEmailPassword(
 																				userEmailController.text,
 																				userPasswordController.text
 																		).then((result) {
 																			if (result != null) {
-																				_firestore.collection('Users').doc(uid).set({
-																					'bday':userBirthdayController.text,
-																					'email':userEmailController.text,
-																					'fname':userFirstNameController.text,
-																					'location':widget.cityName,
-																					'lname':userLastNameController.text
-																				});
 																				setState(() {
 																					loginStatus =
 																					'You have registered successfully';
 																					loginStringColor = Colors.green;
-																					Navigator.push(context, new MaterialPageRoute(builder: (context) => VerifyScreen()));
+																					Navigator.push(context, new MaterialPageRoute(builder: (context) => VerifyScreen(
+																							userEmailController.text,
+																							widget.cityName,
+																							userBirthdayController.text,
+																							userFirstNameController.text,
+																							userLastNameController.text
+																					)));
 																				});
 																				print(result);
 																			}
