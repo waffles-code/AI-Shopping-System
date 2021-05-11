@@ -1,17 +1,63 @@
 import 'package:aishop/settings.dart';
 import 'package:aishop/theme.dart';
 import 'package:aishop/components/icon_button.dart';
+import 'package:aishop/utils/authentication.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
 import 'components/round_textfield.dart';
 
+class EditProfilePage extends StatefulWidget {
 
-class EditProfilePage extends StatelessWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _EditProfilePage();
+  }
+}
+
+class _EditProfilePage extends State<EditProfilePage> {
+
+  Future getUserInfofromdb() async {
+
+    FirebaseFirestore _firestore = FirebaseFirestore.instance;
+    CollectionReference _collectionReference = _firestore.collection("Users");
+    DocumentReference _documentReference = _collectionReference.doc(uid);
+
+    _documentReference.get().then((documentSnapshot) => {
+      if(!documentSnapshot.exists){
+        print("Sorry, User profile not found."),
+      }
+      else{
+        print("Collected: "+documentSnapshot.data().toString()),
+        setState((){
+          userFirstNameController.text = documentSnapshot.get("fname");
+          userLastNameController.text = documentSnapshot.get("lname");
+          userEmailController.text = documentSnapshot.get("email");
+          userBirthdayController.text = documentSnapshot.get("bday");
+          userLocationController.text = documentSnapshot.get("location");
+        }
+        )
+      }
+    });
+  }
+
+  late TextEditingController userEmailController = TextEditingController();
+  late TextEditingController userFirstNameController = TextEditingController();
+  late TextEditingController userLastNameController = TextEditingController();
+  late TextEditingController userBirthdayController = TextEditingController();
+  late TextEditingController userLocationController = TextEditingController();
+
+  void initState() {
+
+    getUserInfofromdb();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+
     Size size = MediaQuery.of(context).size;
-    print(size);
+
     return new Scaffold(
         body: Container(
           color: mediumblack,
@@ -99,31 +145,33 @@ class EditProfilePage extends StatelessWidget {
                           Column(
                             children: <Widget>[
                               CircleAvatar(
-                                  radius: 70,
-                                  backgroundColor: mediumblack,
-                                  child: CircleAvatar(
-                                      radius: 65,
-                                      child: Icon(Icons.account_circle, size: 120)
-                                  )
-                                /* imageUrl != null ? NetworkImage(imageUrl!) : null,
-                          child: imageUrl == null
-                              ? Icon(Icons.account_circle, size: 30)
-                              : Container(),*/
+                                radius: 70,
+                                backgroundColor: mediumblack,
+                                child: CircleAvatar(
+                                  radius: 65,
+                                  backgroundImage:
+                                  imageUrl != null ? NetworkImage(imageUrl!) : null,
+                                  child: imageUrl == null
+                                      ? Icon(Icons.account_circle, size: 120)
+                                      : Container(),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                                 child: RoundTextField(
                                   autofocus: false,
                                   preicon: Icon(Icons.alternate_email),
-                                  text: "email",
+                                  text: "Email",
+                                  control: userEmailController,
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                                 child: RoundTextField(
                                   autofocus: false,
-                                  text: "fname",
+                                  text: "First Name",
                                   preicon: Icon(Icons.person),
+                                  control: userFirstNameController
                                 ),
                               ),
                               Padding(
@@ -131,15 +179,17 @@ class EditProfilePage extends StatelessWidget {
                                 child: RoundTextField(
                                   autofocus: false,
                                   preicon: Icon(Icons.person),
-                                  text: "lname",
+                                  text:  "Last Name",
+                                  control: userLastNameController
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                                 child: RoundTextField(
                                   autofocus: false,
-                                  text: "birthday",
+                                  text: "Birthday",
                                   preicon: Icon(Icons.cake),
+                                  control: userBirthdayController
                                 ),
                               ),
                               Padding(
@@ -147,7 +197,8 @@ class EditProfilePage extends StatelessWidget {
                                 child: RoundTextField(
                                   autofocus: false,
                                   preicon: Icon(Icons.location_pin),
-                                  text: "location",
+                                  text: "Location",
+                                  control: userLocationController,
                                 ),
                               )
                             ],
