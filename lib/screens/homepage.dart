@@ -1,12 +1,8 @@
-import 'dart:js';
 import 'dart:ui';
-
 import 'package:aishop/components/databasemanager.dart';
-import 'package:aishop/components/horizontal_listView.dart';
 import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
 import 'package:aishop/settings.dart';
-import 'package:aishop/utils/authentication.dart';
 import 'package:aishop/widgets/beauty.dart';
 import 'package:aishop/widgets/books.dart';
 import 'package:aishop/widgets/category.dart';
@@ -14,13 +10,8 @@ import 'package:aishop/widgets/clothes.dart';
 import 'package:aishop/widgets/kitchen.dart';
 import 'package:aishop/widgets/tech.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:aishop/widgets/modal_model.dart';
 import 'package:aishop/screens/checkout.dart';
-
-import '../theme.dart';
-import 'loginscreen.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -73,7 +64,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    bool _isProcessing = false;
+    // bool _isProcessing = false;
     return Scaffold(
         appBar: PreferredSize(
             preferredSize: Size.fromHeight(60.0),
@@ -215,7 +206,7 @@ class _HomePageState extends State<HomePage> {
                 style: TextStyle(fontSize: 40),
               ),
             ),
-            Cat(),
+            Category(),
             SizedBox(
               height: 10,
             ),

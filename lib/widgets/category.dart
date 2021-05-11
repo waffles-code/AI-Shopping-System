@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:aishop/icons/icons.dart';
 import 'category_card.dart';
 
-class Cat extends StatelessWidget {
+class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
