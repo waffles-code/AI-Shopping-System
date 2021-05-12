@@ -2,13 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/widgets/product_model.dart';
 
+import '../theme.dart';
+
 //kitchen model
 class Kitchen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 0,
-      height: 450,
+      height: 400,
       child: StreamBuilder<QuerySnapshot>(
         //query database products collection by Kitchen category
         stream: FirebaseFirestore.instance
@@ -30,6 +32,7 @@ class Kitchen extends StatelessWidget {
                   crossAxisCount: 1, childAspectRatio: 3/2, mainAxisSpacing: 0),
               itemBuilder: (context, index) {
                 return ProductCard(
+                  snapshot.data!.docs[index].id,
                   snapshot.data!.docs[index].get('url'),
                   snapshot.data!.docs[index].get('name'),
                   snapshot.data!.docs[index].get('description'),
