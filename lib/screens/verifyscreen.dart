@@ -68,7 +68,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
     user = auth.currentUser!;
     await user.reload();
     if (user.emailVerified) {
-      _firestore.collection('Users').doc(uid).set({
+      _firestore.collection('Users').doc(uid).collection("info").doc(uid).set({
         'bday': birthday,
         'email':email,
         'fname':firstname,
