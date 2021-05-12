@@ -21,7 +21,7 @@ class Kitchen extends StatelessWidget {
           if (!snapshot.hasData) {
             return SizedBox(
               child: CircularProgressIndicator(
-                backgroundColor: Colors.grey,
+                backgroundColor: lightgrey,
               ),
             );
           } else {

@@ -1,4 +1,5 @@
 import 'package:aishop/screens/loginscreen.dart';
+import 'package:aishop/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +13,11 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: lightblack,
           elevation: 1,
           title: Text(
             'AI SHOPPING SYSTEM',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: white),
           ),
           automaticallyImplyLeading: false,
           leading: IconButton(
@@ -25,7 +26,7 @@ class _SettingsPageState extends State<SettingsPage> {
             },
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.white,
+              color: white,
             ),
           )),
       body: Container(
@@ -43,7 +44,7 @@ class _SettingsPageState extends State<SettingsPage> {
               children: [
                 Icon(
                   Icons.person,
-                  color: Colors.black,
+                  color: lightblack,
                 ),
                 SizedBox(
                   width: 8,
@@ -72,7 +73,7 @@ class _SettingsPageState extends State<SettingsPage> {
               children: [
                 Icon(
                   Icons.volume_up_outlined,
-                  color: Colors.black,
+                  color: lightblack,
                 ),
                 SizedBox(
                   width: 8,
@@ -95,7 +96,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Colors.grey[600],
+                    color: lightgrey,
                   ),
                 ),
                 Transform.scale(
@@ -114,7 +115,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Colors.grey[600],
+                    color: lightgrey
                   ),
                 ),
                 Transform.scale(
@@ -129,6 +130,7 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 20,
             ),
             Center(
+              // ignore: deprecated_member_use
               child: OutlineButton(
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 shape: RoundedRectangleBorder(
@@ -143,7 +145,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   style: TextStyle(
                     fontSize: 16,
                     letterSpacing: 2.2,
-                    color: Colors.black87,
+                    color: black,
                   ),
                 ),
               ),
@@ -191,12 +193,12 @@ class _SettingsPageState extends State<SettingsPage> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
-                color: Colors.grey,
+                color: lightgrey,
               ),
             ),
             Icon(
               Icons.arrow_forward_ios,
-              color: Colors.grey,
+              color: lightgrey,
             ),
           ],
         ),

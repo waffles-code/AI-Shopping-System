@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Expanded(child: SidePanel()),
               Expanded(
                   child: Container(
-                    color: Colors.white,
+                    color: white,
                       padding: EdgeInsets.symmetric(
                           horizontal: size.width * 0.1,
                           vertical: size.height * 0.1),
@@ -237,16 +237,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                 },
                                 child: Text(
                                 "Send email",
-                                style: TextStyle(color: Colors.white, fontSize: 20),
+                                style: TextStyle(color: white, fontSize: 20),
                                 ),
-                                color: Colors.black,),
+                                color: lightblack,),
                                   DialogButton(
                                     onPressed: () => Navigator.pop(context),
                                     child: Text(
                                       "Cancel",
-                                      style: TextStyle(color: Colors.white, fontSize: 20),
+                                      style: TextStyle(color: white, fontSize: 20),
                                     ),
-                                    color: Colors.black,)
+                                    color: lightblack,)
                                 ]).show(),
                                 }),
                             //=========================================

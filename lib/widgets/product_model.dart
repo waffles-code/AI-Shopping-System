@@ -41,7 +41,7 @@ class _ProductCard extends State<ProductCard> {
           width: 310,
           height: 350,
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: white,
               boxShadow: [
                 BoxShadow(
                   color: Colors.blueGrey,
@@ -108,7 +108,7 @@ class _ProductCard extends State<ProductCard> {
                         child: IconButton(
                           icon: Icon(
                             AIicons.wishlist,
-                            color: Colors.black,
+                            color: lightblack,
                             size: 35,
                           ),
                           onPressed: () {},
@@ -125,14 +125,14 @@ class _ProductCard extends State<ProductCard> {
                             icon: Icon(
                               Icons.add_shopping_cart_rounded,
                               size: 20,
-                              color: Colors.white,
+                              color: white,
                             ),
                             label: Text(
                               "ADD TO CART",
                               style: TextStyle(
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white),
+                                  color: white),
                             ),
                           )),
                     ],
@@ -165,14 +165,14 @@ class _ProductCard extends State<ProductCard> {
                   color: Color(0xB3C8C8C8),
                   blurRadius: 0.2,
                 )],
-              borderRadius: BorderRadius.circular(10)),
+              borderRadius: BorderRadius.circular(20)),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 InkWell(
                     onTap: () {
                       //on tap modal pop up
-                      Modal(context, widget.imgUrl, widget.name, widget.description, widget.price);
+                      modal(context, widget.imgUrl, widget.name, widget.description, widget.price);
                       DataService().increment(widget.name);
                     },
                     splashColor: Colors.white30,
@@ -229,7 +229,7 @@ class _ProductCard extends State<ProductCard> {
                         child:  IconButton(
                           icon: toggle
                               ? Icon(Icons.favorite, color: Colors.red, size: 30)
-                              : Icon(AIicons.wishlist, color: Colors.black, size: 30),
+                              : Icon(AIicons.wishlist, color: lightblack, size: 30),
                           onPressed: () {
                             setState(() {
                               toggle = !toggle;
@@ -279,7 +279,7 @@ class _ProductCard extends State<ProductCard> {
                                   );
                               },
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.white,
+                                  primary: white,
                                   elevation: 0.1
                               ),
                               icon: add

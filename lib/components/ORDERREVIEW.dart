@@ -1,33 +1,34 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:aishop/widgets/product_model.dart';
-import 'package:aishop/components/databasemanager.dart';
+
+import '../theme.dart';
 
 double g = 0.00;
 int sizethis = 0;
 int count = 0;
 
+// ignore: must_be_immutable
 class OrderReview extends StatelessWidget {
-  User _user = FirebaseAuth.instance.currentUser!;
+  //User _user = FirebaseAuth.instance.currentUser!;
   final CollectionReference usersRef = FirebaseFirestore.instance
       .collection('Users')
       .doc(FirebaseAuth.instance.currentUser!.uid)
       .collection("Cart");
 
   etdata() async {
-    return await usersRef;
+    return usersRef;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: lightblack,
         appBar: AppBar(
           title: Text(
             'Order Review',
             style: TextStyle(
-                fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
+                fontSize: 25, color: lightblack, fontWeight: FontWeight.bold),
           ),
           toolbarHeight: 100,
           backgroundColor: Colors.white60,
@@ -48,16 +49,15 @@ class OrderReview extends StatelessWidget {
                   if (sizethis <= snapshot.data!.docs.length) {
                     g = g + int.parse(snapshot.data!.docs[index].get('price'));
 
-                    DataService().getTotalCost(g.toString());
+                   // DataService().getTotalCost(g.toString());
                   }
 
-                  return Single_cart_product(
-                    prod_name: snapshot.data!.docs[index].get('name'),
-                    prod_picture: snapshot.data!.docs[index].get('url'),
-                    prod_quantity: snapshot.data!.docs[index].get('quantity'),
-                    prod_description:
-                        snapshot.data!.docs[index].get('description'),
-                    prod_price: snapshot.data!.docs[index].get('price'),
+                  return SingleCartProduct(
+                    prodname: snapshot.data!.docs[index].get('name'),
+                    prodpicture: snapshot.data!.docs[index].get('url'),
+                    prodquantity: snapshot.data!.docs[index].get('quantity'),
+                    proddescription: snapshot.data!.docs[index].get('description'),
+                    prodprice: snapshot.data!.docs[index].get('price'),
                   );
                 },
                 itemCount: snapshot.data!.docs.length,
@@ -73,12 +73,12 @@ class OrderReview extends StatelessWidget {
                   child: ListTile(
                 title: new Text(
                   "ORDER SUBTOTAL                      \n                             ",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: white),
                 ),
                 subtitle: new Text(
                   " \n TOTAL                                R " +
                       (g.toString()),
-                  style: TextStyle(color: Colors.white, fontSize: 19.0),
+                  style: TextStyle(color: white, fontSize: 19.0),
                 ),
               ))
             ],
@@ -87,19 +87,19 @@ class OrderReview extends StatelessWidget {
   }
 }
 
-class Single_cart_product extends StatelessWidget {
-  final prod_name;
-  final prod_picture;
-  final prod_price;
-  final prod_quantity;
-  final prod_description;
+class SingleCartProduct extends StatelessWidget {
+  final prodname;
+  final prodpicture;
+  final prodprice;
+  final prodquantity;
+  final proddescription;
 
-  Single_cart_product(
-      {this.prod_name,
-      this.prod_picture,
-      this.prod_price,
-      this.prod_quantity,
-      this.prod_description});
+  SingleCartProduct(
+      {this.prodname,
+      this.prodpicture,
+      this.prodprice,
+      this.prodquantity,
+      this.proddescription});
 
   @override
   Widget build(BuildContext context) {
@@ -107,19 +107,19 @@ class Single_cart_product extends StatelessWidget {
       color: Color(0xB7242424),
       child: ListTile(
         leading: new Image.network(
-          prod_picture,
+          prodpicture,
           width: 70.0,
           height: 70.0,
         ),
-        title: new Text(prod_name, style: TextStyle(color: Colors.white)),
+        title: new Text(prodname, style: TextStyle(color: white)),
         subtitle: new Column(
           children: <Widget>[
             new Row(
               children: <Widget>[
                 Expanded(
                   child: new Text(
-                    prod_description,
-                    style: TextStyle(color: Colors.grey),
+                    proddescription,
+                    style: TextStyle(color: lightgrey),
                     maxLines: 1,
                   ),
                 )
@@ -127,12 +127,12 @@ class Single_cart_product extends StatelessWidget {
             ),
             new Container(
               alignment: Alignment.bottomLeft,
-              child: new Text(prod_quantity,
+              child: new Text(prodquantity,
                   style: TextStyle(color: Color(0xFFFDD835))),
             ),
             new Container(
               alignment: Alignment.bottomRight,
-              child: new Text("R" + prod_price,
+              child: new Text("R" + prodprice,
                   style: TextStyle(color: Color(0xFFFDD835))),
             )
           ],

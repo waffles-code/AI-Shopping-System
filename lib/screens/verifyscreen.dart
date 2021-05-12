@@ -7,6 +7,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
+import '../theme.dart';
+
 class VerifyScreen extends StatefulWidget {
   final String email, location, birthday, firstname, lastname;
   VerifyScreen(this.email, this.location, this.birthday, this.firstname, this.lastname);
@@ -42,11 +44,11 @@ class _VerifyScreenState extends State<VerifyScreen> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        color: Colors.black,
+        color: lightblack,
         child: DefaultTextStyle(
           style: const TextStyle(
             fontSize: 40.0,
-            color: Colors.white
+            color: white
           ),
           child: AnimatedTextKit(
             animatedTexts: [

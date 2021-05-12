@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../theme.dart';
+
 //
 class CustomIconButton extends StatelessWidget {
   final icon;
@@ -15,11 +17,12 @@ class CustomIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 60,
-        width: 70,
+        width: 50,
 
         child: IconButton(
             icon:  Icon(
               icon, size: 30,
+              color: white,
             ),
             onPressed: press,
         )

@@ -2,10 +2,9 @@
 import 'dart:ui';
 
 import 'package:aishop/components/databasemanager.dart';
+import 'package:aishop/components/icon_button.dart';
 import 'package:aishop/edit_profile.dart';
-import 'package:aishop/icons/icons.dart';
 import 'package:aishop/settings.dart';
-import 'package:aishop/utils/authentication.dart';
 import 'package:aishop/widgets/beauty.dart';
 import 'package:aishop/widgets/books.dart';
 import 'package:aishop/widgets/category.dart';
@@ -18,8 +17,6 @@ import 'package:aishop/widgets/modal_model.dart';
 import 'package:aishop/screens/checkout.dart';
 
 import '../theme.dart';
-import 'loginscreen.dart';
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -71,95 +68,101 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    bool _isProcessing = false;
     return Scaffold(
       backgroundColor: lightestgrey,
-        appBar: AppBar(
-            backgroundColor: Colors.black,
-            title: !isSearching
-                ? Text(
-                    "AI Shopping",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  )
-                : TextField(
-                    onChanged: (val) {
-                      initiateSearch(val);
-                    },
-                    style: TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                        icon: Icon(
-                          Icons.search,
-                          color: Colors.white,
-                        ),
-                        hintText: "Search",
-                        hintStyle: TextStyle(color: Colors.white)),
-                  ),
-            actions: [
-              isSearching
-                  ? IconButton(
-                      icon: Icon(
-                        Icons.cancel,
-                        color: white,
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          tempSearchStore.clear();
-                          this.isSearching = false;
-                        });
-                      },
-                    )
-                  : IconButton(
-                      icon: Icon(
-                        Icons.search_outlined,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          this.isSearching = true;
-                          // Navigator.of(context).push(MaterialPageRoute(
-                          //     builder: (BuildContext context) => SearchBar()));
-                        });
-                      },
-                    ),
-              IconButton(
-                icon: Icon(
-                  AIicons.wishlist,
-                  color: Colors.white,
-                  size: 30,
-                ),
-                onPressed: () {},
-              ),
-              Row(
-                children: [
-                  IconButton(
-                    icon: Icon(
-                      Icons.shopping_cart_outlined,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => CheckOutPage()));
-                    },
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Text(
-                      "3",
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(60.0),
+          child: AppBar(
+              backgroundColor: lightblack,
+              title: !isSearching
+                  ? Text(
+                      "AI Shopping",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white.withOpacity(0.8)),
+                          color: white, fontWeight: FontWeight.bold),
+                    )
+                  : TextField(
+                      onChanged: (val) {
+                        initiateSearch(val);
+                      },
+                      style: TextStyle(color: white),
+                      decoration: InputDecoration(
+                          icon: Icon(
+                            Icons.search_rounded,
+                            color: white,
+                          ),
+                          hintText: "Search",
+                          hintStyle: TextStyle(color: white)),
                     ),
-                  )
-                ],
-              )
-            ],
-            iconTheme: IconThemeData(color: Colors.white)),
-        drawer: Drawer(
+              actions: [
+                isSearching
+                    ?
+                CustomIconButton(
+                        icon: Icons.cancel,
+                        press: () {
+                          setState(() {
+                            tempSearchStore.clear();
+                            this.isSearching = false;
+                          });
+                        },
+                      )
+                    : CustomIconButton(
+                        icon: Icons.search_rounded,
+                        press:  () {
+                          setState(() {
+                            this.isSearching = true;
+                            // Navigator.of(context).push(MaterialPageRoute(
+                            //     builder: (BuildContext context) => SearchBar()));
+                          });
+                        },
+                      ),
+                CustomIconButton(
+                  icon: Icons.favorite,
+                  press: () {},
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0,0,20,0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      CustomIconButton(
+                        icon: Icons.shopping_cart,
+                        press: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => CheckOutPage()));
+                        },
+                      ),
+                      CustomIconButton(
+                        icon: Icons.person,
+                        press: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => EditProfilePage()));
+                        },
+                      ),
+                      CustomIconButton(
+                        icon: Icons.settings,
+                        press: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => SettingsPage()));
+                        },
+                      ),
+                      CustomIconButton(
+                        icon: Icons.logout,
+                        press: () {},
+                      ),
+                    ],
+                  ),
+                )
+              ],
+              iconTheme: IconThemeData(color: white)),
+        ),
+        /*drawer: Drawer(
           child: ListView(
             children: <Widget>[
               //Header
@@ -178,7 +181,7 @@ class _HomePageState extends State<HomePage> {
                         : Container(),
                   ),
                 ),
-                decoration: BoxDecoration(color: Colors.black87),
+                decoration: BoxDecoration(color: black),
               ),
 
               //Body of the drawer
@@ -260,7 +263,7 @@ class _HomePageState extends State<HomePage> {
                   )),
             ],
           ),
-        ),
+        ),*/
 
         //Body of the home page
         body: !isSearching
@@ -279,7 +282,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  Cat(),
+                  Category(),
                   //Products
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
@@ -368,7 +371,7 @@ Widget buildResultCard(BuildContext context, data) {
   return InkWell(
       onTap: () {
         DataService().increment(data['name']);
-        Modal(context, data['url'], data['name'], data['description'],
+        modal(context, data['url'], data['name'], data['description'],
             data['price']);
       },
       splashColor: Colors.white30,
@@ -378,7 +381,7 @@ Widget buildResultCard(BuildContext context, data) {
           padding: const EdgeInsets.all(10.0),
           child: Container(
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: white,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.blueGrey,
