@@ -1,16 +1,14 @@
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
-
 import 'package:aishop/components/ORDERREVIEW.dart';
 import 'package:aishop/components/checkoutdelivary.dart';
 import 'package:aishop/components/checkoutpayment.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/components/checkoutaddress.dart';
-//import 'package:aishop/components/ORDERREVIEW.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../components/google_round_button.dart';
-import '../components/round_button.dart';
-import '../components/round_button.dart';
+
+import '../theme.dart';
 
 User _user = FirebaseAuth.instance.currentUser!;
 
@@ -18,7 +16,7 @@ final CollectionReference usersRef = FirebaseFirestore.instance
     .collection('Users')
     .doc(_user.uid)
     .collection("Cart");
-var products_on_cart = [];
+var productsoncart = [];
 
 class CheckOutPage extends StatefulWidget {
   @override
@@ -26,8 +24,8 @@ class CheckOutPage extends StatefulWidget {
 }
 
 class _CheckOutPageState extends State<CheckOutPage> {
-  Getdata() async {
-    return await usersRef;
+  getdata() async {
+    return usersRef;
   }
 
   @override
@@ -42,7 +40,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
     usersRef.get().then((QuerySnapshot snapshot) {
       for (int i = 0; i < snapshot.docs.length; ++i) {
         print('name: $snapshot');
-        products_on_cart.add(snapshot.docs[i].data());
+        productsoncart.add(snapshot.docs[i].data());
         print(snapshot.docs[i].data());
       }
     });
@@ -61,12 +59,12 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 title: Text(
                   "Checkout Page",
                   textWidthBasis: TextWidthBasis.parent,
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: white),
                 ),
-                backgroundColor: Colors.black,
+                backgroundColor: lightblack,
                 bottom: TabBar(
-                    indicatorColor: Colors.white,
-                    labelColor: Colors.white,
+                    indicatorColor: white,
+                    labelColor: white,
                     tabs: [
                       Tab(
                         text: "Address",
@@ -82,7 +80,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
               body: TabBarView(
                 children: <Widget>[
                   CheckOutAddress(),
-                  CheckOutDelivary(),
+                  CheckOutDelivery(),
                   CheckOutPayment(),
                 ],
               ),

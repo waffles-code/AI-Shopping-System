@@ -3,6 +3,8 @@ import 'package:aishop/components/first_delivary_page.dart';
 import 'package:aishop/components/textlink.dart';
 import 'package:flutter/material.dart';
 
+import '../theme.dart';
+
 class CheckOutAddress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class CheckOutAddress extends StatelessWidget {
                         margin: const EdgeInsets.all(50.0),
                         padding: const EdgeInsets.all(10.0),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black)),
+                            border: Border.all(color: lightblack)),
                         child: ListView(children: <Widget>[
                           SizedBox(
                             height: 10,
@@ -45,20 +47,20 @@ class CheckOutAddress extends StatelessWidget {
                                 press: () => {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          CheckOutDelivary()))
+                                          CheckOutDelivery()))
                                 },
                               ),
                               alignment: Alignment(-0.7, 0),
                             ),
                             leading: Icon(Icons.house,
-                                size: 20, color: Colors.black),
+                                size: 20, color: lightblack),
                           ),
                           Divider(
                             height: 20,
                             thickness: 2.5,
                             indent: 30,
                             endIndent: 30,
-                            color: Colors.black,
+                            color: lightblack,
                           ),
                           ListTile(
                             title: Align(
@@ -77,20 +79,20 @@ class CheckOutAddress extends StatelessWidget {
                                 press: () => {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          CheckOutDelivary()))
+                                          CheckOutDelivery()))
                                 },
                               ),
                               alignment: Alignment(-0.7, 0),
                             ),
                             leading:
-                                Icon(Icons.work, size: 20, color: Colors.black),
+                                Icon(Icons.work, size: 20, color: lightblack),
                           ),
                           Divider(
                             height: 20,
                             thickness: 2.5,
                             indent: 30,
                             endIndent: 30,
-                            color: Colors.black,
+                            color: lightblack,
                           ),
                           ListTile(
                             title: Align(
@@ -106,14 +108,14 @@ class CheckOutAddress extends StatelessWidget {
                               alignment: Alignment(-0.95, 0),
                             ),
                             leading:
-                                Icon(Icons.add, size: 20, color: Colors.black),
+                                Icon(Icons.add, size: 20, color: lightblack),
                           ),
                           Divider(
                             height: 15,
                             thickness: 2.5,
                             indent: 30,
                             endIndent: 30,
-                            color: Colors.black,
+                            color: lightblack,
                           ),
                         ]),
                       ))

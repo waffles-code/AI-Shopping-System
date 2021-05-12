@@ -1,6 +1,8 @@
 import 'package:aishop/components/textlink.dart';
 import 'package:flutter/material.dart';
 
+import '../theme.dart';
+
 class CheckOutPayment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class CheckOutPayment extends StatelessWidget {
                   thickness: 2,
                   indent: 10,
                   endIndent: 10,
-                  color: Colors.black,
+                  color: lightblack,
                 ),
                 Container(
                   child: Center(
@@ -47,7 +49,7 @@ class CheckOutPayment extends StatelessWidget {
                   thickness: 2,
                   indent: 10,
                   endIndent: 10,
-                  color: Colors.black,
+                  color: lightblack,
                 ),
               ]),
             ),
@@ -67,14 +69,14 @@ class CheckOutPayment extends StatelessWidget {
                         margin: const EdgeInsets.all(50.0),
                         padding: const EdgeInsets.all(10.0),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black)),
+                            border: Border.all(color: lightblack)),
                         child: new Column(children: <Widget>[
                           Container(
                             margin: EdgeInsets.only(
                                 left: 0.0, top: 8.0, bottom: 2.0, right: 100.0),
                             child: Text("Order Subtotal     R 2 219,97",
                                 style: new TextStyle(
-                                    color: Colors.black,
+                                    color: lightblack,
                                     fontWeight: FontWeight.normal,
                                     fontSize: 18.0)),
                           ),
@@ -86,7 +88,7 @@ class CheckOutPayment extends StatelessWidget {
                                   right: 150.0),
                               child: Text("Delivery        R 250,00",
                                   style: new TextStyle(
-                                      color: Colors.black,
+                                      color: lightblack,
                                       fontWeight: FontWeight.normal,
                                       fontSize: 18.0))),
                           Container(
@@ -97,7 +99,7 @@ class CheckOutPayment extends StatelessWidget {
                                   right: 200.0),
                               child: Text("Promo Code ",
                                   style: new TextStyle(
-                                      color: Colors.black,
+                                      color: lightblack,
                                       fontWeight: FontWeight.normal,
                                       fontSize: 18.0))),
                           SizedBox(
@@ -113,16 +115,16 @@ class CheckOutPayment extends StatelessWidget {
                                   right: 100.0),
                               child: TextFormField(
                                 decoration: InputDecoration(
-                                  fillColor: Colors.black87,
+                                  fillColor: black,
                                   hintText: 'e.g. FirstTimePromo',
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Colors.black, width: 2.0),
+                                        color: lightblack, width: 2.0),
                                     borderRadius: BorderRadius.circular(100),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Colors.black, width: 2.0),
+                                        color: lightblack, width: 2.0),
                                     borderRadius: BorderRadius.circular(100),
                                   ),
                                 ),
@@ -138,7 +140,7 @@ class CheckOutPayment extends StatelessWidget {
                             thickness: 2,
                             indent: 20,
                             endIndent: 20,
-                            color: Colors.black,
+                            color: lightblack,
                           ),
                           SizedBox(
                             height: 5,
@@ -148,7 +150,7 @@ class CheckOutPayment extends StatelessWidget {
                                 left: 0.0, top: 8.0, bottom: 2.0, right: 150.0),
                             child: Text("TOTAL         R 2469,97",
                                 style: new TextStyle(
-                                    color: Colors.black,
+                                    color: lightblack,
                                     fontWeight: FontWeight.normal,
                                     fontSize: 18.0)),
                           ),
@@ -170,21 +172,21 @@ class CheckOutPayment extends StatelessWidget {
                         left: 0.0, top: 0.0, bottom: 0.0, right: 20.0),
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          onPrimary: Colors.black, // background
-                          primary: Colors.black,
+                          onPrimary: lightblack, // background
+                          primary: lightblack,
                           textStyle: TextStyle(
                             fontSize: 18,
                             fontFamily: 'Nunito Sans',
                             fontWeight: FontWeight.w300,
                           ),
-                          side: BorderSide(color: Colors.black, width: 2),
+                          side: BorderSide(color: lightblack, width: 2),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(100)),
                         ),
                         onPressed: () {},
                         child: Text("Purchase",
                             style: new TextStyle(
-                                color: Colors.white70,
+                                color: lightestgrey,
                                 fontWeight: FontWeight.normal,
                                 fontSize: 20.0))),
                   ),

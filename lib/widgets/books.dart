@@ -1,6 +1,6 @@
+import 'package:aishop/widgets/product_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:aishop/widgets/product_model.dart';
 
 import '../theme.dart';
 
@@ -18,7 +18,7 @@ class Books extends StatelessWidget {
           if (!snapshot.hasData) {
             return SizedBox(
               child: CircularProgressIndicator(
-                backgroundColor: Colors.grey,
+                backgroundColor: lightgrey,
               ),
             );
           } else {

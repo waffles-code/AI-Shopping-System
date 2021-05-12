@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../theme.dart';
+
 class CategoryCard extends StatelessWidget {
   final Icon icon;
   final String name;
@@ -11,7 +13,7 @@ class CategoryCard extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Container(
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: white,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.blueGrey,
