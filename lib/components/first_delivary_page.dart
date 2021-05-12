@@ -2,21 +2,24 @@ import 'package:aishop/components/checkoutdelivary.dart';
 import 'package:aishop/components/textlink.dart';
 import 'package:flutter/material.dart';
 
+
+import '../theme.dart';
+
 class FirstDelivaryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: lightblack,
         elevation: 1,
         title: Text(
           'AI SHOPPING SYSTEM',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: white),
         ),
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.white,
+            color: white,
           ),
           onPressed: () {
             Navigator.of(context).pop();
@@ -39,7 +42,7 @@ class FirstDelivaryPage extends StatelessWidget {
                         margin: const EdgeInsets.all(50.0),
                         padding: const EdgeInsets.all(10.0),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black)),
+                            border: Border.all(color: lightblack)),
                         child: ListView(children: <Widget>[
                           ListTile(
                             title: Align(
@@ -58,20 +61,20 @@ class FirstDelivaryPage extends StatelessWidget {
                                 press: () => {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          CheckOutDelivary()))
+                                          CheckOutDelivery()))
                                 },
                               ),
                               alignment: Alignment(-0.7, 0),
                             ),
                             leading: Icon(Icons.house,
-                                size: 20, color: Colors.black),
+                                size: 20, color: lightblack),
                           ),
                           Divider(
                             height: 10,
                             thickness: 2,
                             indent: 10,
                             endIndent: 10,
-                            color: Colors.black,
+                            color: lightblack,
                           ),
                           ListTile(
                             title: Align(
@@ -90,20 +93,20 @@ class FirstDelivaryPage extends StatelessWidget {
                                 press: () => {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          CheckOutDelivary()))
+                                          CheckOutDelivery()))
                                 },
                               ),
                               alignment: Alignment(-0.7, 0),
                             ),
                             leading:
-                                Icon(Icons.work, size: 20, color: Colors.black),
+                                Icon(Icons.work, size: 20, color: lightblack),
                           ),
                           Divider(
                             height: 10,
                             thickness: 2,
                             indent: 10,
                             endIndent: 10,
-                            color: Colors.black,
+                            color: lightblack,
                           ),
                         ]),
                       ))
@@ -121,7 +124,7 @@ class FirstDelivaryPage extends StatelessWidget {
                       left: 0.0, top: 0.0, bottom: 0.0, right: 400.0),
                   child: Text("Name",
                       style: new TextStyle(
-                          color: Colors.black,
+                          color: lightblack,
                           fontWeight: FontWeight.normal,
                           fontSize: 15.0)),
                 ),
@@ -135,16 +138,16 @@ class FirstDelivaryPage extends StatelessWidget {
                           height: 50,
                           child: TextFormField(
                             decoration: InputDecoration(
-                              fillColor: Colors.black87,
+                              fillColor: black,
                               hintText: 'new Address',
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                             ),
@@ -164,7 +167,7 @@ class FirstDelivaryPage extends StatelessWidget {
                       left: 0.0, top: 0.0, bottom: 0.0, right: 350.0),
                   child: Text("Street Address",
                       style: new TextStyle(
-                          color: Colors.black,
+                          color: lightblack,
                           fontWeight: FontWeight.normal,
                           fontSize: 15.0)),
                 ),
@@ -177,16 +180,16 @@ class FirstDelivaryPage extends StatelessWidget {
                           height: 50,
                           child: TextFormField(
                             decoration: InputDecoration(
-                              fillColor: Colors.black87,
+                              fillColor: black,
                               hintText: 'Street and number / P.O. box',
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                             ),
@@ -210,17 +213,17 @@ class FirstDelivaryPage extends StatelessWidget {
                           height: 50,
                           child: TextFormField(
                             decoration: InputDecoration(
-                              fillColor: Colors.black87,
+                              fillColor: black,
                               hintText:
                                   'Apartment, suit, unit, building, floor etc',
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                             ),
@@ -237,7 +240,7 @@ class FirstDelivaryPage extends StatelessWidget {
                       left: 0.0, top: 0.0, bottom: 0.0, right: 400.0),
                   child: Text("City",
                       style: new TextStyle(
-                          color: Colors.black,
+                          color: lightblack,
                           fontWeight: FontWeight.normal,
                           fontSize: 15.0)),
                 ),
@@ -250,16 +253,16 @@ class FirstDelivaryPage extends StatelessWidget {
                           height: 50,
                           child: TextFormField(
                             decoration: InputDecoration(
-                              fillColor: Colors.black87,
+                              fillColor: black,
                               hintText: ' ',
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                             ),
@@ -279,7 +282,7 @@ class FirstDelivaryPage extends StatelessWidget {
                       left: 0.0, top: 0.0, bottom: 0.0, right: 400.0),
                   child: Text("Province",
                       style: new TextStyle(
-                          color: Colors.black,
+                          color: lightblack,
                           fontWeight: FontWeight.normal,
                           fontSize: 15.0)),
                 ),
@@ -292,16 +295,16 @@ class FirstDelivaryPage extends StatelessWidget {
                           height: 50,
                           child: TextFormField(
                             decoration: InputDecoration(
-                              fillColor: Colors.black87,
+                              fillColor: black,
                               hintText: ' ',
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                             ),
@@ -321,7 +324,7 @@ class FirstDelivaryPage extends StatelessWidget {
                       left: 0.0, top: 0.0, bottom: 0.0, right: 400.0),
                   child: Text("Zip Code",
                       style: new TextStyle(
-                          color: Colors.black,
+                          color: lightblack,
                           fontWeight: FontWeight.normal,
                           fontSize: 15.0)),
                 ),
@@ -334,16 +337,16 @@ class FirstDelivaryPage extends StatelessWidget {
                           height: 50,
                           child: TextFormField(
                             decoration: InputDecoration(
-                              fillColor: Colors.white,
+                              fillColor: white,
                               hintText: '',
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: Colors.black, width: 2.0),
+                                    color: lightblack, width: 2.0),
                                 borderRadius: BorderRadius.circular(100),
                               ),
                             ),
@@ -363,7 +366,7 @@ class FirstDelivaryPage extends StatelessWidget {
                   thickness: 2,
                   indent: 0,
                   endIndent: 20,
-                  color: Colors.black,
+                  color: lightblack,
                 ),
                 SizedBox(
                   height: 20,
@@ -378,21 +381,21 @@ class FirstDelivaryPage extends StatelessWidget {
                         height: 50,
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              onPrimary: Colors.black, // background
-                              primary: Colors.black,
+                              onPrimary: lightblack, // background
+                              primary: lightblack,
                               textStyle: TextStyle(
                                 fontSize: 18,
                                 fontFamily: 'Nunito Sans',
                                 fontWeight: FontWeight.w300,
                               ),
-                              side: BorderSide(color: Colors.black, width: 2),
+                              side: BorderSide(color: lightblack, width: 2),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(100)),
                             ),
                             onPressed: () {},
                             child: Text("Save Address",
                                 style: new TextStyle(
-                                    color: Colors.white70,
+                                    color: lightestgrey,
                                     fontWeight: FontWeight.normal,
                                     fontSize: 20.0))),
                       ),
@@ -410,21 +413,21 @@ class FirstDelivaryPage extends StatelessWidget {
                         height: 50,
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              onPrimary: Colors.black, // background
-                              primary: Colors.white,
+                              onPrimary: lightblack, // background
+                              primary: white,
                               textStyle: TextStyle(
                                 fontSize: 18,
                                 fontFamily: 'Nunito Sans',
                                 fontWeight: FontWeight.w300,
                               ),
-                              side: BorderSide(color: Colors.black, width: 2),
+                              side: BorderSide(color: lightblack, width: 2),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(100)),
                             ),
                             onPressed: () {},
                             child: Text("Discard",
                                 style: new TextStyle(
-                                    color: Colors.black,
+                                    color: lightblack,
                                     fontWeight: FontWeight.normal,
                                     fontSize: 20.0))),
                       ),
