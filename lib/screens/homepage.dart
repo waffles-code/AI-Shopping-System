@@ -1,8 +1,7 @@
-import 'dart:js';
+
 import 'dart:ui';
 
 import 'package:aishop/components/databasemanager.dart';
-import 'package:aishop/components/horizontal_listView.dart';
 import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
 import 'package:aishop/settings.dart';
@@ -14,7 +13,6 @@ import 'package:aishop/widgets/clothes.dart';
 import 'package:aishop/widgets/kitchen.dart';
 import 'package:aishop/widgets/tech.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/widgets/modal_model.dart';
 import 'package:aishop/screens/checkout.dart';
@@ -75,6 +73,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     bool _isProcessing = false;
     return Scaffold(
+      backgroundColor: lightestgrey,
         appBar: AppBar(
             backgroundColor: Colors.black,
             title: !isSearching
@@ -267,91 +266,92 @@ class _HomePageState extends State<HomePage> {
         body: !isSearching
             ? ListView(
                 children: <Widget>[
-                  SizedBox(
-                    height: 10,
-                  ),
                   //category
-                  Center(
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
                     child: Text(
                       "Categories",
-                      style: TextStyle(fontSize: 40),
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Inria Serif',
+                        fontWeight: FontWeight.w300,
+                        color: lightblack
+                      ),
                     ),
                   ),
                   Cat(),
-                  SizedBox(
-                    height: 10,
-                  ),
                   //Products
-                  Center(
-                      child: Text(
-                    "Books",
-                    style: TextStyle(fontSize: 40),
-                  )),
-
-                  SizedBox(
-                    height: 10,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
+                    child: Text(
+                      "Books",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Inria Serif',
+                          fontWeight: FontWeight.w300,
+                          color: lightblack
+                      ),
+                    ),
                   ),
                   Books(),
-
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Center(
-                      child: Text(
-                    "Clothes",
-                    style: TextStyle(fontSize: 40),
-                  )),
-
-                  SizedBox(
-                    height: 10,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
+                    child: Text(
+                      "Clothes",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Inria Serif',
+                          fontWeight: FontWeight.w300,
+                          color: lightblack
+                      ),
+                    ),
                   ),
                   Clothes(),
-
-                  SizedBox(
-                    height: 10,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
+                    child: Text(
+                      "Beauty",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Inria Serif',
+                          fontWeight: FontWeight.w300,
+                          color: lightblack
+                      ),
+                    ),
                   ),
-
-                  Center(
-                      child: Text(
-                    "Shoes",
-                    style: TextStyle(fontSize: 40),
-                  )),
                   Beauty(),
-                  SizedBox(
-                    height: 10,
-                  ),
-
-                  Center(
-                      child: Text(
-                    "Kitchen",
-                    style: TextStyle(fontSize: 40),
-                  )),
-                  SizedBox(
-                    height: 10,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
+                    child: Text(
+                      "Kitchen",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Inria Serif',
+                          fontWeight: FontWeight.w300,
+                          color: lightblack
+                      ),
+                    ),
                   ),
                   Kitchen(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Center(
-                      child: Text(
-                    "Tech",
-                    style: TextStyle(fontSize: 40),
-                  )),
-                  SizedBox(
-                    height: 10,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
+                    child: Text(
+                      "Tech",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Inria Serif',
+                          fontWeight: FontWeight.w300,
+                          color: lightblack
+                      ),
+                    ),
                   ),
                   Tech(),
-
-                  SizedBox(
-                    height: 10,
-                  ),
                 ],
               )
             : ListView(children: <Widget>[
                 SizedBox(height: 10.0),
                 GridView.count(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
                     crossAxisCount: 4,
                     crossAxisSpacing: 4.0,
                     mainAxisSpacing: 4.0,
