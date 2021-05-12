@@ -119,9 +119,7 @@ Future<User?> signInWithGoogle() async {
     {
       if(!documentSnapshot.exists){
         print("user added"),
-        FirebaseFirestore.instance
-            .collection('Users')
-            .doc(uid).set(
+        FirebaseFirestore.instance.collection('Users').doc(uid).collection("info").doc(uid).set(
             {
               'fname': name!.split(" ")[0],
               'lname':name!.split(" ")[1],
