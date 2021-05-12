@@ -2,8 +2,8 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
 
- class geolocators{
-    geolocators();
+ class Geolocate{
+    Geolocate();
 
   Future<String> findPosition() async{
    bool serviceEnabled;
