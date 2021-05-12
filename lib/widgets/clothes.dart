@@ -19,14 +19,16 @@ class Clothes extends StatelessWidget {
           if (!snapshot.hasData) {
             return SizedBox(
               child: CircularProgressIndicator(
-                backgroundColor: Colors.blueGrey,
+                backgroundColor: Colors.grey,
               ),
             );
           } else {
             return GridView.builder(
               scrollDirection: Axis.horizontal,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1, childAspectRatio: 3/2, mainAxisSpacing: 0),
+                  crossAxisCount: 1,
+                  childAspectRatio: 3 / 2,
+                  mainAxisSpacing: 0),
               itemBuilder: (context, index) {
                 return ProductCard(
                   snapshot.data!.docs[index].id,

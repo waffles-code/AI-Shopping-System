@@ -1,0 +1,527 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/tab_controller.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/placeholder_span.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/colors.dart', 'packages/aishop/components/checkoutaddress.dart', 'packages/aishop/components/checkoutdelivary.dart', 'packages/aishop/components/checkoutpayment.dart', 'packages/aishop/components/checkoutorderreview.dart'], (function load__packages__aishop__screens__checkout_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__tab_controller$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__placeholder_span$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__colors$46dart, packages__aishop__components__checkoutaddress$46dart, packages__aishop__components__checkoutdelivary$46dart, packages__aishop__components__checkoutpayment$46dart, packages__aishop__components__checkoutorderreview$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const tab_controller = packages__flutter__src__material__tab_controller$46dart.src__material__tab_controller;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const tabs = packages__flutter__src__material__icon_button$46dart.src__material__tabs;
+  const text_painter = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_painter;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const checkoutaddress = packages__aishop__components__checkoutaddress$46dart.components__checkoutaddress;
+  const checkoutdelivary = packages__aishop__components__checkoutdelivary$46dart.components__checkoutdelivary;
+  const checkoutpayment = packages__aishop__components__checkoutpayment$46dart.components__checkoutpayment;
+  const checkoutorderreview = packages__aishop__components__checkoutorderreview$46dart.components__checkoutorderreview;
+  var checkout = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 19,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textWidthBasis",
+        [_Location_column]: 19,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 19,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], widget_inspector._Location);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 21,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.constList([C[7] || CT.C7], widget_inspector._Location);
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[6] || CT.C6,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 33,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 21,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10], widget_inspector._Location);
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 21,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[13] || CT.C13], widget_inspector._Location);
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[12] || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "indicatorColor",
+        [_Location_column]: 32,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "labelColor",
+        [_Location_column]: 61,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "tabs",
+        [_Location_column]: 87,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.constList([C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18], widget_inspector._Location);
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[15] || CT.C15,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 17,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 17,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottom",
+        [_Location_column]: 17,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23], widget_inspector._Location);
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 25,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([], widget_inspector._Location);
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 47,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 48,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 17,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30], widget_inspector._Location);
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 44,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 15,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 15,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33, C[34] || CT.C34], widget_inspector._Location);
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "flex",
+        [_Location_column]: 13,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.constList([C[37] || CT.C37, C[38] || CT.C38], widget_inspector._Location);
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[36] || CT.C36,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 22,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 55,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 12,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.constList([C[42] || CT.C42], widget_inspector._Location);
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[41] || CT.C41,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 54,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.constList([C[45] || CT.C45], widget_inspector._Location);
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[44] || CT.C44,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48], widget_inspector._Location);
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 20,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "length",
+        [_Location_column]: 7,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51, C[52] || CT.C52], widget_inspector._Location);
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 18,
+        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+      });
+    }
+  }, false);
+  var C = Array(53).fill(void 0);
+  var I = [
+    "package:aishop/screens/checkout.dart",
+    "file:///C:/Users/mmase/OneDrive/Documents/SD/mmasehume/AI-Shopping-System/lib/screens/checkout.dart"
+  ];
+  checkout.CheckOutPage = class CheckOutPage extends framework.StatefulWidget {
+    createState() {
+      return new checkout._CheckOutPageState.new();
+    }
+  };
+  (checkout.CheckOutPage.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    checkout.CheckOutPage.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = checkout.CheckOutPage.prototype;
+  dart.addTypeTests(checkout.CheckOutPage);
+  dart.addTypeCaches(checkout.CheckOutPage);
+  dart.setMethodSignature(checkout.CheckOutPage, () => ({
+    __proto__: dart.getMethods(checkout.CheckOutPage.__proto__),
+    createState: dart.fnType(checkout._CheckOutPageState, [])
+  }));
+  dart.setLibraryUri(checkout.CheckOutPage, I[0]);
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  checkout._CheckOutPageState = class _CheckOutPageState extends framework.State$(checkout.CheckOutPage) {
+    build(context) {
+      if (context == null) dart.nullFailed(I[1], 17, 29, "context");
+      return new tab_controller.DefaultTabController.new({length: 3, child: new basic.Row.new({children: T.JSArrayOfWidget().of([new basic.Expanded.new({flex: 2, child: new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Checkout Page", {textWidthBasis: text_painter.TextWidthBasis.parent, style: new text_style.TextStyle.new({color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), backgroundColor: colors.Colors.black, bottom: new tabs.TabBar.new({indicatorColor: colors.Colors.white, labelColor: colors.Colors.white, tabs: T.JSArrayOfWidget().of([new tabs.Tab.new({text: "Address", $creationLocationd_0dea112b090073317d4: C[5] || CT.C5}), new tabs.Tab.new({text: "Delivery", $creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), new tabs.Tab.new({text: "Payment", $creationLocationd_0dea112b090073317d4: C[11] || CT.C11})]), $creationLocationd_0dea112b090073317d4: C[14] || CT.C14}), $creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), body: new tabs.TabBarView.new({children: T.JSArrayOfWidget().of([new checkoutaddress.CheckOutAddress.new({$creationLocationd_0dea112b090073317d4: C[24] || CT.C24}), new checkoutdelivary.CheckOutDelivary.new({$creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), new checkoutpayment.CheckOutPayment.new({$creationLocationd_0dea112b090073317d4: C[27] || CT.C27})]), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}), $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), $creationLocationd_0dea112b090073317d4: C[35] || CT.C35}), new basic.Expanded.new({child: new scaffold.Scaffold.new({body: new checkoutorderreview.OrderReview.new({$creationLocationd_0dea112b090073317d4: C[39] || CT.C39}), $creationLocationd_0dea112b090073317d4: C[40] || CT.C40}), $creationLocationd_0dea112b090073317d4: C[43] || CT.C43})]), $creationLocationd_0dea112b090073317d4: C[46] || CT.C46}), $creationLocationd_0dea112b090073317d4: C[49] || CT.C49});
+    }
+  };
+  (checkout._CheckOutPageState.new = function() {
+    checkout._CheckOutPageState.__proto__.new.call(this);
+    ;
+  }).prototype = checkout._CheckOutPageState.prototype;
+  dart.addTypeTests(checkout._CheckOutPageState);
+  dart.addTypeCaches(checkout._CheckOutPageState);
+  dart.setMethodSignature(checkout._CheckOutPageState, () => ({
+    __proto__: dart.getMethods(checkout._CheckOutPageState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(checkout._CheckOutPageState, I[0]);
+  dart.trackLibraries("packages/aishop/screens/checkout.dart", {
+    "package:aishop/screens/checkout.dart": checkout
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["checkout.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAWsC;IAAoB;;;;;;EAC1D;;;;;;;;;;;;;;;UAI4B;AACxB,YAAO,sDACG,UACD,6BACa,wBAChB,8BACQ,UACC,mCACG,+BACC,kBACL,kCAC+B,2CACxB,qCAAwB,iGAET,6BAChB,qCAA8B,iCAAyB,2BAAa,wBAC1E,wBACQ,oEAER,wBACQ,qEAER,wBACQ,oMAIN,mCACc,wBAChB,oGACA,sGACA,uRAKR,+BACW,iCACJ;IAKf;;;;;EACF","file":"../../../../../../../../../packages/aishop/screens/checkout.dart.lib.js"}');
+  // Exports:
+  return {
+    screens__checkout: checkout
+  };
+}));
+
+//# sourceMappingURL=checkout.dart.lib.js.map

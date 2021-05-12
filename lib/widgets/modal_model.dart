@@ -19,67 +19,82 @@ Modal(context, imgUrl, name, description, price) {
               width: MediaQuery.of(context).size.width * 0.7,
               height: 600,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Image.network(
-                      imgUrl,
-                      width: 250,
-                      height: 250,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Image.network(
+                        imgUrl,
+                        width: 250,
+                        height: 250,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    "Name: " + name,
-                    style: TextStyle(
-                        fontFamily: 'Inria Serif',
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white70),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text("Price: R " + price,
+                    SizedBox(
+                      height: 3,
+                    ),
+                    Text(
+                      "Name: " + name,
                       style: TextStyle(
-                          fontFamily: 'Inria Serif',
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white70)),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text("Description: " + description,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white70)),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
+                          color: Colors.white),
                     ),
-                    icon: Icon(
-                      Icons.add_shopping_cart_rounded,
-                      size: 20,
-                      color: Colors.black,
+                    SizedBox(
+                      height: 5,
                     ),
-                    label: Text(
-                      "ADD TO CART",
-                      style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                    Text("Price: R " + price,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white)),
+                    SizedBox(
+                      height: 5,
                     ),
-                  )
-                ],
-              ),
+                    Text("Description: " + description,
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white70)),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(180.0, 5.0, 20.0, 0.0),
+                      child: Row(
+                        children: <Widget>[
+                          IconButton(
+                            icon: Icon(
+                              AIicons.wishlist,
+                              color: Colors.white,
+                              size: 35,
+                            ),
+                            onPressed: () {},
+                          ),
+                          SizedBox(
+                            width: 12,
+                          ),
+                          ElevatedButton.icon(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.grey,
+                            ),
+                            icon: Icon(
+                              Icons.add_shopping_cart_rounded,
+                              size: 20,
+                              color: Colors.white,
+                            ),
+                            label: Text(
+                              "ADD TO CART",
+                              style: TextStyle(
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ]),
             ),
           ),
         );

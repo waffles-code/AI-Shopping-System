@@ -14,4 +14,10 @@ class AIicons {
   static const IconData beauty = IconData(0xe805, fontFamily: _kFontFam);
   static const IconData sneaker = IconData(0xe806, fontFamily: _kFontFam);
   static const IconData shoe = IconData(0xe807, fontFamily: _kFontFam);
+  static const IconData home = IconData(0xe808, fontFamily: _kFontFam);
+  static const IconData profile = IconData(0xe809, fontFamily: _kFontFam);
+  static const IconData settings = IconData(0xe80a, fontFamily: _kFontFam);
+  static const IconData signout = IconData(0xe80b, fontFamily: _kFontFam);
+  static const IconData cart = IconData(0xe80c, fontFamily: _kFontFam);
+  static const IconData search = IconData(0xe80d, fontFamily: _kFontFam);
 }
