@@ -19,7 +19,8 @@ class _EditProfilePage extends State<EditProfilePage> {
   Future getUserInfofromdb() async {
     FirebaseFirestore _firestore = FirebaseFirestore.instance;
     CollectionReference _collectionReference = _firestore.collection("Users");
-    DocumentReference _documentReference = _collectionReference.doc(uid);
+    DocumentReference _doc = _collectionReference.doc(uid);
+    DocumentReference _documentReference = _doc.collection("info").doc(uid);
 
     _documentReference.get().then((documentSnapshot) => {
           if (!documentSnapshot.exists)
@@ -92,7 +93,7 @@ class _EditProfilePage extends State<EditProfilePage> {
                 color: white,
                 width: size.width * 0.7,
                 height: 60,
-                padding: EdgeInsets.only(right: 30),
+                padding: EdgeInsets.only(right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
