@@ -1,4 +1,5 @@
 import 'package:aishop/components/textlink.dart';
+import 'package:aishop/screens/homepage.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
@@ -183,7 +184,12 @@ class CheckOutPayment extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(100)),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => HomePage()));
+                        },
                         child: Text("Purchase",
                             style: new TextStyle(
                                 color: lightestgrey,

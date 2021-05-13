@@ -24,6 +24,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
   var $_get = dartx._get;
   dart._checkModuleNullSafetyMode(true);
   var T = {
+    CompleterOfvoid: () => (T.CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))(),
     UserPlatformN: () => (T.UserPlatformN = dart.constFn(dart.nullable(platform_interface_user.UserPlatform)))(),
     StreamControllerOfUserPlatformN: () => (T.StreamControllerOfUserPlatformN = dart.constFn(async.StreamController$(T.UserPlatformN())))(),
     UserWebN: () => (T.UserWebN = dart.constFn(dart.nullable(firebase_auth_web_user.UserWeb)))(),
@@ -31,6 +32,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
     UserNToUserWebN: () => (T.UserNToUserWebN = dart.constFn(dart.fnType(T.UserWebN(), [T.UserN()])))(),
     UserWebNTovoid: () => (T.UserWebNTovoid = dart.constFn(dart.fnType(dart.void, [T.UserWebN()])))(),
     ListOfString: () => (T.ListOfString = dart.constFn(core.List$(core.String)))(),
+    _AsyncStarImplOfUserPlatformN: () => (T._AsyncStarImplOfUserPlatformN = dart.constFn(async._AsyncStarImpl$(T.UserPlatformN())))(),
     IdentityMapOfString$StreamControllerOfUserPlatformN: () => (T.IdentityMapOfString$StreamControllerOfUserPlatformN = dart.constFn(_js_helper.IdentityMap$(core.String, T.StreamControllerOfUserPlatformN())))()
   };
   var T$Eval = Object.assign({
@@ -55,14 +57,15 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
   }, false);
   var C = [void 0];
   var I = [
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-1.0.6/lib/firebase_auth_web.dart",
+    "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-1.1.1/lib/firebase_auth_web.dart",
     "package:firebase_auth_web/firebase_auth_web.dart"
   ];
+  var _initialized = dart.privateName(firebase_auth_web, "_initialized");
   var _webAuth = dart.privateName(firebase_auth_web, "_webAuth");
   var Duration__duration = dart.privateName(core, "Duration._duration");
   firebase_auth_web.FirebaseAuthWeb = class FirebaseAuthWeb extends platform_interface_firebase_auth.FirebaseAuthPlatform {
     static registerWith(registrar) {
-      if (registrar == null) dart.nullFailed(I[0], 66, 38, "registrar");
+      if (registrar == null) dart.nullFailed(I[0], 72, 38, "registrar");
       platform_interface_firebase_auth.FirebaseAuthPlatform.instance = firebase_auth_web.FirebaseAuthWeb.instance;
       platform_interface_recaptcha_verifier_factory.RecaptchaVerifierFactoryPlatform.instance = firebase_auth_web_recaptcha_verifier_factory.RecaptchaVerifierFactoryWeb.instance;
     }
@@ -71,7 +74,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
     }
     delegateFor(opts) {
       let app = opts && 'app' in opts ? opts.app : null;
-      if (app == null) dart.nullFailed(I[0], 90, 58, "app");
+      if (app == null) dart.nullFailed(I[0], 96, 58, "app");
       return new firebase_auth_web.FirebaseAuthWeb.new({app: app});
     }
     setInitialValues(opts) {
@@ -90,12 +93,12 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       super.currentUser = value;
     }
     sendAuthChangesEvent(appName, userPlatform) {
-      if (appName == null) dart.nullFailed(I[0], 115, 36, "appName");
-      if (!(firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_get](appName) != null)) dart.assertFailed(null, I[0], 116, 12, "_userChangesListeners[appName] != null");
+      if (appName == null) dart.nullFailed(I[0], 121, 36, "appName");
+      if (!(firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_get](appName) != null)) dart.assertFailed(null, I[0], 122, 12, "_userChangesListeners[appName] != null");
       dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_get](appName)).add(userPlatform);
     }
     applyActionCode(code) {
-      if (code == null) dart.nullFailed(I[0], 122, 39, "code");
+      if (code == null) dart.nullFailed(I[0], 128, 39, "code");
       return async.async(dart.void, (function* applyActionCode() {
         try {
           yield dart.nullCheck(this[_webAuth]).applyActionCode(code);
@@ -109,7 +112,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     checkActionCode(code) {
-      if (code == null) dart.nullFailed(I[0], 131, 49, "code");
+      if (code == null) dart.nullFailed(I[0], 137, 49, "code");
       return async.async(action_code_info.ActionCodeInfo, (function* checkActionCode() {
         try {
           return dart.nullCheck(web_utils.convertWebActionCodeInfo(yield dart.nullCheck(this[_webAuth]).checkActionCode(code)));
@@ -123,8 +126,8 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     confirmPasswordReset(code, newPassword) {
-      if (code == null) dart.nullFailed(I[0], 140, 44, "code");
-      if (newPassword == null) dart.nullFailed(I[0], 140, 57, "newPassword");
+      if (code == null) dart.nullFailed(I[0], 146, 44, "code");
+      if (newPassword == null) dart.nullFailed(I[0], 146, 57, "newPassword");
       return async.async(dart.void, (function* confirmPasswordReset() {
         try {
           yield dart.nullCheck(this[_webAuth]).confirmPasswordReset(code, newPassword);
@@ -138,8 +141,8 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     createUserWithEmailAndPassword(email, password) {
-      if (email == null) dart.nullFailed(I[0], 150, 14, "email");
-      if (password == null) dart.nullFailed(I[0], 150, 28, "password");
+      if (email == null) dart.nullFailed(I[0], 156, 14, "email");
+      if (password == null) dart.nullFailed(I[0], 156, 28, "password");
       return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* createUserWithEmailAndPassword() {
         try {
           return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).createUserWithEmailAndPassword(email, password));
@@ -153,7 +156,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     fetchSignInMethodsForEmail(email) {
-      if (email == null) dart.nullFailed(I[0], 162, 58, "email");
+      if (email == null) dart.nullFailed(I[0], 168, 58, "email");
       return async.async(T.ListOfString(), (function* fetchSignInMethodsForEmail() {
         try {
           return yield dart.nullCheck(this[_webAuth]).fetchSignInMethodsForEmail(email);
@@ -180,16 +183,34 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     authStateChanges() {
-      return dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._authStateChangesListeners[$_get](this.app.name)).stream;
+      return new (T._AsyncStarImplOfUserPlatformN()).new((function* authStateChanges(stream) {
+        yield this[_initialized].future;
+        if (stream.add(this.currentUser)) return;
+        yield;
+        if (stream.addStream(dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._authStateChangesListeners[$_get](this.app.name)).stream)) return;
+        yield;
+      }).bind(this)).stream;
     }
     idTokenChanges() {
-      return dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._idTokenChangesListeners[$_get](this.app.name)).stream;
+      return new (T._AsyncStarImplOfUserPlatformN()).new((function* idTokenChanges(stream) {
+        yield this[_initialized].future;
+        if (stream.add(this.currentUser)) return;
+        yield;
+        if (stream.addStream(dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._idTokenChangesListeners[$_get](this.app.name)).stream)) return;
+        yield;
+      }).bind(this)).stream;
     }
     userChanges() {
-      return dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_get](this.app.name)).stream;
+      return new (T._AsyncStarImplOfUserPlatformN()).new((function* userChanges(stream) {
+        yield this[_initialized].future;
+        if (stream.add(this.currentUser)) return;
+        yield;
+        if (stream.addStream(dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_get](this.app.name)).stream)) return;
+        yield;
+      }).bind(this)).stream;
     }
     sendPasswordResetEmail(email, actionCodeSettings = null) {
-      if (email == null) dart.nullFailed(I[0], 193, 12, "email");
+      if (email == null) dart.nullFailed(I[0], 208, 12, "email");
       return async.async(dart.void, (function* sendPasswordResetEmail() {
         try {
           yield dart.nullCheck(this[_webAuth]).sendPasswordResetEmail(email, web_utils.convertPlatformActionCodeSettings(actionCodeSettings));
@@ -203,7 +224,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     sendSignInLinkToEmail(email, actionCodeSettings = null) {
-      if (email == null) dart.nullFailed(I[0], 206, 12, "email");
+      if (email == null) dart.nullFailed(I[0], 221, 12, "email");
       return async.async(dart.void, (function* sendSignInLinkToEmail() {
         try {
           yield dart.nullCheck(this[_webAuth]).sendSignInLinkToEmail(email, web_utils.convertPlatformActionCodeSettings(actionCodeSettings));
@@ -220,7 +241,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       return dart.nullCheck(this[_webAuth]).languageCode;
     }
     setLanguageCode(languageCode) {
-      if (languageCode == null) dart.nullFailed(I[0], 223, 39, "languageCode");
+      if (languageCode == null) dart.nullFailed(I[0], 238, 39, "languageCode");
       return async.async(dart.void, (function* setLanguageCode() {
         dart.nullCheck(this[_webAuth]).languageCode = languageCode;
       }).bind(this));
@@ -233,7 +254,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     setPersistence(persistence) {
-      if (persistence == null) dart.nullFailed(I[0], 236, 43, "persistence");
+      if (persistence == null) dart.nullFailed(I[0], 251, 43, "persistence");
       return async.async(dart.void, (function* setPersistence() {
         try {
           return dart.nullCheck(this[_webAuth]).setPersistence(web_utils.convertPlatformPersistence(persistence));
@@ -260,7 +281,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     signInWithCredential(credential) {
-      if (credential == null) dart.nullFailed(I[0], 255, 22, "credential");
+      if (credential == null) dart.nullFailed(I[0], 270, 22, "credential");
       return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInWithCredential() {
         try {
           return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithCredential(dart.nullCheck(web_utils.convertPlatformCredential(credential))));
@@ -274,7 +295,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     signInWithCustomToken(token) {
-      if (token == null) dart.nullFailed(I[0], 267, 63, "token");
+      if (token == null) dart.nullFailed(I[0], 282, 63, "token");
       return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInWithCustomToken() {
         try {
           return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithCustomToken(token));
@@ -288,8 +309,8 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     signInWithEmailAndPassword(email, password) {
-      if (email == null) dart.nullFailed(I[0], 278, 14, "email");
-      if (password == null) dart.nullFailed(I[0], 278, 28, "password");
+      if (email == null) dart.nullFailed(I[0], 293, 14, "email");
+      if (password == null) dart.nullFailed(I[0], 293, 28, "password");
       return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInWithEmailAndPassword() {
         try {
           return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithEmailAndPassword(email, password));
@@ -303,8 +324,8 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     signInWithEmailLink(email, emailLink) {
-      if (email == null) dart.nullFailed(I[0], 289, 14, "email");
-      if (emailLink == null) dart.nullFailed(I[0], 289, 28, "emailLink");
+      if (email == null) dart.nullFailed(I[0], 304, 14, "email");
+      if (emailLink == null) dart.nullFailed(I[0], 304, 28, "emailLink");
       return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInWithEmailLink() {
         try {
           return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithEmailLink(email, emailLink));
@@ -318,8 +339,8 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     signInWithPhoneNumber(phoneNumber, applicationVerifier) {
-      if (phoneNumber == null) dart.nullFailed(I[0], 300, 12, "phoneNumber");
-      if (applicationVerifier == null) dart.nullFailed(I[0], 301, 38, "applicationVerifier");
+      if (phoneNumber == null) dart.nullFailed(I[0], 315, 12, "phoneNumber");
+      if (applicationVerifier == null) dart.nullFailed(I[0], 316, 38, "applicationVerifier");
       return async.async(platform_interface_confirmation_result.ConfirmationResultPlatform, (function* signInWithPhoneNumber() {
         try {
           let verifier = auth.RecaptchaVerifier.as(applicationVerifier.delegate);
@@ -334,10 +355,10 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     signInWithPopup(provider) {
-      if (provider == null) dart.nullFailed(I[0], 315, 63, "provider");
+      if (provider == null) dart.nullFailed(I[0], 330, 63, "provider");
       return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInWithPopup() {
         try {
-          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithPopup(dart.nullCheck(web_utils.convertPlatformAuthProvider(provider))));
+          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithPopup(web_utils.convertPlatformAuthProvider(provider)));
         } catch (e$) {
           let e = dart.getThrown(e$);
           if (core.Object.is(e)) {
@@ -348,10 +369,10 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     signInWithRedirect(provider) {
-      if (provider == null) dart.nullFailed(I[0], 327, 48, "provider");
+      if (provider == null) dart.nullFailed(I[0], 342, 48, "provider");
       return async.async(dart.void, (function* signInWithRedirect() {
         try {
-          return dart.nullCheck(this[_webAuth]).signInWithRedirect(dart.nullCheck(web_utils.convertPlatformAuthProvider(provider)));
+          return dart.nullCheck(this[_webAuth]).signInWithRedirect(web_utils.convertPlatformAuthProvider(provider));
         } catch (e$) {
           let e = dart.getThrown(e$);
           if (core.Object.is(e)) {
@@ -375,8 +396,8 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     useEmulator(host, port) {
-      if (host == null) dart.nullFailed(I[0], 346, 35, "host");
-      if (port == null) dart.nullFailed(I[0], 346, 45, "port");
+      if (host == null) dart.nullFailed(I[0], 361, 35, "host");
+      if (port == null) dart.nullFailed(I[0], 361, 45, "port");
       return async.async(dart.void, (function* useEmulator() {
         try {
           dart.nullCheck(this[_webAuth]).useEmulator("http://" + dart.str(host) + ":" + dart.str(port));
@@ -390,7 +411,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
       }).bind(this));
     }
     verifyPasswordResetCode(code) {
-      if (code == null) dart.nullFailed(I[0], 358, 49, "code");
+      if (code == null) dart.nullFailed(I[0], 373, 49, "code");
       return async.async(core.String, (function* verifyPasswordResetCode() {
         try {
           return yield dart.nullCheck(this[_webAuth]).verifyPasswordResetCode(code);
@@ -405,36 +426,41 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
     }
     verifyPhoneNumber(opts) {
       let phoneNumber = opts && 'phoneNumber' in opts ? opts.phoneNumber : null;
-      if (phoneNumber == null) dart.nullFailed(I[0], 368, 21, "phoneNumber");
+      if (phoneNumber == null) dart.nullFailed(I[0], 383, 21, "phoneNumber");
       let verificationCompleted = opts && 'verificationCompleted' in opts ? opts.verificationCompleted : null;
-      if (verificationCompleted == null) dart.nullFailed(I[0], 369, 41, "verificationCompleted");
+      if (verificationCompleted == null) dart.nullFailed(I[0], 384, 41, "verificationCompleted");
       let verificationFailed = opts && 'verificationFailed' in opts ? opts.verificationFailed : null;
-      if (verificationFailed == null) dart.nullFailed(I[0], 370, 38, "verificationFailed");
+      if (verificationFailed == null) dart.nullFailed(I[0], 385, 38, "verificationFailed");
       let codeSent = opts && 'codeSent' in opts ? opts.codeSent : null;
-      if (codeSent == null) dart.nullFailed(I[0], 371, 28, "codeSent");
+      if (codeSent == null) dart.nullFailed(I[0], 386, 28, "codeSent");
       let codeAutoRetrievalTimeout = opts && 'codeAutoRetrievalTimeout' in opts ? opts.codeAutoRetrievalTimeout : null;
-      if (codeAutoRetrievalTimeout == null) dart.nullFailed(I[0], 372, 44, "codeAutoRetrievalTimeout");
+      if (codeAutoRetrievalTimeout == null) dart.nullFailed(I[0], 387, 44, "codeAutoRetrievalTimeout");
       let autoRetrievedSmsCodeForTesting = opts && 'autoRetrievedSmsCodeForTesting' in opts ? opts.autoRetrievedSmsCodeForTesting : null;
       let timeout = opts && 'timeout' in opts ? opts.timeout : C[0] || CT.C0;
-      if (timeout == null) dart.nullFailed(I[0], 374, 14, "timeout");
+      if (timeout == null) dart.nullFailed(I[0], 389, 14, "timeout");
       let forceResendingToken = opts && 'forceResendingToken' in opts ? opts.forceResendingToken : null;
       dart.throw(new core.UnimplementedError.new("verifyPhoneNumber() is not supported on the web. Please use `signInWithPhoneNumber` instead."));
     }
   };
   (firebase_auth_web.FirebaseAuthWeb.__ = function() {
+    this[_initialized] = T.CompleterOfvoid().new();
     this[_webAuth] = null;
     firebase_auth_web.FirebaseAuthWeb.__proto__.new.call(this, {appInstance: null});
     ;
   }).prototype = firebase_auth_web.FirebaseAuthWeb.prototype;
   (firebase_auth_web.FirebaseAuthWeb.new = function(opts) {
     let app = opts && 'app' in opts ? opts.app : null;
-    if (app == null) dart.nullFailed(I[0], 29, 41, "app");
+    if (app == null) dart.nullFailed(I[0], 31, 41, "app");
+    this[_initialized] = T.CompleterOfvoid().new();
     this[_webAuth] = auth.getAuthInstance(core$.app(app.name));
     firebase_auth_web.FirebaseAuthWeb.__proto__.new.call(this, {appInstance: app});
     firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_set](app.name, T.StreamControllerOfUserPlatformN().broadcast());
     firebase_auth_web.FirebaseAuthWeb._authStateChangesListeners[$_set](app.name, T.StreamControllerOfUserPlatformN().broadcast());
     firebase_auth_web.FirebaseAuthWeb._idTokenChangesListeners[$_set](app.name, T.StreamControllerOfUserPlatformN().broadcast());
     dart.nullCheck(this[_webAuth]).onAuthStateChanged.map(T.UserWebN(), dart.fn(webUser => {
+      if (!dart.test(this[_initialized].isCompleted)) {
+        this[_initialized].complete();
+      }
       if (webUser == null) {
         return null;
       } else {
@@ -468,6 +494,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
   dart.setLibraryUri(firebase_auth_web.FirebaseAuthWeb, I[1]);
   dart.setFieldSignature(firebase_auth_web.FirebaseAuthWeb, () => ({
     __proto__: dart.getFields(firebase_auth_web.FirebaseAuthWeb.__proto__),
+    [_initialized]: dart.fieldType(async.Completer$(dart.void)),
     [_webAuth]: dart.finalFieldType(dart.nullable(auth.Auth))
   }));
   dart.defineLazy(firebase_auth_web.FirebaseAuthWeb, {
@@ -487,7 +514,7 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'package
   dart.trackLibraries("packages/firebase_auth_web/firebase_auth_web.dart", {
     "package:firebase_auth_web/firebase_auth_web.dart": firebase_auth_web
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["firebase_auth_web.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/firebase_auth_web/firebase_auth_web.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["firebase_auth_web.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../packages/firebase_auth_web/firebase_auth_web.dart.lib.js"}');
   // Exports:
   return {
     firebase_auth_web: firebase_auth_web

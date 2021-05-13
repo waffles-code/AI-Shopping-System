@@ -1,9 +1,9 @@
-
 import 'dart:ui';
 
 import 'package:aishop/components/databasemanager.dart';
 import 'package:aishop/components/icon_button.dart';
 import 'package:aishop/edit_profile.dart';
+import 'package:aishop/icons/icons.dart';
 import 'package:aishop/settings.dart';
 import 'package:aishop/widgets/beauty.dart';
 import 'package:aishop/widgets/books.dart';
@@ -17,6 +17,7 @@ import 'package:aishop/widgets/modal_model.dart';
 import 'package:aishop/screens/checkout.dart';
 
 import '../theme.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -69,16 +70,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightestgrey,
+        backgroundColor: lightestgrey,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
           child: AppBar(
+              leading: Icon(
+                AIicons.chip,
+                color: Colors.white,
+                size: 30,
+              ),
               backgroundColor: lightblack,
               title: !isSearching
                   ? Text(
                       "AI Shopping",
-                      style: TextStyle(
-                          color: white, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(color: white, fontWeight: FontWeight.bold),
                     )
                   : TextField(
                       onChanged: (val) {
@@ -95,19 +101,25 @@ class _HomePageState extends State<HomePage> {
                     ),
               actions: [
                 isSearching
-                    ?
-                CustomIconButton(
-                        icon: Icons.cancel,
-                        press: () {
+                    ? IconButton(
+                        icon: Icon(
+                          Icons.cancel,
+                          color: white,
+                        ),
+                        onPressed: () {
                           setState(() {
                             tempSearchStore.clear();
                             this.isSearching = false;
                           });
                         },
                       )
-                    : CustomIconButton(
-                        icon: Icons.search_rounded,
-                        press:  () {
+                    : IconButton(
+                        icon: Icon(
+                          AIicons.search,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        onPressed: () {
                           setState(() {
                             this.isSearching = true;
                             // Navigator.of(context).push(MaterialPageRoute(
@@ -115,46 +127,65 @@ class _HomePageState extends State<HomePage> {
                           });
                         },
                       ),
-                CustomIconButton(
-                  icon: Icons.favorite,
-                  press: () {},
+                IconButton(
+                  icon: Icon(
+                    AIicons.wishlist,
+                    color: Colors.white,
+                    size: 25,
+                  ),
+                  onPressed: () {},
                 ),
-
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0,0,20,0),
+                  padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      CustomIconButton(
-                        icon: Icons.shopping_cart,
-                        press: () {
+                      IconButton(
+                        icon: Icon(
+                          AIicons.cart,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        onPressed: () {
                           Navigator.push(
                               context,
                               new MaterialPageRoute(
                                   builder: (context) => CheckOutPage()));
                         },
                       ),
-                      CustomIconButton(
-                        icon: Icons.person,
-                        press: () {
+                      IconButton(
+                        icon: Icon(
+                          AIicons.profile,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        onPressed: () {
                           Navigator.push(
                               context,
                               new MaterialPageRoute(
                                   builder: (context) => EditProfilePage()));
                         },
                       ),
-                      CustomIconButton(
-                        icon: Icons.settings,
-                        press: () {
+                      IconButton(
+                        icon: Icon(
+                          AIicons.settings,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        onPressed: () {
                           Navigator.push(
                               context,
                               new MaterialPageRoute(
                                   builder: (context) => SettingsPage()));
                         },
                       ),
-                      CustomIconButton(
-                        icon: Icons.logout,
-                        press: () {},
+                      IconButton(
+                        icon: Icon(
+                          AIicons.signout,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        onPressed: () {},
                       ),
                     ],
                   ),
@@ -162,193 +193,90 @@ class _HomePageState extends State<HomePage> {
               ],
               iconTheme: IconThemeData(color: white)),
         ),
-        /*drawer: Drawer(
-          child: ListView(
-            children: <Widget>[
-              //Header
-              UserAccountsDrawerHeader(
-                //sets up drawer with user details
-                //if no user name is found the display welcome instead.
-                accountName: Text(name ?? "Welcome!"),
-                accountEmail: Text(userEmail!),
-                currentAccountPicture: GestureDetector(
-                  child: CircleAvatar(
-                    radius: 15,
-                    backgroundImage:
-                        imageUrl != null ? NetworkImage(imageUrl!) : null,
-                    child: imageUrl == null
-                        ? Icon(Icons.account_circle, size: 30)
-                        : Container(),
-                  ),
-                ),
-                decoration: BoxDecoration(color: black),
-              ),
-
-              //Body of the drawer
-              InkWell(
-                //Action when you tap the text
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => HomePage()));
-                },
-                child: ListTile(
-                  title: Text('Home Page'),
-                  leading: Icon(Icons.home),
-                ),
-              ),
-
-              InkWell(
-                //Action when you tap the text
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => EditProfilePage()));
-                },
-                child: ListTile(
-                  title: Text('My Account'),
-                  leading: Icon(Icons.person),
-                ),
-              ),
-
-              InkWell(
-                //Action when you tap the text
-                onTap: () {},
-                child: ListTile(
-                  title: Text('My Orders'),
-                  leading: Icon(Icons.shopping_basket),
-                ),
-              ),
-
-              InkWell(
-                //Action when you tap the text
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => SettingsPage()));
-                },
-                child: ListTile(
-                  title: Text('Settings'),
-                  leading: Icon(Icons.settings),
-                ),
-              ),
-
-              InkWell(
-                  //Action when you tap the text
-                  onTap: () async {
-                    setState(() {
-                      _isProcessing = true;
-                    });
-                    await signOut().then((result) {
-                      print(result);
-                      Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => LoginScreen()));
-                    }).catchError((error) {
-                      print('Sign Out Error: $error');
-                    });
-                    setState(() {
-                      _isProcessing = false;
-                    });
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      top: 8.0,
-                      bottom: 8.0,
-                    ),
-                    child: _isProcessing
-                        ? CircularProgressIndicator()
-                        : ListTile(
-                            title: Text('Sign out'),
-                            leading: Icon(Icons.logout),
-                          ),
-                  )),
-            ],
-          ),
-        ),*/
 
         //Body of the home page
         body: !isSearching
             ? ListView(
                 children: <Widget>[
+                  SizedBox(
+                    height: 10,
+                  ),
                   //category
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
+                  Center(
                     child: Text(
                       "Categories",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Inria Serif',
-                        fontWeight: FontWeight.w300,
-                        color: lightblack
-                      ),
+                      style: TextStyle(fontSize: 40),
                     ),
                   ),
                   Category(),
+                  SizedBox(
+                    height: 10,
+                  ),
                   //Products
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
-                    child: Text(
-                      "Books",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Inria Serif',
-                          fontWeight: FontWeight.w300,
-                          color: lightblack
-                      ),
-                    ),
+                  Center(
+                      child: Text(
+                    "Books",
+                    style: TextStyle(fontSize: 40),
+                  )),
+
+                  SizedBox(
+                    height: 10,
                   ),
                   Books(),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
-                    child: Text(
-                      "Clothes",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Inria Serif',
-                          fontWeight: FontWeight.w300,
-                          color: lightblack
-                      ),
-                    ),
+
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Center(
+                      child: Text(
+                    "Clothes",
+                    style: TextStyle(fontSize: 40),
+                  )),
+
+                  SizedBox(
+                    height: 10,
                   ),
                   Clothes(),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
-                    child: Text(
-                      "Beauty",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Inria Serif',
-                          fontWeight: FontWeight.w300,
-                          color: lightblack
-                      ),
-                    ),
+
+                  SizedBox(
+                    height: 10,
                   ),
+
+                  Center(
+                      child: Text(
+                    "Shoes",
+                    style: TextStyle(fontSize: 40),
+                  )),
                   Beauty(),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
-                    child: Text(
-                      "Kitchen",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Inria Serif',
-                          fontWeight: FontWeight.w300,
-                          color: lightblack
-                      ),
-                    ),
+                  SizedBox(
+                    height: 10,
+                  ),
+
+                  Center(
+                      child: Text(
+                    "Kitchen",
+                    style: TextStyle(fontSize: 40),
+                  )),
+                  SizedBox(
+                    height: 10,
                   ),
                   Kitchen(),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
-                    child: Text(
-                      "Tech",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Inria Serif',
-                          fontWeight: FontWeight.w300,
-                          color: lightblack
-                      ),
-                    ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Center(
+                      child: Text(
+                    "Tech",
+                    style: TextStyle(fontSize: 40),
+                  )),
+                  SizedBox(
+                    height: 10,
                   ),
                   Tech(),
+
+                  SizedBox(
+                    height: 10,
+                  ),
                 ],
               )
             : ListView(children: <Widget>[
@@ -371,7 +299,7 @@ Widget buildResultCard(BuildContext context, data) {
   return InkWell(
       onTap: () {
         DataService().increment(data['name']);
-        modal(context, data['url'], data['name'], data['description'],
+        Modal(context, data['url'], data['name'], data['description'],
             data['price']);
       },
       splashColor: Colors.white30,

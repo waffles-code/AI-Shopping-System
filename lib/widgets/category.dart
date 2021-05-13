@@ -10,7 +10,7 @@ class Category extends StatelessWidget {
             height: 250,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+              padding: EdgeInsets.fromLTRB(85, 0, 0, 0),
               children: <Widget>[
                 Padding(padding: EdgeInsets.fromLTRB(10, 0, 10, 0)),
                 Material(

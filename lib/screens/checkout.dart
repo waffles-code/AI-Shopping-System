@@ -1,8 +1,7 @@
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
+
 import 'package:aishop/components/ORDERREVIEW.dart';
-import 'package:aishop/components/checkoutdelivary.dart';
-import 'package:aishop/components/checkoutpayment.dart';
+
 import 'package:flutter/material.dart';
 import 'package:aishop/components/checkoutaddress.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -62,28 +61,34 @@ class _CheckOutPageState extends State<CheckOutPage> {
                   style: TextStyle(color: white),
                 ),
                 backgroundColor: lightblack,
-                bottom: TabBar(
-                    indicatorColor: white,
-                    labelColor: white,
-                    tabs: [
-                      Tab(
-                        text: "Address",
-                      ),
-                      Tab(
-                        text: "Delivery",
-                      ),
-                      Tab(
-                        text: "Payment",
-                      )
-                    ]),
+                bottom: PreferredSize(
+                  preferredSize: Size(MediaQuery.of(context).size.width, 50),
+                  child: Text(
+                    "Address",
+                    style: TextStyle(color: white),
+                    textWidthBasis: TextWidthBasis.parent,
+                  ),
+                ),
+                // bottom: TabBar(indicatorColor: white, labelColor: white, tabs: [
+                //   Tab(
+                //     text: "Address",
+                //   ),
+                //   Tab(
+                //     text: "Delivery",
+                //   ),
+                //   Tab(
+                //     text: "Payment",
+                //   )
+                // ]),
               ),
-              body: TabBarView(
-                children: <Widget>[
+              body:
+                  // TabBarView(
+                  //   children: <Widget>[
                   CheckOutAddress(),
-                  CheckOutDelivery(),
-                  CheckOutPayment(),
-                ],
-              ),
+              // CheckOutDelivery(),
+              // CheckOutPayment(),
+              // ],
+              // ),
             ),
           ),
           Expanded(

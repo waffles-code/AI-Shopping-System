@@ -20,4 +20,6 @@ class AIicons {
   static const IconData signout = IconData(0xe80b, fontFamily: _kFontFam);
   static const IconData cart = IconData(0xe80c, fontFamily: _kFontFam);
   static const IconData search = IconData(0xe80d, fontFamily: _kFontFam);
+  static const IconData roboshopper = IconData(0xe80e, fontFamily: _kFontFam);
+  static const IconData chip = IconData(0xe811, fontFamily: _kFontFam);
 }

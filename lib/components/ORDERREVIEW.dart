@@ -49,14 +49,15 @@ class OrderReview extends StatelessWidget {
                   if (sizethis <= snapshot.data!.docs.length) {
                     g = g + int.parse(snapshot.data!.docs[index].get('price'));
 
-                   // DataService().getTotalCost(g.toString());
+                    // DataService().getTotalCost(g.toString());
                   }
 
                   return SingleCartProduct(
                     prodname: snapshot.data!.docs[index].get('name'),
                     prodpicture: snapshot.data!.docs[index].get('url'),
-                    prodquantity: snapshot.data!.docs[index].get('quantity'),
-                    proddescription: snapshot.data!.docs[index].get('description'),
+                    // prodquantity: snapshot.data!.docs[index].get('quantity'),
+                    proddescription:
+                        snapshot.data!.docs[index].get('description'),
                     prodprice: snapshot.data!.docs[index].get('price'),
                   );
                 },
@@ -91,14 +92,14 @@ class SingleCartProduct extends StatelessWidget {
   final prodname;
   final prodpicture;
   final prodprice;
-  final prodquantity;
+  // final prodquantity;
   final proddescription;
 
   SingleCartProduct(
       {this.prodname,
       this.prodpicture,
       this.prodprice,
-      this.prodquantity,
+      // this.prodquantity,
       this.proddescription});
 
   @override
@@ -125,11 +126,11 @@ class SingleCartProduct extends StatelessWidget {
                 )
               ],
             ),
-            new Container(
-              alignment: Alignment.bottomLeft,
-              child: new Text(prodquantity,
-                  style: TextStyle(color: Color(0xFFFDD835))),
-            ),
+            // new Container(
+            //   alignment: Alignment.bottomLeft,
+            //   child: new Text(prodquantity,
+            //       style: TextStyle(color: Color(0xFFFDD835))),
+            // ),
             new Container(
               alignment: Alignment.bottomRight,
               child: new Text("R" + prodprice,
