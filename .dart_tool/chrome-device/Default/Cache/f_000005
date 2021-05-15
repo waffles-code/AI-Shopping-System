@@ -19,15 +19,15 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "ojtb27WvOgZoVcmw8TCQ4g==";
+    window.$dartAppId = "TpN1+owSej7HENVuy5jXsQ==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "7.1.1";
-window.$dwdsDevHandlerPath = "http://localhost:59453/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:49688/$dwdsSseHandler";
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:59455/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:49690/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -707,12 +707,7 @@ let modulePaths = {
  "packages/animated_text_kit/src/typewriter.dart": "packages/animated_text_kit/src/typewriter.dart.lib",
  "packages/animated_text_kit/src/rotate.dart": "packages/animated_text_kit/src/rotate.dart.lib",
  "packages/animated_text_kit/src/typer.dart": "packages/animated_text_kit/src/typer.dart.lib",
- "packages/aishop/screens/checkout.dart": "packages/aishop/screens/checkout.dart.lib",
- "packages/aishop/components/checkoutaddress.dart": "packages/aishop/components/checkoutaddress.dart.lib",
  "packages/aishop/components/textlink.dart": "packages/aishop/components/textlink.dart.lib",
- "packages/aishop/components/first_delivary_page.dart": "packages/aishop/components/first_delivary_page.dart.lib",
- "packages/aishop/components/checkoutdelivary.dart": "packages/aishop/components/checkoutdelivary.dart.lib",
- "packages/aishop/components/checkoutpayment.dart": "packages/aishop/components/checkoutpayment.dart.lib",
  "packages/aishop/components/ORDERREVIEW.dart": "packages/aishop/components/ORDERREVIEW.dart.lib",
  "packages/aishop/widgets/modal_model.dart": "packages/aishop/widgets/modal_model.dart.lib",
  "packages/aishop/icons/icons.dart": "packages/aishop/icons/icons.dart.lib",
@@ -1363,12 +1358,7 @@ let moduleNames = {
  "packages/animated_text_kit/src/typewriter.dart.lib": "packages/animated_text_kit/src/typewriter.dart",
  "packages/animated_text_kit/src/rotate.dart.lib": "packages/animated_text_kit/src/rotate.dart",
  "packages/animated_text_kit/src/typer.dart.lib": "packages/animated_text_kit/src/typer.dart",
- "packages/aishop/screens/checkout.dart.lib": "packages/aishop/screens/checkout.dart",
- "packages/aishop/components/checkoutaddress.dart.lib": "packages/aishop/components/checkoutaddress.dart",
  "packages/aishop/components/textlink.dart.lib": "packages/aishop/components/textlink.dart",
- "packages/aishop/components/first_delivary_page.dart.lib": "packages/aishop/components/first_delivary_page.dart",
- "packages/aishop/components/checkoutdelivary.dart.lib": "packages/aishop/components/checkoutdelivary.dart",
- "packages/aishop/components/checkoutpayment.dart.lib": "packages/aishop/components/checkoutpayment.dart",
  "packages/aishop/components/ORDERREVIEW.dart.lib": "packages/aishop/components/ORDERREVIEW.dart",
  "packages/aishop/widgets/modal_model.dart.lib": "packages/aishop/widgets/modal_model.dart",
  "packages/aishop/icons/icons.dart.lib": "packages/aishop/icons/icons.dart",

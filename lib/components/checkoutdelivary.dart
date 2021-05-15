@@ -19,68 +19,8 @@ class CheckOutDelivery extends StatelessWidget {
             children: [
               Container(
                 width: 500,
-                height: 100,
+                height: 150,
                 child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      onPrimary: black, // background
-                      primary: white,
-                      textStyle: TextStyle(
-                        fontSize: 18,
-                        fontFamily: 'Nunito Sans',
-                        fontWeight: FontWeight.w300,
-                      ),
-                      side: BorderSide(color: lightblack, width: 2),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(100)),
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              CheckOutPayment()));
-                    },
-                    child: new Column(children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.only(
-                            left: 5.0, top: 8.0, bottom: 2.0, right: 300.0),
-                        child: Text("Standard Delivery",
-                            style: new TextStyle(
-                                color: lightblack,
-                                fontWeight: FontWeight.w300,
-                                fontSize: 18.0)),
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(
-                              left: 0.0, top: 12.0, bottom: 0.0, right: 200.0),
-                          child: Text(
-                              "Estimated delivery in 4 - 7 business days",
-                              style: new TextStyle(
-                                  color: lightblack,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 10.0))),
-                      Container(
-                          margin: EdgeInsets.only(
-                              left: 400.0, top: 0.0, bottom: 12.0, right: 0.0),
-                          child: Text("R70",
-                              style: new TextStyle(
-                                  color: lightblack,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 20.0))),
-                    ])),
-              ),
-            ]),
-      ),
-      SizedBox(
-        height: 20,
-      ),
-      Container(
-          child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //====================================================================================row
-
-              children: [
-            Container(
-              width: 500,
-              height: 100,
-              child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     onPrimary: black, // background
                     primary: white,
@@ -97,33 +37,169 @@ class CheckOutDelivery extends StatelessWidget {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (BuildContext context) => CheckOutPayment()));
                   },
-                  child: new Column(children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(
-                          left: 5.0, top: 8.0, bottom: 2.0, right: 250.0),
-                      child: Text("Next Business Day Delivery",
-                          style: new TextStyle(
-                              color: lightblack,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15.0)),
+                  child: new Padding(
+                      padding: EdgeInsets.fromLTRB(5, 25, 3, 0),
+                      child: Column(children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(
+                              left: 5.0, top: 8.0, bottom: 2.0, right: 300.0),
+                          child: Text("Standard Delivery",
+                              style: new TextStyle(
+                                  color: lightblack,
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 18.0)),
+                        ),
+                        Container(
+                            margin: EdgeInsets.only(
+                                left: 0.0,
+                                top: 12.0,
+                                bottom: 0.0,
+                                right: 200.0),
+                            child: Text(
+                                "Estimated delivery in 4 - 7 business days",
+                                style: new TextStyle(
+                                    color: lightblack,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 10.0))),
+                        Container(
+                            margin: EdgeInsets.only(
+                                left: 400.0,
+                                top: 0.0,
+                                bottom: 12.0,
+                                right: 0.0),
+                            child: Text("R70",
+                                style: new TextStyle(
+                                    color: lightblack,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 20.0))),
+                      ])),
+                ),
+              )
+            ]),
+      ),
+      SizedBox(
+        height: 20,
+      ),
+      Container(
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //====================================================================================row
+
+              children: [
+            Container(
+                width: 500,
+                height: 150,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    onPrimary: black, // background
+                    primary: white,
+                    textStyle: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'Nunito Sans',
+                      fontWeight: FontWeight.w300,
                     ),
-                    Container(
+                    side: BorderSide(color: lightblack, width: 2),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100)),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => CheckOutPayment()));
+                  },
+                  child: new Padding(
+                      padding: EdgeInsets.fromLTRB(5, 25, 3, 0),
+                      child: Column(children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(
+                              left: 5.0, top: 8.0, bottom: 2.0, right: 250.0),
+                          child: Text("Next Business Day Delivery",
+                              style: new TextStyle(
+                                  color: lightblack,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 15.0)),
+                        ),
+                        Container(
+                            margin: EdgeInsets.only(
+                                left: 0.0,
+                                top: 12.0,
+                                bottom: 0.0,
+                                right: 250.0),
+                            child: Text("Estimated delivery tomorrow",
+                                style: new TextStyle(
+                                    color: lightblack,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 10.0))),
+                        Container(
+                            margin: EdgeInsets.only(
+                                left: 400.0,
+                                top: 0.0,
+                                bottom: 12.0,
+                                right: 0.0),
+                            child: Text("R250",
+                                style: new TextStyle(
+                                    color: lightblack,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 20.0))),
+                      ])),
+                ))
+          ])),
+      SizedBox(
+        height: 20,
+      ),
+      Container(
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //====================================================================================row
+
+              children: [
+            Container(
+              width: 500,
+              height: 150,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  onPrimary: black, // background
+                  primary: white,
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                    fontFamily: 'Nunito Sans',
+                    fontWeight: FontWeight.w300,
+                  ),
+                  side: BorderSide(color: lightblack, width: 2),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(100)),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => CheckOutPayment()));
+                },
+                child: new Padding(
+                    padding: EdgeInsets.fromLTRB(5, 25, 3, 0),
+                    child: Column(children: <Widget>[
+                      Container(
                         margin: EdgeInsets.only(
-                            left: 0.0, top: 12.0, bottom: 0.0, right: 250.0),
-                        child: Text("Estimated delivery tomorrow",
+                            left: 5.0, top: 4.0, bottom: 2.0, right: 220.0),
+                        child: Text("2nd - 3rd Business Day Delivery",
                             style: new TextStyle(
                                 color: lightblack,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 10.0))),
-                    Container(
-                        margin: EdgeInsets.only(
-                            left: 400.0, top: 0.0, bottom: 12.0, right: 0.0),
-                        child: Text("R250",
-                            style: new TextStyle(
-                                color: lightblack,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 20.0))),
-                  ])),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 15.0)),
+                      ),
+                      Container(
+                          margin: EdgeInsets.only(
+                              left: 0.0, top: 6.0, bottom: 0.0, right: 250.0),
+                          child: Text("Estimated delivery in 2 - 3 Days",
+                              style: new TextStyle(
+                                  color: lightblack,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 10.0))),
+                      Container(
+                          margin: EdgeInsets.only(
+                              left: 400.0, top: 0.0, bottom: 6.0, right: 0.0),
+                          child: Text("R200",
+                              style: new TextStyle(
+                                  color: lightblack,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 20.0))),
+                    ])),
+              ),
             )
           ])),
       SizedBox(
@@ -136,7 +212,7 @@ class CheckOutDelivery extends StatelessWidget {
               children: [
             Container(
               width: 500,
-              height: 100,
+              height: 150,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     onPrimary: black, // background
@@ -154,90 +230,41 @@ class CheckOutDelivery extends StatelessWidget {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (BuildContext context) => CheckOutPayment()));
                   },
-                  child: new Column(children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(
-                          left: 5.0, top: 8.0, bottom: 2.0, right: 220.0),
-                      child: Text("2nd - 3rd Business Day Delivery",
-                          style: new TextStyle(
-                              color: lightblack,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15.0)),
-                    ),
-                    Container(
-                        margin: EdgeInsets.only(
-                            left: 0.0, top: 12.0, bottom: 0.0, right: 250.0),
-                        child: Text("Estimated delivery in 2 - 3 Days",
-                            style: new TextStyle(
-                                color: lightblack,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 10.0))),
-                    Container(
-                        margin: EdgeInsets.only(
-                            left: 400.0, top: 0.0, bottom: 12.0, right: 0.0),
-                        child: Text("R200",
-                            style: new TextStyle(
-                                color: lightblack,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 20.0))),
-                  ])),
-            ),
-          ])),
-      SizedBox(
-        height: 20,
-      ),
-      Container(
-          child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //====================================================================================row
-
-              children: [
-            Container(
-              width: 500,
-              height: 100,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    onPrimary: black, // background
-                    primary: white,
-                    textStyle: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Nunito Sans',
-                      fontWeight: FontWeight.w300,
-                    ),
-                    side: BorderSide(color: lightblack, width: 2),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100)),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => CheckOutPayment()));
-                  },
-                  child: new Column(children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(
-                          left: 5.0, top: 8.0, bottom: 2.0, right: 300.0),
-                      child: Text("Saturday DElivery",
-                          style: new TextStyle(
-                              color: lightblack,
-                              fontWeight: FontWeight.w300,
-                              fontSize: 15.0)),
-                    ),
-                    Container(
-                        margin: EdgeInsets.only(
-                            left: 0.0, top: 12.0, bottom: 0.0, right: 250.0),
-                        child: Text("Estimated delivery in 2 -3 days",
-                            style: new TextStyle(
-                                color: lightblack,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 10.0))),
-                    Container(
-                        margin: EdgeInsets.only(
-                            left: 400.0, top: 0.0, bottom: 12.0, right: 0.0),
-                        child: Text("R500",
-                            style: new TextStyle(
-                                color: lightblack,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 20.0))),
-                  ])),
+                  child: new Padding(
+                      padding: EdgeInsets.fromLTRB(5, 25, 3, 0),
+                      child: Column(children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(
+                              left: 5.0, top: 8.0, bottom: 2.0, right: 300.0),
+                          child: Text("Saturday DElivery",
+                              style: new TextStyle(
+                                  color: lightblack,
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 15.0)),
+                        ),
+                        Container(
+                            margin: EdgeInsets.only(
+                                left: 0.0,
+                                top: 12.0,
+                                bottom: 0.0,
+                                right: 250.0),
+                            child: Text("Estimated delivery in 2 -3 days",
+                                style: new TextStyle(
+                                    color: lightblack,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 10.0))),
+                        Container(
+                            margin: EdgeInsets.only(
+                                left: 400.0,
+                                top: 0.0,
+                                bottom: 12.0,
+                                right: 0.0),
+                            child: Text("R500",
+                                style: new TextStyle(
+                                    color: lightblack,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 20.0))),
+                      ]))),
             ),
           ])),
     ])));
