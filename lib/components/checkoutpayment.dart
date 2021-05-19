@@ -1,3 +1,4 @@
+import 'package:aishop/Services/historytracker.dart';
 import 'package:aishop/components/textlink.dart';
 import 'package:aishop/screens/homepage.dart';
 import 'package:flutter/material.dart';
@@ -185,6 +186,8 @@ class CheckOutPayment extends StatelessWidget {
                               borderRadius: BorderRadius.circular(100)),
                         ),
                         onPressed: () {
+                          //add to purchase history
+                          addToPurchases();
                           Navigator.push(
                               context,
                               new MaterialPageRoute(

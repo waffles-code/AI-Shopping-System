@@ -31,3 +31,36 @@ class HistoryTracker  {
   }
 }
 
+void addToPurchases(){
+  DateTime now = new DateTime.now();
+  DateTime date = new DateTime(now.year, now.month, now.day);
+  FirebaseFirestore.instance
+      .collection('Users')
+      .doc(uid)
+      .collection('Cart')
+      .get().then((snapshots) => {
+    snapshots.docs.forEach((productid) {
+      FirebaseFirestore.instance
+          .collection('Users')
+          .doc(uid)
+          .collection('Purchases')
+          .doc(productid.id)
+          .get ()
+          .then((snapshot) => {
+        if (snapshot.data() == null || !snapshot.exists) {
+          FirebaseFirestore.instance.collection('Users').doc(uid).collection("Purchases").doc(productid.id). set (
+              {
+                'url': productid.get("url"),
+                'name':productid.get("name"),
+                'description':productid.get("description"),
+                'price':productid.get("price"),
+                'date': date
+              }
+          )
+        },
+        productid.reference.delete()
+      });
+    })
+  }
+  );
+}
