@@ -16,7 +16,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/widgets/modal_model.dart';
 import 'package:aishop/screens/checkout.dart';
-
+import 'package:aishop/components/order_review.dart';
 import '../theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -70,6 +70,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    updateCartTotal();
     return Scaffold(
         backgroundColor: lightestgrey,
         appBar: PreferredSize(

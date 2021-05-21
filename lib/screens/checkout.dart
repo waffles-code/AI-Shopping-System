@@ -1,11 +1,12 @@
 // ignore: avoid_web_libraries_in_flutter
 
-import 'package:aishop/components/ORDERREVIEW.dart';
+import 'package:aishop/components/order_review.dart';
 
 import 'package:flutter/material.dart';
 import 'package:aishop/components/checkoutaddress.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:aishop/components/order_review.dart';
 
 import '../theme.dart';
 
@@ -47,6 +48,10 @@ class _CheckOutPageState extends State<CheckOutPage> {
 
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      updateCartTotal();
+    });
+
     return DefaultTabController(
       length: 3,
       child: Row(

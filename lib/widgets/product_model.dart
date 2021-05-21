@@ -1,4 +1,5 @@
 import 'package:aishop/Services/historytracker.dart';
+import 'package:aishop/components/order_review.dart';
 import 'package:aishop/components/databasemanager.dart';
 import 'package:aishop/icons/icons.dart';
 import 'package:aishop/utils/cart.dart';
@@ -163,6 +164,7 @@ class _ProductCard extends State<ProductCard> {
                                   widget.description, 
                                   widget.name,
                                   widget.price);
+                              updateCartTotal();
                             }
                             else
                               Cart.removeFromCart(
@@ -171,6 +173,7 @@ class _ProductCard extends State<ProductCard> {
                                   widget.description,
                                   widget.name,
                                   widget.price);
+                            updateCartTotal();
                           },
                           style: ElevatedButton.styleFrom(
                               primary: Colors.black54, elevation: 0.1),
