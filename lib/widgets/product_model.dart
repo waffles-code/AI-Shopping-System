@@ -127,9 +127,16 @@ class _ProductCard extends State<ProductCard> {
                         setState(() {
                           toggle = !toggle;
                         });
-                        if (toggle)
+                        if (toggle) {
                           Wishlist.addToCart(widget.id, widget.imgUrl,
                               widget.description, widget.name, widget.price);
+                          HistoryTracker.addToHistory(
+                              widget.id,
+                              widget.imgUrl,
+                              widget.description,
+                              widget.name,
+                              widget.price);
+                        }
                         else
                           Wishlist.removeFromCart(widget.id, widget.imgUrl,
                               widget.description, widget.name, widget.price);
