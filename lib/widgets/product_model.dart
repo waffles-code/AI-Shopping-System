@@ -143,13 +143,20 @@ class _ProductCard extends State<ProductCard> {
                             setState(() {
                               add = !add;
                             });
-                            if (add)
+                            if (add) {
                               Cart.addToCart(
                                   widget.id,
                                   widget.imgUrl,
                                   widget.description,
                                   widget.name,
                                   widget.price);
+                              HistoryTracker.addToHistory(
+                                  widget.id,
+                                  widget.imgUrl,
+                                  widget.description, 
+                                  widget.name,
+                                  widget.price);
+                            }
                             else
                               Cart.removeFromCart(
                                   widget.id,
