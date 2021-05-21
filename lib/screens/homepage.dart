@@ -6,6 +6,7 @@ import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
 import 'package:aishop/settings.dart';
 import 'package:aishop/widgets/beauty.dart';
+import 'package:aishop/widgets/recommendations.dart';
 import 'package:aishop/widgets/books.dart';
 import 'package:aishop/widgets/category.dart';
 import 'package:aishop/widgets/clothes.dart';
@@ -212,7 +213,21 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 10,
                   ),
+
                   //Products
+                  Center(
+                    child: Text(
+                      "Recommendations",
+                      style: TextStyle(fontSize: 40),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Recommendations(),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Center(
                       child: Text(
                     "Books",
