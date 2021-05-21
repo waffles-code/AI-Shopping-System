@@ -7,17 +7,18 @@ import '../theme.dart';
 //model for modal pop up
 //displays image , price, name, description
 
-Modal(context, imgUrl, name, description, price) {
+Modal(context, id, imgUrl, name, description, price) {
   return showDialog(
       context: context,
       builder: (context) {
         return Center(
           child: Material(
-            type: MaterialType.transparency,
+            color: Colors.black,
+            borderRadius: BorderRadius.circular(10),
+            // type: MaterialType.transparency,
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.black54),
+                  borderRadius: BorderRadius.circular(10), color: Colors.black),
               padding: EdgeInsets.all(15),
               width: MediaQuery.of(context).size.width * 0.7,
               height: 600,
@@ -63,7 +64,7 @@ Modal(context, imgUrl, name, description, price) {
                     ),
                     Center(
                         child: Padding(
-                      padding: const EdgeInsets.fromLTRB(180.0, 5.0, 20.0, 0.0),
+                      padding: const EdgeInsets.fromLTRB(430.0, 5.0, 20.0, 0.0),
                       child: Row(
                         children: <Widget>[
                           IconButton(
@@ -75,7 +76,7 @@ Modal(context, imgUrl, name, description, price) {
                             onPressed: () {},
                           ),
                           SizedBox(
-                            width: 12,
+                            width: 15,
                           ),
                           ElevatedButton.icon(
                             onPressed: () {},

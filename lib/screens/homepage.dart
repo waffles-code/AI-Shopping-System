@@ -315,8 +315,8 @@ Widget buildResultCard(BuildContext context, data) {
   return InkWell(
       onTap: () {
         DataService().increment(data['name']);
-        Modal(context, data['url'], data['name'], data['description'],
-            data['price']);
+        Modal(context, data['id'], data['url'], data['name'],
+            data['description'], data['price']);
       },
       splashColor: Colors.white30,
       customBorder:

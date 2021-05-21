@@ -20,12 +20,12 @@ class ProductCard extends StatefulWidget {
   final String price;
 
   ProductCard(
-      this.id,
-      this.imgUrl,
-      this.name,
-      this.description,
-      this.price,
-      );
+    this.id,
+    this.imgUrl,
+    this.name,
+    this.description,
+    this.price,
+  );
 
   @override
   State<StatefulWidget> createState() {
@@ -57,17 +57,16 @@ class _ProductCard extends State<ProductCard> {
               ],
               borderRadius: BorderRadius.circular(20)),
           child:
-          Column(crossAxisAlignment: CrossAxisAlignment.center, children: <
-              Widget>[
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: <
+                  Widget>[
             InkWell(
                 onTap: () {
                   //add to history clicks
-                  HistoryTracker.addToHistory(
-                      widget.id, widget.imgUrl, widget.description, widget.name, widget.price
-                  );
+                  HistoryTracker.addToHistory(widget.id, widget.imgUrl,
+                      widget.description, widget.name, widget.price);
                   //on tap modal pop up
-                  Modal(context, widget.imgUrl, widget.name, widget.description,
-                      widget.price);
+                  Modal(context, widget.id, widget.imgUrl, widget.name,
+                      widget.description, widget.price);
                   DataService().increment(widget.name);
                 },
                 splashColor: Colors.white30,
@@ -77,43 +76,43 @@ class _ProductCard extends State<ProductCard> {
                     padding: const EdgeInsets.all(4.0),
                     child: Container(
                         child: Padding(
-                          padding: EdgeInsets.all(5.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              //image from db
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Image.network(
-                                  widget.imgUrl,
-                                  width: 180,
-                                  height: 200,
-                                  fit: BoxFit.fitWidth,
-                                ),
-                              ),
-                              //text
-                              Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: Text(
-                                  widget.name,
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: "Nunito Sans"),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                              //price
-                              Text("R " + widget.price,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.orange,
-                                  )),
-                            ],
+                      padding: EdgeInsets.all(5.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          //image from db
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.network(
+                              widget.imgUrl,
+                              width: 180,
+                              height: 200,
+                              fit: BoxFit.fitWidth,
+                            ),
                           ),
-                        )))),
+                          //text
+                          Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Text(
+                              widget.name,
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Nunito Sans"),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          //price
+                          Text("R " + widget.price,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.orange,
+                              )),
+                        ],
+                      ),
+                    )))),
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -131,14 +130,9 @@ class _ProductCard extends State<ProductCard> {
                         if (toggle) {
                           Wishlist.addToCart(widget.id, widget.imgUrl,
                               widget.description, widget.name, widget.price);
-                          HistoryTracker.addToHistory(
-                              widget.id,
-                              widget.imgUrl,
-                              widget.description,
-                              widget.name,
-                              widget.price);
-                        }
-                        else
+                          HistoryTracker.addToHistory(widget.id, widget.imgUrl,
+                              widget.description, widget.name, widget.price);
+                        } else
                           Wishlist.removeFromCart(widget.id, widget.imgUrl,
                               widget.description, widget.name, widget.price);
                       },
@@ -161,12 +155,11 @@ class _ProductCard extends State<ProductCard> {
                               HistoryTracker.addToHistory(
                                   widget.id,
                                   widget.imgUrl,
-                                  widget.description, 
+                                  widget.description,
                                   widget.name,
                                   widget.price);
                               updateCartTotal();
-                            }
-                            else
+                            } else
                               Cart.removeFromCart(
                                   widget.id,
                                   widget.imgUrl,
@@ -179,27 +172,27 @@ class _ProductCard extends State<ProductCard> {
                               primary: Colors.black54, elevation: 0.1),
                           icon: add
                               ? Icon(
-                            Icons.done_all_sharp,
-                            size: 20,
-                            color: Colors.green,
-                          )
+                                  Icons.done_all_sharp,
+                                  size: 20,
+                                  color: Colors.green,
+                                )
                               : Icon(Icons.add_shopping_cart_rounded,
-                              size: 20, color: white),
+                                  size: 20, color: white),
                           label: add
                               ? Text(
-                            "ADDED",
-                            style: TextStyle(
-                                fontSize: 15.0,
-                                fontWeight: FontWeight.bold,
-                                color: white),
-                          )
+                                  "ADDED",
+                                  style: TextStyle(
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: white),
+                                )
                               : Text(
-                            "ADD TO CART",
-                            style: TextStyle(
-                                fontSize: 15.0,
-                                fontWeight: FontWeight.bold,
-                                color: white),
-                          ))),
+                                  "ADD TO CART",
+                                  style: TextStyle(
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: white),
+                                ))),
                 ],
               ),
             )
