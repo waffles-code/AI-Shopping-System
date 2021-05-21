@@ -55,6 +55,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
             flex: 2,
             child: Scaffold(
               appBar: AppBar(
+
                 title: Text(
                   "Checkout Page",
                   textWidthBasis: TextWidthBasis.parent,

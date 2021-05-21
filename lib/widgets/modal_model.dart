@@ -7,7 +7,7 @@ import '../theme.dart';
 //model for modal pop up
 //displays image , price, name, description
 
-Modal(context, imgUrl, name, description, price) {
+Modal(context,id, imgUrl, name, description, price) {
   return showDialog(
       context: context,
       builder: (context) {
@@ -78,7 +78,9 @@ Modal(context, imgUrl, name, description, price) {
                             width: 12,
                           ),
                           ElevatedButton.icon(
-                            onPressed: () {},
+                            onPressed: () {
+
+                            },
                             style: ElevatedButton.styleFrom(
                               primary: Colors.grey,
                             ),
