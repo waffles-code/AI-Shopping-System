@@ -1,7 +1,12 @@
 import 'package:aishop/icons/icons.dart';
+import 'package:aishop/screens/checkout.dart';
+import 'package:aishop/utils/cart.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:aishop/widgets/Quantity_modal.dart';
+import 'package:flutter/services.dart';
+
 
 import '../theme.dart';
 
@@ -20,6 +25,8 @@ class OrderReview extends StatelessWidget {
   etdata() async {
     return usersRef;
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +61,10 @@ class OrderReview extends StatelessWidget {
                   }
 
                   return SingleCartProduct(
+                    cartid: snapshot.data!.docs[index].id,
                     prodname: snapshot.data!.docs[index].get('name'),
                     prodpicture: snapshot.data!.docs[index].get('url'),
-                    // prodquantity: snapshot.data!.docs[index].get('quantity'),
+                    prodquantity: snapshot.data!.docs[index].get('quantity'),
                     proddescription:
                         snapshot.data!.docs[index].get('description'),
                     prodprice: snapshot.data!.docs[index].get('price'),
@@ -93,15 +101,17 @@ class SingleCartProduct extends StatelessWidget {
   final prodname;
   final prodpicture;
   final prodprice;
-  // final prodquantity;
+  final prodquantity;
   final proddescription;
+  final cartid;
 
   SingleCartProduct(
       {this.prodname,
       this.prodpicture,
       this.prodprice,
-      // this.prodquantity,
-      this.proddescription});
+      this.prodquantity,
+      this.proddescription,
+      this.cartid});
 
   @override
   Widget build(BuildContext context) {
@@ -143,11 +153,12 @@ class SingleCartProduct extends StatelessWidget {
                   width: 20,
                   height: 20,
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.yellow)),
+                    color: Colors.blueGrey,
+                    borderRadius: BorderRadius.circular(4.0),
+                  ),
                   child: Center(
                       child: Icon(
-                    Icons.exposure_minus_1,
+                    Icons.plus_one,
                     size: 10,
                     color: Colors.yellowAccent,
                   )),
@@ -156,9 +167,22 @@ class SingleCartProduct extends StatelessWidget {
                   height: 5,
                   width: 10,
                 ),
-                Text(
-                  "1",
-                  style: TextStyle(fontSize: 10, color: Colors.yellowAccent),
+                TextButton(
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                    backgroundColor: MaterialStateProperty.all(Colors.white)
+                  ),
+                  onPressed: () {
+                      QModal(context).then((onValue){
+                        Cart.UpdateQuantity(cartid, prodpicture, proddescription, prodname, prodprice, "$onValue");
+                        Navigator.pushReplacement(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => CheckOutPage()));
+                      });
+
+                  },
+                  child: Text(prodquantity),
                 ),
                 SizedBox(
                   height: 5,
@@ -168,11 +192,12 @@ class SingleCartProduct extends StatelessWidget {
                   width: 20,
                   height: 20,
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.yellow)),
+                    color: Colors.blueGrey,
+                    borderRadius: BorderRadius.circular(4.0),
+                  ),
                   child: Center(
                       child: Icon(
-                    Icons.exposure_plus_1,
+                    Icons.exposure_minus_1,
                     size: 10,
                     color: Colors.yellowAccent,
                   )),
@@ -205,7 +230,13 @@ class SingleCartProduct extends StatelessWidget {
                         width: 0,
                       ),
                       ElevatedButton.icon(
-                        onPressed: () {},
+                        onPressed: () {
+                          Cart.removeFromCart(cartid, prodpicture, proddescription, prodname, prodprice);
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => CheckOutPage()));
+                        },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.grey,
                         ),
@@ -232,4 +263,5 @@ class SingleCartProduct extends StatelessWidget {
       ),
     );
   }
+
 }
