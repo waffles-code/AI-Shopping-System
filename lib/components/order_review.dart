@@ -11,17 +11,19 @@ double g = 0.00;
 int sizethis = 0;
 int count = 0;
 
- void updateCartTotal() async{
-  double total=0;
-     await FirebaseFirestore.instance
+void updateCartTotal() async {
+  double total = 0;
+  await FirebaseFirestore.instance
       .collection('Users')
       .doc(FirebaseAuth.instance.currentUser!.uid)
-      .collection("Cart").get().then((value){
+      .collection("Cart")
+      .get()
+      .then((value) {
     value.docs.forEach((element) {
-      total+=double.parse(element.data()['price']);
-    }) ;
+      total += double.parse(element.data()['price']);
+    });
   });
-  g=total;
+  g = total;
 }
 
 // ignore: must_be_immutable
@@ -70,7 +72,7 @@ class _OrderReviewState extends State<OrderReview> {
               return new ListView.builder(
                 itemBuilder: (context, index) {
                   return SingleCartProduct(
-                      cartid: snapshot.data!.docs[index].id,
+                    cartid: snapshot.data!.docs[index].id,
                     prodname: snapshot.data!.docs[index].get('name'),
                     prodpicture: snapshot.data!.docs[index].get('url'),
                     // prodquantity: snapshot.data!.docs[index].get('quantity'),
@@ -95,8 +97,7 @@ class _OrderReviewState extends State<OrderReview> {
                   style: TextStyle(color: white),
                 ),
                 subtitle: new Text(
-                  " \n TOTAL                                R$g"
-                     ,
+                  " \n TOTAL                                R$g",
                   style: TextStyle(color: white, fontSize: 19.0),
                 ),
               ))
@@ -129,7 +130,6 @@ class SingleCartProduct extends StatefulWidget {
 class _SingleCartProductState extends State<SingleCartProduct> {
   @override
   Widget build(BuildContext context) {
-
     return Card(
       color: Color(0xB7242424),
       child: ListTile(
@@ -231,20 +231,20 @@ class _SingleCartProductState extends State<SingleCartProduct> {
                       ),
                       ElevatedButton.icon(
                         onPressed: () {
-                          Cart.removeFromCart(widget.cartid, widget.prodpicture, widget.proddescription, widget.prodname, widget.prodprice);
+                          Cart.removeFromCart(
+                              widget.cartid,
+                              widget.prodpicture,
+                              widget.proddescription,
+                              widget.prodname,
+                              widget.prodprice);
                           setState(() {
-                            g-=double.parse(widget.prodprice);
+                            g -= double.parse(widget.prodprice);
                             Navigator.pushReplacement(
                                 context,
                                 new MaterialPageRoute(
                                     builder: (context) => CheckOutPage()));
                             updateCartTotal();
                           });
-
-
-
-
-
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.grey,

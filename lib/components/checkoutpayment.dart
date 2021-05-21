@@ -2,6 +2,8 @@ import 'package:aishop/Services/historytracker.dart';
 import 'package:aishop/components/textlink.dart';
 import 'package:aishop/screens/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:aishop/components/order_review.dart';
+import 'checkoutdelivary.dart';
 
 import '../theme.dart';
 
@@ -76,7 +78,7 @@ class CheckOutPayment extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.only(
                                 left: 0.0, top: 8.0, bottom: 2.0, right: 100.0),
-                            child: Text("Order Subtotal     R 2 219,97",
+                            child: Text("Order Subtotal           R$g",
                                 style: new TextStyle(
                                     color: lightblack,
                                     fontWeight: FontWeight.normal,
@@ -88,7 +90,7 @@ class CheckOutPayment extends StatelessWidget {
                                   top: 12.0,
                                   bottom: 0.0,
                                   right: 150.0),
-                              child: Text("Delivery        R 250,00",
+                              child: Text("Delivery        R" + n.toString(),
                                   style: new TextStyle(
                                       color: lightblack,
                                       fontWeight: FontWeight.normal,
@@ -150,7 +152,7 @@ class CheckOutPayment extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.only(
                                 left: 0.0, top: 8.0, bottom: 2.0, right: 150.0),
-                            child: Text("TOTAL         R 2469,97",
+                            child: Text("TOTAL         R" + (g + n).toString(),
                                 style: new TextStyle(
                                     color: lightblack,
                                     fontWeight: FontWeight.normal,
