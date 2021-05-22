@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 
 import '../theme.dart';
 
-class CheckOutDelivery extends StatelessWidget {
+var n = 0;
+
+class CheckOutDelivery extends StatefulWidget {
+  //User _user = FirebaseAuth.instance.currentUser!;
+  @override
+  _CheckOutDelivery createState() => _CheckOutDelivery();
+}
+
+class _CheckOutDelivery extends State<CheckOutDelivery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +42,9 @@ class CheckOutDelivery extends StatelessWidget {
                         borderRadius: BorderRadius.circular(100)),
                   ),
                   onPressed: () {
+                    setState(() {
+                      n = 70;
+                    });
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (BuildContext context) => CheckOutPayment()));
                   },
@@ -102,6 +113,9 @@ class CheckOutDelivery extends StatelessWidget {
                         borderRadius: BorderRadius.circular(100)),
                   ),
                   onPressed: () {
+                    setState(() {
+                      n = 250;
+                    });
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (BuildContext context) => CheckOutPayment()));
                   },
@@ -167,6 +181,9 @@ class CheckOutDelivery extends StatelessWidget {
                       borderRadius: BorderRadius.circular(100)),
                 ),
                 onPressed: () {
+                  setState(() {
+                    n = 200;
+                  });
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (BuildContext context) => CheckOutPayment()));
                 },
@@ -227,6 +244,9 @@ class CheckOutDelivery extends StatelessWidget {
                         borderRadius: BorderRadius.circular(100)),
                   ),
                   onPressed: () {
+                    setState(() {
+                      n = 500;
+                    });
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (BuildContext context) => CheckOutPayment()));
                   },
