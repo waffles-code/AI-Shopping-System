@@ -100,7 +100,7 @@ void addToPurchases() {
                 'name': productid.get("name"),
                 'description': productid.get("description"),
                 'price': productid.get("price"),
-                'date': date
+                'date': date,
               }
           ),
 

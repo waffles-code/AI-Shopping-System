@@ -2,7 +2,6 @@ import 'package:aishop/utils/authentication.dart';
 import 'package:aishop/widgets/product_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../theme.dart';
 
 class Recommendations extends StatefulWidget {
   @override
@@ -45,35 +44,67 @@ class _Recommendations extends State<Recommendations> {
                             }
                           }
                         }
-                        return GridView.builder(
-                          scrollDirection: Axis.horizontal,
-                          gridDelegate:
-                          SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 1,
-                              childAspectRatio: 3 / 2,
-                              mainAxisSpacing: 0),
-                          itemBuilder: (context, index) {
-                            return ProductCard(
-                              recommendations[index].id,
-                              recommendations[index].get('url'),
-                              recommendations[index].get('name'),
-                              recommendations[index]
-                                  .get('description'),
-                              recommendations[index]
-                                  .get('price')
-                                  .toString(),
+                        if(recommendations.length > 3){
+                          recommendations..shuffle();
+                          for(var i = 0; i < recommendations.length; i++){
+                            //recommendations.remove(randomItem);
+                            print(recommendations.length);
+                            return GridView.builder(
+                              scrollDirection: Axis.horizontal,
+                              gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 1,
+                                  childAspectRatio: 3 / 2,
+                                  mainAxisSpacing: 0),
+                              itemBuilder: (context, index) {
+                                return ProductCard(
+                                  recommendations[index].id,
+                                  recommendations[index].get('url'),
+                                  recommendations[index].get('name'),
+                                  recommendations[index]
+                                      .get('description'),
+                                  recommendations[index]
+                                      .get('price')
+                                      .toString(),
+                                );
+                              },
+                              itemCount: 3,
                             );
-                          },
-                          itemCount: recommendations.length,
-                        );
+                          }
+                        }
+                        else{
+                          for(var i = 0; i < recommendations.length; i++){
+                            print(recommendations[i].id);
+                            return GridView.builder(
+                              scrollDirection: Axis.horizontal,
+                              gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 1,
+                                  childAspectRatio: 3 / 2,
+                                  mainAxisSpacing: 0),
+                              itemBuilder: (context, index) {
+                                return ProductCard(
+                                  recommendations[index].id,
+                                  recommendations[index].get('url'),
+                                  recommendations[index].get('name'),
+                                  recommendations[index]
+                                      .get('description'),
+                                  recommendations[index]
+                                      .get('price')
+                                      .toString(),
+                                );
+                              },
+                              itemCount: recommendations.length,
+                            );
+                          }
+                        }
 
                     } else {
-                      return SizedBox(
-                        child: CircularProgressIndicator(
-                          backgroundColor: lightgrey,
-                        ),
+                      return Text(
+                        "No Recommendations yet"
                       );
                     }
+                    throw '';
                   });
             }));
   }
