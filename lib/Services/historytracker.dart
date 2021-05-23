@@ -67,7 +67,6 @@ class HistoryTracker {
           FirebaseFirestore.instance.collection('Users').doc(uid).collection(
               "History").doc(id)
               .update({'index': 0}),
-
         }
     }
     );
@@ -108,19 +107,11 @@ void addToPurchases() {
               .doc(productid.id)
               .get()
               .then((prodshot) {
-            if (prodshot.data()!.containsKey("Purchased By")) {
               FirebaseFirestore.instance.collection('Products').doc(
                   productid.id).update(
                   {'Purchased by': FieldValue.increment(1)}
               );
             }
-            else {
-              FirebaseFirestore.instance.collection('Products').doc(
-                  productid.id).update(
-                {'Purchased by': 1},
-              );
-            }
-          }
           )
         },
         productid.reference.delete()
