@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:aishop/components/order_review.dart';
 import 'package:aishop/screens/search.dart';
 import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
@@ -9,6 +10,7 @@ import 'package:aishop/widgets/books.dart';
 import 'package:aishop/widgets/category.dart';
 import 'package:aishop/widgets/clothes.dart';
 import 'package:aishop/widgets/kitchen.dart';
+import 'package:aishop/widgets/recommendations.dart';
 import 'package:aishop/widgets/tech.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/screens/checkout.dart';
