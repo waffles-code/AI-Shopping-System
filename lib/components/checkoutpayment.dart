@@ -7,11 +7,9 @@ import 'package:aishop/utils/authentication.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/components/order_review.dart';
-import 'ORDERREVIEW.dart';
 import 'checkoutdelivary.dart';
 
 import '../theme.dart';
-import 'letscheckout.dart';
 
 class CheckOutPayment extends StatelessWidget {
   CollectionReference users = FirebaseFirestore.instance.collection('Users');
