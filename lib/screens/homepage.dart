@@ -1,25 +1,22 @@
 import 'dart:ui';
 
-<<<<<<< HEAD
 import 'package:aishop/components/databasemanager.dart';
-=======
-import 'package:aishop/components/order_review.dart';
-import 'package:aishop/screens/search.dart';
->>>>>>> 69670672654eaca476b15289b7c9472151893548
 import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
-import 'package:aishop/screens/wishlist.dart';
+// import 'package:aishop/screens/wishlistscreen.dart';
 import 'package:aishop/settings.dart';
 import 'package:aishop/widgets/beauty.dart';
+import 'package:aishop/widgets/recommendations.dart';
 import 'package:aishop/widgets/books.dart';
 import 'package:aishop/widgets/category.dart';
 import 'package:aishop/widgets/clothes.dart';
 import 'package:aishop/widgets/kitchen.dart';
-import 'package:aishop/widgets/recommendations.dart';
 import 'package:aishop/widgets/tech.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:aishop/widgets/modal_model.dart';
 import 'package:aishop/screens/checkout.dart';
-
+import 'package:aishop/components/order_review.dart';
 import '../theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,8 +25,48 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   bool isSearching = false;
+
+  var queryResultSet = [];
+  var tempSearchStore = [];
+
+  initiateSearch(value) {
+    if (value.length == 0) {
+      setState(() {
+        queryResultSet = [];
+        tempSearchStore = [];
+      });
+    }
+
+    var capitalizedValue =
+        value.substring(0, 1).toUpperCase() + value.substring(1);
+
+    if (queryResultSet.length == 0 && value.length == 1) {
+      DataService().searchByName(capitalizedValue).then((QuerySnapshot mydocs) {
+        for (int i = 0; i < mydocs.docs.length; ++i) {
+          queryResultSet.add(mydocs.docs[i].data());
+          setState(() {
+            tempSearchStore.add(queryResultSet[i]);
+          });
+        }
+      });
+    } else {
+      tempSearchStore = [];
+      queryResultSet.forEach((element) {
+        if (element['name'].toLowerCase().contains(value.toLowerCase()) ==
+            true) {
+          if (element["name"].toLowerCase().indexOf(value.toLowerCase()) == 0) {
+            setState(() {
+              tempSearchStore.add(element);
+            });
+          }
+        }
+      });
+    }
+    if (tempSearchStore.length == 0 && value.length > 1) {
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,14 +82,40 @@ class _HomePageState extends State<HomePage> {
                 size: 30,
               ),
               backgroundColor: lightblack,
-              title:
-                  Text(
+              title: !isSearching
+                  ? Text(
                       "AI Shopping",
                       style:
                           TextStyle(color: white, fontWeight: FontWeight.bold),
+                    )
+                  : TextField(
+                      onChanged: (val) {
+                        initiateSearch(val);
+                      },
+                      style: TextStyle(color: white),
+                      decoration: InputDecoration(
+                          icon: Icon(
+                            Icons.search_rounded,
+                            color: white,
+                          ),
+                          hintText: "Search",
+                          hintStyle: TextStyle(color: white)),
                     ),
               actions: [
-                IconButton(
+                isSearching
+                    ? IconButton(
+                        icon: Icon(
+                          Icons.cancel,
+                          color: white,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            tempSearchStore.clear();
+                            this.isSearching = false;
+                          });
+                        },
+                      )
+                    : IconButton(
                         icon: Icon(
                           AIicons.search,
                           color: Colors.white,
@@ -61,8 +124,8 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           setState(() {
                             this.isSearching = true;
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (BuildContext context) => Search()));
+                            // Navigator.of(context).push(MaterialPageRoute(
+                            //     builder: (BuildContext context) => SearchBar()));
                           });
                         },
                       ),
@@ -73,8 +136,8 @@ class _HomePageState extends State<HomePage> {
                     size: 25,
                   ),
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => wishlist()));
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //     builder: (BuildContext context) => wishlist()));
                   },
                 ),
                 Padding(
@@ -137,8 +200,8 @@ class _HomePageState extends State<HomePage> {
         ),
 
         //Body of the home page
-        body:
-        ListView(
+        body: !isSearching
+            ? ListView(
                 children: <Widget>[
                   SizedBox(
                     height: 10,
@@ -154,6 +217,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 10,
                   ),
+
                   //Products
                   Center(
                     child: Text(
@@ -233,7 +297,78 @@ class _HomePageState extends State<HomePage> {
                     height: 10,
                   ),
                 ],
-              ),
-    );
+              )
+            : ListView(children: <Widget>[
+                SizedBox(height: 10.0),
+                GridView.count(
+                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                    crossAxisCount: 4,
+                    crossAxisSpacing: 4.0,
+                    mainAxisSpacing: 4.0,
+                    primary: false,
+                    shrinkWrap: true,
+                    children: tempSearchStore.map((element) {
+                      return buildResultCard(context, element);
+                    }).toList())
+              ]));
   }
+}
+
+Widget buildResultCard(BuildContext context, data) {
+  return InkWell(
+      onTap: () {
+        DataService().increment(data['name']);
+        Modal(context, data['id'], data['url'], data['name'],
+            data['description'], data['price']);
+      },
+      splashColor: Colors.white30,
+      customBorder:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+              decoration: BoxDecoration(
+                  color: white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.blueGrey,
+                      blurRadius: 5,
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(20)),
+              width: 100,
+              child: Padding(
+                padding: EdgeInsets.all(0.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 10,
+                    ),
+                    //image from db
+                    Image.network(
+                      data['url'],
+                      width: 180,
+                      height: 200,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //text
+                    Text(
+                      "Name: " + data['name'],
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    //price
+                    Text("Price: R " + data['price'],
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold)),
+                  ],
+                ),
+              ))));
 }
