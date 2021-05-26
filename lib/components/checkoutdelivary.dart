@@ -15,6 +15,14 @@ class _CheckOutDelivery extends State<CheckOutDelivery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        floatingActionButton: null,
+        appBar: AppBar(
+          title: Text(
+            "Check Out Delivery Payment",
+          ),
+          elevation: 0,
+          backgroundColor: Colors.black,
+        ),
         body: Container(
             child: ListView(children: <Widget>[
       SizedBox(
