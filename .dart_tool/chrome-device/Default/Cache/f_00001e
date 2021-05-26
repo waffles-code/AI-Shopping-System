@@ -1,34 +1,44 @@
-define(['dart_sdk', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__foundation__stack_frame_dart(dart_sdk, packages__flutter__src__foundation__object$46dart) {
+define(['dart_sdk', 'packages/shared_preferences_platform_interface/method_channel_shared_preferences.dart', 'packages/shared_preferences_linux/shared_preferences_linux.dart', 'packages/shared_preferences_windows/shared_preferences_windows.dart'], (function load__packages__shared_preferences__shared_preferences_dart(dart_sdk, packages__shared_preferences_platform_interface__method_channel_shared_preferences$46dart, packages__shared_preferences_linux__shared_preferences_linux$46dart, packages__shared_preferences_windows__shared_preferences_windows$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
+  const io = dart_sdk.io;
+  const async = dart_sdk.async;
+  const collection = dart_sdk.collection;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  var stack_frame = Object.create(dart.library);
-  var $trim = dartx.trim;
-  var $split = dartx.split;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $where = dartx.where;
-  var $map = dartx.map;
-  var $whereType = dartx.whereType;
-  var $toList = dartx.toList;
-  var $startsWith = dartx.startsWith;
+  const shared_preferences_platform_interface = packages__shared_preferences_platform_interface__method_channel_shared_preferences$46dart.shared_preferences_platform_interface;
+  const method_channel_shared_preferences = packages__shared_preferences_platform_interface__method_channel_shared_preferences$46dart.method_channel_shared_preferences;
+  const shared_preferences_linux = packages__shared_preferences_linux__shared_preferences_linux$46dart.shared_preferences_linux;
+  const shared_preferences_windows = packages__shared_preferences_windows__shared_preferences_windows$46dart.shared_preferences_windows;
+  var shared_preferences = Object.create(dart.library);
+  var $keys = dartx.keys;
   var $_get = dartx._get;
-  var $replaceFirst = dartx.replaceFirst;
-  var $length = dartx.length;
-  var $first = dartx.first;
-  var $skip = dartx.skip;
-  var $join = dartx.join;
-  var $single = dartx.single;
-  var $replaceAll = dartx.replaceAll;
-  var $contains = dartx.contains;
-  var $runtimeType = dartx.runtimeType;
+  var $containsKey = dartx.containsKey;
+  var $cast = dartx.cast;
+  var $toList = dartx.toList;
+  var $_set = dartx._set;
+  var $remove = dartx.remove;
+  var $clear = dartx.clear;
+  var $addAll = dartx.addAll;
+  var $startsWith = dartx.startsWith;
+  var $substring = dartx.substring;
+  var $map = dartx.map;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    StringTobool: () => (T.StringTobool = dart.constFn(dart.fnType(core.bool, [core.String])))(),
-    StackFrameN: () => (T.StackFrameN = dart.constFn(dart.nullable(stack_frame.StackFrame)))(),
-    StringToStackFrameN: () => (T.StringToStackFrameN = dart.constFn(dart.fnType(T.StackFrameN(), [core.String])))()
+    CompleterOfSharedPreferences: () => (T.CompleterOfSharedPreferences = dart.constFn(async.Completer$(shared_preferences.SharedPreferences)))(),
+    LinkedHashSetOfString: () => (T.LinkedHashSetOfString = dart.constFn(collection.LinkedHashSet$(core.String)))(),
+    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))(),
+    intN: () => (T.intN = dart.constFn(dart.nullable(core.int)))(),
+    doubleN: () => (T.doubleN = dart.constFn(dart.nullable(core.double)))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    ListN: () => (T.ListN = dart.constFn(dart.nullable(core.List)))(),
+    ListOfString: () => (T.ListOfString = dart.constFn(core.List$(core.String)))(),
+    ListNOfString: () => (T.ListNOfString = dart.constFn(dart.nullable(T.ListOfString())))(),
+    IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
+    MapOfString$Object: () => (T.MapOfString$Object = dart.constFn(core.Map$(core.String, core.Object)))(),
+    MapEntryOfString$Object: () => (T.MapEntryOfString$Object = dart.constFn(core.MapEntry$(core.String, core.Object)))(),
+    StringAndObjectToMapEntryOfString$Object: () => (T.StringAndObjectToMapEntryOfString$Object = dart.constFn(dart.fnType(T.MapEntryOfString$Object(), [core.String, core.Object])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -42,302 +52,227 @@ define(['dart_sdk', 'packages/flutter/src/foundation/object.dart'], (function lo
   const CT = Object.create({
     _: () => (C, CT)
   });
-  dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.fn(stack_frame.StackFrame.fromStackTraceLine, T.StringToStackFrameN());
-    },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: stack_frame.StackFrame.prototype,
-        [isConstructor$]: false,
-        [method$]: "asynchronous suspension",
-        [className$]: "",
-        [column$]: -1,
-        [line$]: -1,
-        [packagePath$]: "",
-        [$package$]: "",
-        [packageScheme$]: "",
-        [number$]: -1,
-        [source$]: "<asynchronous suspension>"
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: stack_frame.StackFrame.prototype,
-        [isConstructor$]: false,
-        [method$]: "...",
-        [className$]: "",
-        [column$]: -1,
-        [line$]: -1,
-        [packagePath$]: "",
-        [$package$]: "",
-        [packageScheme$]: "",
-        [number$]: -1,
-        [source$]: "..."
-      });
-    }
-  }, false);
-  var C = Array(3).fill(void 0);
+  var C = [];
   var I = [
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/foundation/stack_frame.dart",
-    "package:flutter/src/foundation/stack_frame.dart"
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.5/lib/shared_preferences.dart",
+    "package:shared_preferences/shared_preferences.dart"
   ];
-  var source$ = dart.privateName(stack_frame, "StackFrame.source");
-  var number$ = dart.privateName(stack_frame, "StackFrame.number");
-  var packageScheme$ = dart.privateName(stack_frame, "StackFrame.packageScheme");
-  var $package$ = dart.privateName(stack_frame, "StackFrame.package");
-  var packagePath$ = dart.privateName(stack_frame, "StackFrame.packagePath");
-  var line$ = dart.privateName(stack_frame, "StackFrame.line");
-  var column$ = dart.privateName(stack_frame, "StackFrame.column");
-  var className$ = dart.privateName(stack_frame, "StackFrame.className");
-  var method$ = dart.privateName(stack_frame, "StackFrame.method");
-  var isConstructor$ = dart.privateName(stack_frame, "StackFrame.isConstructor");
-  stack_frame.StackFrame = class StackFrame extends core.Object {
-    get source() {
-      return this[source$];
-    }
-    set source(value) {
-      super.source = value;
-    }
-    get number() {
-      return this[number$];
-    }
-    set number(value) {
-      super.number = value;
-    }
-    get packageScheme() {
-      return this[packageScheme$];
-    }
-    set packageScheme(value) {
-      super.packageScheme = value;
-    }
-    get package() {
-      return this[$package$];
-    }
-    set package(value) {
-      super.package = value;
-    }
-    get packagePath() {
-      return this[packagePath$];
-    }
-    set packagePath(value) {
-      super.packagePath = value;
-    }
-    get line() {
-      return this[line$];
-    }
-    set line(value) {
-      super.line = value;
-    }
-    get column() {
-      return this[column$];
-    }
-    set column(value) {
-      super.column = value;
-    }
-    get className() {
-      return this[className$];
-    }
-    set className(value) {
-      super.className = value;
-    }
-    get method() {
-      return this[method$];
-    }
-    set method(value) {
-      super.method = value;
-    }
-    get isConstructor() {
-      return this[isConstructor$];
-    }
-    set isConstructor(value) {
-      super.isConstructor = value;
-    }
-    static fromStackTrace(stack) {
-      if (stack == null) dart.nullFailed(I[0], 78, 53, "stack");
-      if (!(stack != null)) dart.assertFailed(null, I[0], 79, 12, "stack != null");
-      return stack_frame.StackFrame.fromStackString(dart.toString(stack));
-    }
-    static fromStackString(stack) {
-      if (stack == null) dart.nullFailed(I[0], 84, 50, "stack");
-      if (!(stack != null)) dart.assertFailed(null, I[0], 85, 12, "stack != null");
-      return stack[$trim]()[$split]("\n")[$where](dart.fn(line => {
-        if (line == null) dart.nullFailed(I[0], 89, 24, "line");
-        return line[$isNotEmpty];
-      }, T.StringTobool()))[$map](T.StackFrameN(), C[0] || CT.C0)[$whereType](stack_frame.StackFrame)[$toList]();
-    }
-    static _parseWebFrame(line) {
-      if (line == null) dart.nullFailed(I[0], 98, 44, "line");
-      if (true) {
-        return stack_frame.StackFrame._parseWebDebugFrame(line);
-      } else {
-        return stack_frame.StackFrame._parseWebNonDebugFrame(line);
-      }
-    }
-    static _parseWebDebugFrame(line) {
-      if (line == null) dart.nullFailed(I[0], 106, 48, "line");
-      let hasPackage = line[$startsWith]("package");
-      let parser = hasPackage ? core.RegExp.new("^(package.+) (\\d+):(\\d+)\\s+(.+)$") : core.RegExp.new("^(.+) (\\d+):(\\d+)\\s+(.+)$");
-      let match = parser.firstMatch(line);
-      if (!(match != null)) dart.assertFailed("Expected " + dart.str(line) + " to match " + dart.str(parser) + ".", I[0], 114, 12, "match != null");
-      match = dart.nullCheck(match);
-      let $package = "<unknown>";
-      let packageScheme = "<unknown>";
-      let packagePath = "<unknown>";
-      if (hasPackage) {
-        packageScheme = "package";
-        let packageUri = core.Uri.parse(dart.nullCheck(match.group(1)));
-        $package = packageUri.pathSegments[$_get](0);
-        packagePath = packageUri.path[$replaceFirst](dart.notNull(packageUri.pathSegments[$_get](0)) + "/", "");
-      }
-      return new stack_frame.StackFrame.new({number: -1, packageScheme: packageScheme, package: $package, packagePath: packagePath, line: core.int.parse(dart.nullCheck(match.group(2))), column: core.int.parse(dart.nullCheck(match.group(3))), className: "<unknown>", method: dart.nullCheck(match.group(4)), source: line});
-    }
-    static _parseWebNonDebugFrame(line) {
-      if (line == null) dart.nullFailed(I[0], 148, 52, "line");
-      let match = stack_frame.StackFrame._webNonDebugFramePattern.firstMatch(line);
-      if (match == null) {
-        return null;
-      }
-      let classAndMethod = dart.nullCheck(match.group(1))[$split](".");
-      let className = dart.notNull(classAndMethod[$length]) > 1 ? classAndMethod[$first] : "<unknown>";
-      let method = dart.notNull(classAndMethod[$length]) > 1 ? classAndMethod[$skip](1)[$join](".") : classAndMethod[$single];
-      return new stack_frame.StackFrame.new({number: -1, packageScheme: "<unknown>", package: "<unknown>", packagePath: "<unknown>", line: -1, column: -1, className: className, method: method, source: line});
-    }
-    static fromStackTraceLine(line) {
-      if (line == null) dart.nullFailed(I[0], 185, 48, "line");
-      if (!(line != null)) dart.assertFailed(null, I[0], 186, 12, "line != null");
-      if (line === "<asynchronous suspension>") {
-        return stack_frame.StackFrame.asynchronousSuspension;
-      } else if (line === "...") {
-        return stack_frame.StackFrame.stackOverFlowElision;
-      }
-      if (!(line !== "===== asynchronous gap ===========================")) dart.assertFailed("Got a stack frame from package:stack_trace, where a vm or web frame was expected. " + "This can happen if FlutterError.demangleStackTrace was not set in an environment " + "that propagates non-standard stack traces to the framework, such as during tests.", I[0], 194, 7, "line != '===== asynchronous gap ==========================='");
-      if (!line[$startsWith]("#")) {
-        return stack_frame.StackFrame._parseWebFrame(line);
-      }
-      let parser = core.RegExp.new("^#(\\d+) +(.+) \\((.+?):?(\\d+){0,1}:?(\\d+){0,1}\\)$");
-      let match = parser.firstMatch(line);
-      if (!(match != null)) dart.assertFailed("Expected " + dart.str(line) + " to match " + dart.str(parser) + ".", I[0], 207, 12, "match != null");
-      match = dart.nullCheck(match);
-      let isConstructor = false;
-      let className = "";
-      let method = dart.nullCheck(match.group(2))[$replaceAll](".<anonymous closure>", "");
-      if (method[$startsWith]("new")) {
-        let methodParts = method[$split](" ");
-        className = dart.notNull(methodParts[$length]) > 1 ? method[$split](" ")[$_get](1) : "<unknown>";
-        method = "";
-        if (className[$contains](".")) {
-          let parts = className[$split](".");
-          className = parts[$_get](0);
-          method = parts[$_get](1);
+  var _preferenceCache$ = dart.privateName(shared_preferences, "_preferenceCache");
+  var _setValue = dart.privateName(shared_preferences, "_setValue");
+  shared_preferences.SharedPreferences = class SharedPreferences extends core.Object {
+    static get _store() {
+      if (dart.test(shared_preferences.SharedPreferences._manualDartRegistrationNeeded)) {
+        if (!true && method_channel_shared_preferences.MethodChannelSharedPreferencesStore.is(shared_preferences_platform_interface.SharedPreferencesStorePlatform.instance)) {
+          if (dart.test(io.Platform.isLinux)) {
+            shared_preferences_platform_interface.SharedPreferencesStorePlatform.instance = new shared_preferences_linux.SharedPreferencesLinux.new();
+          } else if (dart.test(io.Platform.isWindows)) {
+            shared_preferences_platform_interface.SharedPreferencesStorePlatform.instance = new shared_preferences_windows.SharedPreferencesWindows.new();
+          }
         }
-        isConstructor = true;
-      } else if (method[$contains](".")) {
-        let parts = method[$split](".");
-        className = parts[$_get](0);
-        method = parts[$_get](1);
+        shared_preferences.SharedPreferences._manualDartRegistrationNeeded = false;
       }
-      let packageUri = core.Uri.parse(dart.nullCheck(match.group(3)));
-      let $package = "<unknown>";
-      let packagePath = packageUri.path;
-      if (packageUri.scheme === "dart" || packageUri.scheme === "package") {
-        $package = packageUri.pathSegments[$_get](0);
-        packagePath = packageUri.path[$replaceFirst](dart.notNull(packageUri.pathSegments[$_get](0)) + "/", "");
+      return shared_preferences_platform_interface.SharedPreferencesStorePlatform.instance;
+    }
+    static getInstance() {
+      return async.async(shared_preferences.SharedPreferences, function* getInstance() {
+        if (shared_preferences.SharedPreferences._completer == null) {
+          let completer = T.CompleterOfSharedPreferences().new();
+          try {
+            let preferencesMap = (yield shared_preferences.SharedPreferences._getSharedPreferencesMap());
+            completer.complete(new shared_preferences.SharedPreferences.__(preferencesMap));
+          } catch (e$) {
+            let e = dart.getThrown(e$);
+            if (core.Exception.is(e)) {
+              completer.completeError(e);
+              let sharedPrefsFuture = completer.future;
+              shared_preferences.SharedPreferences._completer = null;
+              return sharedPrefsFuture;
+            } else
+              throw e$;
+          }
+          shared_preferences.SharedPreferences._completer = completer;
+        }
+        return dart.nullCheck(shared_preferences.SharedPreferences._completer).future;
+      });
+    }
+    getKeys() {
+      return T.LinkedHashSetOfString().from(this[_preferenceCache$][$keys]);
+    }
+    get(key) {
+      if (key == null) dart.nullFailed(I[0], 86, 22, "key");
+      return this[_preferenceCache$][$_get](key);
+    }
+    getBool(key) {
+      if (key == null) dart.nullFailed(I[0], 90, 24, "key");
+      return T.boolN().as(this[_preferenceCache$][$_get](key));
+    }
+    getInt(key) {
+      if (key == null) dart.nullFailed(I[0], 94, 22, "key");
+      return T.intN().as(this[_preferenceCache$][$_get](key));
+    }
+    getDouble(key) {
+      if (key == null) dart.nullFailed(I[0], 98, 28, "key");
+      return T.doubleN().as(this[_preferenceCache$][$_get](key));
+    }
+    getString(key) {
+      if (key == null) dart.nullFailed(I[0], 102, 28, "key");
+      return T.StringN().as(this[_preferenceCache$][$_get](key));
+    }
+    containsKey(key) {
+      if (key == null) dart.nullFailed(I[0], 105, 27, "key");
+      return this[_preferenceCache$][$containsKey](key);
+    }
+    getStringList(key) {
+      let t1;
+      if (key == null) dart.nullFailed(I[0], 109, 38, "key");
+      let list = T.ListN().as(this[_preferenceCache$][$_get](key));
+      if (list != null && !T.ListOfString().is(list)) {
+        list = list[$cast](core.String)[$toList]();
+        this[_preferenceCache$][$_set](key, list);
       }
-      return new stack_frame.StackFrame.new({number: core.int.parse(dart.nullCheck(match.group(1))), className: className, method: method, packageScheme: packageUri.scheme, package: $package, packagePath: packagePath, line: match.group(4) == null ? -1 : core.int.parse(dart.nullCheck(match.group(4))), column: match.group(5) == null ? -1 : core.int.parse(dart.nullCheck(match.group(5))), isConstructor: isConstructor, source: line});
+      return T.ListNOfString().as((t1 = list, t1 == null ? null : t1[$toList]()));
     }
-    get hashCode() {
-      return ui.hashValues(this.number, this.package, this.line, this.column, this.className, this.method, this.source);
+    setBool(key, value) {
+      if (key == null) dart.nullFailed(I[0], 120, 31, "key");
+      if (value == null) dart.nullFailed(I[0], 120, 41, "value");
+      return this[_setValue]("Bool", key, value);
     }
-    _equals(other) {
-      if (other == null) return false;
-      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
-      return stack_frame.StackFrame.is(other) && other.number == this.number && other.package == this.package && other.line == this.line && other.column == this.column && other.className == this.className && other.method == this.method && other.source == this.source;
+    setInt(key, value) {
+      if (key == null) dart.nullFailed(I[0], 123, 30, "key");
+      if (value == null) dart.nullFailed(I[0], 123, 39, "value");
+      return this[_setValue]("Int", key, value);
     }
-    toString() {
-      return dart.str(object.objectRuntimeType(this, "StackFrame")) + "(#" + dart.str(this.number) + ", " + dart.str(this.packageScheme) + ":" + dart.str(this.package) + "/" + dart.str(this.packagePath) + ":" + dart.str(this.line) + ":" + dart.str(this.column) + ", className: " + dart.str(this.className) + ", method: " + dart.str(this.method) + ")";
+    setDouble(key, value) {
+      if (key == null) dart.nullFailed(I[0], 128, 33, "key");
+      if (value == null) dart.nullFailed(I[0], 128, 45, "value");
+      return this[_setValue]("Double", key, value);
+    }
+    setString(key, value) {
+      if (key == null) dart.nullFailed(I[0], 132, 33, "key");
+      if (value == null) dart.nullFailed(I[0], 132, 45, "value");
+      return this[_setValue]("String", key, value);
+    }
+    setStringList(key, value) {
+      if (key == null) dart.nullFailed(I[0], 136, 37, "key");
+      if (value == null) dart.nullFailed(I[0], 136, 55, "value");
+      return this[_setValue]("StringList", key, value);
+    }
+    remove(key) {
+      if (key == null) dart.nullFailed(I[0], 140, 30, "key");
+      let prefixedKey = "flutter." + dart.str(key);
+      this[_preferenceCache$][$remove](key);
+      return shared_preferences.SharedPreferences._store.remove(prefixedKey);
+    }
+    [_setValue](valueType, key, value) {
+      if (valueType == null) dart.nullFailed(I[0], 146, 33, "valueType");
+      if (key == null) dart.nullFailed(I[0], 146, 51, "key");
+      if (value == null) dart.nullFailed(I[0], 146, 63, "value");
+      core.ArgumentError.checkNotNull(core.Object, value, "value");
+      let prefixedKey = "flutter." + dart.str(key);
+      if (T.ListOfString().is(value)) {
+        this[_preferenceCache$][$_set](key, value[$toList]());
+      } else {
+        this[_preferenceCache$][$_set](key, value);
+      }
+      return shared_preferences.SharedPreferences._store.setValue(valueType, prefixedKey, value);
+    }
+    commit() {
+      return async.async(core.bool, function* commit() {
+        return true;
+      });
+    }
+    clear() {
+      this[_preferenceCache$][$clear]();
+      return shared_preferences.SharedPreferences._store.clear();
+    }
+    reload() {
+      return async.async(dart.void, (function* reload() {
+        let preferences = (yield shared_preferences.SharedPreferences._getSharedPreferencesMap());
+        this[_preferenceCache$][$clear]();
+        this[_preferenceCache$][$addAll](preferences);
+      }).bind(this));
+    }
+    static _getSharedPreferencesMap() {
+      return async.async(T.MapOfString$Object(), function* _getSharedPreferencesMap() {
+        let fromSystem = (yield shared_preferences.SharedPreferences._store.getAll());
+        if (!(fromSystem != null)) dart.assertFailed(null, I[0], 182, 12, "fromSystem != null");
+        let preferencesMap = new (T.IdentityMapOfString$Object()).new();
+        for (let key of fromSystem[$keys]) {
+          if (!key[$startsWith]("flutter.")) dart.assertFailed(null, I[0], 186, 14, "key.startsWith(_prefix)");
+          preferencesMap[$_set](key[$substring]("flutter.".length), dart.nullCheck(fromSystem[$_get](key)));
+        }
+        return preferencesMap;
+      });
+    }
+    static setMockInitialValues(values) {
+      if (values == null) dart.nullFailed(I[0], 196, 56, "values");
+      let newValues = values[$map](core.String, core.Object, dart.fn((key, value) => {
+        if (key == null) dart.nullFailed(I[0], 198, 44, "key");
+        if (value == null) dart.nullFailed(I[0], 198, 56, "value");
+        let newKey = key;
+        if (!key[$startsWith]("flutter.")) {
+          newKey = "flutter." + dart.str(key);
+        }
+        return new (T.MapEntryOfString$Object()).__(newKey, value);
+      }, T.StringAndObjectToMapEntryOfString$Object()));
+      shared_preferences_platform_interface.SharedPreferencesStorePlatform.instance = new shared_preferences_platform_interface.InMemorySharedPreferencesStore.withData(newValues);
+      shared_preferences.SharedPreferences._completer = null;
     }
   };
-  (stack_frame.StackFrame.new = function(opts) {
-    let number = opts && 'number' in opts ? opts.number : null;
-    if (number == null) dart.nullFailed(I[0], 30, 19, "number");
-    let column = opts && 'column' in opts ? opts.column : null;
-    if (column == null) dart.nullFailed(I[0], 31, 19, "column");
-    let line = opts && 'line' in opts ? opts.line : null;
-    if (line == null) dart.nullFailed(I[0], 32, 19, "line");
-    let packageScheme = opts && 'packageScheme' in opts ? opts.packageScheme : null;
-    if (packageScheme == null) dart.nullFailed(I[0], 33, 19, "packageScheme");
-    let $package = opts && 'package' in opts ? opts.package : null;
-    if ($package == null) dart.nullFailed(I[0], 34, 19, "package");
-    let packagePath = opts && 'packagePath' in opts ? opts.packagePath : null;
-    if (packagePath == null) dart.nullFailed(I[0], 35, 19, "packagePath");
-    let className = opts && 'className' in opts ? opts.className : "";
-    if (className == null) dart.nullFailed(I[0], 36, 10, "className");
-    let method = opts && 'method' in opts ? opts.method : null;
-    if (method == null) dart.nullFailed(I[0], 37, 19, "method");
-    let isConstructor = opts && 'isConstructor' in opts ? opts.isConstructor : false;
-    if (isConstructor == null) dart.nullFailed(I[0], 38, 10, "isConstructor");
-    let source = opts && 'source' in opts ? opts.source : null;
-    if (source == null) dart.nullFailed(I[0], 39, 19, "source");
-    this[number$] = number;
-    this[column$] = column;
-    this[line$] = line;
-    this[packageScheme$] = packageScheme;
-    this[$package$] = $package;
-    this[packagePath$] = packagePath;
-    this[className$] = className;
-    this[method$] = method;
-    this[isConstructor$] = isConstructor;
-    this[source$] = source;
-    if (!(number != null)) dart.assertFailed(null, I[0], 40, 16, "number != null");
-    if (!(column != null)) dart.assertFailed(null, I[0], 41, 16, "column != null");
-    if (!(line != null)) dart.assertFailed(null, I[0], 42, 16, "line != null");
-    if (!(method != null)) dart.assertFailed(null, I[0], 43, 16, "method != null");
-    if (!(packageScheme != null)) dart.assertFailed(null, I[0], 44, 16, "packageScheme != null");
-    if (!($package != null)) dart.assertFailed(null, I[0], 45, 16, "package != null");
-    if (!(packagePath != null)) dart.assertFailed(null, I[0], 46, 16, "packagePath != null");
-    if (!(className != null)) dart.assertFailed(null, I[0], 47, 16, "className != null");
-    if (!(isConstructor != null)) dart.assertFailed(null, I[0], 48, 16, "isConstructor != null");
-    if (!(source != null)) dart.assertFailed(null, I[0], 49, 16, "source != null");
+  (shared_preferences.SharedPreferences.__ = function(_preferenceCache) {
+    if (_preferenceCache == null) dart.nullFailed(I[0], 20, 28, "_preferenceCache");
+    this[_preferenceCache$] = _preferenceCache;
     ;
-  }).prototype = stack_frame.StackFrame.prototype;
-  dart.addTypeTests(stack_frame.StackFrame);
-  dart.addTypeCaches(stack_frame.StackFrame);
-  dart.setLibraryUri(stack_frame.StackFrame, I[1]);
-  dart.setFieldSignature(stack_frame.StackFrame, () => ({
-    __proto__: dart.getFields(stack_frame.StackFrame.__proto__),
-    source: dart.finalFieldType(core.String),
-    number: dart.finalFieldType(core.int),
-    packageScheme: dart.finalFieldType(core.String),
-    package: dart.finalFieldType(core.String),
-    packagePath: dart.finalFieldType(core.String),
-    line: dart.finalFieldType(core.int),
-    column: dart.finalFieldType(core.int),
-    className: dart.finalFieldType(core.String),
-    method: dart.finalFieldType(core.String),
-    isConstructor: dart.finalFieldType(core.bool)
+  }).prototype = shared_preferences.SharedPreferences.prototype;
+  dart.addTypeTests(shared_preferences.SharedPreferences);
+  dart.addTypeCaches(shared_preferences.SharedPreferences);
+  dart.setMethodSignature(shared_preferences.SharedPreferences, () => ({
+    __proto__: dart.getMethods(shared_preferences.SharedPreferences.__proto__),
+    getKeys: dart.fnType(core.Set$(core.String), []),
+    get: dart.fnType(dart.nullable(core.Object), [core.String]),
+    getBool: dart.fnType(dart.nullable(core.bool), [core.String]),
+    getInt: dart.fnType(dart.nullable(core.int), [core.String]),
+    getDouble: dart.fnType(dart.nullable(core.double), [core.String]),
+    getString: dart.fnType(dart.nullable(core.String), [core.String]),
+    containsKey: dart.fnType(core.bool, [core.String]),
+    getStringList: dart.fnType(dart.nullable(core.List$(core.String)), [core.String]),
+    setBool: dart.fnType(async.Future$(core.bool), [core.String, core.bool]),
+    setInt: dart.fnType(async.Future$(core.bool), [core.String, core.int]),
+    setDouble: dart.fnType(async.Future$(core.bool), [core.String, core.double]),
+    setString: dart.fnType(async.Future$(core.bool), [core.String, core.String]),
+    setStringList: dart.fnType(async.Future$(core.bool), [core.String, core.List$(core.String)]),
+    remove: dart.fnType(async.Future$(core.bool), [core.String]),
+    [_setValue]: dart.fnType(async.Future$(core.bool), [core.String, core.String, core.Object]),
+    commit: dart.fnType(async.Future$(core.bool), []),
+    clear: dart.fnType(async.Future$(core.bool), []),
+    reload: dart.fnType(async.Future$(dart.void), [])
   }));
-  dart.defineExtensionMethods(stack_frame.StackFrame, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(stack_frame.StackFrame, ['hashCode']);
-  dart.defineLazy(stack_frame.StackFrame, {
-    /*stack_frame.StackFrame.asynchronousSuspension*/get asynchronousSuspension() {
-      return C[1] || CT.C1;
+  dart.setLibraryUri(shared_preferences.SharedPreferences, I[1]);
+  dart.setFieldSignature(shared_preferences.SharedPreferences, () => ({
+    __proto__: dart.getFields(shared_preferences.SharedPreferences.__proto__),
+    [_preferenceCache$]: dart.finalFieldType(core.Map$(core.String, core.Object))
+  }));
+  dart.defineLazy(shared_preferences.SharedPreferences, {
+    /*shared_preferences.SharedPreferences._prefix*/get _prefix() {
+      return "flutter.";
     },
-    /*stack_frame.StackFrame.stackOverFlowElision*/get stackOverFlowElision() {
-      return C[2] || CT.C2;
+    /*shared_preferences.SharedPreferences._completer*/get _completer() {
+      return null;
     },
-    /*stack_frame.StackFrame._webNonDebugFramePattern*/get _webNonDebugFramePattern() {
-      return core.RegExp.new("^\\s*at ([^\\s]+).*$");
-    }
+    set _completer(_) {},
+    /*shared_preferences.SharedPreferences._manualDartRegistrationNeeded*/get _manualDartRegistrationNeeded() {
+      return true;
+    },
+    set _manualDartRegistrationNeeded(_) {}
   }, false);
-  dart.trackLibraries("packages/flutter/src/foundation/stack_frame.dart", {
-    "package:flutter/src/foundation/stack_frame.dart": stack_frame
+  dart.trackLibraries("packages/shared_preferences/shared_preferences.dart", {
+    "package:shared_preferences/shared_preferences.dart": shared_preferences
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["stack_frame.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../packages/flutter/src/foundation/stack_frame.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["shared_preferences.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/shared_preferences/shared_preferences.dart.lib.js"}');
   // Exports:
   return {
-    src__foundation__stack_frame: stack_frame
+    shared_preferences: shared_preferences
   };
 }));
 
-//# sourceMappingURL=stack_frame.dart.lib.js.map
+//# sourceMappingURL=shared_preferences.dart.lib.js.map

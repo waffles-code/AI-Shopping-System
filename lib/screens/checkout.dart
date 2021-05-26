@@ -1,7 +1,4 @@
-// ignore: avoid_web_libraries_in_flutter
-
 import 'package:aishop/components/order_review.dart';
-
 import 'package:flutter/material.dart';
 import 'package:aishop/components/checkoutaddress.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -74,26 +71,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
                     textWidthBasis: TextWidthBasis.parent,
                   ),
                 ),
-                // bottom: TabBar(indicatorColor: white, labelColor: white, tabs: [
-                //   Tab(
-                //     text: "Address",
-                //   ),
-                //   Tab(
-                //     text: "Delivery",
-                //   ),
-                //   Tab(
-                //     text: "Payment",
-                //   )
-                // ]),
               ),
-              body:
-                  // TabBarView(
-                  //   children: <Widget>[
-                  CheckOutAddress(),
-              // CheckOutDelivery(),
-              // CheckOutPayment(),
-              // ],
-              // ),
+              body: CheckOutAddress(),
             ),
           ),
           Expanded(

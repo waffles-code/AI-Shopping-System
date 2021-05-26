@@ -1,40 +1,45 @@
-define(['dart_sdk', 'packages/geolocator_platform_interface/src/extensions/integer_extensions.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/geolocator_platform_interface/src/enums/location_permission.dart', 'packages/geolocator_platform_interface/src/models/position.dart', 'packages/geolocator_platform_interface/src/enums/location_accuracy.dart', 'packages/geolocator_platform_interface/src/models/location_options.dart', 'packages/geolocator_platform_interface/src/errors/activity_missing_exception.dart', 'packages/geolocator_platform_interface/src/errors/location_service_disabled_exception.dart', 'packages/geolocator_platform_interface/src/errors/already_subscribed_exception.dart', 'packages/geolocator_platform_interface/src/errors/permission_definitions_not_found_exception.dart', 'packages/geolocator_platform_interface/src/errors/permission_denied_exception.dart', 'packages/geolocator_platform_interface/src/errors/permission_request_in_progress_exception.dart', 'packages/geolocator_platform_interface/src/errors/position_update_exception.dart', 'packages/plugin_platform_interface/plugin_platform_interface.dart', 'packages/vector_math/vector_math.dart'], (function load__packages__geolocator_platform_interface__src__implementations__method_channel_geolocator_dart(dart_sdk, packages__geolocator_platform_interface__src__extensions__integer_extensions$46dart, packages__flutter__src__services__system_channels$46dart, packages__geolocator_platform_interface__src__enums__location_permission$46dart, packages__geolocator_platform_interface__src__models__position$46dart, packages__geolocator_platform_interface__src__enums__location_accuracy$46dart, packages__geolocator_platform_interface__src__models__location_options$46dart, packages__geolocator_platform_interface__src__errors__activity_missing_exception$46dart, packages__geolocator_platform_interface__src__errors__location_service_disabled_exception$46dart, packages__geolocator_platform_interface__src__errors__already_subscribed_exception$46dart, packages__geolocator_platform_interface__src__errors__permission_definitions_not_found_exception$46dart, packages__geolocator_platform_interface__src__errors__permission_denied_exception$46dart, packages__geolocator_platform_interface__src__errors__permission_request_in_progress_exception$46dart, packages__geolocator_platform_interface__src__errors__position_update_exception$46dart, packages__plugin_platform_interface__plugin_platform_interface$46dart, packages__vector_math__vector_math$46dart) {
+define(['dart_sdk', 'packages/firebase_auth_platform_interface/src/types.dart', 'packages/firebase_core/firebase_core.dart', 'packages/flutter/src/foundation/_platform_web.dart', 'packages/firebase_core_platform_interface/firebase_core_platform_interface.dart', 'packages/firebase_auth_platform_interface/src/action_code_info.dart', 'packages/firebase_auth_platform_interface/src/action_code_settings.dart', 'packages/firebase_auth_platform_interface/src/auth_credential.dart', 'packages/firebase_auth_platform_interface/src/auth_provider.dart', 'packages/firebase_auth_platform_interface/src/firebase_auth_exception.dart', 'packages/firebase_auth_platform_interface/src/additional_user_info.dart', 'packages/firebase_auth_platform_interface/src/user_metadata.dart', 'packages/firebase_auth_platform_interface/src/user_info.dart', 'packages/firebase_auth_platform_interface/src/id_token_result.dart'], (function load__packages__firebase_auth__firebase_auth_dart(dart_sdk, packages__firebase_auth_platform_interface__src__types$46dart, packages__firebase_core__firebase_core$46dart, packages__flutter__src__foundation___platform_web$46dart, packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart, packages__firebase_auth_platform_interface__src__action_code_info$46dart, packages__firebase_auth_platform_interface__src__action_code_settings$46dart, packages__firebase_auth_platform_interface__src__auth_credential$46dart, packages__firebase_auth_platform_interface__src__auth_provider$46dart, packages__firebase_auth_platform_interface__src__firebase_auth_exception$46dart, packages__firebase_auth_platform_interface__src__additional_user_info$46dart, packages__firebase_auth_platform_interface__src__user_metadata$46dart, packages__firebase_auth_platform_interface__src__user_info$46dart, packages__firebase_auth_platform_interface__src__id_token_result$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const async = dart_sdk.async;
   const _js_helper = dart_sdk._js_helper;
-  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const integer_extensions = packages__geolocator_platform_interface__src__extensions__integer_extensions$46dart.src__extensions__integer_extensions;
-  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
-  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
-  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
-  const location_permission = packages__geolocator_platform_interface__src__enums__location_permission$46dart.src__enums__location_permission;
-  const position = packages__geolocator_platform_interface__src__models__position$46dart.src__models__position;
-  const location_accuracy = packages__geolocator_platform_interface__src__enums__location_accuracy$46dart.src__enums__location_accuracy;
-  const location_options = packages__geolocator_platform_interface__src__models__location_options$46dart.src__models__location_options;
-  const activity_missing_exception = packages__geolocator_platform_interface__src__errors__activity_missing_exception$46dart.src__errors__activity_missing_exception;
-  const location_service_disabled_exception = packages__geolocator_platform_interface__src__errors__location_service_disabled_exception$46dart.src__errors__location_service_disabled_exception;
-  const already_subscribed_exception = packages__geolocator_platform_interface__src__errors__already_subscribed_exception$46dart.src__errors__already_subscribed_exception;
-  const permission_definitions_not_found_exception = packages__geolocator_platform_interface__src__errors__permission_definitions_not_found_exception$46dart.src__errors__permission_definitions_not_found_exception;
-  const permission_denied_exception = packages__geolocator_platform_interface__src__errors__permission_denied_exception$46dart.src__errors__permission_denied_exception;
-  const permission_request_in_progress_exception = packages__geolocator_platform_interface__src__errors__permission_request_in_progress_exception$46dart.src__errors__permission_request_in_progress_exception;
-  const position_update_exception = packages__geolocator_platform_interface__src__errors__position_update_exception$46dart.src__errors__position_update_exception;
-  const plugin_platform_interface = packages__plugin_platform_interface__plugin_platform_interface$46dart.plugin_platform_interface;
-  const vector_math = packages__vector_math__vector_math$46dart.vector_math;
-  var method_channel_geolocator = Object.create(dart.library);
-  var geolocator_platform_interface = Object.create(dart.library);
-  var geolocator_platform_interface$ = Object.create(dart.library);
+  const platform_interface_firebase_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_firebase_auth;
+  const platform_interface_user = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_user;
+  const types = packages__firebase_auth_platform_interface__src__types$46dart.src__types;
+  const phone_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__providers__phone_auth;
+  const platform_interface_user_credential = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_user_credential;
+  const platform_interface_confirmation_result = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_confirmation_result;
+  const platform_interface_recaptcha_verifier_factory = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_recaptcha_verifier_factory;
+  const firebase_core = packages__firebase_core__firebase_core$46dart.firebase_core;
+  const platform = packages__flutter__src__foundation___platform_web$46dart.src__foundation__platform;
+  const firebase_core_platform_interface = packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart.firebase_core_platform_interface;
+  const action_code_info = packages__firebase_auth_platform_interface__src__action_code_info$46dart.src__action_code_info;
+  const action_code_settings = packages__firebase_auth_platform_interface__src__action_code_settings$46dart.src__action_code_settings;
+  const auth_credential = packages__firebase_auth_platform_interface__src__auth_credential$46dart.src__auth_credential;
+  const auth_provider = packages__firebase_auth_platform_interface__src__auth_provider$46dart.src__auth_provider;
+  const firebase_auth_exception = packages__firebase_auth_platform_interface__src__firebase_auth_exception$46dart.src__firebase_auth_exception;
+  const additional_user_info = packages__firebase_auth_platform_interface__src__additional_user_info$46dart.src__additional_user_info;
+  const user_metadata = packages__firebase_auth_platform_interface__src__user_metadata$46dart.src__user_metadata;
+  const user_info = packages__firebase_auth_platform_interface__src__user_info$46dart.src__user_info;
+  const id_token_result = packages__firebase_auth_platform_interface__src__id_token_result$46dart.src__id_token_result;
+  var firebase_auth = Object.create(dart.library);
+  var $putIfAbsent = dartx.putIfAbsent;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $startsWith = dartx.startsWith;
+  var $replaceFirst = dartx.replaceFirst;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))(),
-    boolNTobool: () => (T.boolNTobool = dart.constFn(dart.fnType(core.bool, [T.boolN()])))(),
-    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
-    PositionN: () => (T.PositionN = dart.constFn(dart.nullable(position.Position)))(),
-    EventSinkTovoid: () => (T.EventSinkTovoid = dart.constFn(dart.fnType(dart.void, [async.EventSink])))(),
-    dynamicToPosition: () => (T.dynamicToPosition = dart.constFn(dart.fnType(position.Position, [dart.dynamic])))(),
-    dynamicToNever: () => (T.dynamicToNever = dart.constFn(dart.fnType(dart.Never, [dart.dynamic])))()
+    VoidToFirebaseAuth: () => (T.VoidToFirebaseAuth = dart.constFn(dart.fnType(firebase_auth.FirebaseAuth, [])))(),
+    UserN: () => (T.UserN = dart.constFn(dart.nullable(firebase_auth.User)))(),
+    UserPlatformN: () => (T.UserPlatformN = dart.constFn(dart.nullable(platform_interface_user.UserPlatform)))(),
+    UserPlatformNToUserN: () => (T.UserPlatformNToUserN = dart.constFn(dart.fnType(T.UserN(), [T.UserPlatformN()])))(),
+    StreamSubscriptionOfUserN: () => (T.StreamSubscriptionOfUserN = dart.constFn(async.StreamSubscription$(T.UserN())))(),
+    StreamSubscriptionOfUserNTovoid: () => (T.StreamSubscriptionOfUserNTovoid = dart.constFn(dart.fnType(dart.void, [T.StreamSubscriptionOfUserN()])))(),
+    IdentityMapOfString$FirebaseAuth: () => (T.IdentityMapOfString$FirebaseAuth = dart.constFn(_js_helper.IdentityMap$(core.String, firebase_auth.FirebaseAuth)))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    IdentityMapOfString$StringN: () => (T.IdentityMapOfString$StringN = dart.constFn(_js_helper.IdentityMap$(core.String, T.StringN())))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -51,391 +56,637 @@ define(['dart_sdk', 'packages/geolocator_platform_interface/src/extensions/integ
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: location_accuracy.LocationAccuracy.prototype,
-        [_name]: "LocationAccuracy.best",
-        index: 4
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 30000000
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: core.Object.prototype
-      });
-    },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: message_codecs.StandardMessageCodec.prototype
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: message_codecs.StandardMethodCodec.prototype,
-        [StandardMethodCodec_messageCodec]: C[4] || CT.C4
+        __proto__: platform_interface_recaptcha_verifier_factory.RecaptchaVerifierSize.prototype,
+        [_name]: "RecaptchaVerifierSize.normal",
+        index: 0
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: platform_channel.MethodChannel.prototype,
-        [MethodChannel__binaryMessenger]: null,
-        [MethodChannel_codec]: C[3] || CT.C3,
-        [MethodChannel_name]: "flutter.baseflow.com/geolocator"
-      });
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: platform_channel.EventChannel.prototype,
-        [EventChannel__binaryMessenger]: null,
-        [EventChannel_codec]: C[3] || CT.C3,
-        [EventChannel_name]: "flutter.baseflow.com/geolocator_updates"
+        __proto__: platform_interface_recaptcha_verifier_factory.RecaptchaVerifierTheme.prototype,
+        [_name]: "RecaptchaVerifierTheme.light",
+        index: 0
       });
     }
   }, false);
-  var C = Array(6).fill(void 0);
+  var C = Array(3).fill(void 0);
   var I = [
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_platform_interface-2.0.2/lib/src/implementations/method_channel_geolocator.dart",
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_platform_interface-2.0.2/lib/src/geolocator_platform_interface.dart",
-    "package:geolocator_platform_interface/src/geolocator_platform_interface.dart",
-    "package:geolocator_platform_interface/src/implementations/method_channel_geolocator.dart"
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-1.1.3/lib/src/firebase_auth.dart",
+    "package:firebase_auth/firebase_auth.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-1.1.3/lib/src/user_credential.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-1.1.3/lib/src/user.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-1.1.3/lib/src/confirmation_result.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-1.1.3/lib/src/recaptcha_verifier.dart"
   ];
-  var forceAndroidLocationManager = dart.privateName(method_channel_geolocator, "MethodChannelGeolocator.forceAndroidLocationManager");
-  var _positionStream = dart.privateName(method_channel_geolocator, "_positionStream");
-  var _handlePlatformException = dart.privateName(method_channel_geolocator, "_handlePlatformException");
-  var _name = dart.privateName(location_accuracy, "_name");
-  geolocator_platform_interface.GeolocatorPlatform = class GeolocatorPlatform extends plugin_platform_interface.PlatformInterface {
+  var app$ = dart.privateName(firebase_auth, "FirebaseAuth.app");
+  var _delegatePackingProperty = dart.privateName(firebase_auth, "_delegatePackingProperty");
+  var _delegate$ = dart.privateName(firebase_auth, "_delegate");
+  var _pipeStreamChanges = dart.privateName(firebase_auth, "_pipeStreamChanges");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  firebase_auth.FirebaseAuth = class FirebaseAuth extends firebase_core_platform_interface.FirebasePluginPlatform {
+    get app() {
+      return this[app$];
+    }
+    set app(value) {
+      this[app$] = value;
+    }
+    get [_delegate$]() {
+      this[_delegatePackingProperty] == null ? this[_delegatePackingProperty] = platform_interface_firebase_auth.FirebaseAuthPlatform.instanceFor({app: this.app, pluginConstants: this.pluginConstants}) : null;
+      return dart.nullCheck(this[_delegatePackingProperty]);
+    }
     static get instance() {
-      return geolocator_platform_interface.GeolocatorPlatform._instance;
+      let defaultAppInstance = firebase_core.Firebase.app();
+      return firebase_auth.FirebaseAuth.instanceFor({app: defaultAppInstance});
     }
-    static set instance(instance) {
-      if (instance == null) dart.nullFailed(I[1], 35, 42, "instance");
-      plugin_platform_interface.PlatformInterface.verifyToken(instance, geolocator_platform_interface.GeolocatorPlatform._token);
-      geolocator_platform_interface.GeolocatorPlatform._instance = instance;
+    static instanceFor(opts) {
+      let app = opts && 'app' in opts ? opts.app : null;
+      if (app == null) dart.nullFailed(I[0], 43, 58, "app");
+      return firebase_auth.FirebaseAuth._firebaseAuthInstances[$putIfAbsent](app.name, dart.fn(() => new firebase_auth.FirebaseAuth.__({app: app}), T.VoidToFirebaseAuth()));
     }
-    checkPermission() {
-      dart.throw(new core.UnimplementedError.new("checkPermission() has not been implemented."));
+    get currentUser() {
+      if (this[_delegate$].currentUser != null) {
+        return new firebase_auth.User.__(this, dart.nullCheck(this[_delegate$].currentUser));
+      }
+      return null;
     }
-    requestPermission() {
-      dart.throw(new core.UnimplementedError.new("requestPermission() has not been implemented."));
+    get languageCode() {
+      if (this[_delegate$].languageCode != null) {
+        return this[_delegate$].languageCode;
+      }
+      return null;
     }
-    isLocationServiceEnabled() {
-      dart.throw(new core.UnimplementedError.new("isLocationServiceEnabled() has not been implemented."));
-    }
-    getLastKnownPosition(opts) {
-      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
-      if (forceAndroidLocationManager == null) dart.nullFailed(I[1], 79, 10, "forceAndroidLocationManager");
-      dart.throw(new core.UnimplementedError.new("getLastKnownPosition() has not been implemented."));
-    }
-    getCurrentPosition(opts) {
-      let desiredAccuracy = opts && 'desiredAccuracy' in opts ? opts.desiredAccuracy : C[0] || CT.C0;
-      if (desiredAccuracy == null) dart.nullFailed(I[1], 103, 22, "desiredAccuracy");
-      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
-      if (forceAndroidLocationManager == null) dart.nullFailed(I[1], 104, 10, "forceAndroidLocationManager");
-      let timeLimit = opts && 'timeLimit' in opts ? opts.timeLimit : null;
-      dart.throw(new core.UnimplementedError.new("getCurrentPosition() has not been implemented."));
-    }
-    getPositionStream(opts) {
-      let desiredAccuracy = opts && 'desiredAccuracy' in opts ? opts.desiredAccuracy : C[0] || CT.C0;
-      if (desiredAccuracy == null) dart.nullFailed(I[1], 145, 22, "desiredAccuracy");
-      let distanceFilter = opts && 'distanceFilter' in opts ? opts.distanceFilter : 0;
-      if (distanceFilter == null) dart.nullFailed(I[1], 146, 9, "distanceFilter");
-      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
-      if (forceAndroidLocationManager == null) dart.nullFailed(I[1], 147, 10, "forceAndroidLocationManager");
-      let timeInterval = opts && 'timeInterval' in opts ? opts.timeInterval : 0;
-      if (timeInterval == null) dart.nullFailed(I[1], 148, 9, "timeInterval");
-      let timeLimit = opts && 'timeLimit' in opts ? opts.timeLimit : null;
-      dart.throw(new core.UnimplementedError.new("getPositionStream() has not been implemented."));
-    }
-    openAppSettings() {
-      return async.async(core.bool, function* openAppSettings() {
-        dart.throw(new core.UnimplementedError.new("openAppSettings() has not been implemented."));
-      });
-    }
-    openLocationSettings() {
-      return async.async(core.bool, function* openLocationSettings() {
-        dart.throw(new core.UnimplementedError.new("openLocationSettings() has not been implemented."));
-      });
-    }
-    distanceBetween(startLatitude, startLongitude, endLatitude, endLongitude) {
-      if (startLatitude == null) dart.nullFailed(I[1], 178, 12, "startLatitude");
-      if (startLongitude == null) dart.nullFailed(I[1], 179, 12, "startLongitude");
-      if (endLatitude == null) dart.nullFailed(I[1], 180, 12, "endLatitude");
-      if (endLongitude == null) dart.nullFailed(I[1], 181, 12, "endLongitude");
-      let earthRadius = 6378137.0;
-      let dLat = geolocator_platform_interface.GeolocatorPlatform._toRadians(dart.notNull(endLatitude) - dart.notNull(startLatitude));
-      let dLon = geolocator_platform_interface.GeolocatorPlatform._toRadians(dart.notNull(endLongitude) - dart.notNull(startLongitude));
-      let a = math.pow(math.sin(core.num.as(dart.dsend(dLat, '/', [2]))), 2) + math.pow(math.sin(core.num.as(dart.dsend(dLon, '/', [2]))), 2) * math.cos(core.num.as(geolocator_platform_interface.GeolocatorPlatform._toRadians(startLatitude))) * math.cos(core.num.as(geolocator_platform_interface.GeolocatorPlatform._toRadians(endLatitude)));
-      let c = 2 * math.asin(math.sqrt(a));
-      return earthRadius * c;
-    }
-    static _toRadians(degree) {
-      if (degree == null) dart.nullFailed(I[1], 196, 28, "degree");
-      return dart.notNull(degree) * 3.141592653589793 / 180;
-    }
-    bearingBetween(startLatitude, startLongitude, endLatitude, endLongitude) {
-      if (startLatitude == null) dart.nullFailed(I[1], 207, 12, "startLatitude");
-      if (startLongitude == null) dart.nullFailed(I[1], 208, 12, "startLongitude");
-      if (endLatitude == null) dart.nullFailed(I[1], 209, 12, "endLatitude");
-      if (endLongitude == null) dart.nullFailed(I[1], 210, 12, "endLongitude");
-      let startLongitudeRadians = vector_math.radians(startLongitude);
-      let startLatitudeRadians = vector_math.radians(startLatitude);
-      let endLongitudeRadians = vector_math.radians(endLongitude);
-      let endLatitudeRadians = vector_math.radians(endLatitude);
-      let y = math.sin(dart.notNull(endLongitudeRadians) - dart.notNull(startLongitudeRadians)) * math.cos(endLatitudeRadians);
-      let x = math.cos(startLatitudeRadians) * math.sin(endLatitudeRadians) - math.sin(startLatitudeRadians) * math.cos(endLatitudeRadians) * math.cos(dart.notNull(endLongitudeRadians) - dart.notNull(startLongitudeRadians));
-      return vector_math.degrees(math.atan2(y, x));
-    }
-  };
-  (geolocator_platform_interface.GeolocatorPlatform.new = function() {
-    geolocator_platform_interface.GeolocatorPlatform.__proto__.new.call(this, {token: geolocator_platform_interface.GeolocatorPlatform._token});
-    ;
-  }).prototype = geolocator_platform_interface.GeolocatorPlatform.prototype;
-  dart.addTypeTests(geolocator_platform_interface.GeolocatorPlatform);
-  dart.addTypeCaches(geolocator_platform_interface.GeolocatorPlatform);
-  dart.setMethodSignature(geolocator_platform_interface.GeolocatorPlatform, () => ({
-    __proto__: dart.getMethods(geolocator_platform_interface.GeolocatorPlatform.__proto__),
-    checkPermission: dart.fnType(async.Future$(location_permission.LocationPermission), []),
-    requestPermission: dart.fnType(async.Future$(location_permission.LocationPermission), []),
-    isLocationServiceEnabled: dart.fnType(async.Future$(core.bool), []),
-    getLastKnownPosition: dart.fnType(async.Future$(dart.nullable(position.Position)), [], {forceAndroidLocationManager: core.bool}, {}),
-    getCurrentPosition: dart.fnType(async.Future$(position.Position), [], {desiredAccuracy: location_accuracy.LocationAccuracy, forceAndroidLocationManager: core.bool, timeLimit: dart.nullable(core.Duration)}, {}),
-    getPositionStream: dart.fnType(async.Stream$(position.Position), [], {desiredAccuracy: location_accuracy.LocationAccuracy, distanceFilter: core.int, forceAndroidLocationManager: core.bool, timeInterval: core.int, timeLimit: dart.nullable(core.Duration)}, {}),
-    openAppSettings: dart.fnType(async.Future$(core.bool), []),
-    openLocationSettings: dart.fnType(async.Future$(core.bool), []),
-    distanceBetween: dart.fnType(core.double, [core.double, core.double, core.double, core.double]),
-    bearingBetween: dart.fnType(core.double, [core.double, core.double, core.double, core.double])
-  }));
-  dart.setLibraryUri(geolocator_platform_interface.GeolocatorPlatform, I[2]);
-  dart.defineLazy(geolocator_platform_interface.GeolocatorPlatform, {
-    /*geolocator_platform_interface.GeolocatorPlatform._token*/get _token() {
-      return C[1] || CT.C1;
-    },
-    /*geolocator_platform_interface.GeolocatorPlatform._instance*/get _instance() {
-      return new method_channel_geolocator.MethodChannelGeolocator.new();
-    },
-    set _instance(_) {}
-  }, false);
-  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
-  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
-  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
-  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
-  var EventChannel__binaryMessenger = dart.privateName(platform_channel, "EventChannel._binaryMessenger");
-  var EventChannel_codec = dart.privateName(platform_channel, "EventChannel.codec");
-  var EventChannel_name = dart.privateName(platform_channel, "EventChannel.name");
-  method_channel_geolocator.MethodChannelGeolocator = class MethodChannelGeolocator extends geolocator_platform_interface.GeolocatorPlatform {
-    get forceAndroidLocationManager() {
-      return this[forceAndroidLocationManager];
-    }
-    set forceAndroidLocationManager(value) {
-      this[forceAndroidLocationManager] = value;
-    }
-    checkPermission() {
-      return async.async(location_permission.LocationPermission, (function* checkPermission() {
-        try {
-          let permission = core.int.as(yield method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(dart.dynamic, "checkPermission"));
-          return integer_extensions['IntergerExtensions|toLocationPermission'](permission);
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (message_codec.PlatformException.is(e)) {
-            this[_handlePlatformException](e);
-            dart.rethrow(e$);
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    requestPermission() {
-      return async.async(location_permission.LocationPermission, (function* requestPermission() {
-        try {
-          let permission = core.int.as(yield method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(dart.dynamic, "requestPermission"));
-          return integer_extensions['IntergerExtensions|toLocationPermission'](permission);
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (message_codec.PlatformException.is(e)) {
-            this[_handlePlatformException](e);
-            dart.rethrow(e$);
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    isLocationServiceEnabled() {
-      return async.async(core.bool, function* isLocationServiceEnabled() {
-        return method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(core.bool, "isLocationServiceEnabled").then(core.bool, dart.fn(value => {
-          let t2;
-          t2 = value;
-          return t2 == null ? false : t2;
-        }, T.boolNTobool()));
-      });
-    }
-    getLastKnownPosition(opts) {
-      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
-      if (forceAndroidLocationManager == null) dart.nullFailed(I[0], 69, 10, "forceAndroidLocationManager");
-      return async.async(T.PositionN(), (function* getLastKnownPosition() {
-        try {
-          let parameters = new (T.IdentityMapOfString$dynamic()).from(["forceAndroidLocationManager", forceAndroidLocationManager]);
-          let positionMap = (yield method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(dart.dynamic, "getLastKnownPosition", parameters));
-          return positionMap != null ? position.Position.fromMap(positionMap) : null;
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (message_codec.PlatformException.is(e)) {
-            this[_handlePlatformException](e);
-            dart.rethrow(e$);
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    getCurrentPosition(opts) {
-      let desiredAccuracy = opts && 'desiredAccuracy' in opts ? opts.desiredAccuracy : C[0] || CT.C0;
-      if (desiredAccuracy == null) dart.nullFailed(I[0], 89, 22, "desiredAccuracy");
-      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
-      if (forceAndroidLocationManager == null) dart.nullFailed(I[0], 90, 10, "forceAndroidLocationManager");
-      let timeLimit = opts && 'timeLimit' in opts ? opts.timeLimit : null;
-      return async.async(position.Position, (function* getCurrentPosition() {
-        let locationOptions = new location_options.LocationOptions.new({accuracy: desiredAccuracy, forceAndroidLocationManager: forceAndroidLocationManager});
-        try {
-          let positionFuture = null;
-          if (timeLimit != null) {
-            positionFuture = method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(dart.dynamic, "getCurrentPosition", locationOptions.toJson()).timeout(timeLimit);
-          } else {
-            positionFuture = method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(dart.dynamic, "getCurrentPosition", locationOptions.toJson());
+    useEmulator(origin) {
+      if (origin == null) dart.nullFailed(I[0], 83, 35, "origin");
+      return async.async(dart.void, (function* useEmulator() {
+        if (!origin[$isNotEmpty]) dart.assertFailed(null, I[0], 84, 12, "origin.isNotEmpty");
+        let mappedOrigin = origin;
+        if (platform.defaultTargetPlatform == platform.TargetPlatform.android && !true) {
+          if (mappedOrigin[$startsWith]("http://localhost")) {
+            mappedOrigin = mappedOrigin[$replaceFirst]("http://localhost", "http://10.0.2.2");
+          } else if (mappedOrigin[$startsWith]("http://127.0.0.1")) {
+            mappedOrigin = mappedOrigin[$replaceFirst]("http://127.0.0.1", "http://10.0.2.2");
           }
-          let positionMap = (yield positionFuture);
-          return position.Position.fromMap(positionMap);
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (message_codec.PlatformException.is(e)) {
-            this[_handlePlatformException](e);
-            dart.rethrow(e$);
-          } else
-            throw e$;
         }
+        let hostPortRegex = core.RegExp.new("^http:\\/\\/([\\w\\d.]+):(\\d+)$");
+        let match = hostPortRegex.firstMatch(mappedOrigin);
+        if (match == null) {
+          dart.throw(new core.ArgumentError.new("firebase.auth().useEmulator() origin format error"));
+        }
+        let host = dart.nullCheck(match.group(1));
+        let port = core.int.parse(dart.nullCheck(match.group(2)));
+        yield this[_delegate$].useEmulator(host, port);
       }).bind(this));
     }
-    getPositionStream(opts) {
-      let desiredAccuracy = opts && 'desiredAccuracy' in opts ? opts.desiredAccuracy : C[0] || CT.C0;
-      if (desiredAccuracy == null) dart.nullFailed(I[0], 126, 22, "desiredAccuracy");
-      let distanceFilter = opts && 'distanceFilter' in opts ? opts.distanceFilter : 0;
-      if (distanceFilter == null) dart.nullFailed(I[0], 127, 9, "distanceFilter");
-      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
-      if (forceAndroidLocationManager == null) dart.nullFailed(I[0], 128, 10, "forceAndroidLocationManager");
-      let timeInterval = opts && 'timeInterval' in opts ? opts.timeInterval : 0;
-      if (timeInterval == null) dart.nullFailed(I[0], 129, 9, "timeInterval");
-      let timeLimit = opts && 'timeLimit' in opts ? opts.timeLimit : null;
-      let locationOptions = new location_options.LocationOptions.new({accuracy: desiredAccuracy, distanceFilter: distanceFilter, forceAndroidLocationManager: forceAndroidLocationManager, timeInterval: timeInterval});
-      if (this[_positionStream] != null) {
-        return dart.nullCheck(this[_positionStream]);
-      }
-      let positionStream = method_channel_geolocator.MethodChannelGeolocator._eventChannel.receiveBroadcastStream(locationOptions.toJson());
-      if (timeLimit != null) {
-        positionStream = positionStream.timeout(timeLimit, {onTimeout: dart.fn(s => {
-            if (s == null) dart.nullFailed(I[0], 150, 21, "s");
-            s.addError(new async.TimeoutException.new("Time limit reached while waiting for position update.", timeLimit));
-            s.close();
-            this[_positionStream] = null;
-          }, T.EventSinkTovoid())});
-      }
-      this[_positionStream] = positionStream.map(position.Position, dart.fn(element => position.Position.fromMap(dart.dgsend(element, [core.String, dart.dynamic], 'cast', [])), T.dynamicToPosition())).handleError(dart.fn(error => {
-        this[_positionStream] = null;
-        if (message_codec.PlatformException.is(error)) {
-          this[_handlePlatformException](error);
-        }
-        dart.throw(error);
-      }, T.dynamicToNever()));
-      return dart.nullCheck(this[_positionStream]);
+    applyActionCode(code) {
+      if (code == null) dart.nullFailed(I[0], 126, 39, "code");
+      return async.async(dart.void, (function* applyActionCode() {
+        yield this[_delegate$].applyActionCode(code);
+      }).bind(this));
     }
-    openAppSettings() {
-      return async.async(core.bool, function* openAppSettings() {
-        return method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(core.bool, "openAppSettings").then(core.bool, dart.fn(value => {
-          let t4;
-          t4 = value;
-          return t4 == null ? false : t4;
-        }, T.boolNTobool()));
-      });
+    checkActionCode(code) {
+      if (code == null) dart.nullFailed(I[0], 148, 49, "code");
+      return this[_delegate$].checkActionCode(code);
     }
-    openLocationSettings() {
-      return async.async(core.bool, function* openLocationSettings() {
-        return method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(core.bool, "openLocationSettings").then(core.bool, dart.fn(value => {
-          let t4;
-          t4 = value;
-          return t4 == null ? false : t4;
-        }, T.boolNTobool()));
-      });
+    confirmPasswordReset(opts) {
+      let code = opts && 'code' in opts ? opts.code : null;
+      if (code == null) dart.nullFailed(I[0], 171, 21, "code");
+      let newPassword = opts && 'newPassword' in opts ? opts.newPassword : null;
+      if (newPassword == null) dart.nullFailed(I[0], 172, 21, "newPassword");
+      return async.async(dart.void, (function* confirmPasswordReset() {
+        yield this[_delegate$].confirmPasswordReset(code, newPassword);
+      }).bind(this));
     }
-    [_handlePlatformException](exception) {
-      if (exception == null) dart.nullFailed(I[0], 188, 51, "exception");
-      switch (exception.code) {
-        case "ACTIVITY_MISSING":
-        {
-          dart.throw(new activity_missing_exception.ActivityMissingException.new(exception.message));
+    createUserWithEmailAndPassword(opts) {
+      let email = opts && 'email' in opts ? opts.email : null;
+      if (email == null) dart.nullFailed(I[0], 191, 21, "email");
+      let password = opts && 'password' in opts ? opts.password : null;
+      if (password == null) dart.nullFailed(I[0], 192, 21, "password");
+      return async.async(firebase_auth.UserCredential, (function* createUserWithEmailAndPassword() {
+        return new firebase_auth.UserCredential.__(this, yield this[_delegate$].createUserWithEmailAndPassword(email, password));
+      }).bind(this));
+    }
+    fetchSignInMethodsForEmail(email) {
+      if (email == null) dart.nullFailed(I[0], 211, 58, "email");
+      return this[_delegate$].fetchSignInMethodsForEmail(email);
+    }
+    getRedirectResult() {
+      return async.async(firebase_auth.UserCredential, (function* getRedirectResult() {
+        return new firebase_auth.UserCredential.__(this, yield this[_delegate$].getRedirectResult());
+      }).bind(this));
+    }
+    isSignInWithEmailLink(emailLink) {
+      if (emailLink == null) dart.nullFailed(I[0], 227, 37, "emailLink");
+      return this[_delegate$].isSignInWithEmailLink(emailLink);
+    }
+    [_pipeStreamChanges](stream) {
+      if (stream == null) dart.nullFailed(I[0], 233, 58, "stream");
+      return stream.map(T.UserN(), dart.fn(delegateUser => {
+        if (delegateUser == null) {
+          return null;
         }
-        case "LOCATION_SERVICES_DISABLED":
-        {
-          dart.throw(new location_service_disabled_exception.LocationServiceDisabledException.new());
+        return new firebase_auth.User.__(this, delegateUser);
+      }, T.UserPlatformNToUserN())).asBroadcastStream({onCancel: dart.fn(sub => {
+          if (sub == null) dart.nullFailed(I[0], 240, 37, "sub");
+          return sub.cancel();
+        }, T.StreamSubscriptionOfUserNTovoid())});
+    }
+    authStateChanges() {
+      return this[_pipeStreamChanges](this[_delegate$].authStateChanges());
+    }
+    idTokenChanges() {
+      return this[_pipeStreamChanges](this[_delegate$].idTokenChanges());
+    }
+    userChanges() {
+      return this[_pipeStreamChanges](this[_delegate$].userChanges());
+    }
+    sendPasswordResetEmail(opts) {
+      let email = opts && 'email' in opts ? opts.email : null;
+      if (email == null) dart.nullFailed(I[0], 268, 21, "email");
+      let actionCodeSettings = opts && 'actionCodeSettings' in opts ? opts.actionCodeSettings : null;
+      return this[_delegate$].sendPasswordResetEmail(email, actionCodeSettings);
+    }
+    sendSignInLinkToEmail(opts) {
+      let email = opts && 'email' in opts ? opts.email : null;
+      if (email == null) dart.nullFailed(I[0], 289, 21, "email");
+      let actionCodeSettings = opts && 'actionCodeSettings' in opts ? opts.actionCodeSettings : null;
+      if (actionCodeSettings == null) dart.nullFailed(I[0], 290, 33, "actionCodeSettings");
+      return async.async(dart.void, (function* sendSignInLinkToEmail() {
+        if (actionCodeSettings.handleCodeInApp !== true) {
+          dart.throw(new core.ArgumentError.new("The [handleCodeInApp] value of [ActionCodeSettings] must be `true`."));
         }
-        case "LOCATION_SUBSCRIPTION_ACTIVE":
-        {
-          dart.throw(new already_subscribed_exception.AlreadySubscribedException.new());
-        }
-        case "PERMISSION_DEFINITIONS_NOT_FOUND":
-        {
-          dart.throw(new permission_definitions_not_found_exception.PermissionDefinitionsNotFoundException.new(exception.message));
-        }
-        case "PERMISSION_DENIED":
-        {
-          dart.throw(new permission_denied_exception.PermissionDeniedException.new(exception.message));
-        }
-        case "PERMISSION_REQUEST_IN_PROGRESS":
-        {
-          dart.throw(new permission_request_in_progress_exception.PermissionRequestInProgressException.new(exception.message));
-        }
-        case "LOCATION_UPDATE_FAILURE":
-        {
-          dart.throw(new position_update_exception.PositionUpdateException.new(exception.message));
-        }
-        default:
-        {
-          dart.throw(exception);
-        }
-      }
+        yield this[_delegate$].sendSignInLinkToEmail(email, actionCodeSettings);
+      }).bind(this));
+    }
+    setLanguageCode(languageCode) {
+      if (languageCode == null) dart.nullFailed(I[0], 313, 39, "languageCode");
+      return this[_delegate$].setLanguageCode(languageCode);
+    }
+    setSettings(opts) {
+      let appVerificationDisabledForTesting = opts && 'appVerificationDisabledForTesting' in opts ? opts.appVerificationDisabledForTesting : null;
+      let userAccessGroup = opts && 'userAccessGroup' in opts ? opts.userAccessGroup : null;
+      return this[_delegate$].setSettings({appVerificationDisabledForTesting: appVerificationDisabledForTesting, userAccessGroup: userAccessGroup});
+    }
+    setPersistence(persistence) {
+      if (persistence == null) dart.nullFailed(I[0], 366, 43, "persistence");
+      return async.async(dart.void, (function* setPersistence() {
+        return this[_delegate$].setPersistence(persistence);
+      }).bind(this));
+    }
+    signInAnonymously() {
+      return async.async(firebase_auth.UserCredential, (function* signInAnonymously() {
+        return new firebase_auth.UserCredential.__(this, yield this[_delegate$].signInAnonymously());
+      }).bind(this));
+    }
+    signInWithCredential(credential) {
+      if (credential == null) dart.nullFailed(I[0], 431, 62, "credential");
+      return async.async(firebase_auth.UserCredential, (function* signInWithCredential() {
+        return new firebase_auth.UserCredential.__(this, yield this[_delegate$].signInWithCredential(credential));
+      }).bind(this));
+    }
+    signInWithCustomToken(token) {
+      if (token == null) dart.nullFailed(I[0], 458, 55, "token");
+      return async.async(firebase_auth.UserCredential, (function* signInWithCustomToken() {
+        return new firebase_auth.UserCredential.__(this, yield this[_delegate$].signInWithCustomToken(token));
+      }).bind(this));
+    }
+    signInWithEmailAndPassword(opts) {
+      let email = opts && 'email' in opts ? opts.email : null;
+      if (email == null) dart.nullFailed(I[0], 482, 21, "email");
+      let password = opts && 'password' in opts ? opts.password : null;
+      if (password == null) dart.nullFailed(I[0], 483, 21, "password");
+      return async.async(firebase_auth.UserCredential, (function* signInWithEmailAndPassword() {
+        return new firebase_auth.UserCredential.__(this, yield this[_delegate$].signInWithEmailAndPassword(email, password));
+      }).bind(this));
+    }
+    signInWithEmailLink(opts) {
+      let email = opts && 'email' in opts ? opts.email : null;
+      if (email == null) dart.nullFailed(I[0], 507, 21, "email");
+      let emailLink = opts && 'emailLink' in opts ? opts.emailLink : null;
+      if (emailLink == null) dart.nullFailed(I[0], 508, 21, "emailLink");
+      return async.async(firebase_auth.UserCredential, (function* signInWithEmailLink() {
+        return new firebase_auth.UserCredential.__(this, yield this[_delegate$].signInWithEmailLink(email, emailLink));
+      }).bind(this));
+    }
+    signInWithPhoneNumber(phoneNumber, verifier = null) {
+      if (phoneNumber == null) dart.nullFailed(I[0], 526, 12, "phoneNumber");
+      return async.async(firebase_auth.ConfirmationResult, (function* signInWithPhoneNumber() {
+        if (!phoneNumber[$isNotEmpty]) dart.assertFailed(null, I[0], 529, 12, "phoneNumber.isNotEmpty");
+        verifier == null ? verifier = firebase_auth.RecaptchaVerifier.new() : null;
+        return new firebase_auth.ConfirmationResult.__(this, yield this[_delegate$].signInWithPhoneNumber(phoneNumber, verifier.delegate));
+      }).bind(this));
+    }
+    signInWithPopup(provider) {
+      if (provider == null) dart.nullFailed(I[0], 545, 55, "provider");
+      return async.async(firebase_auth.UserCredential, (function* signInWithPopup() {
+        return new firebase_auth.UserCredential.__(this, yield this[_delegate$].signInWithPopup(provider));
+      }).bind(this));
+    }
+    signInWithRedirect(provider) {
+      if (provider == null) dart.nullFailed(I[0], 553, 48, "provider");
+      return this[_delegate$].signInWithRedirect(provider);
+    }
+    signOut() {
+      return async.async(dart.void, (function* signOut() {
+        yield this[_delegate$].signOut();
+      }).bind(this));
+    }
+    verifyPasswordResetCode(code) {
+      if (code == null) dart.nullFailed(I[0], 583, 49, "code");
+      return this[_delegate$].verifyPasswordResetCode(code);
+    }
+    verifyPhoneNumber(opts) {
+      let phoneNumber = opts && 'phoneNumber' in opts ? opts.phoneNumber : null;
+      if (phoneNumber == null) dart.nullFailed(I[0], 629, 21, "phoneNumber");
+      let verificationCompleted = opts && 'verificationCompleted' in opts ? opts.verificationCompleted : null;
+      if (verificationCompleted == null) dart.nullFailed(I[0], 630, 41, "verificationCompleted");
+      let verificationFailed = opts && 'verificationFailed' in opts ? opts.verificationFailed : null;
+      if (verificationFailed == null) dart.nullFailed(I[0], 631, 38, "verificationFailed");
+      let codeSent = opts && 'codeSent' in opts ? opts.codeSent : null;
+      if (codeSent == null) dart.nullFailed(I[0], 632, 28, "codeSent");
+      let codeAutoRetrievalTimeout = opts && 'codeAutoRetrievalTimeout' in opts ? opts.codeAutoRetrievalTimeout : null;
+      if (codeAutoRetrievalTimeout == null) dart.nullFailed(I[0], 633, 44, "codeAutoRetrievalTimeout");
+      let autoRetrievedSmsCodeForTesting = opts && 'autoRetrievedSmsCodeForTesting' in opts ? opts.autoRetrievedSmsCodeForTesting : null;
+      let timeout = opts && 'timeout' in opts ? opts.timeout : C[0] || CT.C0;
+      if (timeout == null) dart.nullFailed(I[0], 635, 14, "timeout");
+      let forceResendingToken = opts && 'forceResendingToken' in opts ? opts.forceResendingToken : null;
+      return this[_delegate$].verifyPhoneNumber({phoneNumber: phoneNumber, timeout: timeout, forceResendingToken: forceResendingToken, verificationCompleted: verificationCompleted, verificationFailed: verificationFailed, codeSent: codeSent, codeAutoRetrievalTimeout: codeAutoRetrievalTimeout, autoRetrievedSmsCodeForTesting: autoRetrievedSmsCodeForTesting});
+    }
+    toString() {
+      return "FirebaseAuth(app: " + dart.str(this.app.name) + ")";
     }
   };
-  (method_channel_geolocator.MethodChannelGeolocator.new = function() {
-    this[forceAndroidLocationManager] = false;
-    this[_positionStream] = null;
-    method_channel_geolocator.MethodChannelGeolocator.__proto__.new.call(this);
+  (firebase_auth.FirebaseAuth.__ = function(opts) {
+    let app = opts && 'app' in opts ? opts.app : null;
+    if (app == null) dart.nullFailed(I[0], 32, 33, "app");
+    this[_delegatePackingProperty] = null;
+    this[app$] = app;
+    firebase_auth.FirebaseAuth.__proto__.new.call(this, app.name, "plugins.flutter.io/firebase_auth");
     ;
-  }).prototype = method_channel_geolocator.MethodChannelGeolocator.prototype;
-  dart.addTypeTests(method_channel_geolocator.MethodChannelGeolocator);
-  dart.addTypeCaches(method_channel_geolocator.MethodChannelGeolocator);
-  dart.setMethodSignature(method_channel_geolocator.MethodChannelGeolocator, () => ({
-    __proto__: dart.getMethods(method_channel_geolocator.MethodChannelGeolocator.__proto__),
-    [_handlePlatformException]: dart.fnType(dart.void, [message_codec.PlatformException])
+  }).prototype = firebase_auth.FirebaseAuth.prototype;
+  dart.addTypeTests(firebase_auth.FirebaseAuth);
+  dart.addTypeCaches(firebase_auth.FirebaseAuth);
+  dart.setMethodSignature(firebase_auth.FirebaseAuth, () => ({
+    __proto__: dart.getMethods(firebase_auth.FirebaseAuth.__proto__),
+    useEmulator: dart.fnType(async.Future$(dart.void), [core.String]),
+    applyActionCode: dart.fnType(async.Future$(dart.void), [core.String]),
+    checkActionCode: dart.fnType(async.Future$(action_code_info.ActionCodeInfo), [core.String]),
+    confirmPasswordReset: dart.fnType(async.Future$(dart.void), [], {}, {code: core.String, newPassword: core.String}),
+    createUserWithEmailAndPassword: dart.fnType(async.Future$(firebase_auth.UserCredential), [], {}, {email: core.String, password: core.String}),
+    fetchSignInMethodsForEmail: dart.fnType(async.Future$(core.List$(core.String)), [core.String]),
+    getRedirectResult: dart.fnType(async.Future$(firebase_auth.UserCredential), []),
+    isSignInWithEmailLink: dart.fnType(core.bool, [core.String]),
+    [_pipeStreamChanges]: dart.fnType(async.Stream$(dart.nullable(firebase_auth.User)), [async.Stream$(dart.nullable(platform_interface_user.UserPlatform))]),
+    authStateChanges: dart.fnType(async.Stream$(dart.nullable(firebase_auth.User)), []),
+    idTokenChanges: dart.fnType(async.Stream$(dart.nullable(firebase_auth.User)), []),
+    userChanges: dart.fnType(async.Stream$(dart.nullable(firebase_auth.User)), []),
+    sendPasswordResetEmail: dart.fnType(async.Future$(dart.void), [], {actionCodeSettings: dart.nullable(action_code_settings.ActionCodeSettings)}, {email: core.String}),
+    sendSignInLinkToEmail: dart.fnType(async.Future$(dart.void), [], {}, {actionCodeSettings: action_code_settings.ActionCodeSettings, email: core.String}),
+    setLanguageCode: dart.fnType(async.Future$(dart.void), [core.String]),
+    setSettings: dart.fnType(async.Future$(dart.void), [], {appVerificationDisabledForTesting: dart.nullable(core.bool), userAccessGroup: dart.nullable(core.String)}, {}),
+    setPersistence: dart.fnType(async.Future$(dart.void), [types.Persistence]),
+    signInAnonymously: dart.fnType(async.Future$(firebase_auth.UserCredential), []),
+    signInWithCredential: dart.fnType(async.Future$(firebase_auth.UserCredential), [auth_credential.AuthCredential]),
+    signInWithCustomToken: dart.fnType(async.Future$(firebase_auth.UserCredential), [core.String]),
+    signInWithEmailAndPassword: dart.fnType(async.Future$(firebase_auth.UserCredential), [], {}, {email: core.String, password: core.String}),
+    signInWithEmailLink: dart.fnType(async.Future$(firebase_auth.UserCredential), [], {}, {email: core.String, emailLink: core.String}),
+    signInWithPhoneNumber: dart.fnType(async.Future$(firebase_auth.ConfirmationResult), [core.String], [dart.nullable(firebase_auth.RecaptchaVerifier)]),
+    signInWithPopup: dart.fnType(async.Future$(firebase_auth.UserCredential), [auth_provider.AuthProvider]),
+    signInWithRedirect: dart.fnType(async.Future$(dart.void), [auth_provider.AuthProvider]),
+    signOut: dart.fnType(async.Future$(dart.void), []),
+    verifyPasswordResetCode: dart.fnType(async.Future$(core.String), [core.String]),
+    verifyPhoneNumber: dart.fnType(async.Future$(dart.void), [], {autoRetrievedSmsCodeForTesting: dart.nullable(core.String), forceResendingToken: dart.nullable(core.int), timeout: core.Duration}, {codeAutoRetrievalTimeout: dart.fnType(dart.void, [core.String]), codeSent: dart.fnType(dart.void, [core.String, dart.nullable(core.int)]), phoneNumber: core.String, verificationCompleted: dart.fnType(dart.void, [phone_auth.PhoneAuthCredential]), verificationFailed: dart.fnType(dart.void, [firebase_auth_exception.FirebaseAuthException])})
   }));
-  dart.setLibraryUri(method_channel_geolocator.MethodChannelGeolocator, I[3]);
-  dart.setFieldSignature(method_channel_geolocator.MethodChannelGeolocator, () => ({
-    __proto__: dart.getFields(method_channel_geolocator.MethodChannelGeolocator.__proto__),
-    forceAndroidLocationManager: dart.fieldType(core.bool),
-    [_positionStream]: dart.fieldType(dart.nullable(async.Stream$(position.Position)))
+  dart.setGetterSignature(firebase_auth.FirebaseAuth, () => ({
+    __proto__: dart.getGetters(firebase_auth.FirebaseAuth.__proto__),
+    [_delegate$]: platform_interface_firebase_auth.FirebaseAuthPlatform,
+    currentUser: dart.nullable(firebase_auth.User),
+    languageCode: dart.nullable(core.String)
   }));
-  dart.defineLazy(method_channel_geolocator.MethodChannelGeolocator, {
-    /*method_channel_geolocator.MethodChannelGeolocator._methodChannel*/get _methodChannel() {
-      return C[2] || CT.C2;
+  dart.setLibraryUri(firebase_auth.FirebaseAuth, I[1]);
+  dart.setFieldSignature(firebase_auth.FirebaseAuth, () => ({
+    __proto__: dart.getFields(firebase_auth.FirebaseAuth.__proto__),
+    [_delegatePackingProperty]: dart.fieldType(dart.nullable(platform_interface_firebase_auth.FirebaseAuthPlatform)),
+    app: dart.fieldType(firebase_core.FirebaseApp)
+  }));
+  dart.defineExtensionMethods(firebase_auth.FirebaseAuth, ['toString']);
+  dart.defineLazy(firebase_auth.FirebaseAuth, {
+    /*firebase_auth.FirebaseAuth._firebaseAuthInstances*/get _firebaseAuthInstances() {
+      return new (T.IdentityMapOfString$FirebaseAuth()).new();
     },
-    /*method_channel_geolocator.MethodChannelGeolocator._eventChannel*/get _eventChannel() {
-      return C[5] || CT.C5;
+    set _firebaseAuthInstances(_) {}
+  }, false);
+  var _auth$ = dart.privateName(firebase_auth, "_auth");
+  firebase_auth.UserCredential = class UserCredential extends core.Object {
+    get additionalUserInfo() {
+      return this[_delegate$].additionalUserInfo;
+    }
+    get credential() {
+      return this[_delegate$].credential;
+    }
+    get user() {
+      return this[_delegate$].user == null ? null : new firebase_auth.User.__(this[_auth$], dart.nullCheck(this[_delegate$].user));
+    }
+    toString() {
+      return "UserCredential(" + "additionalUserInfo: " + dart.str(this.additionalUserInfo) + ", " + "credential: " + dart.str(this.credential) + ", " + "user: " + dart.str(this.user) + ")";
+    }
+  };
+  (firebase_auth.UserCredential.__ = function(_auth, _delegate) {
+    if (_auth == null) dart.nullFailed(I[2], 10, 25, "_auth");
+    if (_delegate == null) dart.nullFailed(I[2], 10, 37, "_delegate");
+    this[_auth$] = _auth;
+    this[_delegate$] = _delegate;
+    platform_interface_user_credential.UserCredentialPlatform.verifyExtends(this[_delegate$]);
+  }).prototype = firebase_auth.UserCredential.prototype;
+  dart.addTypeTests(firebase_auth.UserCredential);
+  dart.addTypeCaches(firebase_auth.UserCredential);
+  dart.setGetterSignature(firebase_auth.UserCredential, () => ({
+    __proto__: dart.getGetters(firebase_auth.UserCredential.__proto__),
+    additionalUserInfo: dart.nullable(additional_user_info.AdditionalUserInfo),
+    credential: dart.nullable(auth_credential.AuthCredential),
+    user: dart.nullable(firebase_auth.User)
+  }));
+  dart.setLibraryUri(firebase_auth.UserCredential, I[1]);
+  dart.setFieldSignature(firebase_auth.UserCredential, () => ({
+    __proto__: dart.getFields(firebase_auth.UserCredential.__proto__),
+    [_auth$]: dart.finalFieldType(firebase_auth.FirebaseAuth),
+    [_delegate$]: dart.finalFieldType(platform_interface_user_credential.UserCredentialPlatform)
+  }));
+  dart.defineExtensionMethods(firebase_auth.UserCredential, ['toString']);
+  firebase_auth.User = class User extends core.Object {
+    get displayName() {
+      return this[_delegate$].displayName;
+    }
+    get email() {
+      return this[_delegate$].email;
+    }
+    get emailVerified() {
+      return this[_delegate$].emailVerified;
+    }
+    get isAnonymous() {
+      return this[_delegate$].isAnonymous;
+    }
+    get metadata() {
+      return this[_delegate$].metadata;
+    }
+    get phoneNumber() {
+      return this[_delegate$].phoneNumber;
+    }
+    get photoURL() {
+      return this[_delegate$].photoURL;
+    }
+    get providerData() {
+      return this[_delegate$].providerData;
+    }
+    get refreshToken() {
+      return this[_delegate$].refreshToken;
+    }
+    get tenantId() {
+      return this[_delegate$].tenantId;
+    }
+    get uid() {
+      return this[_delegate$].uid;
+    }
+    delete() {
+      return async.async(dart.void, (function* $delete() {
+        return this[_delegate$].delete();
+      }).bind(this));
+    }
+    getIdToken(forceRefresh = false) {
+      if (forceRefresh == null) dart.nullFailed(I[3], 117, 35, "forceRefresh");
+      return this[_delegate$].getIdToken(forceRefresh);
+    }
+    getIdTokenResult(forceRefresh = false) {
+      if (forceRefresh == null) dart.nullFailed(I[3], 126, 48, "forceRefresh");
+      return this[_delegate$].getIdTokenResult(forceRefresh);
+    }
+    linkWithCredential(credential) {
+      if (credential == null) dart.nullFailed(I[3], 178, 60, "credential");
+      return async.async(firebase_auth.UserCredential, (function* linkWithCredential() {
+        return new firebase_auth.UserCredential.__(this[_auth$], yield this[_delegate$].linkWithCredential(credential));
+      }).bind(this));
+    }
+    linkWithPhoneNumber(phoneNumber, verifier = null) {
+      if (phoneNumber == null) dart.nullFailed(I[3], 212, 12, "phoneNumber");
+      return async.async(firebase_auth.ConfirmationResult, (function* linkWithPhoneNumber() {
+        if (!phoneNumber[$isNotEmpty]) dart.assertFailed(null, I[3], 215, 12, "phoneNumber.isNotEmpty");
+        verifier == null ? verifier = firebase_auth.RecaptchaVerifier.new() : null;
+        return new firebase_auth.ConfirmationResult.__(this[_auth$], yield this[_delegate$].linkWithPhoneNumber(phoneNumber, verifier.delegate));
+      }).bind(this));
+    }
+    reauthenticateWithCredential(credential) {
+      if (credential == null) dart.nullFailed(I[3], 253, 22, "credential");
+      return async.async(firebase_auth.UserCredential, (function* reauthenticateWithCredential() {
+        return new firebase_auth.UserCredential.__(this[_auth$], yield this[_delegate$].reauthenticateWithCredential(credential));
+      }).bind(this));
+    }
+    reload() {
+      return async.async(dart.void, (function* reload() {
+        yield this[_delegate$].reload();
+      }).bind(this));
+    }
+    sendEmailVerification(actionCodeSettings = null) {
+      return async.async(dart.void, (function* sendEmailVerification() {
+        yield this[_delegate$].sendEmailVerification(actionCodeSettings);
+      }).bind(this));
+    }
+    unlink(providerId) {
+      if (providerId == null) dart.nullFailed(I[3], 278, 30, "providerId");
+      return async.async(firebase_auth.User, (function* unlink() {
+        return new firebase_auth.User.__(this[_auth$], yield this[_delegate$].unlink(providerId));
+      }).bind(this));
+    }
+    updateEmail(newEmail) {
+      if (newEmail == null) dart.nullFailed(I[3], 301, 35, "newEmail");
+      return async.async(dart.void, (function* updateEmail() {
+        yield this[_delegate$].updateEmail(newEmail);
+      }).bind(this));
+    }
+    updatePassword(newPassword) {
+      if (newPassword == null) dart.nullFailed(I[3], 318, 38, "newPassword");
+      return async.async(dart.void, (function* updatePassword() {
+        yield this[_delegate$].updatePassword(newPassword);
+      }).bind(this));
+    }
+    updatePhoneNumber(phoneCredential) {
+      if (phoneCredential == null) dart.nullFailed(I[3], 331, 54, "phoneCredential");
+      return async.async(dart.void, (function* updatePhoneNumber() {
+        yield this[_delegate$].updatePhoneNumber(phoneCredential);
+      }).bind(this));
+    }
+    updateProfile(opts) {
+      let displayName = opts && 'displayName' in opts ? opts.displayName : null;
+      let photoURL = opts && 'photoURL' in opts ? opts.photoURL : null;
+      return async.async(dart.void, (function* updateProfile() {
+        yield this[_delegate$].updateProfile(new (T.IdentityMapOfString$StringN()).from(["displayName", displayName, "photoURL", photoURL]));
+      }).bind(this));
+    }
+    verifyBeforeUpdateEmail(newEmail, actionCodeSettings = null) {
+      if (newEmail == null) dart.nullFailed(I[3], 349, 12, "newEmail");
+      return async.async(dart.void, (function* verifyBeforeUpdateEmail() {
+        yield this[_delegate$].verifyBeforeUpdateEmail(newEmail, actionCodeSettings);
+      }).bind(this));
+    }
+    toString() {
+      return dart.str(dart.wrapType(firebase_auth.User)) + "(" + "displayName: " + dart.str(this.displayName) + ", " + "email: " + dart.str(this.email) + ", " + "emailVerified: " + dart.str(this.emailVerified) + ", " + "isAnonymous: " + dart.str(this.isAnonymous) + ", " + "metadata: " + dart.str(this.metadata) + ", " + "phoneNumber: " + dart.str(this.phoneNumber) + ", " + "photoURL: " + dart.str(this.photoURL) + ", " + "providerData, " + dart.str(this.providerData) + ", " + "refreshToken: " + dart.str(this.refreshToken) + ", " + "tenantId: " + dart.str(this.tenantId) + ", " + "uid: " + dart.str(this.uid) + ")";
+    }
+  };
+  (firebase_auth.User.__ = function(_auth, _delegate) {
+    if (_auth == null) dart.nullFailed(I[3], 13, 15, "_auth");
+    if (_delegate == null) dart.nullFailed(I[3], 13, 27, "_delegate");
+    this[_auth$] = _auth;
+    this[_delegate$] = _delegate;
+    platform_interface_user.UserPlatform.verifyExtends(this[_delegate$]);
+  }).prototype = firebase_auth.User.prototype;
+  dart.addTypeTests(firebase_auth.User);
+  dart.addTypeCaches(firebase_auth.User);
+  dart.setMethodSignature(firebase_auth.User, () => ({
+    __proto__: dart.getMethods(firebase_auth.User.__proto__),
+    delete: dart.fnType(async.Future$(dart.void), []),
+    getIdToken: dart.fnType(async.Future$(core.String), [], [core.bool]),
+    getIdTokenResult: dart.fnType(async.Future$(id_token_result.IdTokenResult), [], [core.bool]),
+    linkWithCredential: dart.fnType(async.Future$(firebase_auth.UserCredential), [auth_credential.AuthCredential]),
+    linkWithPhoneNumber: dart.fnType(async.Future$(firebase_auth.ConfirmationResult), [core.String], [dart.nullable(firebase_auth.RecaptchaVerifier)]),
+    reauthenticateWithCredential: dart.fnType(async.Future$(firebase_auth.UserCredential), [auth_credential.AuthCredential]),
+    reload: dart.fnType(async.Future$(dart.void), []),
+    sendEmailVerification: dart.fnType(async.Future$(dart.void), [], [dart.nullable(action_code_settings.ActionCodeSettings)]),
+    unlink: dart.fnType(async.Future$(firebase_auth.User), [core.String]),
+    updateEmail: dart.fnType(async.Future$(dart.void), [core.String]),
+    updatePassword: dart.fnType(async.Future$(dart.void), [core.String]),
+    updatePhoneNumber: dart.fnType(async.Future$(dart.void), [phone_auth.PhoneAuthCredential]),
+    updateProfile: dart.fnType(async.Future$(dart.void), [], {displayName: dart.nullable(core.String), photoURL: dart.nullable(core.String)}, {}),
+    verifyBeforeUpdateEmail: dart.fnType(async.Future$(dart.void), [core.String], [dart.nullable(action_code_settings.ActionCodeSettings)])
+  }));
+  dart.setGetterSignature(firebase_auth.User, () => ({
+    __proto__: dart.getGetters(firebase_auth.User.__proto__),
+    displayName: dart.nullable(core.String),
+    email: dart.nullable(core.String),
+    emailVerified: core.bool,
+    isAnonymous: core.bool,
+    metadata: user_metadata.UserMetadata,
+    phoneNumber: dart.nullable(core.String),
+    photoURL: dart.nullable(core.String),
+    providerData: core.List$(user_info.UserInfo),
+    refreshToken: dart.nullable(core.String),
+    tenantId: dart.nullable(core.String),
+    uid: core.String
+  }));
+  dart.setLibraryUri(firebase_auth.User, I[1]);
+  dart.setFieldSignature(firebase_auth.User, () => ({
+    __proto__: dart.getFields(firebase_auth.User.__proto__),
+    [_delegate$]: dart.fieldType(platform_interface_user.UserPlatform),
+    [_auth$]: dart.finalFieldType(firebase_auth.FirebaseAuth)
+  }));
+  dart.defineExtensionMethods(firebase_auth.User, ['toString']);
+  firebase_auth.ConfirmationResult = class ConfirmationResult extends core.Object {
+    get verificationId() {
+      return this[_delegate$].verificationId;
+    }
+    confirm(verificationCode) {
+      if (verificationCode == null) dart.nullFailed(I[4], 29, 41, "verificationCode");
+      return async.async(firebase_auth.UserCredential, (function* confirm() {
+        return new firebase_auth.UserCredential.__(this[_auth$], yield this[_delegate$].confirm(verificationCode));
+      }).bind(this));
+    }
+  };
+  (firebase_auth.ConfirmationResult.__ = function(_auth, _delegate) {
+    if (_auth == null) dart.nullFailed(I[4], 15, 29, "_auth");
+    if (_delegate == null) dart.nullFailed(I[4], 15, 41, "_delegate");
+    this[_auth$] = _auth;
+    this[_delegate$] = _delegate;
+    platform_interface_confirmation_result.ConfirmationResultPlatform.verifyExtends(this[_delegate$]);
+  }).prototype = firebase_auth.ConfirmationResult.prototype;
+  dart.addTypeTests(firebase_auth.ConfirmationResult);
+  dart.addTypeCaches(firebase_auth.ConfirmationResult);
+  dart.setMethodSignature(firebase_auth.ConfirmationResult, () => ({
+    __proto__: dart.getMethods(firebase_auth.ConfirmationResult.__proto__),
+    confirm: dart.fnType(async.Future$(firebase_auth.UserCredential), [core.String])
+  }));
+  dart.setGetterSignature(firebase_auth.ConfirmationResult, () => ({
+    __proto__: dart.getGetters(firebase_auth.ConfirmationResult.__proto__),
+    verificationId: core.String
+  }));
+  dart.setLibraryUri(firebase_auth.ConfirmationResult, I[1]);
+  dart.setFieldSignature(firebase_auth.ConfirmationResult, () => ({
+    __proto__: dart.getFields(firebase_auth.ConfirmationResult.__proto__),
+    [_delegate$]: dart.fieldType(platform_interface_confirmation_result.ConfirmationResultPlatform),
+    [_auth$]: dart.finalFieldType(firebase_auth.FirebaseAuth)
+  }));
+  var _name = dart.privateName(platform_interface_recaptcha_verifier_factory, "_name");
+  firebase_auth.RecaptchaVerifier = class RecaptchaVerifier extends core.Object {
+    static new(opts) {
+      let container = opts && 'container' in opts ? opts.container : null;
+      let size = opts && 'size' in opts ? opts.size : C[1] || CT.C1;
+      if (size == null) dart.nullFailed(I[5], 49, 27, "size");
+      let theme = opts && 'theme' in opts ? opts.theme : C[2] || CT.C2;
+      if (theme == null) dart.nullFailed(I[5], 50, 28, "theme");
+      let onSuccess = opts && 'onSuccess' in opts ? opts.onSuccess : null;
+      let onError = opts && 'onError' in opts ? opts.onError : null;
+      let onExpired = opts && 'onExpired' in opts ? opts.onExpired : null;
+      return new firebase_auth.RecaptchaVerifier.__(firebase_auth.RecaptchaVerifier._factory.delegateFor({container: container, size: size, theme: theme, onSuccess: onSuccess, onError: onError, onExpired: onExpired}));
+    }
+    get delegate() {
+      return this[_delegate$];
+    }
+    get type() {
+      return this[_delegate$].type;
+    }
+    clear() {
+      return this[_delegate$].clear();
+    }
+    render() {
+      return async.async(core.int, (function* render() {
+        return this[_delegate$].render();
+      }).bind(this));
+    }
+    verify() {
+      return async.async(core.String, (function* verify() {
+        return this[_delegate$].verify();
+      }).bind(this));
+    }
+  };
+  (firebase_auth.RecaptchaVerifier.__ = function(_delegate) {
+    if (_delegate == null) dart.nullFailed(I[5], 13, 28, "_delegate");
+    this[_delegate$] = _delegate;
+    ;
+  }).prototype = firebase_auth.RecaptchaVerifier.prototype;
+  dart.addTypeTests(firebase_auth.RecaptchaVerifier);
+  dart.addTypeCaches(firebase_auth.RecaptchaVerifier);
+  dart.setMethodSignature(firebase_auth.RecaptchaVerifier, () => ({
+    __proto__: dart.getMethods(firebase_auth.RecaptchaVerifier.__proto__),
+    clear: dart.fnType(dart.void, []),
+    render: dart.fnType(async.Future$(core.int), []),
+    verify: dart.fnType(async.Future$(core.String), [])
+  }));
+  dart.setGetterSignature(firebase_auth.RecaptchaVerifier, () => ({
+    __proto__: dart.getGetters(firebase_auth.RecaptchaVerifier.__proto__),
+    delegate: platform_interface_recaptcha_verifier_factory.RecaptchaVerifierFactoryPlatform,
+    type: core.String
+  }));
+  dart.setLibraryUri(firebase_auth.RecaptchaVerifier, I[1]);
+  dart.setFieldSignature(firebase_auth.RecaptchaVerifier, () => ({
+    __proto__: dart.getFields(firebase_auth.RecaptchaVerifier.__proto__),
+    [_delegate$]: dart.fieldType(platform_interface_recaptcha_verifier_factory.RecaptchaVerifierFactoryPlatform)
+  }));
+  dart.defineLazy(firebase_auth.RecaptchaVerifier, {
+    /*firebase_auth.RecaptchaVerifier._factory*/get _factory() {
+      return platform_interface_recaptcha_verifier_factory.RecaptchaVerifierFactoryPlatform.instance;
     }
   }, false);
-  dart.trackLibraries("packages/geolocator_platform_interface/src/implementations/method_channel_geolocator.dart", {
-    "package:geolocator_platform_interface/src/implementations/method_channel_geolocator.dart": method_channel_geolocator,
-    "package:geolocator_platform_interface/src/geolocator_platform_interface.dart": geolocator_platform_interface,
-    "package:geolocator_platform_interface/geolocator_platform_interface.dart": geolocator_platform_interface$
+  dart.trackLibraries("packages/firebase_auth/firebase_auth.dart", {
+    "package:firebase_auth/firebase_auth.dart": firebase_auth
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["../geolocator_platform_interface.dart","method_channel_geolocator.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA6B4C;IAAS;;UAKZ;AACU,MAA7B,wDAAY,QAAQ,EAAE;AACpB,MAApB,6DAAY,QAAQ;IACtB;;AAOG,MAFD,WAAM,gCACJ;IAEJ;;AAY2E,MAAzE,WAAM,gCAAmB;IAC3B;;AAOG,MAFD,WAAM,gCACJ;IAEJ;;UAYO;;AAIJ,MAFD,WAAM,gCACJ;IAEJ;;UAmBmB;;UACZ;;UACK;AAEgE,MAA1E,WAAM,gCAAmB;IAC3B;;UAqCmB;;UACb;;UACC;;UACD;;UACM;AAE+D,MAAzE,WAAM,gCAAmB;IAC3B;;AAM4B;AAC6C,QAAvE,WAAM,gCAAmB;MAC3B;;;AAMiC;AAEwB,QADvD,WAAM,gCACF;MACN;;oBASS,eACA,gBACA,aACA;UAHA;UACA;UACA;UACA;AAEH,wBAAc;AACd,iBAAO,4DAAuB,aAAZ,WAAW,iBAAG,aAAa;AAC7C,iBAAO,4DAAwB,aAAb,YAAY,iBAAG,cAAc;AAE/C,cAAI,AAAsB,SAAlB,qBAAS,WAAL,IAAI,QAAG,OAAI,KACvB,AAAsB,AACa,SAD/B,qBAAS,WAAL,IAAI,QAAG,OAAI,KACf,qBAAI,4DAAW,aAAa,MAC5B,qBAAI,4DAAW,WAAW;AAC9B,cAAI,AAAE,IAAE,UAAK,UAAK,CAAC;AAEvB,YAAO,AAAY,YAAD,GAAG,CAAC;IACxB;;UAEyB;AACvB,YAAc,AAAK,cAAZ,MAAM,wBAAQ;IACvB;mBASS,eACA,gBACA,aACA;UAHA;UACA;UACA;UACA;AAEH,kCAAwB,oBAAQ,cAAc;AAC9C,iCAAuB,oBAAQ,aAAa;AAC5C,gCAAsB,oBAAQ,YAAY;AAC1C,+BAAqB,oBAAQ,WAAW;AAExC,cAAI,AAAiD,SAAzB,aAApB,mBAAmB,iBAAG,qBAAqB,KACnD,SAAI,kBAAkB;AACtB,cAAI,AAA0B,AAA0B,SAAhD,oBAAoB,IAAI,SAAI,kBAAkB,IACtD,AAA0B,AACE,SADxB,oBAAoB,IACpB,SAAI,kBAAkB,IACtB,SAAwB,aAApB,mBAAmB,iBAAG,qBAAqB;AAEvD,YAAO,qBAAQ,WAAM,CAAC,EAAE,CAAC;IAC3B;;;AA5MuB,sFAAa;;EAAO;;;;;;;;;;;;;;;;;;MAEvB,uDAAM;;;MAEA,0DAAS;YAAG;;;;;;;;;;;;ICGjC;;;;;;;AAKqC;AACxC;AAEY,uCACN,MAAM,AAAe,4FAAa;AAEtC,gBAAkB,+DAAX,UAAU;;cACW;AAA5B;AAC2B,YAA3B,+BAAyB,CAAC;AAEnB,YAAP;;;;MAEJ;;;AAG4C;AAC1C;AAEY,uCACN,MAAM,AAAe,4FAAa;AAEtC,gBAAkB,+DAAX,UAAU;;cACW;AAA5B;AAC2B,YAA3B,+BAAyB,CAAC;AAEnB,YAAP;;;;MAEJ;;;AAGqC;AAAY,cAAA,AAC5C,AACA,0FADmB,4CACd,QAAC;;AAAU,oBAAK;gBAAL,cAAS;;MAAM;;;UAI7B;;AAD+B;AAGpC;AACQ,2BAA8B,4CAClC,+BAA+B,2BAA2B;AAGtD,6BACF,MAAM,AAAe,4FAAa,wBAAwB,UAAU;AAExE,gBAAO,AAAY,YAAD,WAAoB,0BAAQ,WAAW,IAAI;;cACjC;AAA5B;AAC2B,YAA3B,+BAAyB,CAAC;AAEnB,YAAP;;;;MAEJ;;;UAImB;;UACZ;;UACK;AAHuB;AAK3B,8BAAkB,oDACZ,eAAe,+BACI,2BAA2B;AAG1D;AACkB;AAEhB,cAAI,AAAU,SAAD;AAMY,YALvB,iBAAiB,AACZ,AAIA,4FAHC,sBACA,AAAgB,eAAD,mBAER,SAAS;;AAKrB,YAHD,iBAAiB,AAAe,4FAC9B,sBACA,AAAgB,eAAD;;AAIb,6BAAc,MAAM,cAAc;AACxC,gBAAgB,2BAAQ,WAAW;;cACP;AAA5B;AAC2B,YAA3B,+BAAyB,CAAC;AAEnB,YAAP;;;;MAEJ;;;UAImB;;UACb;;UACC;;UACD;;UACM;AAEJ,4BAAkB,oDACZ,eAAe,kBACT,cAAc,+BACD,2BAA2B,gBAC1C,YAAY;AAG5B,UAAI,AAAgB;AAClB,cAAsB,gBAAf;;AAGL,2BAAiB,AAAc,uFACjC,AAAgB,eAAD;AAGjB,UAAI,AAAU,SAAD;AAWV,QAVD,iBAAiB,AAAe,cAAD,SAC7B,SAAS,cACE;gBAAC;AAIR,YAHF,AAAE,CAAD,UAAU,+BACT,yDACA,SAAS;AAEF,YAAT,AAAE,CAAD;AACqB,YAAtB,wBAAkB;;;AAiBvB,MAZD,wBAAkB,AACb,AAEA,cAH2B,wBACb,QAAS,WACX,0BAAgB,YAAR,OAAO,iFAE9B,QAAC;AACuB,QAAtB,wBAAkB;AAClB,YAAU,mCAAN,KAAK;AACwB,UAA/B,+BAAyB,KAAK;;AAGrB,QAAX,WAAM,KAAK;;AAIf,YAAsB,gBAAf;IACT;;AAG4B;AAAY,cAAA,AACnC,AACA,0FADmB,mCACd,QAAC;;AAAU,oBAAK;gBAAL,cAAS;;MAAM;;;AAGH;AAAY,cAAA,AACxC,AACA,0FADmB,wCACd,QAAC;;AAAU,oBAAK;gBAAL,cAAS;;MAAM;;;UAEY;AAC9C,cAAQ,AAAU,SAAD;;;AAEoC,UAAjD,WAAM,4DAAyB,AAAU,SAAD;;;;AAEA,UAAxC,WAAM;;;;AAE4B,UAAlC,WAAM;;;;AAEyD,UAA/D,WAAM,0FAAuC,AAAU,SAAD;;;;AAEJ,UAAlD,WAAM,8DAA0B,AAAU,SAAD;;;;AAEoB,UAA7D,WAAM,sFAAqC,AAAU,SAAD;;;;AAEJ,UAAhD,WAAM,0DAAwB,AAAU,SAAD;;;;AAExB,UAAf,WAAM,SAAS;;;IAErB;;;IAnLK,oCAA8B;IAEjB;;;EAkLpB;;;;;;;;;;;;;;MAhMe,gEAAc;;;MAKd,+DAAa","file":"../../../../../../../../../../../../../packages/geolocator_platform_interface/src/implementations/method_channel_geolocator.dart.lib.js"}');
+    "package:firebase_auth/firebase_auth.dart": ["src/firebase_auth.dart", "src/user_credential.dart", "src/user.dart", "src/confirmation_result.dart", "src/recaptcha_verifier.dart"]
+  }, '{"version":3,"sourceRoot":"","sources":["src/firebase_auth.dart","src/user_credential.dart","src/user.dart","src/confirmation_result.dart","src/recaptcha_verifier.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/firebase_auth/firebase_auth.dart.lib.js"}');
   // Exports:
   return {
-    src__implementations__method_channel_geolocator: method_channel_geolocator,
-    src__geolocator_platform_interface: geolocator_platform_interface,
-    geolocator_platform_interface: geolocator_platform_interface$
+    firebase_auth: firebase_auth
   };
 }));
 
-//# sourceMappingURL=method_channel_geolocator.dart.lib.js.map
+//# sourceMappingURL=firebase_auth.dart.lib.js.map
