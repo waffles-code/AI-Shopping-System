@@ -1,3 +1,8 @@
+import 'package:aishop/screens/Categories/beauty.dart';
+import 'package:aishop/screens/Categories/books.dart';
+import 'package:aishop/screens/Categories/clothes.dart';
+import 'package:aishop/screens/Categories/kitchen.dart';
+import 'package:aishop/screens/Categories/tech.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/icons/icons.dart';
 import 'category_card.dart';
@@ -16,7 +21,10 @@ class Category extends StatelessWidget {
                 Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) => BooksScreen()));
+                    },
                     splashColor: Colors.white30,
                     customBorder: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
@@ -31,7 +39,10 @@ class Category extends StatelessWidget {
                 Padding(padding: EdgeInsets.fromLTRB(15, 0, 10, 0)),
                 Material(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) => ClothesScreen()));
+                    },
                     splashColor: Colors.white30,
                     customBorder: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
@@ -46,7 +57,10 @@ class Category extends StatelessWidget {
                 Padding(padding: EdgeInsets.fromLTRB(10, 0, 10, 0)),
                 Material(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) => ShoesScreen()));
+                    },
                     splashColor: Colors.white30,
                     customBorder: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
@@ -61,7 +75,10 @@ class Category extends StatelessWidget {
                 Padding(padding: EdgeInsets.fromLTRB(10, 0, 10, 0)),
                 Material(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) => KitchenScreen()));
+                    },
                     splashColor: Colors.white30,
                     customBorder: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
@@ -76,7 +93,10 @@ class Category extends StatelessWidget {
                 Padding(padding: EdgeInsets.fromLTRB(10, 0, 10, 0)),
                 Material(
                   child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) => TechScreen()));
+                      },
                       splashColor: Colors.white30,
                       customBorder: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
