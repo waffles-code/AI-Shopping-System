@@ -1,16 +1,18 @@
 import 'package:aishop/utils/authentication.dart';
 import 'package:flutter/material.dart';
+import 'package:aishop/widgets/modal_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:intl/intl.dart';
+
+import '../theme.dart';
 
 class PastPurchase extends StatefulWidget {
-  PastPurchase();
 
   @override
   PastPurchaseState createState() => PastPurchaseState();
 }
 
 class PastPurchaseState extends State<PastPurchase> {
-  PastPurchaseState();
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,10 +38,15 @@ class PastPurchaseState extends State<PastPurchase> {
                 itemCount: snapshot.data!.docs.length,
                 itemBuilder: (context, index)
               {
-                  return GestureDetector(
+                  return InkWell (
                     onTap: () {
-                      // This Will Call When User Click On ListView Item
-                      // showDialogFunc(context, imgList[index], titleList[index], descList[index]);
+                      Modal(context,
+                          snapshot.data!.docs[index].id,
+                          snapshot.data!.docs[index].get('url'),
+                          snapshot.data!.docs[index].get('name'),
+                          snapshot.data!.docs[index].get('description'),
+                          snapshot.data!.docs[index].get('price').toString()
+                      );
                     },
                     // Card Which Holds Layout Of ListView Item
                     child: Card(
@@ -75,6 +82,17 @@ class PastPurchaseState extends State<PastPurchase> {
                                         fontSize: 15, color: Colors.grey[500]),
                                   ),
                                 ),
+                                Container(
+                                    margin: EdgeInsets.only(
+                                        left: 800.0,
+                                        top: 0.0,
+                                        bottom: 12.0,
+                                        right: 0.0),
+                                    child: Text("Purchased on : " + snapshot.data!.docs[index].get('date').toDate().toString() ,
+                                        style: new TextStyle(
+                                            color: lightblack,
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 20.0))),
                               ],
                             ),
                           )
