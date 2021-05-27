@@ -40,10 +40,11 @@ class _W extends State<W> {
         backgroundColor: Colors.black,
         actions: [
           IconButton(
+              padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
               icon: Icon(
                 AIicons.cart,
                 color: Colors.white,
-                size: 25,
+                size: 30,
               ),
               onPressed: () {
                 Navigator.push(context,
@@ -112,8 +113,6 @@ class _Wishlist extends State<wishlist> {
           },
           leading: new Image.network(
             widget.prodpicture,
-            // width: 100,
-            // height: 200,
             fit: BoxFit.fill,
           ),
           title: new Text(widget.prodname,
@@ -152,15 +151,10 @@ class _Wishlist extends State<wishlist> {
             Wrap(
               children: <Widget>[
                 Container(
-                  // padding: EdgeInsets.fromLTRB(0, 0, 250, 0),
                   child: new Text("R" + widget.prodprice,
                       style: TextStyle(color: Color(0xFFFDD835), fontSize: 23)),
                 ),
-                // SizedBox(
-                //   width: 500,
-                // ),
                 Container(
-                    // padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     alignment: Alignment.bottomRight,
                     child: ElevatedButton(
                       onPressed: () {
@@ -176,7 +170,6 @@ class _Wishlist extends State<wishlist> {
                             widget.proddescription,
                             widget.prodname,
                             widget.prodprice);
-                        // setState(() {});
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black54,

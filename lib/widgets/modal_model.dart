@@ -1,3 +1,5 @@
+import 'package:aishop/utils/cart.dart';
+import 'package:aishop/utils/wishlist.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/icons/icons.dart';
@@ -74,13 +76,18 @@ Modal(context, id, imgUrl, name, description, price) {
                           color: Colors.white,
                           size: 35,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Wishlist.addToCart(
+                              id, imgUrl, description, name, price);
+                        },
                       ),
                       SizedBox(
                         width: 15,
                       ),
                       ElevatedButton.icon(
-                        onPressed: () {},
+                        onPressed: () {
+                          Cart.addToCart(id, imgUrl, name, description, price);
+                        },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.grey,
                         ),
