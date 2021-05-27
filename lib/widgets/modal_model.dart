@@ -63,42 +63,44 @@ Modal(context, id, imgUrl, name, description, price) {
                       height: 15,
                     ),
                     Center(
-                        child: Padding(
-                      padding: const EdgeInsets.fromLTRB(430.0, 5.0, 20.0, 0.0),
-                      child: Row(
-                        children: <Widget>[
-                          IconButton(
-                            icon: Icon(
-                              AIicons.wishlist,
-                              color: Colors.white,
-                              size: 35,
-                            ),
-                            onPressed: () {},
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          ElevatedButton.icon(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.grey,
-                            ),
-                            icon: Icon(
-                              Icons.add_shopping_cart_rounded,
-                              size: 20,
-                              color: Colors.white,
-                            ),
-                            label: Text(
-                              "ADD TO CART",
-                              style: TextStyle(
-                                  fontSize: 15.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-                          ),
-                        ],
+                        child: Wrap(children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(50.0, 0, 0, 50.0),
                       ),
-                    ))
+                      IconButton(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 25, 0),
+                        icon: Icon(
+                          AIicons.wishlist,
+                          color: Colors.white,
+                          size: 35,
+                        ),
+                        onPressed: () {},
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      ElevatedButton.icon(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.grey,
+                        ),
+                        icon: Icon(
+                          Icons.add_shopping_cart_rounded,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                        label: Text(
+                          "ADD TO CART",
+                          style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0.0, 0, 50, 0),
+                      ),
+                    ]))
                   ]),
             ),
           ),

@@ -1,19 +1,43 @@
-define(['dart_sdk', 'packages/flutter/src/painting/basic_types.dart'], (function load__packages__flutter__src__painting__edge_insets_dart(dart_sdk, packages__flutter__src__painting__basic_types$46dart) {
+define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/colors.dart', 'packages/animated_text_kit/src/animated_text.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/painting/placeholder_span.dart', 'packages/flutter/src/rendering/custom_paint.dart'], (function load__packages__animated_text_kit__src__wavy_dart(dart_sdk, packages__characters__src__extensions$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__colors$46dart, packages__animated_text_kit__src__animated_text$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__painting__placeholder_span$46dart, packages__flutter__src__rendering__custom_paint$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const _interceptors = dart_sdk._interceptors;
+  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
-  var edge_insets = Object.create(dart.library);
-  var $clamp = dartx.clamp;
-  var $toStringAsFixed = dartx.toStringAsFixed;
-  var $truncate = dartx.truncate;
-  var $toDouble = dartx.toDouble;
-  var $modulo = dartx['%'];
+  const extensions = packages__characters__src__extensions$46dart.src__extensions;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const animated_text = packages__animated_text_kit__src__animated_text$46dart.src__animated_text;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const text_painter = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_painter;
+  const text_span = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_span;
+  const custom_paint = packages__flutter__src__rendering__custom_paint$46dart.src__rendering__custom_paint;
+  var wavy = Object.create(dart.library);
+  var $length = dartx.length;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $isEmpty = dartx.isEmpty;
+  var $_get = dartx._get;
+  var $floor = dartx.floor;
+  var $isNegative = dartx.isNegative;
+  var $abs = dartx.abs;
+  var $clear = dartx.clear;
+  var $add = dartx.add;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    _: () => T
+    TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))(),
+    StringToWavyAnimatedText: () => (T.StringToWavyAnimatedText = dart.constFn(dart.fnType(wavy.WavyAnimatedText, [core.String])))(),
+    JSArrayOf_TextLayoutInfo: () => (T.JSArrayOf_TextLayoutInfo = dart.constFn(_interceptors.JSArray$(wavy._TextLayoutInfo)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -30,725 +54,416 @@ define(['dart_sdk', 'packages/flutter/src/painting/basic_types.dart'], (function
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.horizontal",
-        index: 0
+        __proto__: ui.TextAlign.prototype,
+        [_name]: "TextAlign.start",
+        index: 4
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.vertical",
-        index: 1
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: edge_insets._MixedEdgeInsets.prototype,
-        [_MixedEdgeInsets__bottom]: 1 / 0,
-        [_MixedEdgeInsets__top]: 1 / 0,
-        [_MixedEdgeInsets__end]: 1 / 0,
-        [_MixedEdgeInsets__start]: 1 / 0,
-        [_MixedEdgeInsets__right]: 1 / 0,
-        [_MixedEdgeInsets__left]: 1 / 0
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: edge_insets.EdgeInsets.prototype,
-        [bottom$]: 0,
-        [right$]: 0,
-        [top$]: 0,
-        [left$]: 0
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 300000
       });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name$]: "TextDirection.rtl",
-        index: 0
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 48,
+        [_Location_file]: null
       });
     },
     get C5() {
       return C[5] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name$]: "TextDirection.ltr",
-        index: 1
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 49,
+        [_Location_file]: null
       });
     },
     get C6() {
       return C[6] = dart.const({
-        __proto__: edge_insets.EdgeInsetsDirectional.prototype,
-        [bottom$0]: 0,
-        [end$]: 0,
-        [top$0]: 0,
-        [start$]: 0
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textScaleFactor",
+        [_Location_column]: 11,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6], widget_inspector._Location);
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 47,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "painter",
+        [_Location_column]: 9,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10], widget_inspector._Location);
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[13] || CT.C13], widget_inspector._Location);
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[12] || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 1000000
       });
     }
   }, false);
-  var C = Array(7).fill(void 0);
+  var C = Array(15).fill(void 0);
   var I = [
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/painting/edge_insets.dart",
-    "package:flutter/src/painting/edge_insets.dart"
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart",
+    "package:animated_text_kit/src/wavy.dart"
   ];
-  var _left = dart.privateName(edge_insets, "_left");
-  var _right = dart.privateName(edge_insets, "_right");
-  var _start = dart.privateName(edge_insets, "_start");
-  var _end = dart.privateName(edge_insets, "_end");
-  var _top = dart.privateName(edge_insets, "_top");
-  var _bottom = dart.privateName(edge_insets, "_bottom");
-  var _name = dart.privateName(basic_types, "_name");
-  var _MixedEdgeInsets__bottom = dart.privateName(edge_insets, "_MixedEdgeInsets._bottom");
-  var _MixedEdgeInsets__top = dart.privateName(edge_insets, "_MixedEdgeInsets._top");
-  var _MixedEdgeInsets__end = dart.privateName(edge_insets, "_MixedEdgeInsets._end");
-  var _MixedEdgeInsets__start = dart.privateName(edge_insets, "_MixedEdgeInsets._start");
-  var _MixedEdgeInsets__right = dart.privateName(edge_insets, "_MixedEdgeInsets._right");
-  var _MixedEdgeInsets__left = dart.privateName(edge_insets, "_MixedEdgeInsets._left");
-  edge_insets.EdgeInsetsGeometry = class EdgeInsetsGeometry extends core.Object {
-    get isNonNegative() {
-      return dart.notNull(this[_left]) >= 0.0 && dart.notNull(this[_right]) >= 0.0 && dart.notNull(this[_start]) >= 0.0 && dart.notNull(this[_end]) >= 0.0 && dart.notNull(this[_top]) >= 0.0 && dart.notNull(this[_bottom]) >= 0.0;
+  var speed$ = dart.privateName(wavy, "WavyAnimatedText.speed");
+  var _name = dart.privateName(ui, "_name");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var __WavyAnimatedText__waveAnim = dart.privateName(wavy, "_#WavyAnimatedText#_waveAnim");
+  var _waveAnim = dart.privateName(wavy, "_waveAnim");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  wavy.WavyAnimatedText = class WavyAnimatedText extends animated_text.AnimatedText {
+    get speed() {
+      return this[speed$];
     }
-    get horizontal() {
-      return dart.notNull(this[_left]) + dart.notNull(this[_right]) + dart.notNull(this[_start]) + dart.notNull(this[_end]);
+    set speed(value) {
+      super.speed = value;
     }
-    get vertical() {
-      return dart.notNull(this[_top]) + dart.notNull(this[_bottom]);
+    get [_waveAnim]() {
+      let t0;
+      t0 = this[__WavyAnimatedText__waveAnim];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_waveAnim")) : t0;
     }
-    along(axis) {
-      if (axis == null) dart.nullFailed(I[0], 67, 21, "axis");
-      if (!(axis != null)) dart.assertFailed(null, I[0], 68, 12, "axis != null");
-      switch (axis) {
-        case C[0] || CT.C0:
-        {
-          return this.horizontal;
-        }
-        case C[1] || CT.C1:
-        {
-          return this.vertical;
-        }
-      }
+    set [_waveAnim](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 27, 26, "null");
+      this[__WavyAnimatedText__waveAnim] = t0;
     }
-    get collapsedSize() {
-      return new ui.Size.new(this.horizontal, this.vertical);
+    initAnimation(controller) {
+      if (controller == null) dart.nullFailed(I[0], 30, 42, "controller");
+      this[_waveAnim] = new (T.TweenOfdouble()).new({begin: 0.0, end: dart.notNull(this.textCharacters[$length]) / 2 + 0.52}).animate(controller);
     }
-    get flipped() {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(this[_right], this[_left], this[_end], this[_start], this[_bottom], this[_top]);
-    }
-    inflateSize(size) {
-      if (size == null) dart.nullFailed(I[0], 92, 25, "size");
-      return new ui.Size.new(dart.notNull(size.width) + dart.notNull(this.horizontal), dart.notNull(size.height) + dart.notNull(this.vertical));
-    }
-    deflateSize(size) {
-      if (size == null) dart.nullFailed(I[0], 108, 25, "size");
-      return new ui.Size.new(dart.notNull(size.width) - dart.notNull(this.horizontal), dart.notNull(size.height) - dart.notNull(this.vertical));
-    }
-    subtract(other) {
-      if (other == null) dart.nullFailed(I[0], 128, 50, "other");
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(dart.notNull(this[_left]) - dart.notNull(other[_left]), dart.notNull(this[_right]) - dart.notNull(other[_right]), dart.notNull(this[_start]) - dart.notNull(other[_start]), dart.notNull(this[_end]) - dart.notNull(other[_end]), dart.notNull(this[_top]) - dart.notNull(other[_top]), dart.notNull(this[_bottom]) - dart.notNull(other[_bottom]));
-    }
-    add(other) {
-      if (other == null) dart.nullFailed(I[0], 150, 45, "other");
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(dart.notNull(this[_left]) + dart.notNull(other[_left]), dart.notNull(this[_right]) + dart.notNull(other[_right]), dart.notNull(this[_start]) + dart.notNull(other[_start]), dart.notNull(this[_end]) + dart.notNull(other[_end]), dart.notNull(this[_top]) + dart.notNull(other[_top]), dart.notNull(this[_bottom]) + dart.notNull(other[_bottom]));
-    }
-    clamp(min, max) {
-      if (min == null) dart.nullFailed(I[0], 163, 47, "min");
-      if (max == null) dart.nullFailed(I[0], 163, 71, "max");
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(this[_left][$clamp](min[_left], max[_left]), this[_right][$clamp](min[_right], max[_right]), this[_start][$clamp](min[_start], max[_start]), this[_end][$clamp](min[_end], max[_end]), this[_top][$clamp](min[_top], max[_top]), this[_bottom][$clamp](min[_bottom], max[_bottom]));
-    }
-    static lerp(a, b, t) {
-      if (t == null) dart.nullFailed(I[0], 219, 88, "t");
-      if (!(t != null)) dart.assertFailed(null, I[0], 220, 12, "t != null");
-      if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b)['*'](t);
-      if (b == null) return a['*'](1.0 - dart.notNull(t));
-      if (edge_insets.EdgeInsets.is(a) && edge_insets.EdgeInsets.is(b)) return edge_insets.EdgeInsets.lerp(a, b, t);
-      if (edge_insets.EdgeInsetsDirectional.is(a) && edge_insets.EdgeInsetsDirectional.is(b)) return edge_insets.EdgeInsetsDirectional.lerp(a, b, t);
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(dart.nullCheck(ui.lerpDouble(a[_left], b[_left], t)), dart.nullCheck(ui.lerpDouble(a[_right], b[_right], t)), dart.nullCheck(ui.lerpDouble(a[_start], b[_start], t)), dart.nullCheck(ui.lerpDouble(a[_end], b[_end], t)), dart.nullCheck(ui.lerpDouble(a[_top], b[_top], t)), dart.nullCheck(ui.lerpDouble(a[_bottom], b[_bottom], t)));
-    }
-    toString() {
-      if (this[_start] === 0.0 && this[_end] === 0.0) {
-        if (this[_left] === 0.0 && this[_right] === 0.0 && this[_top] === 0.0 && this[_bottom] === 0.0) return "EdgeInsets.zero";
-        if (this[_left] == this[_right] && this[_right] == this[_top] && this[_top] == this[_bottom]) return "EdgeInsets.all(" + this[_left][$toStringAsFixed](1) + ")";
-        return "EdgeInsets(" + this[_left][$toStringAsFixed](1) + ", " + this[_top][$toStringAsFixed](1) + ", " + this[_right][$toStringAsFixed](1) + ", " + this[_bottom][$toStringAsFixed](1) + ")";
-      }
-      if (this[_left] === 0.0 && this[_right] === 0.0) {
-        return "EdgeInsetsDirectional(" + this[_start][$toStringAsFixed](1) + ", " + this[_top][$toStringAsFixed](1) + ", " + this[_end][$toStringAsFixed](1) + ", " + this[_bottom][$toStringAsFixed](1) + ")";
-      }
-      return "EdgeInsets(" + this[_left][$toStringAsFixed](1) + ", " + this[_top][$toStringAsFixed](1) + ", " + this[_right][$toStringAsFixed](1) + ", " + this[_bottom][$toStringAsFixed](1) + ")" + " + " + "EdgeInsetsDirectional(" + this[_start][$toStringAsFixed](1) + ", " + "0.0, " + this[_end][$toStringAsFixed](1) + ", " + "0.0)";
-    }
-    _equals(other) {
-      if (other == null) return false;
-      return edge_insets.EdgeInsetsGeometry.is(other) && other[_left] == this[_left] && other[_right] == this[_right] && other[_start] == this[_start] && other[_end] == this[_end] && other[_top] == this[_top] && other[_bottom] == this[_bottom];
-    }
-    get hashCode() {
-      return ui.hashValues(this[_left], this[_right], this[_start], this[_end], this[_top], this[_bottom]);
+    animatedBuilder(context, child) {
+      if (context == null) dart.nullFailed(I[0], 36, 39, "context");
+      let defaultTextStyle = text.DefaultTextStyle.of(context).style;
+      let scaleFactor = media_query.MediaQuery.of(context).textScaleFactor;
+      return new basic.RepaintBoundary.new({child: new basic.CustomPaint.new({painter: new wavy._WTextPainter.new({progress: this[_waveAnim].value, text: this.text, textStyle: defaultTextStyle.merge(this.textStyle), scaleFactor: scaleFactor}), child: new text.Text.new(this.text, {style: defaultTextStyle.merge(this.textStyle).merge(new text_style.TextStyle.new({color: colors.Colors.transparent})), textScaleFactor: scaleFactor, $creationLocationd_0dea112b090073317d4: C[2] || CT.C2}), $creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), $creationLocationd_0dea112b090073317d4: C[11] || CT.C11});
     }
   };
-  (edge_insets.EdgeInsetsGeometry.new = function() {
+  (wavy.WavyAnimatedText.new = function(text, opts) {
+    if (text == null) dart.nullFailed(I[0], 16, 12, "text");
+    let textAlign = opts && 'textAlign' in opts ? opts.textAlign : C[0] || CT.C0;
+    if (textAlign == null) dart.nullFailed(I[0], 17, 15, "textAlign");
+    let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
+    let speed = opts && 'speed' in opts ? opts.speed : C[1] || CT.C1;
+    if (speed == null) dart.nullFailed(I[0], 19, 10, "speed");
+    this[__WavyAnimatedText__waveAnim] = null;
+    this[speed$] = speed;
+    wavy.WavyAnimatedText.__proto__.new.call(this, {text: text, textAlign: textAlign, textStyle: textStyle, duration: speed['*'](extensions['StringCharacters|get#characters'](text)[$length])});
     ;
-  }).prototype = edge_insets.EdgeInsetsGeometry.prototype;
-  dart.addTypeTests(edge_insets.EdgeInsetsGeometry);
-  dart.addTypeCaches(edge_insets.EdgeInsetsGeometry);
-  dart.setMethodSignature(edge_insets.EdgeInsetsGeometry, () => ({
-    __proto__: dart.getMethods(edge_insets.EdgeInsetsGeometry.__proto__),
-    along: dart.fnType(core.double, [basic_types.Axis]),
-    inflateSize: dart.fnType(ui.Size, [ui.Size]),
-    deflateSize: dart.fnType(ui.Size, [ui.Size]),
-    subtract: dart.fnType(edge_insets.EdgeInsetsGeometry, [edge_insets.EdgeInsetsGeometry]),
-    add: dart.fnType(edge_insets.EdgeInsetsGeometry, [edge_insets.EdgeInsetsGeometry]),
-    clamp: dart.fnType(edge_insets.EdgeInsetsGeometry, [edge_insets.EdgeInsetsGeometry, edge_insets.EdgeInsetsGeometry])
+  }).prototype = wavy.WavyAnimatedText.prototype;
+  dart.addTypeTests(wavy.WavyAnimatedText);
+  dart.addTypeCaches(wavy.WavyAnimatedText);
+  dart.setMethodSignature(wavy.WavyAnimatedText, () => ({
+    __proto__: dart.getMethods(wavy.WavyAnimatedText.__proto__),
+    initAnimation: dart.fnType(dart.void, [animation_controller.AnimationController]),
+    animatedBuilder: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
   }));
-  dart.setGetterSignature(edge_insets.EdgeInsetsGeometry, () => ({
-    __proto__: dart.getGetters(edge_insets.EdgeInsetsGeometry.__proto__),
-    isNonNegative: core.bool,
-    horizontal: core.double,
-    vertical: core.double,
-    collapsedSize: ui.Size,
-    flipped: edge_insets.EdgeInsetsGeometry
+  dart.setGetterSignature(wavy.WavyAnimatedText, () => ({
+    __proto__: dart.getGetters(wavy.WavyAnimatedText.__proto__),
+    [_waveAnim]: animation.Animation$(core.double)
   }));
-  dart.setLibraryUri(edge_insets.EdgeInsetsGeometry, I[1]);
-  dart.defineExtensionMethods(edge_insets.EdgeInsetsGeometry, ['toString', '_equals']);
-  dart.defineExtensionAccessors(edge_insets.EdgeInsetsGeometry, ['hashCode']);
-  dart.defineLazy(edge_insets.EdgeInsetsGeometry, {
-    /*edge_insets.EdgeInsetsGeometry.infinity*/get infinity() {
-      return C[2] || CT.C2;
-    }
-  }, false);
-  var left$ = dart.privateName(edge_insets, "EdgeInsets.left");
-  var top$ = dart.privateName(edge_insets, "EdgeInsets.top");
-  var right$ = dart.privateName(edge_insets, "EdgeInsets.right");
-  var bottom$ = dart.privateName(edge_insets, "EdgeInsets.bottom");
-  edge_insets.EdgeInsets = class EdgeInsets extends edge_insets.EdgeInsetsGeometry {
-    get left() {
-      return this[left$];
-    }
-    set left(value) {
-      super.left = value;
-    }
-    get top() {
-      return this[top$];
-    }
-    set top(value) {
-      super.top = value;
-    }
-    get right() {
-      return this[right$];
-    }
-    set right(value) {
-      super.right = value;
-    }
-    get bottom() {
-      return this[bottom$];
-    }
-    set bottom(value) {
-      super.bottom = value;
-    }
-    get [_left]() {
-      return this.left;
-    }
-    get [_top]() {
-      return this.top;
-    }
-    get [_right]() {
-      return this.right;
-    }
-    get [_bottom]() {
-      return this.bottom;
-    }
-    get [_start]() {
-      return 0.0;
-    }
-    get [_end]() {
-      return 0.0;
-    }
-    get topLeft() {
-      return new ui.Offset.new(this.left, this.top);
-    }
-    get topRight() {
-      return new ui.Offset.new(-dart.notNull(this.right), this.top);
-    }
-    get bottomLeft() {
-      return new ui.Offset.new(this.left, -dart.notNull(this.bottom));
-    }
-    get bottomRight() {
-      return new ui.Offset.new(-dart.notNull(this.right), -dart.notNull(this.bottom));
-    }
-    get flipped() {
-      return new edge_insets.EdgeInsets.fromLTRB(this.right, this.bottom, this.left, this.top);
-    }
-    inflateRect(rect) {
-      if (rect == null) dart.nullFailed(I[0], 471, 25, "rect");
-      return new ui.Rect.fromLTRB(dart.notNull(rect.left) - dart.notNull(this.left), dart.notNull(rect.top) - dart.notNull(this.top), dart.notNull(rect.right) + dart.notNull(this.right), dart.notNull(rect.bottom) + dart.notNull(this.bottom));
-    }
-    deflateRect(rect) {
-      if (rect == null) dart.nullFailed(I[0], 488, 25, "rect");
-      return new ui.Rect.fromLTRB(dart.notNull(rect.left) + dart.notNull(this.left), dart.notNull(rect.top) + dart.notNull(this.top), dart.notNull(rect.right) - dart.notNull(this.right), dart.notNull(rect.bottom) - dart.notNull(this.bottom));
-    }
-    subtract(other) {
-      if (other == null) dart.nullFailed(I[0], 493, 50, "other");
-      if (edge_insets.EdgeInsets.is(other)) return this['-'](other);
-      return super.subtract(other);
-    }
-    add(other) {
-      if (other == null) dart.nullFailed(I[0], 500, 45, "other");
-      if (edge_insets.EdgeInsets.is(other)) return this['+'](other);
-      return super.add(other);
-    }
-    clamp(min, max) {
-      if (min == null) dart.nullFailed(I[0], 507, 47, "min");
-      if (max == null) dart.nullFailed(I[0], 507, 71, "max");
-      return new edge_insets.EdgeInsets.fromLTRB(this[_left][$clamp](min[_left], max[_left]), this[_top][$clamp](min[_top], max[_top]), this[_right][$clamp](min[_right], max[_right]), this[_bottom][$clamp](min[_bottom], max[_bottom]));
-    }
-    ['-'](other) {
-      if (other == null) dart.nullFailed(I[0], 517, 36, "other");
-      return new edge_insets.EdgeInsets.fromLTRB(dart.notNull(this.left) - dart.notNull(other.left), dart.notNull(this.top) - dart.notNull(other.top), dart.notNull(this.right) - dart.notNull(other.right), dart.notNull(this.bottom) - dart.notNull(other.bottom));
-    }
-    ['+'](other) {
-      if (other == null) dart.nullFailed(I[0], 527, 36, "other");
-      return new edge_insets.EdgeInsets.fromLTRB(dart.notNull(this.left) + dart.notNull(other.left), dart.notNull(this.top) + dart.notNull(other.top), dart.notNull(this.right) + dart.notNull(other.right), dart.notNull(this.bottom) + dart.notNull(other.bottom));
-    }
-    _negate() {
-      return new edge_insets.EdgeInsets.fromLTRB(-dart.notNull(this.left), -dart.notNull(this.top), -dart.notNull(this.right), -dart.notNull(this.bottom));
-    }
-    ['*'](other) {
-      if (other == null) dart.nullFailed(I[0], 551, 32, "other");
-      return new edge_insets.EdgeInsets.fromLTRB(dart.notNull(this.left) * dart.notNull(other), dart.notNull(this.top) * dart.notNull(other), dart.notNull(this.right) * dart.notNull(other), dart.notNull(this.bottom) * dart.notNull(other));
-    }
-    ['/'](other) {
-      if (other == null) dart.nullFailed(I[0], 562, 32, "other");
-      return new edge_insets.EdgeInsets.fromLTRB(dart.notNull(this.left) / dart.notNull(other), dart.notNull(this.top) / dart.notNull(other), dart.notNull(this.right) / dart.notNull(other), dart.notNull(this.bottom) / dart.notNull(other));
-    }
-    ['~/'](other) {
-      if (other == null) dart.nullFailed(I[0], 573, 33, "other");
-      return new edge_insets.EdgeInsets.fromLTRB((dart.notNull(this.left) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this.top) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this.right) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this.bottom) / dart.notNull(other))[$truncate]()[$toDouble]());
-    }
-    ['%'](other) {
-      if (other == null) dart.nullFailed(I[0], 584, 32, "other");
-      return new edge_insets.EdgeInsets.fromLTRB(this.left[$modulo](other), this.top[$modulo](other), this.right[$modulo](other), this.bottom[$modulo](other));
-    }
-    static lerp(a, b, t) {
-      if (t == null) dart.nullFailed(I[0], 598, 64, "t");
-      if (!(t != null)) dart.assertFailed(null, I[0], 599, 12, "t != null");
-      if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b)['*'](t);
-      if (b == null) return a['*'](1.0 - dart.notNull(t));
-      return new edge_insets.EdgeInsets.fromLTRB(dart.nullCheck(ui.lerpDouble(a.left, b.left, t)), dart.nullCheck(ui.lerpDouble(a.top, b.top, t)), dart.nullCheck(ui.lerpDouble(a.right, b.right, t)), dart.nullCheck(ui.lerpDouble(a.bottom, b.bottom, t)));
-    }
-    resolve(direction) {
-      return this;
-    }
-    copyWith(opts) {
-      let t0, t0$, t0$0, t0$1;
-      let left = opts && 'left' in opts ? opts.left : null;
-      let top = opts && 'top' in opts ? opts.top : null;
-      let right = opts && 'right' in opts ? opts.right : null;
-      let bottom = opts && 'bottom' in opts ? opts.bottom : null;
-      return new edge_insets.EdgeInsets.only({left: (t0 = left, t0 == null ? this.left : t0), top: (t0$ = top, t0$ == null ? this.top : t0$), right: (t0$0 = right, t0$0 == null ? this.right : t0$0), bottom: (t0$1 = bottom, t0$1 == null ? this.bottom : t0$1)});
+  dart.setSetterSignature(wavy.WavyAnimatedText, () => ({
+    __proto__: dart.getSetters(wavy.WavyAnimatedText.__proto__),
+    [_waveAnim]: animation.Animation$(core.double)
+  }));
+  dart.setLibraryUri(wavy.WavyAnimatedText, I[1]);
+  dart.setFieldSignature(wavy.WavyAnimatedText, () => ({
+    __proto__: dart.getFields(wavy.WavyAnimatedText.__proto__),
+    speed: dart.finalFieldType(core.Duration),
+    [__WavyAnimatedText__waveAnim]: dart.fieldType(dart.nullable(animation.Animation$(core.double)))
+  }));
+  wavy.WavyAnimatedTextKit = class WavyAnimatedTextKit extends animated_text.AnimatedTextKit {
+    static _animatedTexts(text, textAlign, textStyle, speed) {
+      if (text == null) dart.nullFailed(I[0], 97, 18, "text");
+      if (textAlign == null) dart.nullFailed(I[0], 98, 15, "textAlign");
+      if (speed == null) dart.nullFailed(I[0], 100, 14, "speed");
+      return text[$map](wavy.WavyAnimatedText, dart.fn(_ => {
+        if (_ == null) dart.nullFailed(I[0], 103, 17, "_");
+        return new wavy.WavyAnimatedText.new(_, {textAlign: textAlign, textStyle: textStyle, speed: speed});
+      }, T.StringToWavyAnimatedText()))[$toList]();
     }
   };
-  (edge_insets.EdgeInsets.fromLTRB = function(left, top, right, bottom) {
-    if (left == null) dart.nullFailed(I[0], 343, 34, "left");
-    if (top == null) dart.nullFailed(I[0], 343, 45, "top");
-    if (right == null) dart.nullFailed(I[0], 343, 55, "right");
-    if (bottom == null) dart.nullFailed(I[0], 343, 67, "bottom");
-    this[left$] = left;
-    this[top$] = top;
-    this[right$] = right;
-    this[bottom$] = bottom;
-    edge_insets.EdgeInsets.__proto__.new.call(this);
+  (wavy.WavyAnimatedTextKit.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let text = opts && 'text' in opts ? opts.text : null;
+    if (text == null) dart.nullFailed(I[0], 67, 27, "text");
+    let textAlign = opts && 'textAlign' in opts ? opts.textAlign : C[0] || CT.C0;
+    if (textAlign == null) dart.nullFailed(I[0], 68, 15, "textAlign");
+    let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
+    let speed = opts && 'speed' in opts ? opts.speed : C[1] || CT.C1;
+    if (speed == null) dart.nullFailed(I[0], 70, 14, "speed");
+    let pause = opts && 'pause' in opts ? opts.pause : C[14] || CT.C14;
+    if (pause == null) dart.nullFailed(I[0], 71, 14, "pause");
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    let onNext = opts && 'onNext' in opts ? opts.onNext : null;
+    let onNextBeforePause = opts && 'onNextBeforePause' in opts ? opts.onNextBeforePause : null;
+    let onFinished = opts && 'onFinished' in opts ? opts.onFinished : null;
+    let isRepeatingAnimation = opts && 'isRepeatingAnimation' in opts ? opts.isRepeatingAnimation : true;
+    if (isRepeatingAnimation == null) dart.nullFailed(I[0], 76, 10, "isRepeatingAnimation");
+    let totalRepeatCount = opts && 'totalRepeatCount' in opts ? opts.totalRepeatCount : 3;
+    if (totalRepeatCount == null) dart.nullFailed(I[0], 77, 9, "totalRepeatCount");
+    let repeatForever = opts && 'repeatForever' in opts ? opts.repeatForever : true;
+    if (repeatForever == null) dart.nullFailed(I[0], 78, 10, "repeatForever");
+    let displayFullTextOnTap = opts && 'displayFullTextOnTap' in opts ? opts.displayFullTextOnTap : false;
+    if (displayFullTextOnTap == null) dart.nullFailed(I[0], 79, 10, "displayFullTextOnTap");
+    let stopPauseOnTap = opts && 'stopPauseOnTap' in opts ? opts.stopPauseOnTap : false;
+    if (stopPauseOnTap == null) dart.nullFailed(I[0], 80, 10, "stopPauseOnTap");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    wavy.WavyAnimatedTextKit.__proto__.new.call(this, {key: key, animatedTexts: wavy.WavyAnimatedTextKit._animatedTexts(text, textAlign, textStyle, speed), pause: pause, displayFullTextOnTap: displayFullTextOnTap, stopPauseOnTap: stopPauseOnTap, onTap: onTap, onNext: onNext, onNextBeforePause: onNextBeforePause, onFinished: onFinished, isRepeatingAnimation: isRepeatingAnimation, totalRepeatCount: totalRepeatCount, repeatForever: repeatForever, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = edge_insets.EdgeInsets.prototype;
-  (edge_insets.EdgeInsets.all = function(value) {
-    if (value == null) dart.nullFailed(I[0], 355, 31, "value");
-    this[left$] = value;
-    this[top$] = value;
-    this[right$] = value;
-    this[bottom$] = value;
-    edge_insets.EdgeInsets.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsets.prototype;
-  (edge_insets.EdgeInsets.only = function(opts) {
-    let left = opts && 'left' in opts ? opts.left : 0;
-    if (left == null) dart.nullFailed(I[0], 372, 10, "left");
-    let top = opts && 'top' in opts ? opts.top : 0;
-    if (top == null) dart.nullFailed(I[0], 373, 10, "top");
-    let right = opts && 'right' in opts ? opts.right : 0;
-    if (right == null) dart.nullFailed(I[0], 374, 10, "right");
-    let bottom = opts && 'bottom' in opts ? opts.bottom : 0;
-    if (bottom == null) dart.nullFailed(I[0], 375, 10, "bottom");
-    this[left$] = left;
-    this[top$] = top;
-    this[right$] = right;
-    this[bottom$] = bottom;
-    edge_insets.EdgeInsets.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsets.prototype;
-  (edge_insets.EdgeInsets.symmetric = function(opts) {
-    let vertical = opts && 'vertical' in opts ? opts.vertical : 0;
-    if (vertical == null) dart.nullFailed(I[0], 389, 12, "vertical");
-    let horizontal = opts && 'horizontal' in opts ? opts.horizontal : 0;
-    if (horizontal == null) dart.nullFailed(I[0], 390, 12, "horizontal");
-    this[left$] = horizontal;
-    this[top$] = vertical;
-    this[right$] = horizontal;
-    this[bottom$] = vertical;
-    edge_insets.EdgeInsets.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsets.prototype;
-  (edge_insets.EdgeInsets.fromWindowPadding = function(padding, devicePixelRatio) {
-    if (padding == null) dart.nullFailed(I[0], 402, 49, "padding");
-    if (devicePixelRatio == null) dart.nullFailed(I[0], 402, 65, "devicePixelRatio");
-    this[left$] = dart.notNull(padding.left) / dart.notNull(devicePixelRatio);
-    this[top$] = dart.notNull(padding.top) / dart.notNull(devicePixelRatio);
-    this[right$] = dart.notNull(padding.right) / dart.notNull(devicePixelRatio);
-    this[bottom$] = dart.notNull(padding.bottom) / dart.notNull(devicePixelRatio);
-    edge_insets.EdgeInsets.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsets.prototype;
-  dart.addTypeTests(edge_insets.EdgeInsets);
-  dart.addTypeCaches(edge_insets.EdgeInsets);
-  dart.setMethodSignature(edge_insets.EdgeInsets, () => ({
-    __proto__: dart.getMethods(edge_insets.EdgeInsets.__proto__),
-    inflateRect: dart.fnType(ui.Rect, [ui.Rect]),
-    deflateRect: dart.fnType(ui.Rect, [ui.Rect]),
-    '-': dart.fnType(edge_insets.EdgeInsets, [edge_insets.EdgeInsets]),
-    '+': dart.fnType(edge_insets.EdgeInsets, [edge_insets.EdgeInsets]),
-    _negate: dart.fnType(edge_insets.EdgeInsets, []),
-    '*': dart.fnType(edge_insets.EdgeInsets, [core.double]),
-    '/': dart.fnType(edge_insets.EdgeInsets, [core.double]),
-    '~/': dart.fnType(edge_insets.EdgeInsets, [core.double]),
-    '%': dart.fnType(edge_insets.EdgeInsets, [core.double]),
-    resolve: dart.fnType(edge_insets.EdgeInsets, [dart.nullable(ui.TextDirection)]),
-    copyWith: dart.fnType(edge_insets.EdgeInsets, [], {bottom: dart.nullable(core.double), left: dart.nullable(core.double), right: dart.nullable(core.double), top: dart.nullable(core.double)}, {})
-  }));
-  dart.setGetterSignature(edge_insets.EdgeInsets, () => ({
-    __proto__: dart.getGetters(edge_insets.EdgeInsets.__proto__),
-    [_left]: core.double,
-    [_top]: core.double,
-    [_right]: core.double,
-    [_bottom]: core.double,
-    [_start]: core.double,
-    [_end]: core.double,
-    topLeft: ui.Offset,
-    topRight: ui.Offset,
-    bottomLeft: ui.Offset,
-    bottomRight: ui.Offset,
-    flipped: edge_insets.EdgeInsets
-  }));
-  dart.setLibraryUri(edge_insets.EdgeInsets, I[1]);
-  dart.setFieldSignature(edge_insets.EdgeInsets, () => ({
-    __proto__: dart.getFields(edge_insets.EdgeInsets.__proto__),
-    left: dart.finalFieldType(core.double),
-    top: dart.finalFieldType(core.double),
-    right: dart.finalFieldType(core.double),
-    bottom: dart.finalFieldType(core.double)
-  }));
-  dart.defineLazy(edge_insets.EdgeInsets, {
-    /*edge_insets.EdgeInsets.zero*/get zero() {
-      return C[3] || CT.C3;
-    }
-  }, false);
-  var start$ = dart.privateName(edge_insets, "EdgeInsetsDirectional.start");
-  var top$0 = dart.privateName(edge_insets, "EdgeInsetsDirectional.top");
-  var end$ = dart.privateName(edge_insets, "EdgeInsetsDirectional.end");
-  var bottom$0 = dart.privateName(edge_insets, "EdgeInsetsDirectional.bottom");
-  var _name$ = dart.privateName(ui, "_name");
-  edge_insets.EdgeInsetsDirectional = class EdgeInsetsDirectional extends edge_insets.EdgeInsetsGeometry {
-    get start() {
-      return this[start$];
-    }
-    set start(value) {
-      super.start = value;
-    }
-    get top() {
-      return this[top$0];
-    }
-    set top(value) {
-      super.top = value;
-    }
-    get end() {
-      return this[end$];
-    }
-    set end(value) {
-      super.end = value;
-    }
-    get bottom() {
-      return this[bottom$0];
-    }
-    set bottom(value) {
-      super.bottom = value;
-    }
-    get [_start]() {
-      return this.start;
-    }
-    get [_top]() {
-      return this.top;
-    }
-    get [_end]() {
-      return this.end;
-    }
-    get [_bottom]() {
-      return this.bottom;
-    }
-    get [_left]() {
-      return 0.0;
-    }
-    get [_right]() {
-      return 0.0;
-    }
-    get isNonNegative() {
-      return dart.notNull(this.start) >= 0.0 && dart.notNull(this.top) >= 0.0 && dart.notNull(this.end) >= 0.0 && dart.notNull(this.bottom) >= 0.0;
-    }
-    get flipped() {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(this.end, this.bottom, this.start, this.top);
-    }
-    subtract(other) {
-      if (other == null) dart.nullFailed(I[0], 724, 50, "other");
-      if (edge_insets.EdgeInsetsDirectional.is(other)) return this['-'](other);
-      return super.subtract(other);
-    }
-    add(other) {
-      if (other == null) dart.nullFailed(I[0], 731, 45, "other");
-      if (edge_insets.EdgeInsetsDirectional.is(other)) return this['+'](other);
-      return super.add(other);
-    }
-    ['-'](other) {
-      if (other == null) dart.nullFailed(I[0], 738, 58, "other");
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(dart.notNull(this.start) - dart.notNull(other.start), dart.notNull(this.top) - dart.notNull(other.top), dart.notNull(this.end) - dart.notNull(other.end), dart.notNull(this.bottom) - dart.notNull(other.bottom));
-    }
-    ['+'](other) {
-      if (other == null) dart.nullFailed(I[0], 748, 58, "other");
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(dart.notNull(this.start) + dart.notNull(other.start), dart.notNull(this.top) + dart.notNull(other.top), dart.notNull(this.end) + dart.notNull(other.end), dart.notNull(this.bottom) + dart.notNull(other.bottom));
-    }
-    _negate() {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(-dart.notNull(this.start), -dart.notNull(this.top), -dart.notNull(this.end), -dart.notNull(this.bottom));
-    }
-    ['*'](other) {
-      if (other == null) dart.nullFailed(I[0], 772, 43, "other");
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(dart.notNull(this.start) * dart.notNull(other), dart.notNull(this.top) * dart.notNull(other), dart.notNull(this.end) * dart.notNull(other), dart.notNull(this.bottom) * dart.notNull(other));
-    }
-    ['/'](other) {
-      if (other == null) dart.nullFailed(I[0], 783, 43, "other");
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(dart.notNull(this.start) / dart.notNull(other), dart.notNull(this.top) / dart.notNull(other), dart.notNull(this.end) / dart.notNull(other), dart.notNull(this.bottom) / dart.notNull(other));
-    }
-    ['~/'](other) {
-      if (other == null) dart.nullFailed(I[0], 794, 44, "other");
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB((dart.notNull(this.start) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this.top) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this.end) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this.bottom) / dart.notNull(other))[$truncate]()[$toDouble]());
-    }
-    ['%'](other) {
-      if (other == null) dart.nullFailed(I[0], 805, 43, "other");
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(this.start[$modulo](other), this.top[$modulo](other), this.end[$modulo](other), this.bottom[$modulo](other));
-    }
-    static lerp(a, b, t) {
-      if (t == null) dart.nullFailed(I[0], 823, 97, "t");
-      if (!(t != null)) dart.assertFailed(null, I[0], 824, 12, "t != null");
-      if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b)['*'](t);
-      if (b == null) return a['*'](1.0 - dart.notNull(t));
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(dart.nullCheck(ui.lerpDouble(a.start, b.start, t)), dart.nullCheck(ui.lerpDouble(a.top, b.top, t)), dart.nullCheck(ui.lerpDouble(a.end, b.end, t)), dart.nullCheck(ui.lerpDouble(a.bottom, b.bottom, t)));
-    }
-    resolve(direction) {
-      if (!(direction != null)) dart.assertFailed(null, I[0], 841, 12, "direction != null");
-      switch (dart.nullCheck(direction)) {
-        case C[4] || CT.C4:
-        {
-          return new edge_insets.EdgeInsets.fromLTRB(this.end, this.top, this.start, this.bottom);
+  }).prototype = wavy.WavyAnimatedTextKit.prototype;
+  dart.addTypeTests(wavy.WavyAnimatedTextKit);
+  dart.addTypeCaches(wavy.WavyAnimatedTextKit);
+  dart.setLibraryUri(wavy.WavyAnimatedTextKit, I[1]);
+  var _textLayoutInfo = dart.privateName(wavy, "_textLayoutInfo");
+  wavy._WTextPainter = class _WTextPainter extends custom_paint.CustomPainter {
+    paint(canvas, size) {
+      if (canvas == null) dart.nullFailed(I[0], 126, 21, "canvas");
+      if (size == null) dart.nullFailed(I[0], 126, 34, "size");
+      if (dart.test(this[_textLayoutInfo][$isEmpty])) {
+        this.calculateLayoutInfo(this.text, this[_textLayoutInfo]);
+      }
+      canvas.save();
+      for (let textLayout of this[_textLayoutInfo]) {
+        let centerOffset = new ui.Offset.new(dart.notNull(size.width) / 2, dart.notNull(size.height) / 2 - dart.notNull(textLayout.height) / 2);
+        if (dart.test(textLayout.isMoving)) {
+          let p = math.min(core.double, dart.notNull(this.progress) * 2, 1.0);
+          this.drawText(canvas, textLayout.text, new ui.Offset.new(textLayout.offsetX, dart.notNull(textLayout.offsetY) - (dart.notNull(textLayout.offsetY) - dart.notNull(textLayout.riseHeight)) * p)['+'](centerOffset), textLayout);
+        } else {
+          this.drawText(canvas, textLayout.text, new ui.Offset.new(textLayout.offsetX, textLayout.offsetY)['+'](centerOffset), textLayout);
         }
-        case C[5] || CT.C5:
-        {
-          return new edge_insets.EdgeInsets.fromLTRB(this.start, this.top, this.end, this.bottom);
+      }
+      canvas.restore();
+    }
+    shouldRepaint(oldDelegate) {
+      wavy._WTextPainter.as(oldDelegate);
+      if (oldDelegate == null) dart.nullFailed(I[0], 165, 36, "oldDelegate");
+      if (oldDelegate.progress != this.progress) {
+        this.calculateLayoutInfo(this.text, this[_textLayoutInfo]);
+        this.calculateMove();
+        return true;
+      }
+      return false;
+    }
+    calculateMove() {
+      let height = this[_textLayoutInfo][$_get](0).height;
+      let txtInMoInd = this.progress[$floor]();
+      let percent = dart.notNull(this.progress) - txtInMoInd;
+      let txtInMoOdd = (dart.notNull(this.progress) - 0.5)[$floor]();
+      let txtInMoEven = txtInMoInd * 2;
+      if (txtInMoOdd < (this.text.length - 1) / 2 && !txtInMoOdd[$isNegative]) {
+        this[_textLayoutInfo][$_get](txtInMoOdd + (txtInMoOdd + 1)).isMoving = true;
+        this[_textLayoutInfo][$_get](txtInMoOdd + (txtInMoOdd + 1)).riseHeight = dart.notNull(this.progress) < 0.5 ? 0.0 : -1.3 * dart.notNull(height) * math.sin((dart.notNull(this.progress) - 0.5) * 3.141592653589793)[$abs]();
+      }
+      if (txtInMoEven < this.text.length) {
+        this[_textLayoutInfo][$_get](txtInMoEven).isMoving = true;
+        this[_textLayoutInfo][$_get](txtInMoEven).riseHeight = -1.3 * dart.notNull(height) * math.sin(percent * 3.141592653589793);
+      }
+    }
+    drawText(canvas, text, offset, textLayoutInfo) {
+      let t1;
+      if (canvas == null) dart.nullFailed(I[0], 199, 24, "canvas");
+      if (text == null) dart.nullFailed(I[0], 199, 39, "text");
+      if (offset == null) dart.nullFailed(I[0], 199, 52, "offset");
+      if (textLayoutInfo == null) dart.nullFailed(I[0], 200, 23, "textLayoutInfo");
+      let textPainter = (t1 = new text_painter.TextPainter.new({text: new text_span.TextSpan.new({text: text, style: this.textStyle}), textDirection: ui.TextDirection.ltr, textScaleFactor: this.scaleFactor}), (() => {
+        t1.layout();
+        return t1;
+      })());
+      textPainter.paint(canvas, new ui.Offset.new(dart.notNull(offset.dx) - dart.notNull(textLayoutInfo.width) / 2, dart.notNull(offset.dy) + (dart.notNull(textLayoutInfo.height) - dart.notNull(textPainter.height)) / 2));
+    }
+    calculateLayoutInfo(text, list) {
+      if (text == null) dart.nullFailed(I[0], 219, 35, "text");
+      if (list == null) dart.nullFailed(I[0], 219, 63, "list");
+      list[$clear]();
+      let textPainter = new text_painter.TextPainter.new({text: new text_span.TextSpan.new({text: text, style: this.textStyle}), textDirection: ui.TextDirection.ltr, maxLines: 1, textScaleFactor: this.scaleFactor});
+      textPainter.layout();
+      for (let i = 0; i < text.length; i = i + 1) {
+        let forCaret = textPainter.getOffsetForCaret(new ui.TextPosition.new({offset: i}), ui.Rect.zero);
+        let offsetX = forCaret.dx;
+        if (i > 0 && offsetX === 0) {
+          break;
         }
+        let textLayoutInfo = new wavy._TextLayoutInfo.new({text: text[$_get](i), offsetX: offsetX, offsetY: forCaret.dy, width: textPainter.width, height: textPainter.height, baseline: textPainter.computeDistanceToActualBaseline(ui.TextBaseline.ideographic)});
+        list[$add](textLayoutInfo);
       }
     }
   };
-  (edge_insets.EdgeInsetsDirectional.fromSTEB = function(start, top, end, bottom) {
-    if (start == null) dart.nullFailed(I[0], 647, 45, "start");
-    if (top == null) dart.nullFailed(I[0], 647, 57, "top");
-    if (end == null) dart.nullFailed(I[0], 647, 67, "end");
-    if (bottom == null) dart.nullFailed(I[0], 647, 77, "bottom");
-    this[start$] = start;
-    this[top$0] = top;
-    this[end$] = end;
-    this[bottom$0] = bottom;
-    edge_insets.EdgeInsetsDirectional.__proto__.new.call(this);
+  (wavy._WTextPainter.new = function(opts) {
+    let progress = opts && 'progress' in opts ? opts.progress : null;
+    if (progress == null) dart.nullFailed(I[0], 114, 19, "progress");
+    let text = opts && 'text' in opts ? opts.text : null;
+    if (text == null) dart.nullFailed(I[0], 115, 19, "text");
+    let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
+    if (textStyle == null) dart.nullFailed(I[0], 116, 19, "textStyle");
+    let scaleFactor = opts && 'scaleFactor' in opts ? opts.scaleFactor : null;
+    if (scaleFactor == null) dart.nullFailed(I[0], 117, 19, "scaleFactor");
+    this[_textLayoutInfo] = T.JSArrayOf_TextLayoutInfo().of([]);
+    this.progress = progress;
+    this.text = text;
+    this.textStyle = textStyle;
+    this.scaleFactor = scaleFactor;
+    wavy._WTextPainter.__proto__.new.call(this);
     ;
-  }).prototype = edge_insets.EdgeInsetsDirectional.prototype;
-  (edge_insets.EdgeInsetsDirectional.only = function(opts) {
-    let start = opts && 'start' in opts ? opts.start : 0;
-    if (start == null) dart.nullFailed(I[0], 660, 10, "start");
-    let top = opts && 'top' in opts ? opts.top : 0;
-    if (top == null) dart.nullFailed(I[0], 661, 10, "top");
-    let end = opts && 'end' in opts ? opts.end : 0;
-    if (end == null) dart.nullFailed(I[0], 662, 10, "end");
-    let bottom = opts && 'bottom' in opts ? opts.bottom : 0;
-    if (bottom == null) dart.nullFailed(I[0], 663, 10, "bottom");
-    this[start$] = start;
-    this[top$0] = top;
-    this[end$] = end;
-    this[bottom$0] = bottom;
-    edge_insets.EdgeInsetsDirectional.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsetsDirectional.prototype;
-  dart.addTypeTests(edge_insets.EdgeInsetsDirectional);
-  dart.addTypeCaches(edge_insets.EdgeInsetsDirectional);
-  dart.setMethodSignature(edge_insets.EdgeInsetsDirectional, () => ({
-    __proto__: dart.getMethods(edge_insets.EdgeInsetsDirectional.__proto__),
-    '-': dart.fnType(edge_insets.EdgeInsetsDirectional, [edge_insets.EdgeInsetsDirectional]),
-    '+': dart.fnType(edge_insets.EdgeInsetsDirectional, [edge_insets.EdgeInsetsDirectional]),
-    _negate: dart.fnType(edge_insets.EdgeInsetsDirectional, []),
-    '*': dart.fnType(edge_insets.EdgeInsetsDirectional, [core.double]),
-    '/': dart.fnType(edge_insets.EdgeInsetsDirectional, [core.double]),
-    '~/': dart.fnType(edge_insets.EdgeInsetsDirectional, [core.double]),
-    '%': dart.fnType(edge_insets.EdgeInsetsDirectional, [core.double]),
-    resolve: dart.fnType(edge_insets.EdgeInsets, [dart.nullable(ui.TextDirection)])
+  }).prototype = wavy._WTextPainter.prototype;
+  dart.addTypeTests(wavy._WTextPainter);
+  dart.addTypeCaches(wavy._WTextPainter);
+  dart.setMethodSignature(wavy._WTextPainter, () => ({
+    __proto__: dart.getMethods(wavy._WTextPainter.__proto__),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Size]),
+    shouldRepaint: dart.fnType(core.bool, [dart.nullable(core.Object)]),
+    calculateMove: dart.fnType(dart.void, []),
+    drawText: dart.fnType(dart.void, [ui.Canvas, core.String, ui.Offset, wavy._TextLayoutInfo]),
+    calculateLayoutInfo: dart.fnType(dart.void, [core.String, core.List$(wavy._TextLayoutInfo)])
   }));
-  dart.setGetterSignature(edge_insets.EdgeInsetsDirectional, () => ({
-    __proto__: dart.getGetters(edge_insets.EdgeInsetsDirectional.__proto__),
-    [_start]: core.double,
-    [_top]: core.double,
-    [_end]: core.double,
-    [_bottom]: core.double,
-    [_left]: core.double,
-    [_right]: core.double,
-    flipped: edge_insets.EdgeInsetsDirectional
+  dart.setLibraryUri(wavy._WTextPainter, I[1]);
+  dart.setFieldSignature(wavy._WTextPainter, () => ({
+    __proto__: dart.getFields(wavy._WTextPainter.__proto__),
+    progress: dart.finalFieldType(core.double),
+    scaleFactor: dart.finalFieldType(core.double),
+    text: dart.finalFieldType(core.String),
+    [_textLayoutInfo]: dart.finalFieldType(core.List$(wavy._TextLayoutInfo)),
+    textStyle: dart.finalFieldType(text_style.TextStyle)
   }));
-  dart.setLibraryUri(edge_insets.EdgeInsetsDirectional, I[1]);
-  dart.setFieldSignature(edge_insets.EdgeInsetsDirectional, () => ({
-    __proto__: dart.getFields(edge_insets.EdgeInsetsDirectional.__proto__),
-    start: dart.finalFieldType(core.double),
-    top: dart.finalFieldType(core.double),
-    end: dart.finalFieldType(core.double),
-    bottom: dart.finalFieldType(core.double)
-  }));
-  dart.defineLazy(edge_insets.EdgeInsetsDirectional, {
-    /*edge_insets.EdgeInsetsDirectional.zero*/get zero() {
-      return C[6] || CT.C6;
+  var ___TextLayoutInfo_riseHeight = dart.privateName(wavy, "_#_TextLayoutInfo#riseHeight");
+  wavy._TextLayoutInfo = class _TextLayoutInfo extends core.Object {
+    get riseHeight() {
+      let t1;
+      t1 = this[___TextLayoutInfo_riseHeight];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("riseHeight")) : t1;
     }
-  }, false);
-  const _left$ = _MixedEdgeInsets__left;
-  const _right$ = _MixedEdgeInsets__right;
-  const _start$ = _MixedEdgeInsets__start;
-  const _end$ = _MixedEdgeInsets__end;
-  const _top$ = _MixedEdgeInsets__top;
-  const _bottom$ = _MixedEdgeInsets__bottom;
-  edge_insets._MixedEdgeInsets = class _MixedEdgeInsets extends edge_insets.EdgeInsetsGeometry {
-    get [_left]() {
-      return this[_left$];
-    }
-    set [_left](value) {
-      super[_left] = value;
-    }
-    get [_right]() {
-      return this[_right$];
-    }
-    set [_right](value) {
-      super[_right] = value;
-    }
-    get [_start]() {
-      return this[_start$];
-    }
-    set [_start](value) {
-      super[_start] = value;
-    }
-    get [_end]() {
-      return this[_end$];
-    }
-    set [_end](value) {
-      super[_end] = value;
-    }
-    get [_top]() {
-      return this[_top$];
-    }
-    set [_top](value) {
-      super[_top] = value;
-    }
-    get [_bottom]() {
-      return this[_bottom$];
-    }
-    set [_bottom](value) {
-      super[_bottom] = value;
-    }
-    get isNonNegative() {
-      return dart.notNull(this[_left]) >= 0.0 && dart.notNull(this[_right]) >= 0.0 && dart.notNull(this[_start]) >= 0.0 && dart.notNull(this[_end]) >= 0.0 && dart.notNull(this[_top]) >= 0.0 && dart.notNull(this[_bottom]) >= 0.0;
-    }
-    _negate() {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(-dart.notNull(this[_left]), -dart.notNull(this[_right]), -dart.notNull(this[_start]), -dart.notNull(this[_end]), -dart.notNull(this[_top]), -dart.notNull(this[_bottom]));
-    }
-    ['*'](other) {
-      if (other == null) dart.nullFailed(I[0], 895, 38, "other");
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(dart.notNull(this[_left]) * dart.notNull(other), dart.notNull(this[_right]) * dart.notNull(other), dart.notNull(this[_start]) * dart.notNull(other), dart.notNull(this[_end]) * dart.notNull(other), dart.notNull(this[_top]) * dart.notNull(other), dart.notNull(this[_bottom]) * dart.notNull(other));
-    }
-    ['/'](other) {
-      if (other == null) dart.nullFailed(I[0], 907, 38, "other");
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(dart.notNull(this[_left]) / dart.notNull(other), dart.notNull(this[_right]) / dart.notNull(other), dart.notNull(this[_start]) / dart.notNull(other), dart.notNull(this[_end]) / dart.notNull(other), dart.notNull(this[_top]) / dart.notNull(other), dart.notNull(this[_bottom]) / dart.notNull(other));
-    }
-    ['~/'](other) {
-      if (other == null) dart.nullFailed(I[0], 919, 39, "other");
-      return new edge_insets._MixedEdgeInsets.fromLRSETB((dart.notNull(this[_left]) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this[_right]) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this[_start]) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this[_end]) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this[_top]) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this[_bottom]) / dart.notNull(other))[$truncate]()[$toDouble]());
-    }
-    ['%'](other) {
-      if (other == null) dart.nullFailed(I[0], 931, 38, "other");
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(this[_left][$modulo](other), this[_right][$modulo](other), this[_start][$modulo](other), this[_end][$modulo](other), this[_top][$modulo](other), this[_bottom][$modulo](other));
-    }
-    resolve(direction) {
-      if (!(direction != null)) dart.assertFailed(null, I[0], 944, 12, "direction != null");
-      switch (dart.nullCheck(direction)) {
-        case C[4] || CT.C4:
-        {
-          return new edge_insets.EdgeInsets.fromLTRB(dart.notNull(this[_end]) + dart.notNull(this[_left]), this[_top], dart.notNull(this[_start]) + dart.notNull(this[_right]), this[_bottom]);
-        }
-        case C[5] || CT.C5:
-        {
-          return new edge_insets.EdgeInsets.fromLTRB(dart.notNull(this[_start]) + dart.notNull(this[_left]), this[_top], dart.notNull(this[_end]) + dart.notNull(this[_right]), this[_bottom]);
-        }
-      }
+    set riseHeight(t1) {
+      if (t1 == null) dart.nullFailed(I[0], 267, 15, "null");
+      this[___TextLayoutInfo_riseHeight] = t1;
     }
   };
-  (edge_insets._MixedEdgeInsets.fromLRSETB = function(_left, _right, _start, _end, _top, _bottom) {
-    if (_left == null) dart.nullFailed(I[0], 852, 42, "_left");
-    if (_right == null) dart.nullFailed(I[0], 852, 54, "_right");
-    if (_start == null) dart.nullFailed(I[0], 852, 67, "_start");
-    if (_end == null) dart.nullFailed(I[0], 852, 80, "_end");
-    if (_top == null) dart.nullFailed(I[0], 852, 91, "_top");
-    if (_bottom == null) dart.nullFailed(I[0], 852, 102, "_bottom");
-    this[_left$] = _left;
-    this[_right$] = _right;
-    this[_start$] = _start;
-    this[_end$] = _end;
-    this[_top$] = _top;
-    this[_bottom$] = _bottom;
-    edge_insets._MixedEdgeInsets.__proto__.new.call(this);
+  (wavy._TextLayoutInfo.new = function(opts) {
+    let text = opts && 'text' in opts ? opts.text : null;
+    if (text == null) dart.nullFailed(I[0], 271, 19, "text");
+    let offsetX = opts && 'offsetX' in opts ? opts.offsetX : null;
+    if (offsetX == null) dart.nullFailed(I[0], 272, 19, "offsetX");
+    let offsetY = opts && 'offsetY' in opts ? opts.offsetY : null;
+    if (offsetY == null) dart.nullFailed(I[0], 273, 19, "offsetY");
+    let width = opts && 'width' in opts ? opts.width : null;
+    if (width == null) dart.nullFailed(I[0], 274, 19, "width");
+    let height = opts && 'height' in opts ? opts.height : null;
+    if (height == null) dart.nullFailed(I[0], 275, 19, "height");
+    let baseline = opts && 'baseline' in opts ? opts.baseline : null;
+    if (baseline == null) dart.nullFailed(I[0], 276, 19, "baseline");
+    this[___TextLayoutInfo_riseHeight] = null;
+    this.isMoving = false;
+    this.text = text;
+    this.offsetX = offsetX;
+    this.offsetY = offsetY;
+    this.width = width;
+    this.height = height;
+    this.baseline = baseline;
     ;
-  }).prototype = edge_insets._MixedEdgeInsets.prototype;
-  dart.addTypeTests(edge_insets._MixedEdgeInsets);
-  dart.addTypeCaches(edge_insets._MixedEdgeInsets);
-  dart.setMethodSignature(edge_insets._MixedEdgeInsets, () => ({
-    __proto__: dart.getMethods(edge_insets._MixedEdgeInsets.__proto__),
-    _negate: dart.fnType(edge_insets._MixedEdgeInsets, []),
-    '*': dart.fnType(edge_insets._MixedEdgeInsets, [core.double]),
-    '/': dart.fnType(edge_insets._MixedEdgeInsets, [core.double]),
-    '~/': dart.fnType(edge_insets._MixedEdgeInsets, [core.double]),
-    '%': dart.fnType(edge_insets._MixedEdgeInsets, [core.double]),
-    resolve: dart.fnType(edge_insets.EdgeInsets, [dart.nullable(ui.TextDirection)])
+  }).prototype = wavy._TextLayoutInfo.prototype;
+  dart.addTypeTests(wavy._TextLayoutInfo);
+  dart.addTypeCaches(wavy._TextLayoutInfo);
+  dart.setGetterSignature(wavy._TextLayoutInfo, () => ({
+    __proto__: dart.getGetters(wavy._TextLayoutInfo.__proto__),
+    riseHeight: core.double
   }));
-  dart.setLibraryUri(edge_insets._MixedEdgeInsets, I[1]);
-  dart.setFieldSignature(edge_insets._MixedEdgeInsets, () => ({
-    __proto__: dart.getFields(edge_insets._MixedEdgeInsets.__proto__),
-    [_left]: dart.finalFieldType(core.double),
-    [_right]: dart.finalFieldType(core.double),
-    [_start]: dart.finalFieldType(core.double),
-    [_end]: dart.finalFieldType(core.double),
-    [_top]: dart.finalFieldType(core.double),
-    [_bottom]: dart.finalFieldType(core.double)
+  dart.setSetterSignature(wavy._TextLayoutInfo, () => ({
+    __proto__: dart.getSetters(wavy._TextLayoutInfo.__proto__),
+    riseHeight: core.double
   }));
-  dart.trackLibraries("packages/flutter/src/painting/edge_insets.dart", {
-    "package:flutter/src/painting/edge_insets.dart": edge_insets
+  dart.setLibraryUri(wavy._TextLayoutInfo, I[1]);
+  dart.setFieldSignature(wavy._TextLayoutInfo, () => ({
+    __proto__: dart.getFields(wavy._TextLayoutInfo.__proto__),
+    text: dart.finalFieldType(core.String),
+    offsetX: dart.finalFieldType(core.double),
+    offsetY: dart.finalFieldType(core.double),
+    width: dart.finalFieldType(core.double),
+    height: dart.finalFieldType(core.double),
+    baseline: dart.finalFieldType(core.double),
+    [___TextLayoutInfo_riseHeight]: dart.fieldType(dart.nullable(core.double)),
+    isMoving: dart.fieldType(core.bool)
+  }));
+  dart.trackLibraries("packages/animated_text_kit/src/wavy.dart", {
+    "package:animated_text_kit/src/wavy.dart": wavy
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["edge_insets.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../packages/flutter/src/painting/edge_insets.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["wavy.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/animated_text_kit/src/wavy.dart.lib.js"}');
   // Exports:
   return {
-    src__painting__edge_insets: edge_insets
+    src__wavy: wavy
   };
 }));
 
-//# sourceMappingURL=edge_insets.dart.lib.js.map
+//# sourceMappingURL=wavy.dart.lib.js.map

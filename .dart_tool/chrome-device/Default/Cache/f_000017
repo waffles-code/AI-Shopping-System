@@ -1,47 +1,44 @@
-define(['dart_sdk', 'packages/firebase_core_web/src/interop/app.dart', 'packages/firebase_core_web/src/interop/utils/js.dart', 'packages/firebase_core_web/src/interop/utils/utils.dart'], (function load__packages__firebase_storage_web__src__interop__storage_dart(dart_sdk, packages__firebase_core_web__src__interop__app$46dart, packages__firebase_core_web__src__interop__utils__js$46dart, packages__firebase_core_web__src__interop__utils__utils$46dart) {
+define(['dart_sdk', 'packages/geolocator_platform_interface/src/extensions/integer_extensions.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/geolocator_platform_interface/src/enums/location_permission.dart', 'packages/geolocator_platform_interface/src/models/position.dart', 'packages/geolocator_platform_interface/src/enums/location_accuracy.dart', 'packages/geolocator_platform_interface/src/models/location_options.dart', 'packages/geolocator_platform_interface/src/errors/activity_missing_exception.dart', 'packages/geolocator_platform_interface/src/errors/location_service_disabled_exception.dart', 'packages/geolocator_platform_interface/src/errors/already_subscribed_exception.dart', 'packages/geolocator_platform_interface/src/errors/permission_definitions_not_found_exception.dart', 'packages/geolocator_platform_interface/src/errors/permission_denied_exception.dart', 'packages/geolocator_platform_interface/src/errors/permission_request_in_progress_exception.dart', 'packages/geolocator_platform_interface/src/errors/position_update_exception.dart', 'packages/plugin_platform_interface/plugin_platform_interface.dart', 'packages/vector_math/vector_math.dart'], (function load__packages__geolocator_platform_interface__src__implementations__method_channel_geolocator_dart(dart_sdk, packages__geolocator_platform_interface__src__extensions__integer_extensions$46dart, packages__flutter__src__services__system_channels$46dart, packages__geolocator_platform_interface__src__enums__location_permission$46dart, packages__geolocator_platform_interface__src__models__position$46dart, packages__geolocator_platform_interface__src__enums__location_accuracy$46dart, packages__geolocator_platform_interface__src__models__location_options$46dart, packages__geolocator_platform_interface__src__errors__activity_missing_exception$46dart, packages__geolocator_platform_interface__src__errors__location_service_disabled_exception$46dart, packages__geolocator_platform_interface__src__errors__already_subscribed_exception$46dart, packages__geolocator_platform_interface__src__errors__permission_definitions_not_found_exception$46dart, packages__geolocator_platform_interface__src__errors__permission_denied_exception$46dart, packages__geolocator_platform_interface__src__errors__permission_request_in_progress_exception$46dart, packages__geolocator_platform_interface__src__errors__position_update_exception$46dart, packages__plugin_platform_interface__plugin_platform_interface$46dart, packages__vector_math__vector_math$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const async = dart_sdk.async;
   const _js_helper = dart_sdk._js_helper;
-  const _internal = dart_sdk._internal;
-  const js = dart_sdk.js;
+  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const app = packages__firebase_core_web__src__interop__app$46dart.src__interop__app;
-  const js$ = packages__firebase_core_web__src__interop__utils__js$46dart.src__interop__utils__js;
-  const utils = packages__firebase_core_web__src__interop__utils__utils$46dart.src__interop__utils__utils;
-  var storage = Object.create(dart.library);
-  var $map = dartx.map;
-  var $toList = dartx.toList;
+  const integer_extensions = packages__geolocator_platform_interface__src__extensions__integer_extensions$46dart.src__extensions__integer_extensions;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
+  const location_permission = packages__geolocator_platform_interface__src__enums__location_permission$46dart.src__enums__location_permission;
+  const position = packages__geolocator_platform_interface__src__models__position$46dart.src__models__position;
+  const location_accuracy = packages__geolocator_platform_interface__src__enums__location_accuracy$46dart.src__enums__location_accuracy;
+  const location_options = packages__geolocator_platform_interface__src__models__location_options$46dart.src__models__location_options;
+  const activity_missing_exception = packages__geolocator_platform_interface__src__errors__activity_missing_exception$46dart.src__errors__activity_missing_exception;
+  const location_service_disabled_exception = packages__geolocator_platform_interface__src__errors__location_service_disabled_exception$46dart.src__errors__location_service_disabled_exception;
+  const already_subscribed_exception = packages__geolocator_platform_interface__src__errors__already_subscribed_exception$46dart.src__errors__already_subscribed_exception;
+  const permission_definitions_not_found_exception = packages__geolocator_platform_interface__src__errors__permission_definitions_not_found_exception$46dart.src__errors__permission_definitions_not_found_exception;
+  const permission_denied_exception = packages__geolocator_platform_interface__src__errors__permission_denied_exception$46dart.src__errors__permission_denied_exception;
+  const permission_request_in_progress_exception = packages__geolocator_platform_interface__src__errors__permission_request_in_progress_exception$46dart.src__errors__permission_request_in_progress_exception;
+  const position_update_exception = packages__geolocator_platform_interface__src__errors__position_update_exception$46dart.src__errors__position_update_exception;
+  const plugin_platform_interface = packages__plugin_platform_interface__plugin_platform_interface$46dart.plugin_platform_interface;
+  const vector_math = packages__vector_math__vector_math$46dart.vector_math;
+  var method_channel_geolocator = Object.create(dart.library);
+  var geolocator_platform_interface = Object.create(dart.library);
+  var geolocator_platform_interface$ = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(true);
-  var T$ = {
-    ExpandoOfStorage: () => (T$.ExpandoOfStorage = dart.constFn(core.Expando$(storage.Storage)))(),
-    FullMetadataJsImplToFullMetadata: () => (T$.FullMetadataJsImplToFullMetadata = dart.constFn(dart.fnType(storage.FullMetadata, [dart.anonymousJSType("FullMetadataJsImpl")])))(),
-    ListResultJsImplToListResult: () => (T$.ListResultJsImplToListResult = dart.constFn(dart.fnType(storage.ListResult, [dart.anonymousJSType("ListResultJsImpl")])))(),
-    ExpandoOfStorageReference: () => (T$.ExpandoOfStorageReference = dart.constFn(core.Expando$(storage.StorageReference)))(),
-    MapOfString$String: () => (T$.MapOfString$String = dart.constFn(core.Map$(core.String, core.String)))(),
-    MapNOfString$String: () => (T$.MapNOfString$String = dart.constFn(dart.nullable(T$.MapOfString$String())))(),
-    IdentityMapOfString$String: () => (T$.IdentityMapOfString$String = dart.constFn(_js_helper.IdentityMap$(core.String, core.String)))(),
-    ExpandoOfFullMetadata: () => (T$.ExpandoOfFullMetadata = dart.constFn(core.Expando$(storage.FullMetadata)))(),
-    UploadTaskSnapshotJsImplToUploadTaskSnapshot: () => (T$.UploadTaskSnapshotJsImplToUploadTaskSnapshot = dart.constFn(dart.fnType(storage.UploadTaskSnapshot, [dart.anonymousJSType("UploadTaskSnapshotJsImpl")])))(),
-    StreamControllerOfUploadTaskSnapshot: () => (T$.StreamControllerOfUploadTaskSnapshot = dart.constFn(async.StreamController$(storage.UploadTaskSnapshot)))(),
-    VoidToStreamControllerOfUploadTaskSnapshot: () => (T$.VoidToStreamControllerOfUploadTaskSnapshot = dart.constFn(dart.fnType(T$.StreamControllerOfUploadTaskSnapshot(), [])))(),
-    StreamControllerOfUploadTaskSnapshotTodynamic: () => (T$.StreamControllerOfUploadTaskSnapshotTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.StreamControllerOfUploadTaskSnapshot()])))(),
-    VoidTodynamic: () => (T$.VoidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [])))(),
-    VoidToFn: () => (T$.VoidToFn = dart.constFn(dart.fnType(T$.VoidTodynamic(), [])))(),
-    FnTodynamic: () => (T$.FnTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.VoidTodynamic()])))(),
-    UploadTaskSnapshotJsImplToNull: () => (T$.UploadTaskSnapshotJsImplToNull = dart.constFn(dart.fnType(core.Null, [dart.anonymousJSType("UploadTaskSnapshotJsImpl")])))(),
-    dynamicTovoid: () => (T$.dynamicTovoid = dart.constFn(dart.fnType(dart.void, [dart.dynamic])))(),
-    VoidToNull: () => (T$.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
-    VoidTovoid: () => (T$.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    ExpandoOfUploadTask: () => (T$.ExpandoOfUploadTask = dart.constFn(core.Expando$(storage.UploadTask)))(),
-    ExpandoOfUploadTaskSnapshot: () => (T$.ExpandoOfUploadTaskSnapshot = dart.constFn(core.Expando$(storage.UploadTaskSnapshot)))(),
-    dynamicToStorageReference: () => (T$.dynamicToStorageReference = dart.constFn(dart.fnType(storage.StorageReference, [dart.dynamic])))(),
-    ExpandoOfListResult: () => (T$.ExpandoOfListResult = dart.constFn(core.Expando$(storage.ListResult)))()
+  var T = {
+    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))(),
+    boolNTobool: () => (T.boolNTobool = dart.constFn(dart.fnType(core.bool, [T.boolN()])))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    PositionN: () => (T.PositionN = dart.constFn(dart.nullable(position.Position)))(),
+    EventSinkTovoid: () => (T.EventSinkTovoid = dart.constFn(dart.fnType(dart.void, [async.EventSink])))(),
+    dynamicToPosition: () => (T.dynamicToPosition = dart.constFn(dart.fnType(position.Position, [dart.dynamic])))(),
+    dynamicToNever: () => (T.dynamicToNever = dart.constFn(dart.fnType(dart.Never, [dart.dynamic])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
-  }, T$);
+  }, T);
   var S = {
     _: () => S
   };
@@ -54,736 +51,391 @@ define(['dart_sdk', 'packages/firebase_core_web/src/interop/app.dart', 'packages
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: storage.TaskState.prototype,
-        [_name$]: "TaskState.RUNNING",
-        index: 0
+        __proto__: location_accuracy.LocationAccuracy.prototype,
+        [_name]: "LocationAccuracy.best",
+        index: 4
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: storage.TaskState.prototype,
-        [_name$]: "TaskState.PAUSED",
-        index: 1
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: storage.TaskState.prototype,
-        [_name$]: "TaskState.SUCCESS",
-        index: 2
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: storage.TaskState.prototype,
-        [_name$]: "TaskState.CANCELED",
-        index: 3
+        __proto__: core.Object.prototype
       });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: storage.TaskState.prototype,
-        [_name$]: "TaskState.ERROR",
-        index: 4
+        __proto__: message_codecs.StandardMessageCodec.prototype
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C[4] || CT.C4
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C[3] || CT.C3,
+        [MethodChannel_name]: "flutter.baseflow.com/geolocator"
       });
     },
     get C5() {
-      return C[5] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], storage.TaskState);
-    },
-    get C6() {
-      return C[6] = dart.fn(storage.FullMetadata.getInstance, T$.FullMetadataJsImplToFullMetadata());
-    },
-    get C7() {
-      return C[7] = dart.fn(storage.ListResult.getInstance, T$.ListResultJsImplToListResult());
-    },
-    get C8() {
-      return C[8] = dart.fn(storage.UploadTaskSnapshot.getInstance, T$.UploadTaskSnapshotJsImplToUploadTaskSnapshot());
+      return C[5] = dart.const({
+        __proto__: platform_channel.EventChannel.prototype,
+        [EventChannel__binaryMessenger]: null,
+        [EventChannel_codec]: C[3] || CT.C3,
+        [EventChannel_name]: "flutter.baseflow.com/geolocator_updates"
+      });
     }
   }, false);
-  var C = Array(9).fill(void 0);
+  var C = Array(6).fill(void 0);
   var I = [
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_web-1.0.5/lib/src/interop/storage.dart",
-    "package:firebase_storage_web/src/interop/storage.dart"
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_platform_interface-2.0.2/lib/src/implementations/method_channel_geolocator.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_platform_interface-2.0.2/lib/src/geolocator_platform_interface.dart",
+    "package:geolocator_platform_interface/src/geolocator_platform_interface.dart",
+    "package:geolocator_platform_interface/src/implementations/method_channel_geolocator.dart"
   ];
-  var _name$ = dart.privateName(storage, "_name");
-  storage.TaskState = class TaskState extends core.Object {
-    toString() {
-      return this[_name$];
+  var forceAndroidLocationManager = dart.privateName(method_channel_geolocator, "MethodChannelGeolocator.forceAndroidLocationManager");
+  var _positionStream = dart.privateName(method_channel_geolocator, "_positionStream");
+  var _handlePlatformException = dart.privateName(method_channel_geolocator, "_handlePlatformException");
+  var _name = dart.privateName(location_accuracy, "_name");
+  geolocator_platform_interface.GeolocatorPlatform = class GeolocatorPlatform extends plugin_platform_interface.PlatformInterface {
+    static get instance() {
+      return geolocator_platform_interface.GeolocatorPlatform._instance;
+    }
+    static set instance(instance) {
+      if (instance == null) dart.nullFailed(I[1], 35, 42, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, geolocator_platform_interface.GeolocatorPlatform._token);
+      geolocator_platform_interface.GeolocatorPlatform._instance = instance;
+    }
+    checkPermission() {
+      dart.throw(new core.UnimplementedError.new("checkPermission() has not been implemented."));
+    }
+    requestPermission() {
+      dart.throw(new core.UnimplementedError.new("requestPermission() has not been implemented."));
+    }
+    isLocationServiceEnabled() {
+      dart.throw(new core.UnimplementedError.new("isLocationServiceEnabled() has not been implemented."));
+    }
+    getLastKnownPosition(opts) {
+      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
+      if (forceAndroidLocationManager == null) dart.nullFailed(I[1], 79, 10, "forceAndroidLocationManager");
+      dart.throw(new core.UnimplementedError.new("getLastKnownPosition() has not been implemented."));
+    }
+    getCurrentPosition(opts) {
+      let desiredAccuracy = opts && 'desiredAccuracy' in opts ? opts.desiredAccuracy : C[0] || CT.C0;
+      if (desiredAccuracy == null) dart.nullFailed(I[1], 103, 22, "desiredAccuracy");
+      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
+      if (forceAndroidLocationManager == null) dart.nullFailed(I[1], 104, 10, "forceAndroidLocationManager");
+      let timeLimit = opts && 'timeLimit' in opts ? opts.timeLimit : null;
+      dart.throw(new core.UnimplementedError.new("getCurrentPosition() has not been implemented."));
+    }
+    getPositionStream(opts) {
+      let desiredAccuracy = opts && 'desiredAccuracy' in opts ? opts.desiredAccuracy : C[0] || CT.C0;
+      if (desiredAccuracy == null) dart.nullFailed(I[1], 145, 22, "desiredAccuracy");
+      let distanceFilter = opts && 'distanceFilter' in opts ? opts.distanceFilter : 0;
+      if (distanceFilter == null) dart.nullFailed(I[1], 146, 9, "distanceFilter");
+      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
+      if (forceAndroidLocationManager == null) dart.nullFailed(I[1], 147, 10, "forceAndroidLocationManager");
+      let timeInterval = opts && 'timeInterval' in opts ? opts.timeInterval : 0;
+      if (timeInterval == null) dart.nullFailed(I[1], 148, 9, "timeInterval");
+      let timeLimit = opts && 'timeLimit' in opts ? opts.timeLimit : null;
+      dart.throw(new core.UnimplementedError.new("getPositionStream() has not been implemented."));
+    }
+    openAppSettings() {
+      return async.async(core.bool, function* openAppSettings() {
+        dart.throw(new core.UnimplementedError.new("openAppSettings() has not been implemented."));
+      });
+    }
+    openLocationSettings() {
+      return async.async(core.bool, function* openLocationSettings() {
+        dart.throw(new core.UnimplementedError.new("openLocationSettings() has not been implemented."));
+      });
+    }
+    distanceBetween(startLatitude, startLongitude, endLatitude, endLongitude) {
+      if (startLatitude == null) dart.nullFailed(I[1], 178, 12, "startLatitude");
+      if (startLongitude == null) dart.nullFailed(I[1], 179, 12, "startLongitude");
+      if (endLatitude == null) dart.nullFailed(I[1], 180, 12, "endLatitude");
+      if (endLongitude == null) dart.nullFailed(I[1], 181, 12, "endLongitude");
+      let earthRadius = 6378137.0;
+      let dLat = geolocator_platform_interface.GeolocatorPlatform._toRadians(dart.notNull(endLatitude) - dart.notNull(startLatitude));
+      let dLon = geolocator_platform_interface.GeolocatorPlatform._toRadians(dart.notNull(endLongitude) - dart.notNull(startLongitude));
+      let a = math.pow(math.sin(core.num.as(dart.dsend(dLat, '/', [2]))), 2) + math.pow(math.sin(core.num.as(dart.dsend(dLon, '/', [2]))), 2) * math.cos(core.num.as(geolocator_platform_interface.GeolocatorPlatform._toRadians(startLatitude))) * math.cos(core.num.as(geolocator_platform_interface.GeolocatorPlatform._toRadians(endLatitude)));
+      let c = 2 * math.asin(math.sqrt(a));
+      return earthRadius * c;
+    }
+    static _toRadians(degree) {
+      if (degree == null) dart.nullFailed(I[1], 196, 28, "degree");
+      return dart.notNull(degree) * 3.141592653589793 / 180;
+    }
+    bearingBetween(startLatitude, startLongitude, endLatitude, endLongitude) {
+      if (startLatitude == null) dart.nullFailed(I[1], 207, 12, "startLatitude");
+      if (startLongitude == null) dart.nullFailed(I[1], 208, 12, "startLongitude");
+      if (endLatitude == null) dart.nullFailed(I[1], 209, 12, "endLatitude");
+      if (endLongitude == null) dart.nullFailed(I[1], 210, 12, "endLongitude");
+      let startLongitudeRadians = vector_math.radians(startLongitude);
+      let startLatitudeRadians = vector_math.radians(startLatitude);
+      let endLongitudeRadians = vector_math.radians(endLongitude);
+      let endLatitudeRadians = vector_math.radians(endLatitude);
+      let y = math.sin(dart.notNull(endLongitudeRadians) - dart.notNull(startLongitudeRadians)) * math.cos(endLatitudeRadians);
+      let x = math.cos(startLatitudeRadians) * math.sin(endLatitudeRadians) - math.sin(startLatitudeRadians) * math.cos(endLatitudeRadians) * math.cos(dart.notNull(endLongitudeRadians) - dart.notNull(startLongitudeRadians));
+      return vector_math.degrees(math.atan2(y, x));
     }
   };
-  (storage.TaskState.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[0], 20, 6, "index");
-    if (_name == null) dart.nullFailed(I[0], 20, 6, "_name");
-    this.index = index;
-    this[_name$] = _name;
+  (geolocator_platform_interface.GeolocatorPlatform.new = function() {
+    geolocator_platform_interface.GeolocatorPlatform.__proto__.new.call(this, {token: geolocator_platform_interface.GeolocatorPlatform._token});
     ;
-  }).prototype = storage.TaskState.prototype;
-  dart.addTypeTests(storage.TaskState);
-  dart.addTypeCaches(storage.TaskState);
-  dart.setLibraryUri(storage.TaskState, I[1]);
-  dart.setFieldSignature(storage.TaskState, () => ({
-    __proto__: dart.getFields(storage.TaskState.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
+  }).prototype = geolocator_platform_interface.GeolocatorPlatform.prototype;
+  dart.addTypeTests(geolocator_platform_interface.GeolocatorPlatform);
+  dart.addTypeCaches(geolocator_platform_interface.GeolocatorPlatform);
+  dart.setMethodSignature(geolocator_platform_interface.GeolocatorPlatform, () => ({
+    __proto__: dart.getMethods(geolocator_platform_interface.GeolocatorPlatform.__proto__),
+    checkPermission: dart.fnType(async.Future$(location_permission.LocationPermission), []),
+    requestPermission: dart.fnType(async.Future$(location_permission.LocationPermission), []),
+    isLocationServiceEnabled: dart.fnType(async.Future$(core.bool), []),
+    getLastKnownPosition: dart.fnType(async.Future$(dart.nullable(position.Position)), [], {forceAndroidLocationManager: core.bool}, {}),
+    getCurrentPosition: dart.fnType(async.Future$(position.Position), [], {desiredAccuracy: location_accuracy.LocationAccuracy, forceAndroidLocationManager: core.bool, timeLimit: dart.nullable(core.Duration)}, {}),
+    getPositionStream: dart.fnType(async.Stream$(position.Position), [], {desiredAccuracy: location_accuracy.LocationAccuracy, distanceFilter: core.int, forceAndroidLocationManager: core.bool, timeInterval: core.int, timeLimit: dart.nullable(core.Duration)}, {}),
+    openAppSettings: dart.fnType(async.Future$(core.bool), []),
+    openLocationSettings: dart.fnType(async.Future$(core.bool), []),
+    distanceBetween: dart.fnType(core.double, [core.double, core.double, core.double, core.double]),
+    bearingBetween: dart.fnType(core.double, [core.double, core.double, core.double, core.double])
   }));
-  dart.defineExtensionMethods(storage.TaskState, ['toString']);
-  storage.TaskState.RUNNING = C[0] || CT.C0;
-  storage.TaskState.PAUSED = C[1] || CT.C1;
-  storage.TaskState.SUCCESS = C[2] || CT.C2;
-  storage.TaskState.CANCELED = C[3] || CT.C3;
-  storage.TaskState.ERROR = C[4] || CT.C4;
-  storage.TaskState.values = C[5] || CT.C5;
-  storage.Storage = class Storage extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.storage.Storage, "firebase.storage.Storage")) {
-    get app() {
-      return app.App.getInstance(this.jsObject.app);
-    }
-    get maxOperationRetryTime() {
-      return this.jsObject.maxOperationRetryTime;
-    }
-    get maxUploadRetryTime() {
-      return this.jsObject.maxUploadRetryTime;
-    }
-    static getInstance(jsObject) {
-      let t3, t2, t1, t0;
-      if (jsObject == null) dart.nullFailed(I[0], 52, 60, "jsObject");
-      t0 = storage.Storage._expando;
-      t1 = jsObject;
-      t2 = t0._get(t1);
-      return t2 == null ? (t3 = new storage.Storage._fromJsObject(jsObject), t0._set(t1, t3), t3) : t2;
-    }
-    ref(path = null) {
-      return storage.StorageReference.getInstance(this.jsObject.ref(path));
-    }
-    refFromURL(url) {
-      if (url == null) dart.nullFailed(I[0], 61, 38, "url");
-      return storage.StorageReference.getInstance(this.jsObject.refFromURL(url));
-    }
-    setMaxOperationRetryTime(time) {
-      if (time == null) dart.nullFailed(I[0], 65, 37, "time");
-      return this.jsObject.setMaxOperationRetryTime(time);
-    }
-    setMaxUploadRetryTime(time) {
-      if (time == null) dart.nullFailed(I[0], 69, 34, "time");
-      return this.jsObject.setMaxUploadRetryTime(time);
-    }
-  };
-  (storage.Storage._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 36, 55, "jsObject");
-    storage.Storage.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.Storage.prototype;
-  dart.addTypeTests(storage.Storage);
-  dart.addTypeCaches(storage.Storage);
-  dart.setMethodSignature(storage.Storage, () => ({
-    __proto__: dart.getMethods(storage.Storage.__proto__),
-    ref: dart.fnType(storage.StorageReference, [], [dart.nullable(core.String)]),
-    refFromURL: dart.fnType(storage.StorageReference, [core.String]),
-    setMaxOperationRetryTime: dart.fnType(dart.void, [core.int]),
-    setMaxUploadRetryTime: dart.fnType(dart.void, [core.int])
-  }));
-  dart.setGetterSignature(storage.Storage, () => ({
-    __proto__: dart.getGetters(storage.Storage.__proto__),
-    app: app.App,
-    maxOperationRetryTime: core.int,
-    maxUploadRetryTime: core.int
-  }));
-  dart.setLibraryUri(storage.Storage, I[1]);
-  dart.defineLazy(storage.Storage, {
-    /*storage.Storage._expando*/get _expando() {
-      return new (T$.ExpandoOfStorage()).new();
-    }
+  dart.setLibraryUri(geolocator_platform_interface.GeolocatorPlatform, I[2]);
+  dart.defineLazy(geolocator_platform_interface.GeolocatorPlatform, {
+    /*geolocator_platform_interface.GeolocatorPlatform._token*/get _token() {
+      return C[1] || CT.C1;
+    },
+    /*geolocator_platform_interface.GeolocatorPlatform._instance*/get _instance() {
+      return new method_channel_geolocator.MethodChannelGeolocator.new();
+    },
+    set _instance(_) {}
   }, false);
-  storage.StorageReference = class StorageReference extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.storage.Reference, "firebase.storage.Reference")) {
-    get bucket() {
-      return this.jsObject.bucket;
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  var EventChannel__binaryMessenger = dart.privateName(platform_channel, "EventChannel._binaryMessenger");
+  var EventChannel_codec = dart.privateName(platform_channel, "EventChannel.codec");
+  var EventChannel_name = dart.privateName(platform_channel, "EventChannel.name");
+  method_channel_geolocator.MethodChannelGeolocator = class MethodChannelGeolocator extends geolocator_platform_interface.GeolocatorPlatform {
+    get forceAndroidLocationManager() {
+      return this[forceAndroidLocationManager];
     }
-    get fullPath() {
-      return this.jsObject.fullPath;
+    set forceAndroidLocationManager(value) {
+      this[forceAndroidLocationManager] = value;
     }
-    get name() {
-      return this.jsObject.name;
-    }
-    get parent() {
-      return storage.StorageReference.getInstance(this.jsObject.parent);
-    }
-    get root() {
-      return storage.StorageReference.getInstance(this.jsObject.root);
-    }
-    get storage() {
-      return storage.Storage.getInstance(this.jsObject.storage);
-    }
-    static getInstance(jsObject) {
-      let t3, t2, t1, t0;
-      if (jsObject == null) dart.nullFailed(I[0], 105, 39, "jsObject");
-      t0 = storage.StorageReference._expando;
-      t1 = jsObject;
-      t2 = t0._get(t1);
-      return t2 == null ? (t3 = new storage.StorageReference._fromJsObject(jsObject), t0._set(t1, t3), t3) : t2;
-    }
-    child(path) {
-      if (path == null) dart.nullFailed(I[0], 111, 33, "path");
-      return storage.StorageReference.getInstance(this.jsObject.child(path));
-    }
-    delete() {
-      return utils.handleThenable(dart.dynamic, this.jsObject.delete());
-    }
-    getDownloadURL() {
-      return async.async(core.Uri, (function* getDownloadURL() {
-        let uriString = (yield utils.handleThenable(core.String, this.jsObject.getDownloadURL()));
-        return core.Uri.parse(uriString);
+    checkPermission() {
+      return async.async(location_permission.LocationPermission, (function* checkPermission() {
+        try {
+          let permission = core.int.as(yield method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(dart.dynamic, "checkPermission"));
+          return integer_extensions['IntergerExtensions|toLocationPermission'](permission);
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (message_codec.PlatformException.is(e)) {
+            this[_handlePlatformException](e);
+            dart.rethrow(e$);
+          } else
+            throw e$;
+        }
       }).bind(this));
     }
-    getMetadata() {
-      return utils.handleThenable(dart.anonymousJSType("FullMetadataJsImpl"), this.jsObject.getMetadata()).then(storage.FullMetadata, C[6] || CT.C6);
-    }
-    list(options) {
-      let t0;
-      return utils.handleThenable(dart.anonymousJSType("ListResultJsImpl"), this.jsObject.list((t0 = options, t0 == null ? null : t0.jsObject))).then(storage.ListResult, C[7] || CT.C7);
-    }
-    listAll() {
-      return utils.handleThenable(dart.anonymousJSType("ListResultJsImpl"), this.jsObject.listAll()).then(storage.ListResult, C[7] || CT.C7);
-    }
-    put(blob, metadata = null) {
-      let taskImpl = null;
-      if (metadata != null) {
-        taskImpl = this.jsObject.put(blob, metadata.jsObject);
-      } else {
-        taskImpl = this.jsObject.put(blob);
-      }
-      return storage.UploadTask.getInstance(taskImpl);
-    }
-    putString(data, format = null, metadata = null) {
-      if (data == null) dart.nullFailed(I[0], 175, 31, "data");
-      let taskImpl = null;
-      if (metadata != null) {
-        taskImpl = this.jsObject.putString(data, format, metadata.jsObject);
-      } else if (format != null) {
-        taskImpl = this.jsObject.putString(data, format);
-      } else {
-        taskImpl = this.jsObject.putString(data);
-      }
-      return storage.UploadTask.getInstance(taskImpl);
-    }
-    toString() {
-      return dart.toString(this.jsObject);
-    }
-    updateMetadata(metadata) {
-      if (metadata == null) dart.nullFailed(I[0], 194, 56, "metadata");
-      return utils.handleThenable(dart.anonymousJSType("FullMetadataJsImpl"), this.jsObject.updateMetadata(metadata.jsObject)).then(storage.FullMetadata, C[6] || CT.C6);
-    }
-  };
-  (storage.StorageReference._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 79, 66, "jsObject");
-    storage.StorageReference.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.StorageReference.prototype;
-  dart.addTypeTests(storage.StorageReference);
-  dart.addTypeCaches(storage.StorageReference);
-  dart.setMethodSignature(storage.StorageReference, () => ({
-    __proto__: dart.getMethods(storage.StorageReference.__proto__),
-    child: dart.fnType(storage.StorageReference, [core.String]),
-    delete: dart.fnType(async.Future, []),
-    getDownloadURL: dart.fnType(async.Future$(core.Uri), []),
-    getMetadata: dart.fnType(async.Future$(storage.FullMetadata), []),
-    list: dart.fnType(async.Future$(storage.ListResult), [dart.nullable(storage.ListOptions)]),
-    listAll: dart.fnType(async.Future$(storage.ListResult), []),
-    put: dart.fnType(storage.UploadTask, [dart.dynamic], [dart.nullable(storage.UploadMetadata)]),
-    putString: dart.fnType(storage.UploadTask, [core.String], [dart.nullable(core.String), dart.nullable(storage.UploadMetadata)]),
-    updateMetadata: dart.fnType(async.Future$(storage.FullMetadata), [storage.SettableMetadata])
-  }));
-  dart.setGetterSignature(storage.StorageReference, () => ({
-    __proto__: dart.getGetters(storage.StorageReference.__proto__),
-    bucket: core.String,
-    fullPath: core.String,
-    name: core.String,
-    parent: dart.nullable(storage.StorageReference),
-    root: storage.StorageReference,
-    storage: storage.Storage
-  }));
-  dart.setLibraryUri(storage.StorageReference, I[1]);
-  dart.defineExtensionMethods(storage.StorageReference, ['toString']);
-  dart.defineLazy(storage.StorageReference, {
-    /*storage.StorageReference._expando*/get _expando() {
-      return new (T$.ExpandoOfStorageReference()).new();
-    }
-  }, false);
-  const _is__SettableMetadataBase_default = Symbol('_is__SettableMetadataBase_default');
-  storage._SettableMetadataBase$ = dart.generic(T => {
-    class _SettableMetadataBase extends js$.JsObjectWrapper$(T) {
-      get cacheControl() {
-        return this.jsObject.cacheControl;
-      }
-      set cacheControl(s) {
-        if (s == null) dart.nullFailed(I[0], 449, 27, "s");
-        this.jsObject.cacheControl = s;
-      }
-      get contentDisposition() {
-        return this.jsObject.contentDisposition;
-      }
-      set contentDisposition(s) {
-        if (s == null) dart.nullFailed(I[0], 455, 33, "s");
-        this.jsObject.contentDisposition = s;
-      }
-      get contentEncoding() {
-        return this.jsObject.contentEncoding;
-      }
-      set contentEncoding(s) {
-        if (s == null) dart.nullFailed(I[0], 461, 30, "s");
-        this.jsObject.contentEncoding = s;
-      }
-      get contentLanguage() {
-        return this.jsObject.contentLanguage;
-      }
-      set contentLanguage(s) {
-        if (s == null) dart.nullFailed(I[0], 467, 30, "s");
-        this.jsObject.contentLanguage = s;
-      }
-      get contentType() {
-        return this.jsObject.contentType;
-      }
-      set contentType(s) {
-        if (s == null) dart.nullFailed(I[0], 473, 26, "s");
-        this.jsObject.contentType = s;
-      }
-      get customMetadata() {
-        let metadata = T$.MapNOfString$String().as(utils.dartify(this.jsObject.customMetadata));
-        if (metadata != null) {
-          return metadata;
-        } else {
-          return new (T$.IdentityMapOfString$String()).new();
+    requestPermission() {
+      return async.async(location_permission.LocationPermission, (function* requestPermission() {
+        try {
+          let permission = core.int.as(yield method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(dart.dynamic, "requestPermission"));
+          return integer_extensions['IntergerExtensions|toLocationPermission'](permission);
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (message_codec.PlatformException.is(e)) {
+            this[_handlePlatformException](e);
+            dart.rethrow(e$);
+          } else
+            throw e$;
         }
-      }
-      set customMetadata(m) {
-        if (m == null) dart.nullFailed(I[0], 487, 42, "m");
-        this.jsObject.customMetadata = utils.jsify(m);
-      }
+      }).bind(this));
     }
-    (_SettableMetadataBase.fromJsObject = function(jsObject) {
-      if (jsObject == null) dart.nullFailed(I[0], 445, 40, "jsObject");
-      _SettableMetadataBase.__proto__.fromJsObject.call(this, jsObject);
-      ;
-    }).prototype = _SettableMetadataBase.prototype;
-    dart.addTypeTests(_SettableMetadataBase);
-    _SettableMetadataBase.prototype[_is__SettableMetadataBase_default] = true;
-    dart.addTypeCaches(_SettableMetadataBase);
-    dart.setGetterSignature(_SettableMetadataBase, () => ({
-      __proto__: dart.getGetters(_SettableMetadataBase.__proto__),
-      cacheControl: core.String,
-      contentDisposition: core.String,
-      contentEncoding: core.String,
-      contentLanguage: core.String,
-      contentType: core.String,
-      customMetadata: core.Map$(core.String, core.String)
-    }));
-    dart.setSetterSignature(_SettableMetadataBase, () => ({
-      __proto__: dart.getSetters(_SettableMetadataBase.__proto__),
-      cacheControl: core.String,
-      contentDisposition: core.String,
-      contentEncoding: core.String,
-      contentLanguage: core.String,
-      contentType: core.String,
-      customMetadata: core.Map$(core.String, core.String)
-    }));
-    dart.setLibraryUri(_SettableMetadataBase, I[1]);
-    return _SettableMetadataBase;
-  });
-  storage._SettableMetadataBase = storage._SettableMetadataBase$();
-  dart.addTypeTests(storage._SettableMetadataBase, _is__SettableMetadataBase_default);
-  const _is__UploadMetadataBase_default = Symbol('_is__UploadMetadataBase_default');
-  storage._UploadMetadataBase$ = dart.generic(T => {
-    class _UploadMetadataBase extends storage._SettableMetadataBase$(T) {
-      get md5Hash() {
-        return this.jsObject.md5Hash;
-      }
-      set md5Hash(s) {
-        if (s == null) dart.nullFailed(I[0], 279, 22, "s");
-        this.jsObject.md5Hash = s;
-      }
+    isLocationServiceEnabled() {
+      return async.async(core.bool, function* isLocationServiceEnabled() {
+        return method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(core.bool, "isLocationServiceEnabled").then(core.bool, dart.fn(value => {
+          let t2;
+          t2 = value;
+          return t2 == null ? false : t2;
+        }, T.boolNTobool()));
+      });
     }
-    (_UploadMetadataBase.fromJsObject = function(jsObject) {
-      if (jsObject == null) dart.nullFailed(I[0], 275, 38, "jsObject");
-      _UploadMetadataBase.__proto__.fromJsObject.call(this, jsObject);
-      ;
-    }).prototype = _UploadMetadataBase.prototype;
-    dart.addTypeTests(_UploadMetadataBase);
-    _UploadMetadataBase.prototype[_is__UploadMetadataBase_default] = true;
-    dart.addTypeCaches(_UploadMetadataBase);
-    dart.setGetterSignature(_UploadMetadataBase, () => ({
-      __proto__: dart.getGetters(_UploadMetadataBase.__proto__),
-      md5Hash: core.String
-    }));
-    dart.setSetterSignature(_UploadMetadataBase, () => ({
-      __proto__: dart.getSetters(_UploadMetadataBase.__proto__),
-      md5Hash: core.String
-    }));
-    dart.setLibraryUri(_UploadMetadataBase, I[1]);
-    return _UploadMetadataBase;
-  });
-  storage._UploadMetadataBase = storage._UploadMetadataBase$();
-  dart.addTypeTests(storage._UploadMetadataBase, _is__UploadMetadataBase_default);
-  storage.FullMetadata = class FullMetadata extends storage._UploadMetadataBase$(dart.anonymousJSType("FullMetadataJsImpl")) {
-    get bucket() {
-      return this.jsObject.bucket;
-    }
-    get fullPath() {
-      return this.jsObject.fullPath;
-    }
-    get generation() {
-      return this.jsObject.generation;
-    }
-    get metageneration() {
-      return this.jsObject.metageneration;
-    }
-    get name() {
-      return this.jsObject.name;
-    }
-    get size() {
-      return this.jsObject.size;
-    }
-    get timeCreated() {
-      return this.jsObject.timeCreated == null ? null : core.DateTime.parse(dart.nullCheck(this.jsObject.timeCreated));
-    }
-    get updated() {
-      return this.jsObject.updated == null ? null : core.DateTime.parse(dart.nullCheck(this.jsObject.updated));
-    }
-    static getInstance(jsObject) {
-      let t3, t2, t1, t0;
-      if (jsObject == null) dart.nullFailed(I[0], 236, 70, "jsObject");
-      t0 = storage.FullMetadata._expando;
-      t1 = jsObject;
-      t2 = t0._get(t1);
-      return t2 == null ? (t3 = new storage.FullMetadata._fromJsObject(jsObject), t0._set(t1, t3), t3) : t2;
-    }
-  };
-  (storage.FullMetadata._fromJsObject = function(jsObject) {
-    storage.FullMetadata.__proto__.fromJsObject.call(this, dart.anonymousJSType("FullMetadataJsImpl").as(jsObject));
-    ;
-  }).prototype = storage.FullMetadata.prototype;
-  dart.addTypeTests(storage.FullMetadata);
-  dart.addTypeCaches(storage.FullMetadata);
-  dart.setGetterSignature(storage.FullMetadata, () => ({
-    __proto__: dart.getGetters(storage.FullMetadata.__proto__),
-    bucket: core.String,
-    fullPath: dart.nullable(core.String),
-    generation: dart.nullable(core.String),
-    metageneration: dart.nullable(core.String),
-    name: dart.nullable(core.String),
-    size: dart.nullable(core.int),
-    timeCreated: dart.nullable(core.DateTime),
-    updated: dart.nullable(core.DateTime)
-  }));
-  dart.setLibraryUri(storage.FullMetadata, I[1]);
-  dart.defineLazy(storage.FullMetadata, {
-    /*storage.FullMetadata._expando*/get _expando() {
-      return new (T$.ExpandoOfFullMetadata()).new();
-    }
-  }, false);
-  storage.UploadMetadata = class UploadMetadata extends storage._UploadMetadataBase$(dart.anonymousJSType("UploadMetadataJsImpl")) {
-    static new(opts) {
-      let md5Hash = opts && 'md5Hash' in opts ? opts.md5Hash : null;
-      let cacheControl = opts && 'cacheControl' in opts ? opts.cacheControl : null;
-      let contentDisposition = opts && 'contentDisposition' in opts ? opts.contentDisposition : null;
-      let contentEncoding = opts && 'contentEncoding' in opts ? opts.contentEncoding : null;
-      let contentLanguage = opts && 'contentLanguage' in opts ? opts.contentLanguage : null;
-      let contentType = opts && 'contentType' in opts ? opts.contentType : null;
-      let customMetadata = opts && 'customMetadata' in opts ? opts.customMetadata : null;
-      return new storage.UploadMetadata.fromJsObject({md5Hash: md5Hash, cacheControl: cacheControl, contentDisposition: contentDisposition, contentEncoding: contentEncoding, contentLanguage: contentLanguage, contentType: contentType, customMetadata: customMetadata != null ? utils.jsify(customMetadata) : null});
-    }
-  };
-  (storage.UploadMetadata.fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 266, 68, "jsObject");
-    storage.UploadMetadata.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.UploadMetadata.prototype;
-  dart.addTypeTests(storage.UploadMetadata);
-  dart.addTypeCaches(storage.UploadMetadata);
-  dart.setLibraryUri(storage.UploadMetadata, I[1]);
-  var _future = dart.privateName(storage, "_future");
-  storage.UploadTask = class UploadTask extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.storage.UploadTask, "firebase.storage.UploadTask")) {
-    get future() {
-      let t0;
-      t0 = this[_future];
-      return t0 == null ? this[_future] = utils.handleThenable(dart.anonymousJSType("UploadTaskSnapshotJsImpl"), this.jsObject).then(storage.UploadTaskSnapshot, C[8] || CT.C8) : t0;
-    }
-    get snapshot() {
-      return storage.UploadTaskSnapshot.getInstance(this.jsObject.snapshot);
-    }
-    static getInstance(jsObject) {
-      let t3, t2, t1, t0;
-      if (jsObject == null) dart.nullFailed(I[0], 307, 66, "jsObject");
-      t0 = storage.UploadTask._expando;
-      t1 = jsObject;
-      t2 = t0._get(t1);
-      return t2 == null ? (t3 = new storage.UploadTask._fromJsObject(jsObject), t0._set(t1, t3), t3) : t2;
-    }
-    cancel() {
-      return this.jsObject.cancel();
-    }
-    get onStateChanged() {
-      let changeController = null;
-      function changeController$35get() {
-        let t1;
-        t1 = changeController;
-        return t1 == null ? dart.throw(new _internal.LateError.localNI("changeController")) : t1;
-      }
-      dart.fn(changeController$35get, T$.VoidToStreamControllerOfUploadTaskSnapshot());
-      function changeController$35set(t2) {
-        if (t2 == null) dart.nullFailed(I[0], 317, 47, "null");
-        return changeController = t2;
-      }
-      dart.fn(changeController$35set, T$.StreamControllerOfUploadTaskSnapshotTodynamic());
-      let onStateChangedUnsubscribe = null;
-      function onStateChangedUnsubscribe$35get() {
-        let t5;
-        t5 = onStateChangedUnsubscribe;
-        return t5 == null ? dart.throw(new _internal.LateError.localNI("onStateChangedUnsubscribe")) : t5;
-      }
-      dart.fn(onStateChangedUnsubscribe$35get, T$.VoidToFn());
-      function onStateChangedUnsubscribe$35set(t6) {
-        if (t6 == null) dart.nullFailed(I[0], 318, 23, "null");
-        return onStateChangedUnsubscribe = t6;
-      }
-      dart.fn(onStateChangedUnsubscribe$35set, T$.FnTodynamic());
-      let nextWrapper = js.allowInterop(T$.UploadTaskSnapshotJsImplToNull(), dart.fn(data => {
-        if (data == null) dart.nullFailed(I[0], 321, 64, "data");
-        changeController$35get().add(storage.UploadTaskSnapshot.getInstance(data));
-      }, T$.UploadTaskSnapshotJsImplToNull()));
-      let errorWrapper = js.allowInterop(T$.dynamicTovoid(), dart.fn(e => changeController$35get().addError(core.Object.as(e)), T$.dynamicTovoid()));
-      let onCompletion = js.allowInterop(T$.VoidToNull(), dart.fn(() => {
-        changeController$35get().close();
-      }, T$.VoidToNull()));
-      const startListen = () => {
-        onStateChangedUnsubscribe$35set(this.jsObject.on(dart.global.firebase.storage.TaskEvent.STATE_CHANGED, dart.assertInterop(nextWrapper), dart.assertInterop(errorWrapper), dart.assertInterop(onCompletion)));
-      };
-      dart.fn(startListen, T$.VoidTovoid());
-      function stopListen() {
-        onStateChangedUnsubscribe$35get()();
-        changeController$35get().close();
-      }
-      dart.fn(stopListen, T$.VoidTovoid());
-      changeController$35set(T$.StreamControllerOfUploadTaskSnapshot().broadcast({onListen: startListen, onCancel: stopListen, sync: true}));
-      return changeController$35get().stream;
-    }
-    pause() {
-      return this.jsObject.pause();
-    }
-    resume() {
-      return this.jsObject.resume();
-    }
-  };
-  (storage.UploadTask._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 289, 61, "jsObject");
-    this[_future] = null;
-    storage.UploadTask.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.UploadTask.prototype;
-  dart.addTypeTests(storage.UploadTask);
-  dart.addTypeCaches(storage.UploadTask);
-  dart.setMethodSignature(storage.UploadTask, () => ({
-    __proto__: dart.getMethods(storage.UploadTask.__proto__),
-    cancel: dart.fnType(core.bool, []),
-    pause: dart.fnType(core.bool, []),
-    resume: dart.fnType(core.bool, [])
-  }));
-  dart.setGetterSignature(storage.UploadTask, () => ({
-    __proto__: dart.getGetters(storage.UploadTask.__proto__),
-    future: async.Future$(storage.UploadTaskSnapshot),
-    snapshot: storage.UploadTaskSnapshot,
-    onStateChanged: async.Stream$(storage.UploadTaskSnapshot)
-  }));
-  dart.setLibraryUri(storage.UploadTask, I[1]);
-  dart.setFieldSignature(storage.UploadTask, () => ({
-    __proto__: dart.getFields(storage.UploadTask.__proto__),
-    [_future]: dart.fieldType(dart.nullable(async.Future$(storage.UploadTaskSnapshot)))
-  }));
-  dart.defineLazy(storage.UploadTask, {
-    /*storage.UploadTask._expando*/get _expando() {
-      return new (T$.ExpandoOfUploadTask()).new();
-    }
-  }, false);
-  storage.UploadTaskSnapshot = class UploadTaskSnapshot extends js$.JsObjectWrapper$(dart.anonymousJSType("UploadTaskSnapshotJsImpl")) {
-    get bytesTransferred() {
-      return this.jsObject.bytesTransferred;
-    }
-    get metadata() {
-      return storage.FullMetadata.getInstance(this.jsObject.metadata);
-    }
-    get ref() {
-      return storage.StorageReference.getInstance(this.jsObject.ref);
-    }
-    get state() {
-      switch (this.jsObject.state) {
-        case "running":
-        {
-          return storage.TaskState.RUNNING;
+    getLastKnownPosition(opts) {
+      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
+      if (forceAndroidLocationManager == null) dart.nullFailed(I[0], 69, 10, "forceAndroidLocationManager");
+      return async.async(T.PositionN(), (function* getLastKnownPosition() {
+        try {
+          let parameters = new (T.IdentityMapOfString$dynamic()).from(["forceAndroidLocationManager", forceAndroidLocationManager]);
+          let positionMap = (yield method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(dart.dynamic, "getLastKnownPosition", parameters));
+          return positionMap != null ? position.Position.fromMap(positionMap) : null;
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (message_codec.PlatformException.is(e)) {
+            this[_handlePlatformException](e);
+            dart.rethrow(e$);
+          } else
+            throw e$;
         }
-        case "paused":
-        {
-          return storage.TaskState.PAUSED;
+      }).bind(this));
+    }
+    getCurrentPosition(opts) {
+      let desiredAccuracy = opts && 'desiredAccuracy' in opts ? opts.desiredAccuracy : C[0] || CT.C0;
+      if (desiredAccuracy == null) dart.nullFailed(I[0], 89, 22, "desiredAccuracy");
+      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
+      if (forceAndroidLocationManager == null) dart.nullFailed(I[0], 90, 10, "forceAndroidLocationManager");
+      let timeLimit = opts && 'timeLimit' in opts ? opts.timeLimit : null;
+      return async.async(position.Position, (function* getCurrentPosition() {
+        let locationOptions = new location_options.LocationOptions.new({accuracy: desiredAccuracy, forceAndroidLocationManager: forceAndroidLocationManager});
+        try {
+          let positionFuture = null;
+          if (timeLimit != null) {
+            positionFuture = method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(dart.dynamic, "getCurrentPosition", locationOptions.toJson()).timeout(timeLimit);
+          } else {
+            positionFuture = method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(dart.dynamic, "getCurrentPosition", locationOptions.toJson());
+          }
+          let positionMap = (yield positionFuture);
+          return position.Position.fromMap(positionMap);
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (message_codec.PlatformException.is(e)) {
+            this[_handlePlatformException](e);
+            dart.rethrow(e$);
+          } else
+            throw e$;
         }
-        case "success":
-        {
-          return storage.TaskState.SUCCESS;
+      }).bind(this));
+    }
+    getPositionStream(opts) {
+      let desiredAccuracy = opts && 'desiredAccuracy' in opts ? opts.desiredAccuracy : C[0] || CT.C0;
+      if (desiredAccuracy == null) dart.nullFailed(I[0], 126, 22, "desiredAccuracy");
+      let distanceFilter = opts && 'distanceFilter' in opts ? opts.distanceFilter : 0;
+      if (distanceFilter == null) dart.nullFailed(I[0], 127, 9, "distanceFilter");
+      let forceAndroidLocationManager = opts && 'forceAndroidLocationManager' in opts ? opts.forceAndroidLocationManager : false;
+      if (forceAndroidLocationManager == null) dart.nullFailed(I[0], 128, 10, "forceAndroidLocationManager");
+      let timeInterval = opts && 'timeInterval' in opts ? opts.timeInterval : 0;
+      if (timeInterval == null) dart.nullFailed(I[0], 129, 9, "timeInterval");
+      let timeLimit = opts && 'timeLimit' in opts ? opts.timeLimit : null;
+      let locationOptions = new location_options.LocationOptions.new({accuracy: desiredAccuracy, distanceFilter: distanceFilter, forceAndroidLocationManager: forceAndroidLocationManager, timeInterval: timeInterval});
+      if (this[_positionStream] != null) {
+        return dart.nullCheck(this[_positionStream]);
+      }
+      let positionStream = method_channel_geolocator.MethodChannelGeolocator._eventChannel.receiveBroadcastStream(locationOptions.toJson());
+      if (timeLimit != null) {
+        positionStream = positionStream.timeout(timeLimit, {onTimeout: dart.fn(s => {
+            if (s == null) dart.nullFailed(I[0], 150, 21, "s");
+            s.addError(new async.TimeoutException.new("Time limit reached while waiting for position update.", timeLimit));
+            s.close();
+            this[_positionStream] = null;
+          }, T.EventSinkTovoid())});
+      }
+      this[_positionStream] = positionStream.map(position.Position, dart.fn(element => position.Position.fromMap(dart.dgsend(element, [core.String, dart.dynamic], 'cast', [])), T.dynamicToPosition())).handleError(dart.fn(error => {
+        this[_positionStream] = null;
+        if (message_codec.PlatformException.is(error)) {
+          this[_handlePlatformException](error);
         }
-        case "canceled":
+        dart.throw(error);
+      }, T.dynamicToNever()));
+      return dart.nullCheck(this[_positionStream]);
+    }
+    openAppSettings() {
+      return async.async(core.bool, function* openAppSettings() {
+        return method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(core.bool, "openAppSettings").then(core.bool, dart.fn(value => {
+          let t4;
+          t4 = value;
+          return t4 == null ? false : t4;
+        }, T.boolNTobool()));
+      });
+    }
+    openLocationSettings() {
+      return async.async(core.bool, function* openLocationSettings() {
+        return method_channel_geolocator.MethodChannelGeolocator._methodChannel.invokeMethod(core.bool, "openLocationSettings").then(core.bool, dart.fn(value => {
+          let t4;
+          t4 = value;
+          return t4 == null ? false : t4;
+        }, T.boolNTobool()));
+      });
+    }
+    [_handlePlatformException](exception) {
+      if (exception == null) dart.nullFailed(I[0], 188, 51, "exception");
+      switch (exception.code) {
+        case "ACTIVITY_MISSING":
         {
-          return storage.TaskState.CANCELED;
+          dart.throw(new activity_missing_exception.ActivityMissingException.new(exception.message));
         }
-        case "error":
+        case "LOCATION_SERVICES_DISABLED":
         {
-          return storage.TaskState.ERROR;
+          dart.throw(new location_service_disabled_exception.LocationServiceDisabledException.new());
+        }
+        case "LOCATION_SUBSCRIPTION_ACTIVE":
+        {
+          dart.throw(new already_subscribed_exception.AlreadySubscribedException.new());
+        }
+        case "PERMISSION_DEFINITIONS_NOT_FOUND":
+        {
+          dart.throw(new permission_definitions_not_found_exception.PermissionDefinitionsNotFoundException.new(exception.message));
+        }
+        case "PERMISSION_DENIED":
+        {
+          dart.throw(new permission_denied_exception.PermissionDeniedException.new(exception.message));
+        }
+        case "PERMISSION_REQUEST_IN_PROGRESS":
+        {
+          dart.throw(new permission_request_in_progress_exception.PermissionRequestInProgressException.new(exception.message));
+        }
+        case "LOCATION_UPDATE_FAILURE":
+        {
+          dart.throw(new position_update_exception.PositionUpdateException.new(exception.message));
         }
         default:
         {
-          dart.throw(new core.UnsupportedError.new("Unknown state '" + dart.str(this.jsObject.state) + "' please file a bug."));
+          dart.throw(exception);
         }
       }
     }
-    get task() {
-      return storage.UploadTask.getInstance(this.jsObject.task);
-    }
-    get totalBytes() {
-      return this.jsObject.totalBytes;
-    }
-    static getInstance(jsObject) {
-      let t11, t10, t9, t8;
-      if (jsObject == null) dart.nullFailed(I[0], 410, 48, "jsObject");
-      t8 = storage.UploadTaskSnapshot._expando;
-      t9 = jsObject;
-      t10 = t8._get(t9);
-      return t10 == null ? (t11 = new storage.UploadTaskSnapshot._fromJsObject(jsObject), t8._set(t9, t11), t11) : t10;
-    }
   };
-  (storage.UploadTaskSnapshot._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 367, 48, "jsObject");
-    storage.UploadTaskSnapshot.__proto__.fromJsObject.call(this, jsObject);
+  (method_channel_geolocator.MethodChannelGeolocator.new = function() {
+    this[forceAndroidLocationManager] = false;
+    this[_positionStream] = null;
+    method_channel_geolocator.MethodChannelGeolocator.__proto__.new.call(this);
     ;
-  }).prototype = storage.UploadTaskSnapshot.prototype;
-  dart.addTypeTests(storage.UploadTaskSnapshot);
-  dart.addTypeCaches(storage.UploadTaskSnapshot);
-  dart.setGetterSignature(storage.UploadTaskSnapshot, () => ({
-    __proto__: dart.getGetters(storage.UploadTaskSnapshot.__proto__),
-    bytesTransferred: core.int,
-    metadata: storage.FullMetadata,
-    ref: storage.StorageReference,
-    state: storage.TaskState,
-    task: storage.UploadTask,
-    totalBytes: core.int
+  }).prototype = method_channel_geolocator.MethodChannelGeolocator.prototype;
+  dart.addTypeTests(method_channel_geolocator.MethodChannelGeolocator);
+  dart.addTypeCaches(method_channel_geolocator.MethodChannelGeolocator);
+  dart.setMethodSignature(method_channel_geolocator.MethodChannelGeolocator, () => ({
+    __proto__: dart.getMethods(method_channel_geolocator.MethodChannelGeolocator.__proto__),
+    [_handlePlatformException]: dart.fnType(dart.void, [message_codec.PlatformException])
   }));
-  dart.setLibraryUri(storage.UploadTaskSnapshot, I[1]);
-  dart.defineLazy(storage.UploadTaskSnapshot, {
-    /*storage.UploadTaskSnapshot._expando*/get _expando() {
-      return new (T$.ExpandoOfUploadTaskSnapshot()).new();
+  dart.setLibraryUri(method_channel_geolocator.MethodChannelGeolocator, I[3]);
+  dart.setFieldSignature(method_channel_geolocator.MethodChannelGeolocator, () => ({
+    __proto__: dart.getFields(method_channel_geolocator.MethodChannelGeolocator.__proto__),
+    forceAndroidLocationManager: dart.fieldType(core.bool),
+    [_positionStream]: dart.fieldType(dart.nullable(async.Stream$(position.Position)))
+  }));
+  dart.defineLazy(method_channel_geolocator.MethodChannelGeolocator, {
+    /*method_channel_geolocator.MethodChannelGeolocator._methodChannel*/get _methodChannel() {
+      return C[2] || CT.C2;
+    },
+    /*method_channel_geolocator.MethodChannelGeolocator._eventChannel*/get _eventChannel() {
+      return C[5] || CT.C5;
     }
   }, false);
-  storage.SettableMetadata = class SettableMetadata extends storage._SettableMetadataBase$(dart.anonymousJSType("SettableMetadataJsImpl")) {
-    static new(opts) {
-      let cacheControl = opts && 'cacheControl' in opts ? opts.cacheControl : null;
-      let contentDisposition = opts && 'contentDisposition' in opts ? opts.contentDisposition : null;
-      let contentEncoding = opts && 'contentEncoding' in opts ? opts.contentEncoding : null;
-      let contentLanguage = opts && 'contentLanguage' in opts ? opts.contentLanguage : null;
-      let contentType = opts && 'contentType' in opts ? opts.contentType : null;
-      let customMetadata = opts && 'customMetadata' in opts ? opts.customMetadata : null;
-      return new storage.SettableMetadata.fromJsObject({cacheControl: cacheControl, contentDisposition: contentDisposition, contentEncoding: contentEncoding, contentLanguage: contentLanguage, contentType: contentType, customMetadata: customMetadata != null ? utils.jsify(customMetadata) : null});
-    }
-  };
-  (storage.SettableMetadata.fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 438, 72, "jsObject");
-    storage.SettableMetadata.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.SettableMetadata.prototype;
-  dart.addTypeTests(storage.SettableMetadata);
-  dart.addTypeCaches(storage.SettableMetadata);
-  dart.setLibraryUri(storage.SettableMetadata, I[1]);
-  storage.ListOptions = class ListOptions extends js$.JsObjectWrapper$(dart.anonymousJSType("ListOptionsJsImpl")) {
-    static new(opts) {
-      let maxResults = opts && 'maxResults' in opts ? opts.maxResults : null;
-      let pageToken = opts && 'pageToken' in opts ? opts.pageToken : null;
-      return new storage.ListOptions._fromJsObject({maxResults: maxResults, pageToken: pageToken});
-    }
-    get maxResults() {
-      return this.jsObject.maxResults;
-    }
-    set maxResults(n) {
-      if (n == null) dart.nullFailed(I[0], 505, 22, "n");
-      return this.jsObject.maxResults = n;
-    }
-    get pageToken() {
-      return this.jsObject.pageToken;
-    }
-    set pageToken(t) {
-      if (t == null) dart.nullFailed(I[0], 511, 24, "t");
-      return this.jsObject.pageToken = t;
-    }
-  };
-  (storage.ListOptions._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 499, 63, "jsObject");
-    storage.ListOptions.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.ListOptions.prototype;
-  dart.addTypeTests(storage.ListOptions);
-  dart.addTypeCaches(storage.ListOptions);
-  dart.setGetterSignature(storage.ListOptions, () => ({
-    __proto__: dart.getGetters(storage.ListOptions.__proto__),
-    maxResults: core.int,
-    pageToken: core.String
-  }));
-  dart.setSetterSignature(storage.ListOptions, () => ({
-    __proto__: dart.getSetters(storage.ListOptions.__proto__),
-    maxResults: core.int,
-    pageToken: core.String
-  }));
-  dart.setLibraryUri(storage.ListOptions, I[1]);
-  storage.ListResult = class ListResult extends js$.JsObjectWrapper$(dart.anonymousJSType("ListResultJsImpl")) {
-    get items() {
-      return this.jsObject.items[$map](storage.StorageReference, dart.fn(data => new storage.StorageReference._fromJsObject(dart.lazyJSType(() => dart.global.firebase.storage.Reference, "firebase.storage.Reference").as(data)), T$.dynamicToStorageReference()))[$toList]();
-    }
-    get nextPageToken() {
-      return this.jsObject.nextPageToken;
-    }
-    get prefixes() {
-      return this.jsObject.prefixes[$map](storage.StorageReference, dart.fn(data => new storage.StorageReference._fromJsObject(dart.lazyJSType(() => dart.global.firebase.storage.Reference, "firebase.storage.Reference").as(data)), T$.dynamicToStorageReference()))[$toList]();
-    }
-    static getInstance(jsObject) {
-      let t11, t10, t9, t8;
-      if (jsObject == null) dart.nullFailed(I[0], 541, 66, "jsObject");
-      t8 = storage.ListResult._expando;
-      t9 = jsObject;
-      t10 = t8._get(t9);
-      return t10 == null ? (t11 = new storage.ListResult._fromJsObject(jsObject), t8._set(t9, t11), t11) : t10;
-    }
-  };
-  (storage.ListResult._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 516, 61, "jsObject");
-    storage.ListResult.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.ListResult.prototype;
-  dart.addTypeTests(storage.ListResult);
-  dart.addTypeCaches(storage.ListResult);
-  dart.setGetterSignature(storage.ListResult, () => ({
-    __proto__: dart.getGetters(storage.ListResult.__proto__),
-    items: core.List$(storage.StorageReference),
-    nextPageToken: core.String,
-    prefixes: core.List$(storage.StorageReference)
-  }));
-  dart.setLibraryUri(storage.ListResult, I[1]);
-  dart.defineLazy(storage.ListResult, {
-    /*storage.ListResult._expando*/get _expando() {
-      return new (T$.ExpandoOfListResult()).new();
-    }
-  }, false);
-  storage.getStorageInstance = function getStorageInstance(app = null, bucket = null) {
-    let appImpl = app != null ? dart.global.firebase.app(app.name) : dart.global.firebase.app();
-    return storage.Storage.getInstance(bucket != null ? appImpl.storage(bucket) : appImpl.storage());
-  };
-  dart.trackLibraries("packages/firebase_storage_web/src/interop/storage.dart", {
-    "package:firebase_storage_web/src/interop/storage.dart": storage
+  dart.trackLibraries("packages/geolocator_platform_interface/src/implementations/method_channel_geolocator.dart", {
+    "package:geolocator_platform_interface/src/implementations/method_channel_geolocator.dart": method_channel_geolocator,
+    "package:geolocator_platform_interface/src/geolocator_platform_interface.dart": geolocator_platform_interface,
+    "package:geolocator_platform_interface/geolocator_platform_interface.dart": geolocator_platform_interface$
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["storage.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/firebase_storage_web/src/interop/storage.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["../geolocator_platform_interface.dart","method_channel_geolocator.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/geolocator_platform_interface/src/implementations/method_channel_geolocator.dart.lib.js"}');
   // Exports:
   return {
-    src__interop__storage: storage
+    src__implementations__method_channel_geolocator: method_channel_geolocator,
+    src__geolocator_platform_interface: geolocator_platform_interface,
+    geolocator_platform_interface: geolocator_platform_interface$
   };
 }));
 
-//# sourceMappingURL=storage.dart.lib.js.map
+//# sourceMappingURL=method_channel_geolocator.dart.lib.js.map

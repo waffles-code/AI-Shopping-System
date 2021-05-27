@@ -1,44 +1,29 @@
-define(['dart_sdk', 'packages/shared_preferences_platform_interface/method_channel_shared_preferences.dart', 'packages/shared_preferences_linux/shared_preferences_linux.dart', 'packages/shared_preferences_windows/shared_preferences_windows.dart'], (function load__packages__shared_preferences__shared_preferences_dart(dart_sdk, packages__shared_preferences_platform_interface__method_channel_shared_preferences$46dart, packages__shared_preferences_linux__shared_preferences_linux$46dart, packages__shared_preferences_windows__shared_preferences_windows$46dart) {
+define(['dart_sdk', 'packages/google_sign_in_platform_interface/src/types.dart', 'packages/google_sign_in_platform_interface/src/utils.dart', 'packages/google_sign_in/src/common.dart', 'packages/flutter/src/services/system_channels.dart'], (function load__packages__google_sign_in__google_sign_in_dart(dart_sdk, packages__google_sign_in_platform_interface__src__types$46dart, packages__google_sign_in_platform_interface__src__utils$46dart, packages__google_sign_in__src__common$46dart, packages__flutter__src__services__system_channels$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const io = dart_sdk.io;
   const async = dart_sdk.async;
-  const collection = dart_sdk.collection;
   const _js_helper = dart_sdk._js_helper;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const shared_preferences_platform_interface = packages__shared_preferences_platform_interface__method_channel_shared_preferences$46dart.shared_preferences_platform_interface;
-  const method_channel_shared_preferences = packages__shared_preferences_platform_interface__method_channel_shared_preferences$46dart.method_channel_shared_preferences;
-  const shared_preferences_linux = packages__shared_preferences_linux__shared_preferences_linux$46dart.shared_preferences_linux;
-  const shared_preferences_windows = packages__shared_preferences_windows__shared_preferences_windows$46dart.shared_preferences_windows;
-  var shared_preferences = Object.create(dart.library);
-  var $keys = dartx.keys;
-  var $_get = dartx._get;
-  var $containsKey = dartx.containsKey;
-  var $cast = dartx.cast;
-  var $toList = dartx.toList;
-  var $_set = dartx._set;
-  var $remove = dartx.remove;
-  var $clear = dartx.clear;
-  var $addAll = dartx.addAll;
-  var $startsWith = dartx.startsWith;
-  var $substring = dartx.substring;
-  var $map = dartx.map;
+  const types = packages__google_sign_in_platform_interface__src__types$46dart.src__types;
+  const google_sign_in_platform_interface = packages__google_sign_in_platform_interface__src__utils$46dart.google_sign_in_platform_interface;
+  const common = packages__google_sign_in__src__common$46dart.src__common;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  var google_sign_in = Object.create(dart.library);
+  var $_equals = dartx._equals;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    CompleterOfSharedPreferences: () => (T.CompleterOfSharedPreferences = dart.constFn(async.Completer$(shared_preferences.SharedPreferences)))(),
-    LinkedHashSetOfString: () => (T.LinkedHashSetOfString = dart.constFn(collection.LinkedHashSet$(core.String)))(),
-    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))(),
-    intN: () => (T.intN = dart.constFn(dart.nullable(core.int)))(),
-    doubleN: () => (T.doubleN = dart.constFn(dart.nullable(core.double)))(),
-    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
-    ListN: () => (T.ListN = dart.constFn(dart.nullable(core.List)))(),
-    ListOfString: () => (T.ListOfString = dart.constFn(core.List$(core.String)))(),
-    ListNOfString: () => (T.ListNOfString = dart.constFn(dart.nullable(T.ListOfString())))(),
-    IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
-    MapOfString$Object: () => (T.MapOfString$Object = dart.constFn(core.Map$(core.String, core.Object)))(),
-    MapEntryOfString$Object: () => (T.MapEntryOfString$Object = dart.constFn(core.MapEntry$(core.String, core.Object)))(),
-    StringAndObjectToMapEntryOfString$Object: () => (T.StringAndObjectToMapEntryOfString$Object = dart.constFn(dart.fnType(T.MapEntryOfString$Object(), [core.String, core.Object])))()
+    IdentityMapOfString$String: () => (T.IdentityMapOfString$String = dart.constFn(_js_helper.IdentityMap$(core.String, core.String)))(),
+    MapOfString$String: () => (T.MapOfString$String = dart.constFn(core.Map$(core.String, core.String)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    GoogleSignInAccountN: () => (T.GoogleSignInAccountN = dart.constFn(dart.nullable(google_sign_in.GoogleSignInAccount)))(),
+    StreamControllerOfGoogleSignInAccountN: () => (T.StreamControllerOfGoogleSignInAccountN = dart.constFn(async.StreamController$(T.GoogleSignInAccountN())))(),
+    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
+    CompleterOfvoid: () => (T.CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))(),
+    FutureOrOfGoogleSignInAccountN: () => (T.FutureOrOfGoogleSignInAccountN = dart.constFn(async.FutureOr$(T.GoogleSignInAccountN())))(),
+    voidToFutureOrOfGoogleSignInAccountN: () => (T.voidToFutureOrOfGoogleSignInAccountN = dart.constFn(dart.fnType(T.FutureOrOfGoogleSignInAccountN(), [dart.void])))(),
+    dynamicTobool: () => (T.dynamicTobool = dart.constFn(dart.fnType(core.bool, [dart.dynamic])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -52,227 +37,395 @@ define(['dart_sdk', 'packages/shared_preferences_platform_interface/method_chann
   const CT = Object.create({
     _: () => (C, CT)
   });
-  var C = [];
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: types.SignInOption.prototype,
+        [_name]: "SignInOption.standard",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([], core.String);
+    }
+  }, false);
+  var C = Array(2).fill(void 0);
   var I = [
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.5/lib/shared_preferences.dart",
-    "package:shared_preferences/shared_preferences.dart"
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-5.0.2/lib/google_sign_in.dart",
+    "package:google_sign_in/google_sign_in.dart"
   ];
-  var _preferenceCache$ = dart.privateName(shared_preferences, "_preferenceCache");
-  var _setValue = dart.privateName(shared_preferences, "_setValue");
-  shared_preferences.SharedPreferences = class SharedPreferences extends core.Object {
-    static get _store() {
-      if (dart.test(shared_preferences.SharedPreferences._manualDartRegistrationNeeded)) {
-        if (!true && method_channel_shared_preferences.MethodChannelSharedPreferencesStore.is(shared_preferences_platform_interface.SharedPreferencesStorePlatform.instance)) {
-          if (dart.test(io.Platform.isLinux)) {
-            shared_preferences_platform_interface.SharedPreferencesStorePlatform.instance = new shared_preferences_linux.SharedPreferencesLinux.new();
-          } else if (dart.test(io.Platform.isWindows)) {
-            shared_preferences_platform_interface.SharedPreferencesStorePlatform.instance = new shared_preferences_windows.SharedPreferencesWindows.new();
-          }
-        }
-        shared_preferences.SharedPreferences._manualDartRegistrationNeeded = false;
-      }
-      return shared_preferences_platform_interface.SharedPreferencesStorePlatform.instance;
+  var _data$ = dart.privateName(google_sign_in, "_data");
+  google_sign_in.GoogleSignInAuthentication = class GoogleSignInAuthentication extends core.Object {
+    get idToken() {
+      return this[_data$].idToken;
     }
-    static getInstance() {
-      return async.async(shared_preferences.SharedPreferences, function* getInstance() {
-        if (shared_preferences.SharedPreferences._completer == null) {
-          let completer = T.CompleterOfSharedPreferences().new();
-          try {
-            let preferencesMap = (yield shared_preferences.SharedPreferences._getSharedPreferencesMap());
-            completer.complete(new shared_preferences.SharedPreferences.__(preferencesMap));
-          } catch (e$) {
-            let e = dart.getThrown(e$);
-            if (core.Exception.is(e)) {
-              completer.completeError(e);
-              let sharedPrefsFuture = completer.future;
-              shared_preferences.SharedPreferences._completer = null;
-              return sharedPrefsFuture;
-            } else
-              throw e$;
-          }
-          shared_preferences.SharedPreferences._completer = completer;
-        }
-        return dart.nullCheck(shared_preferences.SharedPreferences._completer).future;
-      });
+    get accessToken() {
+      return this[_data$].accessToken;
     }
-    getKeys() {
-      return T.LinkedHashSetOfString().from(this[_preferenceCache$][$keys]);
+    get serverAuthCode() {
+      return this[_data$].serverAuthCode;
     }
-    get(key) {
-      if (key == null) dart.nullFailed(I[0], 86, 22, "key");
-      return this[_preferenceCache$][$_get](key);
-    }
-    getBool(key) {
-      if (key == null) dart.nullFailed(I[0], 90, 24, "key");
-      return T.boolN().as(this[_preferenceCache$][$_get](key));
-    }
-    getInt(key) {
-      if (key == null) dart.nullFailed(I[0], 94, 22, "key");
-      return T.intN().as(this[_preferenceCache$][$_get](key));
-    }
-    getDouble(key) {
-      if (key == null) dart.nullFailed(I[0], 98, 28, "key");
-      return T.doubleN().as(this[_preferenceCache$][$_get](key));
-    }
-    getString(key) {
-      if (key == null) dart.nullFailed(I[0], 102, 28, "key");
-      return T.StringN().as(this[_preferenceCache$][$_get](key));
-    }
-    containsKey(key) {
-      if (key == null) dart.nullFailed(I[0], 105, 27, "key");
-      return this[_preferenceCache$][$containsKey](key);
-    }
-    getStringList(key) {
-      let t1;
-      if (key == null) dart.nullFailed(I[0], 109, 38, "key");
-      let list = T.ListN().as(this[_preferenceCache$][$_get](key));
-      if (list != null && !T.ListOfString().is(list)) {
-        list = list[$cast](core.String)[$toList]();
-        this[_preferenceCache$][$_set](key, list);
-      }
-      return T.ListNOfString().as((t1 = list, t1 == null ? null : t1[$toList]()));
-    }
-    setBool(key, value) {
-      if (key == null) dart.nullFailed(I[0], 120, 31, "key");
-      if (value == null) dart.nullFailed(I[0], 120, 41, "value");
-      return this[_setValue]("Bool", key, value);
-    }
-    setInt(key, value) {
-      if (key == null) dart.nullFailed(I[0], 123, 30, "key");
-      if (value == null) dart.nullFailed(I[0], 123, 39, "value");
-      return this[_setValue]("Int", key, value);
-    }
-    setDouble(key, value) {
-      if (key == null) dart.nullFailed(I[0], 128, 33, "key");
-      if (value == null) dart.nullFailed(I[0], 128, 45, "value");
-      return this[_setValue]("Double", key, value);
-    }
-    setString(key, value) {
-      if (key == null) dart.nullFailed(I[0], 132, 33, "key");
-      if (value == null) dart.nullFailed(I[0], 132, 45, "value");
-      return this[_setValue]("String", key, value);
-    }
-    setStringList(key, value) {
-      if (key == null) dart.nullFailed(I[0], 136, 37, "key");
-      if (value == null) dart.nullFailed(I[0], 136, 55, "value");
-      return this[_setValue]("StringList", key, value);
-    }
-    remove(key) {
-      if (key == null) dart.nullFailed(I[0], 140, 30, "key");
-      let prefixedKey = "flutter." + dart.str(key);
-      this[_preferenceCache$][$remove](key);
-      return shared_preferences.SharedPreferences._store.remove(prefixedKey);
-    }
-    [_setValue](valueType, key, value) {
-      if (valueType == null) dart.nullFailed(I[0], 146, 33, "valueType");
-      if (key == null) dart.nullFailed(I[0], 146, 51, "key");
-      if (value == null) dart.nullFailed(I[0], 146, 63, "value");
-      core.ArgumentError.checkNotNull(core.Object, value, "value");
-      let prefixedKey = "flutter." + dart.str(key);
-      if (T.ListOfString().is(value)) {
-        this[_preferenceCache$][$_set](key, value[$toList]());
-      } else {
-        this[_preferenceCache$][$_set](key, value);
-      }
-      return shared_preferences.SharedPreferences._store.setValue(valueType, prefixedKey, value);
-    }
-    commit() {
-      return async.async(core.bool, function* commit() {
-        return true;
-      });
-    }
-    clear() {
-      this[_preferenceCache$][$clear]();
-      return shared_preferences.SharedPreferences._store.clear();
-    }
-    reload() {
-      return async.async(dart.void, (function* reload() {
-        let preferences = (yield shared_preferences.SharedPreferences._getSharedPreferencesMap());
-        this[_preferenceCache$][$clear]();
-        this[_preferenceCache$][$addAll](preferences);
-      }).bind(this));
-    }
-    static _getSharedPreferencesMap() {
-      return async.async(T.MapOfString$Object(), function* _getSharedPreferencesMap() {
-        let fromSystem = (yield shared_preferences.SharedPreferences._store.getAll());
-        if (!(fromSystem != null)) dart.assertFailed(null, I[0], 182, 12, "fromSystem != null");
-        let preferencesMap = new (T.IdentityMapOfString$Object()).new();
-        for (let key of fromSystem[$keys]) {
-          if (!key[$startsWith]("flutter.")) dart.assertFailed(null, I[0], 186, 14, "key.startsWith(_prefix)");
-          preferencesMap[$_set](key[$substring]("flutter.".length), dart.nullCheck(fromSystem[$_get](key)));
-        }
-        return preferencesMap;
-      });
-    }
-    static setMockInitialValues(values) {
-      if (values == null) dart.nullFailed(I[0], 196, 56, "values");
-      let newValues = values[$map](core.String, core.Object, dart.fn((key, value) => {
-        if (key == null) dart.nullFailed(I[0], 198, 44, "key");
-        if (value == null) dart.nullFailed(I[0], 198, 56, "value");
-        let newKey = key;
-        if (!key[$startsWith]("flutter.")) {
-          newKey = "flutter." + dart.str(key);
-        }
-        return new (T.MapEntryOfString$Object()).__(newKey, value);
-      }, T.StringAndObjectToMapEntryOfString$Object()));
-      shared_preferences_platform_interface.SharedPreferencesStorePlatform.instance = new shared_preferences_platform_interface.InMemorySharedPreferencesStore.withData(newValues);
-      shared_preferences.SharedPreferences._completer = null;
+    toString() {
+      return "GoogleSignInAuthentication:" + dart.str(this[_data$]);
     }
   };
-  (shared_preferences.SharedPreferences.__ = function(_preferenceCache) {
-    if (_preferenceCache == null) dart.nullFailed(I[0], 20, 28, "_preferenceCache");
-    this[_preferenceCache$] = _preferenceCache;
+  (google_sign_in.GoogleSignInAuthentication.__ = function(_data) {
+    if (_data == null) dart.nullFailed(I[0], 20, 37, "_data");
+    this[_data$] = _data;
     ;
-  }).prototype = shared_preferences.SharedPreferences.prototype;
-  dart.addTypeTests(shared_preferences.SharedPreferences);
-  dart.addTypeCaches(shared_preferences.SharedPreferences);
-  dart.setMethodSignature(shared_preferences.SharedPreferences, () => ({
-    __proto__: dart.getMethods(shared_preferences.SharedPreferences.__proto__),
-    getKeys: dart.fnType(core.Set$(core.String), []),
-    get: dart.fnType(dart.nullable(core.Object), [core.String]),
-    getBool: dart.fnType(dart.nullable(core.bool), [core.String]),
-    getInt: dart.fnType(dart.nullable(core.int), [core.String]),
-    getDouble: dart.fnType(dart.nullable(core.double), [core.String]),
-    getString: dart.fnType(dart.nullable(core.String), [core.String]),
-    containsKey: dart.fnType(core.bool, [core.String]),
-    getStringList: dart.fnType(dart.nullable(core.List$(core.String)), [core.String]),
-    setBool: dart.fnType(async.Future$(core.bool), [core.String, core.bool]),
-    setInt: dart.fnType(async.Future$(core.bool), [core.String, core.int]),
-    setDouble: dart.fnType(async.Future$(core.bool), [core.String, core.double]),
-    setString: dart.fnType(async.Future$(core.bool), [core.String, core.String]),
-    setStringList: dart.fnType(async.Future$(core.bool), [core.String, core.List$(core.String)]),
-    remove: dart.fnType(async.Future$(core.bool), [core.String]),
-    [_setValue]: dart.fnType(async.Future$(core.bool), [core.String, core.String, core.Object]),
-    commit: dart.fnType(async.Future$(core.bool), []),
-    clear: dart.fnType(async.Future$(core.bool), []),
-    reload: dart.fnType(async.Future$(dart.void), [])
+  }).prototype = google_sign_in.GoogleSignInAuthentication.prototype;
+  dart.addTypeTests(google_sign_in.GoogleSignInAuthentication);
+  dart.addTypeCaches(google_sign_in.GoogleSignInAuthentication);
+  dart.setGetterSignature(google_sign_in.GoogleSignInAuthentication, () => ({
+    __proto__: dart.getGetters(google_sign_in.GoogleSignInAuthentication.__proto__),
+    idToken: dart.nullable(core.String),
+    accessToken: dart.nullable(core.String),
+    serverAuthCode: dart.nullable(core.String)
   }));
-  dart.setLibraryUri(shared_preferences.SharedPreferences, I[1]);
-  dart.setFieldSignature(shared_preferences.SharedPreferences, () => ({
-    __proto__: dart.getFields(shared_preferences.SharedPreferences.__proto__),
-    [_preferenceCache$]: dart.finalFieldType(core.Map$(core.String, core.Object))
+  dart.setLibraryUri(google_sign_in.GoogleSignInAuthentication, I[1]);
+  dart.setFieldSignature(google_sign_in.GoogleSignInAuthentication, () => ({
+    __proto__: dart.getFields(google_sign_in.GoogleSignInAuthentication.__proto__),
+    [_data$]: dart.finalFieldType(types.GoogleSignInTokenData)
   }));
-  dart.defineLazy(shared_preferences.SharedPreferences, {
-    /*shared_preferences.SharedPreferences._prefix*/get _prefix() {
-      return "flutter.";
+  dart.defineExtensionMethods(google_sign_in.GoogleSignInAuthentication, ['toString']);
+  var displayName = dart.privateName(google_sign_in, "GoogleSignInAccount.displayName");
+  var email = dart.privateName(google_sign_in, "GoogleSignInAccount.email");
+  var id = dart.privateName(google_sign_in, "GoogleSignInAccount.id");
+  var photoUrl = dart.privateName(google_sign_in, "GoogleSignInAccount.photoUrl");
+  var _googleSignIn$ = dart.privateName(google_sign_in, "_googleSignIn");
+  var _idToken = dart.privateName(google_sign_in, "_idToken");
+  google_sign_in.GoogleSignInAccount = class GoogleSignInAccount extends core.Object {
+    get displayName() {
+      return this[displayName];
+    }
+    set displayName(value) {
+      super.displayName = value;
+    }
+    get email() {
+      return this[email];
+    }
+    set email(value) {
+      super.email = value;
+    }
+    get id() {
+      return this[id];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get photoUrl() {
+      return this[photoUrl];
+    }
+    set photoUrl(value) {
+      super.photoUrl = value;
+    }
+    get authentication() {
+      return async.async(google_sign_in.GoogleSignInAuthentication, (function* authentication() {
+        if (!dart.equals(this[_googleSignIn$].currentUser, this)) {
+          dart.throw(new core.StateError.new("User is no longer signed in."));
+        }
+        let response = (yield google_sign_in_platform_interface.GoogleSignInPlatform.instance.getTokens({email: this.email, shouldRecoverAuth: true}));
+        if (response.idToken == null) {
+          response.idToken = this[_idToken];
+        }
+        return new google_sign_in.GoogleSignInAuthentication.__(response);
+      }).bind(this));
+    }
+    get authHeaders() {
+      return async.async(T.MapOfString$String(), (function* authHeaders() {
+        let token = (yield this.authentication).accessToken;
+        return new (T.IdentityMapOfString$String()).from(["Authorization", "Bearer " + dart.str(token), "X-Goog-AuthUser", "0"]);
+      }).bind(this));
+    }
+    clearAuthCache() {
+      return async.async(dart.void, (function* clearAuthCache() {
+        let token = dart.nullCheck((yield this.authentication).accessToken);
+        yield google_sign_in_platform_interface.GoogleSignInPlatform.instance.clearAuthCache({token: token});
+      }).bind(this));
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!google_sign_in.GoogleSignInAccount.is(other)) return false;
+      let otherAccount = other;
+      return this.displayName == otherAccount.displayName && this.email == otherAccount.email && this.id == otherAccount.id && this.photoUrl == otherAccount.photoUrl && this[_idToken] == otherAccount[_idToken];
+    }
+    get hashCode() {
+      return ui.hashValues(this.displayName, this.email, this.id, this.photoUrl, this[_idToken]);
+    }
+    toString() {
+      let data = new (T.IdentityMapOfString$dynamic()).from(["displayName", this.displayName, "email", this.email, "id", this.id, "photoUrl", this.photoUrl]);
+      return "GoogleSignInAccount:" + dart.str(data);
+    }
+  };
+  (google_sign_in.GoogleSignInAccount.__ = function(_googleSignIn, data) {
+    if (_googleSignIn == null) dart.nullFailed(I[0], 42, 30, "_googleSignIn");
+    if (data == null) dart.nullFailed(I[0], 42, 66, "data");
+    this[_googleSignIn$] = _googleSignIn;
+    this[displayName] = data.displayName;
+    this[email] = data.email;
+    this[id] = data.id;
+    this[photoUrl] = data.photoUrl;
+    this[_idToken] = data.idToken;
+    if (!(this.id != null)) dart.assertFailed(null, I[0], 48, 12, "id != null");
+  }).prototype = google_sign_in.GoogleSignInAccount.prototype;
+  dart.addTypeTests(google_sign_in.GoogleSignInAccount);
+  dart.addTypeCaches(google_sign_in.GoogleSignInAccount);
+  google_sign_in.GoogleSignInAccount[dart.implements] = () => [common.GoogleIdentity];
+  dart.setMethodSignature(google_sign_in.GoogleSignInAccount, () => ({
+    __proto__: dart.getMethods(google_sign_in.GoogleSignInAccount.__proto__),
+    clearAuthCache: dart.fnType(async.Future$(dart.void), []),
+    _equals: dart.fnType(core.bool, [dart.dynamic]),
+    [$_equals]: dart.fnType(core.bool, [dart.dynamic])
+  }));
+  dart.setGetterSignature(google_sign_in.GoogleSignInAccount, () => ({
+    __proto__: dart.getGetters(google_sign_in.GoogleSignInAccount.__proto__),
+    authentication: async.Future$(google_sign_in.GoogleSignInAuthentication),
+    authHeaders: async.Future$(core.Map$(core.String, core.String))
+  }));
+  dart.setLibraryUri(google_sign_in.GoogleSignInAccount, I[1]);
+  dart.setFieldSignature(google_sign_in.GoogleSignInAccount, () => ({
+    __proto__: dart.getFields(google_sign_in.GoogleSignInAccount.__proto__),
+    displayName: dart.finalFieldType(dart.nullable(core.String)),
+    email: dart.finalFieldType(core.String),
+    id: dart.finalFieldType(core.String),
+    photoUrl: dart.finalFieldType(dart.nullable(core.String)),
+    [_idToken]: dart.finalFieldType(dart.nullable(core.String)),
+    [_googleSignIn$]: dart.finalFieldType(google_sign_in.GoogleSignIn)
+  }));
+  dart.defineExtensionMethods(google_sign_in.GoogleSignInAccount, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(google_sign_in.GoogleSignInAccount, ['hashCode']);
+  dart.defineLazy(google_sign_in.GoogleSignInAccount, {
+    /*google_sign_in.GoogleSignInAccount.kFailedToRecoverAuthError*/get kFailedToRecoverAuthError() {
+      return "failed_to_recover_auth";
     },
-    /*shared_preferences.SharedPreferences._completer*/get _completer() {
-      return null;
-    },
-    set _completer(_) {},
-    /*shared_preferences.SharedPreferences._manualDartRegistrationNeeded*/get _manualDartRegistrationNeeded() {
-      return true;
-    },
-    set _manualDartRegistrationNeeded(_) {}
+    /*google_sign_in.GoogleSignInAccount.kUserRecoverableAuthError*/get kUserRecoverableAuthError() {
+      return "user_recoverable_auth";
+    }
   }, false);
-  dart.trackLibraries("packages/shared_preferences/shared_preferences.dart", {
-    "package:shared_preferences/shared_preferences.dart": shared_preferences
+  var signInOption$ = dart.privateName(google_sign_in, "GoogleSignIn.signInOption");
+  var scopes$ = dart.privateName(google_sign_in, "GoogleSignIn.scopes");
+  var hostedDomain$ = dart.privateName(google_sign_in, "GoogleSignIn.hostedDomain");
+  var clientId$ = dart.privateName(google_sign_in, "GoogleSignIn.clientId");
+  var _name = dart.privateName(types, "_name");
+  var _currentUserController = dart.privateName(google_sign_in, "_currentUserController");
+  var _initialization = dart.privateName(google_sign_in, "_initialization");
+  var _lastMethodCall = dart.privateName(google_sign_in, "_lastMethodCall");
+  var _currentUser = dart.privateName(google_sign_in, "_currentUser");
+  var _ensureInitialized = dart.privateName(google_sign_in, "_ensureInitialized");
+  var _setCurrentUser = dart.privateName(google_sign_in, "_setCurrentUser");
+  var _callMethod = dart.privateName(google_sign_in, "_callMethod");
+  var _addMethodCall = dart.privateName(google_sign_in, "_addMethodCall");
+  google_sign_in.GoogleSignIn = class GoogleSignIn extends core.Object {
+    get signInOption() {
+      return this[signInOption$];
+    }
+    set signInOption(value) {
+      super.signInOption = value;
+    }
+    get scopes() {
+      return this[scopes$];
+    }
+    set scopes(value) {
+      super.scopes = value;
+    }
+    get hostedDomain() {
+      return this[hostedDomain$];
+    }
+    set hostedDomain(value) {
+      super.hostedDomain = value;
+    }
+    get clientId() {
+      return this[clientId$];
+    }
+    set clientId(value) {
+      super.clientId = value;
+    }
+    static standard(opts) {
+      let scopes = opts && 'scopes' in opts ? opts.scopes : C[1] || CT.C1;
+      if (scopes == null) dart.nullFailed(I[0], 176, 18, "scopes");
+      let hostedDomain = opts && 'hostedDomain' in opts ? opts.hostedDomain : null;
+      return new google_sign_in.GoogleSignIn.new({signInOption: types.SignInOption.standard, scopes: scopes, hostedDomain: hostedDomain});
+    }
+    static games() {
+      return new google_sign_in.GoogleSignIn.new({signInOption: types.SignInOption.games});
+    }
+    get onCurrentUserChanged() {
+      return this[_currentUserController].stream;
+    }
+    [_callMethod](method) {
+      if (method == null) dart.nullFailed(I[0], 230, 53, "method");
+      return async.async(T.GoogleSignInAccountN(), (function* _callMethod() {
+        yield this[_ensureInitialized]();
+        let response = (yield dart.dcall(method, []));
+        return this[_setCurrentUser](response != null && types.GoogleSignInUserData.is(response) ? new google_sign_in.GoogleSignInAccount.__(this, response) : null);
+      }).bind(this));
+    }
+    [_setCurrentUser](currentUser) {
+      if (!dart.equals(currentUser, this[_currentUser])) {
+        this[_currentUser] = currentUser;
+        this[_currentUserController].add(this[_currentUser]);
+      }
+      return this[_currentUser];
+    }
+    [_ensureInitialized]() {
+      let t1, t0;
+      t0 = this[_initialization];
+      return t0 == null ? this[_initialization] = (t1 = google_sign_in_platform_interface.GoogleSignInPlatform.instance.init({signInOption: this.signInOption, scopes: this.scopes, hostedDomain: this.hostedDomain, clientId: this.clientId}), (() => {
+        t1.catchError(dart.fn(_ => {
+          this[_initialization] = null;
+        }, T.dynamicToNull()));
+        return t1;
+      })()) : t0;
+    }
+    static _waitFor(future) {
+      if (future == null) dart.nullFailed(I[0], 265, 45, "future");
+      let completer = T.CompleterOfvoid().new();
+      future.whenComplete(dart.bind(completer, 'complete')).catchError(dart.fn(_ => {
+      }, T.dynamicToNull()));
+      return completer.future;
+    }
+    [_addMethodCall](method, opts) {
+      if (method == null) dart.nullFailed(I[0], 283, 14, "method");
+      let canSkipCall = opts && 'canSkipCall' in opts ? opts.canSkipCall : false;
+      if (canSkipCall == null) dart.nullFailed(I[0], 284, 10, "canSkipCall");
+      return async.async(T.GoogleSignInAccountN(), (function* _addMethodCall() {
+        let response = null;
+        if (this[_lastMethodCall] == null) {
+          response = this[_callMethod](method);
+        } else {
+          response = dart.nullCheck(this[_lastMethodCall]).then(T.GoogleSignInAccountN(), dart.fn(_ => {
+            if (dart.test(canSkipCall) && this[_currentUser] != null) {
+              return this[_currentUser];
+            }
+            return this[_callMethod](method);
+          }, T.voidToFutureOrOfGoogleSignInAccountN()));
+        }
+        this[_lastMethodCall] = google_sign_in.GoogleSignIn._waitFor(response);
+        return response;
+      }).bind(this));
+    }
+    get currentUser() {
+      return this[_currentUser];
+    }
+    signInSilently(opts) {
+      let suppressErrors = opts && 'suppressErrors' in opts ? opts.suppressErrors : true;
+      if (suppressErrors == null) dart.nullFailed(I[0], 327, 10, "suppressErrors");
+      return async.async(T.GoogleSignInAccountN(), (function* signInSilently() {
+        try {
+          return yield this[_addMethodCall](dart.bind(google_sign_in_platform_interface.GoogleSignInPlatform.instance, 'signInSilently'), {canSkipCall: true});
+        } catch (e) {
+          let _ = dart.getThrown(e);
+          if (core.Object.is(_)) {
+            if (dart.test(suppressErrors)) {
+              return null;
+            } else {
+              dart.rethrow(e);
+            }
+          } else
+            throw e;
+        }
+      }).bind(this));
+    }
+    isSignedIn() {
+      return async.async(core.bool, (function* isSignedIn() {
+        yield this[_ensureInitialized]();
+        return google_sign_in_platform_interface.GoogleSignInPlatform.instance.isSignedIn();
+      }).bind(this));
+    }
+    signIn() {
+      let result = this[_addMethodCall](dart.bind(google_sign_in_platform_interface.GoogleSignInPlatform.instance, 'signIn'), {canSkipCall: true});
+      function isCanceled(error) {
+        return message_codec.PlatformException.is(error) && error.code === "sign_in_canceled";
+      }
+      dart.fn(isCanceled, T.dynamicTobool());
+      return result.catchError(dart.fn(_ => null, T.dynamicToNull()), {test: isCanceled});
+    }
+    signOut() {
+      return this[_addMethodCall](dart.bind(google_sign_in_platform_interface.GoogleSignInPlatform.instance, 'signOut'));
+    }
+    disconnect() {
+      return this[_addMethodCall](dart.bind(google_sign_in_platform_interface.GoogleSignInPlatform.instance, 'disconnect'));
+    }
+    requestScopes(scopes) {
+      if (scopes == null) dart.nullFailed(I[0], 375, 43, "scopes");
+      return async.async(core.bool, (function* requestScopes() {
+        yield this[_ensureInitialized]();
+        return google_sign_in_platform_interface.GoogleSignInPlatform.instance.requestScopes(scopes);
+      }).bind(this));
+    }
+  };
+  (google_sign_in.GoogleSignIn.new = function(opts) {
+    let signInOption = opts && 'signInOption' in opts ? opts.signInOption : C[0] || CT.C0;
+    if (signInOption == null) dart.nullFailed(I[0], 168, 10, "signInOption");
+    let scopes = opts && 'scopes' in opts ? opts.scopes : C[1] || CT.C1;
+    if (scopes == null) dart.nullFailed(I[0], 169, 10, "scopes");
+    let hostedDomain = opts && 'hostedDomain' in opts ? opts.hostedDomain : null;
+    let clientId = opts && 'clientId' in opts ? opts.clientId : null;
+    this[_currentUserController] = T.StreamControllerOfGoogleSignInAccountN().broadcast();
+    this[_initialization] = null;
+    this[_lastMethodCall] = null;
+    this[_currentUser] = null;
+    this[signInOption$] = signInOption;
+    this[scopes$] = scopes;
+    this[hostedDomain$] = hostedDomain;
+    this[clientId$] = clientId;
+    ;
+  }).prototype = google_sign_in.GoogleSignIn.prototype;
+  dart.addTypeTests(google_sign_in.GoogleSignIn);
+  dart.addTypeCaches(google_sign_in.GoogleSignIn);
+  dart.setMethodSignature(google_sign_in.GoogleSignIn, () => ({
+    __proto__: dart.getMethods(google_sign_in.GoogleSignIn.__proto__),
+    [_callMethod]: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), [core.Function]),
+    [_setCurrentUser]: dart.fnType(dart.nullable(google_sign_in.GoogleSignInAccount), [dart.nullable(google_sign_in.GoogleSignInAccount)]),
+    [_ensureInitialized]: dart.fnType(async.Future$(dart.void), []),
+    [_addMethodCall]: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), [core.Function], {canSkipCall: core.bool}, {}),
+    signInSilently: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), [], {suppressErrors: core.bool}, {}),
+    isSignedIn: dart.fnType(async.Future$(core.bool), []),
+    signIn: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), []),
+    signOut: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), []),
+    disconnect: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), []),
+    requestScopes: dart.fnType(async.Future$(core.bool), [core.List$(core.String)])
+  }));
+  dart.setGetterSignature(google_sign_in.GoogleSignIn, () => ({
+    __proto__: dart.getGetters(google_sign_in.GoogleSignIn.__proto__),
+    onCurrentUserChanged: async.Stream$(dart.nullable(google_sign_in.GoogleSignInAccount)),
+    currentUser: dart.nullable(google_sign_in.GoogleSignInAccount)
+  }));
+  dart.setLibraryUri(google_sign_in.GoogleSignIn, I[1]);
+  dart.setFieldSignature(google_sign_in.GoogleSignIn, () => ({
+    __proto__: dart.getFields(google_sign_in.GoogleSignIn.__proto__),
+    signInOption: dart.finalFieldType(types.SignInOption),
+    scopes: dart.finalFieldType(core.List$(core.String)),
+    hostedDomain: dart.finalFieldType(dart.nullable(core.String)),
+    clientId: dart.finalFieldType(dart.nullable(core.String)),
+    [_currentUserController]: dart.fieldType(async.StreamController$(dart.nullable(google_sign_in.GoogleSignInAccount))),
+    [_initialization]: dart.fieldType(dart.nullable(async.Future$(dart.void))),
+    [_lastMethodCall]: dart.fieldType(dart.nullable(async.Future$(dart.void))),
+    [_currentUser]: dart.fieldType(dart.nullable(google_sign_in.GoogleSignInAccount))
+  }));
+  dart.defineLazy(google_sign_in.GoogleSignIn, {
+    /*google_sign_in.GoogleSignIn.kSignInRequiredError*/get kSignInRequiredError() {
+      return "sign_in_required";
+    },
+    /*google_sign_in.GoogleSignIn.kSignInCanceledError*/get kSignInCanceledError() {
+      return "sign_in_canceled";
+    },
+    /*google_sign_in.GoogleSignIn.kNetworkError*/get kNetworkError() {
+      return "network_error";
+    },
+    /*google_sign_in.GoogleSignIn.kSignInFailedError*/get kSignInFailedError() {
+      return "sign_in_failed";
+    }
+  }, false);
+  dart.trackLibraries("packages/google_sign_in/google_sign_in.dart", {
+    "package:google_sign_in/google_sign_in.dart": google_sign_in
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["shared_preferences.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/shared_preferences/shared_preferences.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["google_sign_in.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/google_sign_in/google_sign_in.dart.lib.js"}');
   // Exports:
   return {
-    shared_preferences: shared_preferences
+    google_sign_in: google_sign_in
   };
 }));
 
-//# sourceMappingURL=shared_preferences.dart.lib.js.map
+//# sourceMappingURL=google_sign_in.dart.lib.js.map

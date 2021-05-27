@@ -1,45 +1,22 @@
-define(['dart_sdk', 'packages/flutter/src/foundation/_platform_web.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/foundation/print.dart', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__foundation__binding_dart(dart_sdk, packages__flutter__src__foundation___platform_web$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__foundation__print$46dart, packages__flutter__src__foundation__object$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/animation/listener_helpers.dart'], (function load__packages__flutter__src__material__arc_dart(dart_sdk, packages__flutter__src__foundation__object$46dart, packages__flutter__src__animation__listener_helpers$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const developer = dart_sdk.developer;
-  const _js_helper = dart_sdk._js_helper;
   const ui = dart_sdk.ui;
-  const async = dart_sdk.async;
+  const math = dart_sdk.math;
   const _internal = dart_sdk._internal;
-  const convert = dart_sdk.convert;
-  const io = dart_sdk.io;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const platform = packages__flutter__src__foundation___platform_web$46dart.src__foundation__platform;
-  const debug = packages__flutter__src__foundation__debug$46dart.src__foundation__debug;
-  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
-  const print = packages__flutter__src__foundation__print$46dart.src__foundation__print;
   const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  var binding = Object.create(dart.library);
-  var $containsKey = dartx.containsKey;
-  var $_get = dartx._get;
-  var $substring = dartx.substring;
-  var $toString = dartx.toString;
-  var $_set = dartx._set;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  var arc = Object.create(dart.library);
+  var $abs = dartx.abs;
+  var $sign = dartx.sign;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    IdentityMapOfString$String: () => (T.IdentityMapOfString$String = dart.constFn(_js_helper.IdentityMap$(core.String, core.String)))(),
-    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
-    VoidToFutureOfvoid: () => (T.VoidToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [])))(),
-    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
-    MapOfString$dynamic: () => (T.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
-    FutureOfMapOfString$dynamic: () => (T.FutureOfMapOfString$dynamic = dart.constFn(async.Future$(T.MapOfString$dynamic())))(),
-    MapOfString$String: () => (T.MapOfString$String = dart.constFn(core.Map$(core.String, core.String)))(),
-    MapOfString$StringToFutureOfMapOfString$dynamic: () => (T.MapOfString$StringToFutureOfMapOfString$dynamic = dart.constFn(dart.fnType(T.FutureOfMapOfString$dynamic(), [T.MapOfString$String()])))(),
-    FutureOfString: () => (T.FutureOfString = dart.constFn(async.Future$(core.String)))(),
-    VoidToFutureOfString: () => (T.VoidToFutureOfString = dart.constFn(dart.fnType(T.FutureOfString(), [])))(),
-    StringToFutureOfvoid: () => (T.StringToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [core.String])))(),
-    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
-    VoidToMapOfString$dynamic: () => (T.VoidToMapOfString$dynamic = dart.constFn(dart.fnType(T.MapOfString$dynamic(), [])))(),
-    MapOfString$dynamicTodynamic: () => (T.MapOfString$dynamicTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.MapOfString$dynamic()])))(),
-    FutureOfServiceExtensionResponse: () => (T.FutureOfServiceExtensionResponse = dart.constFn(async.Future$(developer.ServiceExtensionResponse)))(),
-    StringAndMapOfString$StringToFutureOfServiceExtensionResponse: () => (T.StringAndMapOfString$StringToFutureOfServiceExtensionResponse = dart.constFn(dart.fnType(T.FutureOfServiceExtensionResponse(), [core.String, T.MapOfString$String()])))()
+    VoidTodouble: () => (T.VoidTodouble = dart.constFn(dart.fnType(core.double, [])))(),
+    OffsetN: () => (T.OffsetN = dart.constFn(dart.nullable(ui.Offset)))(),
+    _DiagonalTodouble: () => (T._DiagonalTodouble = dart.constFn(dart.fnType(core.double, [arc._Diagonal])))(),
+    RectN: () => (T.RectN = dart.constFn(dart.nullable(ui.Rect)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -55,380 +32,553 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_platform_web.dart', 'packa
   });
   dart.defineLazy(CT, {
     get C0() {
-      return C[0] = dart.fn(binding._exitApplication, T.VoidToFutureOfvoid());
+      return C[0] = dart.const({
+        __proto__: arc._CornerId.prototype,
+        [_name$]: "_CornerId.topLeft",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: arc._CornerId.prototype,
+        [_name$]: "_CornerId.topRight",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: arc._CornerId.prototype,
+        [_name$]: "_CornerId.bottomLeft",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: arc._CornerId.prototype,
+        [_name$]: "_CornerId.bottomRight",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], arc._CornerId);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: arc._Diagonal.prototype,
+        [endId$]: C[3] || CT.C3,
+        [beginId$]: C[0] || CT.C0
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: arc._Diagonal.prototype,
+        [endId$]: C[0] || CT.C0,
+        [beginId$]: C[3] || CT.C3
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: arc._Diagonal.prototype,
+        [endId$]: C[2] || CT.C2,
+        [beginId$]: C[1] || CT.C1
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: arc._Diagonal.prototype,
+        [endId$]: C[1] || CT.C1,
+        [beginId$]: C[2] || CT.C2
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8, C[9] || CT.C9], arc._Diagonal);
     }
   }, false);
-  var C = [void 0];
+  var C = Array(10).fill(void 0);
   var I = [
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/foundation/binding.dart",
-    "package:flutter/src/foundation/binding.dart"
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/arc.dart",
+    "package:flutter/src/material/arc.dart"
   ];
-  var _lockCount = dart.privateName(binding, "_lockCount");
-  var _postExtensionStateChangedEvent = dart.privateName(binding, "_postExtensionStateChangedEvent");
-  binding.BindingBase = class BindingBase extends core.Object {
-    get window() {
-      return ui.window;
-    }
-    get platformDispatcher() {
-      return ui.PlatformDispatcher.instance;
-    }
-    initInstances() {
-      if (!!dart.test(binding.BindingBase._debugInitialized)) dart.assertFailed(null, I[0], 134, 12, "!_debugInitialized");
-      if (!dart.test(dart.fn(() => {
-        binding.BindingBase._debugInitialized = true;
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 135, 12, "() {\r\n      _debugInitialized = true;\r\n      return true;\r\n    }()");
-    }
-    initServiceExtensions() {
-      if (!!dart.test(binding.BindingBase._debugServiceExtensionsRegistered)) dart.assertFailed(null, I[0], 162, 12, "!_debugServiceExtensionsRegistered");
-      if (!dart.test(dart.fn(() => {
-        this.registerSignalServiceExtension({name: "reassemble", callback: dart.bind(this, 'reassembleApplication')});
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 164, 12, "() {\r\n      registerSignalServiceExtension(\r\n        name: 'reassemble',\r\n        callback: reassembleApplication,\r\n      );\r\n      return true;\r\n    }()");
-      if (!false && !true) {
-        this.registerSignalServiceExtension({name: "exit", callback: C[0] || CT.C0});
-      }
-      if (!dart.test(dart.fn(() => {
-        this.registerServiceExtension({name: "platformOverride", callback: dart.fn(parameters => {
-            if (parameters == null) dart.nullFailed(I[0], 183, 40, "parameters");
-            return async.async(T.MapOfString$dynamic(), (function*() {
-              if (dart.test(parameters[$containsKey]("value"))) {
-                switch (parameters[$_get]("value")) {
-                  case "android":
-                  {
-                    platform.debugDefaultTargetPlatformOverride = platform.TargetPlatform.android;
-                    break;
-                  }
-                  case "fuchsia":
-                  {
-                    platform.debugDefaultTargetPlatformOverride = platform.TargetPlatform.fuchsia;
-                    break;
-                  }
-                  case "iOS":
-                  {
-                    platform.debugDefaultTargetPlatformOverride = platform.TargetPlatform.iOS;
-                    break;
-                  }
-                  case "linux":
-                  {
-                    platform.debugDefaultTargetPlatformOverride = platform.TargetPlatform.linux;
-                    break;
-                  }
-                  case "macOS":
-                  {
-                    platform.debugDefaultTargetPlatformOverride = platform.TargetPlatform.macOS;
-                    break;
-                  }
-                  case "windows":
-                  {
-                    platform.debugDefaultTargetPlatformOverride = platform.TargetPlatform.windows;
-                    break;
-                  }
-                  case "default":
-                  default:
-                  {
-                    platform.debugDefaultTargetPlatformOverride = null;
-                  }
-                }
-                this[_postExtensionStateChangedEvent]("platformOverride", dart.toString(platform.defaultTargetPlatform)[$substring]((dart.str(dart.wrapType(platform.TargetPlatform)) + ".").length));
-                yield this.reassembleApplication();
-              }
-              return new (T.IdentityMapOfString$dynamic()).from(["value", dart.toString(platform.defaultTargetPlatform)[$substring]((dart.str(dart.wrapType(platform.TargetPlatform)) + ".").length)]);
-            }).bind(this));
-          }, T.MapOfString$StringToFutureOfMapOfString$dynamic())});
-        this.registerServiceExtension({name: "brightnessOverride", callback: dart.fn(parameters => {
-            if (parameters == null) dart.nullFailed(I[0], 225, 40, "parameters");
-            return async.async(T.MapOfString$dynamic(), (function*() {
-              let t0, t0$;
-              if (dart.test(parameters[$containsKey]("value"))) {
-                switch (parameters[$_get]("value")) {
-                  case "Brightness.light":
-                  {
-                    debug.debugBrightnessOverride = ui.Brightness.light;
-                    break;
-                  }
-                  case "Brightness.dark":
-                  {
-                    debug.debugBrightnessOverride = ui.Brightness.dark;
-                    break;
-                  }
-                  default:
-                  {
-                    debug.debugBrightnessOverride = null;
-                  }
-                }
-                this[_postExtensionStateChangedEvent]("brightnessOverride", dart.toString((t0 = debug.debugBrightnessOverride, t0 == null ? this.window.platformBrightness : t0)));
-                yield this.reassembleApplication();
-              }
-              return new (T.IdentityMapOfString$dynamic()).from(["value", dart.toString((t0$ = debug.debugBrightnessOverride, t0$ == null ? this.window.platformBrightness : t0$))]);
-            }).bind(this));
-          }, T.MapOfString$StringToFutureOfMapOfString$dynamic())});
-        this.registerStringServiceExtension({name: "connectedVmServiceUri", getter: dart.fn(() => async.async(core.String, function*() {
-            let t0;
-            t0 = debug.connectedVmServiceUri;
-            return t0 == null ? "" : t0;
-          }), T.VoidToFutureOfString()), setter: dart.fn(uri => {
-            if (uri == null) dart.nullFailed(I[0], 252, 25, "uri");
-            return async.async(dart.void, function*() {
-              debug.connectedVmServiceUri = uri;
-            });
-          }, T.StringToFutureOfvoid())});
-        this.registerStringServiceExtension({name: "activeDevToolsServerAddress", getter: dart.fn(() => async.async(core.String, function*() {
-            let t0;
-            t0 = debug.activeDevToolsServerAddress;
-            return t0 == null ? "" : t0;
-          }), T.VoidToFutureOfString()), setter: dart.fn(serverAddress => {
-            if (serverAddress == null) dart.nullFailed(I[0], 260, 25, "serverAddress");
-            return async.async(dart.void, function*() {
-              debug.activeDevToolsServerAddress = serverAddress;
-            });
-          }, T.StringToFutureOfvoid())});
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 179, 12, "() {\r\n      const String platformOverrideExtensionName = 'platformOverride';\r\n      registerServiceExtension(\r\n        name: platformOverrideExtensionName,\r\n        callback: (Map<String, String> parameters) async {\r\n          if (parameters.containsKey('value')) {\r\n            switch (parameters['value']) {\r\n              case 'android':\r\n                debugDefaultTargetPlatformOverride = TargetPlatform.android;\r\n                break;\r\n              case 'fuchsia':\r\n                debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;\r\n                break;\r\n              case 'iOS':\r\n                debugDefaultTargetPlatformOverride = TargetPlatform.iOS;\r\n                break;\r\n              case 'linux':\r\n                debugDefaultTargetPlatformOverride = TargetPlatform.linux;\r\n                break;\r\n              case 'macOS':\r\n                debugDefaultTargetPlatformOverride = TargetPlatform.macOS;\r\n                break;\r\n              case 'windows':\r\n                debugDefaultTargetPlatformOverride = TargetPlatform.windows;\r\n                break;\r\n              case 'default':\r\n              default:\r\n                debugDefaultTargetPlatformOverride = null;\r\n            }\r\n            _postExtensionStateChangedEvent(\r\n              platformOverrideExtensionName,\r\n              defaultTargetPlatform.toString().substring('$TargetPlatform.'.length),\r\n            );\r\n            await reassembleApplication();\r\n          }\r\n          return <String, dynamic>{\r\n            'value': defaultTargetPlatform\r\n                     .toString()\r\n                     .substring('$TargetPlatform.'.length),\r\n          };\r\n        },\r\n      );\r\n\r\n      const String brightnessOverrideExtensionName = 'brightnessOverride';\r\n      registerServiceExtension(\r\n        name: brightnessOverrideExtensionName,\r\n        callback: (Map<String, String> parameters) async {\r\n          if (parameters.containsKey('value')) {\r\n            switch (parameters['value']) {\r\n              case 'Brightness.light':\r\n                debugBrightnessOverride = ui.Brightness.light;\r\n                break;\r\n              case 'Brightness.dark':\r\n                debugBrightnessOverride = ui.Brightness.dark;\r\n                break;\r\n              default:\r\n                debugBrightnessOverride = null;\r\n            }\r\n            _postExtensionStateChangedEvent(\r\n              brightnessOverrideExtensionName,\r\n              (debugBrightnessOverride ?? window.platformBrightness).toString(),\r\n            );\r\n            await reassembleApplication();\r\n          }\r\n          return <String, dynamic>{\r\n            'value': (debugBrightnessOverride ?? window.platformBrightness).toString(),\r\n          };\r\n        },\r\n      );\r\n\r\n      registerStringServiceExtension(\r\n        name: 'connectedVmServiceUri',\r\n        getter: () async => connectedVmServiceUri ?? '',\r\n        setter: (String uri) async {\r\n          connectedVmServiceUri = uri;\r\n        },\r\n      );\r\n\r\n      registerStringServiceExtension(\r\n        name: 'activeDevToolsServerAddress',\r\n        getter: () async => activeDevToolsServerAddress ?? '',\r\n        setter: (String serverAddress) async {\r\n          activeDevToolsServerAddress = serverAddress;\r\n        },\r\n      );\r\n\r\n      return true;\r\n    }()");
-      if (!dart.test(dart.fn(() => {
-        binding.BindingBase._debugServiceExtensionsRegistered = true;
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 267, 12, "() {\r\n      _debugServiceExtensionsRegistered = true;\r\n      return true;\r\n    }()");
-    }
-    get locked() {
-      return dart.notNull(this[_lockCount]) > 0;
-    }
-    lockEvents(callback) {
-      if (callback == null) dart.nullFailed(I[0], 293, 40, "callback");
-      developer.Timeline.startSync("Lock events");
-      if (!(callback != null)) dart.assertFailed(null, I[0], 296, 12, "callback != null");
-      this[_lockCount] = dart.notNull(this[_lockCount]) + 1;
-      let future = callback();
-      if (!(future != null)) dart.assertFailed("The lockEvents() callback returned null; it should return a Future<void> that completes when the lock is to expire.", I[0], 299, 12, "future != null");
-      future.whenComplete(dart.fn(() => {
-        this[_lockCount] = dart.notNull(this[_lockCount]) - 1;
-        if (!dart.test(this.locked)) {
-          developer.Timeline.finishSync();
-          this.unlocked();
-        }
-      }, T.VoidToNull()));
-      return future;
-    }
-    unlocked() {
-      if (!!dart.test(this.locked)) dart.assertFailed(null, I[0], 316, 12, "!locked");
-    }
-    reassembleApplication() {
-      return this.lockEvents(dart.bind(this, 'performReassemble'));
-    }
-    performReassemble() {
-      assertions.FlutterError.resetErrorCount();
-      return T.FutureOfvoid().value();
-    }
-    registerSignalServiceExtension(opts) {
-      let name = opts && 'name' in opts ? opts.name : null;
-      if (name == null) dart.nullFailed(I[0], 367, 21, "name");
-      let callback = opts && 'callback' in opts ? opts.callback : null;
-      if (callback == null) dart.nullFailed(I[0], 368, 28, "callback");
-      if (!(name != null)) dart.assertFailed(null, I[0], 370, 12, "name != null");
-      if (!(callback != null)) dart.assertFailed(null, I[0], 371, 12, "callback != null");
-      this.registerServiceExtension({name: name, callback: dart.fn(parameters => {
-          if (parameters == null) dart.nullFailed(I[0], 374, 38, "parameters");
-          return async.async(T.MapOfString$dynamic(), function*() {
-            yield callback();
-            return new (T.IdentityMapOfString$dynamic()).new();
-          });
-        }, T.MapOfString$StringToFutureOfMapOfString$dynamic())});
-    }
-    registerBoolServiceExtension(opts) {
-      let name = opts && 'name' in opts ? opts.name : null;
-      if (name == null) dart.nullFailed(I[0], 397, 21, "name");
-      let getter = opts && 'getter' in opts ? opts.getter : null;
-      if (getter == null) dart.nullFailed(I[0], 398, 37, "getter");
-      let setter = opts && 'setter' in opts ? opts.setter : null;
-      if (setter == null) dart.nullFailed(I[0], 399, 37, "setter");
-      if (!(name != null)) dart.assertFailed(null, I[0], 401, 12, "name != null");
-      if (!(getter != null)) dart.assertFailed(null, I[0], 402, 12, "getter != null");
-      if (!(setter != null)) dart.assertFailed(null, I[0], 403, 12, "setter != null");
-      this.registerServiceExtension({name: name, callback: dart.fn(parameters => {
-          if (parameters == null) dart.nullFailed(I[0], 406, 38, "parameters");
-          return async.async(T.MapOfString$dynamic(), (function*() {
-            if (dart.test(parameters[$containsKey]("enabled"))) {
-              yield setter(parameters[$_get]("enabled") === "true");
-              this[_postExtensionStateChangedEvent](name, dart.test(yield getter()) ? "true" : "false");
-            }
-            return new (T.IdentityMapOfString$dynamic()).from(["enabled", dart.test(yield getter()) ? "true" : "false"]);
-          }).bind(this));
-        }, T.MapOfString$StringToFutureOfMapOfString$dynamic())});
-    }
-    registerNumericServiceExtension(opts) {
-      let name = opts && 'name' in opts ? opts.name : null;
-      if (name == null) dart.nullFailed(I[0], 431, 21, "name");
-      let getter = opts && 'getter' in opts ? opts.getter : null;
-      if (getter == null) dart.nullFailed(I[0], 432, 39, "getter");
-      let setter = opts && 'setter' in opts ? opts.setter : null;
-      if (setter == null) dart.nullFailed(I[0], 433, 39, "setter");
-      if (!(name != null)) dart.assertFailed(null, I[0], 435, 12, "name != null");
-      if (!(getter != null)) dart.assertFailed(null, I[0], 436, 12, "getter != null");
-      if (!(setter != null)) dart.assertFailed(null, I[0], 437, 12, "setter != null");
-      this.registerServiceExtension({name: name, callback: dart.fn(parameters => {
-          if (parameters == null) dart.nullFailed(I[0], 440, 38, "parameters");
-          return async.async(T.MapOfString$dynamic(), (function*() {
-            if (dart.test(parameters[$containsKey](name))) {
-              yield setter(core.double.parse(dart.nullCheck(parameters[$_get](name))));
-              this[_postExtensionStateChangedEvent](name, dart.toString(yield getter()));
-            }
-            return new (T.IdentityMapOfString$dynamic()).from([name, dart.toString(yield getter())]);
-          }).bind(this));
-        }, T.MapOfString$StringToFutureOfMapOfString$dynamic())});
-    }
-    [_postExtensionStateChangedEvent](name, value) {
-      if (name == null) dart.nullFailed(I[0], 461, 47, "name");
-      this.postEvent("Flutter.ServiceExtensionStateChanged", new (T.IdentityMapOfString$dynamic()).from(["extension", "ext.flutter." + dart.str(name), "value", value]));
-    }
-    postEvent(eventKind, eventData) {
-      if (eventKind == null) dart.nullFailed(I[0], 475, 25, "eventKind");
-      if (eventData == null) dart.nullFailed(I[0], 475, 57, "eventData");
-      developer.postEvent(eventKind, eventData);
-    }
-    registerStringServiceExtension(opts) {
-      let name = opts && 'name' in opts ? opts.name : null;
-      if (name == null) dart.nullFailed(I[0], 493, 21, "name");
-      let getter = opts && 'getter' in opts ? opts.getter : null;
-      if (getter == null) dart.nullFailed(I[0], 494, 39, "getter");
-      let setter = opts && 'setter' in opts ? opts.setter : null;
-      if (setter == null) dart.nullFailed(I[0], 495, 39, "setter");
-      if (!(name != null)) dart.assertFailed(null, I[0], 497, 12, "name != null");
-      if (!(getter != null)) dart.assertFailed(null, I[0], 498, 12, "getter != null");
-      if (!(setter != null)) dart.assertFailed(null, I[0], 499, 12, "setter != null");
-      this.registerServiceExtension({name: name, callback: dart.fn(parameters => {
-          if (parameters == null) dart.nullFailed(I[0], 502, 38, "parameters");
-          return async.async(T.MapOfString$dynamic(), (function*() {
-            if (dart.test(parameters[$containsKey]("value"))) {
-              yield setter(dart.nullCheck(parameters[$_get]("value")));
-              this[_postExtensionStateChangedEvent](name, yield getter());
-            }
-            return new (T.IdentityMapOfString$dynamic()).from(["value", (yield getter())]);
-          }).bind(this));
-        }, T.MapOfString$StringToFutureOfMapOfString$dynamic())});
-    }
-    registerServiceExtension(opts) {
-      let name = opts && 'name' in opts ? opts.name : null;
-      if (name == null) dart.nullFailed(I[0], 565, 21, "name");
-      let callback = opts && 'callback' in opts ? opts.callback : null;
-      if (callback == null) dart.nullFailed(I[0], 566, 39, "callback");
-      if (!(name != null)) dart.assertFailed(null, I[0], 568, 12, "name != null");
-      if (!(callback != null)) dart.assertFailed(null, I[0], 569, 12, "callback != null");
-      let methodName = "ext.flutter." + dart.str(name);
-      developer.registerExtension(methodName, dart.fn((method, parameters) => {
-        if (method == null) dart.nullFailed(I[0], 571, 53, "method");
-        if (parameters == null) dart.nullFailed(I[0], 571, 81, "parameters");
-        return async.async(developer.ServiceExtensionResponse, function*() {
-          if (!(method === methodName)) dart.assertFailed(null, I[0], 572, 14, "method == methodName");
-          if (!dart.test(dart.fn(() => {
-            if (dart.test(debug.debugInstrumentationEnabled)) print.debugPrint("service extension method received: " + dart.str(method) + "(" + dart.str(parameters) + ")");
-            return true;
-          }, T.VoidTobool())())) dart.assertFailed(null, I[0], 573, 14, "() {\r\n        if (debugInstrumentationEnabled)\r\n          debugPrint('service extension method received: $method($parameters)');\r\n        return true;\r\n      }()");
-          yield debug.debugInstrumentAction(dart.void, "Wait for outer event loop", dart.fn(() => T.FutureOfvoid().delayed(core.Duration.zero), T.VoidToFutureOfvoid()));
-          let caughtException = null;
-          let caughtStack = null;
-          let result = null;
-          function result$35get() {
-            let t1;
-            t1 = result;
-            return t1 == null ? dart.throw(new _internal.LateError.localNI("result")) : t1;
-          }
-          dart.fn(result$35get, T.VoidToMapOfString$dynamic());
-          function result$35set(t2) {
-            if (t2 == null) dart.nullFailed(I[0], 595, 33, "null");
-            return result = t2;
-          }
-          dart.fn(result$35set, T.MapOfString$dynamicTodynamic());
-          try {
-            result$35set(yield callback(parameters));
-          } catch (e) {
-            let exception = dart.getThrown(e);
-            let stack = dart.stackTrace(e);
-            if (core.Object.is(exception)) {
-              caughtException = exception;
-              caughtStack = stack;
-            } else
-              throw e;
-          }
-          if (caughtException == null) {
-            result$35get()[$_set]("type", "_extensionType");
-            result$35get()[$_set]("method", method);
-            return new developer.ServiceExtensionResponse.result(convert.json.encode(result$35get()));
+  var _dirty = dart.privateName(arc, "_dirty");
+  var _center = dart.privateName(arc, "_center");
+  var _radius = dart.privateName(arc, "_radius");
+  var _beginAngle = dart.privateName(arc, "_beginAngle");
+  var _endAngle = dart.privateName(arc, "_endAngle");
+  var _initialize = dart.privateName(arc, "_initialize");
+  arc.MaterialPointArcTween = class MaterialPointArcTween extends tween.Tween$(ui.Offset) {
+    [_initialize]() {
+      if (!(this.begin != null)) dart.assertFailed(null, I[0], 46, 12, "this.begin != null");
+      if (!(this.end != null)) dart.assertFailed(null, I[0], 47, 12, "this.end != null");
+      let begin = dart.nullCheck(this.begin);
+      let end = dart.nullCheck(this.end);
+      let delta = end['-'](begin);
+      let deltaX = delta.dx[$abs]();
+      let deltaY = delta.dy[$abs]();
+      let distanceFromAtoB = delta.distance;
+      let c = new ui.Offset.new(end.dx, begin.dy);
+      const sweepAngle = () => {
+        return 2.0 * math.asin(dart.notNull(distanceFromAtoB) / (2.0 * dart.nullCheck(this[_radius])));
+      };
+      dart.fn(sweepAngle, T.VoidTodouble());
+      if (deltaX > 2 && deltaY > 2) {
+        if (deltaX < deltaY) {
+          this[_radius] = dart.notNull(distanceFromAtoB) * dart.notNull(distanceFromAtoB) / dart.notNull(c['-'](begin).distance) / 2.0;
+          this[_center] = new ui.Offset.new(dart.notNull(end.dx) + dart.nullCheck(this[_radius]) * (dart.notNull(begin.dx) - dart.notNull(end.dx))[$sign], end.dy);
+          if (dart.notNull(begin.dx) < dart.notNull(end.dx)) {
+            this[_beginAngle] = dart.notNull(sweepAngle()) * (dart.notNull(begin.dy) - dart.notNull(end.dy))[$sign];
+            this[_endAngle] = 0.0;
           } else {
-            assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: caughtException, stack: caughtStack, context: new assertions.ErrorDescription.new("during a service extension callback for \"" + dart.str(method) + "\"")}));
-            return new developer.ServiceExtensionResponse.error(-32000, convert.json.encode(new (T.IdentityMapOfString$String()).from(["exception", dart.toString(caughtException), "stack", dart.toString(caughtStack), "method", method])));
+            this[_beginAngle] = 3.141592653589793 + dart.notNull(sweepAngle()) * (dart.notNull(end.dy) - dart.notNull(begin.dy))[$sign];
+            this[_endAngle] = 3.141592653589793;
           }
-        });
-      }, T.StringAndMapOfString$StringToFutureOfServiceExtensionResponse()));
+        } else {
+          this[_radius] = dart.notNull(distanceFromAtoB) * dart.notNull(distanceFromAtoB) / dart.notNull(c['-'](end).distance) / 2.0;
+          this[_center] = new ui.Offset.new(begin.dx, dart.notNull(begin.dy) + (dart.notNull(end.dy) - dart.notNull(begin.dy))[$sign] * dart.nullCheck(this[_radius]));
+          if (dart.notNull(begin.dy) < dart.notNull(end.dy)) {
+            this[_beginAngle] = -3.141592653589793 / 2.0;
+            this[_endAngle] = dart.nullCheck(this[_beginAngle]) + dart.notNull(sweepAngle()) * (dart.notNull(end.dx) - dart.notNull(begin.dx))[$sign];
+          } else {
+            this[_beginAngle] = 3.141592653589793 / 2.0;
+            this[_endAngle] = dart.nullCheck(this[_beginAngle]) + dart.notNull(sweepAngle()) * (dart.notNull(begin.dx) - dart.notNull(end.dx))[$sign];
+          }
+        }
+        if (!(this[_beginAngle] != null)) dart.assertFailed(null, I[0], 83, 14, "_beginAngle != null");
+        if (!(this[_endAngle] != null)) dart.assertFailed(null, I[0], 84, 14, "_endAngle != null");
+      } else {
+        this[_beginAngle] = null;
+        this[_endAngle] = null;
+      }
+      this[_dirty] = false;
+    }
+    get center() {
+      if (this.begin == null || this.end == null) return null;
+      if (dart.test(this[_dirty])) this[_initialize]();
+      return this[_center];
+    }
+    get radius() {
+      if (this.begin == null || this.end == null) return null;
+      if (dart.test(this[_dirty])) this[_initialize]();
+      return this[_radius];
+    }
+    get beginAngle() {
+      if (this.begin == null || this.end == null) return null;
+      if (dart.test(this[_dirty])) this[_initialize]();
+      return this[_beginAngle];
+    }
+    get endAngle() {
+      if (this.begin == null || this.end == null) return null;
+      if (dart.test(this[_dirty])) this[_initialize]();
+      return this[_beginAngle];
+    }
+    set begin(value) {
+      T.OffsetN().as(value);
+      if (!dart.equals(value, this.begin)) {
+        super.begin = value;
+        this[_dirty] = true;
+      }
+    }
+    get begin() {
+      return super.begin;
+    }
+    set end(value) {
+      T.OffsetN().as(value);
+      if (!dart.equals(value, this.end)) {
+        super.end = value;
+        this[_dirty] = true;
+      }
+    }
+    get end() {
+      return super.end;
+    }
+    lerp(t) {
+      if (t == null) dart.nullFailed(I[0], 159, 22, "t");
+      if (dart.test(this[_dirty])) this[_initialize]();
+      if (t === 0.0) return dart.nullCheck(this.begin);
+      if (t === 1.0) return dart.nullCheck(this.end);
+      if (this[_beginAngle] == null || this[_endAngle] == null) return dart.nullCheck(ui.Offset.lerp(this.begin, this.end, t));
+      let angle = dart.nullCheck(ui.lerpDouble(this[_beginAngle], this[_endAngle], t));
+      let x = math.cos(angle) * dart.nullCheck(this[_radius]);
+      let y = math.sin(angle) * dart.nullCheck(this[_radius]);
+      return dart.nullCheck(this[_center])['+'](new ui.Offset.new(x, y));
     }
     toString() {
-      return "<" + dart.str(object.objectRuntimeType(this, "BindingBase")) + ">";
+      return dart.str(object.objectRuntimeType(this, "MaterialPointArcTween")) + "(" + dart.str(this.begin) + " → " + dart.str(this.end) + "; center=" + dart.str(this.center) + ", radius=" + dart.str(this.radius) + ", beginAngle=" + dart.str(this.beginAngle) + ", endAngle=" + dart.str(this.endAngle) + ")";
     }
   };
-  (binding.BindingBase.new = function() {
-    this[_lockCount] = 0;
-    developer.Timeline.startSync("Framework initialization");
-    if (!!dart.test(binding.BindingBase._debugInitialized)) dart.assertFailed(null, I[0], 55, 12, "!_debugInitialized");
-    this.initInstances();
-    if (!dart.test(binding.BindingBase._debugInitialized)) dart.assertFailed(null, I[0], 57, 12, "_debugInitialized");
-    if (!!dart.test(binding.BindingBase._debugServiceExtensionsRegistered)) dart.assertFailed(null, I[0], 59, 12, "!_debugServiceExtensionsRegistered");
-    this.initServiceExtensions();
-    if (!dart.test(binding.BindingBase._debugServiceExtensionsRegistered)) dart.assertFailed(null, I[0], 61, 12, "_debugServiceExtensionsRegistered");
-    developer.postEvent("Flutter.FrameworkInitialization", new (T.IdentityMapOfString$String()).new());
-    developer.Timeline.finishSync();
-  }).prototype = binding.BindingBase.prototype;
-  dart.addTypeTests(binding.BindingBase);
-  dart.addTypeCaches(binding.BindingBase);
-  dart.setMethodSignature(binding.BindingBase, () => ({
-    __proto__: dart.getMethods(binding.BindingBase.__proto__),
-    initInstances: dart.fnType(dart.void, []),
-    initServiceExtensions: dart.fnType(dart.void, []),
-    lockEvents: dart.fnType(async.Future$(dart.void), [dart.fnType(async.Future$(dart.void), [])]),
-    unlocked: dart.fnType(dart.void, []),
-    reassembleApplication: dart.fnType(async.Future$(dart.void), []),
-    performReassemble: dart.fnType(async.Future$(dart.void), []),
-    registerSignalServiceExtension: dart.fnType(dart.void, [], {}, {callback: dart.fnType(async.Future$(dart.void), []), name: core.String}),
-    registerBoolServiceExtension: dart.fnType(dart.void, [], {}, {getter: dart.fnType(async.Future$(core.bool), []), name: core.String, setter: dart.fnType(async.Future$(dart.void), [core.bool])}),
-    registerNumericServiceExtension: dart.fnType(dart.void, [], {}, {getter: dart.fnType(async.Future$(core.double), []), name: core.String, setter: dart.fnType(async.Future$(dart.void), [core.double])}),
-    [_postExtensionStateChangedEvent]: dart.fnType(dart.void, [core.String, dart.dynamic]),
-    postEvent: dart.fnType(dart.void, [core.String, core.Map$(core.String, dart.dynamic)]),
-    registerStringServiceExtension: dart.fnType(dart.void, [], {}, {getter: dart.fnType(async.Future$(core.String), []), name: core.String, setter: dart.fnType(async.Future$(dart.void), [core.String])}),
-    registerServiceExtension: dart.fnType(dart.void, [], {}, {callback: dart.fnType(async.Future$(core.Map$(core.String, dart.dynamic)), [core.Map$(core.String, core.String)]), name: core.String})
+  (arc.MaterialPointArcTween.new = function(opts) {
+    let begin = opts && 'begin' in opts ? opts.begin : null;
+    let end = opts && 'end' in opts ? opts.end : null;
+    this[_dirty] = true;
+    this[_center] = null;
+    this[_radius] = null;
+    this[_beginAngle] = null;
+    this[_endAngle] = null;
+    arc.MaterialPointArcTween.__proto__.new.call(this, {begin: begin, end: end});
+    ;
+  }).prototype = arc.MaterialPointArcTween.prototype;
+  dart.addTypeTests(arc.MaterialPointArcTween);
+  dart.addTypeCaches(arc.MaterialPointArcTween);
+  dart.setMethodSignature(arc.MaterialPointArcTween, () => ({
+    __proto__: dart.getMethods(arc.MaterialPointArcTween.__proto__),
+    [_initialize]: dart.fnType(dart.void, [])
   }));
-  dart.setGetterSignature(binding.BindingBase, () => ({
-    __proto__: dart.getGetters(binding.BindingBase.__proto__),
-    window: ui.SingletonFlutterWindow,
-    platformDispatcher: ui.PlatformDispatcher,
-    locked: core.bool
+  dart.setGetterSignature(arc.MaterialPointArcTween, () => ({
+    __proto__: dart.getGetters(arc.MaterialPointArcTween.__proto__),
+    center: dart.nullable(ui.Offset),
+    radius: dart.nullable(core.double),
+    beginAngle: dart.nullable(core.double),
+    endAngle: dart.nullable(core.double)
   }));
-  dart.setLibraryUri(binding.BindingBase, I[1]);
-  dart.setFieldSignature(binding.BindingBase, () => ({
-    __proto__: dart.getFields(binding.BindingBase.__proto__),
-    [_lockCount]: dart.fieldType(core.int)
+  dart.setSetterSignature(arc.MaterialPointArcTween, () => ({
+    __proto__: dart.getSetters(arc.MaterialPointArcTween.__proto__),
+    begin: dart.nullable(core.Object),
+    end: dart.nullable(core.Object)
   }));
-  dart.defineExtensionMethods(binding.BindingBase, ['toString']);
-  dart.defineLazy(binding.BindingBase, {
-    /*binding.BindingBase._debugInitialized*/get _debugInitialized() {
-      return false;
-    },
-    set _debugInitialized(_) {},
-    /*binding.BindingBase._debugServiceExtensionsRegistered*/get _debugServiceExtensionsRegistered() {
-      return false;
-    },
-    set _debugServiceExtensionsRegistered(_) {}
-  }, false);
-  binding._exitApplication = function _exitApplication() {
-    return async.async(dart.void, function* _exitApplication() {
-      io.exit(0);
-    });
+  dart.setLibraryUri(arc.MaterialPointArcTween, I[1]);
+  dart.setFieldSignature(arc.MaterialPointArcTween, () => ({
+    __proto__: dart.getFields(arc.MaterialPointArcTween.__proto__),
+    [_dirty]: dart.fieldType(core.bool),
+    [_center]: dart.fieldType(dart.nullable(ui.Offset)),
+    [_radius]: dart.fieldType(dart.nullable(core.double)),
+    [_beginAngle]: dart.fieldType(dart.nullable(core.double)),
+    [_endAngle]: dart.fieldType(dart.nullable(core.double))
+  }));
+  dart.defineExtensionMethods(arc.MaterialPointArcTween, ['toString']);
+  var _name$ = dart.privateName(arc, "_name");
+  arc._CornerId = class _CornerId extends core.Object {
+    toString() {
+      return this[_name$];
+    }
   };
-  dart.trackLibraries("packages/flutter/src/foundation/binding.dart", {
-    "package:flutter/src/foundation/binding.dart": binding
+  (arc._CornerId.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 180, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 180, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = arc._CornerId.prototype;
+  dart.addTypeTests(arc._CornerId);
+  dart.addTypeCaches(arc._CornerId);
+  dart.setLibraryUri(arc._CornerId, I[1]);
+  dart.setFieldSignature(arc._CornerId, () => ({
+    __proto__: dart.getFields(arc._CornerId.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(arc._CornerId, ['toString']);
+  arc._CornerId.topLeft = C[0] || CT.C0;
+  arc._CornerId.topRight = C[1] || CT.C1;
+  arc._CornerId.bottomLeft = C[2] || CT.C2;
+  arc._CornerId.bottomRight = C[3] || CT.C3;
+  arc._CornerId.values = C[4] || CT.C4;
+  var beginId$ = dart.privateName(arc, "_Diagonal.beginId");
+  var endId$ = dart.privateName(arc, "_Diagonal.endId");
+  arc._Diagonal = class _Diagonal extends core.Object {
+    get beginId() {
+      return this[beginId$];
+    }
+    set beginId(value) {
+      super.beginId = value;
+    }
+    get endId() {
+      return this[endId$];
+    }
+    set endId(value) {
+      super.endId = value;
+    }
+  };
+  (arc._Diagonal.new = function(beginId, endId) {
+    if (beginId == null) dart.nullFailed(I[0], 188, 24, "beginId");
+    if (endId == null) dart.nullFailed(I[0], 188, 38, "endId");
+    this[beginId$] = beginId;
+    this[endId$] = endId;
+    ;
+  }).prototype = arc._Diagonal.prototype;
+  dart.addTypeTests(arc._Diagonal);
+  dart.addTypeCaches(arc._Diagonal);
+  dart.setLibraryUri(arc._Diagonal, I[1]);
+  dart.setFieldSignature(arc._Diagonal, () => ({
+    __proto__: dart.getFields(arc._Diagonal.__proto__),
+    beginId: dart.finalFieldType(arc._CornerId),
+    endId: dart.finalFieldType(arc._CornerId)
+  }));
+  var __MaterialRectArcTween__beginArc = dart.privateName(arc, "_#MaterialRectArcTween#_beginArc");
+  var __MaterialRectArcTween__endArc = dart.privateName(arc, "_#MaterialRectArcTween#_endArc");
+  var _diagonalSupport = dart.privateName(arc, "_diagonalSupport");
+  var _beginArc = dart.privateName(arc, "_beginArc");
+  var _cornerFor = dart.privateName(arc, "_cornerFor");
+  var _endArc = dart.privateName(arc, "_endArc");
+  arc.MaterialRectArcTween = class MaterialRectArcTween extends tween.RectTween {
+    [_initialize]() {
+      if (!(this.begin != null)) dart.assertFailed(null, I[0], 249, 12, "begin != null");
+      if (!(this.end != null)) dart.assertFailed(null, I[0], 250, 12, "end != null");
+      let centersVector = dart.nullCheck(this.end).center['-'](dart.nullCheck(this.begin).center);
+      let diagonal = arc._maxBy(arc._Diagonal, arc._allDiagonals, dart.fn(d => {
+        if (d == null) dart.nullFailed(I[0], 252, 76, "d");
+        return this[_diagonalSupport](centersVector, d);
+      }, T._DiagonalTodouble()));
+      this[_beginArc] = new arc.MaterialPointArcTween.new({begin: this[_cornerFor](dart.nullCheck(this.begin), diagonal.beginId), end: this[_cornerFor](dart.nullCheck(this.end), diagonal.beginId)});
+      this[_endArc] = new arc.MaterialPointArcTween.new({begin: this[_cornerFor](dart.nullCheck(this.begin), diagonal.endId), end: this[_cornerFor](dart.nullCheck(this.end), diagonal.endId)});
+      this[_dirty] = false;
+    }
+    [_diagonalSupport](centersVector, diagonal) {
+      if (centersVector == null) dart.nullFailed(I[0], 264, 34, "centersVector");
+      if (diagonal == null) dart.nullFailed(I[0], 264, 59, "diagonal");
+      let delta = this[_cornerFor](dart.nullCheck(this.begin), diagonal.endId)['-'](this[_cornerFor](dart.nullCheck(this.begin), diagonal.beginId));
+      let length = delta.distance;
+      return dart.notNull(centersVector.dx) * dart.notNull(delta.dx) / dart.notNull(length) + dart.notNull(centersVector.dy) * dart.notNull(delta.dy) / dart.notNull(length);
+    }
+    [_cornerFor](rect, id) {
+      if (rect == null) dart.nullFailed(I[0], 270, 26, "rect");
+      if (id == null) dart.nullFailed(I[0], 270, 42, "id");
+      switch (id) {
+        case C[0] || CT.C0:
+        {
+          return rect.topLeft;
+        }
+        case C[1] || CT.C1:
+        {
+          return rect.topRight;
+        }
+        case C[2] || CT.C2:
+        {
+          return rect.bottomLeft;
+        }
+        case C[3] || CT.C3:
+        {
+          return rect.bottomRight;
+        }
+      }
+    }
+    get beginArc() {
+      if (this.begin == null) return null;
+      if (dart.test(this[_dirty])) this[_initialize]();
+      return this[_beginArc];
+    }
+    get [_beginArc]() {
+      let t0;
+      t0 = this[__MaterialRectArcTween__beginArc];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_beginArc")) : t0;
+    }
+    set [_beginArc](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 288, 30, "null");
+      this[__MaterialRectArcTween__beginArc] = t0;
+    }
+    get endArc() {
+      if (this.end == null) return null;
+      if (dart.test(this[_dirty])) this[_initialize]();
+      return this[_endArc];
+    }
+    get [_endArc]() {
+      let t1;
+      t1 = this[__MaterialRectArcTween__endArc];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_endArc")) : t1;
+    }
+    set [_endArc](t1) {
+      if (t1 == null) dart.nullFailed(I[0], 299, 30, "null");
+      this[__MaterialRectArcTween__endArc] = t1;
+    }
+    set begin(value) {
+      T.RectN().as(value);
+      if (!dart.equals(value, this.begin)) {
+        super.begin = value;
+        this[_dirty] = true;
+      }
+    }
+    get begin() {
+      return super.begin;
+    }
+    set end(value) {
+      T.RectN().as(value);
+      if (!dart.equals(value, this.end)) {
+        super.end = value;
+        this[_dirty] = true;
+      }
+    }
+    get end() {
+      return super.end;
+    }
+    lerp(t) {
+      if (t == null) dart.nullFailed(I[0], 318, 20, "t");
+      if (dart.test(this[_dirty])) this[_initialize]();
+      if (t === 0.0) return dart.nullCheck(this.begin);
+      if (t === 1.0) return dart.nullCheck(this.end);
+      return new ui.Rect.fromPoints(this[_beginArc].lerp(t), this[_endArc].lerp(t));
+    }
+    toString() {
+      return dart.str(object.objectRuntimeType(this, "MaterialRectArcTween")) + "(" + dart.str(this.begin) + " → " + dart.str(this.end) + "; beginArc=" + dart.str(this.beginArc) + ", endArc=" + dart.str(this.endArc) + ")";
+    }
+  };
+  (arc.MaterialRectArcTween.new = function(opts) {
+    let begin = opts && 'begin' in opts ? opts.begin : null;
+    let end = opts && 'end' in opts ? opts.end : null;
+    this[_dirty] = true;
+    this[__MaterialRectArcTween__beginArc] = null;
+    this[__MaterialRectArcTween__endArc] = null;
+    arc.MaterialRectArcTween.__proto__.new.call(this, {begin: begin, end: end});
+    ;
+  }).prototype = arc.MaterialRectArcTween.prototype;
+  dart.addTypeTests(arc.MaterialRectArcTween);
+  dart.addTypeCaches(arc.MaterialRectArcTween);
+  dart.setMethodSignature(arc.MaterialRectArcTween, () => ({
+    __proto__: dart.getMethods(arc.MaterialRectArcTween.__proto__),
+    [_initialize]: dart.fnType(dart.void, []),
+    [_diagonalSupport]: dart.fnType(core.double, [ui.Offset, arc._Diagonal]),
+    [_cornerFor]: dart.fnType(ui.Offset, [ui.Rect, arc._CornerId]),
+    lerp: dart.fnType(ui.Rect, [core.double])
+  }));
+  dart.setGetterSignature(arc.MaterialRectArcTween, () => ({
+    __proto__: dart.getGetters(arc.MaterialRectArcTween.__proto__),
+    beginArc: dart.nullable(arc.MaterialPointArcTween),
+    [_beginArc]: arc.MaterialPointArcTween,
+    endArc: dart.nullable(arc.MaterialPointArcTween),
+    [_endArc]: arc.MaterialPointArcTween
+  }));
+  dart.setSetterSignature(arc.MaterialRectArcTween, () => ({
+    __proto__: dart.getSetters(arc.MaterialRectArcTween.__proto__),
+    [_beginArc]: arc.MaterialPointArcTween,
+    [_endArc]: arc.MaterialPointArcTween,
+    begin: dart.nullable(core.Object),
+    end: dart.nullable(core.Object)
+  }));
+  dart.setLibraryUri(arc.MaterialRectArcTween, I[1]);
+  dart.setFieldSignature(arc.MaterialRectArcTween, () => ({
+    __proto__: dart.getFields(arc.MaterialRectArcTween.__proto__),
+    [_dirty]: dart.fieldType(core.bool),
+    [__MaterialRectArcTween__beginArc]: dart.fieldType(dart.nullable(arc.MaterialPointArcTween)),
+    [__MaterialRectArcTween__endArc]: dart.fieldType(dart.nullable(arc.MaterialPointArcTween))
+  }));
+  dart.defineExtensionMethods(arc.MaterialRectArcTween, ['toString']);
+  var __MaterialRectCenterArcTween__centerArc = dart.privateName(arc, "_#MaterialRectCenterArcTween#_centerArc");
+  var _centerArc = dart.privateName(arc, "_centerArc");
+  arc.MaterialRectCenterArcTween = class MaterialRectCenterArcTween extends tween.RectTween {
+    [_initialize]() {
+      if (!(this.begin != null)) dart.assertFailed(null, I[0], 364, 12, "begin != null");
+      if (!(this.end != null)) dart.assertFailed(null, I[0], 365, 12, "end != null");
+      this[_centerArc] = new arc.MaterialPointArcTween.new({begin: dart.nullCheck(this.begin).center, end: dart.nullCheck(this.end).center});
+      this[_dirty] = false;
+    }
+    get centerArc() {
+      if (this.begin == null || this.end == null) return null;
+      if (dart.test(this[_dirty])) this[_initialize]();
+      return this[_centerArc];
+    }
+    get [_centerArc]() {
+      let t2;
+      t2 = this[__MaterialRectCenterArcTween__centerArc];
+      return t2 == null ? dart.throw(new _internal.LateError.fieldNI("_centerArc")) : t2;
+    }
+    set [_centerArc](t2) {
+      if (t2 == null) dart.nullFailed(I[0], 382, 30, "null");
+      this[__MaterialRectCenterArcTween__centerArc] = t2;
+    }
+    set begin(value) {
+      T.RectN().as(value);
+      if (!dart.equals(value, this.begin)) {
+        super.begin = value;
+        this[_dirty] = true;
+      }
+    }
+    get begin() {
+      return super.begin;
+    }
+    set end(value) {
+      T.RectN().as(value);
+      if (!dart.equals(value, this.end)) {
+        super.end = value;
+        this[_dirty] = true;
+      }
+    }
+    get end() {
+      return super.end;
+    }
+    lerp(t) {
+      if (t == null) dart.nullFailed(I[0], 401, 20, "t");
+      if (dart.test(this[_dirty])) this[_initialize]();
+      if (t === 0.0) return dart.nullCheck(this.begin);
+      if (t === 1.0) return dart.nullCheck(this.end);
+      let center = this[_centerArc].lerp(t);
+      let width = dart.nullCheck(ui.lerpDouble(dart.nullCheck(this.begin).width, dart.nullCheck(this.end).width, t));
+      let height = dart.nullCheck(ui.lerpDouble(dart.nullCheck(this.begin).height, dart.nullCheck(this.end).height, t));
+      return new ui.Rect.fromLTWH(dart.notNull(center.dx) - width / 2.0, dart.notNull(center.dy) - height / 2.0, width, height);
+    }
+    toString() {
+      return dart.str(object.objectRuntimeType(this, "MaterialRectCenterArcTween")) + "(" + dart.str(this.begin) + " → " + dart.str(this.end) + "; centerArc=" + dart.str(this.centerArc) + ")";
+    }
+  };
+  (arc.MaterialRectCenterArcTween.new = function(opts) {
+    let begin = opts && 'begin' in opts ? opts.begin : null;
+    let end = opts && 'end' in opts ? opts.end : null;
+    this[_dirty] = true;
+    this[__MaterialRectCenterArcTween__centerArc] = null;
+    arc.MaterialRectCenterArcTween.__proto__.new.call(this, {begin: begin, end: end});
+    ;
+  }).prototype = arc.MaterialRectCenterArcTween.prototype;
+  dart.addTypeTests(arc.MaterialRectCenterArcTween);
+  dart.addTypeCaches(arc.MaterialRectCenterArcTween);
+  dart.setMethodSignature(arc.MaterialRectCenterArcTween, () => ({
+    __proto__: dart.getMethods(arc.MaterialRectCenterArcTween.__proto__),
+    [_initialize]: dart.fnType(dart.void, []),
+    lerp: dart.fnType(ui.Rect, [core.double])
+  }));
+  dart.setGetterSignature(arc.MaterialRectCenterArcTween, () => ({
+    __proto__: dart.getGetters(arc.MaterialRectCenterArcTween.__proto__),
+    centerArc: dart.nullable(arc.MaterialPointArcTween),
+    [_centerArc]: arc.MaterialPointArcTween
+  }));
+  dart.setSetterSignature(arc.MaterialRectCenterArcTween, () => ({
+    __proto__: dart.getSetters(arc.MaterialRectCenterArcTween.__proto__),
+    [_centerArc]: arc.MaterialPointArcTween,
+    begin: dart.nullable(core.Object),
+    end: dart.nullable(core.Object)
+  }));
+  dart.setLibraryUri(arc.MaterialRectCenterArcTween, I[1]);
+  dart.setFieldSignature(arc.MaterialRectCenterArcTween, () => ({
+    __proto__: dart.getFields(arc.MaterialRectCenterArcTween.__proto__),
+    [_dirty]: dart.fieldType(core.bool),
+    [__MaterialRectCenterArcTween__centerArc]: dart.fieldType(dart.nullable(arc.MaterialPointArcTween))
+  }));
+  dart.defineExtensionMethods(arc.MaterialRectCenterArcTween, ['toString']);
+  arc._maxBy = function _maxBy(T, input, keyFunc) {
+    if (input == null) dart.nullFailed(I[0], 203, 25, "input");
+    if (keyFunc == null) dart.nullFailed(I[0], 203, 44, "keyFunc");
+    let maxValue = null;
+    let maxValue$35isSet = false;
+    function maxValue$35get() {
+      return maxValue$35isSet ? maxValue : dart.throw(new _internal.LateError.localNI("maxValue"));
+    }
+    dart.fn(maxValue$35get, dart.fnType(T, []));
+    function maxValue$35set(t6) {
+      maxValue$35isSet = true;
+      return maxValue = t6;
+    }
+    dart.fn(maxValue$35set, dart.fnType(dart.dynamic, [T]));
+    let maxKey = null;
+    for (let value of input) {
+      let key = keyFunc(value);
+      if (maxKey == null || dart.notNull(key) > dart.notNull(maxKey)) {
+        maxValue$35set(value);
+        maxKey = key;
+      }
+    }
+    return maxValue$35get();
+  };
+  dart.defineLazy(arc, {
+    /*arc._kOnAxisDelta*/get _kOnAxisDelta() {
+      return 2;
+    },
+    /*arc._allDiagonals*/get _allDiagonals() {
+      return C[5] || CT.C5;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/material/arc.dart", {
+    "package:flutter/src/material/arc.dart": arc
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["binding.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/foundation/binding.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["arc.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/material/arc.dart.lib.js"}');
   // Exports:
   return {
-    src__foundation__binding: binding
+    src__material__arc: arc
   };
 }));
 
-//# sourceMappingURL=binding.dart.lib.js.map
+//# sourceMappingURL=arc.dart.lib.js.map
