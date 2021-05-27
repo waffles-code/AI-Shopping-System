@@ -3,7 +3,8 @@ import 'dart:ui';
 import 'package:aishop/components/databasemanager.dart';
 import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
-// import 'package:aishop/screens/wishlistscreen.dart';
+// import 'package:aishop/screens/wishlist.dart';
+import 'package:aishop/screens/wishlistscreen.dart';
 import 'package:aishop/settings.dart';
 import 'package:aishop/widgets/beauty.dart';
 import 'package:aishop/widgets/recommendations.dart';
@@ -136,8 +137,8 @@ class _HomePageState extends State<HomePage> {
                     size: 25,
                   ),
                   onPressed: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    //     builder: (BuildContext context) => wishlist()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => W()));
                   },
                 ),
                 Padding(
