@@ -42,7 +42,7 @@ class CheckOutAddress extends StatelessWidget {
                             subtitle: Align(
                               child: TextLink(
                                 text:
-                                    "11 Maclaren st,MarshallTown,Johannesburg",
+                                    "11 Maclaren st , MarshallTown , Johannesburg ",
                                 align: Alignment.center,
                                 press: () => {
                                   Navigator.of(context).push(MaterialPageRoute(
@@ -74,7 +74,7 @@ class CheckOutAddress extends StatelessWidget {
                             subtitle: Align(
                               child: TextLink(
                                 text:
-                                    "104 Stiemens st,Braamfontein,Johannesburg",
+                                    "104 Stiemens st , Braamfontein , Johannesburg ",
                                 align: Alignment.center,
                                 press: () => {
                                   Navigator.of(context).push(MaterialPageRoute(

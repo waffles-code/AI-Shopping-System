@@ -51,12 +51,14 @@ class _OrderReviewState extends State<OrderReview> {
     return Scaffold(
         backgroundColor: lightblack,
         appBar: AppBar(
+          primary: false,
+          leading: Container(),
           title: Text(
             'Order Review',
             style: TextStyle(
-                fontSize: 25, color: lightblack, fontWeight: FontWeight.bold),
+                fontSize: 25, color: lightblack, fontWeight: FontWeight.bold,),
           ),
-          toolbarHeight: 100,
+          toolbarHeight: 105,
           backgroundColor: Colors.white60,
         ),
         body: new StreamBuilder<QuerySnapshot>(
@@ -93,11 +95,11 @@ class _OrderReviewState extends State<OrderReview> {
               Expanded(
                   child: ListTile(
                 title: new Text(
-                  "ORDER SUBTOTAL                      R$g\n                             ",
+                  "ORDER SUBTOTAL                      R $g\n                             ",
                   style: TextStyle(color: white),
                 ),
                 subtitle: new Text(
-                  " \n TOTAL                                R$g",
+                  " \n TOTAL                                R $g",
                   style: TextStyle(color: white, fontSize: 19.0),
                 ),
               ))
@@ -172,7 +174,7 @@ class _SingleCartProductState extends State<SingleCartProduct> {
                       border: Border.all(color: Colors.yellow)),
                   child: Center(
                       child: Icon(
-                    Icons.exposure_minus_1,
+                    Icons.remove,
                     size: 10,
                     color: Colors.yellowAccent,
                   )),
@@ -197,7 +199,7 @@ class _SingleCartProductState extends State<SingleCartProduct> {
                       border: Border.all(color: Colors.yellow)),
                   child: Center(
                       child: Icon(
-                    Icons.exposure_plus_1,
+                    Icons.add,
                     size: 10,
                     color: Colors.yellowAccent,
                   )),
