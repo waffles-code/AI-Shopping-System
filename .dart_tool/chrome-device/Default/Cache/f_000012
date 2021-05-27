@@ -1,32 +1,33 @@
-define(['dart_sdk', 'packages/firebase_auth_web/src/utils/web_utils.dart', 'packages/firebase_auth_platform_interface/src/types.dart', 'packages/firebase_auth_web/src/interop/auth.dart', 'packages/firebase_auth_platform_interface/src/id_token_result.dart', 'packages/firebase_auth_platform_interface/src/firebase_auth_exception.dart', 'packages/intl/src/intl/date_format.dart'], (function load__packages__firebase_auth_web__src__firebase_auth_web_confirmation_result_dart(dart_sdk, packages__firebase_auth_web__src__utils__web_utils$46dart, packages__firebase_auth_platform_interface__src__types$46dart, packages__firebase_auth_web__src__interop__auth$46dart, packages__firebase_auth_platform_interface__src__id_token_result$46dart, packages__firebase_auth_platform_interface__src__firebase_auth_exception$46dart, packages__intl__src__intl__date_format$46dart) {
+define(['dart_sdk', 'packages/firebase_auth_platform_interface/src/firebase_auth_exception.dart', 'packages/firebase_auth_platform_interface/src/action_code_info.dart', 'packages/firebase_auth_platform_interface/src/additional_user_info.dart', 'packages/firebase_auth_platform_interface/src/id_token_result.dart', 'packages/firebase_auth_platform_interface/src/types.dart', 'packages/firebase_auth_web/src/interop/auth.dart', 'packages/firebase_auth_platform_interface/src/auth_credential.dart'], (function load__packages__firebase_auth_web__src__utils__web_utils_dart(dart_sdk, packages__firebase_auth_platform_interface__src__firebase_auth_exception$46dart, packages__firebase_auth_platform_interface__src__action_code_info$46dart, packages__firebase_auth_platform_interface__src__additional_user_info$46dart, packages__firebase_auth_platform_interface__src__id_token_result$46dart, packages__firebase_auth_platform_interface__src__types$46dart, packages__firebase_auth_web__src__interop__auth$46dart, packages__firebase_auth_platform_interface__src__auth_credential$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const async = dart_sdk.async;
   const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const web_utils = packages__firebase_auth_web__src__utils__web_utils$46dart.src__utils__web_utils;
-  const platform_interface_user_credential = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_user_credential;
-  const platform_interface_confirmation_result = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_confirmation_result;
-  const platform_interface_firebase_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_firebase_auth;
-  const platform_interface_user = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_user;
-  const auth = packages__firebase_auth_web__src__interop__auth$46dart.src__interop__auth;
-  const id_token_result = packages__firebase_auth_platform_interface__src__id_token_result$46dart.src__id_token_result;
   const firebase_auth_exception = packages__firebase_auth_platform_interface__src__firebase_auth_exception$46dart.src__firebase_auth_exception;
-  const date_format = packages__intl__src__intl__date_format$46dart.src__intl__date_format;
-  var firebase_auth_web_confirmation_result = Object.create(dart.library);
-  var firebase_auth_web_user_credential = Object.create(dart.library);
-  var firebase_auth_web_user = Object.create(dart.library);
-  var $map = dartx.map;
-  var $toList = dartx.toList;
+  const action_code_info = packages__firebase_auth_platform_interface__src__action_code_info$46dart.src__action_code_info;
+  const additional_user_info = packages__firebase_auth_platform_interface__src__additional_user_info$46dart.src__additional_user_info;
+  const id_token_result = packages__firebase_auth_platform_interface__src__id_token_result$46dart.src__id_token_result;
+  const types = packages__firebase_auth_platform_interface__src__types$46dart.src__types;
+  const email_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__providers__email_auth;
+  const facebook_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__providers__facebook_auth;
+  const github_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__providers__github_auth;
+  const google_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__providers__google_auth;
+  const twitter_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__providers__twitter_auth;
+  const phone_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__providers__phone_auth;
+  const oauth = packages__firebase_auth_platform_interface__src__types$46dart.src__providers__oauth;
+  const platform_interface_recaptcha_verifier_factory = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_recaptcha_verifier_factory;
+  const auth = packages__firebase_auth_web__src__interop__auth$46dart.src__interop__auth;
+  const auth_credential = packages__firebase_auth_platform_interface__src__auth_credential$46dart.src__auth_credential;
+  var web_utils = Object.create(dart.library);
+  var $replaceFirst = dartx.replaceFirst;
   var $_get = dartx._get;
+  var $forEach = dartx.forEach;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    IdentityMapOfString$int: () => (T.IdentityMapOfString$int = dart.constFn(_js_helper.IdentityMap$(core.String, core.int)))(),
-    MapOfString$dynamic: () => (T.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
     IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
-    UserInfoOfUserInfoJsImpl: () => (T.UserInfoOfUserInfoJsImpl = dart.constFn(auth.UserInfo$(dart.anonymousJSType("UserInfoJsImpl"))))(),
-    UserInfoOfUserInfoJsImplToMapOfString$dynamic: () => (T.UserInfoOfUserInfoJsImplToMapOfString$dynamic = dart.constFn(dart.fnType(T.MapOfString$dynamic(), [T.UserInfoOfUserInfoJsImpl()])))()
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -40,303 +41,237 @@ define(['dart_sdk', 'packages/firebase_auth_web/src/utils/web_utils.dart', 'pack
   const CT = Object.create({
     _: () => (C, CT)
   });
-  var C = [];
-  var I = [
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-1.1.1/lib/src/firebase_auth_web_confirmation_result.dart",
-    "package:firebase_auth_web/src/firebase_auth_web_confirmation_result.dart",
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-1.1.1/lib/src/firebase_auth_web_user_credential.dart",
-    "package:firebase_auth_web/src/firebase_auth_web_user_credential.dart",
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-1.1.1/lib/src/firebase_auth_web_user.dart",
-    "package:firebase_auth_web/src/firebase_auth_web_user.dart"
-  ];
-  var _auth$ = dart.privateName(firebase_auth_web_confirmation_result, "_auth");
-  var _webConfirmationResult$ = dart.privateName(firebase_auth_web_confirmation_result, "_webConfirmationResult");
-  firebase_auth_web_confirmation_result.ConfirmationResultWeb = class ConfirmationResultWeb extends platform_interface_confirmation_result.ConfirmationResultPlatform {
-    confirm(verificationCode) {
-      if (verificationCode == null) dart.nullFailed(I[0], 23, 49, "verificationCode");
-      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* confirm() {
-        try {
-          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this[_auth$], yield this[_webConfirmationResult$].confirm(verificationCode));
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-  };
-  (firebase_auth_web_confirmation_result.ConfirmationResultWeb.new = function(_auth, _webConfirmationResult) {
-    if (_auth == null) dart.nullFailed(I[0], 15, 30, "_auth");
-    if (_webConfirmationResult == null) dart.nullFailed(I[0], 15, 42, "_webConfirmationResult");
-    this[_auth$] = _auth;
-    this[_webConfirmationResult$] = _webConfirmationResult;
-    firebase_auth_web_confirmation_result.ConfirmationResultWeb.__proto__.new.call(this, _webConfirmationResult.verificationId);
-    ;
-  }).prototype = firebase_auth_web_confirmation_result.ConfirmationResultWeb.prototype;
-  dart.addTypeTests(firebase_auth_web_confirmation_result.ConfirmationResultWeb);
-  dart.addTypeCaches(firebase_auth_web_confirmation_result.ConfirmationResultWeb);
-  dart.setLibraryUri(firebase_auth_web_confirmation_result.ConfirmationResultWeb, I[1]);
-  dart.setFieldSignature(firebase_auth_web_confirmation_result.ConfirmationResultWeb, () => ({
-    __proto__: dart.getFields(firebase_auth_web_confirmation_result.ConfirmationResultWeb.__proto__),
-    [_auth$]: dart.finalFieldType(platform_interface_firebase_auth.FirebaseAuthPlatform),
-    [_webConfirmationResult$]: dart.finalFieldType(auth.ConfirmationResult)
-  }));
-  firebase_auth_web_user_credential.UserCredentialWeb = class UserCredentialWeb extends platform_interface_user_credential.UserCredentialPlatform {};
-  (firebase_auth_web_user_credential.UserCredentialWeb.new = function(auth, webUserCredential) {
-    if (auth == null) dart.nullFailed(I[2], 15, 26, "auth");
-    if (webUserCredential == null) dart.nullFailed(I[2], 16, 33, "webUserCredential");
-    firebase_auth_web_user_credential.UserCredentialWeb.__proto__.new.call(this, {auth: auth, additionalUserInfo: web_utils.convertWebAdditionalUserInfo(webUserCredential.additionalUserInfo), credential: web_utils.convertWebOAuthCredential(webUserCredential.credential), user: new firebase_auth_web_user.UserWeb.new(auth, dart.nullCheck(webUserCredential.user))});
-    ;
-  }).prototype = firebase_auth_web_user_credential.UserCredentialWeb.prototype;
-  dart.addTypeTests(firebase_auth_web_user_credential.UserCredentialWeb);
-  dart.addTypeCaches(firebase_auth_web_user_credential.UserCredentialWeb);
-  dart.setLibraryUri(firebase_auth_web_user_credential.UserCredentialWeb, I[3]);
-  var _webUser$ = dart.privateName(firebase_auth_web_user, "_webUser");
-  firebase_auth_web_user.UserWeb = class UserWeb extends platform_interface_user.UserPlatform {
-    delete() {
-      return async.async(dart.void, (function* $delete() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          yield this[_webUser$].delete();
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    getIdToken(forceRefresh) {
-      if (forceRefresh == null) dart.nullFailed(I[4], 65, 34, "forceRefresh");
-      return async.async(core.String, (function* getIdToken() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          return yield this[_webUser$].getIdToken(forceRefresh);
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    getIdTokenResult(forceRefresh) {
-      if (forceRefresh == null) dart.nullFailed(I[4], 76, 47, "forceRefresh");
-      return async.async(id_token_result.IdTokenResult, (function* getIdTokenResult() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        return web_utils.convertWebIdTokenResult(yield this[_webUser$].getIdTokenResult(forceRefresh));
-      }).bind(this));
-    }
-    linkWithCredential(credential) {
-      if (credential == null) dart.nullFailed(I[4], 84, 22, "credential");
-      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* linkWithCredential() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this.auth, yield this[_webUser$].linkWithCredential(web_utils.convertPlatformCredential(credential)));
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    linkWithPhoneNumber(phoneNumber, applicationVerifier) {
-      if (phoneNumber == null) dart.nullFailed(I[4], 98, 12, "phoneNumber");
-      if (applicationVerifier == null) dart.nullFailed(I[4], 99, 38, "applicationVerifier");
-      return async.async(platform_interface_confirmation_result.ConfirmationResultPlatform, (function* linkWithPhoneNumber() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          let verifier = auth.RecaptchaVerifier.as(applicationVerifier.delegate);
-          return new firebase_auth_web_confirmation_result.ConfirmationResultWeb.new(this.auth, yield this[_webUser$].linkWithPhoneNumber(phoneNumber, verifier));
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    reauthenticateWithCredential(credential) {
-      if (credential == null) dart.nullFailed(I[4], 117, 22, "credential");
-      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* reauthenticateWithCredential() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          let userCredential = (yield this[_webUser$].reauthenticateWithCredential(dart.nullCheck(web_utils.convertPlatformCredential(credential))));
-          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this.auth, userCredential);
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    reload() {
-      return async.async(dart.void, (function* reload() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          yield this[_webUser$].reload();
-          this.auth.sendAuthChangesEvent(this.auth.app.name, this.auth.currentUser);
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    sendEmailVerification(actionCodeSettings) {
-      firebase_auth_web_user._assertIsSignedOut(this.auth);
-      try {
-        return this[_webUser$].sendEmailVerification(web_utils.convertPlatformActionCodeSettings(actionCodeSettings));
-      } catch (e$) {
-        let e = dart.getThrown(e$);
-        if (core.Object.is(e)) {
-          dart.throw(web_utils.getFirebaseAuthException(e));
-        } else
-          throw e$;
-      }
-    }
-    unlink(providerId) {
-      if (providerId == null) dart.nullFailed(I[4], 154, 38, "providerId");
-      return async.async(platform_interface_user.UserPlatform, (function* unlink() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          return new firebase_auth_web_user.UserWeb.new(this.auth, yield this[_webUser$].unlink(providerId));
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    updateEmail(newEmail) {
-      if (newEmail == null) dart.nullFailed(I[4], 165, 35, "newEmail");
-      return async.async(dart.void, (function* updateEmail() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          yield this[_webUser$].updateEmail(newEmail);
-          yield this[_webUser$].reload();
-          this.auth.sendAuthChangesEvent(this.auth.app.name, this.auth.currentUser);
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    updatePassword(newPassword) {
-      if (newPassword == null) dart.nullFailed(I[4], 178, 38, "newPassword");
-      return async.async(dart.void, (function* updatePassword() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          yield this[_webUser$].updatePassword(newPassword);
-          yield this[_webUser$].reload();
-          this.auth.sendAuthChangesEvent(this.auth.app.name, this.auth.currentUser);
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    updatePhoneNumber(phoneCredential) {
-      if (phoneCredential == null) dart.nullFailed(I[4], 191, 54, "phoneCredential");
-      return async.async(dart.void, (function* updatePhoneNumber() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          yield this[_webUser$].updatePhoneNumber(web_utils.convertPlatformCredential(phoneCredential));
-          yield this[_webUser$].reload();
-          this.auth.sendAuthChangesEvent(this.auth.app.name, this.auth.currentUser);
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    updateProfile(profile) {
-      if (profile == null) dart.nullFailed(I[4], 205, 51, "profile");
-      return async.async(dart.void, (function* updateProfile() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        try {
-          yield this[_webUser$].updateProfile({displayName: profile[$_get]("displayName"), photoURL: profile[$_get]("photoURL")});
-          yield this[_webUser$].reload();
-          this.auth.sendAuthChangesEvent(this.auth.app.name, this.auth.currentUser);
-        } catch (e$) {
-          let e = dart.getThrown(e$);
-          if (core.Object.is(e)) {
-            dart.throw(web_utils.getFirebaseAuthException(e));
-          } else
-            throw e$;
-        }
-      }).bind(this));
-    }
-    verifyBeforeUpdateEmail(newEmail, actionCodeSettings = null) {
-      if (newEmail == null) dart.nullFailed(I[4], 222, 12, "newEmail");
-      return async.async(dart.void, (function* verifyBeforeUpdateEmail() {
-        firebase_auth_web_user._assertIsSignedOut(this.auth);
-        yield this[_webUser$].verifyBeforeUpdateEmail(newEmail, web_utils.convertPlatformActionCodeSettings(actionCodeSettings));
-      }).bind(this));
-    }
-  };
-  (firebase_auth_web_user.UserWeb.new = function(auth, _webUser) {
-    if (auth == null) dart.nullFailed(I[4], 21, 32, "auth");
-    if (_webUser == null) dart.nullFailed(I[4], 21, 43, "_webUser");
-    this[_webUser$] = _webUser;
-    firebase_auth_web_user.UserWeb.__proto__.new.call(this, auth, new (T.IdentityMapOfString$dynamic()).from(["displayName", _webUser.displayName, "email", _webUser.email, "emailVerified", _webUser.emailVerified, "isAnonymous", _webUser.isAnonymous, "metadata", new (T.IdentityMapOfString$int()).from(["creationTime", firebase_auth_web_user._dateFormat.parse(_webUser.metadata.creationTime).millisecondsSinceEpoch, "lastSignInTime", firebase_auth_web_user._dateFormat.parse(_webUser.metadata.lastSignInTime).millisecondsSinceEpoch]), "phoneNumber", _webUser.phoneNumber, "photoURL", _webUser.photoURL, "providerData", _webUser.providerData[$map](T.MapOfString$dynamic(), dart.fn(webUserInfo => {
-        if (webUserInfo == null) dart.nullFailed(I[4], 38, 43, "webUserInfo");
-        return new (T.IdentityMapOfString$dynamic()).from(["displayName", webUserInfo.displayName, "email", webUserInfo.email, "phoneNumber", webUserInfo.phoneNumber, "providerId", webUserInfo.providerId, "photoURL", webUserInfo.photoURL, "uid", webUserInfo.uid]);
-      }, T.UserInfoOfUserInfoJsImplToMapOfString$dynamic()))[$toList](), "refreshToken", _webUser.refreshToken, "tenantId", _webUser.tenantId, "uid", _webUser.uid]));
-    ;
-  }).prototype = firebase_auth_web_user.UserWeb.prototype;
-  dart.addTypeTests(firebase_auth_web_user.UserWeb);
-  dart.addTypeCaches(firebase_auth_web_user.UserWeb);
-  dart.setLibraryUri(firebase_auth_web_user.UserWeb, I[5]);
-  dart.setFieldSignature(firebase_auth_web_user.UserWeb, () => ({
-    __proto__: dart.getFields(firebase_auth_web_user.UserWeb.__proto__),
-    [_webUser$]: dart.finalFieldType(auth.User)
-  }));
-  firebase_auth_web_user._assertIsSignedOut = function _assertIsSignedOut(instance) {
-    if (instance == null) dart.nullFailed(I[4], 238, 46, "instance");
-    if (instance.currentUser == null) {
-      dart.throw(new firebase_auth_exception.FirebaseAuthException.new({code: "no-current-user", message: "No user currently signed in."}));
-    }
-  };
-  dart.defineLazy(firebase_auth_web_user, {
-    /*firebase_auth_web_user._dateFormat*/get _dateFormat() {
-      return new date_format.DateFormat.new("EEE, d MMM yyyy HH:mm:ss", "en_US");
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: types.Persistence.prototype,
+        [_name]: "Persistence.SESSION",
+        index: 2
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: types.Persistence.prototype,
+        [_name]: "Persistence.NONE",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: types.Persistence.prototype,
+        [_name]: "Persistence.LOCAL",
+        index: 0
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: platform_interface_recaptcha_verifier_factory.RecaptchaVerifierSize.prototype,
+        [_name$]: "RecaptchaVerifierSize.compact",
+        index: 1
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: platform_interface_recaptcha_verifier_factory.RecaptchaVerifierSize.prototype,
+        [_name$]: "RecaptchaVerifierSize.normal",
+        index: 0
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: platform_interface_recaptcha_verifier_factory.RecaptchaVerifierTheme.prototype,
+        [_name$]: "RecaptchaVerifierTheme.dark",
+        index: 1
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: platform_interface_recaptcha_verifier_factory.RecaptchaVerifierTheme.prototype,
+        [_name$]: "RecaptchaVerifierTheme.light",
+        index: 0
+      });
     }
   }, false);
-  dart.trackLibraries("packages/firebase_auth_web/src/firebase_auth_web_confirmation_result.dart", {
-    "package:firebase_auth_web/src/firebase_auth_web_confirmation_result.dart": firebase_auth_web_confirmation_result,
-    "package:firebase_auth_web/src/firebase_auth_web_user_credential.dart": firebase_auth_web_user_credential,
-    "package:firebase_auth_web/src/firebase_auth_web_user.dart": firebase_auth_web_user
+  var C = Array(7).fill(void 0);
+  var I = ["file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-1.1.1/lib/src/utils/web_utils.dart"];
+  var _name = dart.privateName(types, "_name");
+  var _name$ = dart.privateName(platform_interface_recaptcha_verifier_factory, "_name");
+  web_utils.getFirebaseAuthException = function getFirebaseAuthException(exception) {
+    if (exception == null) dart.nullFailed(I[0], 14, 55, "exception");
+    if (!dart.anonymousJSType("FirebaseError").is(exception)) {
+      return new firebase_auth_exception.FirebaseAuthException.new({code: "unknown", message: "An unknown error occurred: " + dart.str(exception)});
+    }
+    let firebaseError = dart.lazyJSType(() => dart.global.firebase.auth.Error, "firebase.auth.Error").as(exception);
+    let code = firebaseError.code[$replaceFirst]("auth/", "");
+    let message = firebaseError.message[$replaceFirst]("(" + dart.str(firebaseError.code) + ")", "");
+    return new firebase_auth_exception.FirebaseAuthException.new({code: code, message: message, email: firebaseError.email, credential: web_utils.convertWebAuthCredential(firebaseError.credential), phoneNumber: firebaseError.phoneNumber, tenantId: firebaseError.tenantId});
+  };
+  web_utils.convertWebActionCodeInfo = function convertWebActionCodeInfo(webActionCodeInfo) {
+    if (webActionCodeInfo == null) {
+      return null;
+    }
+    return new action_code_info.ActionCodeInfo.new({operation: 0, data: new (T.IdentityMapOfString$dynamic()).from(["email", webActionCodeInfo.data.email, "previousEmail", webActionCodeInfo.data.previousEmail])});
+  };
+  web_utils.convertWebAdditionalUserInfo = function convertWebAdditionalUserInfo(webAdditionalUserInfo) {
+    if (webAdditionalUserInfo == null) {
+      return null;
+    }
+    return new additional_user_info.AdditionalUserInfo.new({isNewUser: webAdditionalUserInfo.isNewUser, profile: webAdditionalUserInfo.profile, providerId: webAdditionalUserInfo.providerId, username: webAdditionalUserInfo.username});
+  };
+  web_utils.convertWebIdTokenResult = function convertWebIdTokenResult(webIdTokenResult) {
+    if (webIdTokenResult == null) dart.nullFailed(I[0], 69, 30, "webIdTokenResult");
+    return new id_token_result.IdTokenResult.new(new (T.IdentityMapOfString$dynamic()).from(["claims", webIdTokenResult.claims, "expirationTimestamp", webIdTokenResult.expirationTime.millisecondsSinceEpoch, "issuedAtTimestamp", webIdTokenResult.issuedAtTime.millisecondsSinceEpoch, "authTimestamp", webIdTokenResult.authTime.millisecondsSinceEpoch, "signInProvider", webIdTokenResult.signInProvider, "signInSecondFactor", null, "token", webIdTokenResult.token]));
+  };
+  web_utils.convertPlatformActionCodeSettings = function convertPlatformActionCodeSettings(actionCodeSettings) {
+    if (actionCodeSettings == null) {
+      return null;
+    }
+    let actionCodeSettingsMap = actionCodeSettings.asMap();
+    let webActionCodeSettings = {url: actionCodeSettings.url, handleCodeInApp: actionCodeSettings.handleCodeInApp};
+    if (actionCodeSettingsMap[$_get]("android") != null) {
+      webActionCodeSettings.android = {packageName: T.StringN().as(dart.dsend(actionCodeSettingsMap[$_get]("android"), '_get', ["packageName"])), minimumVersion: T.StringN().as(dart.dsend(actionCodeSettingsMap[$_get]("android"), '_get', ["minimumVersion"])), installApp: T.boolN().as(dart.dsend(actionCodeSettingsMap[$_get]("android"), '_get', ["installApp"]))};
+    }
+    if (actionCodeSettingsMap[$_get]("iOS") != null) {
+      webActionCodeSettings.iOS = {bundleId: T.StringN().as(dart.dsend(actionCodeSettingsMap[$_get]("iOS"), '_get', ["bundleId"]))};
+    }
+    return webActionCodeSettings;
+  };
+  web_utils.convertPlatformPersistence = function convertPlatformPersistence(persistence) {
+    if (persistence == null) dart.nullFailed(I[0], 113, 47, "persistence");
+    switch (persistence) {
+      case C[0] || CT.C0:
+      {
+        return "session";
+      }
+      case C[1] || CT.C1:
+      {
+        return "none";
+      }
+      case C[2] || CT.C2:
+      default:
+      {
+        return "local";
+      }
+    }
+  };
+  web_utils.convertPlatformAuthProvider = function convertPlatformAuthProvider(authProvider) {
+    if (authProvider == null) dart.nullFailed(I[0], 127, 16, "authProvider");
+    if (email_auth.EmailAuthProvider.is(authProvider)) {
+      return auth.EmailAuthProvider.new();
+    }
+    if (facebook_auth.FacebookAuthProvider.is(authProvider)) {
+      let facebookAuthProvider = auth.FacebookAuthProvider.new();
+      authProvider.scopes[$forEach](dart.bind(facebookAuthProvider, 'addScope'));
+      facebookAuthProvider.setCustomParameters(authProvider.parameters);
+      return facebookAuthProvider;
+    }
+    if (github_auth.GithubAuthProvider.is(authProvider)) {
+      let githubAuthProvider = auth.GithubAuthProvider.new();
+      authProvider.scopes[$forEach](dart.bind(githubAuthProvider, 'addScope'));
+      githubAuthProvider.setCustomParameters(authProvider.parameters);
+      return githubAuthProvider;
+    }
+    if (google_auth.GoogleAuthProvider.is(authProvider)) {
+      let googleAuthProvider = auth.GoogleAuthProvider.new();
+      authProvider.scopes[$forEach](dart.bind(googleAuthProvider, 'addScope'));
+      googleAuthProvider.setCustomParameters(authProvider.parameters);
+      return googleAuthProvider;
+    }
+    if (twitter_auth.TwitterAuthProvider.is(authProvider)) {
+      let twitterAuthProvider = auth.TwitterAuthProvider.new();
+      twitterAuthProvider.setCustomParameters(authProvider.parameters);
+      return twitterAuthProvider;
+    }
+    if (phone_auth.PhoneAuthProvider.is(authProvider)) {
+      return auth.PhoneAuthProvider.new();
+    }
+    if (oauth.OAuthProvider.is(authProvider)) {
+      let oAuthProvider = auth.OAuthProvider.new(authProvider.providerId);
+      authProvider.scopes[$forEach](dart.bind(oAuthProvider, 'addScope'));
+      oAuthProvider.setCustomParameters(authProvider.parameters);
+      return oAuthProvider;
+    }
+    dart.throw(new core.FallThroughError.new());
+  };
+  web_utils.convertWebAuthCredential = function convertWebAuthCredential(authCredential) {
+    if (authCredential == null) {
+      return null;
+    }
+    return new auth_credential.AuthCredential.new({providerId: authCredential.providerId, signInMethod: authCredential.signInMethod});
+  };
+  web_utils.convertWebOAuthCredential = function convertWebOAuthCredential(oAuthCredential) {
+    if (oAuthCredential == null) {
+      return null;
+    }
+    return new oauth.OAuthProvider.new(oAuthCredential.providerId).credential({accessToken: oAuthCredential.accessToken, idToken: oAuthCredential.idToken});
+  };
+  web_utils.convertPlatformCredential = function convertPlatformCredential(credential) {
+    if (credential == null) dart.nullFailed(I[0], 213, 18, "credential");
+    if (email_auth.EmailAuthCredential.is(credential)) {
+      if (credential.emailLink != null) {
+        return auth.EmailAuthProvider.credentialWithLink(credential.email, dart.nullCheck(credential.emailLink));
+      }
+      return auth.EmailAuthProvider.credential(credential.email, dart.nullCheck(credential.password));
+    }
+    if (facebook_auth.FacebookAuthCredential.is(credential)) {
+      return auth.FacebookAuthProvider.credential(dart.nullCheck(credential.accessToken));
+    }
+    if (github_auth.GithubAuthCredential.is(credential)) {
+      return auth.GithubAuthProvider.credential(dart.nullCheck(credential.accessToken));
+    }
+    if (google_auth.GoogleAuthCredential.is(credential)) {
+      return auth.GoogleAuthProvider.credential(credential.idToken, credential.accessToken);
+    }
+    if (oauth.OAuthCredential.is(credential)) {
+      return auth.OAuthProvider.new(credential.providerId).credential(credential.idToken, credential.accessToken);
+    }
+    if (twitter_auth.TwitterAuthCredential.is(credential)) {
+      return auth.TwitterAuthProvider.credential(dart.nullCheck(credential.accessToken), dart.nullCheck(credential.secret));
+    }
+    if (phone_auth.PhoneAuthCredential.is(credential)) {
+      return auth.PhoneAuthProvider.credential(dart.nullCheck(credential.verificationId), dart.nullCheck(credential.smsCode));
+    }
+    if (oauth.OAuthCredential.is(credential)) {
+      return auth.OAuthProvider.new(credential.providerId).credential(credential.idToken, credential.accessToken);
+    }
+    return null;
+  };
+  web_utils.convertRecaptchaVerifierSize = function convertRecaptchaVerifierSize(size) {
+    if (size == null) dart.nullFailed(I[0], 276, 59, "size");
+    switch (size) {
+      case C[3] || CT.C3:
+      {
+        return "compact";
+      }
+      case C[4] || CT.C4:
+      default:
+      {
+        return "normal";
+      }
+    }
+  };
+  web_utils.convertRecaptchaVerifierTheme = function convertRecaptchaVerifierTheme(theme) {
+    if (theme == null) dart.nullFailed(I[0], 287, 61, "theme");
+    switch (theme) {
+      case C[5] || CT.C5:
+      {
+        return "dark";
+      }
+      case C[6] || CT.C6:
+      default:
+      {
+        return "light";
+      }
+    }
+  };
+  dart.trackLibraries("packages/firebase_auth_web/src/utils/web_utils.dart", {
+    "package:firebase_auth_web/src/utils/web_utils.dart": web_utils
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["firebase_auth_web_confirmation_result.dart","firebase_auth_web_user_credential.dart","firebase_auth_web_user.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../../packages/firebase_auth_web/src/firebase_auth_web_confirmation_result.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["web_utils.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/firebase_auth_web/src/utils/web_utils.dart.lib.js"}');
   // Exports:
   return {
-    src__firebase_auth_web_confirmation_result: firebase_auth_web_confirmation_result,
-    src__firebase_auth_web_user_credential: firebase_auth_web_user_credential,
-    src__firebase_auth_web_user: firebase_auth_web_user
+    src__utils__web_utils: web_utils
   };
 }));
 
-//# sourceMappingURL=firebase_auth_web_confirmation_result.dart.lib.js.map
+//# sourceMappingURL=web_utils.dart.lib.js.map

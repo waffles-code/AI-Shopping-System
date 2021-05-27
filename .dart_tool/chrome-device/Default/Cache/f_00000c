@@ -1,65 +1,56 @@
-define(['dart_sdk', 'packages/firebase_core_web/src/interop/utils/utils.dart', 'packages/firebase_core_web/src/interop/app.dart', 'packages/firebase_core_web/src/interop/utils/js.dart'], (function load__packages__cloud_firestore_web__src__interop__utils__utils_dart(dart_sdk, packages__firebase_core_web__src__interop__utils__utils$46dart, packages__firebase_core_web__src__interop__app$46dart, packages__firebase_core_web__src__interop__utils__js$46dart) {
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/arc.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/foundation/_platform_web.dart', 'packages/flutter/src/cupertino/debug.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/material/page.dart', 'packages/flutter/src/widgets/grid_paper.dart', 'packages/flutter/src/painting/strut_style.dart'], (function load__packages__flutter__src__material__app_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__arc$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__foundation___platform_web$46dart, packages__flutter__src__cupertino__debug$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__material__page$46dart, packages__flutter__src__widgets__grid_paper$46dart, packages__flutter__src__painting__strut_style$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const js_util = dart_sdk.js_util;
-  const js = dart_sdk.js;
+  const ui = dart_sdk.ui;
   const _internal = dart_sdk._internal;
-  const async = dart_sdk.async;
-  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const utils = packages__firebase_core_web__src__interop__utils__utils$46dart.src__interop__utils__utils;
-  const app = packages__firebase_core_web__src__interop__app$46dart.src__interop__app;
-  const js$ = packages__firebase_core_web__src__interop__utils__js$46dart.src__interop__utils__js;
-  var utils$ = Object.create(dart.library);
-  var firestore = Object.create(dart.library);
-  var $insert = dartx.insert;
-  var $map = dartx.map;
-  var $toList = dartx.toList;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const heroes = packages__flutter__src__widgets__widget_span$46dart.src__widgets__heroes;
+  const router = packages__flutter__src__widgets__widget_span$46dart.src__widgets__router;
+  const localizations = packages__flutter__src__widgets__widget_span$46dart.src__widgets__localizations;
+  const shortcuts = packages__flutter__src__widgets__widget_span$46dart.src__widgets__shortcuts;
+  const actions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__actions;
+  const overscroll_indicator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__overscroll_indicator;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const scroll_configuration = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scroll_configuration;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const app = packages__flutter__src__widgets__widget_span$46dart.src__widgets__app;
+  const arc = packages__flutter__src__material__arc$46dart.src__material__arc;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const theme_data = packages__flutter__src__material__icon_button$46dart.src__material__theme_data;
+  const theme$ = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const material_localizations = packages__flutter__src__material__icon_button$46dart.src__material__material_localizations;
+  const floating_action_button = packages__flutter__src__material__icon_button$46dart.src__material__floating_action_button;
+  const platform = packages__flutter__src__foundation___platform_web$46dart.src__foundation__platform;
+  const localizations$ = packages__flutter__src__cupertino__debug$46dart.src__cupertino__localizations;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const page = packages__flutter__src__material__page$46dart.src__material__page;
+  const grid_paper = packages__flutter__src__widgets__grid_paper$46dart.src__widgets__grid_paper;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  var app$ = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(true);
   var T$ = {
+    BuildContextToWidget: () => (T$.BuildContextToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext])))(),
+    RectN: () => (T$.RectN = dart.constFn(dart.nullable(ui.Rect)))(),
+    RectNAndRectNToMaterialRectArcTween: () => (T$.RectNAndRectNToMaterialRectArcTween = dart.constFn(dart.fnType(arc.MaterialRectArcTween, [T$.RectN(), T$.RectN()])))(),
+    SyncIterableOfLocalizationsDelegate: () => (T$.SyncIterableOfLocalizationsDelegate = dart.constFn(_js_helper.SyncIterable$(localizations.LocalizationsDelegate)))(),
+    StateOfStatefulWidget: () => (T$.StateOfStatefulWidget = dart.constFn(framework.State$(framework.StatefulWidget)))(),
+    GlobalObjectKeyOfStateOfStatefulWidget: () => (T$.GlobalObjectKeyOfStateOfStatefulWidget = dart.constFn(framework.GlobalObjectKey$(T$.StateOfStatefulWidget())))(),
     ObjectN: () => (T$.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
-    ObjectNToObjectN: () => (T$.ObjectNToObjectN = dart.constFn(dart.fnType(T$.ObjectN(), [T$.ObjectN()])))(),
-    ObjectNTodynamic: () => (T$.ObjectNTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.ObjectN()])))(),
-    QueryOfQueryJsImpl: () => (T$.QueryOfQueryJsImpl = dart.constFn(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query"))))(),
-    StreamControllerOfvoid: () => (T$.StreamControllerOfvoid = dart.constFn(async.StreamController$(dart.void)))(),
-    VoidToStreamControllerOfvoid: () => (T$.VoidToStreamControllerOfvoid = dart.constFn(dart.fnType(T$.StreamControllerOfvoid(), [])))(),
-    StreamControllerOfvoidTodynamic: () => (T$.StreamControllerOfvoidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.StreamControllerOfvoid()])))(),
-    VoidTodynamic: () => (T$.VoidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [])))(),
-    VoidToFn: () => (T$.VoidToFn = dart.constFn(dart.fnType(T$.VoidTodynamic(), [])))(),
-    FnTodynamic: () => (T$.FnTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.VoidTodynamic()])))(),
-    ObjectNToNull: () => (T$.ObjectNToNull = dart.constFn(dart.fnType(core.Null, [T$.ObjectN()])))(),
-    VoidTovoid: () => (T$.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    dynamicToPromiseJsImpl: () => (T$.dynamicToPromiseJsImpl = dart.constFn(dart.fnType(dart.lazyJSType(() => dart.global.Promise, "Promise"), [dart.dynamic])))(),
-    FutureOfObjectN: () => (T$.FutureOfObjectN = dart.constFn(async.Future$(T$.ObjectN())))(),
-    voidTodynamic: () => (T$.voidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [dart.void])))(),
-    ExpandoOfFirestore: () => (T$.ExpandoOfFirestore = dart.constFn(core.Expando$(firestore.Firestore)))(),
-    ExpandoOfWriteBatch: () => (T$.ExpandoOfWriteBatch = dart.constFn(core.Expando$(firestore.WriteBatch)))(),
-    DocumentSnapshotJsImplToDocumentSnapshot: () => (T$.DocumentSnapshotJsImplToDocumentSnapshot = dart.constFn(dart.fnType(firestore.DocumentSnapshot, [dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot")])))(),
-    StreamControllerOfDocumentSnapshot: () => (T$.StreamControllerOfDocumentSnapshot = dart.constFn(async.StreamController$(firestore.DocumentSnapshot)))(),
-    VoidToStreamControllerOfDocumentSnapshot: () => (T$.VoidToStreamControllerOfDocumentSnapshot = dart.constFn(dart.fnType(T$.StreamControllerOfDocumentSnapshot(), [])))(),
-    StreamControllerOfDocumentSnapshotTodynamic: () => (T$.StreamControllerOfDocumentSnapshotTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.StreamControllerOfDocumentSnapshot()])))(),
-    DocumentSnapshotJsImplToNull: () => (T$.DocumentSnapshotJsImplToNull = dart.constFn(dart.fnType(core.Null, [dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot")])))(),
-    dynamicTovoid: () => (T$.dynamicTovoid = dart.constFn(dart.fnType(dart.void, [dart.dynamic])))(),
-    ExpandoOfDocumentReference: () => (T$.ExpandoOfDocumentReference = dart.constFn(core.Expando$(firestore.DocumentReference)))(),
-    QuerySnapshotJsImplToQuerySnapshot: () => (T$.QuerySnapshotJsImplToQuerySnapshot = dart.constFn(dart.fnType(firestore.QuerySnapshot, [dart.lazyJSType(() => dart.global.firebase.firestore.QuerySnapshot, "firebase.firestore.QuerySnapshot")])))(),
-    StreamControllerOfQuerySnapshot: () => (T$.StreamControllerOfQuerySnapshot = dart.constFn(async.StreamController$(firestore.QuerySnapshot)))(),
-    VoidToStreamControllerOfQuerySnapshot: () => (T$.VoidToStreamControllerOfQuerySnapshot = dart.constFn(dart.fnType(T$.StreamControllerOfQuerySnapshot(), [])))(),
-    StreamControllerOfQuerySnapshotTodynamic: () => (T$.StreamControllerOfQuerySnapshotTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.StreamControllerOfQuerySnapshot()])))(),
-    QuerySnapshotJsImplToNull: () => (T$.QuerySnapshotJsImplToNull = dart.constFn(dart.fnType(core.Null, [dart.lazyJSType(() => dart.global.firebase.firestore.QuerySnapshot, "firebase.firestore.QuerySnapshot")])))(),
-    JSArrayOfDocumentSnapshotJsImpl: () => (T$.JSArrayOfDocumentSnapshotJsImpl = dart.constFn(_interceptors.JSArray$(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot"))))(),
-    CollectionReferenceOfCollectionReferenceJsImpl: () => (T$.CollectionReferenceOfCollectionReferenceJsImpl = dart.constFn(firestore.CollectionReference$(dart.lazyJSType(() => dart.global.firebase.firestore.CollectionReference, "firebase.firestore.CollectionReference"))))(),
-    DocumentReferenceJsImplToDocumentReference: () => (T$.DocumentReferenceJsImplToDocumentReference = dart.constFn(dart.fnType(firestore.DocumentReference, [dart.lazyJSType(() => dart.global.firebase.firestore.DocumentReference, "firebase.firestore.DocumentReference")])))(),
-    ExpandoOfCollectionReferenceOfCollectionReferenceJsImpl: () => (T$.ExpandoOfCollectionReferenceOfCollectionReferenceJsImpl = dart.constFn(core.Expando$(T$.CollectionReferenceOfCollectionReferenceJsImpl())))(),
-    ExpandoOfDocumentChange: () => (T$.ExpandoOfDocumentChange = dart.constFn(core.Expando$(firestore.DocumentChange)))(),
-    MapOfString$dynamic: () => (T$.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
-    MapNOfString$dynamic: () => (T$.MapNOfString$dynamic = dart.constFn(dart.nullable(T$.MapOfString$dynamic())))(),
-    ExpandoOfDocumentSnapshot: () => (T$.ExpandoOfDocumentSnapshot = dart.constFn(core.Expando$(firestore.DocumentSnapshot)))(),
-    dynamicToDocumentChange: () => (T$.dynamicToDocumentChange = dart.constFn(dart.fnType(firestore.DocumentChange, [dart.dynamic])))(),
-    dynamicToDocumentSnapshot: () => (T$.dynamicToDocumentSnapshot = dart.constFn(dart.fnType(firestore.DocumentSnapshot, [dart.dynamic])))(),
-    dynamicTodynamic: () => (T$.dynamicTodynamic = dart.constFn(dart.fnType(dart.dynamic, [dart.dynamic])))(),
-    ExpandoOfQuerySnapshot: () => (T$.ExpandoOfQuerySnapshot = dart.constFn(core.Expando$(firestore.QuerySnapshot)))(),
-    ExpandoOfTransaction: () => (T$.ExpandoOfTransaction = dart.constFn(core.Expando$(firestore.Transaction)))()
+    RouteSettingsAndFnToMaterialPageRouteOfT: () => (T$.RouteSettingsAndFnToMaterialPageRouteOfT = dart.constFn(dart.gFnType(T => {
+      var MaterialPageRouteOfT = () => (MaterialPageRouteOfT = dart.constFn(page.MaterialPageRoute$(T)))();
+      return [MaterialPageRouteOfT(), [navigator.RouteSettings, T$.BuildContextToWidget()]];
+    }, T => {
+      var MaterialPageRouteOfT = () => (MaterialPageRouteOfT = dart.constFn(page.MaterialPageRoute$(T)))();
+      return [T$.ObjectN()];
+    })))(),
+    VoidTobool: () => (T$.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -75,1003 +66,1780 @@ define(['dart_sdk', 'packages/firebase_core_web/src/interop/utils/utils.dart', '
   });
   dart.defineLazy(CT, {
     get C0() {
-      return C[0] = dart.fn(utils$.jsify, T$.ObjectNTodynamic());
+      return C[0] = dart.const({
+        __proto__: app$.ThemeMode.prototype,
+        [_name$]: "ThemeMode.system",
+        index: 0
+      });
     },
     get C1() {
-      return C[1] = dart.fn(firestore.DocumentSnapshot.getInstance, T$.DocumentSnapshotJsImplToDocumentSnapshot());
+      return C[1] = dart.const({
+        __proto__: app$.ThemeMode.prototype,
+        [_name$]: "ThemeMode.light",
+        index: 1
+      });
     },
     get C2() {
-      return C[2] = dart.fn(firestore.QuerySnapshot.getInstance, T$.QuerySnapshotJsImplToQuerySnapshot());
+      return C[2] = dart.const({
+        __proto__: app$.ThemeMode.prototype,
+        [_name$]: "ThemeMode.dark",
+        index: 2
+      });
     },
     get C3() {
-      return C[3] = dart.fn(firestore.DocumentReference.getInstance, T$.DocumentReferenceJsImplToDocumentReference());
-    }
-  }, false);
-  var C = Array(4).fill(void 0);
-  var I = [
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-2.0.0/lib/src/interop/firestore.dart",
-    "package:cloud_firestore_web/src/interop/firestore.dart"
-  ];
-  utils$.dartify = function dartify(jsObject) {
-    return utils.dartify(jsObject, dart.fn(object => {
-      if (dart.test(js_util.instanceof(object, dart.global.firebase.firestore.DocumentReference))) {
-        return firestore.DocumentReference.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentReference, "firebase.firestore.DocumentReference").as(dart.nullCheck(object)));
-      }
-      if (dart.test(js_util.instanceof(object, dart.global.firebase.firestore.GeoPoint))) {
-        return object;
-      }
-      if (dart.test(js_util.instanceof(object, dart.global.firebase.firestore.Timestamp))) {
-        return new core.DateTime.fromMillisecondsSinceEpoch(dart.lazyJSType(() => dart.global.firebase.firestore.Timestamp, "firebase.firestore.Timestamp").as(dart.nullCheck(object)).toMillis());
-      }
-      if (dart.test(js_util.instanceof(object, dart.global.firebase.firestore.Blob))) {
-        return dart.anonymousJSType("Blob").as(dart.nullCheck(object));
-      }
-      return null;
-    }, T$.ObjectNToObjectN()));
-  };
-  utils$.jsify = function jsify(dartObject) {
-    if (dartObject == null) {
-      return null;
-    }
-    return utils.jsify(dartObject, dart.fn(object => {
-      if (core.DateTime.is(object)) {
-        return dart.global.firebase.firestore.Timestamp.fromMillis(object.millisecondsSinceEpoch);
-      }
-      if (firestore.DocumentReference.is(object)) {
-        return object.jsObject;
-      }
-      if (firestore.FieldValue.is(object)) {
-        return firestore.jsifyFieldValue(object);
-      }
-      if (dart.anonymousJSType("Blob").is(object)) {
-        return object;
-      }
-      if (dart.lazyJSType(() => dart.global.firebase.firestore.GeoPoint, "firebase.firestore.GeoPoint").is(object)) {
-        return dartObject;
-      }
-      if (core.Function.is(object)) {
-        return js.allowInterop(core.Function, object);
-      }
-      return null;
-    }, T$.ObjectNTodynamic()));
-  };
-  firestore.Firestore = class Firestore extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.Firestore, "firebase.firestore.Firestore")) {
-    get app() {
-      return app.App.getInstance(this.jsObject.app);
-    }
-    static getInstance(jsObject) {
-      let t3, t2, t1, t0;
-      if (jsObject == null) dart.nullFailed(I[0], 37, 66, "jsObject");
-      t0 = firestore.Firestore._expando;
-      t1 = jsObject;
-      t2 = t0._get(t1);
-      return t2 == null ? (t3 = new firestore.Firestore._fromJsObject(jsObject), t0._set(t1, t3), t3) : t2;
-    }
-    batch() {
-      return firestore.WriteBatch.getInstance(this.jsObject.batch());
-    }
-    collection(collectionPath) {
-      if (collectionPath == null) dart.nullFailed(I[0], 46, 41, "collectionPath");
-      return firestore.CollectionReference.getInstance(this.jsObject.collection(collectionPath));
-    }
-    collectionGroup(collectionId) {
-      if (collectionId == null) dart.nullFailed(I[0], 49, 32, "collectionId");
-      return new (T$.QueryOfQueryJsImpl()).fromJsObject(this.jsObject.collectionGroup(collectionId));
-    }
-    doc(documentPath) {
-      if (documentPath == null) dart.nullFailed(I[0], 52, 32, "documentPath");
-      return firestore.DocumentReference.getInstance(this.jsObject.doc(documentPath));
-    }
-    enablePersistence(settings = null) {
-      return utils.handleThenable(core.Null, this.jsObject.enablePersistence(settings));
-    }
-    snapshotsInSync() {
-      let controller = null;
-      function controller$35get() {
-        let t1;
-        t1 = controller;
-        return t1 == null ? dart.throw(new _internal.LateError.localNI("controller")) : t1;
-      }
-      dart.fn(controller$35get, T$.VoidToStreamControllerOfvoid());
-      function controller$35set(t2) {
-        if (t2 == null) dart.nullFailed(I[0], 60, 33, "null");
-        return controller = t2;
-      }
-      dart.fn(controller$35set, T$.StreamControllerOfvoidTodynamic());
-      let onSnapshotsInSyncUnsubscribe = null;
-      function onSnapshotsInSyncUnsubscribe$35get() {
-        let t5;
-        t5 = onSnapshotsInSyncUnsubscribe;
-        return t5 == null ? dart.throw(new _internal.LateError.localNI("onSnapshotsInSyncUnsubscribe")) : t5;
-      }
-      dart.fn(onSnapshotsInSyncUnsubscribe$35get, T$.VoidToFn());
-      function onSnapshotsInSyncUnsubscribe$35set(t6) {
-        if (t6 == null) dart.nullFailed(I[0], 61, 23, "null");
-        return onSnapshotsInSyncUnsubscribe = t6;
-      }
-      dart.fn(onSnapshotsInSyncUnsubscribe$35set, T$.FnTodynamic());
-      let nextWrapper = js.allowInterop(T$.ObjectNToNull(), dart.fn(noValue => {
-        controller$35get().add(null);
-      }, T$.ObjectNToNull()));
-      const startListen = () => {
-        onSnapshotsInSyncUnsubscribe$35set(this.jsObject.onSnapshotsInSync(dart.assertInterop(nextWrapper)));
-      };
-      dart.fn(startListen, T$.VoidTovoid());
-      function stopListen() {
-        onSnapshotsInSyncUnsubscribe$35get()();
-        controller$35get().close();
-      }
-      dart.fn(stopListen, T$.VoidTovoid());
-      controller$35set(T$.StreamControllerOfvoid().broadcast({onListen: startListen, onCancel: stopListen}));
-      return controller$35get().stream;
-    }
-    clearPersistence() {
-      return utils.handleThenable(core.Null, this.jsObject.clearPersistence());
-    }
-    runTransaction(updateFunction) {
-      if (updateFunction == null) dart.nullFailed(I[0], 86, 48, "updateFunction");
-      let updateFunctionWrap = js.allowInterop(T$.dynamicToPromiseJsImpl(), dart.fn(transaction => utils.handleFutureWithMapper(T$.ObjectN(), dart.dynamic, T$.FutureOfObjectN().as(updateFunction(firestore.Transaction.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.Transaction, "firebase.firestore.Transaction").as(transaction)))), C[0] || CT.C0), T$.dynamicToPromiseJsImpl()));
-      return utils.handleThenable(dart.void, this.jsObject.runTransaction(dart.assertInterop(updateFunctionWrap))).then(dart.dynamic, dart.fn(value => utils$.dartify(null), T$.voidTodynamic()));
-    }
-    settings(settings) {
-      if (settings == null) dart.nullFailed(I[0], 95, 44, "settings");
-      return this.jsObject.settings(settings);
-    }
-    enableNetwork() {
-      return utils.handleThenable(dart.dynamic, this.jsObject.enableNetwork());
-    }
-    disableNetwork() {
-      return utils.handleThenable(dart.dynamic, this.jsObject.disableNetwork());
-    }
-    terminate() {
-      return utils.handleThenable(core.Null, this.jsObject.terminate());
-    }
-    waitForPendingWrites() {
-      return utils.handleThenable(core.Null, this.jsObject.waitForPendingWrites());
-    }
-  };
-  (firestore.Firestore._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 41, 61, "jsObject");
-    firestore.Firestore.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.Firestore.prototype;
-  dart.addTypeTests(firestore.Firestore);
-  dart.addTypeCaches(firestore.Firestore);
-  dart.setMethodSignature(firestore.Firestore, () => ({
-    __proto__: dart.getMethods(firestore.Firestore.__proto__),
-    batch: dart.fnType(dart.nullable(firestore.WriteBatch), []),
-    collection: dart.fnType(firestore.CollectionReference$(dart.lazyJSType(() => dart.global.firebase.firestore.CollectionReference, "firebase.firestore.CollectionReference")), [core.String]),
-    collectionGroup: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [core.String]),
-    doc: dart.fnType(firestore.DocumentReference, [core.String]),
-    enablePersistence: dart.fnType(async.Future$(core.Null), [], [dart.nullable(dart.anonymousJSType("PersistenceSettings"))]),
-    snapshotsInSync: dart.fnType(async.Stream$(dart.void), []),
-    clearPersistence: dart.fnType(async.Future$(core.Null), []),
-    runTransaction: dart.fnType(async.Future, [dart.fnType(dart.dynamic, [dart.nullable(firestore.Transaction)])]),
-    settings: dart.fnType(dart.void, [dart.anonymousJSType("Settings")]),
-    enableNetwork: dart.fnType(async.Future, []),
-    disableNetwork: dart.fnType(async.Future, []),
-    terminate: dart.fnType(async.Future$(core.Null), []),
-    waitForPendingWrites: dart.fnType(async.Future$(core.Null), [])
-  }));
-  dart.setGetterSignature(firestore.Firestore, () => ({
-    __proto__: dart.getGetters(firestore.Firestore.__proto__),
-    app: app.App
-  }));
-  dart.setLibraryUri(firestore.Firestore, I[1]);
-  dart.defineLazy(firestore.Firestore, {
-    /*firestore.Firestore._expando*/get _expando() {
-      return new (T$.ExpandoOfFirestore()).new();
-    }
-  }, false);
-  var _wrapUpdateFunctionCall = dart.privateName(firestore, "_wrapUpdateFunctionCall");
-  firestore._Updatable = class _Updatable extends core.Object {
-    [_wrapUpdateFunctionCall](T, jsObject, data, documentRef = null) {
-      if (data == null) dart.nullFailed(I[0], 507, 64, "data");
-      let args = [utils$.jsify(data)];
-      if (documentRef != null) {
-        args[$insert](0, documentRef.jsObject);
-      }
-      return dart.nullable(T).as(utils.callMethod(core.Object.as(jsObject), "update", args));
-    }
-  };
-  (firestore._Updatable.new = function() {
-    ;
-  }).prototype = firestore._Updatable.prototype;
-  dart.addTypeTests(firestore._Updatable);
-  dart.addTypeCaches(firestore._Updatable);
-  dart.setMethodSignature(firestore._Updatable, () => ({
-    __proto__: dart.getMethods(firestore._Updatable.__proto__),
-    [_wrapUpdateFunctionCall]: dart.gFnType(T => [dart.nullable(T), [dart.dynamic, core.Map$(core.String, dart.dynamic)], [dart.nullable(firestore.DocumentReference)]], T => [dart.nullable(core.Object)])
-  }));
-  dart.setLibraryUri(firestore._Updatable, I[1]);
-  const JsObjectWrapper__Updatable$36 = class JsObjectWrapper__Updatable extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.WriteBatch, "firebase.firestore.WriteBatch")) {};
-  (JsObjectWrapper__Updatable$36.fromJsObject = function(jsObject) {
-    JsObjectWrapper__Updatable$36.__proto__.fromJsObject.call(this, jsObject);
-  }).prototype = JsObjectWrapper__Updatable$36.prototype;
-  dart.applyMixin(JsObjectWrapper__Updatable$36, firestore._Updatable);
-  firestore.WriteBatch = class WriteBatch extends JsObjectWrapper__Updatable$36 {
-    static getInstance(jsObject) {
-      let t11, t10, t9, t8;
-      if (jsObject == null) dart.nullFailed(I[0], 113, 68, "jsObject");
-      t8 = firestore.WriteBatch._expando;
-      t9 = jsObject;
-      t10 = t8._get(t9);
-      return t10 == null ? (t11 = new firestore.WriteBatch._fromJsObject(jsObject), t8._set(t9, t11), t11) : t10;
-    }
-    commit() {
-      return utils.handleThenable(core.Null, this.jsObject.commit());
-    }
-    delete(documentRef) {
-      if (documentRef == null) dart.nullFailed(I[0], 122, 39, "documentRef");
-      return firestore.WriteBatch.getInstance(this.jsObject.delete(documentRef.jsObject));
-    }
-    set(documentRef, data, options = null) {
-      if (documentRef == null) dart.nullFailed(I[0], 125, 36, "documentRef");
-      if (data == null) dart.nullFailed(I[0], 125, 70, "data");
-      let jsObjectSet = options != null ? this.jsObject.set(documentRef.jsObject, utils$.jsify(data), options) : this.jsObject.set(documentRef.jsObject, utils$.jsify(data));
-      return firestore.WriteBatch.getInstance(jsObjectSet);
-    }
-    update(documentRef, data) {
-      if (documentRef == null) dart.nullFailed(I[0], 133, 39, "documentRef");
-      if (data == null) dart.nullFailed(I[0], 133, 73, "data");
-      return firestore.WriteBatch.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.WriteBatch, "firebase.firestore.WriteBatch").as(this[_wrapUpdateFunctionCall](dart.dynamic, this.jsObject, data, documentRef)));
-    }
-  };
-  (firestore.WriteBatch._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 117, 63, "jsObject");
-    firestore.WriteBatch.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.WriteBatch.prototype;
-  dart.addTypeTests(firestore.WriteBatch);
-  dart.addTypeCaches(firestore.WriteBatch);
-  dart.setMethodSignature(firestore.WriteBatch, () => ({
-    __proto__: dart.getMethods(firestore.WriteBatch.__proto__),
-    commit: dart.fnType(async.Future$(core.Null), []),
-    delete: dart.fnType(firestore.WriteBatch, [firestore.DocumentReference]),
-    set: dart.fnType(firestore.WriteBatch, [firestore.DocumentReference, core.Map$(core.String, dart.dynamic)], [dart.nullable(dart.anonymousJSType("SetOptions"))]),
-    update: dart.fnType(firestore.WriteBatch, [firestore.DocumentReference, core.Map$(core.String, dart.dynamic)])
-  }));
-  dart.setLibraryUri(firestore.WriteBatch, I[1]);
-  dart.defineLazy(firestore.WriteBatch, {
-    /*firestore.WriteBatch._expando*/get _expando() {
-      return new (T$.ExpandoOfWriteBatch()).new();
-    }
-  }, false);
-  var _createSnapshotStream = dart.privateName(firestore, "_createSnapshotStream");
-  const JsObjectWrapper__Updatable$36$ = class JsObjectWrapper__Updatable extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentReference, "firebase.firestore.DocumentReference")) {};
-  (JsObjectWrapper__Updatable$36$.fromJsObject = function(jsObject) {
-    JsObjectWrapper__Updatable$36$.__proto__.fromJsObject.call(this, jsObject);
-  }).prototype = JsObjectWrapper__Updatable$36$.prototype;
-  dart.applyMixin(JsObjectWrapper__Updatable$36$, firestore._Updatable);
-  firestore.DocumentReference = class DocumentReference extends JsObjectWrapper__Updatable$36$ {
-    get firestore() {
-      return firestore.Firestore.getInstance(this.jsObject.firestore);
-    }
-    get id() {
-      return this.jsObject.id;
-    }
-    get parent() {
-      return firestore.CollectionReference.getInstance(this.jsObject.parent);
-    }
-    get path() {
-      return this.jsObject.path;
-    }
-    static getInstance(jsObject) {
-      let t11, t10, t9, t8;
-      if (jsObject == null) dart.nullFailed(I[0], 156, 49, "jsObject");
-      t8 = firestore.DocumentReference._expando;
-      t9 = jsObject;
-      t10 = t8._get(t9);
-      return t10 == null ? (t11 = new firestore.DocumentReference._fromJsObject(jsObject), t8._set(t9, t11), t11) : t10;
-    }
-    collection(collectionPath) {
-      if (collectionPath == null) dart.nullFailed(I[0], 164, 42, "collectionPath");
-      return firestore.CollectionReference.getInstance(this.jsObject.collection(collectionPath));
-    }
-    delete() {
-      return utils.handleThenable(core.Null, this.jsObject.delete());
-    }
-    get(options = null) {
-      let jsObjectSet = options != null ? this.jsObject.get(options) : this.jsObject.get();
-      return utils.handleThenable(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot"), jsObjectSet).then(firestore.DocumentSnapshot, C[1] || CT.C1);
-    }
-    get onSnapshot() {
-      return this[_createSnapshotStream]().stream;
-    }
-    get onMetadataChangesSnapshot() {
-      return this[_createSnapshotStream]({includeMetadataChanges: true}).stream;
-    }
-    [_createSnapshotStream](options = null) {
-      let onSnapshotUnsubscribe = null;
-      function onSnapshotUnsubscribe$35get() {
-        let t9;
-        t9 = onSnapshotUnsubscribe;
-        return t9 == null ? dart.throw(new _internal.LateError.localNI("onSnapshotUnsubscribe")) : t9;
-      }
-      dart.fn(onSnapshotUnsubscribe$35get, T$.VoidToFn());
-      function onSnapshotUnsubscribe$35set(t10) {
-        if (t10 == null) dart.nullFailed(I[0], 187, 23, "null");
-        return onSnapshotUnsubscribe = t10;
-      }
-      dart.fn(onSnapshotUnsubscribe$35set, T$.FnTodynamic());
-      let controller = null;
-      function controller$35get() {
-        let t13;
-        t13 = controller;
-        return t13 == null ? dart.throw(new _internal.LateError.localNI("controller")) : t13;
-      }
-      dart.fn(controller$35get, T$.VoidToStreamControllerOfDocumentSnapshot());
-      function controller$35set(t14) {
-        if (t14 == null) dart.nullFailed(I[0], 189, 45, "null");
-        return controller = t14;
-      }
-      dart.fn(controller$35set, T$.StreamControllerOfDocumentSnapshotTodynamic());
-      let nextWrapper = js.allowInterop(T$.DocumentSnapshotJsImplToNull(), dart.fn(snapshot => {
-        if (snapshot == null) dart.nullFailed(I[0], 192, 64, "snapshot");
-        controller$35get().add(firestore.DocumentSnapshot.getInstance(snapshot));
-      }, T$.DocumentSnapshotJsImplToNull()));
-      let errorWrapper = js.allowInterop(T$.dynamicTovoid(), dart.fn(e => controller$35get().addError(core.Object.as(e)), T$.dynamicTovoid()));
-      const startListen = () => {
-        onSnapshotUnsubscribe$35set(options != null ? this.jsObject.onSnapshot(options, dart.assertInterop(nextWrapper), dart.assertInterop(errorWrapper)) : this.jsObject.onSnapshot(dart.assertInterop(nextWrapper), dart.assertInterop(errorWrapper)));
-      };
-      dart.fn(startListen, T$.VoidTovoid());
-      function stopListen() {
-        onSnapshotUnsubscribe$35get()();
-      }
-      dart.fn(stopListen, T$.VoidTovoid());
-      return controller$35set(T$.StreamControllerOfDocumentSnapshot().broadcast({onListen: startListen, onCancel: stopListen, sync: true}));
-    }
-    set(data, options = null) {
-      if (data == null) dart.nullFailed(I[0], 215, 41, "data");
-      let jsObjectSet = options != null ? this.jsObject.set(utils$.jsify(data), options) : this.jsObject.set(utils$.jsify(data));
-      return utils.handleThenable(core.Null, jsObjectSet);
-    }
-    update(data) {
-      if (data == null) dart.nullFailed(I[0], 223, 44, "data");
-      return utils.handleThenable(core.Null, dart.lazyJSType(() => dart.global.Promise, "Promise").as(this[_wrapUpdateFunctionCall](dart.dynamic, this.jsObject, data)));
-    }
-  };
-  (firestore.DocumentReference._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 161, 49, "jsObject");
-    firestore.DocumentReference.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.DocumentReference.prototype;
-  dart.addTypeTests(firestore.DocumentReference);
-  dart.addTypeCaches(firestore.DocumentReference);
-  dart.setMethodSignature(firestore.DocumentReference, () => ({
-    __proto__: dart.getMethods(firestore.DocumentReference.__proto__),
-    collection: dart.fnType(dart.nullable(firestore.CollectionReference$(dart.lazyJSType(() => dart.global.firebase.firestore.CollectionReference, "firebase.firestore.CollectionReference"))), [core.String]),
-    delete: dart.fnType(async.Future$(core.Null), []),
-    get: dart.fnType(async.Future$(firestore.DocumentSnapshot), [], [dart.nullable(dart.anonymousJSType("GetOptions"))]),
-    [_createSnapshotStream]: dart.fnType(async.StreamController$(firestore.DocumentSnapshot), [], [dart.nullable(dart.anonymousJSType("DocumentListenOptions"))]),
-    set: dart.fnType(async.Future$(core.Null), [core.Map$(core.String, dart.dynamic)], [dart.nullable(dart.anonymousJSType("SetOptions"))]),
-    update: dart.fnType(async.Future$(core.Null), [core.Map$(core.String, dart.dynamic)])
-  }));
-  dart.setGetterSignature(firestore.DocumentReference, () => ({
-    __proto__: dart.getGetters(firestore.DocumentReference.__proto__),
-    firestore: firestore.Firestore,
-    id: core.String,
-    parent: dart.nullable(firestore.CollectionReference$(dart.lazyJSType(() => dart.global.firebase.firestore.CollectionReference, "firebase.firestore.CollectionReference"))),
-    path: core.String,
-    onSnapshot: async.Stream$(firestore.DocumentSnapshot),
-    onMetadataChangesSnapshot: async.Stream$(firestore.DocumentSnapshot)
-  }));
-  dart.setLibraryUri(firestore.DocumentReference, I[1]);
-  dart.defineLazy(firestore.DocumentReference, {
-    /*firestore.DocumentReference._expando*/get _expando() {
-      return new (T$.ExpandoOfDocumentReference()).new();
-    }
-  }, false);
-  var __Query_onSnapshot = dart.privateName(firestore, "_#Query#onSnapshot");
-  var __Query_onSnapshotMetadata = dart.privateName(firestore, "_#Query#onSnapshotMetadata");
-  var _wrapPaginatingFunctionCall = dart.privateName(firestore, "_wrapPaginatingFunctionCall");
-  const _is_Query_default = Symbol('_is_Query_default');
-  firestore.Query$ = dart.generic(T => {
-    class Query extends js$.JsObjectWrapper$(T) {
-      get firestore() {
-        return firestore.Firestore.getInstance(this.jsObject.firestore);
-      }
-      endAt(opts) {
-        let snapshot = opts && 'snapshot' in opts ? opts.snapshot : null;
-        let fieldValues = opts && 'fieldValues' in opts ? opts.fieldValues : null;
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query").as(this[_wrapPaginatingFunctionCall](dart.dynamic, "endAt", snapshot, fieldValues)));
-      }
-      endBefore(opts) {
-        let snapshot = opts && 'snapshot' in opts ? opts.snapshot : null;
-        let fieldValues = opts && 'fieldValues' in opts ? opts.fieldValues : null;
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query").as(this[_wrapPaginatingFunctionCall](dart.dynamic, "endBefore", snapshot, fieldValues)));
-      }
-      get(options = null) {
-        return utils.handleThenable(dart.lazyJSType(() => dart.global.firebase.firestore.QuerySnapshot, "firebase.firestore.QuerySnapshot"), this.jsObject.get()).then(firestore.QuerySnapshot, C[2] || CT.C2);
-      }
-      limit(limit) {
-        if (limit == null) dart.nullFailed(I[0], 246, 19, "limit");
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(this.jsObject.limit(limit));
-      }
-      limitToLast(limit) {
-        if (limit == null) dart.nullFailed(I[0], 248, 25, "limit");
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(this.jsObject.limitToLast(limit));
-      }
-      get onSnapshot() {
-        let t17, t16;
-        t16 = this[__Query_onSnapshot];
-        return t16 == null ? (t17 = this[_createSnapshotStream](false).stream, this[__Query_onSnapshot] == null ? this[__Query_onSnapshot] = t17 : dart.throw(new _internal.LateError.fieldADI("onSnapshot"))) : t16;
-      }
-      get onSnapshotMetadata() {
-        let t17, t16;
-        t16 = this[__Query_onSnapshotMetadata];
-        return t16 == null ? (t17 = this[_createSnapshotStream](true).stream, this[__Query_onSnapshotMetadata] == null ? this[__Query_onSnapshotMetadata] = t17 : dart.throw(new _internal.LateError.fieldADI("onSnapshotMetadata"))) : t16;
-      }
-      [_createSnapshotStream](includeMetadataChanges) {
-        if (includeMetadataChanges == null) dart.nullFailed(I[0], 258, 10, "includeMetadataChanges");
-        let onSnapshotUnsubscribe = null;
-        function onSnapshotUnsubscribe$35get() {
-          let t17;
-          t17 = onSnapshotUnsubscribe;
-          return t17 == null ? dart.throw(new _internal.LateError.localNI("onSnapshotUnsubscribe")) : t17;
-        }
-        dart.fn(onSnapshotUnsubscribe$35get, T$.VoidToFn());
-        function onSnapshotUnsubscribe$35set(t18) {
-          if (t18 == null) dart.nullFailed(I[0], 260, 23, "null");
-          return onSnapshotUnsubscribe = t18;
-        }
-        dart.fn(onSnapshotUnsubscribe$35set, T$.FnTodynamic());
-        let controller = null;
-        function controller$35get() {
-          let t21;
-          t21 = controller;
-          return t21 == null ? dart.throw(new _internal.LateError.localNI("controller")) : t21;
-        }
-        dart.fn(controller$35get, T$.VoidToStreamControllerOfQuerySnapshot());
-        function controller$35set(t22) {
-          if (t22 == null) dart.nullFailed(I[0], 262, 42, "null");
-          return controller = t22;
-        }
-        dart.fn(controller$35set, T$.StreamControllerOfQuerySnapshotTodynamic());
-        let nextWrapper = js.allowInterop(T$.QuerySnapshotJsImplToNull(), dart.fn(snapshot => {
-          if (snapshot == null) dart.nullFailed(I[0], 265, 61, "snapshot");
-          controller$35get().add(new firestore.QuerySnapshot._fromJsObject(snapshot));
-        }, T$.QuerySnapshotJsImplToNull()));
-        let errorWrapper = js.allowInterop(T$.dynamicTovoid(), dart.fn(e => controller$35get().addError(core.Object.as(e)), T$.dynamicTovoid()));
-        let options = {includeMetadataChanges: includeMetadataChanges};
-        const startListen = () => {
-          onSnapshotUnsubscribe$35set(this.jsObject.onSnapshot(options, dart.assertInterop(nextWrapper), dart.assertInterop(errorWrapper)));
-        };
-        dart.fn(startListen, T$.VoidTovoid());
-        function stopListen() {
-          onSnapshotUnsubscribe$35get()();
-        }
-        dart.fn(stopListen, T$.VoidTovoid());
-        return controller$35set(T$.StreamControllerOfQuerySnapshot().broadcast({onListen: startListen, onCancel: stopListen, sync: true}));
-      }
-      orderBy(fieldPath, directionStr = null) {
-        let jsObjectOrderBy = directionStr != null ? this.jsObject.orderBy(fieldPath, directionStr) : this.jsObject.orderBy(fieldPath);
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(jsObjectOrderBy);
-      }
-      startAfter(opts) {
-        let snapshot = opts && 'snapshot' in opts ? opts.snapshot : null;
-        let fieldValues = opts && 'fieldValues' in opts ? opts.fieldValues : null;
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query").as(this[_wrapPaginatingFunctionCall](dart.dynamic, "startAfter", snapshot, fieldValues)));
-      }
-      startAt(opts) {
-        let snapshot = opts && 'snapshot' in opts ? opts.snapshot : null;
-        let fieldValues = opts && 'fieldValues' in opts ? opts.fieldValues : null;
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query").as(this[_wrapPaginatingFunctionCall](dart.dynamic, "startAt", snapshot, fieldValues)));
-      }
-      where(fieldPath, opStr, value) {
-        if (opStr == null) dart.nullFailed(I[0], 305, 45, "opStr");
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(this.jsObject.where(fieldPath, opStr, utils$.jsify(value)));
-      }
-      [_wrapPaginatingFunctionCall](S, method, snapshot, fieldValues) {
-        if (method == null) dart.nullFailed(I[0], 313, 14, "method");
-        if (snapshot == null && fieldValues == null) {
-          dart.throw(new core.ArgumentError.new("Please provide either snapshot or fieldValues parameter."));
-        }
-        let args = snapshot != null ? T$.JSArrayOfDocumentSnapshotJsImpl().of([snapshot.jsObject]) : dart.nullCheck(fieldValues)[$map](dart.dynamic, C[0] || CT.C0)[$toList]();
-        return dart.nullable(S).as(utils.callMethod(this.jsObject, method, args));
-      }
-    }
-    (Query.fromJsObject = function(jsObject) {
-      if (jsObject == null) dart.nullFailed(I[0], 232, 24, "jsObject");
-      this[__Query_onSnapshot] = null;
-      this[__Query_onSnapshotMetadata] = null;
-      Query.__proto__.fromJsObject.call(this, jsObject);
-      ;
-    }).prototype = Query.prototype;
-    dart.addTypeTests(Query);
-    Query.prototype[_is_Query_default] = true;
-    dart.addTypeCaches(Query);
-    dart.setMethodSignature(Query, () => ({
-      __proto__: dart.getMethods(Query.__proto__),
-      endAt: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [], {fieldValues: dart.nullable(core.List), snapshot: dart.nullable(firestore.DocumentSnapshot)}, {}),
-      endBefore: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [], {fieldValues: dart.nullable(core.List), snapshot: dart.nullable(firestore.DocumentSnapshot)}, {}),
-      get: dart.fnType(async.Future$(firestore.QuerySnapshot), [], [dart.nullable(dart.anonymousJSType("GetOptions"))]),
-      limit: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [core.num]),
-      limitToLast: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [core.num]),
-      [_createSnapshotStream]: dart.fnType(async.StreamController$(firestore.QuerySnapshot), [core.bool]),
-      orderBy: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [dart.dynamic], [dart.nullable(core.String)]),
-      startAfter: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [], {fieldValues: dart.nullable(core.List), snapshot: dart.nullable(firestore.DocumentSnapshot)}, {}),
-      startAt: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [], {fieldValues: dart.nullable(core.List), snapshot: dart.nullable(firestore.DocumentSnapshot)}, {}),
-      where: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [dart.dynamic, core.String, dart.dynamic]),
-      [_wrapPaginatingFunctionCall]: dart.gFnType(S => [dart.nullable(S), [core.String, dart.nullable(firestore.DocumentSnapshot), dart.nullable(core.List)]], S => [dart.nullable(core.Object)])
-    }));
-    dart.setGetterSignature(Query, () => ({
-      __proto__: dart.getGetters(Query.__proto__),
-      firestore: firestore.Firestore,
-      onSnapshot: async.Stream$(firestore.QuerySnapshot),
-      onSnapshotMetadata: async.Stream$(firestore.QuerySnapshot)
-    }));
-    dart.setLibraryUri(Query, I[1]);
-    dart.setFieldSignature(Query, () => ({
-      __proto__: dart.getFields(Query.__proto__),
-      [__Query_onSnapshot]: dart.fieldType(dart.nullable(async.Stream$(firestore.QuerySnapshot))),
-      [__Query_onSnapshotMetadata]: dart.fieldType(dart.nullable(async.Stream$(firestore.QuerySnapshot)))
-    }));
-    return Query;
-  });
-  firestore.Query = firestore.Query$();
-  dart.addTypeTests(firestore.Query, _is_Query_default);
-  const _is_CollectionReference_default = Symbol('_is_CollectionReference_default');
-  firestore.CollectionReference$ = dart.generic(T => {
-    class CollectionReference extends firestore.Query$(T) {
-      get id() {
-        return this.jsObject.id;
-      }
-      get parent() {
-        return firestore.DocumentReference.getInstance(this.jsObject.parent);
-      }
-      get path() {
-        return this.jsObject.path;
-      }
-      static getInstance(jsObject) {
-        let t27, t26, t25, t24;
-        if (jsObject == null) dart.nullFailed(I[0], 339, 51, "jsObject");
-        t24 = firestore.CollectionReference._expando;
-        t25 = jsObject;
-        t26 = t24._get(t25);
-        return t26 == null ? (t27 = new (T$.CollectionReferenceOfCollectionReferenceJsImpl())._fromJsObject(jsObject), t24._set(t25, t27), t27) : t26;
-      }
-      static new() {
-        return new (firestore.CollectionReference$(T))._fromJsObject(new dart.global.firebase.firestore.CollectionReference());
-      }
-      add(data) {
-        if (data == null) dart.nullFailed(I[0], 350, 54, "data");
-        return utils.handleThenable(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentReference, "firebase.firestore.DocumentReference"), this.jsObject.add(utils$.jsify(data))).then(firestore.DocumentReference, C[3] || CT.C3);
-      }
-      doc(documentPath = null) {
-        let jsObjectDoc = documentPath != null ? this.jsObject.doc(documentPath) : this.jsObject.doc();
-        return firestore.DocumentReference.getInstance(jsObjectDoc);
-      }
-      isEqual(other) {
-        if (other == null) dart.nullFailed(I[0], 361, 36, "other");
-        return this.jsObject.isEqual(other.jsObject);
-      }
-    }
-    (CollectionReference._fromJsObject = function(jsObject) {
-      if (jsObject == null) dart.nullFailed(I[0], 347, 51, "jsObject");
-      CollectionReference.__proto__.fromJsObject.call(this, T.as(jsObject));
-      ;
-    }).prototype = CollectionReference.prototype;
-    dart.addTypeTests(CollectionReference);
-    CollectionReference.prototype[_is_CollectionReference_default] = true;
-    dart.addTypeCaches(CollectionReference);
-    dart.setMethodSignature(CollectionReference, () => ({
-      __proto__: dart.getMethods(CollectionReference.__proto__),
-      add: dart.fnType(async.Future$(firestore.DocumentReference), [core.Map$(core.String, dart.dynamic)]),
-      doc: dart.fnType(firestore.DocumentReference, [], [dart.nullable(core.String)]),
-      isEqual: dart.fnType(core.bool, [firestore.CollectionReference$(dart.lazyJSType(() => dart.global.firebase.firestore.CollectionReference, "firebase.firestore.CollectionReference"))])
-    }));
-    dart.setGetterSignature(CollectionReference, () => ({
-      __proto__: dart.getGetters(CollectionReference.__proto__),
-      id: core.String,
-      parent: dart.nullable(firestore.DocumentReference),
-      path: core.String
-    }));
-    dart.setLibraryUri(CollectionReference, I[1]);
-    return CollectionReference;
-  });
-  firestore.CollectionReference = firestore.CollectionReference$();
-  dart.defineLazy(firestore.CollectionReference, {
-    /*firestore.CollectionReference._expando*/get _expando() {
-      return new (T$.ExpandoOfCollectionReferenceOfCollectionReferenceJsImpl()).new();
-    }
-  }, false);
-  dart.addTypeTests(firestore.CollectionReference, _is_CollectionReference_default);
-  firestore.DocumentChange = class DocumentChange extends js$.JsObjectWrapper$(dart.anonymousJSType("DocumentChangeJsImpl")) {
-    get type() {
-      return this.jsObject.type;
-    }
-    get doc() {
-      return firestore.DocumentSnapshot.getInstance(this.jsObject.doc);
-    }
-    get oldIndex() {
-      return this.jsObject.oldIndex;
-    }
-    get newIndex() {
-      return this.jsObject.newIndex;
-    }
-    static getInstance(jsObject) {
-      let t27, t26, t25, t24;
-      if (jsObject == null) dart.nullFailed(I[0], 378, 46, "jsObject");
-      t24 = firestore.DocumentChange._expando;
-      t25 = jsObject;
-      t26 = t24._get(t25);
-      return t26 == null ? (t27 = new firestore.DocumentChange._fromJsObject(jsObject), t24._set(t25, t27), t27) : t26;
-    }
-  };
-  (firestore.DocumentChange._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 382, 71, "jsObject");
-    firestore.DocumentChange.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.DocumentChange.prototype;
-  dart.addTypeTests(firestore.DocumentChange);
-  dart.addTypeCaches(firestore.DocumentChange);
-  dart.setGetterSignature(firestore.DocumentChange, () => ({
-    __proto__: dart.getGetters(firestore.DocumentChange.__proto__),
-    type: core.String,
-    doc: dart.nullable(firestore.DocumentSnapshot),
-    oldIndex: core.num,
-    newIndex: core.num
-  }));
-  dart.setLibraryUri(firestore.DocumentChange, I[1]);
-  dart.defineLazy(firestore.DocumentChange, {
-    /*firestore.DocumentChange._expando*/get _expando() {
-      return new (T$.ExpandoOfDocumentChange()).new();
-    }
-  }, false);
-  firestore.DocumentSnapshot = class DocumentSnapshot extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot")) {
-    get exists() {
-      return this.jsObject.exists;
-    }
-    get id() {
-      return this.jsObject.id;
-    }
-    get metadata() {
-      return this.jsObject.metadata;
-    }
-    get ref() {
-      return firestore.DocumentReference.getInstance(this.jsObject.ref);
-    }
-    static getInstance(jsObject) {
-      let t27, t26, t25, t24;
-      if (jsObject == null) dart.nullFailed(I[0], 400, 48, "jsObject");
-      t24 = firestore.DocumentSnapshot._expando;
-      t25 = jsObject;
-      t26 = t24._get(t25);
-      return t26 == null ? (t27 = new firestore.DocumentSnapshot._fromJsObject(jsObject), t24._set(t25, t27), t27) : t26;
-    }
-    data() {
-      return T$.MapNOfString$dynamic().as(utils$.dartify(this.jsObject.data()));
-    }
-    get(fieldPath) {
-      return utils$.dartify(this.jsObject.get(fieldPath));
-    }
-    isEqual(other) {
-      if (other == null) dart.nullFailed(I[0], 413, 33, "other");
-      return this.jsObject.isEqual(other.jsObject);
-    }
-  };
-  (firestore.DocumentSnapshot._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 405, 48, "jsObject");
-    firestore.DocumentSnapshot.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.DocumentSnapshot.prototype;
-  dart.addTypeTests(firestore.DocumentSnapshot);
-  dart.addTypeCaches(firestore.DocumentSnapshot);
-  dart.setMethodSignature(firestore.DocumentSnapshot, () => ({
-    __proto__: dart.getMethods(firestore.DocumentSnapshot.__proto__),
-    data: dart.fnType(dart.nullable(core.Map$(core.String, dart.dynamic)), []),
-    get: dart.fnType(dart.dynamic, [dart.dynamic]),
-    isEqual: dart.fnType(core.bool, [firestore.DocumentSnapshot])
-  }));
-  dart.setGetterSignature(firestore.DocumentSnapshot, () => ({
-    __proto__: dart.getGetters(firestore.DocumentSnapshot.__proto__),
-    exists: core.bool,
-    id: core.String,
-    metadata: dart.lazyJSType(() => dart.global.firebase.firestore.SnapshotMetadata, "firebase.firestore.SnapshotMetadata"),
-    ref: dart.nullable(firestore.DocumentReference)
-  }));
-  dart.setLibraryUri(firestore.DocumentSnapshot, I[1]);
-  dart.defineLazy(firestore.DocumentSnapshot, {
-    /*firestore.DocumentSnapshot._expando*/get _expando() {
-      return new (T$.ExpandoOfDocumentSnapshot()).new();
-    }
-  }, false);
-  firestore.QuerySnapshot = class QuerySnapshot extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.QuerySnapshot, "firebase.firestore.QuerySnapshot")) {
-    docChanges(options = null) {
-      let changes = options != null ? this.jsObject.docChanges(dart.nullable(dart.anonymousJSType("SnapshotListenOptions")).as(utils$.jsify(options))) : this.jsObject.docChanges();
-      return changes[$map](firestore.DocumentChange, dart.fn(e => firestore.DocumentChange.getInstance(dart.anonymousJSType("DocumentChangeJsImpl").as(e)), T$.dynamicToDocumentChange()))[$toList]();
-    }
-    get docs() {
-      return this.jsObject.docs[$map](firestore.DocumentSnapshot, dart.fn(e => firestore.DocumentSnapshot.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot").as(e)), T$.dynamicToDocumentSnapshot()))[$toList]();
-    }
-    get empty() {
-      return this.jsObject.empty;
-    }
-    get metadata() {
-      return this.jsObject.metadata;
-    }
-    get query() {
-      return new (T$.QueryOfQueryJsImpl()).fromJsObject(this.jsObject.query);
-    }
-    get size() {
-      return this.jsObject.size;
-    }
-    static getInstance(jsObject) {
-      let t27, t26, t25, t24;
-      if (jsObject == null) dart.nullFailed(I[0], 451, 45, "jsObject");
-      t24 = firestore.QuerySnapshot._expando;
-      t25 = jsObject;
-      t26 = t24._get(t25);
-      return t26 == null ? (t27 = new firestore.QuerySnapshot._fromJsObject(jsObject), t24._set(t25, t27), t27) : t26;
-    }
-    forEach(callback) {
-      if (callback == null) dart.nullFailed(I[0], 458, 44, "callback");
-      let callbackWrap = js.allowInterop(T$.dynamicTodynamic(), dart.fn(s => callback(firestore.DocumentSnapshot.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot").as(s))), T$.dynamicTodynamic()));
-      return this.jsObject.forEach(dart.assertInterop(callbackWrap));
-    }
-    isEqual(other) {
-      if (other == null) dart.nullFailed(I[0], 464, 30, "other");
-      return this.jsObject.isEqual(other.jsObject);
-    }
-  };
-  (firestore.QuerySnapshot._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 455, 69, "jsObject");
-    firestore.QuerySnapshot.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.QuerySnapshot.prototype;
-  dart.addTypeTests(firestore.QuerySnapshot);
-  dart.addTypeCaches(firestore.QuerySnapshot);
-  dart.setMethodSignature(firestore.QuerySnapshot, () => ({
-    __proto__: dart.getMethods(firestore.QuerySnapshot.__proto__),
-    docChanges: dart.fnType(core.List$(firestore.DocumentChange), [], [dart.nullable(dart.anonymousJSType("SnapshotListenOptions"))]),
-    forEach: dart.fnType(dart.void, [dart.fnType(dart.dynamic, [dart.nullable(firestore.DocumentSnapshot)])]),
-    isEqual: dart.fnType(core.bool, [firestore.QuerySnapshot])
-  }));
-  dart.setGetterSignature(firestore.QuerySnapshot, () => ({
-    __proto__: dart.getGetters(firestore.QuerySnapshot.__proto__),
-    docs: core.List$(dart.nullable(firestore.DocumentSnapshot)),
-    empty: core.bool,
-    metadata: dart.lazyJSType(() => dart.global.firebase.firestore.SnapshotMetadata, "firebase.firestore.SnapshotMetadata"),
-    query: firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")),
-    size: core.num
-  }));
-  dart.setLibraryUri(firestore.QuerySnapshot, I[1]);
-  dart.defineLazy(firestore.QuerySnapshot, {
-    /*firestore.QuerySnapshot._expando*/get _expando() {
-      return new (T$.ExpandoOfQuerySnapshot()).new();
-    }
-  }, false);
-  const JsObjectWrapper__Updatable$36$0 = class JsObjectWrapper__Updatable extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.Transaction, "firebase.firestore.Transaction")) {};
-  (JsObjectWrapper__Updatable$36$0.fromJsObject = function(jsObject) {
-    JsObjectWrapper__Updatable$36$0.__proto__.fromJsObject.call(this, jsObject);
-  }).prototype = JsObjectWrapper__Updatable$36$0.prototype;
-  dart.applyMixin(JsObjectWrapper__Updatable$36$0, firestore._Updatable);
-  firestore.Transaction = class Transaction extends JsObjectWrapper__Updatable$36$0 {
-    static getInstance(jsObject) {
-      let t27, t26, t25, t24;
-      if (jsObject == null) dart.nullFailed(I[0], 472, 70, "jsObject");
-      t24 = firestore.Transaction._expando;
-      t25 = jsObject;
-      t26 = t24._get(t25);
-      return t26 == null ? (t27 = new firestore.Transaction._fromJsObject(jsObject), t24._set(t25, t27), t27) : t26;
-    }
-    delete(documentRef) {
-      if (documentRef == null) dart.nullFailed(I[0], 479, 40, "documentRef");
-      return firestore.Transaction.getInstance(this.jsObject.delete(documentRef.jsObject));
-    }
-    get(documentRef) {
-      if (documentRef == null) dart.nullFailed(I[0], 482, 50, "documentRef");
-      return utils.handleThenable(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot"), this.jsObject.get(documentRef.jsObject)).then(firestore.DocumentSnapshot, C[1] || CT.C1);
-    }
-    set(documentRef, data, options = null) {
-      if (documentRef == null) dart.nullFailed(I[0], 487, 37, "documentRef");
-      if (data == null) dart.nullFailed(I[0], 487, 71, "data");
-      let jsObjectSet = options != null ? this.jsObject.set(documentRef.jsObject, utils$.jsify(data), options) : this.jsObject.set(documentRef.jsObject, utils$.jsify(data));
-      return firestore.Transaction.getInstance(jsObjectSet);
-    }
-    update(documentRef, data) {
-      if (documentRef == null) dart.nullFailed(I[0], 496, 29, "documentRef");
-      if (data == null) dart.nullFailed(I[0], 496, 63, "data");
-      return firestore.Transaction.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.Transaction, "firebase.firestore.Transaction").as(this[_wrapUpdateFunctionCall](dart.dynamic, this.jsObject, data, documentRef)));
-    }
-  };
-  (firestore.Transaction._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 476, 65, "jsObject");
-    firestore.Transaction.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.Transaction.prototype;
-  dart.addTypeTests(firestore.Transaction);
-  dart.addTypeCaches(firestore.Transaction);
-  dart.setMethodSignature(firestore.Transaction, () => ({
-    __proto__: dart.getMethods(firestore.Transaction.__proto__),
-    delete: dart.fnType(firestore.Transaction, [firestore.DocumentReference]),
-    get: dart.fnType(async.Future$(firestore.DocumentSnapshot), [firestore.DocumentReference]),
-    set: dart.fnType(firestore.Transaction, [firestore.DocumentReference, core.Map$(core.String, dart.dynamic)], [dart.nullable(dart.anonymousJSType("SetOptions"))]),
-    update: dart.fnType(firestore.Transaction, [firestore.DocumentReference, core.Map$(core.String, dart.dynamic)])
-  }));
-  dart.setLibraryUri(firestore.Transaction, I[1]);
-  dart.defineLazy(firestore.Transaction, {
-    /*firestore.Transaction._expando*/get _expando() {
-      return new (T$.ExpandoOfTransaction()).new();
-    }
-  }, false);
-  var _jsify = dart.privateName(firestore, "_jsify");
-  firestore._FieldValueDelete = class _FieldValueDelete extends core.Object {
-    [_jsify]() {
-      return dart.global.firebase.firestore.FieldValue.delete();
-    }
-    toString() {
-      return "FieldValue.delete()";
-    }
-  };
-  (firestore._FieldValueDelete.new = function() {
-    ;
-  }).prototype = firestore._FieldValueDelete.prototype;
-  dart.addTypeTests(firestore._FieldValueDelete);
-  dart.addTypeCaches(firestore._FieldValueDelete);
-  firestore._FieldValueDelete[dart.implements] = () => [firestore.FieldValue];
-  dart.setMethodSignature(firestore._FieldValueDelete, () => ({
-    __proto__: dart.getMethods(firestore._FieldValueDelete.__proto__),
-    [_jsify]: dart.fnType(dart.anonymousJSType("FieldValue"), [])
-  }));
-  dart.setLibraryUri(firestore._FieldValueDelete, I[1]);
-  dart.defineExtensionMethods(firestore._FieldValueDelete, ['toString']);
-  firestore._FieldValueServerTimestamp = class _FieldValueServerTimestamp extends core.Object {
-    [_jsify]() {
-      return dart.global.firebase.firestore.FieldValue.serverTimestamp();
-    }
-    toString() {
-      return "FieldValue.serverTimestamp()";
-    }
-  };
-  (firestore._FieldValueServerTimestamp.new = function() {
-    ;
-  }).prototype = firestore._FieldValueServerTimestamp.prototype;
-  dart.addTypeTests(firestore._FieldValueServerTimestamp);
-  dart.addTypeCaches(firestore._FieldValueServerTimestamp);
-  firestore._FieldValueServerTimestamp[dart.implements] = () => [firestore.FieldValue];
-  dart.setMethodSignature(firestore._FieldValueServerTimestamp, () => ({
-    __proto__: dart.getMethods(firestore._FieldValueServerTimestamp.__proto__),
-    [_jsify]: dart.fnType(dart.anonymousJSType("FieldValue"), [])
-  }));
-  dart.setLibraryUri(firestore._FieldValueServerTimestamp, I[1]);
-  dart.defineExtensionMethods(firestore._FieldValueServerTimestamp, ['toString']);
-  firestore._FieldValueArray = class _FieldValueArray extends core.Object {};
-  (firestore._FieldValueArray.new = function(elements) {
-    this.elements = elements;
-    ;
-  }).prototype = firestore._FieldValueArray.prototype;
-  dart.addTypeTests(firestore._FieldValueArray);
-  dart.addTypeCaches(firestore._FieldValueArray);
-  firestore._FieldValueArray[dart.implements] = () => [firestore.FieldValue];
-  dart.setLibraryUri(firestore._FieldValueArray, I[1]);
-  dart.setFieldSignature(firestore._FieldValueArray, () => ({
-    __proto__: dart.getFields(firestore._FieldValueArray.__proto__),
-    elements: dart.finalFieldType(dart.nullable(core.List))
-  }));
-  firestore._FieldValueArrayUnion = class _FieldValueArrayUnion extends firestore._FieldValueArray {
-    [_jsify]() {
-      return dart.nullable(dart.anonymousJSType("FieldValue")).as(utils.callMethod(core.Object.as(dart.global.firebase.firestore.FieldValue), "arrayUnion", core.List.as(utils$.jsify(this.elements))));
-    }
-    toString() {
-      return "FieldValue.arrayUnion(" + dart.str(this.elements) + ")";
-    }
-  };
-  (firestore._FieldValueArrayUnion.new = function(elements) {
-    firestore._FieldValueArrayUnion.__proto__.new.call(this, elements);
-    ;
-  }).prototype = firestore._FieldValueArrayUnion.prototype;
-  dart.addTypeTests(firestore._FieldValueArrayUnion);
-  dart.addTypeCaches(firestore._FieldValueArrayUnion);
-  dart.setMethodSignature(firestore._FieldValueArrayUnion, () => ({
-    __proto__: dart.getMethods(firestore._FieldValueArrayUnion.__proto__),
-    [_jsify]: dart.fnType(dart.nullable(dart.anonymousJSType("FieldValue")), [])
-  }));
-  dart.setLibraryUri(firestore._FieldValueArrayUnion, I[1]);
-  dart.defineExtensionMethods(firestore._FieldValueArrayUnion, ['toString']);
-  firestore._FieldValueArrayRemove = class _FieldValueArrayRemove extends firestore._FieldValueArray {
-    [_jsify]() {
-      return dart.nullable(dart.anonymousJSType("FieldValue")).as(utils.callMethod(core.Object.as(dart.global.firebase.firestore.FieldValue), "arrayRemove", core.List.as(utils$.jsify(this.elements))));
-    }
-    toString() {
-      return "FieldValue.arrayRemove(" + dart.str(this.elements) + ")";
-    }
-  };
-  (firestore._FieldValueArrayRemove.new = function(elements) {
-    firestore._FieldValueArrayRemove.__proto__.new.call(this, elements);
-    ;
-  }).prototype = firestore._FieldValueArrayRemove.prototype;
-  dart.addTypeTests(firestore._FieldValueArrayRemove);
-  dart.addTypeCaches(firestore._FieldValueArrayRemove);
-  dart.setMethodSignature(firestore._FieldValueArrayRemove, () => ({
-    __proto__: dart.getMethods(firestore._FieldValueArrayRemove.__proto__),
-    [_jsify]: dart.fnType(dart.nullable(dart.anonymousJSType("FieldValue")), [])
-  }));
-  dart.setLibraryUri(firestore._FieldValueArrayRemove, I[1]);
-  dart.defineExtensionMethods(firestore._FieldValueArrayRemove, ['toString']);
-  firestore._FieldValueIncrement = class _FieldValueIncrement extends core.Object {
-    [_jsify]() {
-      return dart.global.firebase.firestore.FieldValue.increment(this.n);
-    }
-    toString() {
-      return "FieldValue.increment(" + dart.str(this.n) + ")";
-    }
-  };
-  (firestore._FieldValueIncrement.new = function(n) {
-    if (n == null) dart.nullFailed(I[0], 573, 29, "n");
-    this.n = n;
-    ;
-  }).prototype = firestore._FieldValueIncrement.prototype;
-  dart.addTypeTests(firestore._FieldValueIncrement);
-  dart.addTypeCaches(firestore._FieldValueIncrement);
-  firestore._FieldValueIncrement[dart.implements] = () => [firestore.FieldValue];
-  dart.setMethodSignature(firestore._FieldValueIncrement, () => ({
-    __proto__: dart.getMethods(firestore._FieldValueIncrement.__proto__),
-    [_jsify]: dart.fnType(dart.anonymousJSType("FieldValue"), [])
-  }));
-  dart.setLibraryUri(firestore._FieldValueIncrement, I[1]);
-  dart.setFieldSignature(firestore._FieldValueIncrement, () => ({
-    __proto__: dart.getFields(firestore._FieldValueIncrement.__proto__),
-    n: dart.finalFieldType(core.num)
-  }));
-  dart.defineExtensionMethods(firestore._FieldValueIncrement, ['toString']);
-  firestore.FieldValue = class FieldValue extends core.Object {
-    [_jsify]() {
-      dart.throw(new core.UnimplementedError.new("_jsify() has not been implemented"));
-    }
-    static serverTimestamp() {
-      return firestore.FieldValue._serverTimestamp;
-    }
-    static delete() {
-      return firestore.FieldValue._delete;
-    }
-    static arrayUnion(elements) {
-      return new firestore._FieldValueArrayUnion.new(elements);
-    }
-    static arrayRemove(elements) {
-      return new firestore._FieldValueArrayRemove.new(elements);
-    }
-    static increment(n) {
-      if (n == null) dart.nullFailed(I[0], 608, 35, "n");
-      return new firestore._FieldValueIncrement.new(n);
-    }
-  };
-  (firestore.FieldValue.__ = function() {
-    ;
-  }).prototype = firestore.FieldValue.prototype;
-  dart.addTypeTests(firestore.FieldValue);
-  dart.addTypeCaches(firestore.FieldValue);
-  dart.setMethodSignature(firestore.FieldValue, () => ({
-    __proto__: dart.getMethods(firestore.FieldValue.__proto__),
-    [_jsify]: dart.fnType(dart.nullable(dart.anonymousJSType("FieldValue")), [])
-  }));
-  dart.setLibraryUri(firestore.FieldValue, I[1]);
-  dart.defineLazy(firestore.FieldValue, {
-    /*firestore.FieldValue._serverTimestamp*/get _serverTimestamp() {
-      return new firestore._FieldValueServerTimestamp.new();
+      return C[3] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2], app$.ThemeMode);
     },
-    /*firestore.FieldValue._delete*/get _delete() {
-      return new firestore._FieldValueDelete.new();
+    get C4() {
+      return C[4] = dart.constMap(core.String, T$.BuildContextToWidget(), []);
+    },
+    get C5() {
+      return C[5] = dart.constList([], navigator.NavigatorObserver);
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.Locale.prototype,
+        [Locale__countryCode]: "US",
+        [Locale_scriptCode]: null,
+        [Locale__languageCode]: "en"
+      });
+    },
+    get C6() {
+      return C[6] = dart.constList([C[7] || CT.C7], ui.Locale);
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: platform.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.iOS",
+        index: 2
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: platform.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.linux",
+        index: 3
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: platform.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.macOS",
+        index: 4
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: platform.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.windows",
+        index: 5
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 681,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "axisDirection",
+        [_Location_column]: 11,
+        [_Location_line]: 682,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 11,
+        [_Location_line]: 683,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 680,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: platform.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.android",
+        index: 0
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: platform.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.fuchsia",
+        index: 1
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 31,
+        [_Location_line]: 714,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22], widget_inspector._Location);
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 714,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 59828
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C[20] || CT.C20,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: null,
+        [Icon_icon]: C[23] || CT.C23
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 714,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 7,
+        [_Location_line]: 715,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mini",
+        [_Location_column]: 7,
+        [_Location_line]: 716,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27, C[28] || CT.C28], widget_inspector._Location);
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 713,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 15,
+        [_Location_line]: 744,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31], widget_inspector._Location);
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 743,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 9,
+        [_Location_line]: 741,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 742,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.constList([C[34] || CT.C34, C[35] || CT.C35], widget_inspector._Location);
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[33] || CT.C33,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 740,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 7,
+        [_Location_line]: 739,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 740,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.constList([C[38] || CT.C38, C[39] || CT.C39], widget_inspector._Location);
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[37] || CT.C37,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 738,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 9,
+        [_Location_line]: 775,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "routeInformationProvider",
+        [_Location_column]: 9,
+        [_Location_line]: 776,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "routeInformationParser",
+        [_Location_column]: 9,
+        [_Location_line]: 777,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "routerDelegate",
+        [_Location_column]: 9,
+        [_Location_line]: 778,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backButtonDispatcher",
+        [_Location_column]: 9,
+        [_Location_line]: 779,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 9,
+        [_Location_line]: 780,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 781,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onGenerateTitle",
+        [_Location_column]: 9,
+        [_Location_line]: 782,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textStyle",
+        [_Location_column]: 9,
+        [_Location_line]: 783,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 9,
+        [_Location_line]: 784,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "locale",
+        [_Location_column]: 9,
+        [_Location_line]: 785,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "localizationsDelegates",
+        [_Location_column]: 9,
+        [_Location_line]: 786,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "localeResolutionCallback",
+        [_Location_column]: 9,
+        [_Location_line]: 787,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "localeListResolutionCallback",
+        [_Location_column]: 9,
+        [_Location_line]: 788,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "supportedLocales",
+        [_Location_column]: 9,
+        [_Location_line]: 789,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "showPerformanceOverlay",
+        [_Location_column]: 9,
+        [_Location_line]: 790,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "checkerboardRasterCacheImages",
+        [_Location_column]: 9,
+        [_Location_line]: 791,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "checkerboardOffscreenLayers",
+        [_Location_column]: 9,
+        [_Location_line]: 792,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "showSemanticsDebugger",
+        [_Location_column]: 9,
+        [_Location_line]: 793,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "debugShowCheckedModeBanner",
+        [_Location_column]: 9,
+        [_Location_line]: 794,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "inspectorSelectButtonBuilder",
+        [_Location_column]: 9,
+        [_Location_line]: 795,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shortcuts",
+        [_Location_column]: 9,
+        [_Location_line]: 796,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actions",
+        [_Location_column]: 9,
+        [_Location_line]: 797,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "restorationScopeId",
+        [_Location_column]: 9,
+        [_Location_line]: 798,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.constList([C[42] || CT.C42, C[43] || CT.C43, C[44] || CT.C44, C[45] || CT.C45, C[46] || CT.C46, C[47] || CT.C47, C[48] || CT.C48, C[49] || CT.C49, C[50] || CT.C50, C[51] || CT.C51, C[52] || CT.C52, C[53] || CT.C53, C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56, C[57] || CT.C57, C[58] || CT.C58, C[59] || CT.C59, C[60] || CT.C60, C[61] || CT.C61, C[62] || CT.C62, C[63] || CT.C63, C[64] || CT.C64, C[65] || CT.C65], widget_inspector._Location);
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[41] || CT.C41,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 774,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 7,
+        [_Location_line]: 803,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "navigatorKey",
+        [_Location_column]: 7,
+        [_Location_line]: 804,
+        [_Location_file]: null
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "navigatorObservers",
+        [_Location_column]: 7,
+        [_Location_line]: 805,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "pageRouteBuilder",
+        [_Location_column]: 7,
+        [_Location_line]: 806,
+        [_Location_file]: null
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "home",
+        [_Location_column]: 7,
+        [_Location_line]: 809,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "routes",
+        [_Location_column]: 7,
+        [_Location_line]: 810,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "initialRoute",
+        [_Location_column]: 7,
+        [_Location_line]: 811,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onGenerateRoute",
+        [_Location_column]: 7,
+        [_Location_line]: 812,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onGenerateInitialRoutes",
+        [_Location_column]: 7,
+        [_Location_line]: 813,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onUnknownRoute",
+        [_Location_column]: 7,
+        [_Location_line]: 814,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 7,
+        [_Location_line]: 815,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 7,
+        [_Location_line]: 816,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onGenerateTitle",
+        [_Location_column]: 7,
+        [_Location_line]: 817,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textStyle",
+        [_Location_column]: 7,
+        [_Location_line]: 818,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 7,
+        [_Location_line]: 819,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "locale",
+        [_Location_column]: 7,
+        [_Location_line]: 820,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "localizationsDelegates",
+        [_Location_column]: 7,
+        [_Location_line]: 821,
+        [_Location_file]: null
+      });
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "localeResolutionCallback",
+        [_Location_column]: 7,
+        [_Location_line]: 822,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "localeListResolutionCallback",
+        [_Location_column]: 7,
+        [_Location_line]: 823,
+        [_Location_file]: null
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "supportedLocales",
+        [_Location_column]: 7,
+        [_Location_line]: 824,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "showPerformanceOverlay",
+        [_Location_column]: 7,
+        [_Location_line]: 825,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "checkerboardRasterCacheImages",
+        [_Location_column]: 7,
+        [_Location_line]: 826,
+        [_Location_file]: null
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "checkerboardOffscreenLayers",
+        [_Location_column]: 7,
+        [_Location_line]: 827,
+        [_Location_file]: null
+      });
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "showSemanticsDebugger",
+        [_Location_column]: 7,
+        [_Location_line]: 828,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "debugShowCheckedModeBanner",
+        [_Location_column]: 7,
+        [_Location_line]: 829,
+        [_Location_file]: null
+      });
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "inspectorSelectButtonBuilder",
+        [_Location_column]: 7,
+        [_Location_line]: 830,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shortcuts",
+        [_Location_column]: 7,
+        [_Location_line]: 831,
+        [_Location_file]: null
+      });
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actions",
+        [_Location_column]: 7,
+        [_Location_line]: 832,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "restorationScopeId",
+        [_Location_column]: 7,
+        [_Location_line]: 833,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.constList([C[68] || CT.C68, C[69] || CT.C69, C[70] || CT.C70, C[71] || CT.C71, C[72] || CT.C72, C[73] || CT.C73, C[74] || CT.C74, C[75] || CT.C75, C[76] || CT.C76, C[77] || CT.C77, C[78] || CT.C78, C[79] || CT.C79, C[80] || CT.C80, C[81] || CT.C81, C[82] || CT.C82, C[83] || CT.C83, C[84] || CT.C84, C[85] || CT.C85, C[86] || CT.C86, C[87] || CT.C87, C[88] || CT.C88, C[89] || CT.C89, C[90] || CT.C90, C[91] || CT.C91, C[92] || CT.C92, C[93] || CT.C93, C[94] || CT.C94, C[95] || CT.C95, C[96] || CT.C96], widget_inspector._Location);
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[67] || CT.C67,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 802,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 3774462944.0
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 11,
+        [_Location_line]: 844,
+        [_Location_file]: null
+      });
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "interval",
+        [_Location_column]: 11,
+        [_Location_line]: 845,
+        [_Location_file]: null
+      });
+    },
+    get C102() {
+      return C[102] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "divisions",
+        [_Location_column]: 11,
+        [_Location_line]: 846,
+        [_Location_file]: null
+      });
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "subdivisions",
+        [_Location_column]: 11,
+        [_Location_line]: 847,
+        [_Location_file]: null
+      });
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 848,
+        [_Location_file]: null
+      });
+    },
+    get C99() {
+      return C[99] = dart.constList([C[100] || CT.C100, C[101] || CT.C101, C[102] || CT.C102, C[103] || CT.C103, C[104] || CT.C104], widget_inspector._Location);
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[99] || CT.C99,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 843,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C107() {
+      return C[107] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 9,
+        [_Location_line]: 857,
+        [_Location_file]: null
+      });
+    },
+    get C108() {
+      return C[108] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 858,
+        [_Location_file]: null
+      });
+    },
+    get C106() {
+      return C[106] = dart.constList([C[107] || CT.C107, C[108] || CT.C108], widget_inspector._Location);
+    },
+    get C105() {
+      return C[105] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[106] || CT.C106,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 856,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C111() {
+      return C[111] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "behavior",
+        [_Location_column]: 7,
+        [_Location_line]: 855,
+        [_Location_file]: null
+      });
+    },
+    get C112() {
+      return C[112] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 856,
+        [_Location_file]: null
+      });
+    },
+    get C110() {
+      return C[110] = dart.constList([C[111] || CT.C111, C[112] || CT.C112], widget_inspector._Location);
+    },
+    get C109() {
+      return C[109] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[110] || CT.C110,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 854,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart"
+      });
+    },
+    get C114() {
+      return C[114] = dart.const({
+        __proto__: ui.TextDecorationStyle.prototype,
+        [_name$0]: "TextDecorationStyle.double",
+        index: 1
+      });
+    },
+    get C115() {
+      return C[115] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294967040.0
+      });
+    },
+    get C116() {
+      return C[116] = dart.const({
+        __proto__: ui.TextDecoration.prototype,
+        [TextDecoration__mask]: 1
+      });
+    },
+    get C117() {
+      return C[117] = dart.const({
+        __proto__: ui.FontWeight.prototype,
+        [FontWeight_index]: 8
+      });
+    },
+    get C118() {
+      return C[118] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 3506372608.0
+      });
+    },
+    get C113() {
+      return C[113] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: "fallback style; consider putting your text in a Material",
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: C[114] || CT.C114,
+        [TextStyle_decorationColor]: C[115] || CT.C115,
+        [TextStyle_decoration]: C[116] || CT.C116,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: C[117] || CT.C117,
+        [TextStyle_fontSize]: 48,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: "monospace",
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[118] || CT.C118,
+        [TextStyle_inherit]: true
+      });
     }
   }, false);
-  firestore.getFirestoreInstance = function getFirestoreInstance(app = null) {
-    return firestore.Firestore.getInstance(app != null ? dart.global.firebase.firestore(app.jsObject) : dart.global.firebase.firestore());
+  var C = Array(119).fill(void 0);
+  var I = [
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/app.dart",
+    "package:flutter/src/material/app.dart"
+  ];
+  var _name$ = dart.privateName(app$, "_name");
+  app$.ThemeMode = class ThemeMode extends core.Object {
+    toString() {
+      return this[_name$];
+    }
   };
-  firestore.jsifyFieldValue = function jsifyFieldValue(fieldValue) {
-    if (fieldValue == null) dart.nullFailed(I[0], 583, 36, "fieldValue");
-    return fieldValue[_jsify]();
+  (app$.ThemeMode.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 40, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 40, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = app$.ThemeMode.prototype;
+  dart.addTypeTests(app$.ThemeMode);
+  dart.addTypeCaches(app$.ThemeMode);
+  dart.setLibraryUri(app$.ThemeMode, I[1]);
+  dart.setFieldSignature(app$.ThemeMode, () => ({
+    __proto__: dart.getFields(app$.ThemeMode.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(app$.ThemeMode, ['toString']);
+  app$.ThemeMode.system = C[0] || CT.C0;
+  app$.ThemeMode.light = C[1] || CT.C1;
+  app$.ThemeMode.dark = C[2] || CT.C2;
+  app$.ThemeMode.values = C[3] || CT.C3;
+  var navigatorKey$ = dart.privateName(app$, "MaterialApp.navigatorKey");
+  var scaffoldMessengerKey$ = dart.privateName(app$, "MaterialApp.scaffoldMessengerKey");
+  var home$ = dart.privateName(app$, "MaterialApp.home");
+  var routes$ = dart.privateName(app$, "MaterialApp.routes");
+  var initialRoute$ = dart.privateName(app$, "MaterialApp.initialRoute");
+  var onGenerateRoute$ = dart.privateName(app$, "MaterialApp.onGenerateRoute");
+  var onGenerateInitialRoutes$ = dart.privateName(app$, "MaterialApp.onGenerateInitialRoutes");
+  var onUnknownRoute$ = dart.privateName(app$, "MaterialApp.onUnknownRoute");
+  var navigatorObservers$ = dart.privateName(app$, "MaterialApp.navigatorObservers");
+  var routeInformationProvider$ = dart.privateName(app$, "MaterialApp.routeInformationProvider");
+  var routeInformationParser$ = dart.privateName(app$, "MaterialApp.routeInformationParser");
+  var routerDelegate$ = dart.privateName(app$, "MaterialApp.routerDelegate");
+  var backButtonDispatcher$ = dart.privateName(app$, "MaterialApp.backButtonDispatcher");
+  var builder$ = dart.privateName(app$, "MaterialApp.builder");
+  var title$ = dart.privateName(app$, "MaterialApp.title");
+  var onGenerateTitle$ = dart.privateName(app$, "MaterialApp.onGenerateTitle");
+  var theme$0 = dart.privateName(app$, "MaterialApp.theme");
+  var darkTheme$ = dart.privateName(app$, "MaterialApp.darkTheme");
+  var highContrastTheme$ = dart.privateName(app$, "MaterialApp.highContrastTheme");
+  var highContrastDarkTheme$ = dart.privateName(app$, "MaterialApp.highContrastDarkTheme");
+  var themeMode$ = dart.privateName(app$, "MaterialApp.themeMode");
+  var color$ = dart.privateName(app$, "MaterialApp.color");
+  var locale$ = dart.privateName(app$, "MaterialApp.locale");
+  var localizationsDelegates$ = dart.privateName(app$, "MaterialApp.localizationsDelegates");
+  var localeListResolutionCallback$ = dart.privateName(app$, "MaterialApp.localeListResolutionCallback");
+  var localeResolutionCallback$ = dart.privateName(app$, "MaterialApp.localeResolutionCallback");
+  var supportedLocales$ = dart.privateName(app$, "MaterialApp.supportedLocales");
+  var showPerformanceOverlay$ = dart.privateName(app$, "MaterialApp.showPerformanceOverlay");
+  var checkerboardRasterCacheImages$ = dart.privateName(app$, "MaterialApp.checkerboardRasterCacheImages");
+  var checkerboardOffscreenLayers$ = dart.privateName(app$, "MaterialApp.checkerboardOffscreenLayers");
+  var showSemanticsDebugger$ = dart.privateName(app$, "MaterialApp.showSemanticsDebugger");
+  var debugShowCheckedModeBanner$ = dart.privateName(app$, "MaterialApp.debugShowCheckedModeBanner");
+  var shortcuts$ = dart.privateName(app$, "MaterialApp.shortcuts");
+  var actions$ = dart.privateName(app$, "MaterialApp.actions");
+  var restorationScopeId$ = dart.privateName(app$, "MaterialApp.restorationScopeId");
+  var debugShowMaterialGrid$ = dart.privateName(app$, "MaterialApp.debugShowMaterialGrid");
+  var Locale__countryCode = dart.privateName(ui, "Locale._countryCode");
+  var Locale_scriptCode = dart.privateName(ui, "Locale.scriptCode");
+  var Locale__languageCode = dart.privateName(ui, "Locale._languageCode");
+  app$.MaterialApp = class MaterialApp extends framework.StatefulWidget {
+    get navigatorKey() {
+      return this[navigatorKey$];
+    }
+    set navigatorKey(value) {
+      super.navigatorKey = value;
+    }
+    get scaffoldMessengerKey() {
+      return this[scaffoldMessengerKey$];
+    }
+    set scaffoldMessengerKey(value) {
+      super.scaffoldMessengerKey = value;
+    }
+    get home() {
+      return this[home$];
+    }
+    set home(value) {
+      super.home = value;
+    }
+    get routes() {
+      return this[routes$];
+    }
+    set routes(value) {
+      super.routes = value;
+    }
+    get initialRoute() {
+      return this[initialRoute$];
+    }
+    set initialRoute(value) {
+      super.initialRoute = value;
+    }
+    get onGenerateRoute() {
+      return this[onGenerateRoute$];
+    }
+    set onGenerateRoute(value) {
+      super.onGenerateRoute = value;
+    }
+    get onGenerateInitialRoutes() {
+      return this[onGenerateInitialRoutes$];
+    }
+    set onGenerateInitialRoutes(value) {
+      super.onGenerateInitialRoutes = value;
+    }
+    get onUnknownRoute() {
+      return this[onUnknownRoute$];
+    }
+    set onUnknownRoute(value) {
+      super.onUnknownRoute = value;
+    }
+    get navigatorObservers() {
+      return this[navigatorObservers$];
+    }
+    set navigatorObservers(value) {
+      super.navigatorObservers = value;
+    }
+    get routeInformationProvider() {
+      return this[routeInformationProvider$];
+    }
+    set routeInformationProvider(value) {
+      super.routeInformationProvider = value;
+    }
+    get routeInformationParser() {
+      return this[routeInformationParser$];
+    }
+    set routeInformationParser(value) {
+      super.routeInformationParser = value;
+    }
+    get routerDelegate() {
+      return this[routerDelegate$];
+    }
+    set routerDelegate(value) {
+      super.routerDelegate = value;
+    }
+    get backButtonDispatcher() {
+      return this[backButtonDispatcher$];
+    }
+    set backButtonDispatcher(value) {
+      super.backButtonDispatcher = value;
+    }
+    get builder() {
+      return this[builder$];
+    }
+    set builder(value) {
+      super.builder = value;
+    }
+    get title() {
+      return this[title$];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    get onGenerateTitle() {
+      return this[onGenerateTitle$];
+    }
+    set onGenerateTitle(value) {
+      super.onGenerateTitle = value;
+    }
+    get theme() {
+      return this[theme$0];
+    }
+    set theme(value) {
+      super.theme = value;
+    }
+    get darkTheme() {
+      return this[darkTheme$];
+    }
+    set darkTheme(value) {
+      super.darkTheme = value;
+    }
+    get highContrastTheme() {
+      return this[highContrastTheme$];
+    }
+    set highContrastTheme(value) {
+      super.highContrastTheme = value;
+    }
+    get highContrastDarkTheme() {
+      return this[highContrastDarkTheme$];
+    }
+    set highContrastDarkTheme(value) {
+      super.highContrastDarkTheme = value;
+    }
+    get themeMode() {
+      return this[themeMode$];
+    }
+    set themeMode(value) {
+      super.themeMode = value;
+    }
+    get color() {
+      return this[color$];
+    }
+    set color(value) {
+      super.color = value;
+    }
+    get locale() {
+      return this[locale$];
+    }
+    set locale(value) {
+      super.locale = value;
+    }
+    get localizationsDelegates() {
+      return this[localizationsDelegates$];
+    }
+    set localizationsDelegates(value) {
+      super.localizationsDelegates = value;
+    }
+    get localeListResolutionCallback() {
+      return this[localeListResolutionCallback$];
+    }
+    set localeListResolutionCallback(value) {
+      super.localeListResolutionCallback = value;
+    }
+    get localeResolutionCallback() {
+      return this[localeResolutionCallback$];
+    }
+    set localeResolutionCallback(value) {
+      super.localeResolutionCallback = value;
+    }
+    get supportedLocales() {
+      return this[supportedLocales$];
+    }
+    set supportedLocales(value) {
+      super.supportedLocales = value;
+    }
+    get showPerformanceOverlay() {
+      return this[showPerformanceOverlay$];
+    }
+    set showPerformanceOverlay(value) {
+      super.showPerformanceOverlay = value;
+    }
+    get checkerboardRasterCacheImages() {
+      return this[checkerboardRasterCacheImages$];
+    }
+    set checkerboardRasterCacheImages(value) {
+      super.checkerboardRasterCacheImages = value;
+    }
+    get checkerboardOffscreenLayers() {
+      return this[checkerboardOffscreenLayers$];
+    }
+    set checkerboardOffscreenLayers(value) {
+      super.checkerboardOffscreenLayers = value;
+    }
+    get showSemanticsDebugger() {
+      return this[showSemanticsDebugger$];
+    }
+    set showSemanticsDebugger(value) {
+      super.showSemanticsDebugger = value;
+    }
+    get debugShowCheckedModeBanner() {
+      return this[debugShowCheckedModeBanner$];
+    }
+    set debugShowCheckedModeBanner(value) {
+      super.debugShowCheckedModeBanner = value;
+    }
+    get shortcuts() {
+      return this[shortcuts$];
+    }
+    set shortcuts(value) {
+      super.shortcuts = value;
+    }
+    get actions() {
+      return this[actions$];
+    }
+    set actions(value) {
+      super.actions = value;
+    }
+    get restorationScopeId() {
+      return this[restorationScopeId$];
+    }
+    set restorationScopeId(value) {
+      super.restorationScopeId = value;
+    }
+    get debugShowMaterialGrid() {
+      return this[debugShowMaterialGrid$];
+    }
+    set debugShowMaterialGrid(value) {
+      super.debugShowMaterialGrid = value;
+    }
+    createState() {
+      return new app$._MaterialAppState.new();
+    }
+    static createMaterialHeroController() {
+      return new heroes.HeroController.new({createRectTween: dart.fn((begin, end) => new arc.MaterialRectArcTween.new({begin: begin, end: end}), T$.RectNAndRectNToMaterialRectArcTween())});
+    }
   };
-  dart.trackLibraries("packages/cloud_firestore_web/src/interop/utils/utils.dart", {
-    "package:cloud_firestore_web/src/interop/utils/utils.dart": utils$,
-    "package:cloud_firestore_web/src/interop/firestore.dart": firestore
+  (app$.MaterialApp.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let navigatorKey = opts && 'navigatorKey' in opts ? opts.navigatorKey : null;
+    let scaffoldMessengerKey = opts && 'scaffoldMessengerKey' in opts ? opts.scaffoldMessengerKey : null;
+    let home = opts && 'home' in opts ? opts.home : null;
+    let routes = opts && 'routes' in opts ? opts.routes : C[4] || CT.C4;
+    if (routes == null) dart.nullFailed(I[0], 172, 37, "routes");
+    let initialRoute = opts && 'initialRoute' in opts ? opts.initialRoute : null;
+    let onGenerateRoute = opts && 'onGenerateRoute' in opts ? opts.onGenerateRoute : null;
+    let onGenerateInitialRoutes = opts && 'onGenerateInitialRoutes' in opts ? opts.onGenerateInitialRoutes : null;
+    let onUnknownRoute = opts && 'onUnknownRoute' in opts ? opts.onUnknownRoute : null;
+    let navigatorObservers = opts && 'navigatorObservers' in opts ? opts.navigatorObservers : C[5] || CT.C5;
+    if (navigatorObservers == null) dart.nullFailed(I[0], 177, 34, "navigatorObservers");
+    let builder = opts && 'builder' in opts ? opts.builder : null;
+    let title = opts && 'title' in opts ? opts.title : "";
+    if (title == null) dart.nullFailed(I[0], 179, 10, "title");
+    let onGenerateTitle = opts && 'onGenerateTitle' in opts ? opts.onGenerateTitle : null;
+    let color = opts && 'color' in opts ? opts.color : null;
+    let theme = opts && 'theme' in opts ? opts.theme : null;
+    let darkTheme = opts && 'darkTheme' in opts ? opts.darkTheme : null;
+    let highContrastTheme = opts && 'highContrastTheme' in opts ? opts.highContrastTheme : null;
+    let highContrastDarkTheme = opts && 'highContrastDarkTheme' in opts ? opts.highContrastDarkTheme : null;
+    let themeMode = opts && 'themeMode' in opts ? opts.themeMode : C[0] || CT.C0;
+    let locale = opts && 'locale' in opts ? opts.locale : null;
+    let localizationsDelegates = opts && 'localizationsDelegates' in opts ? opts.localizationsDelegates : null;
+    let localeListResolutionCallback = opts && 'localeListResolutionCallback' in opts ? opts.localeListResolutionCallback : null;
+    let localeResolutionCallback = opts && 'localeResolutionCallback' in opts ? opts.localeResolutionCallback : null;
+    let supportedLocales = opts && 'supportedLocales' in opts ? opts.supportedLocales : C[6] || CT.C6;
+    if (supportedLocales == null) dart.nullFailed(I[0], 191, 10, "supportedLocales");
+    let debugShowMaterialGrid = opts && 'debugShowMaterialGrid' in opts ? opts.debugShowMaterialGrid : false;
+    if (debugShowMaterialGrid == null) dart.nullFailed(I[0], 192, 10, "debugShowMaterialGrid");
+    let showPerformanceOverlay = opts && 'showPerformanceOverlay' in opts ? opts.showPerformanceOverlay : false;
+    if (showPerformanceOverlay == null) dart.nullFailed(I[0], 193, 10, "showPerformanceOverlay");
+    let checkerboardRasterCacheImages = opts && 'checkerboardRasterCacheImages' in opts ? opts.checkerboardRasterCacheImages : false;
+    if (checkerboardRasterCacheImages == null) dart.nullFailed(I[0], 194, 10, "checkerboardRasterCacheImages");
+    let checkerboardOffscreenLayers = opts && 'checkerboardOffscreenLayers' in opts ? opts.checkerboardOffscreenLayers : false;
+    if (checkerboardOffscreenLayers == null) dart.nullFailed(I[0], 195, 10, "checkerboardOffscreenLayers");
+    let showSemanticsDebugger = opts && 'showSemanticsDebugger' in opts ? opts.showSemanticsDebugger : false;
+    if (showSemanticsDebugger == null) dart.nullFailed(I[0], 196, 10, "showSemanticsDebugger");
+    let debugShowCheckedModeBanner = opts && 'debugShowCheckedModeBanner' in opts ? opts.debugShowCheckedModeBanner : true;
+    if (debugShowCheckedModeBanner == null) dart.nullFailed(I[0], 197, 10, "debugShowCheckedModeBanner");
+    let shortcuts = opts && 'shortcuts' in opts ? opts.shortcuts : null;
+    let actions = opts && 'actions' in opts ? opts.actions : null;
+    let restorationScopeId = opts && 'restorationScopeId' in opts ? opts.restorationScopeId : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[navigatorKey$] = navigatorKey;
+    this[scaffoldMessengerKey$] = scaffoldMessengerKey;
+    this[home$] = home;
+    this[routes$] = routes;
+    this[initialRoute$] = initialRoute;
+    this[onGenerateRoute$] = onGenerateRoute;
+    this[onGenerateInitialRoutes$] = onGenerateInitialRoutes;
+    this[onUnknownRoute$] = onUnknownRoute;
+    this[navigatorObservers$] = navigatorObservers;
+    this[builder$] = builder;
+    this[title$] = title;
+    this[onGenerateTitle$] = onGenerateTitle;
+    this[color$] = color;
+    this[theme$0] = theme;
+    this[darkTheme$] = darkTheme;
+    this[highContrastTheme$] = highContrastTheme;
+    this[highContrastDarkTheme$] = highContrastDarkTheme;
+    this[themeMode$] = themeMode;
+    this[locale$] = locale;
+    this[localizationsDelegates$] = localizationsDelegates;
+    this[localeListResolutionCallback$] = localeListResolutionCallback;
+    this[localeResolutionCallback$] = localeResolutionCallback;
+    this[supportedLocales$] = supportedLocales;
+    this[debugShowMaterialGrid$] = debugShowMaterialGrid;
+    this[showPerformanceOverlay$] = showPerformanceOverlay;
+    this[checkerboardRasterCacheImages$] = checkerboardRasterCacheImages;
+    this[checkerboardOffscreenLayers$] = checkerboardOffscreenLayers;
+    this[showSemanticsDebugger$] = showSemanticsDebugger;
+    this[debugShowCheckedModeBanner$] = debugShowCheckedModeBanner;
+    this[shortcuts$] = shortcuts;
+    this[actions$] = actions;
+    this[restorationScopeId$] = restorationScopeId;
+    if (!(routes != null)) dart.assertFailed(null, I[0], 201, 15, "routes != null");
+    if (!(navigatorObservers != null)) dart.assertFailed(null, I[0], 202, 15, "navigatorObservers != null");
+    if (!(title != null)) dart.assertFailed(null, I[0], 203, 15, "title != null");
+    if (!(debugShowMaterialGrid != null)) dart.assertFailed(null, I[0], 204, 15, "debugShowMaterialGrid != null");
+    if (!(showPerformanceOverlay != null)) dart.assertFailed(null, I[0], 205, 15, "showPerformanceOverlay != null");
+    if (!(checkerboardRasterCacheImages != null)) dart.assertFailed(null, I[0], 206, 15, "checkerboardRasterCacheImages != null");
+    if (!(checkerboardOffscreenLayers != null)) dart.assertFailed(null, I[0], 207, 15, "checkerboardOffscreenLayers != null");
+    if (!(showSemanticsDebugger != null)) dart.assertFailed(null, I[0], 208, 15, "showSemanticsDebugger != null");
+    if (!(debugShowCheckedModeBanner != null)) dart.assertFailed(null, I[0], 209, 15, "debugShowCheckedModeBanner != null");
+    this[routeInformationProvider$] = null;
+    this[routeInformationParser$] = null;
+    this[routerDelegate$] = null;
+    this[backButtonDispatcher$] = null;
+    app$.MaterialApp.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = app$.MaterialApp.prototype;
+  (app$.MaterialApp.router = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let scaffoldMessengerKey = opts && 'scaffoldMessengerKey' in opts ? opts.scaffoldMessengerKey : null;
+    let routeInformationProvider = opts && 'routeInformationProvider' in opts ? opts.routeInformationProvider : null;
+    let routeInformationParser = opts && 'routeInformationParser' in opts ? opts.routeInformationParser : null;
+    if (routeInformationParser == null) dart.nullFailed(I[0], 221, 50, "routeInformationParser");
+    let routerDelegate = opts && 'routerDelegate' in opts ? opts.routerDelegate : null;
+    if (routerDelegate == null) dart.nullFailed(I[0], 222, 42, "routerDelegate");
+    let backButtonDispatcher = opts && 'backButtonDispatcher' in opts ? opts.backButtonDispatcher : null;
+    let builder = opts && 'builder' in opts ? opts.builder : null;
+    let title = opts && 'title' in opts ? opts.title : "";
+    if (title == null) dart.nullFailed(I[0], 225, 10, "title");
+    let onGenerateTitle = opts && 'onGenerateTitle' in opts ? opts.onGenerateTitle : null;
+    let color = opts && 'color' in opts ? opts.color : null;
+    let theme = opts && 'theme' in opts ? opts.theme : null;
+    let darkTheme = opts && 'darkTheme' in opts ? opts.darkTheme : null;
+    let highContrastTheme = opts && 'highContrastTheme' in opts ? opts.highContrastTheme : null;
+    let highContrastDarkTheme = opts && 'highContrastDarkTheme' in opts ? opts.highContrastDarkTheme : null;
+    let themeMode = opts && 'themeMode' in opts ? opts.themeMode : C[0] || CT.C0;
+    let locale = opts && 'locale' in opts ? opts.locale : null;
+    let localizationsDelegates = opts && 'localizationsDelegates' in opts ? opts.localizationsDelegates : null;
+    let localeListResolutionCallback = opts && 'localeListResolutionCallback' in opts ? opts.localeListResolutionCallback : null;
+    let localeResolutionCallback = opts && 'localeResolutionCallback' in opts ? opts.localeResolutionCallback : null;
+    let supportedLocales = opts && 'supportedLocales' in opts ? opts.supportedLocales : C[6] || CT.C6;
+    if (supportedLocales == null) dart.nullFailed(I[0], 237, 10, "supportedLocales");
+    let debugShowMaterialGrid = opts && 'debugShowMaterialGrid' in opts ? opts.debugShowMaterialGrid : false;
+    if (debugShowMaterialGrid == null) dart.nullFailed(I[0], 238, 10, "debugShowMaterialGrid");
+    let showPerformanceOverlay = opts && 'showPerformanceOverlay' in opts ? opts.showPerformanceOverlay : false;
+    if (showPerformanceOverlay == null) dart.nullFailed(I[0], 239, 10, "showPerformanceOverlay");
+    let checkerboardRasterCacheImages = opts && 'checkerboardRasterCacheImages' in opts ? opts.checkerboardRasterCacheImages : false;
+    if (checkerboardRasterCacheImages == null) dart.nullFailed(I[0], 240, 10, "checkerboardRasterCacheImages");
+    let checkerboardOffscreenLayers = opts && 'checkerboardOffscreenLayers' in opts ? opts.checkerboardOffscreenLayers : false;
+    if (checkerboardOffscreenLayers == null) dart.nullFailed(I[0], 241, 10, "checkerboardOffscreenLayers");
+    let showSemanticsDebugger = opts && 'showSemanticsDebugger' in opts ? opts.showSemanticsDebugger : false;
+    if (showSemanticsDebugger == null) dart.nullFailed(I[0], 242, 10, "showSemanticsDebugger");
+    let debugShowCheckedModeBanner = opts && 'debugShowCheckedModeBanner' in opts ? opts.debugShowCheckedModeBanner : true;
+    if (debugShowCheckedModeBanner == null) dart.nullFailed(I[0], 243, 10, "debugShowCheckedModeBanner");
+    let shortcuts = opts && 'shortcuts' in opts ? opts.shortcuts : null;
+    let actions = opts && 'actions' in opts ? opts.actions : null;
+    let restorationScopeId = opts && 'restorationScopeId' in opts ? opts.restorationScopeId : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[scaffoldMessengerKey$] = scaffoldMessengerKey;
+    this[routeInformationProvider$] = routeInformationProvider;
+    this[routeInformationParser$] = routeInformationParser;
+    this[routerDelegate$] = routerDelegate;
+    this[backButtonDispatcher$] = backButtonDispatcher;
+    this[builder$] = builder;
+    this[title$] = title;
+    this[onGenerateTitle$] = onGenerateTitle;
+    this[color$] = color;
+    this[theme$0] = theme;
+    this[darkTheme$] = darkTheme;
+    this[highContrastTheme$] = highContrastTheme;
+    this[highContrastDarkTheme$] = highContrastDarkTheme;
+    this[themeMode$] = themeMode;
+    this[locale$] = locale;
+    this[localizationsDelegates$] = localizationsDelegates;
+    this[localeListResolutionCallback$] = localeListResolutionCallback;
+    this[localeResolutionCallback$] = localeResolutionCallback;
+    this[supportedLocales$] = supportedLocales;
+    this[debugShowMaterialGrid$] = debugShowMaterialGrid;
+    this[showPerformanceOverlay$] = showPerformanceOverlay;
+    this[checkerboardRasterCacheImages$] = checkerboardRasterCacheImages;
+    this[checkerboardOffscreenLayers$] = checkerboardOffscreenLayers;
+    this[showSemanticsDebugger$] = showSemanticsDebugger;
+    this[debugShowCheckedModeBanner$] = debugShowCheckedModeBanner;
+    this[shortcuts$] = shortcuts;
+    this[actions$] = actions;
+    this[restorationScopeId$] = restorationScopeId;
+    if (!(routeInformationParser != null)) dart.assertFailed(null, I[0], 247, 15, "routeInformationParser != null");
+    if (!(routerDelegate != null)) dart.assertFailed(null, I[0], 248, 15, "routerDelegate != null");
+    if (!(title != null)) dart.assertFailed(null, I[0], 249, 15, "title != null");
+    if (!(debugShowMaterialGrid != null)) dart.assertFailed(null, I[0], 250, 15, "debugShowMaterialGrid != null");
+    if (!(showPerformanceOverlay != null)) dart.assertFailed(null, I[0], 251, 15, "showPerformanceOverlay != null");
+    if (!(checkerboardRasterCacheImages != null)) dart.assertFailed(null, I[0], 252, 15, "checkerboardRasterCacheImages != null");
+    if (!(checkerboardOffscreenLayers != null)) dart.assertFailed(null, I[0], 253, 15, "checkerboardOffscreenLayers != null");
+    if (!(showSemanticsDebugger != null)) dart.assertFailed(null, I[0], 254, 15, "showSemanticsDebugger != null");
+    if (!(debugShowCheckedModeBanner != null)) dart.assertFailed(null, I[0], 255, 15, "debugShowCheckedModeBanner != null");
+    this[navigatorObservers$] = null;
+    this[navigatorKey$] = null;
+    this[onGenerateRoute$] = null;
+    this[home$] = null;
+    this[onGenerateInitialRoutes$] = null;
+    this[onUnknownRoute$] = null;
+    this[routes$] = null;
+    this[initialRoute$] = null;
+    app$.MaterialApp.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = app$.MaterialApp.prototype;
+  dart.addTypeTests(app$.MaterialApp);
+  dart.addTypeCaches(app$.MaterialApp);
+  dart.setMethodSignature(app$.MaterialApp, () => ({
+    __proto__: dart.getMethods(app$.MaterialApp.__proto__),
+    createState: dart.fnType(app$._MaterialAppState, [])
+  }));
+  dart.setLibraryUri(app$.MaterialApp, I[1]);
+  dart.setFieldSignature(app$.MaterialApp, () => ({
+    __proto__: dart.getFields(app$.MaterialApp.__proto__),
+    navigatorKey: dart.finalFieldType(dart.nullable(framework.GlobalKey$(navigator.NavigatorState))),
+    scaffoldMessengerKey: dart.finalFieldType(dart.nullable(framework.GlobalKey$(scaffold.ScaffoldMessengerState))),
+    home: dart.finalFieldType(dart.nullable(framework.Widget)),
+    routes: dart.finalFieldType(dart.nullable(core.Map$(core.String, dart.fnType(framework.Widget, [framework.BuildContext])))),
+    initialRoute: dart.finalFieldType(dart.nullable(core.String)),
+    onGenerateRoute: dart.finalFieldType(dart.nullable(dart.fnType(dart.nullable(navigator.Route), [navigator.RouteSettings]))),
+    onGenerateInitialRoutes: dart.finalFieldType(dart.nullable(dart.fnType(core.List$(navigator.Route), [core.String]))),
+    onUnknownRoute: dart.finalFieldType(dart.nullable(dart.fnType(dart.nullable(navigator.Route), [navigator.RouteSettings]))),
+    navigatorObservers: dart.finalFieldType(dart.nullable(core.List$(navigator.NavigatorObserver))),
+    routeInformationProvider: dart.finalFieldType(dart.nullable(router.RouteInformationProvider)),
+    routeInformationParser: dart.finalFieldType(dart.nullable(router.RouteInformationParser$(core.Object))),
+    routerDelegate: dart.finalFieldType(dart.nullable(router.RouterDelegate$(core.Object))),
+    backButtonDispatcher: dart.finalFieldType(dart.nullable(router.BackButtonDispatcher)),
+    builder: dart.finalFieldType(dart.nullable(dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)]))),
+    title: dart.finalFieldType(core.String),
+    onGenerateTitle: dart.finalFieldType(dart.nullable(dart.fnType(core.String, [framework.BuildContext]))),
+    theme: dart.finalFieldType(dart.nullable(theme_data.ThemeData)),
+    darkTheme: dart.finalFieldType(dart.nullable(theme_data.ThemeData)),
+    highContrastTheme: dart.finalFieldType(dart.nullable(theme_data.ThemeData)),
+    highContrastDarkTheme: dart.finalFieldType(dart.nullable(theme_data.ThemeData)),
+    themeMode: dart.finalFieldType(dart.nullable(app$.ThemeMode)),
+    color: dart.finalFieldType(dart.nullable(ui.Color)),
+    locale: dart.finalFieldType(dart.nullable(ui.Locale)),
+    localizationsDelegates: dart.finalFieldType(dart.nullable(core.Iterable$(localizations.LocalizationsDelegate))),
+    localeListResolutionCallback: dart.finalFieldType(dart.nullable(dart.fnType(dart.nullable(ui.Locale), [dart.nullable(core.List$(ui.Locale)), core.Iterable$(ui.Locale)]))),
+    localeResolutionCallback: dart.finalFieldType(dart.nullable(dart.fnType(dart.nullable(ui.Locale), [dart.nullable(ui.Locale), core.Iterable$(ui.Locale)]))),
+    supportedLocales: dart.finalFieldType(core.Iterable$(ui.Locale)),
+    showPerformanceOverlay: dart.finalFieldType(core.bool),
+    checkerboardRasterCacheImages: dart.finalFieldType(core.bool),
+    checkerboardOffscreenLayers: dart.finalFieldType(core.bool),
+    showSemanticsDebugger: dart.finalFieldType(core.bool),
+    debugShowCheckedModeBanner: dart.finalFieldType(core.bool),
+    shortcuts: dart.finalFieldType(dart.nullable(core.Map$(shortcuts.LogicalKeySet, actions.Intent))),
+    actions: dart.finalFieldType(dart.nullable(core.Map$(core.Type, actions.Action$(actions.Intent)))),
+    restorationScopeId: dart.finalFieldType(dart.nullable(core.String)),
+    debugShowMaterialGrid: dart.finalFieldType(core.bool)
+  }));
+  var _name = dart.privateName(platform, "_name");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  app$._MaterialScrollBehavior = class _MaterialScrollBehavior extends scroll_configuration.ScrollBehavior {
+    getPlatform(context) {
+      if (context == null) dart.nullFailed(I[0], 664, 43, "context");
+      return theme$.Theme.of(context).platform;
+    }
+    buildViewportChrome(context, child, axisDirection) {
+      if (context == null) dart.nullFailed(I[0], 669, 43, "context");
+      if (child == null) dart.nullFailed(I[0], 669, 59, "child");
+      if (axisDirection == null) dart.nullFailed(I[0], 669, 80, "axisDirection");
+      switch (this.getPlatform(context)) {
+        case C[8] || CT.C8:
+        case C[9] || CT.C9:
+        case C[10] || CT.C10:
+        case C[11] || CT.C11:
+        {
+          return child;
+        }
+        case C[17] || CT.C17:
+        case C[18] || CT.C18:
+        {
+          return new overscroll_indicator.GlowingOverscrollIndicator.new({child: child, axisDirection: axisDirection, color: theme$.Theme.of(context).accentColor, $creationLocationd_0dea112b090073317d4: C[12] || CT.C12});
+        }
+      }
+    }
+  };
+  (app$._MaterialScrollBehavior.new = function() {
+    app$._MaterialScrollBehavior.__proto__.new.call(this);
+    ;
+  }).prototype = app$._MaterialScrollBehavior.prototype;
+  dart.addTypeTests(app$._MaterialScrollBehavior);
+  dart.addTypeCaches(app$._MaterialScrollBehavior);
+  dart.setLibraryUri(app$._MaterialScrollBehavior, I[1]);
+  var ___MaterialAppState__heroController = dart.privateName(app$, "_#_MaterialAppState#_heroController");
+  var _heroController = dart.privateName(app$, "_heroController");
+  var _usesRouter = dart.privateName(app$, "_usesRouter");
+  var _localizationsDelegates = dart.privateName(app$, "_localizationsDelegates");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var Icon_textDirection = dart.privateName(icon, "Icon.textDirection");
+  var Icon_semanticLabel = dart.privateName(icon, "Icon.semanticLabel");
+  var Icon_color = dart.privateName(icon, "Icon.color");
+  var Icon_size = dart.privateName(icon, "Icon.size");
+  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
+  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
+  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
+  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
+  var Icon_icon = dart.privateName(icon, "Icon.icon");
+  var _inspectorSelectButtonBuilder = dart.privateName(app$, "_inspectorSelectButtonBuilder");
+  var _materialBuilder = dart.privateName(app$, "_materialBuilder");
+  var _buildWidgetApp = dart.privateName(app$, "_buildWidgetApp");
+  var Color_value = dart.privateName(ui, "Color.value");
+  app$._MaterialAppState = class _MaterialAppState extends framework.State$(app$.MaterialApp) {
+    get [_heroController]() {
+      let t0;
+      t0 = this[___MaterialAppState__heroController];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_heroController")) : t0;
+    }
+    set [_heroController](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 690, 23, "null");
+      this[___MaterialAppState__heroController] = t0;
+    }
+    get [_usesRouter]() {
+      return this.widget.routerDelegate != null;
+    }
+    initState() {
+      super.initState();
+      this[_heroController] = app$.MaterialApp.createMaterialHeroController();
+    }
+    get [_localizationsDelegates]() {
+      return new (T$.SyncIterableOfLocalizationsDelegate()).new((function* _localizationsDelegates() {
+        if (this.widget.localizationsDelegates != null) yield* dart.nullCheck(this.widget.localizationsDelegates);
+        yield material_localizations.DefaultMaterialLocalizations.delegate;
+        yield localizations$.DefaultCupertinoLocalizations.delegate;
+      }).bind(this));
+    }
+    [_inspectorSelectButtonBuilder](context, onPressed) {
+      if (context == null) dart.nullFailed(I[0], 712, 53, "context");
+      if (onPressed == null) dart.nullFailed(I[0], 712, 75, "onPressed");
+      return new floating_action_button.FloatingActionButton.new({child: C[19] || CT.C19, onPressed: onPressed, mini: true, $creationLocationd_0dea112b090073317d4: C[24] || CT.C24});
+    }
+    [_materialBuilder](context, child) {
+      let t1, t1$;
+      if (context == null) dart.nullFailed(I[0], 720, 40, "context");
+      let mode = (t1 = this.widget.themeMode, t1 == null ? app$.ThemeMode.system : t1);
+      let platformBrightness = media_query.MediaQuery.platformBrightnessOf(context);
+      let useDarkTheme = mode == app$.ThemeMode.dark || mode == app$.ThemeMode.system && platformBrightness == ui.Brightness.dark;
+      let highContrast = media_query.MediaQuery.highContrastOf(context);
+      let theme = null;
+      if (useDarkTheme && dart.test(highContrast) && this.widget.highContrastDarkTheme != null) {
+        theme = this.widget.highContrastDarkTheme;
+      } else if (useDarkTheme && this.widget.darkTheme != null) {
+        theme = this.widget.darkTheme;
+      } else if (dart.test(highContrast) && this.widget.highContrastTheme != null) {
+        theme = this.widget.highContrastTheme;
+      }
+      theme == null ? theme = (t1$ = this.widget.theme, t1$ == null ? theme_data.ThemeData.light() : t1$) : null;
+      return new scaffold.ScaffoldMessenger.new({key: this.widget.scaffoldMessengerKey, child: new theme$.AnimatedTheme.new({data: theme, child: this.widget.builder != null ? new basic.Builder.new({builder: dart.fn(context => {
+              if (context == null) dart.nullFailed(I[0], 744, 38, "context");
+              return dart.nullCheck(this.widget.builder)(context, child);
+            }, T$.BuildContextToWidget()), $creationLocationd_0dea112b090073317d4: C[29] || CT.C29}) : dart.nullCheck(child), $creationLocationd_0dea112b090073317d4: C[32] || CT.C32}), $creationLocationd_0dea112b090073317d4: C[36] || CT.C36});
+    }
+    [_buildWidgetApp](context) {
+      let t2, t1, t1$;
+      if (context == null) dart.nullFailed(I[0], 764, 39, "context");
+      let materialColor = (t1$ = (t1 = this.widget.color, t1 == null ? (t2 = this.widget.theme, t2 == null ? null : t2.primaryColor) : t1), t1$ == null ? colors.Colors.blue : t1$);
+      if (dart.test(this[_usesRouter])) {
+        return new app.WidgetsApp.router({key: new (T$.GlobalObjectKeyOfStateOfStatefulWidget()).new(this), routeInformationProvider: this.widget.routeInformationProvider, routeInformationParser: dart.nullCheck(this.widget.routeInformationParser), routerDelegate: dart.nullCheck(this.widget.routerDelegate), backButtonDispatcher: this.widget.backButtonDispatcher, builder: dart.bind(this, _materialBuilder), title: this.widget.title, onGenerateTitle: this.widget.onGenerateTitle, textStyle: app$._errorTextStyle, color: materialColor, locale: this.widget.locale, localizationsDelegates: this[_localizationsDelegates], localeResolutionCallback: this.widget.localeResolutionCallback, localeListResolutionCallback: this.widget.localeListResolutionCallback, supportedLocales: this.widget.supportedLocales, showPerformanceOverlay: this.widget.showPerformanceOverlay, checkerboardRasterCacheImages: this.widget.checkerboardRasterCacheImages, checkerboardOffscreenLayers: this.widget.checkerboardOffscreenLayers, showSemanticsDebugger: this.widget.showSemanticsDebugger, debugShowCheckedModeBanner: this.widget.debugShowCheckedModeBanner, inspectorSelectButtonBuilder: dart.bind(this, _inspectorSelectButtonBuilder), shortcuts: this.widget.shortcuts, actions: this.widget.actions, restorationScopeId: this.widget.restorationScopeId, $creationLocationd_0dea112b090073317d4: C[40] || CT.C40});
+      }
+      return new app.WidgetsApp.new({key: new (T$.GlobalObjectKeyOfStateOfStatefulWidget()).new(this), navigatorKey: this.widget.navigatorKey, navigatorObservers: dart.nullCheck(this.widget.navigatorObservers), pageRouteBuilder: dart.fn((T, settings, builder) => {
+          if (settings == null) dart.nullFailed(I[0], 806, 43, "settings");
+          if (builder == null) dart.nullFailed(I[0], 806, 67, "builder");
+          return new (page.MaterialPageRoute$(T)).new({settings: settings, builder: builder});
+        }, T$.RouteSettingsAndFnToMaterialPageRouteOfT()), home: this.widget.home, routes: dart.nullCheck(this.widget.routes), initialRoute: this.widget.initialRoute, onGenerateRoute: this.widget.onGenerateRoute, onGenerateInitialRoutes: this.widget.onGenerateInitialRoutes, onUnknownRoute: this.widget.onUnknownRoute, builder: dart.bind(this, _materialBuilder), title: this.widget.title, onGenerateTitle: this.widget.onGenerateTitle, textStyle: app$._errorTextStyle, color: materialColor, locale: this.widget.locale, localizationsDelegates: this[_localizationsDelegates], localeResolutionCallback: this.widget.localeResolutionCallback, localeListResolutionCallback: this.widget.localeListResolutionCallback, supportedLocales: this.widget.supportedLocales, showPerformanceOverlay: this.widget.showPerformanceOverlay, checkerboardRasterCacheImages: this.widget.checkerboardRasterCacheImages, checkerboardOffscreenLayers: this.widget.checkerboardOffscreenLayers, showSemanticsDebugger: this.widget.showSemanticsDebugger, debugShowCheckedModeBanner: this.widget.debugShowCheckedModeBanner, inspectorSelectButtonBuilder: dart.bind(this, _inspectorSelectButtonBuilder), shortcuts: this.widget.shortcuts, actions: this.widget.actions, restorationScopeId: this.widget.restorationScopeId, $creationLocationd_0dea112b090073317d4: C[66] || CT.C66});
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 838, 29, "context");
+      let result = this[_buildWidgetApp](context);
+      if (!dart.test(dart.fn(() => {
+        if (dart.test(this.widget.debugShowMaterialGrid)) {
+          result = new grid_paper.GridPaper.new({color: C[97] || CT.C97, interval: 8.0, divisions: 2, subdivisions: 1, child: result, $creationLocationd_0dea112b090073317d4: C[98] || CT.C98});
+        }
+        return true;
+      }, T$.VoidTobool())())) dart.assertFailed(null, I[0], 841, 12, "() {\r\n      if (widget.debugShowMaterialGrid) {\r\n        result = GridPaper(\r\n          color: const Color(0xE0F9BBE0),\r\n          interval: 8.0,\r\n          divisions: 2,\r\n          subdivisions: 1,\r\n          child: result,\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      return new scroll_configuration.ScrollConfiguration.new({behavior: new app$._MaterialScrollBehavior.new(), child: new navigator.HeroControllerScope.new({controller: this[_heroController], child: result, $creationLocationd_0dea112b090073317d4: C[105] || CT.C105}), $creationLocationd_0dea112b090073317d4: C[109] || CT.C109});
+    }
+  };
+  (app$._MaterialAppState.new = function() {
+    this[___MaterialAppState__heroController] = null;
+    app$._MaterialAppState.__proto__.new.call(this);
+    ;
+  }).prototype = app$._MaterialAppState.prototype;
+  dart.addTypeTests(app$._MaterialAppState);
+  dart.addTypeCaches(app$._MaterialAppState);
+  dart.setMethodSignature(app$._MaterialAppState, () => ({
+    __proto__: dart.getMethods(app$._MaterialAppState.__proto__),
+    [_inspectorSelectButtonBuilder]: dart.fnType(framework.Widget, [framework.BuildContext, dart.fnType(dart.void, [])]),
+    [_materialBuilder]: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)]),
+    [_buildWidgetApp]: dart.fnType(framework.Widget, [framework.BuildContext]),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(app$._MaterialAppState, () => ({
+    __proto__: dart.getGetters(app$._MaterialAppState.__proto__),
+    [_heroController]: heroes.HeroController,
+    [_usesRouter]: core.bool,
+    [_localizationsDelegates]: core.Iterable$(localizations.LocalizationsDelegate)
+  }));
+  dart.setSetterSignature(app$._MaterialAppState, () => ({
+    __proto__: dart.getSetters(app$._MaterialAppState.__proto__),
+    [_heroController]: heroes.HeroController
+  }));
+  dart.setLibraryUri(app$._MaterialAppState, I[1]);
+  dart.setFieldSignature(app$._MaterialAppState, () => ({
+    __proto__: dart.getFields(app$._MaterialAppState.__proto__),
+    [___MaterialAppState__heroController]: dart.fieldType(dart.nullable(heroes.HeroController))
+  }));
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var _name$0 = dart.privateName(ui, "_name");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextDecoration__mask = dart.privateName(ui, "TextDecoration._mask");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  dart.defineLazy(app$, {
+    /*app$._errorTextStyle*/get _errorTextStyle() {
+      return C[113] || CT.C113;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/material/app.dart", {
+    "package:flutter/src/material/app.dart": app$
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["utils.dart","../firestore.dart","../../../../../firebase_core_web-1.0.2/lib/src/interop/utils/js.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../../../../packages/cloud_firestore_web/src/interop/utils/utils.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["app.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAiDA;;;QAVK;;;;;EAUL;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;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","file":"../../../../../../../../packages/flutter/src/material/app.dart.lib.js"}');
   // Exports:
   return {
-    src__interop__utils__utils: utils$,
-    src__interop__firestore: firestore
+    src__material__app: app$
   };
 }));
 
-//# sourceMappingURL=utils.dart.lib.js.map
+//# sourceMappingURL=app.dart.lib.js.map
