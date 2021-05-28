@@ -108,7 +108,7 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 25,
         [_Location_line]: 111,
-        [_Location_file]: "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     },
     get C11() {
@@ -141,7 +141,7 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 104,
-        [_Location_file]: "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     },
     get C15() {
@@ -214,7 +214,7 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 26,
         [_Location_line]: 205,
-        [_Location_file]: "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     },
     get C23() {
@@ -247,13 +247,13 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 198,
-        [_Location_file]: "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     }
   }, false);
   var C = Array(25).fill(void 0);
   var I = [
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/widgets/safe_area.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/widgets/safe_area.dart",
     "package:flutter/src/widgets/safe_area.dart"
   ];
   var left$ = dart.privateName(safe_area, "SafeArea.left");
@@ -485,7 +485,7 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
   dart.trackLibraries("packages/flutter/src/widgets/safe_area.dart", {
     "package:flutter/src/widgets/safe_area.dart": safe_area
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["safe_area.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAwDa;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAaN;;;;;;IAQE;;;;;;;UAGa;AACxB,qBAAO,8BAAwB,OAAO;AACjB,iBAAkB,0BAAG,OAAO;AACtC,oBAAU,AAAK,IAAD;AAEzB,UAAI,AAAK,AAAQ,AAAO,IAAhB,oBAAmB,OAAO,AAAK,AAAW,AAAO,IAAnB,uBAAsB,iBAAO,iCACjE,AAA2D,UAAjD,AAAQ,OAAD,mBAAkB,AAAK,AAAY,IAAb;AAEzC,YAAO,iCACe,uCACZ,gCAAS,aAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,gCAAS,YAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,gCAAS,cAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,gCAAS,eAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,+BAExC,+CACP,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;;UAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAvFO;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACS;;;IANT;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,sDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;IAqHT;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAMJ;;;;;;;UAGa;AACxB,qBAAO,8BAAwB,OAAO;AACrB,oBAAqB,AAAY,0BAAT,OAAO;AAChD,YAAO,uCACe,uCACZ,gCAAS,aAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,gCAAS,YAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,gCAAS,cAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,gCAAS,eAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,gCAEvC,+CACR,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;;UAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAlEO;QACA;;QACA;;QACA;;QACA;;QACA;;QACS;;;IALT;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,4DAAW,GAAG;;EAAC","file":"../../../../../../../../../../../packages/flutter/src/widgets/safe_area.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["safe_area.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAwDa;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAaN;;;;;;IAQE;;;;;;;UAGa;AACxB,qBAAO,8BAAwB,OAAO;AACjB,iBAAkB,0BAAG,OAAO;AACtC,oBAAU,AAAK,IAAD;AAEzB,UAAI,AAAK,AAAQ,AAAO,IAAhB,oBAAmB,OAAO,AAAK,AAAW,AAAO,IAAnB,uBAAsB,iBAAO,iCACjE,AAA2D,UAAjD,AAAQ,OAAD,mBAAkB,AAAK,AAAY,IAAb;AAEzC,YAAO,iCACe,uCACZ,gCAAS,aAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,gCAAS,YAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,gCAAS,cAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,gCAAS,eAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,+BAExC,+CACP,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;;UAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAvFO;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACS;;;IANT;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,sDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;IAqHT;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAMJ;;;;;;;UAGa;AACxB,qBAAO,8BAAwB,OAAO;AACrB,oBAAqB,AAAY,0BAAT,OAAO;AAChD,YAAO,uCACe,uCACZ,gCAAS,aAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,gCAAS,YAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,gCAAS,cAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,gCAAS,eAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,gCAEvC,+CACR,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;;UAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAlEO;QACA;;QACA;;QACA;;QACA;;QACA;;QACS;;;IALT;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,4DAAW,GAAG;;EAAC","file":"../../../../../../../../packages/flutter/src/widgets/safe_area.dart.lib.js"}');
   // Exports:
   return {
     src__widgets__safe_area: safe_area

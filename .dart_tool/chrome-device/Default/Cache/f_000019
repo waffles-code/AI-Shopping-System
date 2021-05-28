@@ -1,75 +1,68 @@
-define(['dart_sdk', 'packages/http/src/byte_stream.dart', 'packages/http/src/utils.dart', 'packages/http/src/boundary_characters.dart', 'packages/http_parser/src/media_type.dart', 'packages/pedantic/pedantic.dart', 'packages/http/src/exception.dart'], (function load__packages__http__src__multipart_request_dart(dart_sdk, packages__http__src__byte_stream$46dart, packages__http__src__utils$46dart, packages__http__src__boundary_characters$46dart, packages__http_parser__src__media_type$46dart, packages__pedantic__pedantic$46dart, packages__http__src__exception$46dart) {
+define(['dart_sdk', 'packages/plugin_platform_interface/plugin_platform_interface.dart', 'packages/firebase_storage_platform_interface/src/full_metadata.dart', 'packages/firebase_storage_platform_interface/src/task_state.dart', 'packages/firebase_storage_platform_interface/src/internal/pointer.dart', 'packages/firebase_storage_platform_interface/src/list_options.dart', 'packages/firebase_storage_platform_interface/src/settable_metadata.dart', 'packages/firebase_storage_platform_interface/src/put_string_format.dart', 'packages/firebase_storage_platform_interface/src/method_channel/utils/exception.dart', 'packages/firebase_core_platform_interface/firebase_core_platform_interface.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/firebase_core/firebase_core.dart'], (function load__packages__firebase_storage_platform_interface__src__platform_interface__platform_interface_task_snapshot_dart(dart_sdk, packages__plugin_platform_interface__plugin_platform_interface$46dart, packages__firebase_storage_platform_interface__src__full_metadata$46dart, packages__firebase_storage_platform_interface__src__task_state$46dart, packages__firebase_storage_platform_interface__src__internal__pointer$46dart, packages__firebase_storage_platform_interface__src__list_options$46dart, packages__firebase_storage_platform_interface__src__settable_metadata$46dart, packages__firebase_storage_platform_interface__src__put_string_format$46dart, packages__firebase_storage_platform_interface__src__method_channel__utils__exception$46dart, packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart, packages__flutter__src__services__system_channels$46dart, packages__firebase_core__firebase_core$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _js_helper = dart_sdk._js_helper;
-  const _interceptors = dart_sdk._interceptors;
-  const convert = dart_sdk.convert;
-  const async = dart_sdk.async;
   const collection = dart_sdk.collection;
-  const math = dart_sdk.math;
-  const html = dart_sdk.html;
+  const async = dart_sdk.async;
   const typed_data = dart_sdk.typed_data;
-  const _native_typed_data = dart_sdk._native_typed_data;
+  const io = dart_sdk.io;
+  const _js_helper = dart_sdk._js_helper;
+  const _internal = dart_sdk._internal;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const byte_stream = packages__http__src__byte_stream$46dart.src__byte_stream;
-  const utils = packages__http__src__utils$46dart.src__utils;
-  const boundary_characters = packages__http__src__boundary_characters$46dart.src__boundary_characters;
-  const media_type = packages__http_parser__src__media_type$46dart.src__media_type;
-  const pedantic = packages__pedantic__pedantic$46dart.pedantic;
-  const exception = packages__http__src__exception$46dart.src__exception;
-  var multipart_request = Object.create(dart.library);
-  var multipart_file_stub = Object.create(dart.library);
-  var multipart_file = Object.create(dart.library);
-  var streamed_request = Object.create(dart.library);
-  var browser_client = Object.create(dart.library);
-  var response$ = Object.create(dart.library);
-  var request$ = Object.create(dart.library);
-  var streamed_response = Object.create(dart.library);
-  var base_response = Object.create(dart.library);
-  var base_request = Object.create(dart.library);
-  var base_client = Object.create(dart.library);
-  var client$ = Object.create(dart.library);
-  var http = Object.create(dart.library);
-  var $length = dartx.length;
-  var $forEach = dartx.forEach;
-  var $_set = dartx._set;
-  var $entries = dartx.entries;
-  var $replaceAll = dartx.replaceAll;
+  const plugin_platform_interface = packages__plugin_platform_interface__plugin_platform_interface$46dart.plugin_platform_interface;
+  const full_metadata = packages__firebase_storage_platform_interface__src__full_metadata$46dart.src__full_metadata;
+  const task_state = packages__firebase_storage_platform_interface__src__task_state$46dart.src__task_state;
+  const pointer = packages__firebase_storage_platform_interface__src__internal__pointer$46dart.src__internal__pointer;
+  const list_options = packages__firebase_storage_platform_interface__src__list_options$46dart.src__list_options;
+  const settable_metadata = packages__firebase_storage_platform_interface__src__settable_metadata$46dart.src__settable_metadata;
+  const put_string_format = packages__firebase_storage_platform_interface__src__put_string_format$46dart.src__put_string_format;
+  const exception = packages__firebase_storage_platform_interface__src__method_channel__utils__exception$46dart.src__method_channel__utils__exception;
+  const firebase_core_platform_interface = packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart.firebase_core_platform_interface;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
+  const firebase_core = packages__firebase_core__firebase_core$46dart.firebase_core;
+  var platform_interface_task_snapshot = Object.create(dart.library);
+  var platform_interface_task = Object.create(dart.library);
+  var platform_interface_reference = Object.create(dart.library);
+  var platform_interface_list_result = Object.create(dart.library);
+  var method_channel_task_snapshot = Object.create(dart.library);
+  var method_channel_task = Object.create(dart.library);
+  var method_channel_list_result = Object.create(dart.library);
+  var method_channel_reference = Object.create(dart.library);
+  var method_channel_firebase_storage = Object.create(dart.library);
+  var platform_interface_firebase_storage = Object.create(dart.library);
+  var firebase_storage_platform_interface = Object.create(dart.library);
   var $_get = dartx._get;
-  var $toLowerCase = dartx.toLowerCase;
-  var $hashCode = dartx.hashCode;
-  var $onLoad = dartx.onLoad;
-  var $response = dartx.response;
-  var $asUint8List = dartx.asUint8List;
-  var $responseHeaders = dartx.responseHeaders;
-  var $onError = dartx.onError;
-  var $addAll = dartx.addAll;
-  var $cast = dartx.cast;
-  var $containsKey = dartx.containsKey;
-  var $remove = dartx.remove;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $_set = dartx._set;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    IdentityMapOfString$String: () => (T.IdentityMapOfString$String = dart.constFn(_js_helper.IdentityMap$(core.String, core.String)))(),
-    JSArrayOfMultipartFile: () => (T.JSArrayOfMultipartFile = dart.constFn(_interceptors.JSArray$(multipart_file.MultipartFile)))(),
-    StringAndStringTovoid: () => (T.StringAndStringTovoid = dart.constFn(dart.fnType(dart.void, [core.String, core.String])))(),
-    ListOfint: () => (T.ListOfint = dart.constFn(core.List$(core.int)))(),
-    _AsyncStarImplOfListOfint: () => (T._AsyncStarImplOfListOfint = dart.constFn(async._AsyncStarImpl$(T.ListOfint())))(),
-    intToint: () => (T.intToint = dart.constFn(dart.fnType(core.int, [core.int])))(),
-    LinkedHashMapOfString$String: () => (T.LinkedHashMapOfString$String = dart.constFn(collection.LinkedHashMap$(core.String, core.String)))(),
-    StringAndStringTobool: () => (T.StringAndStringTobool = dart.constFn(dart.fnType(core.bool, [core.String, core.String])))(),
-    StringToint: () => (T.StringToint = dart.constFn(dart.fnType(core.int, [core.String])))(),
-    _EmptyStreamOfListOfint: () => (T._EmptyStreamOfListOfint = dart.constFn(async._EmptyStream$(T.ListOfint())))(),
-    StreamControllerOfListOfint: () => (T.StreamControllerOfListOfint = dart.constFn(async.StreamController$(T.ListOfint())))(),
-    LinkedHashSetOfHttpRequest: () => (T.LinkedHashSetOfHttpRequest = dart.constFn(collection.LinkedHashSet$(html.HttpRequest)))(),
-    CompleterOfStreamedResponse: () => (T.CompleterOfStreamedResponse = dart.constFn(async.Completer$(streamed_response.StreamedResponse)))(),
-    ProgressEventToNull: () => (T.ProgressEventToNull = dart.constFn(dart.fnType(core.Null, [html.ProgressEvent])))(),
-    FutureOfResponse: () => (T.FutureOfResponse = dart.constFn(async.Future$(response$.Response)))(),
-    ClientToFutureOfResponse: () => (T.ClientToFutureOfResponse = dart.constFn(dart.fnType(T.FutureOfResponse(), [client$.Client])))(),
-    FutureOfString: () => (T.FutureOfString = dart.constFn(async.Future$(core.String)))(),
-    ClientToFutureOfString: () => (T.ClientToFutureOfString = dart.constFn(dart.fnType(T.FutureOfString(), [client$.Client])))(),
-    FutureOfUint8List: () => (T.FutureOfUint8List = dart.constFn(async.Future$(typed_data.Uint8List)))(),
-    ClientToFutureOfUint8List: () => (T.ClientToFutureOfUint8List = dart.constFn(dart.fnType(T.FutureOfUint8List(), [client$.Client])))()
+    LinkedHashMapOfString$dynamic: () => (T.LinkedHashMapOfString$dynamic = dart.constFn(collection.LinkedHashMap$(core.String, dart.dynamic)))(),
+    Uint8ListN: () => (T.Uint8ListN = dart.constFn(dart.nullable(typed_data.Uint8List)))(),
+    CompleterOfvoid: () => (T.CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    voidToNull: () => (T.voidToNull = dart.constFn(dart.fnType(core.Null, [dart.void])))(),
+    ObjectAndStackTraceToNull: () => (T.ObjectAndStackTraceToNull = dart.constFn(dart.fnType(core.Null, [core.Object, core.StackTrace])))(),
+    StreamOfTaskSnapshotPlatform: () => (T.StreamOfTaskSnapshotPlatform = dart.constFn(async.Stream$(platform_interface_task_snapshot.TaskSnapshotPlatform)))(),
+    VoidToStreamSubscription: () => (T.VoidToStreamSubscription = dart.constFn(dart.fnType(async.StreamSubscription, [])))(),
+    StreamSubscriptionTodynamic: () => (T.StreamSubscriptionTodynamic = dart.constFn(dart.fnType(dart.dynamic, [async.StreamSubscription])))(),
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
+    TaskSnapshotPlatformToFutureOfvoid: () => (T.TaskSnapshotPlatformToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [platform_interface_task_snapshot.TaskSnapshotPlatform])))(),
+    FutureOfTaskSnapshotPlatform: () => (T.FutureOfTaskSnapshotPlatform = dart.constFn(async.Future$(platform_interface_task_snapshot.TaskSnapshotPlatform)))(),
+    CompleterOfTaskSnapshotPlatform: () => (T.CompleterOfTaskSnapshotPlatform = dart.constFn(async.Completer$(platform_interface_task_snapshot.TaskSnapshotPlatform)))(),
+    VoidToFutureOfvoid: () => (T.VoidToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [])))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    StringToMethodChannelReference: () => (T.StringToMethodChannelReference = dart.constFn(dart.fnType(method_channel_reference.MethodChannelReference, [core.String])))(),
+    FutureOrOfString: () => (T.FutureOrOfString = dart.constFn(async.FutureOr$(core.String)))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    ListOfString: () => (T.ListOfString = dart.constFn(core.List$(core.String)))(),
+    StreamControllerOfTaskSnapshotPlatform: () => (T.StreamControllerOfTaskSnapshotPlatform = dart.constFn(async.StreamController$(platform_interface_task_snapshot.TaskSnapshotPlatform)))(),
+    MethodCallToFutureOfvoid: () => (T.MethodCallToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [message_codec.MethodCall])))(),
+    IdentityMapOfString$MethodChannelFirebaseStorage: () => (T.IdentityMapOfString$MethodChannelFirebaseStorage = dart.constFn(_js_helper.IdentityMap$(core.String, method_channel_firebase_storage.MethodChannelFirebaseStorage)))(),
+    IdentityMapOfint$StreamControllerOfTaskSnapshotPlatform: () => (T.IdentityMapOfint$StreamControllerOfTaskSnapshotPlatform = dart.constFn(_js_helper.IdentityMap$(core.int, T.StreamControllerOfTaskSnapshotPlatform())))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -85,1108 +78,1172 @@ define(['dart_sdk', 'packages/http/src/byte_stream.dart', 'packages/http/src/uti
   });
   dart.defineLazy(CT, {
     get C0() {
-      return C[0] = dart.constList([13, 10], core.int);
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: T._EmptyStreamOfListOfint().prototype
+      return C[0] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 120000000
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: byte_stream.ByteStream.prototype,
-        [StreamView__stream]: C[2] || CT.C2
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 600000000
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: message_codecs.StandardMessageCodec.prototype
       });
     },
     get C3() {
-      return C[3] = dart.constMap(core.String, core.String, []);
-    }
-  }, false);
-  var C = Array(4).fill(void 0);
-  var I = [
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/multipart_request.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/base_request.dart",
-    "package:http/src/base_request.dart",
-    "package:http/src/multipart_request.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/multipart_file_stub.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/multipart_file.dart",
-    "package:http/src/multipart_file.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/streamed_request.dart",
-    "package:http/src/streamed_request.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/browser_client.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/base_client.dart",
-    "package:http/src/base_client.dart",
-    "package:http/src/browser_client.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/response.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/base_response.dart",
-    "package:http/src/base_response.dart",
-    "package:http/src/response.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/request.dart",
-    "package:http/src/request.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/src/streamed_response.dart",
-    "package:http/src/streamed_response.dart",
-    "package:http/src/client.dart",
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib/http.dart"
-  ];
-  var fields = dart.privateName(multipart_request, "MultipartRequest.fields");
-  var files = dart.privateName(multipart_request, "MultipartRequest.files");
-  var _headerForField = dart.privateName(multipart_request, "_headerForField");
-  var _headerForFile = dart.privateName(multipart_request, "_headerForFile");
-  var _boundaryString = dart.privateName(multipart_request, "_boundaryString");
-  var _finalize = dart.privateName(multipart_request, "_finalize");
-  var _browserEncode = dart.privateName(multipart_request, "_browserEncode");
-  var method$ = dart.privateName(base_request, "BaseRequest.method");
-  var url$ = dart.privateName(base_request, "BaseRequest.url");
-  var headers = dart.privateName(base_request, "BaseRequest.headers");
-  var _contentLength = dart.privateName(base_request, "_contentLength");
-  var _persistentConnection = dart.privateName(base_request, "_persistentConnection");
-  var _followRedirects = dart.privateName(base_request, "_followRedirects");
-  var _maxRedirects = dart.privateName(base_request, "_maxRedirects");
-  var _finalized = dart.privateName(base_request, "_finalized");
-  var _checkFinalized = dart.privateName(base_request, "_checkFinalized");
-  var StreamView__stream = dart.privateName(async, "StreamView._stream");
-  base_request.BaseRequest = class BaseRequest extends core.Object {
-    get method() {
-      return this[method$];
-    }
-    set method(value) {
-      super.method = value;
-    }
-    get url() {
-      return this[url$];
-    }
-    set url(value) {
-      super.url = value;
-    }
-    get headers() {
-      return this[headers];
-    }
-    set headers(value) {
-      super.headers = value;
-    }
-    get contentLength() {
-      return this[_contentLength];
-    }
-    set contentLength(value) {
-      if (value != null && dart.notNull(value) < 0) {
-        dart.throw(new core.ArgumentError.new("Invalid content length " + dart.str(value) + "."));
-      }
-      this[_checkFinalized]();
-      this[_contentLength] = value;
-    }
-    get persistentConnection() {
-      return this[_persistentConnection];
-    }
-    set persistentConnection(value) {
-      if (value == null) dart.nullFailed(I[1], 54, 33, "value");
-      this[_checkFinalized]();
-      this[_persistentConnection] = value;
-    }
-    get followRedirects() {
-      return this[_followRedirects];
-    }
-    set followRedirects(value) {
-      if (value == null) dart.nullFailed(I[1], 65, 28, "value");
-      this[_checkFinalized]();
-      this[_followRedirects] = value;
-    }
-    get maxRedirects() {
-      return this[_maxRedirects];
-    }
-    set maxRedirects(value) {
-      if (value == null) dart.nullFailed(I[1], 77, 24, "value");
-      this[_checkFinalized]();
-      this[_maxRedirects] = value;
-    }
-    get finalized() {
-      return this[_finalized];
-    }
-    static _validateMethod(method) {
-      if (method == null) dart.nullFailed(I[1], 92, 40, "method");
-      if (!dart.test(base_request.BaseRequest._tokenRE.hasMatch(method))) {
-        dart.throw(new core.ArgumentError.value(method, "method", "Not a valid method"));
-      }
-      return method;
-    }
-    finalize() {
-      if (dart.test(this.finalized)) dart.throw(new core.StateError.new("Can't finalize a finalized Request."));
-      this[_finalized] = true;
-      return C[1] || CT.C1;
-    }
-    send() {
-      return async.async(streamed_response.StreamedResponse, (function* send() {
-        let client = client$.Client.new();
-        try {
-          let response = (yield client.send(this));
-          let stream = utils.onDone(T.ListOfint(), response.stream, dart.bind(client, 'close'));
-          return new streamed_response.StreamedResponse.new(new byte_stream.ByteStream.new(stream), response.statusCode, {contentLength: response.contentLength, request: response.request, headers: response.headers, isRedirect: response.isRedirect, persistentConnection: response.persistentConnection, reasonPhrase: response.reasonPhrase});
-        } catch (e) {
-          let _ = dart.getThrown(e);
-          if (core.Object.is(_)) {
-            client.close();
-            dart.rethrow(e);
-          } else
-            throw e;
-        }
-      }).bind(this));
-    }
-    [_checkFinalized]() {
-      if (!dart.test(this.finalized)) return;
-      dart.throw(new core.StateError.new("Can't modify a finalized Request."));
-    }
-    toString() {
-      return dart.str(this.method) + " " + dart.str(this.url);
-    }
-  };
-  (base_request.BaseRequest.new = function(method, url) {
-    if (method == null) dart.nullFailed(I[1], 99, 22, "method");
-    if (url == null) dart.nullFailed(I[1], 99, 35, "url");
-    this[_contentLength] = null;
-    this[_persistentConnection] = true;
-    this[_followRedirects] = true;
-    this[_maxRedirects] = 5;
-    this[_finalized] = false;
-    this[url$] = url;
-    this[method$] = base_request.BaseRequest._validateMethod(method);
-    this[headers] = T.LinkedHashMapOfString$String().new({equals: dart.fn((key1, key2) => {
-        if (key1 == null) dart.nullFailed(I[1], 102, 22, "key1");
-        if (key2 == null) dart.nullFailed(I[1], 102, 28, "key2");
-        return key1[$toLowerCase]() === key2[$toLowerCase]();
-      }, T.StringAndStringTobool()), hashCode: dart.fn(key => {
-        if (key == null) dart.nullFailed(I[1], 103, 24, "key");
-        return key[$toLowerCase]()[$hashCode];
-      }, T.StringToint())});
-    ;
-  }).prototype = base_request.BaseRequest.prototype;
-  dart.addTypeTests(base_request.BaseRequest);
-  dart.addTypeCaches(base_request.BaseRequest);
-  dart.setMethodSignature(base_request.BaseRequest, () => ({
-    __proto__: dart.getMethods(base_request.BaseRequest.__proto__),
-    finalize: dart.fnType(byte_stream.ByteStream, []),
-    send: dart.fnType(async.Future$(streamed_response.StreamedResponse), []),
-    [_checkFinalized]: dart.fnType(dart.void, [])
-  }));
-  dart.setGetterSignature(base_request.BaseRequest, () => ({
-    __proto__: dart.getGetters(base_request.BaseRequest.__proto__),
-    contentLength: dart.nullable(core.int),
-    persistentConnection: core.bool,
-    followRedirects: core.bool,
-    maxRedirects: core.int,
-    finalized: core.bool
-  }));
-  dart.setSetterSignature(base_request.BaseRequest, () => ({
-    __proto__: dart.getSetters(base_request.BaseRequest.__proto__),
-    contentLength: dart.nullable(core.int),
-    persistentConnection: core.bool,
-    followRedirects: core.bool,
-    maxRedirects: core.int
-  }));
-  dart.setLibraryUri(base_request.BaseRequest, I[2]);
-  dart.setFieldSignature(base_request.BaseRequest, () => ({
-    __proto__: dart.getFields(base_request.BaseRequest.__proto__),
-    method: dart.finalFieldType(core.String),
-    url: dart.finalFieldType(core.Uri),
-    [_contentLength]: dart.fieldType(dart.nullable(core.int)),
-    [_persistentConnection]: dart.fieldType(core.bool),
-    [_followRedirects]: dart.fieldType(core.bool),
-    [_maxRedirects]: dart.fieldType(core.int),
-    headers: dart.finalFieldType(core.Map$(core.String, core.String)),
-    [_finalized]: dart.fieldType(core.bool)
-  }));
-  dart.defineExtensionMethods(base_request.BaseRequest, ['toString']);
-  dart.defineLazy(base_request.BaseRequest, {
-    /*base_request.BaseRequest._tokenRE*/get _tokenRE() {
-      return core.RegExp.new("^[\\w!#%&'*+\\-.^`|~]+$");
-    }
-  }, false);
-  multipart_request.MultipartRequest = class MultipartRequest extends base_request.BaseRequest {
-    get fields() {
-      return this[fields];
-    }
-    set fields(value) {
-      super.fields = value;
-    }
-    get files() {
-      return this[files];
-    }
-    set files(value) {
-      super.files = value;
-    }
-    get contentLength() {
-      let length = 0;
-      this.fields[$forEach](dart.fn((name, value) => {
-        if (name == null) dart.nullFailed(I[0], 57, 21, "name");
-        if (value == null) dart.nullFailed(I[0], 57, 27, "value");
-        length = length + ("--".length + 70 + "\r\n".length + dart.notNull(convert.utf8.encode(this[_headerForField](name, value))[$length]) + dart.notNull(convert.utf8.encode(value)[$length]) + "\r\n".length);
-      }, T.StringAndStringTovoid()));
-      for (let file of this.files) {
-        length = length + ("--".length + 70 + "\r\n".length + dart.notNull(convert.utf8.encode(this[_headerForFile](file))[$length]) + dart.notNull(file.length) + "\r\n".length);
-      }
-      return length + "--".length + 70 + "--\r\n".length;
-    }
-    set contentLength(value) {
-      dart.throw(new core.UnsupportedError.new("Cannot set the contentLength property of " + "multipart requests."));
-    }
-    finalize() {
-      let boundary = this[_boundaryString]();
-      this.headers[$_set]("content-type", "multipart/form-data; boundary=" + dart.str(boundary));
-      super.finalize();
-      return new byte_stream.ByteStream.new(this[_finalize](boundary));
-    }
-    [_finalize](boundary) {
-      if (boundary == null) dart.nullFailed(I[0], 95, 38, "boundary");
-      return new (T._AsyncStarImplOfListOfint()).new((function* _finalize(stream) {
-        let line = C[0] || CT.C0;
-        let separator = convert.utf8.encode("--" + dart.str(boundary) + "\r\n");
-        let close = convert.utf8.encode("--" + dart.str(boundary) + "--\r\n");
-        for (let field of this.fields[$entries]) {
-          if (stream.add(separator)) return;
-          yield;
-          if (stream.add(convert.utf8.encode(this[_headerForField](field.key, field.value)))) return;
-          yield;
-          if (stream.add(convert.utf8.encode(field.value))) return;
-          yield;
-          if (stream.add(line)) return;
-          yield;
-        }
-        for (let file of this.files) {
-          if (stream.add(separator)) return;
-          yield;
-          if (stream.add(convert.utf8.encode(this[_headerForFile](file)))) return;
-          yield;
-          if (stream.addStream(file.finalize())) return;
-          yield;
-          if (stream.add(line)) return;
-          yield;
-        }
-        if (stream.add(close)) return;
-        yield;
-      }).bind(this)).stream;
-    }
-    [_headerForField](name, value) {
-      if (name == null) dart.nullFailed(I[0], 119, 33, "name");
-      if (value == null) dart.nullFailed(I[0], 119, 46, "value");
-      let header = "content-disposition: form-data; name=\"" + dart.str(this[_browserEncode](name)) + "\"";
-      if (!dart.test(utils.isPlainAscii(value))) {
-        header = header + "\r\n" + "content-type: text/plain; charset=utf-8\r\n" + "content-transfer-encoding: binary";
-      }
-      return header + "\r\n\r\n";
-    }
-    [_headerForFile](file) {
-      if (file == null) dart.nullFailed(I[0], 133, 39, "file");
-      let header = "content-type: " + dart.str(file.contentType) + "\r\n" + "content-disposition: form-data; name=\"" + dart.str(this[_browserEncode](file.field)) + "\"";
-      if (file.filename != null) {
-        header = header + "; filename=\"" + dart.str(this[_browserEncode](dart.nullCheck(file.filename))) + "\"";
-      }
-      return header + "\r\n\r\n";
-    }
-    [_browserEncode](value) {
-      if (value == null) dart.nullFailed(I[0], 144, 32, "value");
-      return value[$replaceAll](multipart_request._newlineRegExp, "%0D%0A")[$replaceAll]("\"", "%22");
-    }
-    [_boundaryString]() {
-      let prefix = "dart-http-boundary-";
-      let list = T.ListOfint().generate(70 - prefix.length, dart.fn(index => {
-        if (index == null) dart.nullFailed(I[0], 157, 10, "index");
-        return boundary_characters.boundaryCharacters[$_get](multipart_request.MultipartRequest._random.nextInt(boundary_characters.boundaryCharacters[$length]));
-      }, T.intToint()), {growable: false});
-      return prefix + dart.str(core.String.fromCharCodes(list));
-    }
-  };
-  (multipart_request.MultipartRequest.new = function(method, url) {
-    if (method == null) dart.nullFailed(I[0], 48, 27, "method");
-    if (url == null) dart.nullFailed(I[0], 48, 39, "url");
-    this[fields] = new (T.IdentityMapOfString$String()).new();
-    this[files] = T.JSArrayOfMultipartFile().of([]);
-    multipart_request.MultipartRequest.__proto__.new.call(this, method, url);
-    ;
-  }).prototype = multipart_request.MultipartRequest.prototype;
-  dart.addTypeTests(multipart_request.MultipartRequest);
-  dart.addTypeCaches(multipart_request.MultipartRequest);
-  dart.setMethodSignature(multipart_request.MultipartRequest, () => ({
-    __proto__: dart.getMethods(multipart_request.MultipartRequest.__proto__),
-    [_finalize]: dart.fnType(async.Stream$(core.List$(core.int)), [core.String]),
-    [_headerForField]: dart.fnType(core.String, [core.String, core.String]),
-    [_headerForFile]: dart.fnType(core.String, [multipart_file.MultipartFile]),
-    [_browserEncode]: dart.fnType(core.String, [core.String]),
-    [_boundaryString]: dart.fnType(core.String, [])
-  }));
-  dart.setGetterSignature(multipart_request.MultipartRequest, () => ({
-    __proto__: dart.getGetters(multipart_request.MultipartRequest.__proto__),
-    contentLength: core.int
-  }));
-  dart.setLibraryUri(multipart_request.MultipartRequest, I[3]);
-  dart.setFieldSignature(multipart_request.MultipartRequest, () => ({
-    __proto__: dart.getFields(multipart_request.MultipartRequest.__proto__),
-    fields: dart.finalFieldType(core.Map$(core.String, core.String)),
-    files: dart.finalFieldType(core.List$(multipart_file.MultipartFile))
-  }));
-  dart.defineLazy(multipart_request.MultipartRequest, {
-    /*multipart_request.MultipartRequest._boundaryLength*/get _boundaryLength() {
-      return 70;
+      return C[3] = dart.const({
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C[4] || CT.C4
+      });
     },
-    /*multipart_request.MultipartRequest._random*/get _random() {
-      return math.Random.new();
-    }
-  }, false);
-  dart.defineLazy(multipart_request, {
-    /*multipart_request._newlineRegExp*/get _newlineRegExp() {
-      return core.RegExp.new("\\r\\n|\\r|\\n");
-    }
-  }, false);
-  multipart_file_stub.multipartFileFromPath = function multipartFileFromPath(field, filePath, opts) {
-    if (field == null) dart.nullFailed(I[4], 9, 52, "field");
-    if (filePath == null) dart.nullFailed(I[4], 9, 66, "filePath");
-    let filename = opts && 'filename' in opts ? opts.filename : null;
-    let contentType = opts && 'contentType' in opts ? opts.contentType : null;
-    return dart.throw(new core.UnsupportedError.new("MultipartFile is only supported where dart:io is available."));
-  };
-  var field$ = dart.privateName(multipart_file, "MultipartFile.field");
-  var length$ = dart.privateName(multipart_file, "MultipartFile.length");
-  var filename$ = dart.privateName(multipart_file, "MultipartFile.filename");
-  var contentType$ = dart.privateName(multipart_file, "MultipartFile.contentType");
-  var _isFinalized = dart.privateName(multipart_file, "_isFinalized");
-  var _stream = dart.privateName(multipart_file, "_stream");
-  multipart_file.MultipartFile = class MultipartFile extends core.Object {
-    get field() {
-      return this[field$];
-    }
-    set field(value) {
-      super.field = value;
-    }
-    get length() {
-      return this[length$];
-    }
-    set length(value) {
-      super.length = value;
-    }
-    get filename() {
-      return this[filename$];
-    }
-    set filename(value) {
-      super.filename = value;
-    }
-    get contentType() {
-      return this[contentType$];
-    }
-    set contentType(value) {
-      super.contentType = value;
-    }
-    get isFinalized() {
-      return this[_isFinalized];
-    }
-    static fromBytes(field, value, opts) {
-      if (field == null) dart.nullFailed(I[5], 60, 42, "field");
-      if (value == null) dart.nullFailed(I[5], 60, 59, "value");
-      let filename = opts && 'filename' in opts ? opts.filename : null;
-      let contentType = opts && 'contentType' in opts ? opts.contentType : null;
-      let stream = byte_stream.ByteStream.fromBytes(value);
-      return new multipart_file.MultipartFile.new(field, stream, value[$length], {filename: filename, contentType: contentType});
-    }
-    static fromString(field, value, opts) {
-      if (field == null) dart.nullFailed(I[5], 73, 43, "field");
-      if (value == null) dart.nullFailed(I[5], 73, 57, "value");
-      let filename = opts && 'filename' in opts ? opts.filename : null;
-      let contentType = opts && 'contentType' in opts ? opts.contentType : null;
-      contentType == null ? contentType = new media_type.MediaType.new("text", "plain") : null;
-      let encoding = utils.encodingForCharset(contentType.parameters[$_get]("charset"), convert.utf8);
-      contentType = contentType.change({parameters: new (T.IdentityMapOfString$String()).from(["charset", encoding.name])});
-      return multipart_file.MultipartFile.fromBytes(field, encoding.encode(value), {filename: filename, contentType: contentType});
-    }
-    static fromPath(field, filePath, opts) {
-      if (field == null) dart.nullFailed(I[5], 92, 48, "field");
-      if (filePath == null) dart.nullFailed(I[5], 92, 62, "filePath");
-      let filename = opts && 'filename' in opts ? opts.filename : null;
-      let contentType = opts && 'contentType' in opts ? opts.contentType : null;
-      return multipart_file_stub.multipartFileFromPath(field, filePath, {filename: filename, contentType: contentType});
-    }
-    finalize() {
-      if (dart.test(this.isFinalized)) {
-        dart.throw(new core.StateError.new("Can't finalize a finalized MultipartFile."));
-      }
-      this[_isFinalized] = true;
-      return this[_stream];
-    }
-  };
-  (multipart_file.MultipartFile.new = function(field, stream, length, opts) {
-    let t1;
-    if (field == null) dart.nullFailed(I[5], 51, 22, "field");
-    if (stream == null) dart.nullFailed(I[5], 51, 47, "stream");
-    if (length == null) dart.nullFailed(I[5], 51, 60, "length");
-    let filename = opts && 'filename' in opts ? opts.filename : null;
-    let contentType = opts && 'contentType' in opts ? opts.contentType : null;
-    this[_isFinalized] = false;
-    this[field$] = field;
-    this[length$] = length;
-    this[filename$] = filename;
-    this[_stream] = utils.toByteStream(stream);
-    this[contentType$] = (t1 = contentType, t1 == null ? new media_type.MediaType.new("application", "octet-stream") : t1);
-    ;
-  }).prototype = multipart_file.MultipartFile.prototype;
-  dart.addTypeTests(multipart_file.MultipartFile);
-  dart.addTypeCaches(multipart_file.MultipartFile);
-  dart.setMethodSignature(multipart_file.MultipartFile, () => ({
-    __proto__: dart.getMethods(multipart_file.MultipartFile.__proto__),
-    finalize: dart.fnType(byte_stream.ByteStream, [])
-  }));
-  dart.setGetterSignature(multipart_file.MultipartFile, () => ({
-    __proto__: dart.getGetters(multipart_file.MultipartFile.__proto__),
-    isFinalized: core.bool
-  }));
-  dart.setLibraryUri(multipart_file.MultipartFile, I[6]);
-  dart.setFieldSignature(multipart_file.MultipartFile, () => ({
-    __proto__: dart.getFields(multipart_file.MultipartFile.__proto__),
-    field: dart.finalFieldType(core.String),
-    length: dart.finalFieldType(core.int),
-    filename: dart.finalFieldType(dart.nullable(core.String)),
-    contentType: dart.finalFieldType(media_type.MediaType),
-    [_stream]: dart.finalFieldType(byte_stream.ByteStream),
-    [_isFinalized]: dart.fieldType(core.bool)
-  }));
-  var _controller = dart.privateName(streamed_request, "_controller");
-  streamed_request.StreamedRequest = class StreamedRequest extends base_request.BaseRequest {
-    get sink() {
-      return this[_controller].sink;
-    }
-    finalize() {
-      super.finalize();
-      return new byte_stream.ByteStream.new(this[_controller].stream);
-    }
-  };
-  (streamed_request.StreamedRequest.new = function(method, url) {
-    if (method == null) dart.nullFailed(I[7], 32, 26, "method");
-    if (url == null) dart.nullFailed(I[7], 32, 38, "url");
-    this[_controller] = T.StreamControllerOfListOfint().new({sync: true});
-    streamed_request.StreamedRequest.__proto__.new.call(this, method, url);
-    ;
-  }).prototype = streamed_request.StreamedRequest.prototype;
-  dart.addTypeTests(streamed_request.StreamedRequest);
-  dart.addTypeCaches(streamed_request.StreamedRequest);
-  dart.setGetterSignature(streamed_request.StreamedRequest, () => ({
-    __proto__: dart.getGetters(streamed_request.StreamedRequest.__proto__),
-    sink: async.EventSink$(core.List$(core.int))
-  }));
-  dart.setLibraryUri(streamed_request.StreamedRequest, I[8]);
-  dart.setFieldSignature(streamed_request.StreamedRequest, () => ({
-    __proto__: dart.getFields(streamed_request.StreamedRequest.__proto__),
-    [_controller]: dart.finalFieldType(async.StreamController$(core.List$(core.int)))
-  }));
-  var withCredentials = dart.privateName(browser_client, "BrowserClient.withCredentials");
-  var _xhrs = dart.privateName(browser_client, "_xhrs");
-  var _sendUnstreamed = dart.privateName(base_client, "_sendUnstreamed");
-  var _checkResponseSuccess = dart.privateName(base_client, "_checkResponseSuccess");
-  base_client.BaseClient = class BaseClient extends core.Object {
-    head(url, opts) {
-      if (url == null) dart.nullFailed(I[10], 22, 29, "url");
-      let headers = opts && 'headers' in opts ? opts.headers : null;
-      return this[_sendUnstreamed]("HEAD", url, headers);
-    }
-    get(url, opts) {
-      if (url == null) dart.nullFailed(I[10], 26, 28, "url");
-      let headers = opts && 'headers' in opts ? opts.headers : null;
-      return this[_sendUnstreamed]("GET", url, headers);
-    }
-    post(url, opts) {
-      if (url == null) dart.nullFailed(I[10], 30, 29, "url");
-      let headers = opts && 'headers' in opts ? opts.headers : null;
-      let body = opts && 'body' in opts ? opts.body : null;
-      let encoding = opts && 'encoding' in opts ? opts.encoding : null;
-      return this[_sendUnstreamed]("POST", url, headers, body, encoding);
-    }
-    put(url, opts) {
-      if (url == null) dart.nullFailed(I[10], 35, 28, "url");
-      let headers = opts && 'headers' in opts ? opts.headers : null;
-      let body = opts && 'body' in opts ? opts.body : null;
-      let encoding = opts && 'encoding' in opts ? opts.encoding : null;
-      return this[_sendUnstreamed]("PUT", url, headers, body, encoding);
-    }
-    patch(url, opts) {
-      if (url == null) dart.nullFailed(I[10], 40, 30, "url");
-      let headers = opts && 'headers' in opts ? opts.headers : null;
-      let body = opts && 'body' in opts ? opts.body : null;
-      let encoding = opts && 'encoding' in opts ? opts.encoding : null;
-      return this[_sendUnstreamed]("PATCH", url, headers, body, encoding);
-    }
-    delete(url, opts) {
-      if (url == null) dart.nullFailed(I[10], 45, 31, "url");
-      let headers = opts && 'headers' in opts ? opts.headers : null;
-      let body = opts && 'body' in opts ? opts.body : null;
-      let encoding = opts && 'encoding' in opts ? opts.encoding : null;
-      return this[_sendUnstreamed]("DELETE", url, headers, body, encoding);
-    }
-    read(url, opts) {
-      if (url == null) dart.nullFailed(I[10], 50, 27, "url");
-      let headers = opts && 'headers' in opts ? opts.headers : null;
-      return async.async(core.String, (function* read() {
-        let response = (yield this.get(url, {headers: headers}));
-        this[_checkResponseSuccess](url, response);
-        return response.body;
-      }).bind(this));
-    }
-    readBytes(url, opts) {
-      if (url == null) dart.nullFailed(I[10], 57, 35, "url");
-      let headers = opts && 'headers' in opts ? opts.headers : null;
-      return async.async(typed_data.Uint8List, (function* readBytes() {
-        let response = (yield this.get(url, {headers: headers}));
-        this[_checkResponseSuccess](url, response);
-        return response.bodyBytes;
-      }).bind(this));
-    }
-    [_sendUnstreamed](method, url, headers, body = null, encoding = null) {
-      if (method == null) dart.nullFailed(I[10], 75, 14, "method");
-      if (url == null) dart.nullFailed(I[10], 75, 26, "url");
-      return async.async(response$.Response, (function* _sendUnstreamed() {
-        let request = new request$.Request.new(method, url);
-        if (headers != null) request.headers[$addAll](headers);
-        if (encoding != null) request.encoding = encoding;
-        if (body != null) {
-          if (typeof body == 'string') {
-            request.body = body;
-          } else if (core.List.is(body)) {
-            request.bodyBytes = body[$cast](core.int);
-          } else if (core.Map.is(body)) {
-            request.bodyFields = body[$cast](core.String, core.String);
-          } else {
-            dart.throw(new core.ArgumentError.new("Invalid request body \"" + dart.str(body) + "\"."));
-          }
-        }
-        return response$.Response.fromStream(yield this.send(request));
-      }).bind(this));
-    }
-    [_checkResponseSuccess](url, response) {
-      if (url == null) dart.nullFailed(I[10], 97, 34, "url");
-      if (response == null) dart.nullFailed(I[10], 97, 48, "response");
-      if (dart.notNull(response.statusCode) < 400) return;
-      let message = "Request to " + dart.str(url) + " failed with status " + dart.str(response.statusCode);
-      if (response.reasonPhrase != null) {
-        message = message + ": " + dart.str(response.reasonPhrase);
-      }
-      dart.throw(new exception.ClientException.new(message + ".", url));
-    }
-    close() {
-    }
-  };
-  (base_client.BaseClient.new = function() {
-    ;
-  }).prototype = base_client.BaseClient.prototype;
-  dart.addTypeTests(base_client.BaseClient);
-  dart.addTypeCaches(base_client.BaseClient);
-  base_client.BaseClient[dart.implements] = () => [client$.Client];
-  dart.setMethodSignature(base_client.BaseClient, () => ({
-    __proto__: dart.getMethods(base_client.BaseClient.__proto__),
-    head: dart.fnType(async.Future$(response$.Response), [core.Uri], {headers: dart.nullable(core.Map$(core.String, core.String))}, {}),
-    get: dart.fnType(async.Future$(response$.Response), [core.Uri], {headers: dart.nullable(core.Map$(core.String, core.String))}, {}),
-    post: dart.fnType(async.Future$(response$.Response), [core.Uri], {body: dart.nullable(core.Object), encoding: dart.nullable(convert.Encoding), headers: dart.nullable(core.Map$(core.String, core.String))}, {}),
-    put: dart.fnType(async.Future$(response$.Response), [core.Uri], {body: dart.nullable(core.Object), encoding: dart.nullable(convert.Encoding), headers: dart.nullable(core.Map$(core.String, core.String))}, {}),
-    patch: dart.fnType(async.Future$(response$.Response), [core.Uri], {body: dart.nullable(core.Object), encoding: dart.nullable(convert.Encoding), headers: dart.nullable(core.Map$(core.String, core.String))}, {}),
-    delete: dart.fnType(async.Future$(response$.Response), [core.Uri], {body: dart.nullable(core.Object), encoding: dart.nullable(convert.Encoding), headers: dart.nullable(core.Map$(core.String, core.String))}, {}),
-    read: dart.fnType(async.Future$(core.String), [core.Uri], {headers: dart.nullable(core.Map$(core.String, core.String))}, {}),
-    readBytes: dart.fnType(async.Future$(typed_data.Uint8List), [core.Uri], {headers: dart.nullable(core.Map$(core.String, core.String))}, {}),
-    [_sendUnstreamed]: dart.fnType(async.Future$(response$.Response), [core.String, core.Uri, dart.nullable(core.Map$(core.String, core.String))], [dart.dynamic, dart.nullable(convert.Encoding)]),
-    [_checkResponseSuccess]: dart.fnType(dart.void, [core.Uri, response$.Response]),
-    close: dart.fnType(dart.void, [])
-  }));
-  dart.setLibraryUri(base_client.BaseClient, I[11]);
-  browser_client.BrowserClient = class BrowserClient extends base_client.BaseClient {
-    get withCredentials() {
-      return this[withCredentials];
-    }
-    set withCredentials(value) {
-      this[withCredentials] = value;
-    }
-    send(request) {
-      if (request == null) dart.nullFailed(I[9], 44, 45, "request");
-      return async.async(streamed_response.StreamedResponse, (function* send() {
-        let t1;
-        let bytes = (yield request.finalize().toBytes());
-        let xhr = html.HttpRequest.new();
-        this[_xhrs].add(xhr);
-        t1 = xhr;
-        (() => {
-          t1.open(request.method, dart.str(request.url), {async: true});
-          t1.responseType = "arraybuffer";
-          t1.withCredentials = this.withCredentials;
-          return t1;
-        })();
-        request.headers[$forEach](dart.bind(xhr, 'setRequestHeader'));
-        let completer = T.CompleterOfStreamedResponse().new();
-        pedantic.unawaited(xhr[$onLoad].first.then(dart.void, dart.fn(_ => {
-          if (_ == null) dart.nullFailed(I[9], 56, 38, "_");
-          let body = typed_data.ByteBuffer.as(xhr[$response])[$asUint8List]();
-          completer.complete(new streamed_response.StreamedResponse.new(byte_stream.ByteStream.fromBytes(body), dart.nullCheck(xhr.status), {contentLength: body[$length], request: request, headers: xhr[$responseHeaders], reasonPhrase: xhr.statusText}));
-        }, T.ProgressEventToNull())));
-        pedantic.unawaited(xhr[$onError].first.then(dart.void, dart.fn(_ => {
-          if (_ == null) dart.nullFailed(I[9], 66, 39, "_");
-          completer.completeError(new exception.ClientException.new("XMLHttpRequest error.", request.url), core.StackTrace.current);
-        }, T.ProgressEventToNull())));
-        xhr.send(bytes);
-        try {
-          return yield completer.future;
-        } finally {
-          this[_xhrs].remove(xhr);
-        }
-      }).bind(this));
-    }
-    close() {
-      for (let xhr of this[_xhrs]) {
-        xhr.abort();
-      }
-    }
-  };
-  (browser_client.BrowserClient.new = function() {
-    this[_xhrs] = T.LinkedHashSetOfHttpRequest().new();
-    this[withCredentials] = false;
-    ;
-  }).prototype = browser_client.BrowserClient.prototype;
-  dart.addTypeTests(browser_client.BrowserClient);
-  dart.addTypeCaches(browser_client.BrowserClient);
-  dart.setMethodSignature(browser_client.BrowserClient, () => ({
-    __proto__: dart.getMethods(browser_client.BrowserClient.__proto__),
-    send: dart.fnType(async.Future$(streamed_response.StreamedResponse), [base_request.BaseRequest])
-  }));
-  dart.setLibraryUri(browser_client.BrowserClient, I[12]);
-  dart.setFieldSignature(browser_client.BrowserClient, () => ({
-    __proto__: dart.getFields(browser_client.BrowserClient.__proto__),
-    [_xhrs]: dart.finalFieldType(core.Set$(html.HttpRequest)),
-    withCredentials: dart.fieldType(core.bool)
-  }));
-  browser_client.createClient = function createClient() {
-    return new browser_client.BrowserClient.new();
-  };
-  var bodyBytes$ = dart.privateName(response$, "Response.bodyBytes");
-  var request$0 = dart.privateName(base_response, "BaseResponse.request");
-  var statusCode$ = dart.privateName(base_response, "BaseResponse.statusCode");
-  var reasonPhrase$ = dart.privateName(base_response, "BaseResponse.reasonPhrase");
-  var contentLength$ = dart.privateName(base_response, "BaseResponse.contentLength");
-  var headers$ = dart.privateName(base_response, "BaseResponse.headers");
-  var isRedirect$ = dart.privateName(base_response, "BaseResponse.isRedirect");
-  var persistentConnection$ = dart.privateName(base_response, "BaseResponse.persistentConnection");
-  base_response.BaseResponse = class BaseResponse extends core.Object {
-    get request() {
-      return this[request$0];
-    }
-    set request(value) {
-      super.request = value;
-    }
-    get statusCode() {
-      return this[statusCode$];
-    }
-    set statusCode(value) {
-      super.statusCode = value;
-    }
-    get reasonPhrase() {
-      return this[reasonPhrase$];
-    }
-    set reasonPhrase(value) {
-      super.reasonPhrase = value;
-    }
-    get contentLength() {
-      return this[contentLength$];
-    }
-    set contentLength(value) {
-      super.contentLength = value;
-    }
-    get headers() {
-      return this[headers$];
-    }
-    set headers(value) {
-      super.headers = value;
-    }
-    get isRedirect() {
-      return this[isRedirect$];
-    }
-    set isRedirect(value) {
-      super.isRedirect = value;
-    }
-    get persistentConnection() {
-      return this[persistentConnection$];
-    }
-    set persistentConnection(value) {
-      super.persistentConnection = value;
-    }
-  };
-  (base_response.BaseResponse.new = function(statusCode, opts) {
-    if (statusCode == null) dart.nullFailed(I[14], 37, 21, "statusCode");
-    let contentLength = opts && 'contentLength' in opts ? opts.contentLength : null;
-    let request = opts && 'request' in opts ? opts.request : null;
-    let headers = opts && 'headers' in opts ? opts.headers : C[3] || CT.C3;
-    if (headers == null) dart.nullFailed(I[14], 40, 12, "headers");
-    let isRedirect = opts && 'isRedirect' in opts ? opts.isRedirect : false;
-    if (isRedirect == null) dart.nullFailed(I[14], 41, 12, "isRedirect");
-    let persistentConnection = opts && 'persistentConnection' in opts ? opts.persistentConnection : true;
-    if (persistentConnection == null) dart.nullFailed(I[14], 42, 12, "persistentConnection");
-    let reasonPhrase = opts && 'reasonPhrase' in opts ? opts.reasonPhrase : null;
-    this[statusCode$] = statusCode;
-    this[contentLength$] = contentLength;
-    this[request$0] = request;
-    this[headers$] = headers;
-    this[isRedirect$] = isRedirect;
-    this[persistentConnection$] = persistentConnection;
-    this[reasonPhrase$] = reasonPhrase;
-    if (dart.notNull(this.statusCode) < 100) {
-      dart.throw(new core.ArgumentError.new("Invalid status code " + dart.str(this.statusCode) + "."));
-    } else if (this.contentLength != null && dart.nullCheck(this.contentLength) < 0) {
-      dart.throw(new core.ArgumentError.new("Invalid content length " + dart.str(this.contentLength) + "."));
-    }
-  }).prototype = base_response.BaseResponse.prototype;
-  dart.addTypeTests(base_response.BaseResponse);
-  dart.addTypeCaches(base_response.BaseResponse);
-  dart.setLibraryUri(base_response.BaseResponse, I[15]);
-  dart.setFieldSignature(base_response.BaseResponse, () => ({
-    __proto__: dart.getFields(base_response.BaseResponse.__proto__),
-    request: dart.finalFieldType(dart.nullable(base_request.BaseRequest)),
-    statusCode: dart.finalFieldType(core.int),
-    reasonPhrase: dart.finalFieldType(dart.nullable(core.String)),
-    contentLength: dart.finalFieldType(dart.nullable(core.int)),
-    headers: dart.finalFieldType(core.Map$(core.String, core.String)),
-    isRedirect: dart.finalFieldType(core.bool),
-    persistentConnection: dart.finalFieldType(core.bool)
-  }));
-  response$.Response = class Response extends base_response.BaseResponse {
-    get bodyBytes() {
-      return this[bodyBytes$];
-    }
-    set bodyBytes(value) {
-      super.bodyBytes = value;
-    }
-    get body() {
-      return response$._encodingForHeaders(this.headers).decode(this.bodyBytes);
-    }
-    static fromStream(response) {
-      if (response == null) dart.nullFailed(I[13], 62, 55, "response");
-      return async.async(response$.Response, function* fromStream() {
-        let body = (yield response.stream.toBytes());
-        return new response$.Response.bytes(body, response.statusCode, {request: response.request, headers: response.headers, isRedirect: response.isRedirect, persistentConnection: response.persistentConnection, reasonPhrase: response.reasonPhrase});
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C[3] || CT.C3,
+        [MethodChannel_name]: "plugins.flutter.io/firebase_storage"
       });
     }
+  }, false);
+  var C = Array(5).fill(void 0);
+  var I = [
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-2.0.3/lib/src/platform_interface/platform_interface_task_snapshot.dart",
+    "package:firebase_storage_platform_interface/src/platform_interface/platform_interface_task_snapshot.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-2.0.3/lib/src/platform_interface/platform_interface_task.dart",
+    "package:firebase_storage_platform_interface/src/platform_interface/platform_interface_task.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-2.0.3/lib/src/platform_interface/platform_interface_reference.dart",
+    "package:firebase_storage_platform_interface/src/platform_interface/platform_interface_reference.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-2.0.3/lib/src/platform_interface/platform_interface_list_result.dart",
+    "package:firebase_storage_platform_interface/src/platform_interface/platform_interface_list_result.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-2.0.3/lib/src/method_channel/method_channel_task_snapshot.dart",
+    "package:firebase_storage_platform_interface/src/method_channel/method_channel_task_snapshot.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-2.0.3/lib/src/method_channel/method_channel_task.dart",
+    "package:firebase_storage_platform_interface/src/method_channel/method_channel_task.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-2.0.3/lib/src/method_channel/method_channel_list_result.dart",
+    "package:firebase_storage_platform_interface/src/method_channel/method_channel_list_result.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-2.0.3/lib/src/method_channel/method_channel_reference.dart",
+    "package:firebase_storage_platform_interface/src/method_channel/method_channel_reference.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-2.0.3/lib/src/method_channel/method_channel_firebase_storage.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-2.0.3/lib/src/platform_interface/platform_interface_firebase_storage.dart",
+    "package:firebase_storage_platform_interface/src/platform_interface/platform_interface_firebase_storage.dart",
+    "package:firebase_storage_platform_interface/src/method_channel/method_channel_firebase_storage.dart"
+  ];
+  var _state$ = dart.privateName(platform_interface_task_snapshot, "_state");
+  var _data$ = dart.privateName(platform_interface_task_snapshot, "_data");
+  platform_interface_task_snapshot.TaskSnapshotPlatform = class TaskSnapshotPlatform extends plugin_platform_interface.PlatformInterface {
+    static verifyExtends(instance) {
+      if (instance == null) dart.nullFailed(I[0], 25, 50, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, platform_interface_task_snapshot.TaskSnapshotPlatform._token);
+    }
+    get bytesTransferred() {
+      return core.int.as(this[_data$][$_get]("bytesTransferred"));
+    }
+    get metadata() {
+      return this[_data$][$_get]("metadata") == null ? null : new full_metadata.FullMetadata.new(T.LinkedHashMapOfString$dynamic().from(core.Map.as(this[_data$][$_get]("metadata"))));
+    }
+    get ref() {
+      dart.throw(new core.UnimplementedError.new("ref is not implemented"));
+    }
+    get state() {
+      return this[_state$];
+    }
+    get totalBytes() {
+      return core.int.as(this[_data$][$_get]("totalBytes"));
+    }
   };
-  (response$.Response.new = function(body, statusCode, opts) {
-    if (body == null) dart.nullFailed(I[13], 31, 19, "body");
-    if (statusCode == null) dart.nullFailed(I[13], 31, 29, "statusCode");
-    let request = opts && 'request' in opts ? opts.request : null;
-    let headers = opts && 'headers' in opts ? opts.headers : C[3] || CT.C3;
-    if (headers == null) dart.nullFailed(I[13], 33, 27, "headers");
-    let isRedirect = opts && 'isRedirect' in opts ? opts.isRedirect : false;
-    if (isRedirect == null) dart.nullFailed(I[13], 34, 12, "isRedirect");
-    let persistentConnection = opts && 'persistentConnection' in opts ? opts.persistentConnection : true;
-    if (persistentConnection == null) dart.nullFailed(I[13], 35, 12, "persistentConnection");
-    let reasonPhrase = opts && 'reasonPhrase' in opts ? opts.reasonPhrase : null;
-    response$.Response.bytes.call(this, response$._encodingForHeaders(headers).encode(body), statusCode, {request: request, headers: headers, isRedirect: isRedirect, persistentConnection: persistentConnection, reasonPhrase: reasonPhrase});
-  }).prototype = response$.Response.prototype;
-  (response$.Response.bytes = function(bodyBytes, statusCode, opts) {
-    if (bodyBytes == null) dart.nullFailed(I[13], 45, 28, "bodyBytes");
-    if (statusCode == null) dart.nullFailed(I[13], 45, 43, "statusCode");
-    let request = opts && 'request' in opts ? opts.request : null;
-    let headers = opts && 'headers' in opts ? opts.headers : C[3] || CT.C3;
-    if (headers == null) dart.nullFailed(I[13], 47, 27, "headers");
-    let isRedirect = opts && 'isRedirect' in opts ? opts.isRedirect : false;
-    if (isRedirect == null) dart.nullFailed(I[13], 48, 12, "isRedirect");
-    let persistentConnection = opts && 'persistentConnection' in opts ? opts.persistentConnection : true;
-    if (persistentConnection == null) dart.nullFailed(I[13], 49, 12, "persistentConnection");
-    let reasonPhrase = opts && 'reasonPhrase' in opts ? opts.reasonPhrase : null;
-    this[bodyBytes$] = utils.toUint8List(bodyBytes);
-    response$.Response.__proto__.new.call(this, statusCode, {contentLength: bodyBytes[$length], request: request, headers: headers, isRedirect: isRedirect, persistentConnection: persistentConnection, reasonPhrase: reasonPhrase});
+  (platform_interface_task_snapshot.TaskSnapshotPlatform.new = function(_state, _data) {
+    if (_state == null) dart.nullFailed(I[0], 11, 29, "_state");
+    if (_data == null) dart.nullFailed(I[0], 11, 42, "_data");
+    this[_state$] = _state;
+    this[_data$] = _data;
+    platform_interface_task_snapshot.TaskSnapshotPlatform.__proto__.new.call(this, {token: platform_interface_task_snapshot.TaskSnapshotPlatform._token});
     ;
-  }).prototype = response$.Response.prototype;
-  dart.addTypeTests(response$.Response);
-  dart.addTypeCaches(response$.Response);
-  dart.setGetterSignature(response$.Response, () => ({
-    __proto__: dart.getGetters(response$.Response.__proto__),
-    body: core.String
+  }).prototype = platform_interface_task_snapshot.TaskSnapshotPlatform.prototype;
+  dart.addTypeTests(platform_interface_task_snapshot.TaskSnapshotPlatform);
+  dart.addTypeCaches(platform_interface_task_snapshot.TaskSnapshotPlatform);
+  dart.setGetterSignature(platform_interface_task_snapshot.TaskSnapshotPlatform, () => ({
+    __proto__: dart.getGetters(platform_interface_task_snapshot.TaskSnapshotPlatform.__proto__),
+    bytesTransferred: core.int,
+    metadata: dart.nullable(full_metadata.FullMetadata),
+    ref: platform_interface_reference.ReferencePlatform,
+    state: task_state.TaskState,
+    totalBytes: core.int
   }));
-  dart.setLibraryUri(response$.Response, I[16]);
-  dart.setFieldSignature(response$.Response, () => ({
-    __proto__: dart.getFields(response$.Response.__proto__),
-    bodyBytes: dart.finalFieldType(typed_data.Uint8List)
+  dart.setLibraryUri(platform_interface_task_snapshot.TaskSnapshotPlatform, I[1]);
+  dart.setFieldSignature(platform_interface_task_snapshot.TaskSnapshotPlatform, () => ({
+    __proto__: dart.getFields(platform_interface_task_snapshot.TaskSnapshotPlatform.__proto__),
+    [_state$]: dart.finalFieldType(task_state.TaskState),
+    [_data$]: dart.finalFieldType(core.Map$(core.String, dart.dynamic))
   }));
-  response$._encodingForHeaders = function _encodingForHeaders(headers) {
-    if (headers == null) dart.nullFailed(I[13], 77, 50, "headers");
-    return utils.encodingForCharset(response$._contentTypeForHeaders(headers).parameters[$_get]("charset"));
-  };
-  response$._contentTypeForHeaders = function _contentTypeForHeaders(headers) {
-    if (headers == null) dart.nullFailed(I[13], 83, 54, "headers");
-    let contentType = headers[$_get]("content-type");
-    if (contentType != null) return media_type.MediaType.parse(contentType);
-    return new media_type.MediaType.new("application", "octet-stream");
-  };
-  var _defaultEncoding = dart.privateName(request$, "_defaultEncoding");
-  var _bodyBytes = dart.privateName(request$, "_bodyBytes");
-  var _contentType = dart.privateName(request$, "_contentType");
-  var _checkFinalized$ = dart.privateName(request$, "_checkFinalized");
-  request$.Request = class Request extends base_request.BaseRequest {
-    get contentLength() {
-      return this.bodyBytes[$length];
+  dart.defineLazy(platform_interface_task_snapshot.TaskSnapshotPlatform, {
+    /*platform_interface_task_snapshot.TaskSnapshotPlatform._token*/get _token() {
+      return new core.Object.new();
     }
-    set contentLength(value) {
-      dart.throw(new core.UnsupportedError.new("Cannot set the contentLength property of " + "non-streaming Request objects."));
+  }, false);
+  platform_interface_task.TaskPlatform = class TaskPlatform extends plugin_platform_interface.PlatformInterface {
+    static verifyExtends(instance) {
+      if (instance == null) dart.nullFailed(I[2], 23, 42, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, platform_interface_task.TaskPlatform._token);
     }
-    get encoding() {
-      if (this[_contentType] == null || !dart.test(dart.nullCheck(this[_contentType]).parameters[$containsKey]("charset"))) {
-        return this[_defaultEncoding];
-      }
-      return utils.requiredEncodingForCharset(dart.nullCheck(dart.nullCheck(this[_contentType]).parameters[$_get]("charset")));
+    get snapshotEvents() {
+      dart.throw(new core.UnimplementedError.new("snapshotEvents is not implemented"));
     }
-    set encoding(value) {
-      if (value == null) dart.nullFailed(I[17], 59, 25, "value");
-      this[_checkFinalized$]();
-      this[_defaultEncoding] = value;
-      let contentType = this[_contentType];
-      if (contentType == null) return;
-      this[_contentType] = contentType.change({parameters: new (T.IdentityMapOfString$String()).from(["charset", value.name])});
+    get snapshot() {
+      dart.throw(new core.UnimplementedError.new("snapshot is not implemented"));
     }
-    get bodyBytes() {
-      return this[_bodyBytes];
+    get onComplete() {
+      dart.throw(new core.UnimplementedError.new("onComplete is not implemented"));
     }
-    set bodyBytes(value) {
-      if (value == null) dart.nullFailed(I[17], 76, 27, "value");
-      this[_checkFinalized$]();
-      this[_bodyBytes] = utils.toUint8List(value);
+    pause() {
+      dart.throw(new core.UnimplementedError.new("pause() is not implemented"));
     }
-    get body() {
-      return this.encoding.decode(this.bodyBytes);
+    resume() {
+      dart.throw(new core.UnimplementedError.new("resume() is not implemented"));
     }
-    set body(value) {
-      if (value == null) dart.nullFailed(I[17], 91, 19, "value");
-      this.bodyBytes = this.encoding.encode(value);
-      let contentType = this[_contentType];
-      if (contentType == null) {
-        this[_contentType] = new media_type.MediaType.new("text", "plain", new (T.IdentityMapOfString$String()).from(["charset", this.encoding.name]));
-      } else if (!dart.test(contentType.parameters[$containsKey]("charset"))) {
-        this[_contentType] = contentType.change({parameters: new (T.IdentityMapOfString$String()).from(["charset", this.encoding.name])});
-      }
-    }
-    get bodyFields() {
-      let contentType = this[_contentType];
-      if (contentType == null || contentType.mimeType !== "application/x-www-form-urlencoded") {
-        dart.throw(new core.StateError.new("Cannot access the body fields of a Request without " + "content-type \"application/x-www-form-urlencoded\"."));
-      }
-      return core.Uri.splitQueryString(this.body, {encoding: this.encoding});
-    }
-    set bodyFields(fields) {
-      if (fields == null) dart.nullFailed(I[17], 128, 38, "fields");
-      let contentType = this[_contentType];
-      if (contentType == null) {
-        this[_contentType] = new media_type.MediaType.new("application", "x-www-form-urlencoded");
-      } else if (contentType.mimeType !== "application/x-www-form-urlencoded") {
-        dart.throw(new core.StateError.new("Cannot set the body fields of a Request with " + "content-type \"" + dart.str(contentType.mimeType) + "\"."));
-      }
-      this.body = utils.mapToQuery(fields, {encoding: this.encoding});
-    }
-    finalize() {
-      super.finalize();
-      return byte_stream.ByteStream.fromBytes(this.bodyBytes);
-    }
-    get [_contentType]() {
-      let contentType = this.headers[$_get]("content-type");
-      if (contentType == null) return null;
-      return media_type.MediaType.parse(contentType);
-    }
-    set [_contentType](value) {
-      if (value == null) {
-        this.headers[$remove]("content-type");
-      } else {
-        this.headers[$_set]("content-type", dart.toString(value));
-      }
-    }
-    [_checkFinalized$]() {
-      if (!dart.test(this.finalized)) return;
-      dart.throw(new core.StateError.new("Can't modify a finalized Request."));
+    cancel() {
+      dart.throw(new core.UnimplementedError.new("cancel() is not implemented"));
     }
   };
-  (request$.Request.new = function(method, url) {
-    if (method == null) dart.nullFailed(I[17], 140, 18, "method");
-    if (url == null) dart.nullFailed(I[17], 140, 30, "url");
-    this[_defaultEncoding] = convert.utf8;
-    this[_bodyBytes] = _native_typed_data.NativeUint8List.new(0);
-    request$.Request.__proto__.new.call(this, method, url);
+  (platform_interface_task.TaskPlatform.new = function() {
+    platform_interface_task.TaskPlatform.__proto__.new.call(this, {token: platform_interface_task.TaskPlatform._token});
     ;
-  }).prototype = request$.Request.prototype;
-  dart.addTypeTests(request$.Request);
-  dart.addTypeCaches(request$.Request);
-  dart.setMethodSignature(request$.Request, () => ({
-    __proto__: dart.getMethods(request$.Request.__proto__),
-    [_checkFinalized$]: dart.fnType(dart.void, [])
+  }).prototype = platform_interface_task.TaskPlatform.prototype;
+  dart.addTypeTests(platform_interface_task.TaskPlatform);
+  dart.addTypeCaches(platform_interface_task.TaskPlatform);
+  dart.setMethodSignature(platform_interface_task.TaskPlatform, () => ({
+    __proto__: dart.getMethods(platform_interface_task.TaskPlatform.__proto__),
+    pause: dart.fnType(async.Future$(core.bool), []),
+    resume: dart.fnType(async.Future$(core.bool), []),
+    cancel: dart.fnType(async.Future$(core.bool), [])
   }));
-  dart.setGetterSignature(request$.Request, () => ({
-    __proto__: dart.getGetters(request$.Request.__proto__),
-    contentLength: core.int,
-    encoding: convert.Encoding,
-    bodyBytes: typed_data.Uint8List,
-    body: core.String,
-    bodyFields: core.Map$(core.String, core.String),
-    [_contentType]: dart.nullable(media_type.MediaType)
+  dart.setGetterSignature(platform_interface_task.TaskPlatform, () => ({
+    __proto__: dart.getGetters(platform_interface_task.TaskPlatform.__proto__),
+    snapshotEvents: async.Stream$(platform_interface_task_snapshot.TaskSnapshotPlatform),
+    snapshot: platform_interface_task_snapshot.TaskSnapshotPlatform,
+    onComplete: async.Future$(platform_interface_task_snapshot.TaskSnapshotPlatform)
   }));
-  dart.setSetterSignature(request$.Request, () => ({
-    __proto__: dart.getSetters(request$.Request.__proto__),
-    encoding: convert.Encoding,
-    bodyBytes: core.List$(core.int),
-    body: core.String,
-    bodyFields: core.Map$(core.String, core.String),
-    [_contentType]: dart.nullable(media_type.MediaType)
-  }));
-  dart.setLibraryUri(request$.Request, I[18]);
-  dart.setFieldSignature(request$.Request, () => ({
-    __proto__: dart.getFields(request$.Request.__proto__),
-    [_defaultEncoding]: dart.fieldType(convert.Encoding),
-    [_bodyBytes]: dart.fieldType(typed_data.Uint8List)
-  }));
-  var stream$ = dart.privateName(streamed_response, "StreamedResponse.stream");
-  streamed_response.StreamedResponse = class StreamedResponse extends base_response.BaseResponse {
-    get stream() {
-      return this[stream$];
+  dart.setLibraryUri(platform_interface_task.TaskPlatform, I[3]);
+  dart.defineLazy(platform_interface_task.TaskPlatform, {
+    /*platform_interface_task.TaskPlatform._token*/get _token() {
+      return new core.Object.new();
     }
-    set stream(value) {
-      super.stream = value;
+  }, false);
+  var storage$ = dart.privateName(platform_interface_reference, "ReferencePlatform.storage");
+  var _pointer = dart.privateName(platform_interface_reference, "_pointer");
+  platform_interface_reference.ReferencePlatform = class ReferencePlatform extends plugin_platform_interface.PlatformInterface {
+    get storage() {
+      return this[storage$];
+    }
+    set storage(value) {
+      super.storage = value;
+    }
+    static verifyExtends(instance) {
+      if (instance == null) dart.nullFailed(I[4], 30, 47, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, platform_interface_reference.ReferencePlatform._token);
+    }
+    get bucket() {
+      return this.storage.bucket;
+    }
+    get fullPath() {
+      return this[_pointer].path;
+    }
+    get name() {
+      return this[_pointer].name;
+    }
+    get parent() {
+      let parentPath = this[_pointer].parent;
+      if (parentPath == null) {
+        return null;
+      }
+      return this.storage.ref(parentPath);
+    }
+    get root() {
+      return this.storage.ref("/");
+    }
+    child(path) {
+      if (path == null) dart.nullFailed(I[4], 71, 34, "path");
+      return this.storage.ref(this[_pointer].child(path));
+    }
+    delete() {
+      dart.throw(new core.UnimplementedError.new("delete() is not implemented"));
+    }
+    getDownloadURL() {
+      dart.throw(new core.UnimplementedError.new("getDownloadURL() is not implemented"));
+    }
+    getMetadata() {
+      dart.throw(new core.UnimplementedError.new("getMetadata() is not implemented"));
+    }
+    list(options = null) {
+      dart.throw(new core.UnimplementedError.new("list() is not implemented"));
+    }
+    listAll() {
+      dart.throw(new core.UnimplementedError.new("listAll() is not implemented"));
+    }
+    getData(maxSize) {
+      if (maxSize == null) dart.nullFailed(I[4], 123, 34, "maxSize");
+      return async.async(T.Uint8ListN(), function* getData() {
+        dart.throw(new core.UnimplementedError.new("getData() is not implemented"));
+      });
+    }
+    putData(data, metadata = null) {
+      if (data == null) dart.nullFailed(I[4], 132, 34, "data");
+      dart.throw(new core.UnimplementedError.new("putData() is not implemented"));
+    }
+    putBlob(data, metadata = null) {
+      dart.throw(new core.UnimplementedError.new("putBlob() is not implemented"));
+    }
+    putFile(file, metadata = null) {
+      if (file == null) dart.nullFailed(I[4], 146, 29, "file");
+      dart.throw(new core.UnimplementedError.new("putFile() is not implemented"));
+    }
+    putString(data, format, metadata = null) {
+      if (data == null) dart.nullFailed(I[4], 160, 33, "data");
+      if (format == null) dart.nullFailed(I[4], 160, 55, "format");
+      dart.throw(new core.UnimplementedError.new("putString() is not implemented"));
+    }
+    updateMetadata(metadata) {
+      if (metadata == null) dart.nullFailed(I[4], 166, 56, "metadata");
+      dart.throw(new core.UnimplementedError.new("updateMetadata() is not implemented"));
+    }
+    writeToFile(file) {
+      if (file == null) dart.nullFailed(I[4], 173, 33, "file");
+      dart.throw(new core.UnimplementedError.new("writeToFile() is not implemented"));
     }
   };
-  (streamed_response.StreamedResponse.new = function(stream, statusCode, opts) {
-    if (stream == null) dart.nullFailed(I[19], 21, 38, "stream");
-    if (statusCode == null) dart.nullFailed(I[19], 21, 50, "statusCode");
-    let contentLength = opts && 'contentLength' in opts ? opts.contentLength : null;
-    let request = opts && 'request' in opts ? opts.request : null;
-    let headers = opts && 'headers' in opts ? opts.headers : C[3] || CT.C3;
-    if (headers == null) dart.nullFailed(I[19], 24, 27, "headers");
-    let isRedirect = opts && 'isRedirect' in opts ? opts.isRedirect : false;
-    if (isRedirect == null) dart.nullFailed(I[19], 25, 12, "isRedirect");
-    let persistentConnection = opts && 'persistentConnection' in opts ? opts.persistentConnection : true;
-    if (persistentConnection == null) dart.nullFailed(I[19], 26, 12, "persistentConnection");
-    let reasonPhrase = opts && 'reasonPhrase' in opts ? opts.reasonPhrase : null;
-    this[stream$] = utils.toByteStream(stream);
-    streamed_response.StreamedResponse.__proto__.new.call(this, statusCode, {contentLength: contentLength, request: request, headers: headers, isRedirect: isRedirect, persistentConnection: persistentConnection, reasonPhrase: reasonPhrase});
+  (platform_interface_reference.ReferencePlatform.new = function(storage, path) {
+    if (storage == null) dart.nullFailed(I[4], 16, 26, "storage");
+    if (path == null) dart.nullFailed(I[4], 16, 42, "path");
+    this[storage$] = storage;
+    this[_pointer] = new pointer.Pointer.new(path);
+    platform_interface_reference.ReferencePlatform.__proto__.new.call(this, {token: platform_interface_reference.ReferencePlatform._token});
     ;
-  }).prototype = streamed_response.StreamedResponse.prototype;
-  dart.addTypeTests(streamed_response.StreamedResponse);
-  dart.addTypeCaches(streamed_response.StreamedResponse);
-  dart.setLibraryUri(streamed_response.StreamedResponse, I[20]);
-  dart.setFieldSignature(streamed_response.StreamedResponse, () => ({
-    __proto__: dart.getFields(streamed_response.StreamedResponse.__proto__),
-    stream: dart.finalFieldType(byte_stream.ByteStream)
+  }).prototype = platform_interface_reference.ReferencePlatform.prototype;
+  dart.addTypeTests(platform_interface_reference.ReferencePlatform);
+  dart.addTypeCaches(platform_interface_reference.ReferencePlatform);
+  dart.setMethodSignature(platform_interface_reference.ReferencePlatform, () => ({
+    __proto__: dart.getMethods(platform_interface_reference.ReferencePlatform.__proto__),
+    child: dart.fnType(platform_interface_reference.ReferencePlatform, [core.String]),
+    delete: dart.fnType(async.Future$(dart.void), []),
+    getDownloadURL: dart.fnType(async.Future$(core.String), []),
+    getMetadata: dart.fnType(async.Future$(full_metadata.FullMetadata), []),
+    list: dart.fnType(async.Future$(platform_interface_list_result.ListResultPlatform), [], [dart.nullable(list_options.ListOptions)]),
+    listAll: dart.fnType(async.Future$(platform_interface_list_result.ListResultPlatform), []),
+    getData: dart.fnType(async.Future$(dart.nullable(typed_data.Uint8List)), [core.int]),
+    putData: dart.fnType(platform_interface_task.TaskPlatform, [typed_data.Uint8List], [dart.nullable(settable_metadata.SettableMetadata)]),
+    putBlob: dart.fnType(platform_interface_task.TaskPlatform, [dart.dynamic], [dart.nullable(settable_metadata.SettableMetadata)]),
+    putFile: dart.fnType(platform_interface_task.TaskPlatform, [io.File], [dart.nullable(settable_metadata.SettableMetadata)]),
+    putString: dart.fnType(platform_interface_task.TaskPlatform, [core.String, put_string_format.PutStringFormat], [dart.nullable(settable_metadata.SettableMetadata)]),
+    updateMetadata: dart.fnType(async.Future$(full_metadata.FullMetadata), [settable_metadata.SettableMetadata]),
+    writeToFile: dart.fnType(platform_interface_task.TaskPlatform, [io.File])
   }));
-  client$.Client = class Client extends core.Object {
-    static new() {
-      return browser_client.createClient();
+  dart.setGetterSignature(platform_interface_reference.ReferencePlatform, () => ({
+    __proto__: dart.getGetters(platform_interface_reference.ReferencePlatform.__proto__),
+    bucket: core.String,
+    fullPath: core.String,
+    name: core.String,
+    parent: dart.nullable(platform_interface_reference.ReferencePlatform),
+    root: platform_interface_reference.ReferencePlatform
+  }));
+  dart.setLibraryUri(platform_interface_reference.ReferencePlatform, I[5]);
+  dart.setFieldSignature(platform_interface_reference.ReferencePlatform, () => ({
+    __proto__: dart.getFields(platform_interface_reference.ReferencePlatform.__proto__),
+    [_pointer]: dart.fieldType(pointer.Pointer),
+    storage: dart.finalFieldType(platform_interface_firebase_storage.FirebaseStoragePlatform)
+  }));
+  dart.defineLazy(platform_interface_reference.ReferencePlatform, {
+    /*platform_interface_reference.ReferencePlatform._token*/get _token() {
+      return new core.Object.new();
+    }
+  }, false);
+  var storage$0 = dart.privateName(platform_interface_list_result, "ListResultPlatform.storage");
+  var nextPageToken$ = dart.privateName(platform_interface_list_result, "ListResultPlatform.nextPageToken");
+  platform_interface_list_result.ListResultPlatform = class ListResultPlatform extends plugin_platform_interface.PlatformInterface {
+    get storage() {
+      return this[storage$0];
+    }
+    set storage(value) {
+      super.storage = value;
+    }
+    get nextPageToken() {
+      return this[nextPageToken$];
+    }
+    set nextPageToken(value) {
+      super.nextPageToken = value;
+    }
+    static verifyExtends(instance) {
+      if (instance == null) dart.nullFailed(I[6], 21, 48, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, platform_interface_list_result.ListResultPlatform._token);
+    }
+    get items() {
+      dart.throw(new core.UnimplementedError.new("items is not implemented"));
+    }
+    get prefixes() {
+      dart.throw(new core.UnimplementedError.new("prefixes is not implemented"));
     }
   };
-  (client$.Client[dart.mixinNew] = function() {
-  }).prototype = client$.Client.prototype;
-  dart.addTypeTests(client$.Client);
-  dart.addTypeCaches(client$.Client);
-  dart.setLibraryUri(client$.Client, I[21]);
-  http.head = function head(url, opts) {
-    if (url == null) dart.nullFailed(I[22], 35, 27, "url");
-    let headers = opts && 'headers' in opts ? opts.headers : null;
-    return http._withClient(response$.Response, dart.fn(client => {
-      if (client == null) dart.nullFailed(I[22], 36, 18, "client");
-      return client.head(url, {headers: headers});
-    }, T.ClientToFutureOfResponse()));
+  (platform_interface_list_result.ListResultPlatform.new = function(storage, nextPageToken) {
+    this[storage$0] = storage;
+    this[nextPageToken$] = nextPageToken;
+    platform_interface_list_result.ListResultPlatform.__proto__.new.call(this, {token: platform_interface_list_result.ListResultPlatform._token});
+    ;
+  }).prototype = platform_interface_list_result.ListResultPlatform.prototype;
+  dart.addTypeTests(platform_interface_list_result.ListResultPlatform);
+  dart.addTypeCaches(platform_interface_list_result.ListResultPlatform);
+  dart.setGetterSignature(platform_interface_list_result.ListResultPlatform, () => ({
+    __proto__: dart.getGetters(platform_interface_list_result.ListResultPlatform.__proto__),
+    items: core.List$(platform_interface_reference.ReferencePlatform),
+    prefixes: core.List$(platform_interface_reference.ReferencePlatform)
+  }));
+  dart.setLibraryUri(platform_interface_list_result.ListResultPlatform, I[7]);
+  dart.setFieldSignature(platform_interface_list_result.ListResultPlatform, () => ({
+    __proto__: dart.getFields(platform_interface_list_result.ListResultPlatform.__proto__),
+    storage: dart.finalFieldType(dart.nullable(platform_interface_firebase_storage.FirebaseStoragePlatform)),
+    nextPageToken: dart.finalFieldType(dart.nullable(core.String))
+  }));
+  dart.defineLazy(platform_interface_list_result.ListResultPlatform, {
+    /*platform_interface_list_result.ListResultPlatform._token*/get _token() {
+      return new core.Object.new();
+    }
+  }, false);
+  var storage$1 = dart.privateName(method_channel_task_snapshot, "MethodChannelTaskSnapshot.storage");
+  var _data$0 = dart.privateName(method_channel_task_snapshot, "_data");
+  method_channel_task_snapshot.MethodChannelTaskSnapshot = class MethodChannelTaskSnapshot extends platform_interface_task_snapshot.TaskSnapshotPlatform {
+    get storage() {
+      return this[storage$1];
+    }
+    set storage(value) {
+      super.storage = value;
+    }
+    get ref() {
+      return new method_channel_reference.MethodChannelReference.new(this.storage, core.String.as(this[_data$0][$_get]("path")));
+    }
   };
-  http.get = function get(url, opts) {
-    if (url == null) dart.nullFailed(I[22], 45, 26, "url");
-    let headers = opts && 'headers' in opts ? opts.headers : null;
-    return http._withClient(response$.Response, dart.fn(client => {
-      if (client == null) dart.nullFailed(I[22], 46, 18, "client");
-      return client.get(url, {headers: headers});
-    }, T.ClientToFutureOfResponse()));
+  (method_channel_task_snapshot.MethodChannelTaskSnapshot.new = function(storage, state, _data) {
+    if (storage == null) dart.nullFailed(I[8], 11, 34, "storage");
+    if (state == null) dart.nullFailed(I[8], 11, 53, "state");
+    if (_data == null) dart.nullFailed(I[8], 11, 65, "_data");
+    this[storage$1] = storage;
+    this[_data$0] = _data;
+    method_channel_task_snapshot.MethodChannelTaskSnapshot.__proto__.new.call(this, state, _data);
+    ;
+  }).prototype = method_channel_task_snapshot.MethodChannelTaskSnapshot.prototype;
+  dart.addTypeTests(method_channel_task_snapshot.MethodChannelTaskSnapshot);
+  dart.addTypeCaches(method_channel_task_snapshot.MethodChannelTaskSnapshot);
+  dart.setLibraryUri(method_channel_task_snapshot.MethodChannelTaskSnapshot, I[9]);
+  dart.setFieldSignature(method_channel_task_snapshot.MethodChannelTaskSnapshot, () => ({
+    __proto__: dart.getFields(method_channel_task_snapshot.MethodChannelTaskSnapshot.__proto__),
+    storage: dart.finalFieldType(platform_interface_firebase_storage.FirebaseStoragePlatform),
+    [_data$0]: dart.finalFieldType(core.Map$(core.String, dart.dynamic))
+  }));
+  var storage$2 = dart.privateName(method_channel_task, "MethodChannelTask.storage");
+  var _exception = dart.privateName(method_channel_task, "_exception");
+  var _stackTrace = dart.privateName(method_channel_task, "_stackTrace");
+  var _didComplete = dart.privateName(method_channel_task, "_didComplete");
+  var _completer = dart.privateName(method_channel_task, "_completer");
+  var __MethodChannelTask__stream = dart.privateName(method_channel_task, "_#MethodChannelTask#_stream");
+  var __MethodChannelTask__initialTaskCompleter = dart.privateName(method_channel_task, "_#MethodChannelTask#_initialTaskCompleter");
+  var __MethodChannelTask__snapshot = dart.privateName(method_channel_task, "_#MethodChannelTask#_snapshot");
+  var _handle$ = dart.privateName(method_channel_task, "_handle");
+  var _initialTask$ = dart.privateName(method_channel_task, "_initialTask");
+  var _initialTaskCompleter = dart.privateName(method_channel_task, "_initialTaskCompleter");
+  var _snapshot = dart.privateName(method_channel_task, "_snapshot");
+  var _stream = dart.privateName(method_channel_task, "_stream");
+  method_channel_task.MethodChannelTask = class MethodChannelTask extends platform_interface_task.TaskPlatform {
+    get storage() {
+      return this[storage$2];
+    }
+    set storage(value) {
+      super.storage = value;
+    }
+    get [_stream]() {
+      let t4;
+      t4 = this[__MethodChannelTask__stream];
+      return t4 == null ? dart.throw(new _internal.LateError.fieldNI("_stream")) : t4;
+    }
+    set [_stream](t4) {
+      if (t4 == null) dart.nullFailed(I[10], 97, 37, "null");
+      this[__MethodChannelTask__stream] = t4;
+    }
+    get [_initialTaskCompleter]() {
+      let t5;
+      t5 = this[__MethodChannelTask__initialTaskCompleter];
+      return t5 == null ? dart.throw(new _internal.LateError.fieldNI("_initialTaskCompleter")) : t5;
+    }
+    set [_initialTaskCompleter](t5) {
+      if (t5 == null) dart.nullFailed(I[10], 99, 24, "null");
+      this[__MethodChannelTask__initialTaskCompleter] = t5;
+    }
+    get [_snapshot]() {
+      let t6;
+      t6 = this[__MethodChannelTask__snapshot];
+      return t6 == null ? dart.throw(new _internal.LateError.fieldNI("_snapshot")) : t6;
+    }
+    set [_snapshot](t6) {
+      if (t6 == null) dart.nullFailed(I[10], 108, 29, "null");
+      this[__MethodChannelTask__snapshot] = t6;
+    }
+    get snapshotEvents() {
+      return T.StreamOfTaskSnapshotPlatform().as(dart.nullCheck(method_channel_firebase_storage.MethodChannelFirebaseStorage.taskObservers[$_get](this[_handle$])).stream);
+    }
+    get snapshot() {
+      return this[_snapshot];
+    }
+    get onComplete() {
+      return async.async(platform_interface_task_snapshot.TaskSnapshotPlatform, (function* onComplete() {
+        if (dart.test(this[_didComplete]) && this[_exception] == null) {
+          return T.FutureOfTaskSnapshotPlatform().value(this.snapshot);
+        } else if (dart.test(this[_didComplete]) && this[_exception] != null) {
+          return exception.catchFuturePlatformException(platform_interface_task_snapshot.TaskSnapshotPlatform, dart.nullCheck(this[_exception]), this[_stackTrace]);
+        } else {
+          this[_completer] == null ? this[_completer] = T.CompleterOfTaskSnapshotPlatform().new() : null;
+          return dart.nullCheck(this[_completer]).future;
+        }
+      }).bind(this));
+    }
+    pause() {
+      return async.async(core.bool, (function* pause() {
+        try {
+          if (!dart.test(this[_initialTaskCompleter].isCompleted)) {
+            yield this[_initialTaskCompleter].future;
+          }
+          let data = (yield method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMapMethod(core.String, dart.dynamic, "Task#pause", new (T.IdentityMapOfString$dynamic()).from(["handle", this[_handle$]])));
+          let success = core.bool.as(dart.nullCheck(data)[$_get]("status"));
+          if (dart.test(success)) {
+            this[_snapshot] = new method_channel_task_snapshot.MethodChannelTaskSnapshot.new(this.storage, task_state.TaskState.paused, T.LinkedHashMapOfString$dynamic().from(core.Map.as(data[$_get]("snapshot"))));
+          }
+          return success;
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            return exception.catchFuturePlatformException(core.bool, e);
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    resume() {
+      return async.async(core.bool, (function* resume() {
+        try {
+          if (!dart.test(this[_initialTaskCompleter].isCompleted)) {
+            yield this[_initialTaskCompleter].future;
+          }
+          let data = (yield method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMapMethod(core.String, dart.dynamic, "Task#resume", new (T.IdentityMapOfString$dynamic()).from(["handle", this[_handle$]])));
+          let success = core.bool.as(dart.nullCheck(data)[$_get]("status"));
+          if (dart.test(success)) {
+            this[_snapshot] = new method_channel_task_snapshot.MethodChannelTaskSnapshot.new(this.storage, task_state.TaskState.running, T.LinkedHashMapOfString$dynamic().from(core.Map.as(data[$_get]("snapshot"))));
+          }
+          return success;
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            return exception.catchFuturePlatformException(core.bool, e);
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    cancel() {
+      return async.async(core.bool, (function* cancel() {
+        try {
+          if (!dart.test(this[_initialTaskCompleter].isCompleted)) {
+            yield this[_initialTaskCompleter].future;
+          }
+          let data = (yield method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMapMethod(core.String, dart.dynamic, "Task#cancel", new (T.IdentityMapOfString$dynamic()).from(["handle", this[_handle$]])));
+          let success = core.bool.as(dart.nullCheck(data)[$_get]("status"));
+          if (dart.test(success)) {
+            this[_snapshot] = new method_channel_task_snapshot.MethodChannelTaskSnapshot.new(this.storage, task_state.TaskState.canceled, T.LinkedHashMapOfString$dynamic().from(core.Map.as(data[$_get]("snapshot"))));
+          }
+          return success;
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            return exception.catchFuturePlatformException(core.bool, e);
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
   };
-  http.post = function post(url, opts) {
-    if (url == null) dart.nullFailed(I[22], 66, 27, "url");
-    let headers = opts && 'headers' in opts ? opts.headers : null;
-    let body = opts && 'body' in opts ? opts.body : null;
-    let encoding = opts && 'encoding' in opts ? opts.encoding : null;
-    return http._withClient(response$.Response, dart.fn(client => {
-      if (client == null) dart.nullFailed(I[22], 68, 18, "client");
-      return client.post(url, {headers: headers, body: body, encoding: encoding});
-    }, T.ClientToFutureOfResponse()));
+  (method_channel_task.MethodChannelTask.new = function(_handle, storage, path, _initialTask) {
+    if (_handle == null) dart.nullFailed(I[10], 22, 10, "_handle");
+    if (storage == null) dart.nullFailed(I[10], 23, 10, "storage");
+    if (path == null) dart.nullFailed(I[10], 24, 12, "path");
+    if (_initialTask == null) dart.nullFailed(I[10], 25, 10, "_initialTask");
+    this[_exception] = null;
+    this[_stackTrace] = null;
+    this[_didComplete] = false;
+    this[_completer] = null;
+    this[__MethodChannelTask__stream] = null;
+    this[__MethodChannelTask__initialTaskCompleter] = null;
+    this[__MethodChannelTask__snapshot] = null;
+    this[_handle$] = _handle;
+    this[storage$2] = storage;
+    this[_initialTask$] = _initialTask;
+    method_channel_task.MethodChannelTask.__proto__.new.call(this);
+    this[_initialTaskCompleter] = T.CompleterOfvoid().new();
+    this[_snapshot] = new method_channel_task_snapshot.MethodChannelTaskSnapshot.new(this.storage, task_state.TaskState.running, new (T.IdentityMapOfString$dynamic()).from(["path", path, "bytesTransferred", 0, "totalBytes", 1]));
+    this[_initialTask$]().then(core.Null, dart.fn(_ => {
+      this[_initialTaskCompleter].complete();
+    }, T.voidToNull())).catchError(dart.fn((e, stackTrace) => {
+      if (e == null) dart.nullFailed(I[10], 36, 27, "e");
+      if (stackTrace == null) dart.nullFailed(I[10], 36, 41, "stackTrace");
+      this[_initialTaskCompleter].completeError(e, stackTrace);
+      this[_didComplete] = true;
+      this[_exception] = e;
+      this[_stackTrace] = stackTrace;
+      if (this[_completer] != null) {
+        exception.catchFuturePlatformException(dart.dynamic, e, stackTrace).catchError(dart.bind(dart.nullCheck(this[_completer]), 'completeError'));
+      }
+    }, T.ObjectAndStackTraceToNull()));
+    this[_stream] = T.StreamOfTaskSnapshotPlatform().as(dart.nullCheck(method_channel_firebase_storage.MethodChannelFirebaseStorage.taskObservers[$_get](this[_handle$])).stream);
+    let _subscription = null;
+    function _subscription$35get() {
+      let t1;
+      t1 = _subscription;
+      return t1 == null ? dart.throw(new _internal.LateError.localNI("_subscription")) : t1;
+    }
+    dart.fn(_subscription$35get, T.VoidToStreamSubscription());
+    function _subscription$35set(t2) {
+      if (t2 == null) dart.nullFailed(I[10], 50, 29, "null");
+      return _subscription = t2;
+    }
+    dart.fn(_subscription$35set, T.StreamSubscriptionTodynamic());
+    _subscription$35set(this[_stream].listen(dart.fn(snapshot => {
+      if (snapshot == null) dart.nullFailed(I[10], 53, 58, "snapshot");
+      return async.async(dart.void, (function*() {
+        let t4;
+        if (this[_snapshot].state != task_state.TaskState.canceled) {
+          this[_snapshot] = snapshot;
+        }
+        if (snapshot.state == task_state.TaskState.success) {
+          this[_didComplete] = true;
+          t4 = this[_completer];
+          t4 == null ? null : t4.complete(snapshot);
+          yield _subscription$35get().cancel();
+        }
+      }).bind(this));
+    }, T.TaskSnapshotPlatformToFutureOfvoid()), {onError: dart.fn((e, stackTrace) => {
+        if (e == null) dart.nullFailed(I[10], 65, 25, "e");
+        if (stackTrace == null) dart.nullFailed(I[10], 65, 39, "stackTrace");
+        if (firebase_core_platform_interface.FirebaseException.is(e) && e.code === "canceled") {
+          this[_snapshot] = new method_channel_task_snapshot.MethodChannelTaskSnapshot.new(this.storage, task_state.TaskState.canceled, new (T.IdentityMapOfString$dynamic()).from(["path", path, "bytesTransferred", this[_snapshot].bytesTransferred, "totalBytes", this[_snapshot].totalBytes]));
+        } else {
+          this[_snapshot] = new method_channel_task_snapshot.MethodChannelTaskSnapshot.new(this.storage, task_state.TaskState.error, new (T.IdentityMapOfString$dynamic()).from(["path", path, "bytesTransferred", this[_snapshot].bytesTransferred, "totalBytes", this[_snapshot].totalBytes]));
+        }
+        this[_didComplete] = true;
+        this[_exception] = e;
+        this[_stackTrace] = stackTrace;
+        if (this[_completer] != null) {
+          exception.catchFuturePlatformException(dart.dynamic, e, stackTrace).catchError(dart.bind(dart.nullCheck(this[_completer]), 'completeError'));
+        }
+      }, T.ObjectAndStackTraceToNull()), cancelOnError: true}));
+  }).prototype = method_channel_task.MethodChannelTask.prototype;
+  dart.addTypeTests(method_channel_task.MethodChannelTask);
+  dart.addTypeCaches(method_channel_task.MethodChannelTask);
+  dart.setGetterSignature(method_channel_task.MethodChannelTask, () => ({
+    __proto__: dart.getGetters(method_channel_task.MethodChannelTask.__proto__),
+    [_stream]: async.Stream$(platform_interface_task_snapshot.TaskSnapshotPlatform),
+    [_initialTaskCompleter]: async.Completer$(dart.void),
+    [_snapshot]: platform_interface_task_snapshot.TaskSnapshotPlatform
+  }));
+  dart.setSetterSignature(method_channel_task.MethodChannelTask, () => ({
+    __proto__: dart.getSetters(method_channel_task.MethodChannelTask.__proto__),
+    [_stream]: async.Stream$(platform_interface_task_snapshot.TaskSnapshotPlatform),
+    [_initialTaskCompleter]: async.Completer$(dart.void),
+    [_snapshot]: platform_interface_task_snapshot.TaskSnapshotPlatform
+  }));
+  dart.setLibraryUri(method_channel_task.MethodChannelTask, I[11]);
+  dart.setFieldSignature(method_channel_task.MethodChannelTask, () => ({
+    __proto__: dart.getFields(method_channel_task.MethodChannelTask.__proto__),
+    [_exception]: dart.fieldType(dart.nullable(core.Object)),
+    [_stackTrace]: dart.fieldType(dart.nullable(core.StackTrace)),
+    [_didComplete]: dart.fieldType(core.bool),
+    [_completer]: dart.fieldType(dart.nullable(async.Completer$(platform_interface_task_snapshot.TaskSnapshotPlatform))),
+    [__MethodChannelTask__stream]: dart.fieldType(dart.nullable(async.Stream$(platform_interface_task_snapshot.TaskSnapshotPlatform))),
+    [__MethodChannelTask__initialTaskCompleter]: dart.fieldType(dart.nullable(async.Completer$(dart.void))),
+    [_initialTask$]: dart.fieldType(dart.fnType(async.Future$(dart.void), [])),
+    [_handle$]: dart.finalFieldType(core.int),
+    storage: dart.finalFieldType(platform_interface_firebase_storage.FirebaseStoragePlatform),
+    [__MethodChannelTask__snapshot]: dart.fieldType(dart.nullable(platform_interface_task_snapshot.TaskSnapshotPlatform))
+  }));
+  method_channel_task.MethodChannelPutFileTask = class MethodChannelPutFileTask extends method_channel_task.MethodChannelTask {
+    static _getTask(handle, storage, path, file, metadata) {
+      if (handle == null) dart.nullFailed(I[10], 210, 11, "handle");
+      if (storage == null) dart.nullFailed(I[10], 211, 31, "storage");
+      if (path == null) dart.nullFailed(I[10], 212, 14, "path");
+      if (file == null) dart.nullFailed(I[10], 213, 12, "file");
+      return dart.fn(() => {
+        let t10;
+        return method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMethod(dart.void, "Task#startPutFile", new (T.IdentityMapOfString$dynamic()).from(["appName", storage.app.name, "maxOperationRetryTime", storage.maxOperationRetryTime, "maxUploadRetryTime", storage.maxUploadRetryTime, "maxDownloadRetryTime", storage.maxDownloadRetryTime, "bucket", storage.bucket, "handle", handle, "path", path, "filePath", file.absolute.path, "metadata", (t10 = metadata, t10 == null ? null : t10.asMap())]));
+      }, T.VoidToFutureOfvoid());
+    }
   };
-  http.put = function put(url, opts) {
-    if (url == null) dart.nullFailed(I[22], 89, 26, "url");
-    let headers = opts && 'headers' in opts ? opts.headers : null;
-    let body = opts && 'body' in opts ? opts.body : null;
-    let encoding = opts && 'encoding' in opts ? opts.encoding : null;
-    return http._withClient(response$.Response, dart.fn(client => {
-      if (client == null) dart.nullFailed(I[22], 91, 18, "client");
-      return client.put(url, {headers: headers, body: body, encoding: encoding});
-    }, T.ClientToFutureOfResponse()));
+  (method_channel_task.MethodChannelPutFileTask.new = function(handle, storage, path, file, metadata) {
+    if (handle == null) dart.nullFailed(I[10], 204, 32, "handle");
+    if (storage == null) dart.nullFailed(I[10], 204, 64, "storage");
+    if (path == null) dart.nullFailed(I[10], 205, 14, "path");
+    if (file == null) dart.nullFailed(I[10], 205, 25, "file");
+    method_channel_task.MethodChannelPutFileTask.__proto__.new.call(this, handle, storage, path, method_channel_task.MethodChannelPutFileTask._getTask(handle, storage, path, file, metadata));
+    ;
+  }).prototype = method_channel_task.MethodChannelPutFileTask.prototype;
+  dart.addTypeTests(method_channel_task.MethodChannelPutFileTask);
+  dart.addTypeCaches(method_channel_task.MethodChannelPutFileTask);
+  dart.setLibraryUri(method_channel_task.MethodChannelPutFileTask, I[11]);
+  method_channel_task.MethodChannelPutStringTask = class MethodChannelPutStringTask extends method_channel_task.MethodChannelTask {
+    static _getTask(handle, storage, path, data, format, metadata) {
+      if (handle == null) dart.nullFailed(I[10], 244, 11, "handle");
+      if (storage == null) dart.nullFailed(I[10], 245, 31, "storage");
+      if (path == null) dart.nullFailed(I[10], 246, 14, "path");
+      if (data == null) dart.nullFailed(I[10], 247, 14, "data");
+      if (format == null) dart.nullFailed(I[10], 248, 23, "format");
+      return dart.fn(() => {
+        let t10;
+        return method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMethod(dart.void, "Task#startPutString", new (T.IdentityMapOfString$dynamic()).from(["appName", storage.app.name, "bucket", storage.bucket, "maxOperationRetryTime", storage.maxOperationRetryTime, "maxUploadRetryTime", storage.maxUploadRetryTime, "maxDownloadRetryTime", storage.maxDownloadRetryTime, "handle", handle, "path", path, "data", data, "format", format.index, "metadata", (t10 = metadata, t10 == null ? null : t10.asMap())]));
+      }, T.VoidToFutureOfvoid());
+    }
   };
-  http.patch = function patch(url, opts) {
-    if (url == null) dart.nullFailed(I[22], 113, 28, "url");
-    let headers = opts && 'headers' in opts ? opts.headers : null;
-    let body = opts && 'body' in opts ? opts.body : null;
-    let encoding = opts && 'encoding' in opts ? opts.encoding : null;
-    return http._withClient(response$.Response, dart.fn(client => {
-      if (client == null) dart.nullFailed(I[22], 115, 18, "client");
-      return client.patch(url, {headers: headers, body: body, encoding: encoding});
-    }, T.ClientToFutureOfResponse()));
+  (method_channel_task.MethodChannelPutStringTask.new = function(handle, storage, path, data, format, metadata) {
+    if (handle == null) dart.nullFailed(I[10], 234, 11, "handle");
+    if (storage == null) dart.nullFailed(I[10], 235, 31, "storage");
+    if (path == null) dart.nullFailed(I[10], 236, 14, "path");
+    if (data == null) dart.nullFailed(I[10], 237, 14, "data");
+    if (format == null) dart.nullFailed(I[10], 238, 23, "format");
+    method_channel_task.MethodChannelPutStringTask.__proto__.new.call(this, handle, storage, path, method_channel_task.MethodChannelPutStringTask._getTask(handle, storage, path, data, format, metadata));
+    ;
+  }).prototype = method_channel_task.MethodChannelPutStringTask.prototype;
+  dart.addTypeTests(method_channel_task.MethodChannelPutStringTask);
+  dart.addTypeCaches(method_channel_task.MethodChannelPutStringTask);
+  dart.setLibraryUri(method_channel_task.MethodChannelPutStringTask, I[11]);
+  method_channel_task.MethodChannelPutTask = class MethodChannelPutTask extends method_channel_task.MethodChannelTask {
+    static _getTask(handle, storage, path, data, metadata) {
+      if (handle == null) dart.nullFailed(I[10], 275, 11, "handle");
+      if (storage == null) dart.nullFailed(I[10], 276, 31, "storage");
+      if (path == null) dart.nullFailed(I[10], 277, 14, "path");
+      if (data == null) dart.nullFailed(I[10], 278, 17, "data");
+      return dart.fn(() => {
+        let t10;
+        return method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMethod(dart.void, "Task#startPutData", new (T.IdentityMapOfString$dynamic()).from(["appName", storage.app.name, "bucket", storage.bucket, "maxOperationRetryTime", storage.maxOperationRetryTime, "maxUploadRetryTime", storage.maxUploadRetryTime, "maxDownloadRetryTime", storage.maxDownloadRetryTime, "handle", handle, "path", path, "data", data, "metadata", (t10 = metadata, t10 == null ? null : t10.asMap())]));
+      }, T.VoidToFutureOfvoid());
+    }
   };
-  http.delete = function $delete(url, opts) {
-    if (url == null) dart.nullFailed(I[22], 125, 29, "url");
-    let headers = opts && 'headers' in opts ? opts.headers : null;
-    let body = opts && 'body' in opts ? opts.body : null;
-    let encoding = opts && 'encoding' in opts ? opts.encoding : null;
-    return http._withClient(response$.Response, dart.fn(client => {
-      if (client == null) dart.nullFailed(I[22], 127, 18, "client");
-      return client.delete(url, {headers: headers, body: body, encoding: encoding});
-    }, T.ClientToFutureOfResponse()));
+  (method_channel_task.MethodChannelPutTask.new = function(handle, storage, path, data, metadata) {
+    if (handle == null) dart.nullFailed(I[10], 269, 28, "handle");
+    if (storage == null) dart.nullFailed(I[10], 269, 60, "storage");
+    if (path == null) dart.nullFailed(I[10], 269, 76, "path");
+    if (data == null) dart.nullFailed(I[10], 270, 17, "data");
+    method_channel_task.MethodChannelPutTask.__proto__.new.call(this, handle, storage, path, method_channel_task.MethodChannelPutTask._getTask(handle, storage, path, data, metadata));
+    ;
+  }).prototype = method_channel_task.MethodChannelPutTask.prototype;
+  dart.addTypeTests(method_channel_task.MethodChannelPutTask);
+  dart.addTypeCaches(method_channel_task.MethodChannelPutTask);
+  dart.setLibraryUri(method_channel_task.MethodChannelPutTask, I[11]);
+  method_channel_task.MethodChannelDownloadTask = class MethodChannelDownloadTask extends method_channel_task.MethodChannelTask {
+    static _getTask(handle, storage, path, file) {
+      if (handle == null) dart.nullFailed(I[10], 303, 11, "handle");
+      if (storage == null) dart.nullFailed(I[10], 303, 43, "storage");
+      if (path == null) dart.nullFailed(I[10], 303, 59, "path");
+      if (file == null) dart.nullFailed(I[10], 303, 70, "file");
+      return dart.fn(() => method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMethod(dart.void, "Task#writeToFile", new (T.IdentityMapOfString$dynamic()).from(["appName", storage.app.name, "maxOperationRetryTime", storage.maxOperationRetryTime, "maxUploadRetryTime", storage.maxUploadRetryTime, "maxDownloadRetryTime", storage.maxDownloadRetryTime, "bucket", storage.bucket, "handle", handle, "path", path, "filePath", file.path])), T.VoidToFutureOfvoid());
+    }
   };
-  http.read = function read(url, opts) {
-    if (url == null) dart.nullFailed(I[22], 142, 25, "url");
-    let headers = opts && 'headers' in opts ? opts.headers : null;
-    return http._withClient(core.String, dart.fn(client => {
-      if (client == null) dart.nullFailed(I[22], 143, 18, "client");
-      return client.read(url, {headers: headers});
-    }, T.ClientToFutureOfString()));
+  (method_channel_task.MethodChannelDownloadTask.new = function(handle, storage, path, file) {
+    if (handle == null) dart.nullFailed(I[10], 299, 11, "handle");
+    if (storage == null) dart.nullFailed(I[10], 299, 43, "storage");
+    if (path == null) dart.nullFailed(I[10], 299, 59, "path");
+    if (file == null) dart.nullFailed(I[10], 299, 70, "file");
+    method_channel_task.MethodChannelDownloadTask.__proto__.new.call(this, handle, storage, path, method_channel_task.MethodChannelDownloadTask._getTask(handle, storage, path, file));
+    ;
+  }).prototype = method_channel_task.MethodChannelDownloadTask.prototype;
+  dart.addTypeTests(method_channel_task.MethodChannelDownloadTask);
+  dart.addTypeCaches(method_channel_task.MethodChannelDownloadTask);
+  dart.setLibraryUri(method_channel_task.MethodChannelDownloadTask, I[11]);
+  var _items = dart.privateName(method_channel_list_result, "_items");
+  var _prefixes = dart.privateName(method_channel_list_result, "_prefixes");
+  method_channel_list_result.MethodChannelListResult = class MethodChannelListResult extends platform_interface_list_result.ListResultPlatform {
+    get items() {
+      return this[_items][$map](method_channel_reference.MethodChannelReference, dart.fn(path => {
+        if (path == null) dart.nullFailed(I[12], 27, 15, "path");
+        return new method_channel_reference.MethodChannelReference.new(dart.nullCheck(this.storage), path);
+      }, T.StringToMethodChannelReference()))[$toList]();
+    }
+    get prefixes() {
+      return this[_prefixes][$map](method_channel_reference.MethodChannelReference, dart.fn(path => {
+        if (path == null) dart.nullFailed(I[12], 34, 15, "path");
+        return new method_channel_reference.MethodChannelReference.new(dart.nullCheck(this.storage), path);
+      }, T.StringToMethodChannelReference()))[$toList]();
+    }
   };
-  http.readBytes = function readBytes(url, opts) {
-    if (url == null) dart.nullFailed(I[22], 158, 33, "url");
-    let headers = opts && 'headers' in opts ? opts.headers : null;
-    return http._withClient(typed_data.Uint8List, dart.fn(client => {
-      if (client == null) dart.nullFailed(I[22], 159, 18, "client");
-      return client.readBytes(url, {headers: headers});
-    }, T.ClientToFutureOfUint8List()));
-  };
-  http._withClient = function _withClient(T, fn) {
-    if (fn == null) dart.nullFailed(I[22], 161, 53, "fn");
-    return async.async(T, function* _withClient() {
-      let client = client$.Client.new();
+  (method_channel_list_result.MethodChannelListResult.new = function(storage, opts) {
+    let t10, t10$;
+    if (storage == null) dart.nullFailed(I[12], 12, 29, "storage");
+    let nextPageToken = opts && 'nextPageToken' in opts ? opts.nextPageToken : null;
+    let items = opts && 'items' in opts ? opts.items : null;
+    let prefixes = opts && 'prefixes' in opts ? opts.prefixes : null;
+    this[_items] = (t10 = items, t10 == null ? T.JSArrayOfString().of([]) : t10);
+    this[_prefixes] = (t10$ = prefixes, t10$ == null ? T.JSArrayOfString().of([]) : t10$);
+    method_channel_list_result.MethodChannelListResult.__proto__.new.call(this, storage, nextPageToken);
+    ;
+  }).prototype = method_channel_list_result.MethodChannelListResult.prototype;
+  dart.addTypeTests(method_channel_list_result.MethodChannelListResult);
+  dart.addTypeCaches(method_channel_list_result.MethodChannelListResult);
+  dart.setLibraryUri(method_channel_list_result.MethodChannelListResult, I[13]);
+  dart.setFieldSignature(method_channel_list_result.MethodChannelListResult, () => ({
+    __proto__: dart.getFields(method_channel_list_result.MethodChannelListResult.__proto__),
+    [_items]: dart.fieldType(core.List$(core.String)),
+    [_prefixes]: dart.fieldType(core.List$(core.String))
+  }));
+  method_channel_reference.MethodChannelReference = class MethodChannelReference extends platform_interface_reference.ReferencePlatform {
+    delete() {
+      return async.async(dart.void, (function* $delete() {
+        try {
+          yield method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMethod(dart.dynamic, "Reference#delete", new (T.IdentityMapOfString$dynamic()).from(["appName", this.storage.app.name, "maxOperationRetryTime", this.storage.maxOperationRetryTime, "maxUploadRetryTime", this.storage.maxUploadRetryTime, "maxDownloadRetryTime", this.storage.maxDownloadRetryTime, "bucket", this.storage.bucket, "path", this.fullPath]));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(exception.convertPlatformException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    getDownloadURL() {
+      return async.async(core.String, (function* getDownloadURL() {
+        try {
+          let data = (yield method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMapMethod(core.String, dart.dynamic, "Reference#getDownloadURL", new (T.IdentityMapOfString$dynamic()).from(["appName", this.storage.app.name, "maxOperationRetryTime", this.storage.maxOperationRetryTime, "maxUploadRetryTime", this.storage.maxUploadRetryTime, "maxDownloadRetryTime", this.storage.maxDownloadRetryTime, "bucket", this.storage.bucket, "path", this.fullPath])));
+          return T.FutureOrOfString().as(dart.nullCheck(data)[$_get]("downloadURL"));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(exception.convertPlatformException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    getMetadata() {
+      return async.async(full_metadata.FullMetadata, (function* getMetadata() {
+        try {
+          let data = (yield method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMapMethod(core.String, dart.dynamic, "Reference#getMetadata", new (T.IdentityMapOfString$dynamic()).from(["appName", this.storage.app.name, "maxOperationRetryTime", this.storage.maxOperationRetryTime, "maxUploadRetryTime", this.storage.maxUploadRetryTime, "maxDownloadRetryTime", this.storage.maxDownloadRetryTime, "bucket", this.storage.bucket, "path", this.fullPath])));
+          return new full_metadata.FullMetadata.new(dart.nullCheck(data));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(exception.convertPlatformException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    list(options = null) {
+      return async.async(platform_interface_list_result.ListResultPlatform, (function* list() {
+        let t13, t13$, t13$0;
+        try {
+          let data = (yield method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMapMethod(core.String, dart.dynamic, "Reference#list", new (T.IdentityMapOfString$dynamic()).from(["appName", this.storage.app.name, "maxOperationRetryTime", this.storage.maxOperationRetryTime, "maxUploadRetryTime", this.storage.maxUploadRetryTime, "maxDownloadRetryTime", this.storage.maxDownloadRetryTime, "bucket", this.storage.bucket, "path", this.fullPath, "options", new (T.IdentityMapOfString$dynamic()).from(["maxResults", (t13$ = (t13 = options, t13 == null ? null : t13.maxResults), t13$ == null ? 1000 : t13$), "pageToken", (t13$0 = options, t13$0 == null ? null : t13$0.pageToken)])])));
+          return new method_channel_list_result.MethodChannelListResult.new(this.storage, {nextPageToken: T.StringN().as(dart.nullCheck(data)[$_get]("nextPageToken")), items: T.ListOfString().from(core.Iterable.as(data[$_get]("items"))), prefixes: T.ListOfString().from(core.Iterable.as(data[$_get]("prefixes")))});
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(exception.convertPlatformException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    listAll() {
+      return async.async(platform_interface_list_result.ListResultPlatform, (function* listAll() {
+        try {
+          let data = (yield method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMapMethod(core.String, dart.dynamic, "Reference#listAll", new (T.IdentityMapOfString$dynamic()).from(["appName", this.storage.app.name, "maxOperationRetryTime", this.storage.maxOperationRetryTime, "maxUploadRetryTime", this.storage.maxUploadRetryTime, "maxDownloadRetryTime", this.storage.maxDownloadRetryTime, "bucket", this.storage.bucket, "path", this.fullPath])));
+          return new method_channel_list_result.MethodChannelListResult.new(this.storage, {nextPageToken: T.StringN().as(dart.nullCheck(data)[$_get]("nextPageToken")), items: T.ListOfString().from(core.Iterable.as(data[$_get]("items"))), prefixes: T.ListOfString().from(core.Iterable.as(data[$_get]("prefixes")))});
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(exception.convertPlatformException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    getData(maxSize) {
+      if (maxSize == null) dart.nullFailed(I[14], 132, 34, "maxSize");
       try {
-        return yield fn(client);
-      } finally {
-        client.close();
+        return method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMethod(typed_data.Uint8List, "Reference#getData", new (T.IdentityMapOfString$dynamic()).from(["appName", this.storage.app.name, "maxOperationRetryTime", this.storage.maxOperationRetryTime, "maxUploadRetryTime", this.storage.maxUploadRetryTime, "maxDownloadRetryTime", this.storage.maxDownloadRetryTime, "bucket", this.storage.bucket, "path", this.fullPath, "maxSize", maxSize]));
+      } catch (e$) {
+        let e = dart.getThrown(e$);
+        if (core.Object.is(e)) {
+          dart.throw(exception.convertPlatformException(e));
+        } else
+          throw e$;
       }
-    });
+    }
+    putData(data, metadata = null) {
+      if (data == null) dart.nullFailed(I[14], 150, 34, "data");
+      let handle = method_channel_firebase_storage.MethodChannelFirebaseStorage.nextMethodChannelHandleId;
+      method_channel_firebase_storage.MethodChannelFirebaseStorage.taskObservers[$_set](handle, T.StreamControllerOfTaskSnapshotPlatform().broadcast());
+      return new method_channel_task.MethodChannelPutTask.new(handle, this.storage, this.fullPath, data, metadata);
+    }
+    putBlob(data, metadata = null) {
+      dart.throw(new core.UnimplementedError.new("putBlob() is not supported on native platforms. Use [put], [putFile] or [putString] instead."));
+    }
+    putFile(file, metadata = null) {
+      if (file == null) dart.nullFailed(I[14], 164, 29, "file");
+      let handle = method_channel_firebase_storage.MethodChannelFirebaseStorage.nextMethodChannelHandleId;
+      method_channel_firebase_storage.MethodChannelFirebaseStorage.taskObservers[$_set](handle, T.StreamControllerOfTaskSnapshotPlatform().broadcast());
+      return new method_channel_task.MethodChannelPutFileTask.new(handle, this.storage, this.fullPath, file, metadata);
+    }
+    putString(data, format, metadata = null) {
+      if (data == null) dart.nullFailed(I[14], 172, 33, "data");
+      if (format == null) dart.nullFailed(I[14], 172, 55, "format");
+      let handle = method_channel_firebase_storage.MethodChannelFirebaseStorage.nextMethodChannelHandleId;
+      method_channel_firebase_storage.MethodChannelFirebaseStorage.taskObservers[$_set](handle, T.StreamControllerOfTaskSnapshotPlatform().broadcast());
+      return new method_channel_task.MethodChannelPutStringTask.new(handle, this.storage, this.fullPath, data, format, metadata);
+    }
+    updateMetadata(metadata) {
+      if (metadata == null) dart.nullFailed(I[14], 182, 56, "metadata");
+      return async.async(full_metadata.FullMetadata, (function* updateMetadata() {
+        try {
+          let data = (yield method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.invokeMapMethod(core.String, dart.dynamic, "Reference#updateMetadata", new (T.IdentityMapOfString$dynamic()).from(["appName", this.storage.app.name, "maxOperationRetryTime", this.storage.maxOperationRetryTime, "maxUploadRetryTime", this.storage.maxUploadRetryTime, "maxDownloadRetryTime", this.storage.maxDownloadRetryTime, "bucket", this.storage.bucket, "path", this.fullPath, "metadata", metadata.asMap()])));
+          return new full_metadata.FullMetadata.new(dart.nullCheck(data));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(exception.convertPlatformException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    writeToFile(file) {
+      if (file == null) dart.nullFailed(I[14], 203, 33, "file");
+      let handle = method_channel_firebase_storage.MethodChannelFirebaseStorage.nextMethodChannelHandleId;
+      method_channel_firebase_storage.MethodChannelFirebaseStorage.taskObservers[$_set](handle, T.StreamControllerOfTaskSnapshotPlatform().broadcast());
+      return new method_channel_task.MethodChannelDownloadTask.new(handle, this.storage, this.fullPath, file);
+    }
   };
-  dart.trackLibraries("packages/http/src/multipart_request.dart", {
-    "package:http/src/multipart_request.dart": multipart_request,
-    "package:http/src/multipart_file_stub.dart": multipart_file_stub,
-    "package:http/src/multipart_file.dart": multipart_file,
-    "package:http/src/streamed_request.dart": streamed_request,
-    "package:http/src/browser_client.dart": browser_client,
-    "package:http/src/response.dart": response$,
-    "package:http/src/request.dart": request$,
-    "package:http/src/streamed_response.dart": streamed_response,
-    "package:http/src/base_response.dart": base_response,
-    "package:http/src/base_request.dart": base_request,
-    "package:http/src/base_client.dart": base_client,
-    "package:http/src/client.dart": client$,
-    "package:http/http.dart": http
+  (method_channel_reference.MethodChannelReference.new = function(storage, path) {
+    if (storage == null) dart.nullFailed(I[14], 19, 50, "storage");
+    if (path == null) dart.nullFailed(I[14], 19, 66, "path");
+    method_channel_reference.MethodChannelReference.__proto__.new.call(this, storage, path);
+    ;
+  }).prototype = method_channel_reference.MethodChannelReference.prototype;
+  dart.addTypeTests(method_channel_reference.MethodChannelReference);
+  dart.addTypeCaches(method_channel_reference.MethodChannelReference);
+  dart.setLibraryUri(method_channel_reference.MethodChannelReference, I[15]);
+  var maxOperationRetryTime = dart.privateName(method_channel_firebase_storage, "MethodChannelFirebaseStorage.maxOperationRetryTime");
+  var maxUploadRetryTime = dart.privateName(method_channel_firebase_storage, "MethodChannelFirebaseStorage.maxUploadRetryTime");
+  var maxDownloadRetryTime = dart.privateName(method_channel_firebase_storage, "MethodChannelFirebaseStorage.maxDownloadRetryTime");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var _handleTaskStateChange = dart.privateName(method_channel_firebase_storage, "_handleTaskStateChange");
+  var _sendTaskException = dart.privateName(method_channel_firebase_storage, "_sendTaskException");
+  var appInstance$ = dart.privateName(platform_interface_firebase_storage, "FirebaseStoragePlatform.appInstance");
+  var bucket$ = dart.privateName(platform_interface_firebase_storage, "FirebaseStoragePlatform.bucket");
+  platform_interface_firebase_storage.FirebaseStoragePlatform = class FirebaseStoragePlatform extends plugin_platform_interface.PlatformInterface {
+    get appInstance() {
+      return this[appInstance$];
+    }
+    set appInstance(value) {
+      super.appInstance = value;
+    }
+    get bucket() {
+      return this[bucket$];
+    }
+    set bucket(value) {
+      super.bucket = value;
+    }
+    static instanceFor(opts) {
+      let app = opts && 'app' in opts ? opts.app : null;
+      if (app == null) dart.nullFailed(I[17], 24, 29, "app");
+      let bucket = opts && 'bucket' in opts ? opts.bucket : null;
+      if (bucket == null) dart.nullFailed(I[17], 24, 50, "bucket");
+      return platform_interface_firebase_storage.FirebaseStoragePlatform.instance.delegateFor({app: app, bucket: bucket});
+    }
+    get app() {
+      if (this.appInstance == null) {
+        return firebase_core.Firebase.app();
+      }
+      return dart.nullCheck(this.appInstance);
+    }
+    static get instance() {
+      let t17;
+      t17 = platform_interface_firebase_storage.FirebaseStoragePlatform._instance;
+      return t17 == null ? platform_interface_firebase_storage.FirebaseStoragePlatform._instance = method_channel_firebase_storage.MethodChannelFirebaseStorage.instance : t17;
+    }
+    static set instance(instance) {
+      if (instance == null) dart.nullFailed(I[17], 58, 47, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, platform_interface_firebase_storage.FirebaseStoragePlatform._token);
+      platform_interface_firebase_storage.FirebaseStoragePlatform._instance = instance;
+    }
+    get maxOperationRetryTime() {
+      dart.throw(new core.UnimplementedError.new("get.maxOperationRetryTime is not implemented"));
+    }
+    get maxUploadRetryTime() {
+      dart.throw(new core.UnimplementedError.new("get.maxUploadRetryTime is not implemented"));
+    }
+    get maxDownloadRetryTime() {
+      dart.throw(new core.UnimplementedError.new("get.maxDownloadRetryTime is not implemented"));
+    }
+    delegateFor(opts) {
+      let app = opts && 'app' in opts ? opts.app : null;
+      if (app == null) dart.nullFailed(I[17], 82, 29, "app");
+      let bucket = opts && 'bucket' in opts ? opts.bucket : null;
+      if (bucket == null) dart.nullFailed(I[17], 82, 50, "bucket");
+      dart.throw(new core.UnimplementedError.new("delegateFor() is not implemented"));
+    }
+    ref(path) {
+      if (path == null) dart.nullFailed(I[17], 91, 32, "path");
+      dart.throw(new core.UnimplementedError.new("ref() is not implemented"));
+    }
+    setMaxOperationRetryTime(time) {
+      if (time == null) dart.nullFailed(I[17], 96, 37, "time");
+      dart.throw(new core.UnimplementedError.new("setMaxOperationRetryTime() is not implemented"));
+    }
+    setMaxUploadRetryTime(time) {
+      if (time == null) dart.nullFailed(I[17], 101, 34, "time");
+      dart.throw(new core.UnimplementedError.new("setMaxUploadRetryTime() is not implemented"));
+    }
+    setMaxDownloadRetryTime(time) {
+      if (time == null) dart.nullFailed(I[17], 106, 36, "time");
+      dart.throw(new core.UnimplementedError.new("setMaxDownloadRetryTime() is not implemented"));
+    }
+  };
+  (platform_interface_firebase_storage.FirebaseStoragePlatform.new = function(opts) {
+    let appInstance = opts && 'appInstance' in opts ? opts.appInstance : null;
+    let bucket = opts && 'bucket' in opts ? opts.bucket : null;
+    if (bucket == null) dart.nullFailed(I[17], 19, 60, "bucket");
+    this[appInstance$] = appInstance;
+    this[bucket$] = bucket;
+    platform_interface_firebase_storage.FirebaseStoragePlatform.__proto__.new.call(this, {token: platform_interface_firebase_storage.FirebaseStoragePlatform._token});
+    ;
+  }).prototype = platform_interface_firebase_storage.FirebaseStoragePlatform.prototype;
+  dart.addTypeTests(platform_interface_firebase_storage.FirebaseStoragePlatform);
+  dart.addTypeCaches(platform_interface_firebase_storage.FirebaseStoragePlatform);
+  dart.setMethodSignature(platform_interface_firebase_storage.FirebaseStoragePlatform, () => ({
+    __proto__: dart.getMethods(platform_interface_firebase_storage.FirebaseStoragePlatform.__proto__),
+    delegateFor: dart.fnType(platform_interface_firebase_storage.FirebaseStoragePlatform, [], {}, {app: firebase_core.FirebaseApp, bucket: core.String}),
+    ref: dart.fnType(platform_interface_reference.ReferencePlatform, [core.String]),
+    setMaxOperationRetryTime: dart.fnType(dart.void, [core.int]),
+    setMaxUploadRetryTime: dart.fnType(dart.void, [core.int]),
+    setMaxDownloadRetryTime: dart.fnType(dart.void, [core.int])
+  }));
+  dart.setGetterSignature(platform_interface_firebase_storage.FirebaseStoragePlatform, () => ({
+    __proto__: dart.getGetters(platform_interface_firebase_storage.FirebaseStoragePlatform.__proto__),
+    app: firebase_core.FirebaseApp,
+    maxOperationRetryTime: core.int,
+    maxUploadRetryTime: core.int,
+    maxDownloadRetryTime: core.int
+  }));
+  dart.setLibraryUri(platform_interface_firebase_storage.FirebaseStoragePlatform, I[18]);
+  dart.setFieldSignature(platform_interface_firebase_storage.FirebaseStoragePlatform, () => ({
+    __proto__: dart.getFields(platform_interface_firebase_storage.FirebaseStoragePlatform.__proto__),
+    appInstance: dart.finalFieldType(dart.nullable(firebase_core.FirebaseApp)),
+    bucket: dart.finalFieldType(core.String)
+  }));
+  dart.defineLazy(platform_interface_firebase_storage.FirebaseStoragePlatform, {
+    /*platform_interface_firebase_storage.FirebaseStoragePlatform._token*/get _token() {
+      return new core.Object.new();
+    },
+    /*platform_interface_firebase_storage.FirebaseStoragePlatform._instance*/get _instance() {
+      return null;
+    },
+    set _instance(_) {}
+  }, false);
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  method_channel_firebase_storage.MethodChannelFirebaseStorage = class MethodChannelFirebaseStorage extends platform_interface_firebase_storage.FirebaseStoragePlatform {
+    get maxOperationRetryTime() {
+      return this[maxOperationRetryTime];
+    }
+    set maxOperationRetryTime(value) {
+      this[maxOperationRetryTime] = value;
+    }
+    get maxUploadRetryTime() {
+      return this[maxUploadRetryTime];
+    }
+    set maxUploadRetryTime(value) {
+      this[maxUploadRetryTime] = value;
+    }
+    get maxDownloadRetryTime() {
+      return this[maxDownloadRetryTime];
+    }
+    set maxDownloadRetryTime(value) {
+      this[maxDownloadRetryTime] = value;
+    }
+    static _getInstanceKey(appName, bucket) {
+      if (appName == null) dart.nullFailed(I[16], 71, 46, "appName");
+      if (bucket == null) dart.nullFailed(I[16], 71, 62, "bucket");
+      return dart.str(appName) + "|" + dart.str(bucket);
+    }
+    static get instance() {
+      return new method_channel_firebase_storage.MethodChannelFirebaseStorage.__();
+    }
+    static get nextMethodChannelHandleId() {
+      let t17;
+      t17 = method_channel_firebase_storage.MethodChannelFirebaseStorage._methodChannelHandleId;
+      method_channel_firebase_storage.MethodChannelFirebaseStorage._methodChannelHandleId = dart.notNull(t17) + 1;
+      return t17;
+    }
+    [_handleTaskStateChange](taskState, $arguments) {
+      if (taskState == null) dart.nullFailed(I[16], 109, 17, "taskState");
+      if ($arguments == null) dart.nullFailed(I[16], 109, 50, "arguments");
+      return async.async(dart.void, function* _handleTaskStateChange() {
+        let snapshotData = T.LinkedHashMapOfString$dynamic().from(core.Map.as($arguments[$_get]("snapshot")));
+        let storage = dart.nullCheck(method_channel_firebase_storage.MethodChannelFirebaseStorage._methodChannelFirebaseStorageInstances[$_get](method_channel_firebase_storage.MethodChannelFirebaseStorage._getInstanceKey(core.String.as($arguments[$_get]("appName")), core.String.as($arguments[$_get]("bucket")))));
+        let snapshot = new method_channel_task_snapshot.MethodChannelTaskSnapshot.new(storage, taskState, snapshotData);
+        dart.nullCheck(method_channel_firebase_storage.MethodChannelFirebaseStorage.taskObservers[$_get]($arguments[$_get]("handle"))).add(snapshot);
+      });
+    }
+    [_sendTaskException](handle, exception) {
+      if (handle == null) dart.nullFailed(I[16], 126, 31, "handle");
+      if (exception == null) dart.nullFailed(I[16], 126, 57, "exception");
+      dart.nullCheck(method_channel_firebase_storage.MethodChannelFirebaseStorage.taskObservers[$_get](handle)).addError(exception);
+    }
+    delegateFor(opts) {
+      let t20, t19, t18, t17;
+      let app = opts && 'app' in opts ? opts.app : null;
+      if (app == null) dart.nullFailed(I[16], 132, 29, "app");
+      let bucket = opts && 'bucket' in opts ? opts.bucket : null;
+      if (bucket == null) dart.nullFailed(I[16], 132, 50, "bucket");
+      let key = method_channel_firebase_storage.MethodChannelFirebaseStorage._getInstanceKey(app.name, bucket);
+      t17 = method_channel_firebase_storage.MethodChannelFirebaseStorage._methodChannelFirebaseStorageInstances;
+      t18 = key;
+      t19 = t17[$_get](t18);
+      return t19 == null ? (t20 = new method_channel_firebase_storage.MethodChannelFirebaseStorage.new({app: app, bucket: bucket}), t17[$_set](t18, t20), t20) : t19;
+    }
+    ref(path) {
+      if (path == null) dart.nullFailed(I[16], 140, 32, "path");
+      return new method_channel_reference.MethodChannelReference.new(this, path);
+    }
+    setMaxOperationRetryTime(time) {
+      if (time == null) dart.nullFailed(I[16], 145, 37, "time");
+      this.maxOperationRetryTime = time;
+    }
+    setMaxUploadRetryTime(time) {
+      if (time == null) dart.nullFailed(I[16], 150, 34, "time");
+      this.maxUploadRetryTime = time;
+    }
+    setMaxDownloadRetryTime(time) {
+      if (time == null) dart.nullFailed(I[16], 155, 44, "time");
+      return async.async(dart.void, (function* setMaxDownloadRetryTime() {
+        this.maxDownloadRetryTime = time;
+      }).bind(this));
+    }
+  };
+  (method_channel_firebase_storage.MethodChannelFirebaseStorage.new = function(opts) {
+    let app = opts && 'app' in opts ? opts.app : null;
+    if (app == null) dart.nullFailed(I[16], 19, 29, "app");
+    let bucket = opts && 'bucket' in opts ? opts.bucket : null;
+    if (bucket == null) dart.nullFailed(I[16], 19, 50, "bucket");
+    this[maxOperationRetryTime] = (C[0] || CT.C0).inMilliseconds;
+    this[maxUploadRetryTime] = (C[1] || CT.C1).inMilliseconds;
+    this[maxDownloadRetryTime] = (C[1] || CT.C1).inMilliseconds;
+    method_channel_firebase_storage.MethodChannelFirebaseStorage.__proto__.new.call(this, {appInstance: app, bucket: bucket});
+    if (dart.test(method_channel_firebase_storage.MethodChannelFirebaseStorage._initialized)) return;
+    method_channel_firebase_storage.MethodChannelFirebaseStorage.channel.setMethodCallHandler(dart.fn(call => {
+      if (call == null) dart.nullFailed(I[16], 25, 46, "call");
+      return async.async(dart.void, (function*() {
+        let $arguments = core.Map.as(call.arguments);
+        switch (call.method) {
+          case "Task#onProgress":
+          {
+            return this[_handleTaskStateChange](task_state.TaskState.running, $arguments);
+          }
+          case "Task#onPaused":
+          {
+            return this[_handleTaskStateChange](task_state.TaskState.paused, $arguments);
+          }
+          case "Task#onSuccess":
+          {
+            return this[_handleTaskStateChange](task_state.TaskState.success, $arguments);
+          }
+          case "Task#onCanceled":
+          {
+            return this[_sendTaskException](core.int.as($arguments[$_get]("handle")), new firebase_core_platform_interface.FirebaseException.new({plugin: "firebase_storage", code: "canceled", message: "User canceled the upload/download."}));
+          }
+          case "Task#onFailure":
+          {
+            let errorMap = T.LinkedHashMapOfString$dynamic().from(core.Map.as($arguments[$_get]("error")));
+            return this[_sendTaskException](core.int.as($arguments[$_get]("handle")), new firebase_core_platform_interface.FirebaseException.new({plugin: "firebase_storage", code: core.String.as(errorMap[$_get]("code")), message: T.StringN().as(errorMap[$_get]("message"))}));
+          }
+        }
+      }).bind(this));
+    }, T.MethodCallToFutureOfvoid()));
+    method_channel_firebase_storage.MethodChannelFirebaseStorage._initialized = true;
+  }).prototype = method_channel_firebase_storage.MethodChannelFirebaseStorage.prototype;
+  (method_channel_firebase_storage.MethodChannelFirebaseStorage.__ = function() {
+    this[maxOperationRetryTime] = (C[0] || CT.C0).inMilliseconds;
+    this[maxUploadRetryTime] = (C[1] || CT.C1).inMilliseconds;
+    this[maxDownloadRetryTime] = (C[1] || CT.C1).inMilliseconds;
+    method_channel_firebase_storage.MethodChannelFirebaseStorage.__proto__.new.call(this, {appInstance: null, bucket: ""});
+    ;
+  }).prototype = method_channel_firebase_storage.MethodChannelFirebaseStorage.prototype;
+  dart.addTypeTests(method_channel_firebase_storage.MethodChannelFirebaseStorage);
+  dart.addTypeCaches(method_channel_firebase_storage.MethodChannelFirebaseStorage);
+  dart.setMethodSignature(method_channel_firebase_storage.MethodChannelFirebaseStorage, () => ({
+    __proto__: dart.getMethods(method_channel_firebase_storage.MethodChannelFirebaseStorage.__proto__),
+    [_handleTaskStateChange]: dart.fnType(async.Future$(dart.void), [task_state.TaskState, core.Map]),
+    [_sendTaskException]: dart.fnType(dart.void, [core.int, firebase_core_platform_interface.FirebaseException]),
+    setMaxDownloadRetryTime: dart.fnType(async.Future$(dart.void), [core.int])
+  }));
+  dart.setLibraryUri(method_channel_firebase_storage.MethodChannelFirebaseStorage, I[19]);
+  dart.setFieldSignature(method_channel_firebase_storage.MethodChannelFirebaseStorage, () => ({
+    __proto__: dart.getFields(method_channel_firebase_storage.MethodChannelFirebaseStorage.__proto__),
+    maxOperationRetryTime: dart.fieldType(core.int),
+    maxUploadRetryTime: dart.fieldType(core.int),
+    maxDownloadRetryTime: dart.fieldType(core.int)
+  }));
+  dart.defineLazy(method_channel_firebase_storage.MethodChannelFirebaseStorage, {
+    /*method_channel_firebase_storage.MethodChannelFirebaseStorage._initialized*/get _initialized() {
+      return false;
+    },
+    set _initialized(_) {},
+    /*method_channel_firebase_storage.MethodChannelFirebaseStorage.channel*/get channel() {
+      return C[2] || CT.C2;
+    },
+    /*method_channel_firebase_storage.MethodChannelFirebaseStorage._methodChannelFirebaseStorageInstances*/get _methodChannelFirebaseStorageInstances() {
+      return new (T.IdentityMapOfString$MethodChannelFirebaseStorage()).new();
+    },
+    set _methodChannelFirebaseStorageInstances(_) {},
+    /*method_channel_firebase_storage.MethodChannelFirebaseStorage._methodChannelHandleId*/get _methodChannelHandleId() {
+      return 0;
+    },
+    set _methodChannelHandleId(_) {},
+    /*method_channel_firebase_storage.MethodChannelFirebaseStorage.taskObservers*/get taskObservers() {
+      return new (T.IdentityMapOfint$StreamControllerOfTaskSnapshotPlatform()).new();
+    }
+  }, false);
+  dart.trackLibraries("packages/firebase_storage_platform_interface/src/platform_interface/platform_interface_task_snapshot.dart", {
+    "package:firebase_storage_platform_interface/src/platform_interface/platform_interface_task_snapshot.dart": platform_interface_task_snapshot,
+    "package:firebase_storage_platform_interface/src/platform_interface/platform_interface_task.dart": platform_interface_task,
+    "package:firebase_storage_platform_interface/src/platform_interface/platform_interface_reference.dart": platform_interface_reference,
+    "package:firebase_storage_platform_interface/src/platform_interface/platform_interface_list_result.dart": platform_interface_list_result,
+    "package:firebase_storage_platform_interface/src/method_channel/method_channel_task_snapshot.dart": method_channel_task_snapshot,
+    "package:firebase_storage_platform_interface/src/method_channel/method_channel_task.dart": method_channel_task,
+    "package:firebase_storage_platform_interface/src/method_channel/method_channel_list_result.dart": method_channel_list_result,
+    "package:firebase_storage_platform_interface/src/method_channel/method_channel_reference.dart": method_channel_reference,
+    "package:firebase_storage_platform_interface/src/method_channel/method_channel_firebase_storage.dart": method_channel_firebase_storage,
+    "package:firebase_storage_platform_interface/src/platform_interface/platform_interface_firebase_storage.dart": platform_interface_firebase_storage,
+    "package:firebase_storage_platform_interface/firebase_storage_platform_interface.dart": firebase_storage_platform_interface
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["base_request.dart","multipart_request.dart","multipart_file_stub.dart","multipart_file.dart","streamed_request.dart","base_client.dart","browser_client.dart","base_response.dart","response.dart","request.dart","streamed_response.dart","client.dart","../http.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/http/src/multipart_request.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["platform_interface_task_snapshot.dart","platform_interface_task.dart","platform_interface_reference.dart","platform_interface_list_result.dart","../method_channel/method_channel_task_snapshot.dart","../method_channel/method_channel_task.dart","../method_channel/method_channel_list_result.dart","../method_channel/method_channel_reference.dart","platform_interface_firebase_storage.dart","../method_channel/method_channel_firebase_storage.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/firebase_storage_platform_interface/src/platform_interface/platform_interface_task_snapshot.dart.lib.js"}');
   // Exports:
   return {
-    src__multipart_request: multipart_request,
-    src__multipart_file_stub: multipart_file_stub,
-    src__multipart_file: multipart_file,
-    src__streamed_request: streamed_request,
-    src__browser_client: browser_client,
-    src__response: response$,
-    src__request: request$,
-    src__streamed_response: streamed_response,
-    src__base_response: base_response,
-    src__base_request: base_request,
-    src__base_client: base_client,
-    src__client: client$,
-    http: http
+    src__platform_interface__platform_interface_task_snapshot: platform_interface_task_snapshot,
+    src__platform_interface__platform_interface_task: platform_interface_task,
+    src__platform_interface__platform_interface_reference: platform_interface_reference,
+    src__platform_interface__platform_interface_list_result: platform_interface_list_result,
+    src__method_channel__method_channel_task_snapshot: method_channel_task_snapshot,
+    src__method_channel__method_channel_task: method_channel_task,
+    src__method_channel__method_channel_list_result: method_channel_list_result,
+    src__method_channel__method_channel_reference: method_channel_reference,
+    src__method_channel__method_channel_firebase_storage: method_channel_firebase_storage,
+    src__platform_interface__platform_interface_firebase_storage: platform_interface_firebase_storage,
+    firebase_storage_platform_interface: firebase_storage_platform_interface
   };
 }));
 
-//# sourceMappingURL=multipart_request.dart.lib.js.map
+//# sourceMappingURL=platform_interface_task_snapshot.dart.lib.js.map

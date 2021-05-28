@@ -1,25 +1,50 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/will_pop_scope.dart'], (function load__packages__flutter__src__widgets__form_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__will_pop_scope$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/placeholder_span.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/stack.dart', 'packages/flutter/src/painting/strut_style.dart'], (function load__packages__flutter__src__rendering__debug_overflow_indicator_dart(dart_sdk, packages__flutter__src__painting__placeholder_span$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__stack$46dart, packages__flutter__src__painting__strut_style$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const async = dart_sdk.async;
-  const collection = dart_sdk.collection;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const will_pop_scope = packages__flutter__src__widgets__will_pop_scope$46dart.src__widgets__will_pop_scope;
-  var form = Object.create(dart.library);
-  var $any = dartx.any;
+  const text_painter = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_painter;
+  const text_span = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_span;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const stack = packages__flutter__src__rendering__stack$46dart.src__rendering__stack;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  var debug_overflow_indicator = Object.create(dart.library);
+  var $length = dartx.length;
+  var $toStringAsFixed = dartx.toStringAsFixed;
+  var $toStringAsPrecision = dartx.toStringAsPrecision;
+  var $add = dartx.add;
+  var $isEmpty = dartx.isEmpty;
+  var $runtimeType = dartx.runtimeType;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $first = dartx.first;
+  var $last = dartx.last;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $join = dartx.join;
+  var $times = dartx['*'];
+  var $truncate = dartx.truncate;
   dart._checkModuleNullSafetyMode(true);
-  var T$ = {
-    LinkedHashSetOfFormFieldState: () => (T$.LinkedHashSetOfFormFieldState = dart.constFn(collection.LinkedHashSet$(form.FormFieldState)))(),
-    FormFieldStateTobool: () => (T$.FormFieldStateTobool = dart.constFn(dart.fnType(core.bool, [form.FormFieldState])))(),
-    VoidTovoid: () => (T$.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    StringN: () => (T$.StringN = dart.constFn(dart.nullable(core.String)))()
+  var T = {
+    ListOfTextPainter: () => (T.ListOfTextPainter = dart.constFn(core.List$(text_painter.TextPainter)))(),
+    JSArrayOf_OverflowRegionData: () => (T.JSArrayOf_OverflowRegionData = dart.constFn(_interceptors.JSArray$(debug_overflow_indicator._OverflowRegionData)))(),
+    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    SyncIterableOfDiagnosticsNode: () => (T.SyncIterableOfDiagnosticsNode = dart.constFn(_js_helper.SyncIterable$(diagnostics.DiagnosticsNode)))(),
+    IterableOfDiagnosticsNode: () => (T.IterableOfDiagnosticsNode = dart.constFn(core.Iterable$(diagnostics.DiagnosticsNode)))(),
+    VoidToIterableOfDiagnosticsNode: () => (T.VoidToIterableOfDiagnosticsNode = dart.constFn(dart.fnType(T.IterableOfDiagnosticsNode(), [])))(),
+    TextSpanN: () => (T.TextSpanN = dart.constFn(dart.nullable(text_span.TextSpan)))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    JSArrayOfColor: () => (T.JSArrayOfColor = dart.constFn(_interceptors.JSArray$(ui.Color)))(),
+    JSArrayOfdouble: () => (T.JSArrayOfdouble = dart.constFn(_interceptors.JSArray$(core.double)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
-  }, T$);
+  }, T);
   var S = {
     _: () => S
   };
@@ -32,633 +57,441 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: form.AutovalidateMode.prototype,
-        [_name$]: "AutovalidateMode.always",
-        index: 1
+        __proto__: debug_overflow_indicator._OverflowSide.prototype,
+        [_name$]: "_OverflowSide.left",
+        index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: form.AutovalidateMode.prototype,
-        [_name$]: "AutovalidateMode.onUserInteraction",
-        index: 2
+        __proto__: debug_overflow_indicator._OverflowSide.prototype,
+        [_name$]: "_OverflowSide.top",
+        index: 1
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: form.AutovalidateMode.prototype,
-        [_name$]: "AutovalidateMode.disabled",
-        index: 0
+        __proto__: debug_overflow_indicator._OverflowSide.prototype,
+        [_name$]: "_OverflowSide.bottom",
+        index: 2
       });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: debug_overflow_indicator._OverflowSide.prototype,
+        [_name$]: "_OverflowSide.right",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], debug_overflow_indicator._OverflowSide);
     },
     get C5() {
       return C[5] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "formState",
-        [_Location_column]: 9,
-        [_Location_line]: 211,
-        [_Location_file]: null
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 0,
+        [OffsetBase__dx]: 0
       });
     },
     get C6() {
       return C[6] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "generation",
-        [_Location_column]: 9,
-        [_Location_line]: 212,
-        [_Location_file]: null
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 0,
+        [OffsetBase__dx]: 8.5
       });
     },
     get C7() {
       return C[7] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 9,
-        [_Location_line]: 213,
-        [_Location_file]: null
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 1,
+        [OffsetBase__dx]: 0
       });
     },
-    get C4() {
-      return C[4] = dart.constList([C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7], widget_inspector._Location);
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 8.5,
+        [OffsetBase__dx]: 0
+      });
     },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[4] || CT.C4,
-        [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 210,
-        [_Location_file]: "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/widgets/form.dart"
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 3204448256.0
       });
     },
     get C10() {
       return C[10] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "onWillPop",
-        [_Location_column]: 7,
-        [_Location_line]: 209,
-        [_Location_file]: null
+        __proto__: ui.Color.prototype,
+        [Color_value]: 3221225216.0
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: ui.FontWeight.prototype,
+        [FontWeight_index]: 7
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4287627264.0
       });
     },
     get C11() {
       return C[11] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 210,
-        [_Location_file]: null
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: C[12] || CT.C12,
+        [TextStyle_fontSize]: 7.5,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[13] || CT.C13,
+        [TextStyle_inherit]: true
       });
     },
-    get C9() {
-      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11], widget_inspector._Location);
-    },
-    get C8() {
-      return C[8] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[9] || CT.C9,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 208,
-        [_Location_file]: "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/widgets/form.dart"
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 10,
+        [OffsetBase__dx]: 10
       });
     },
-    get C12() {
-      return C[12] = dart.constList([C[2] || CT.C2, C[0] || CT.C0, C[1] || CT.C1], form.AutovalidateMode);
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294967295.0
+      });
     }
   }, false);
-  var C = Array(13).fill(void 0);
+  var C = Array(16).fill(void 0);
   var I = [
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/widgets/form.dart",
-    "package:flutter/src/widgets/form.dart"
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/rendering/debug_overflow_indicator.dart",
+    "package:flutter/src/rendering/debug_overflow_indicator.dart"
   ];
-  var child$ = dart.privateName(form, "Form.child");
-  var onWillPop$ = dart.privateName(form, "Form.onWillPop");
-  var onChanged$ = dart.privateName(form, "Form.onChanged");
-  var autovalidateMode$ = dart.privateName(form, "Form.autovalidateMode");
-  var autovalidate$ = dart.privateName(form, "Form.autovalidate");
-  var _formState = dart.privateName(form, "_formState");
-  form.Form = class Form extends framework.StatefulWidget {
-    get child() {
-      return this[child$];
-    }
-    set child(value) {
-      super.child = value;
-    }
-    get onWillPop() {
-      return this[onWillPop$];
-    }
-    set onWillPop(value) {
-      super.onWillPop = value;
-    }
-    get onChanged() {
-      return this[onChanged$];
-    }
-    set onChanged(value) {
-      super.onChanged = value;
-    }
-    get autovalidateMode() {
-      return this[autovalidateMode$];
-    }
-    set autovalidateMode(value) {
-      super.autovalidateMode = value;
-    }
-    get autovalidate() {
-      return this[autovalidate$];
-    }
-    set autovalidate(value) {
-      super.autovalidate = value;
-    }
-    static of(context) {
-      let t0;
-      if (context == null) dart.nullFailed(I[0], 107, 37, "context");
-      let scope = context.dependOnInheritedWidgetOfExactType(form._FormScope);
-      t0 = scope;
-      return t0 == null ? null : t0[_formState];
-    }
-    createState() {
-      return new form.FormState.new();
-    }
-  };
-  (form.Form.new = function(opts) {
-    let t0;
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    if (child == null) dart.nullFailed(I[0], 78, 19, "child");
-    let autovalidate = opts && 'autovalidate' in opts ? opts.autovalidate : false;
-    if (autovalidate == null) dart.nullFailed(I[0], 84, 10, "autovalidate");
-    let onWillPop = opts && 'onWillPop' in opts ? opts.onWillPop : null;
-    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
-    let autovalidateMode = opts && 'autovalidateMode' in opts ? opts.autovalidateMode : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[child$] = child;
-    this[autovalidate$] = autovalidate;
-    this[onWillPop$] = onWillPop;
-    this[onChanged$] = onChanged;
-    if (!(child != null)) dart.assertFailed(null, I[0], 88, 15, "child != null");
-    if (!(autovalidate != null)) dart.assertFailed(null, I[0], 89, 15, "autovalidate != null");
-    if (!(autovalidate === false || autovalidate === true && autovalidateMode == null)) dart.assertFailed("autovalidate and autovalidateMode should not be used together.", I[0], 91, 10, "autovalidate == false ||\r\n         autovalidate == true && autovalidateMode == null");
-    this[autovalidateMode$] = (t0 = autovalidateMode, t0 == null ? dart.test(autovalidate) ? form.AutovalidateMode.always : form.AutovalidateMode.disabled : t0);
-    form.Form.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = form.Form.prototype;
-  dart.addTypeTests(form.Form);
-  dart.addTypeCaches(form.Form);
-  dart.setMethodSignature(form.Form, () => ({
-    __proto__: dart.getMethods(form.Form.__proto__),
-    createState: dart.fnType(form.FormState, [])
-  }));
-  dart.setLibraryUri(form.Form, I[1]);
-  dart.setFieldSignature(form.Form, () => ({
-    __proto__: dart.getFields(form.Form.__proto__),
-    child: dart.finalFieldType(framework.Widget),
-    onWillPop: dart.finalFieldType(dart.nullable(dart.fnType(async.Future$(core.bool), []))),
-    onChanged: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, []))),
-    autovalidateMode: dart.finalFieldType(form.AutovalidateMode),
-    autovalidate: dart.finalFieldType(core.bool)
-  }));
-  var _generation = dart.privateName(form, "_generation");
-  var _hasInteractedByUser = dart.privateName(form, "_hasInteractedByUser");
-  var _fields = dart.privateName(form, "_fields");
-  var _forceRebuild = dart.privateName(form, "_forceRebuild");
-  var _fieldDidChange = dart.privateName(form, "_fieldDidChange");
-  var _register = dart.privateName(form, "_register");
-  var _unregister = dart.privateName(form, "_unregister");
-  var _validate = dart.privateName(form, "_validate");
-  var _name$ = dart.privateName(form, "_name");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  form.FormState = class FormState extends framework.State$(form.Form) {
-    [_fieldDidChange]() {
-      if (this.widget.onChanged != null) dart.nullCheck(this.widget.onChanged)();
-      this[_hasInteractedByUser] = this[_fields][$any](dart.fn(field => {
-        if (field == null) dart.nullFailed(I[0], 175, 39, "field");
-        return field[_hasInteractedByUser];
-      }, T$.FormFieldStateTobool()));
-      this[_forceRebuild]();
-    }
-    [_forceRebuild]() {
-      this.setState(dart.fn(() => {
-        this[_generation] = dart.notNull(this[_generation]) + 1;
-      }, T$.VoidTovoid()));
-    }
-    [_register](field) {
-      if (field == null) dart.nullFailed(I[0], 185, 42, "field");
-      this[_fields].add(field);
-    }
-    [_unregister](field) {
-      if (field == null) dart.nullFailed(I[0], 189, 44, "field");
-      this[_fields].remove(field);
-    }
-    build(context) {
-      if (context == null) dart.nullFailed(I[0], 194, 29, "context");
-      switch (this.widget.autovalidateMode) {
-        case C[0] || CT.C0:
-        {
-          this[_validate]();
-          break;
-        }
-        case C[1] || CT.C1:
-        {
-          if (dart.test(this[_hasInteractedByUser])) {
-            this[_validate]();
-          }
-          break;
-        }
-        case C[2] || CT.C2:
-        {
-          break;
-        }
-      }
-      return new will_pop_scope.WillPopScope.new({onWillPop: this.widget.onWillPop, child: new form._FormScope.new({formState: this, generation: this[_generation], child: this.widget.child, $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), $creationLocationd_0dea112b090073317d4: C[8] || CT.C8});
-    }
-    save() {
-      for (let field of this[_fields])
-        field.save();
-    }
-    reset() {
-      for (let field of this[_fields])
-        field.reset();
-      this[_hasInteractedByUser] = false;
-      this[_fieldDidChange]();
-    }
-    validate() {
-      this[_hasInteractedByUser] = true;
-      this[_forceRebuild]();
-      return this[_validate]();
-    }
-    [_validate]() {
-      let hasError = false;
-      for (let field of this[_fields])
-        hasError = !dart.test(field.validate()) || hasError;
-      return !hasError;
-    }
-  };
-  (form.FormState.new = function() {
-    this[_generation] = 0;
-    this[_hasInteractedByUser] = false;
-    this[_fields] = T$.LinkedHashSetOfFormFieldState().new();
-    form.FormState.__proto__.new.call(this);
-    ;
-  }).prototype = form.FormState.prototype;
-  dart.addTypeTests(form.FormState);
-  dart.addTypeCaches(form.FormState);
-  dart.setMethodSignature(form.FormState, () => ({
-    __proto__: dart.getMethods(form.FormState.__proto__),
-    [_fieldDidChange]: dart.fnType(dart.void, []),
-    [_forceRebuild]: dart.fnType(dart.void, []),
-    [_register]: dart.fnType(dart.void, [form.FormFieldState]),
-    [_unregister]: dart.fnType(dart.void, [form.FormFieldState]),
-    build: dart.fnType(framework.Widget, [framework.BuildContext]),
-    save: dart.fnType(dart.void, []),
-    reset: dart.fnType(dart.void, []),
-    validate: dart.fnType(core.bool, []),
-    [_validate]: dart.fnType(core.bool, [])
-  }));
-  dart.setLibraryUri(form.FormState, I[1]);
-  dart.setFieldSignature(form.FormState, () => ({
-    __proto__: dart.getFields(form.FormState.__proto__),
-    [_generation]: dart.fieldType(core.int),
-    [_hasInteractedByUser]: dart.fieldType(core.bool),
-    [_fields]: dart.finalFieldType(core.Set$(form.FormFieldState))
-  }));
-  var _formState$ = dart.privateName(form, "_FormScope._formState");
-  var _generation$ = dart.privateName(form, "_FormScope._generation");
-  form._FormScope = class _FormScope extends framework.InheritedWidget {
-    get [_formState]() {
-      return this[_formState$];
-    }
-    set [_formState](value) {
-      super[_formState] = value;
-    }
-    get [_generation]() {
-      return this[_generation$];
-    }
-    set [_generation](value) {
-      super[_generation] = value;
-    }
-    get form() {
-      return this[_formState].widget;
-    }
-    updateShouldNotify(old) {
-      form._FormScope.as(old);
-      if (old == null) dart.nullFailed(I[0], 276, 38, "old");
-      return this[_generation] != old[_generation];
-    }
-  };
-  (form._FormScope.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    if (child == null) dart.nullFailed(I[0], 259, 21, "child");
-    let formState = opts && 'formState' in opts ? opts.formState : null;
-    if (formState == null) dart.nullFailed(I[0], 260, 24, "formState");
-    let generation = opts && 'generation' in opts ? opts.generation : null;
-    if (generation == null) dart.nullFailed(I[0], 261, 18, "generation");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[_formState$] = formState;
-    this[_generation$] = generation;
-    form._FormScope.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = form._FormScope.prototype;
-  dart.addTypeTests(form._FormScope);
-  dart.addTypeCaches(form._FormScope);
-  dart.setMethodSignature(form._FormScope, () => ({
-    __proto__: dart.getMethods(form._FormScope.__proto__),
-    updateShouldNotify: dart.fnType(core.bool, [dart.nullable(core.Object)])
-  }));
-  dart.setGetterSignature(form._FormScope, () => ({
-    __proto__: dart.getGetters(form._FormScope.__proto__),
-    form: form.Form
-  }));
-  dart.setLibraryUri(form._FormScope, I[1]);
-  dart.setFieldSignature(form._FormScope, () => ({
-    __proto__: dart.getFields(form._FormScope.__proto__),
-    [_formState]: dart.finalFieldType(form.FormState),
-    [_generation]: dart.finalFieldType(core.int)
-  }));
-  var onSaved$ = dart.privateName(form, "FormField.onSaved");
-  var validator$ = dart.privateName(form, "FormField.validator");
-  var builder$ = dart.privateName(form, "FormField.builder");
-  var initialValue$ = dart.privateName(form, "FormField.initialValue");
-  var enabled$ = dart.privateName(form, "FormField.enabled");
-  var autovalidateMode$0 = dart.privateName(form, "FormField.autovalidateMode");
-  var autovalidate$0 = dart.privateName(form, "FormField.autovalidate");
-  const _is_FormField_default = Symbol('_is_FormField_default');
-  form.FormField$ = dart.generic(T => {
-    var FormFieldStateOfT = () => (FormFieldStateOfT = dart.constFn(form.FormFieldState$(T)))();
-    class FormField extends framework.StatefulWidget {
-      get onSaved() {
-        return this[onSaved$];
-      }
-      set onSaved(value) {
-        super.onSaved = value;
-      }
-      get validator() {
-        return this[validator$];
-      }
-      set validator(value) {
-        super.validator = value;
-      }
-      get builder() {
-        return this[builder$];
-      }
-      set builder(value) {
-        super.builder = value;
-      }
-      get initialValue() {
-        return this[initialValue$];
-      }
-      set initialValue(value) {
-        super.initialValue = value;
-      }
-      get enabled() {
-        return this[enabled$];
-      }
-      set enabled(value) {
-        super.enabled = value;
-      }
-      get autovalidateMode() {
-        return this[autovalidateMode$0];
-      }
-      set autovalidateMode(value) {
-        super.autovalidateMode = value;
-      }
-      get autovalidate() {
-        return this[autovalidate$0];
-      }
-      set autovalidate(value) {
-        super.autovalidate = value;
-      }
-      createState() {
-        return new (FormFieldStateOfT()).new();
-      }
-    }
-    (FormField.new = function(opts) {
-      let t0;
-      let key = opts && 'key' in opts ? opts.key : null;
-      let builder = opts && 'builder' in opts ? opts.builder : null;
-      if (builder == null) dart.nullFailed(I[0], 324, 19, "builder");
-      let onSaved = opts && 'onSaved' in opts ? opts.onSaved : null;
-      let validator = opts && 'validator' in opts ? opts.validator : null;
-      let initialValue = opts && 'initialValue' in opts ? opts.initialValue : null;
-      let autovalidate = opts && 'autovalidate' in opts ? opts.autovalidate : false;
-      if (autovalidate == null) dart.nullFailed(I[0], 333, 10, "autovalidate");
-      let enabled = opts && 'enabled' in opts ? opts.enabled : true;
-      if (enabled == null) dart.nullFailed(I[0], 334, 10, "enabled");
-      let autovalidateMode = opts && 'autovalidateMode' in opts ? opts.autovalidateMode : null;
-      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-      this[builder$] = builder;
-      this[onSaved$] = onSaved;
-      this[validator$] = validator;
-      this[initialValue$] = initialValue;
-      this[autovalidate$0] = autovalidate;
-      this[enabled$] = enabled;
-      if (!(builder != null)) dart.assertFailed(null, I[0], 336, 15, "builder != null");
-      if (!(autovalidate === false || autovalidate === true && autovalidateMode == null)) dart.assertFailed("autovalidate and autovalidateMode should not be used together.", I[0], 338, 10, "autovalidate == false ||\r\n         autovalidate == true && autovalidateMode == null");
-      this[autovalidateMode$0] = (t0 = autovalidateMode, t0 == null ? dart.test(autovalidate) ? form.AutovalidateMode.always : form.AutovalidateMode.disabled : t0);
-      FormField.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-      ;
-    }).prototype = FormField.prototype;
-    dart.addTypeTests(FormField);
-    FormField.prototype[_is_FormField_default] = true;
-    dart.addTypeCaches(FormField);
-    dart.setMethodSignature(FormField, () => ({
-      __proto__: dart.getMethods(FormField.__proto__),
-      createState: dart.fnType(form.FormFieldState$(T), [])
-    }));
-    dart.setLibraryUri(FormField, I[1]);
-    dart.setFieldSignature(FormField, () => ({
-      __proto__: dart.getFields(FormField.__proto__),
-      onSaved: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [dart.nullable(T)]))),
-      validator: dart.finalFieldType(dart.nullable(dart.fnType(dart.nullable(core.String), [dart.nullable(T)]))),
-      builder: dart.finalFieldType(dart.fnType(framework.Widget, [form.FormFieldState$(T)])),
-      initialValue: dart.finalFieldType(dart.nullable(T)),
-      enabled: dart.finalFieldType(core.bool),
-      autovalidateMode: dart.finalFieldType(form.AutovalidateMode),
-      autovalidate: dart.finalFieldType(core.bool)
-    }));
-    return FormField;
-  });
-  form.FormField = form.FormField$();
-  dart.addTypeTests(form.FormField, _is_FormField_default);
-  var _value = dart.privateName(form, "_value");
-  var _errorText = dart.privateName(form, "_errorText");
-  const _is_FormFieldState_default = Symbol('_is_FormFieldState_default');
-  form.FormFieldState$ = dart.generic(T => {
-    var TN = () => (TN = dart.constFn(dart.nullable(T)))();
-    var TNToStringN = () => (TNToStringN = dart.constFn(dart.fnType(T$.StringN(), [TN()])))();
-    var TNToNStringN = () => (TNToNStringN = dart.constFn(dart.nullable(TNToStringN())))();
-    var TNTovoid = () => (TNTovoid = dart.constFn(dart.fnType(dart.void, [TN()])))();
-    var TNToNvoid = () => (TNToNvoid = dart.constFn(dart.nullable(TNTovoid())))();
-    var FormFieldStateOfT = () => (FormFieldStateOfT = dart.constFn(form.FormFieldState$(T)))();
-    var FormFieldStateOfTToWidget = () => (FormFieldStateOfTToWidget = dart.constFn(dart.fnType(framework.Widget, [FormFieldStateOfT()])))();
-    class FormFieldState extends framework.State$(form.FormField$(T)) {
-      get value() {
-        return this[_value];
-      }
-      get errorText() {
-        return this[_errorText];
-      }
-      get hasError() {
-        return this[_errorText] != null;
-      }
-      get isValid() {
-        let t0;
-        return (t0 = TNToNStringN().as(this.widget.validator), t0 == null ? null : t0(this[_value])) == null;
-      }
-      save() {
-        if (TNToNvoid().as(this.widget.onSaved) != null) dart.nullCheck(TNToNvoid().as(this.widget.onSaved))(this.value);
-      }
-      reset() {
-        let t0;
-        this.setState(dart.fn(() => {
-          this[_value] = this.widget.initialValue;
-          this[_hasInteractedByUser] = false;
-          this[_errorText] = null;
-        }, T$.VoidTovoid()));
-        t0 = form.Form.of(this.context);
-        t0 == null ? null : t0[_fieldDidChange]();
-      }
-      validate() {
-        this.setState(dart.fn(() => {
-          this[_validate]();
-        }, T$.VoidTovoid()));
-        return !dart.test(this.hasError);
-      }
-      [_validate]() {
-        if (TNToNStringN().as(this.widget.validator) != null) this[_errorText] = dart.nullCheck(TNToNStringN().as(this.widget.validator))(this[_value]);
-      }
-      didChange(value) {
-        let t0;
-        TN().as(value);
-        this.setState(dart.fn(() => {
-          this[_value] = value;
-          this[_hasInteractedByUser] = true;
-        }, T$.VoidTovoid()));
-        t0 = form.Form.of(this.context);
-        t0 == null ? null : t0[_fieldDidChange]();
-      }
-      setValue(value) {
-        TN().as(value);
-        this[_value] = value;
-      }
-      initState() {
-        super.initState();
-        this[_value] = this.widget.initialValue;
-      }
-      deactivate() {
-        let t0;
-        t0 = form.Form.of(this.context);
-        t0 == null ? null : t0[_unregister](this);
-        super.deactivate();
-      }
-      build(context) {
-        let t0, t0$;
-        if (context == null) dart.nullFailed(I[0], 510, 29, "context");
-        if (dart.test(this.widget.enabled)) {
-          switch (this.widget.autovalidateMode) {
-            case C[0] || CT.C0:
-            {
-              this[_validate]();
-              break;
-            }
-            case C[1] || CT.C1:
-            {
-              if (dart.test(this[_hasInteractedByUser])) {
-                this[_validate]();
-              }
-              break;
-            }
-            case C[2] || CT.C2:
-            {
-              break;
-            }
-          }
-        }
-        t0 = form.Form.of(context);
-        t0 == null ? null : t0[_register](this);
-        t0$ = this.widget;
-        return FormFieldStateOfTToWidget().as(t0$.builder)(this);
-      }
-    }
-    (FormFieldState.new = function() {
-      this[_value] = null;
-      this[_errorText] = null;
-      this[_hasInteractedByUser] = false;
-      FormFieldState.__proto__.new.call(this);
-      ;
-    }).prototype = FormFieldState.prototype;
-    dart.addTypeTests(FormFieldState);
-    FormFieldState.prototype[_is_FormFieldState_default] = true;
-    dart.addTypeCaches(FormFieldState);
-    dart.setMethodSignature(FormFieldState, () => ({
-      __proto__: dart.getMethods(FormFieldState.__proto__),
-      save: dart.fnType(dart.void, []),
-      reset: dart.fnType(dart.void, []),
-      validate: dart.fnType(core.bool, []),
-      [_validate]: dart.fnType(dart.void, []),
-      didChange: dart.fnType(dart.void, [dart.nullable(core.Object)]),
-      setValue: dart.fnType(dart.void, [dart.nullable(core.Object)]),
-      build: dart.fnType(framework.Widget, [framework.BuildContext])
-    }));
-    dart.setGetterSignature(FormFieldState, () => ({
-      __proto__: dart.getGetters(FormFieldState.__proto__),
-      value: dart.nullable(T),
-      errorText: dart.nullable(core.String),
-      hasError: core.bool,
-      isValid: core.bool
-    }));
-    dart.setLibraryUri(FormFieldState, I[1]);
-    dart.setFieldSignature(FormFieldState, () => ({
-      __proto__: dart.getFields(FormFieldState.__proto__),
-      [_value]: dart.fieldType(dart.nullable(T)),
-      [_errorText]: dart.fieldType(dart.nullable(core.String)),
-      [_hasInteractedByUser]: dart.fieldType(core.bool)
-    }));
-    return FormFieldState;
-  });
-  form.FormFieldState = form.FormFieldState$();
-  dart.addTypeTests(form.FormFieldState, _is_FormFieldState_default);
-  form.AutovalidateMode = class AutovalidateMode extends core.Object {
+  var _name$ = dart.privateName(debug_overflow_indicator, "_name");
+  debug_overflow_indicator._OverflowSide = class _OverflowSide extends core.Object {
     toString() {
       return this[_name$];
     }
   };
-  (form.AutovalidateMode.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[0], 531, 6, "index");
-    if (_name == null) dart.nullFailed(I[0], 531, 6, "_name");
+  (debug_overflow_indicator._OverflowSide.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 14, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 14, 6, "_name");
     this.index = index;
     this[_name$] = _name;
     ;
-  }).prototype = form.AutovalidateMode.prototype;
-  dart.addTypeTests(form.AutovalidateMode);
-  dart.addTypeCaches(form.AutovalidateMode);
-  dart.setLibraryUri(form.AutovalidateMode, I[1]);
-  dart.setFieldSignature(form.AutovalidateMode, () => ({
-    __proto__: dart.getFields(form.AutovalidateMode.__proto__),
+  }).prototype = debug_overflow_indicator._OverflowSide.prototype;
+  dart.addTypeTests(debug_overflow_indicator._OverflowSide);
+  dart.addTypeCaches(debug_overflow_indicator._OverflowSide);
+  dart.setLibraryUri(debug_overflow_indicator._OverflowSide, I[1]);
+  dart.setFieldSignature(debug_overflow_indicator._OverflowSide, () => ({
+    __proto__: dart.getFields(debug_overflow_indicator._OverflowSide.__proto__),
     index: dart.finalFieldType(core.int),
     [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.defineExtensionMethods(form.AutovalidateMode, ['toString']);
-  form.AutovalidateMode.disabled = C[2] || CT.C2;
-  form.AutovalidateMode.always = C[0] || CT.C0;
-  form.AutovalidateMode.onUserInteraction = C[1] || CT.C1;
-  form.AutovalidateMode.values = C[12] || CT.C12;
-  dart.trackLibraries("packages/flutter/src/widgets/form.dart", {
-    "package:flutter/src/widgets/form.dart": form
+  dart.defineExtensionMethods(debug_overflow_indicator._OverflowSide, ['toString']);
+  debug_overflow_indicator._OverflowSide.left = C[0] || CT.C0;
+  debug_overflow_indicator._OverflowSide.top = C[1] || CT.C1;
+  debug_overflow_indicator._OverflowSide.bottom = C[2] || CT.C2;
+  debug_overflow_indicator._OverflowSide.right = C[3] || CT.C3;
+  debug_overflow_indicator._OverflowSide.values = C[4] || CT.C4;
+  var rect$ = dart.privateName(debug_overflow_indicator, "_OverflowRegionData.rect");
+  var label$ = dart.privateName(debug_overflow_indicator, "_OverflowRegionData.label");
+  var labelOffset$ = dart.privateName(debug_overflow_indicator, "_OverflowRegionData.labelOffset");
+  var rotation$ = dart.privateName(debug_overflow_indicator, "_OverflowRegionData.rotation");
+  var side$ = dart.privateName(debug_overflow_indicator, "_OverflowRegionData.side");
+  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
+  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
+  debug_overflow_indicator._OverflowRegionData = class _OverflowRegionData extends core.Object {
+    get rect() {
+      return this[rect$];
+    }
+    set rect(value) {
+      super.rect = value;
+    }
+    get label() {
+      return this[label$];
+    }
+    set label(value) {
+      super.label = value;
+    }
+    get labelOffset() {
+      return this[labelOffset$];
+    }
+    set labelOffset(value) {
+      super.labelOffset = value;
+    }
+    get rotation() {
+      return this[rotation$];
+    }
+    set rotation(value) {
+      super.rotation = value;
+    }
+    get side() {
+      return this[side$];
+    }
+    set side(value) {
+      super.side = value;
+    }
+  };
+  (debug_overflow_indicator._OverflowRegionData.new = function(opts) {
+    let rect = opts && 'rect' in opts ? opts.rect : null;
+    if (rect == null) dart.nullFailed(I[0], 25, 19, "rect");
+    let label = opts && 'label' in opts ? opts.label : "";
+    if (label == null) dart.nullFailed(I[0], 26, 10, "label");
+    let labelOffset = opts && 'labelOffset' in opts ? opts.labelOffset : C[5] || CT.C5;
+    if (labelOffset == null) dart.nullFailed(I[0], 27, 10, "labelOffset");
+    let rotation = opts && 'rotation' in opts ? opts.rotation : 0;
+    if (rotation == null) dart.nullFailed(I[0], 28, 10, "rotation");
+    let side = opts && 'side' in opts ? opts.side : null;
+    if (side == null) dart.nullFailed(I[0], 29, 19, "side");
+    this[rect$] = rect;
+    this[label$] = label;
+    this[labelOffset$] = labelOffset;
+    this[rotation$] = rotation;
+    this[side$] = side;
+    ;
+  }).prototype = debug_overflow_indicator._OverflowRegionData.prototype;
+  dart.addTypeTests(debug_overflow_indicator._OverflowRegionData);
+  dart.addTypeCaches(debug_overflow_indicator._OverflowRegionData);
+  dart.setLibraryUri(debug_overflow_indicator._OverflowRegionData, I[1]);
+  dart.setFieldSignature(debug_overflow_indicator._OverflowRegionData, () => ({
+    __proto__: dart.getFields(debug_overflow_indicator._OverflowRegionData.__proto__),
+    rect: dart.finalFieldType(ui.Rect),
+    label: dart.finalFieldType(core.String),
+    labelOffset: dart.finalFieldType(ui.Offset),
+    rotation: dart.finalFieldType(core.double),
+    side: dart.finalFieldType(debug_overflow_indicator._OverflowSide)
+  }));
+  var _indicatorLabel = dart.privateName(debug_overflow_indicator, "_indicatorLabel");
+  var _overflowReportNeeded = dart.privateName(debug_overflow_indicator, "_overflowReportNeeded");
+  var _formatPixels = dart.privateName(debug_overflow_indicator, "_formatPixels");
+  var _calculateOverflowRegions = dart.privateName(debug_overflow_indicator, "_calculateOverflowRegions");
+  var _reportOverflow = dart.privateName(debug_overflow_indicator, "_reportOverflow");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  debug_overflow_indicator.DebugOverflowIndicatorMixin = class DebugOverflowIndicatorMixin extends object.RenderObject {};
+  debug_overflow_indicator.DebugOverflowIndicatorMixin[dart.mixinOn] = RenderObject => class DebugOverflowIndicatorMixin extends RenderObject {
+    [_formatPixels](value) {
+      if (value == null) dart.nullFailed(I[0], 120, 31, "value");
+      if (!(dart.notNull(value) > 0.0)) dart.assertFailed(null, I[0], 121, 12, "value > 0.0");
+      let pixels = null;
+      if (dart.notNull(value) > 10.0) {
+        pixels = value[$toStringAsFixed](0);
+      } else if (dart.notNull(value) > 1.0) {
+        pixels = value[$toStringAsFixed](1);
+      } else {
+        pixels = value[$toStringAsPrecision](3);
+      }
+      return pixels;
+    }
+    [_calculateOverflowRegions](overflow, containerRect) {
+      if (overflow == null) dart.nullFailed(I[0], 133, 68, "overflow");
+      if (containerRect == null) dart.nullFailed(I[0], 133, 83, "containerRect");
+      let regions = T.JSArrayOf_OverflowRegionData().of([]);
+      if (dart.notNull(overflow.left) > 0.0) {
+        let markerRect = new ui.Rect.fromLTWH(0.0, 0.0, dart.notNull(containerRect.width) * 0.1, containerRect.height);
+        regions[$add](new debug_overflow_indicator._OverflowRegionData.new({rect: markerRect, label: "LEFT OVERFLOWED BY " + dart.str(this[_formatPixels](overflow.left)) + " PIXELS", labelOffset: markerRect.centerLeft['+'](C[6] || CT.C6), rotation: 3.141592653589793 / 2.0, side: debug_overflow_indicator._OverflowSide.left}));
+      }
+      if (dart.notNull(overflow.right) > 0.0) {
+        let markerRect = new ui.Rect.fromLTWH(dart.notNull(containerRect.width) * (1.0 - 0.1), 0.0, dart.notNull(containerRect.width) * 0.1, containerRect.height);
+        regions[$add](new debug_overflow_indicator._OverflowRegionData.new({rect: markerRect, label: "RIGHT OVERFLOWED BY " + dart.str(this[_formatPixels](overflow.right)) + " PIXELS", labelOffset: markerRect.centerRight['-'](C[6] || CT.C6), rotation: -3.141592653589793 / 2.0, side: debug_overflow_indicator._OverflowSide.right}));
+      }
+      if (dart.notNull(overflow.top) > 0.0) {
+        let markerRect = new ui.Rect.fromLTWH(0.0, 0.0, containerRect.width, dart.notNull(containerRect.height) * 0.1);
+        regions[$add](new debug_overflow_indicator._OverflowRegionData.new({rect: markerRect, label: "TOP OVERFLOWED BY " + dart.str(this[_formatPixels](overflow.top)) + " PIXELS", labelOffset: markerRect.topCenter['+'](C[7] || CT.C7), rotation: 0.0, side: debug_overflow_indicator._OverflowSide.top}));
+      }
+      if (dart.notNull(overflow.bottom) > 0.0) {
+        let markerRect = new ui.Rect.fromLTWH(0.0, dart.notNull(containerRect.height) * (1.0 - 0.1), containerRect.width, dart.notNull(containerRect.height) * 0.1);
+        regions[$add](new debug_overflow_indicator._OverflowRegionData.new({rect: markerRect, label: "BOTTOM OVERFLOWED BY " + dart.str(this[_formatPixels](overflow.bottom)) + " PIXELS", labelOffset: markerRect.bottomCenter['-'](C[8] || CT.C8), rotation: 0.0, side: debug_overflow_indicator._OverflowSide.bottom}));
+      }
+      return regions;
+    }
+    [_reportOverflow](overflow, overflowHints) {
+      if (overflow == null) dart.nullFailed(I[0], 201, 37, "overflow");
+      overflowHints == null ? overflowHints = T.JSArrayOfDiagnosticsNode().of([]) : null;
+      if (dart.test(overflowHints[$isEmpty])) {
+        overflowHints[$add](new assertions.ErrorDescription.new("The edge of the " + dart.str(this[$runtimeType]) + " that is " + "overflowing has been marked in the rendering with a yellow and black " + "striped pattern. This is usually caused by the contents being too big " + "for the " + dart.str(this[$runtimeType]) + "."));
+        overflowHints[$add](new assertions.ErrorHint.new("This is considered an error condition because it indicates that there " + "is content that cannot be seen. If the content is legitimately bigger " + "than the available space, consider clipping it with a ClipRect widget " + "before putting it in the " + dart.str(this[$runtimeType]) + ", or using a scrollable " + "container, like a ListView."));
+      }
+      let overflows = (() => {
+        let t0 = T.JSArrayOfString().of([]);
+        if (dart.notNull(overflow.left) > 0.0) t0[$add](dart.str(this[_formatPixels](overflow.left)) + " pixels on the left");
+        if (dart.notNull(overflow.top) > 0.0) t0[$add](dart.str(this[_formatPixels](overflow.top)) + " pixels on the top");
+        if (dart.notNull(overflow.bottom) > 0.0) t0[$add](dart.str(this[_formatPixels](overflow.bottom)) + " pixels on the bottom");
+        if (dart.notNull(overflow.right) > 0.0) t0[$add](dart.str(this[_formatPixels](overflow.right)) + " pixels on the right");
+        return t0;
+      })();
+      let overflowText = "";
+      if (!dart.test(overflows[$isNotEmpty])) dart.assertFailed("Somehow " + dart.str(this[$runtimeType]) + " didn't actually overflow like it thought it did.", I[0], 226, 12, "overflows.isNotEmpty");
+      switch (overflows[$length]) {
+        case 1:
+        {
+          overflowText = overflows[$first];
+          break;
+        }
+        case 2:
+        {
+          overflowText = dart.str(overflows[$first]) + " and " + dart.str(overflows[$last]);
+          break;
+        }
+        default:
+        {
+          overflows[$_set](dart.notNull(overflows[$length]) - 1, "and " + dart.str(overflows[$_get](dart.notNull(overflows[$length]) - 1)));
+          overflowText = overflows[$join](", ");
+        }
+      }
+      assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: assertions.FlutterError.new("A " + dart.str(this[$runtimeType]) + " overflowed by " + dart.str(overflowText) + "."), library: "rendering library", context: new assertions.ErrorDescription.new("during layout"), informationCollector: dart.fn(() => new (T.SyncIterableOfDiagnosticsNode()).new((function*() {
+          if (this.debugCreator != null) yield new object.DiagnosticsDebugCreator.new(dart.nullCheck(this.debugCreator));
+          yield* dart.nullCheck(overflowHints);
+          yield this.describeForError("The specific " + dart.str(this[$runtimeType]) + " in question is");
+          yield diagnostics.DiagnosticsNode.message("◢◤"[$times]((100 / 2)[$truncate]()), {allowWrap: false});
+        }).bind(this)), T.VoidToIterableOfDiagnosticsNode())}));
+    }
+    paintOverflowIndicator(context, offset, containerRect, childRect, opts) {
+      let t1;
+      if (context == null) dart.nullFailed(I[0], 267, 21, "context");
+      if (offset == null) dart.nullFailed(I[0], 268, 12, "offset");
+      if (containerRect == null) dart.nullFailed(I[0], 269, 10, "containerRect");
+      if (childRect == null) dart.nullFailed(I[0], 270, 10, "childRect");
+      let overflowHints = opts && 'overflowHints' in opts ? opts.overflowHints : null;
+      let overflow = stack.RelativeRect.fromRect(containerRect, childRect);
+      if (dart.notNull(overflow.left) <= 0.0 && dart.notNull(overflow.right) <= 0.0 && dart.notNull(overflow.top) <= 0.0 && dart.notNull(overflow.bottom) <= 0.0) {
+        return;
+      }
+      let overflowRegions = this[_calculateOverflowRegions](overflow, containerRect);
+      for (let region of overflowRegions) {
+        context.canvas.drawRect(region.rect.shift(offset), debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorPaint);
+        let textSpan = T.TextSpanN().as(this[_indicatorLabel][$_get](region.side.index).text);
+        if ((t1 = textSpan, t1 == null ? null : t1.text) != region.label) {
+          this[_indicatorLabel][$_get](region.side.index).text = new text_span.TextSpan.new({text: region.label, style: debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorTextStyle});
+          this[_indicatorLabel][$_get](region.side.index).layout();
+        }
+        let labelOffset = region.labelOffset['+'](offset);
+        let centerOffset = new ui.Offset.new(-dart.notNull(this[_indicatorLabel][$_get](region.side.index).width) / 2.0, 0.0);
+        let textBackgroundRect = centerOffset['&'](this[_indicatorLabel][$_get](region.side.index).size);
+        context.canvas.save();
+        context.canvas.translate(labelOffset.dx, labelOffset.dy);
+        context.canvas.rotate(region.rotation);
+        context.canvas.drawRect(textBackgroundRect, debug_overflow_indicator.DebugOverflowIndicatorMixin._labelBackgroundPaint);
+        this[_indicatorLabel][$_get](region.side.index).paint(context.canvas, centerOffset);
+        context.canvas.restore();
+      }
+      if (dart.test(this[_overflowReportNeeded])) {
+        this[_overflowReportNeeded] = false;
+        this[_reportOverflow](overflow, overflowHints);
+      }
+    }
+    reassemble() {
+      super.reassemble();
+      if (!dart.test(dart.fn(() => {
+        this[_overflowReportNeeded] = true;
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 315, 12, "() {\r\n      _overflowReportNeeded = true;\r\n      return true;\r\n    }()");
+    }
+  };
+  (debug_overflow_indicator.DebugOverflowIndicatorMixin[dart.mixinNew] = function() {
+    this[_indicatorLabel] = T.ListOfTextPainter().filled(debug_overflow_indicator._OverflowSide.values[$length], new text_painter.TextPainter.new({textDirection: ui.TextDirection.ltr}));
+    this[_overflowReportNeeded] = true;
+  }).prototype = debug_overflow_indicator.DebugOverflowIndicatorMixin.prototype;
+  dart.addTypeTests(debug_overflow_indicator.DebugOverflowIndicatorMixin);
+  dart.addTypeCaches(debug_overflow_indicator.DebugOverflowIndicatorMixin);
+  debug_overflow_indicator.DebugOverflowIndicatorMixin[dart.implements] = () => [object.RenderObject];
+  dart.setMethodSignature(debug_overflow_indicator.DebugOverflowIndicatorMixin, () => ({
+    __proto__: dart.getMethods(debug_overflow_indicator.DebugOverflowIndicatorMixin.__proto__),
+    [_formatPixels]: dart.fnType(core.String, [core.double]),
+    [_calculateOverflowRegions]: dart.fnType(core.List$(debug_overflow_indicator._OverflowRegionData), [stack.RelativeRect, ui.Rect]),
+    [_reportOverflow]: dart.fnType(dart.void, [stack.RelativeRect, dart.nullable(core.List$(diagnostics.DiagnosticsNode))]),
+    paintOverflowIndicator: dart.fnType(dart.void, [object.PaintingContext, ui.Offset, ui.Rect, ui.Rect], {overflowHints: dart.nullable(core.List$(diagnostics.DiagnosticsNode))}, {})
+  }));
+  dart.setLibraryUri(debug_overflow_indicator.DebugOverflowIndicatorMixin, I[1]);
+  dart.setFieldSignature(debug_overflow_indicator.DebugOverflowIndicatorMixin, () => ({
+    __proto__: dart.getFields(debug_overflow_indicator.DebugOverflowIndicatorMixin.__proto__),
+    [_indicatorLabel]: dart.finalFieldType(core.List$(text_painter.TextPainter)),
+    [_overflowReportNeeded]: dart.fieldType(core.bool)
+  }));
+  dart.defineLazy(debug_overflow_indicator.DebugOverflowIndicatorMixin, {
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._black*/get _black() {
+      return C[9] || CT.C9;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._yellow*/get _yellow() {
+      return C[10] || CT.C10;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorFraction*/get _indicatorFraction() {
+      return 0.1;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorFontSizePixels*/get _indicatorFontSizePixels() {
+      return 7.5;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorLabelPaddingPixels*/get _indicatorLabelPaddingPixels() {
+      return 1;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorTextStyle*/get _indicatorTextStyle() {
+      return C[11] || CT.C11;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorPaint*/get _indicatorPaint() {
+      let t1;
+      return t1 = ui.Paint.new(), (() => {
+        t1.shader = ui.Gradient.linear(ui.Offset.zero, C[14] || CT.C14, T.JSArrayOfColor().of([debug_overflow_indicator.DebugOverflowIndicatorMixin._black, debug_overflow_indicator.DebugOverflowIndicatorMixin._yellow, debug_overflow_indicator.DebugOverflowIndicatorMixin._yellow, debug_overflow_indicator.DebugOverflowIndicatorMixin._black]), T.JSArrayOfdouble().of([0.25, 0.25, 0.75, 0.75]), ui.TileMode.repeated);
+        return t1;
+      })();
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._labelBackgroundPaint*/get _labelBackgroundPaint() {
+      let t1;
+      return t1 = ui.Paint.new(), (() => {
+        t1.color = C[15] || CT.C15;
+        return t1;
+      })();
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/rendering/debug_overflow_indicator.dart", {
+    "package:flutter/src/rendering/debug_overflow_indicator.dart": debug_overflow_indicator
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["form.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../packages/flutter/src/widgets/form.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["debug_overflow_indicator.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/rendering/debug_overflow_indicator.dart.lib.js"}');
   // Exports:
   return {
-    src__widgets__form: form
+    src__rendering__debug_overflow_indicator: debug_overflow_indicator
   };
 }));
 
-//# sourceMappingURL=form.dart.lib.js.map
+//# sourceMappingURL=debug_overflow_indicator.dart.lib.js.map
