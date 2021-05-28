@@ -19,15 +19,15 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "TpN1+owSej7HENVuy5jXsQ==";
+    window.$dartAppId = "q47DLvlxyZ01CfWyFNSu8A==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "7.1.1";
-window.$dwdsDevHandlerPath = "http://localhost:49688/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:49580/$dwdsSseHandler";
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:49690/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:49582/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -707,23 +707,18 @@ let modulePaths = {
  "packages/animated_text_kit/src/typewriter.dart": "packages/animated_text_kit/src/typewriter.dart.lib",
  "packages/animated_text_kit/src/rotate.dart": "packages/animated_text_kit/src/rotate.dart.lib",
  "packages/animated_text_kit/src/typer.dart": "packages/animated_text_kit/src/typer.dart.lib",
+ "packages/aishop/utils/cart.dart": "packages/aishop/utils/cart.dart.lib",
  "packages/aishop/components/textlink.dart": "packages/aishop/components/textlink.dart.lib",
- "packages/aishop/components/ORDERREVIEW.dart": "packages/aishop/components/ORDERREVIEW.dart.lib",
+ "packages/aishop/components/pastpurchase.dart": "packages/aishop/components/pastpurchase.dart.lib",
  "packages/aishop/widgets/modal_model.dart": "packages/aishop/widgets/modal_model.dart.lib",
  "packages/aishop/icons/icons.dart": "packages/aishop/icons/icons.dart.lib",
- "packages/aishop/widgets/tech.dart": "packages/aishop/widgets/tech.dart.lib",
- "packages/aishop/widgets/product_model.dart": "packages/aishop/widgets/product_model.dart.lib",
  "packages/aishop/utils/wishlist.dart": "packages/aishop/utils/wishlist.dart.lib",
- "packages/aishop/utils/cart.dart": "packages/aishop/utils/cart.dart.lib",
+ "packages/aishop/Services/historytracker.dart": "packages/aishop/Services/historytracker.dart.lib",
  "packages/aishop/components/databasemanager.dart": "packages/aishop/components/databasemanager.dart.lib",
- "packages/aishop/widgets/kitchen.dart": "packages/aishop/widgets/kitchen.dart.lib",
- "packages/aishop/widgets/clothes.dart": "packages/aishop/widgets/clothes.dart.lib",
- "packages/aishop/widgets/category.dart": "packages/aishop/widgets/category.dart.lib",
  "packages/aishop/widgets/category_card.dart": "packages/aishop/widgets/category_card.dart.lib",
- "packages/aishop/widgets/books.dart": "packages/aishop/widgets/books.dart.lib",
- "packages/aishop/widgets/beauty.dart": "packages/aishop/widgets/beauty.dart.lib",
  "packages/aishop/components/round_textfield.dart": "packages/aishop/components/round_textfield.dart.lib",
  "packages/aishop/components/icon_button.dart": "packages/aishop/components/icon_button.dart.lib",
+ "packages/aishop/components/searchservice.dart": "packages/aishop/components/searchservice.dart.lib",
  "packages/aishop/components/title.dart": "packages/aishop/components/title.dart.lib",
  "packages/aishop/components/sidepanel.dart": "packages/aishop/components/sidepanel.dart.lib",
  "packages/aishop/components/round_passwordfield.dart": "packages/aishop/components/round_passwordfield.dart.lib",
@@ -1358,23 +1353,18 @@ let moduleNames = {
  "packages/animated_text_kit/src/typewriter.dart.lib": "packages/animated_text_kit/src/typewriter.dart",
  "packages/animated_text_kit/src/rotate.dart.lib": "packages/animated_text_kit/src/rotate.dart",
  "packages/animated_text_kit/src/typer.dart.lib": "packages/animated_text_kit/src/typer.dart",
+ "packages/aishop/utils/cart.dart.lib": "packages/aishop/utils/cart.dart",
  "packages/aishop/components/textlink.dart.lib": "packages/aishop/components/textlink.dart",
- "packages/aishop/components/ORDERREVIEW.dart.lib": "packages/aishop/components/ORDERREVIEW.dart",
+ "packages/aishop/components/pastpurchase.dart.lib": "packages/aishop/components/pastpurchase.dart",
  "packages/aishop/widgets/modal_model.dart.lib": "packages/aishop/widgets/modal_model.dart",
  "packages/aishop/icons/icons.dart.lib": "packages/aishop/icons/icons.dart",
- "packages/aishop/widgets/tech.dart.lib": "packages/aishop/widgets/tech.dart",
- "packages/aishop/widgets/product_model.dart.lib": "packages/aishop/widgets/product_model.dart",
  "packages/aishop/utils/wishlist.dart.lib": "packages/aishop/utils/wishlist.dart",
- "packages/aishop/utils/cart.dart.lib": "packages/aishop/utils/cart.dart",
+ "packages/aishop/Services/historytracker.dart.lib": "packages/aishop/Services/historytracker.dart",
  "packages/aishop/components/databasemanager.dart.lib": "packages/aishop/components/databasemanager.dart",
- "packages/aishop/widgets/kitchen.dart.lib": "packages/aishop/widgets/kitchen.dart",
- "packages/aishop/widgets/clothes.dart.lib": "packages/aishop/widgets/clothes.dart",
- "packages/aishop/widgets/category.dart.lib": "packages/aishop/widgets/category.dart",
  "packages/aishop/widgets/category_card.dart.lib": "packages/aishop/widgets/category_card.dart",
- "packages/aishop/widgets/books.dart.lib": "packages/aishop/widgets/books.dart",
- "packages/aishop/widgets/beauty.dart.lib": "packages/aishop/widgets/beauty.dart",
  "packages/aishop/components/round_textfield.dart.lib": "packages/aishop/components/round_textfield.dart",
  "packages/aishop/components/icon_button.dart.lib": "packages/aishop/components/icon_button.dart",
+ "packages/aishop/components/searchservice.dart.lib": "packages/aishop/components/searchservice.dart",
  "packages/aishop/components/title.dart.lib": "packages/aishop/components/title.dart",
  "packages/aishop/components/sidepanel.dart.lib": "packages/aishop/components/sidepanel.dart",
  "packages/aishop/components/round_passwordfield.dart.lib": "packages/aishop/components/round_passwordfield.dart",

@@ -1,32 +1,30 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/async.dart', 'packages/cloud_firestore/cloud_firestore.dart', 'packages/flutter/src/material/progress_indicator.dart', 'packages/aishop/theme.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/rendering/sliver_grid.dart', 'packages/aishop/widgets/product_model.dart'], (function load__packages__aishop__widgets__kitchen_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__async$46dart, packages__cloud_firestore__cloud_firestore$46dart, packages__flutter__src__material__progress_indicator$46dart, packages__aishop__theme$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__rendering__sliver_grid$46dart, packages__aishop__widgets__product_model$46dart) {
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/implicit_animations.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/material/constants.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/decoration_image.dart', 'packages/flutter/src/painting/box_fit.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/widgets/icon_theme.dart', 'packages/flutter/src/painting/_network_image_web.dart'], (function load__packages__flutter__src__material__circle_avatar_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__implicit_animations$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__material__constants$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__decoration_image$46dart, packages__flutter__src__painting__box_fit$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__widgets__icon_theme$46dart, packages__flutter__src__painting___network_image_web$46dart) {
   'use strict';
   const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const debug = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
   const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
   const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
   const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const async = packages__flutter__src__widgets__async$46dart.src__widgets__async;
-  const cloud_firestore = packages__cloud_firestore__cloud_firestore$46dart.cloud_firestore;
-  const progress_indicator = packages__flutter__src__material__progress_indicator$46dart.src__material__progress_indicator;
-  const theme = packages__aishop__theme$46dart.theme;
-  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
-  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
-  const sliver_grid = packages__flutter__src__rendering__sliver_grid$46dart.src__rendering__sliver_grid;
-  const product_model = packages__aishop__widgets__product_model$46dart.widgets__product_model;
-  var kitchen = Object.create(dart.library);
-  var $_get = dartx._get;
-  var $toString = dartx.toString;
-  var $length = dartx.length;
+  const theme$ = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const theme_data = packages__flutter__src__material__icon_button$46dart.src__material__theme_data;
+  const implicit_animations = packages__flutter__src__widgets__implicit_animations$46dart.src__widgets__implicit_animations;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const constants = packages__flutter__src__material__constants$46dart.src__material__constants;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const decoration_image = packages__flutter__src__painting__decoration_image$46dart.src__painting__decoration_image;
+  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const icon_theme = packages__flutter__src__widgets__icon_theme$46dart.src__widgets__icon_theme;
+  const image_provider = packages__flutter__src__painting___network_image_web$46dart.src__painting__image_provider;
+  var circle_avatar = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
-    QuerySnapshotOfObjectN: () => (T.QuerySnapshotOfObjectN = dart.constFn(cloud_firestore.QuerySnapshot$(T.ObjectN())))(),
-    StreamBuilderOfQuerySnapshotOfObjectN: () => (T.StreamBuilderOfQuerySnapshotOfObjectN = dart.constFn(async.StreamBuilder$(T.QuerySnapshotOfObjectN())))(),
-    BuildContextAndintToProductCard: () => (T.BuildContextAndintToProductCard = dart.constFn(dart.fnType(product_model.ProductCard, [framework.BuildContext, core.int])))(),
-    AsyncSnapshotOfQuerySnapshotOfObjectN: () => (T.AsyncSnapshotOfQuerySnapshotOfObjectN = dart.constFn(async.AsyncSnapshot$(T.QuerySnapshotOfObjectN())))(),
-    BuildContextAndAsyncSnapshotOfQuerySnapshotOfObjectNToWidget: () => (T.BuildContextAndAsyncSnapshotOfQuerySnapshotOfObjectNToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, T.AsyncSnapshotOfQuerySnapshotOfObjectN()])))()
+    _: () => T
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -41,27 +39,28 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "backgroundColor",
-        [_Location_column]: 17,
-        [_Location_line]: 24,
-        [_Location_file]: null
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: ui.Brightness.prototype,
+        [_name]: "Brightness.dark",
+        index: 0
       });
     },
     get C1() {
-      return C[1] = dart.constList([C[2] || CT.C2], widget_inspector._Location);
+      return C[1] = dart.const({
+        __proto__: ui.Brightness.prototype,
+        [_name]: "Brightness.light",
+        index: 1
+      });
     },
-    get C0() {
-      return C[0] = dart.const({
+    get C4() {
+      return C[4] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[1] || CT.C1,
-        [_Location_name]: null,
-        [_Location_column]: 22,
-        [_Location_line]: 23,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/kitchen.dart"
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 259,
+        [_Location_file]: null
       });
     },
     get C5() {
@@ -69,31 +68,31 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
-        [_Location_column]: 15,
-        [_Location_line]: 23,
+        [_Location_column]: 21,
+        [_Location_line]: 260,
         [_Location_file]: null
       });
     },
-    get C4() {
-      return C[4] = dart.constList([C[5] || CT.C5], widget_inspector._Location);
-    },
     get C3() {
-      return C[3] = dart.const({
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C2() {
+      return C[2] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_parameterLocations]: C[3] || CT.C3,
         [_Location_name]: null,
-        [_Location_column]: 20,
-        [_Location_line]: 22,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/kitchen.dart"
+        [_Location_column]: 26,
+        [_Location_line]: 258,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/circle_avatar.dart"
       });
     },
     get C8() {
       return C[8] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "id",
-        [_Location_column]: 46,
-        [_Location_line]: 37,
+        [_Location_name]: "data",
+        [_Location_column]: 19,
+        [_Location_line]: 257,
         [_Location_file]: null
       });
     },
@@ -101,44 +100,14 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
       return C[9] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "imgUrl",
-        [_Location_column]: 46,
-        [_Location_line]: 38,
-        [_Location_file]: null
-      });
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "name",
-        [_Location_column]: 46,
-        [_Location_line]: 39,
-        [_Location_file]: null
-      });
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "description",
-        [_Location_column]: 46,
-        [_Location_line]: 40,
-        [_Location_file]: null
-      });
-    },
-    get C12() {
-      return C[12] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "price",
-        [_Location_column]: 59,
-        [_Location_line]: 41,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 258,
         [_Location_file]: null
       });
     },
     get C7() {
-      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12], widget_inspector._Location);
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9], widget_inspector._Location);
     },
     get C6() {
       return C[6] = dart.const({
@@ -146,70 +115,93 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_parameterLocations]: C[7] || CT.C7,
         [_Location_name]: null,
         [_Location_column]: 24,
-        [_Location_line]: 36,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/kitchen.dart"
+        [_Location_line]: 256,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/circle_avatar.dart"
       });
     },
-    get C15() {
-      return C[15] = dart.const({
+    get C12() {
+      return C[12] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "scrollDirection",
-        [_Location_column]: 15,
-        [_Location_line]: 30,
+        [_Location_name]: "data",
+        [_Location_column]: 17,
+        [_Location_line]: 255,
         [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 256,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13], widget_inspector._Location);
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 252,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/circle_avatar.dart"
       });
     },
     get C16() {
       return C[16] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "gridDelegate",
+        [_Location_name]: "child",
         [_Location_column]: 15,
-        [_Location_line]: 31,
+        [_Location_line]: 252,
         [_Location_file]: null
       });
     },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "itemBuilder",
-        [_Location_column]: 15,
-        [_Location_line]: 35,
-        [_Location_file]: null
-      });
-    },
-    get C18() {
-      return C[18] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "itemCount",
-        [_Location_column]: 15,
-        [_Location_line]: 44,
-        [_Location_file]: null
-      });
+    get C15() {
+      return C[15] = dart.constList([C[16] || CT.C16], widget_inspector._Location);
     },
     get C14() {
-      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18], widget_inspector._Location);
-    },
-    get C13() {
-      return C[13] = dart.const({
+      return C[14] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_parameterLocations]: C[15] || CT.C15,
         [_Location_name]: null,
-        [_Location_column]: 29,
-        [_Location_line]: 29,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/kitchen.dart"
+        [_Location_column]: 13,
+        [_Location_line]: 251,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/circle_avatar.dart"
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "constraints",
+        [_Location_column]: 7,
+        [_Location_line]: 221,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "duration",
+        [_Location_column]: 7,
+        [_Location_line]: 227,
+        [_Location_file]: null
       });
     },
     get C21() {
       return C[21] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "stream",
-        [_Location_column]: 9,
-        [_Location_line]: 16,
+        [_Location_name]: "decoration",
+        [_Location_column]: 7,
+        [_Location_line]: 228,
         [_Location_file]: null
       });
     },
@@ -217,117 +209,245 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
       return C[22] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "builder",
-        [_Location_column]: 9,
-        [_Location_line]: 20,
-        [_Location_file]: null
-      });
-    },
-    get C20() {
-      return C[20] = dart.constList([C[21] || CT.C21, C[22] || CT.C22], widget_inspector._Location);
-    },
-    get C19() {
-      return C[19] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[20] || CT.C20,
-        [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 14,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/kitchen.dart"
-      });
-    },
-    get C25() {
-      return C[25] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "width",
+        [_Location_name]: "foregroundDecoration",
         [_Location_column]: 7,
-        [_Location_line]: 12,
+        [_Location_line]: 239,
         [_Location_file]: null
       });
-    },
-    get C26() {
-      return C[26] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "height",
-        [_Location_column]: 7,
-        [_Location_line]: 13,
-        [_Location_file]: null
-      });
-    },
-    get C27() {
-      return C[27] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 14,
-        [_Location_file]: null
-      });
-    },
-    get C24() {
-      return C[24] = dart.constList([C[25] || CT.C25, C[26] || CT.C26, C[27] || CT.C27], widget_inspector._Location);
     },
     get C23() {
       return C[23] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 249,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.constList([C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23], widget_inspector._Location);
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[18] || CT.C18,
         [_Location_name]: null,
         [_Location_column]: 12,
-        [_Location_line]: 11,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/kitchen.dart"
+        [_Location_line]: 220,
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/circle_avatar.dart"
       });
     }
   }, false);
-  var C = Array(28).fill(void 0);
+  var C = Array(24).fill(void 0);
   var I = [
-    "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/kitchen.dart",
-    "package:aishop/widgets/kitchen.dart"
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/material/circle_avatar.dart",
+    "package:flutter/src/material/circle_avatar.dart"
   ];
+  var child$ = dart.privateName(circle_avatar, "CircleAvatar.child");
+  var backgroundColor$ = dart.privateName(circle_avatar, "CircleAvatar.backgroundColor");
+  var foregroundColor$ = dart.privateName(circle_avatar, "CircleAvatar.foregroundColor");
+  var backgroundImage$ = dart.privateName(circle_avatar, "CircleAvatar.backgroundImage");
+  var foregroundImage$ = dart.privateName(circle_avatar, "CircleAvatar.foregroundImage");
+  var onBackgroundImageError$ = dart.privateName(circle_avatar, "CircleAvatar.onBackgroundImageError");
+  var onForegroundImageError$ = dart.privateName(circle_avatar, "CircleAvatar.onForegroundImageError");
+  var radius$ = dart.privateName(circle_avatar, "CircleAvatar.radius");
+  var minRadius$ = dart.privateName(circle_avatar, "CircleAvatar.minRadius");
+  var maxRadius$ = dart.privateName(circle_avatar, "CircleAvatar.maxRadius");
+  var _minDiameter = dart.privateName(circle_avatar, "_minDiameter");
+  var _maxDiameter = dart.privateName(circle_avatar, "_maxDiameter");
+  var _name = dart.privateName(ui, "_name");
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
   var _Location_column = dart.privateName(widget_inspector, "_Location.column");
   var _Location_line = dart.privateName(widget_inspector, "_Location.line");
   var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  kitchen.Kitchen = class Kitchen extends framework.StatelessWidget {
+  circle_avatar.CircleAvatar = class CircleAvatar extends framework.StatelessWidget {
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    get backgroundColor() {
+      return this[backgroundColor$];
+    }
+    set backgroundColor(value) {
+      super.backgroundColor = value;
+    }
+    get foregroundColor() {
+      return this[foregroundColor$];
+    }
+    set foregroundColor(value) {
+      super.foregroundColor = value;
+    }
+    get backgroundImage() {
+      return this[backgroundImage$];
+    }
+    set backgroundImage(value) {
+      super.backgroundImage = value;
+    }
+    get foregroundImage() {
+      return this[foregroundImage$];
+    }
+    set foregroundImage(value) {
+      super.foregroundImage = value;
+    }
+    get onBackgroundImageError() {
+      return this[onBackgroundImageError$];
+    }
+    set onBackgroundImageError(value) {
+      super.onBackgroundImageError = value;
+    }
+    get onForegroundImageError() {
+      return this[onForegroundImageError$];
+    }
+    set onForegroundImageError(value) {
+      super.onForegroundImageError = value;
+    }
+    get radius() {
+      return this[radius$];
+    }
+    set radius(value) {
+      super.radius = value;
+    }
+    get minRadius() {
+      return this[minRadius$];
+    }
+    set minRadius(value) {
+      super.minRadius = value;
+    }
+    get maxRadius() {
+      return this[maxRadius$];
+    }
+    set maxRadius(value) {
+      super.maxRadius = value;
+    }
+    get [_minDiameter]() {
+      let t0, t0$;
+      if (this.radius == null && this.minRadius == null && this.maxRadius == null) {
+        return 20 * 2.0;
+      }
+      return 2.0 * dart.notNull((t0$ = (t0 = this.radius, t0 == null ? this.minRadius : t0), t0$ == null ? 0 : t0$));
+    }
+    get [_maxDiameter]() {
+      let t0, t0$;
+      if (this.radius == null && this.minRadius == null && this.maxRadius == null) {
+        return 20 * 2.0;
+      }
+      return 2.0 * dart.notNull((t0$ = (t0 = this.radius, t0 == null ? this.maxRadius : t0), t0$ == null ? 1 / 0 : t0$));
+    }
     build(context) {
-      if (context == null) dart.nullFailed(I[0], 10, 29, "context");
-      return new container.Container.new({width: 0.0, height: 400.0, child: new (T.StreamBuilderOfQuerySnapshotOfObjectN()).new({stream: cloud_firestore.FirebaseFirestore.instance.collection("Products").where("category", {isEqualTo: "Kitchen"}).snapshots(), builder: dart.fn((context, snapshot) => {
-            if (context == null) dart.nullFailed(I[0], 20, 19, "context");
-            if (snapshot == null) dart.nullFailed(I[0], 20, 28, "snapshot");
-            if (!dart.test(snapshot.hasData)) {
-              return new basic.SizedBox.new({child: new progress_indicator.CircularProgressIndicator.new({backgroundColor: theme.lightgrey, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
-            } else {
-              return new scroll_view.GridView.builder({scrollDirection: basic_types.Axis.horizontal, gridDelegate: new sliver_grid.SliverGridDelegateWithFixedCrossAxisCount.new({crossAxisCount: 1, childAspectRatio: 3 / 2, mainAxisSpacing: 0.0}), itemBuilder: dart.fn((context, index) => {
-                  if (context == null) dart.nullFailed(I[0], 35, 29, "context");
-                  if (index == null) dart.nullFailed(I[0], 35, 38, "index");
-                  return new product_model.ProductCard.new(dart.nullCheck(snapshot.data).docs[$_get](index).id, core.String.as(dart.nullCheck(snapshot.data).docs[$_get](index).get("url")), core.String.as(dart.nullCheck(snapshot.data).docs[$_get](index).get("name")), core.String.as(dart.nullCheck(snapshot.data).docs[$_get](index).get("description")), dart.toString(dart.nullCheck(snapshot.data).docs[$_get](index).get("price")), {$creationLocationd_0dea112b090073317d4: C[6] || CT.C6});
-                }, T.BuildContextAndintToProductCard()), itemCount: dart.nullCheck(snapshot.data).docs[$length], $creationLocationd_0dea112b090073317d4: C[13] || CT.C13});
-            }
-          }, T.BuildContextAndAsyncSnapshotOfQuerySnapshotOfObjectNToWidget()), $creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), $creationLocationd_0dea112b090073317d4: C[23] || CT.C23});
+      if (context == null) dart.nullFailed(I[0], 194, 29, "context");
+      if (!dart.test(debug.debugCheckHasMediaQuery(context))) dart.assertFailed(null, I[0], 195, 12, "debugCheckHasMediaQuery(context)");
+      let theme = theme$.Theme.of(context);
+      let textStyle = dart.nullCheck(theme.primaryTextTheme.subtitle1).copyWith({color: this.foregroundColor});
+      let effectiveBackgroundColor = this.backgroundColor;
+      if (effectiveBackgroundColor == null) {
+        switch (theme_data.ThemeData.estimateBrightnessForColor(dart.nullCheck(textStyle.color))) {
+          case C[0] || CT.C0:
+          {
+            effectiveBackgroundColor = theme.primaryColorLight;
+            break;
+          }
+          case C[1] || CT.C1:
+          {
+            effectiveBackgroundColor = theme.primaryColorDark;
+            break;
+          }
+        }
+      } else if (this.foregroundColor == null) {
+        switch (theme_data.ThemeData.estimateBrightnessForColor(dart.nullCheck(this.backgroundColor))) {
+          case C[0] || CT.C0:
+          {
+            textStyle = textStyle.copyWith({color: theme.primaryColorLight});
+            break;
+          }
+          case C[1] || CT.C1:
+          {
+            textStyle = textStyle.copyWith({color: theme.primaryColorDark});
+            break;
+          }
+        }
+      }
+      let minDiameter = this[_minDiameter];
+      let maxDiameter = this[_maxDiameter];
+      return new implicit_animations.AnimatedContainer.new({constraints: new box.BoxConstraints.new({minHeight: minDiameter, minWidth: minDiameter, maxWidth: maxDiameter, maxHeight: maxDiameter}), duration: constants.kThemeChangeDuration, decoration: new box_decoration.BoxDecoration.new({color: effectiveBackgroundColor, image: this.backgroundImage != null ? new decoration_image.DecorationImage.new({image: dart.nullCheck(this.backgroundImage), onError: this.onBackgroundImageError, fit: box_fit.BoxFit.cover}) : null, shape: box_border.BoxShape.circle}), foregroundDecoration: this.foregroundImage != null ? new box_decoration.BoxDecoration.new({image: new decoration_image.DecorationImage.new({image: dart.nullCheck(this.foregroundImage), onError: this.onForegroundImageError, fit: box_fit.BoxFit.cover}), shape: box_border.BoxShape.circle}) : null, child: this.child == null ? null : new basic.Center.new({child: new media_query.MediaQuery.new({data: media_query.MediaQuery.of(context).copyWith({textScaleFactor: 1.0}), child: new icon_theme.IconTheme.new({data: theme.iconTheme.copyWith({color: textStyle.color}), child: new text.DefaultTextStyle.new({style: textStyle, child: dart.nullCheck(this.child), $creationLocationd_0dea112b090073317d4: C[2] || CT.C2}), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), $creationLocationd_0dea112b090073317d4: C[14] || CT.C14}), $creationLocationd_0dea112b090073317d4: C[17] || CT.C17});
     }
   };
-  (kitchen.Kitchen.new = function(opts) {
+  (circle_avatar.CircleAvatar.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
+    let backgroundImage = opts && 'backgroundImage' in opts ? opts.backgroundImage : null;
+    let foregroundImage = opts && 'foregroundImage' in opts ? opts.foregroundImage : null;
+    let onBackgroundImageError = opts && 'onBackgroundImageError' in opts ? opts.onBackgroundImageError : null;
+    let onForegroundImageError = opts && 'onForegroundImageError' in opts ? opts.onForegroundImageError : null;
+    let foregroundColor = opts && 'foregroundColor' in opts ? opts.foregroundColor : null;
+    let radius = opts && 'radius' in opts ? opts.radius : null;
+    let minRadius = opts && 'minRadius' in opts ? opts.minRadius : null;
+    let maxRadius = opts && 'maxRadius' in opts ? opts.maxRadius : null;
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    kitchen.Kitchen.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    this[child$] = child;
+    this[backgroundColor$] = backgroundColor;
+    this[backgroundImage$] = backgroundImage;
+    this[foregroundImage$] = foregroundImage;
+    this[onBackgroundImageError$] = onBackgroundImageError;
+    this[onForegroundImageError$] = onForegroundImageError;
+    this[foregroundColor$] = foregroundColor;
+    this[radius$] = radius;
+    this[minRadius$] = minRadius;
+    this[maxRadius$] = maxRadius;
+    if (!(radius == null || minRadius == null && maxRadius == null)) dart.assertFailed(null, I[0], 75, 15, "radius == null || (minRadius == null && maxRadius == null)");
+    if (!(backgroundImage != null || onBackgroundImageError == null)) dart.assertFailed(null, I[0], 76, 15, "backgroundImage != null || onBackgroundImageError == null");
+    if (!(foregroundImage != null || onForegroundImageError == null)) dart.assertFailed(null, I[0], 77, 15, "foregroundImage != null || onForegroundImageError== null");
+    circle_avatar.CircleAvatar.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = kitchen.Kitchen.prototype;
-  dart.addTypeTests(kitchen.Kitchen);
-  dart.addTypeCaches(kitchen.Kitchen);
-  dart.setMethodSignature(kitchen.Kitchen, () => ({
-    __proto__: dart.getMethods(kitchen.Kitchen.__proto__),
+  }).prototype = circle_avatar.CircleAvatar.prototype;
+  dart.addTypeTests(circle_avatar.CircleAvatar);
+  dart.addTypeCaches(circle_avatar.CircleAvatar);
+  dart.setMethodSignature(circle_avatar.CircleAvatar, () => ({
+    __proto__: dart.getMethods(circle_avatar.CircleAvatar.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(kitchen.Kitchen, I[1]);
-  dart.trackLibraries("packages/aishop/widgets/kitchen.dart", {
-    "package:aishop/widgets/kitchen.dart": kitchen
+  dart.setGetterSignature(circle_avatar.CircleAvatar, () => ({
+    __proto__: dart.getGetters(circle_avatar.CircleAvatar.__proto__),
+    [_minDiameter]: core.double,
+    [_maxDiameter]: core.double
+  }));
+  dart.setLibraryUri(circle_avatar.CircleAvatar, I[1]);
+  dart.setFieldSignature(circle_avatar.CircleAvatar, () => ({
+    __proto__: dart.getFields(circle_avatar.CircleAvatar.__proto__),
+    child: dart.finalFieldType(dart.nullable(framework.Widget)),
+    backgroundColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    foregroundColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    backgroundImage: dart.finalFieldType(dart.nullable(image_provider.ImageProvider$(core.Object))),
+    foregroundImage: dart.finalFieldType(dart.nullable(image_provider.ImageProvider$(core.Object))),
+    onBackgroundImageError: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)]))),
+    onForegroundImageError: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)]))),
+    radius: dart.finalFieldType(dart.nullable(core.double)),
+    minRadius: dart.finalFieldType(dart.nullable(core.double)),
+    maxRadius: dart.finalFieldType(dart.nullable(core.double))
+  }));
+  dart.defineLazy(circle_avatar.CircleAvatar, {
+    /*circle_avatar.CircleAvatar._defaultRadius*/get _defaultRadius() {
+      return 20;
+    },
+    /*circle_avatar.CircleAvatar._defaultMinRadius*/get _defaultMinRadius() {
+      return 0;
+    },
+    /*circle_avatar.CircleAvatar._defaultMaxRadius*/get _defaultMaxRadius() {
+      return 1 / 0;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/material/circle_avatar.dart", {
+    "package:flutter/src/material/circle_avatar.dart": circle_avatar
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["kitchen.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAS4B;AACxB,YAAO,qCACE,aACC,cACD,6DAEqB,AACrB,AACA,AACA,sDAFW,kBACL,wBAAuB,kCAEzB,SAAC,SAAS;gBAAT;gBAAS;AACjB,2BAAK,AAAS,QAAD;AACX,oBAAO,gCACE,uEACY;;AAKrB,oBAAgB,oDACQ,2CACR,+EACM,qBACE,AAAE,IAAE,oBACL,oBACR,SAAC,SAAS;sBAAT;sBAAS;AACrB,wBAAO,mCACQ,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,qBACZ,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,wBAClB,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,yBAClB,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,iBACS,cAA3B,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM;oEAGX,AAAE,AAAK,eAApB,AAAS,QAAD;;;IAM/B;;;;;;EACF","file":"../../../../../../../../../packages/aishop/widgets/kitchen.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["circle_avatar.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAmFgB;;;;;;IAQD;;;;;;IASA;;;;;;IAQQ;;;;;;IAKA;;;;;;IAIK;;;;;;IAIA;;;;;;IAcZ;;;;;;IAgBA;;;;;;IAgBA;;;;;;;;AAYZ,UAAI,AAAO,uBAAW,AAAU,0BAAW,AAAU;AACnD,cAAsB,MAAE;;AAE1B,YAAO,AAAI,qBAAuB,OAAb,kBAAP,aAAU,sBAAH;IACvB;;;AAGE,UAAI,AAAO,uBAAW,AAAU,0BAAW,AAAU;AACnD,cAAsB,MAAE;;AAE1B,YAAO,AAAI,qBAAuB,OAAb,kBAAP,aAAU,sBAAH;IACvB;;UAG0B;AACxB,qBAAO,8BAAwB,OAAO;AACtB,kBAAc,gBAAG,OAAO;AAC9B,sBAA4C,AAAE,eAAlC,AAAM,AAAiB,KAAlB,8CAA6C;AACjE,qCAA2B;AAClC,UAAI,AAAyB,wBAAD;AAC1B,gBAAkB,gDAA0C,eAAf,AAAU,SAAD;;;AAEA,YAAlD,2BAA2B,AAAM,KAAD;AAChC;;;;AAEiD,YAAjD,2BAA2B,AAAM,KAAD;AAChC;;;YAEC,KAAI,AAAgB;AACzB,gBAAkB,gDAA0C,eAAf;;;AAEqB,YAA9D,YAAY,AAAU,SAAD,kBAAiB,AAAM,KAAD;AAC3C;;;;AAE6D,YAA7D,YAAY,AAAU,SAAD,kBAAiB,AAAM,KAAD;AAC3C;;;;AAGO,wBAAc;AACd,wBAAc;AAC3B,YAAO,6DACQ,uCACA,WAAW,YACZ,WAAW,YACX,WAAW,aACV,WAAW,cAEd,4CACE,6CACH,wBAAwB,SACxB,AAAgB,+BACnB,iDACwB,eAAf,gCACE,kCACG,yBAEd,aACY,oDAEI,AAAgB,+BAChC,6CACS,iDACiB,eAAf,gCACE,kCACG,+BAEE,+BAElB,aACC,AAAM,qBACP,OACA,6BACS,sCAGY,AAAY,0BAAT,OAAO,6BAA4B,cAChD,oCACC,AAAM,AAAU,KAAX,4BAA2B,AAAU,SAAD,iBACxC,sCACE,SAAS,SACJ,eAAL;IAMzB;;;QA1MO;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;;IATA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;UACK,AAAO,AAAQ,MAAT,YAAa,AAAU,SAAD,YAAY,AAAU,SAAD;UACjD,AAAgB,AAAQ,eAAT,YAAY,AAAuB,sBAAD;UACjD,AAAgB,AAAQ,eAAT,YAAY,AAAsB,sBAAA;AACxD,8DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;MA6FA,yCAAc;;;MAGd,4CAAiB;;;MAGjB,4CAAiB","file":"../../../../../../../../packages/flutter/src/material/circle_avatar.dart.lib.js"}');
   // Exports:
   return {
-    widgets__kitchen: kitchen
+    src__material__circle_avatar: circle_avatar
   };
 }));
 
-//# sourceMappingURL=kitchen.dart.lib.js.map
+//# sourceMappingURL=circle_avatar.dart.lib.js.map

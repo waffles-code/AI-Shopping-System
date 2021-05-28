@@ -1,30 +1,45 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/async.dart', 'packages/cloud_firestore/cloud_firestore.dart', 'packages/flutter/src/material/progress_indicator.dart', 'packages/aishop/theme.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/rendering/sliver_grid.dart', 'packages/aishop/widgets/product_model.dart'], (function load__packages__aishop__widgets__clothes_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__async$46dart, packages__cloud_firestore__cloud_firestore$46dart, packages__flutter__src__material__progress_indicator$46dart, packages__aishop__theme$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__rendering__sliver_grid$46dart, packages__aishop__widgets__product_model$46dart) {
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/widgets/async.dart', 'packages/cloud_firestore/cloud_firestore.dart', 'packages/aishop/utils/authentication.dart', 'packages/flutter/src/material/progress_indicator.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/aishop/widgets/modal_model.dart', 'packages/flutter/src/material/card.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/aishop/theme.dart'], (function load__packages__aishop__components__pastpurchase_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__widgets__async$46dart, packages__cloud_firestore__cloud_firestore$46dart, packages__aishop__utils__authentication$46dart, packages__flutter__src__material__progress_indicator$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__aishop__widgets__modal_model$46dart, packages__flutter__src__material__card$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__painting__strut_style$46dart, packages__aishop__theme$46dart) {
   'use strict';
   const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
-  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
   const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
   const async = packages__flutter__src__widgets__async$46dart.src__widgets__async;
   const cloud_firestore = packages__cloud_firestore__cloud_firestore$46dart.cloud_firestore;
+  const authentication = packages__aishop__utils__authentication$46dart.utils__authentication;
   const progress_indicator = packages__flutter__src__material__progress_indicator$46dart.src__material__progress_indicator;
-  const theme = packages__aishop__theme$46dart.theme;
   const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
-  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
-  const sliver_grid = packages__flutter__src__rendering__sliver_grid$46dart.src__rendering__sliver_grid;
-  const product_model = packages__aishop__widgets__product_model$46dart.widgets__product_model;
-  var clothes = Object.create(dart.library);
+  const modal_model = packages__aishop__widgets__modal_model$46dart.widgets__modal_model;
+  const card = packages__flutter__src__material__card$46dart.src__material__card;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const theme = packages__aishop__theme$46dart.theme;
+  var pastpurchase = Object.create(dart.library);
+  var $length = dartx.length;
   var $_get = dartx._get;
   var $toString = dartx.toString;
-  var $length = dartx.length;
   dart._checkModuleNullSafetyMode(true);
   var T = {
+    MapOfString$dynamic: () => (T.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
+    QuerySnapshotOfMapOfString$dynamic: () => (T.QuerySnapshotOfMapOfString$dynamic = dart.constFn(cloud_firestore.QuerySnapshot$(T.MapOfString$dynamic())))(),
+    StreamBuilderOfQuerySnapshotOfMapOfString$dynamic: () => (T.StreamBuilderOfQuerySnapshotOfMapOfString$dynamic = dart.constFn(async.StreamBuilder$(T.QuerySnapshotOfMapOfString$dynamic())))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    BuildContextAndintToInkWell: () => (T.BuildContextAndintToInkWell = dart.constFn(dart.fnType(ink_well.InkWell, [framework.BuildContext, core.int])))(),
     ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
     QuerySnapshotOfObjectN: () => (T.QuerySnapshotOfObjectN = dart.constFn(cloud_firestore.QuerySnapshot$(T.ObjectN())))(),
-    StreamBuilderOfQuerySnapshotOfObjectN: () => (T.StreamBuilderOfQuerySnapshotOfObjectN = dart.constFn(async.StreamBuilder$(T.QuerySnapshotOfObjectN())))(),
-    BuildContextAndintToProductCard: () => (T.BuildContextAndintToProductCard = dart.constFn(dart.fnType(product_model.ProductCard, [framework.BuildContext, core.int])))(),
     AsyncSnapshotOfQuerySnapshotOfObjectN: () => (T.AsyncSnapshotOfQuerySnapshotOfObjectN = dart.constFn(async.AsyncSnapshot$(T.QuerySnapshotOfObjectN())))(),
     BuildContextAndAsyncSnapshotOfQuerySnapshotOfObjectNToWidget: () => (T.BuildContextAndAsyncSnapshotOfQuerySnapshotOfObjectNToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, T.AsyncSnapshotOfQuerySnapshotOfObjectN()])))()
   };
@@ -45,8 +60,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
       return C[2] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "backgroundColor",
-        [_Location_column]: 17,
+        [_Location_name]: "data",
+        [_Location_column]: 13,
         [_Location_line]: 22,
         [_Location_file]: null
       });
@@ -59,275 +74,687 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C[1] || CT.C1,
         [_Location_name]: null,
-        [_Location_column]: 22,
+        [_Location_column]: 18,
         [_Location_line]: 21,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/clothes.dart"
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
       });
     },
     get C5() {
       return C[5] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 15,
+        [_Location_name]: "title",
+        [_Location_column]: 11,
         [_Location_line]: 21,
         [_Location_file]: null
       });
     },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elevation",
+        [_Location_column]: 11,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 11,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
     get C4() {
-      return C[4] = dart.constList([C[5] || CT.C5], widget_inspector._Location);
+      return C[4] = dart.constList([C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7], widget_inspector._Location);
     },
     get C3() {
       return C[3] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C[4] || CT.C4,
         [_Location_name]: null,
-        [_Location_column]: 20,
+        [_Location_column]: 17,
         [_Location_line]: 20,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/clothes.dart"
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
       });
+    },
+    get C9() {
+      return C[9] = dart.constList([], widget_inspector._Location);
     },
     get C8() {
       return C[8] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "id",
-        [_Location_column]: 46,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 26,
         [_Location_line]: 34,
-        [_Location_file]: null
-      });
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "imgUrl",
-        [_Location_column]: 46,
-        [_Location_line]: 35,
-        [_Location_file]: null
-      });
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "name",
-        [_Location_column]: 46,
-        [_Location_line]: 36,
-        [_Location_file]: null
-      });
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "description",
-        [_Location_column]: 46,
-        [_Location_line]: 37,
-        [_Location_file]: null
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
       });
     },
     get C12() {
       return C[12] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "price",
-        [_Location_column]: 59,
-        [_Location_line]: 38,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 34,
         [_Location_file]: null
       });
     },
-    get C7() {
-      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12], widget_inspector._Location);
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12], widget_inspector._Location);
     },
-    get C6() {
-      return C[6] = dart.const({
+    get C10() {
+      return C[10] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_parameterLocations]: C[11] || CT.C11,
         [_Location_name]: null,
         [_Location_column]: 24,
         [_Location_line]: 33,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/clothes.dart"
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
       });
     },
     get C15() {
       return C[15] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "scrollDirection",
-        [_Location_column]: 15,
-        [_Location_line]: 27,
-        [_Location_file]: null
-      });
-    },
-    get C16() {
-      return C[16] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "gridDelegate",
-        [_Location_column]: 15,
-        [_Location_line]: 28,
-        [_Location_file]: null
-      });
-    },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "itemBuilder",
-        [_Location_column]: 15,
-        [_Location_line]: 32,
-        [_Location_file]: null
-      });
-    },
-    get C18() {
-      return C[18] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "itemCount",
-        [_Location_column]: 15,
-        [_Location_line]: 41,
+        [_Location_name]: "src",
+        [_Location_column]: 77,
+        [_Location_line]: 56,
         [_Location_file]: null
       });
     },
     get C14() {
-      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18], widget_inspector._Location);
+      return C[14] = dart.constList([C[15] || CT.C15], widget_inspector._Location);
     },
     get C13() {
       return C[13] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C[14] || CT.C14,
         [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 56,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
         [_Location_column]: 29,
-        [_Location_line]: 26,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/clothes.dart"
-      });
-    },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "stream",
-        [_Location_column]: 9,
-        [_Location_line]: 14,
+        [_Location_line]: 56,
         [_Location_file]: null
       });
-    },
-    get C22() {
-      return C[22] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "builder",
-        [_Location_column]: 9,
-        [_Location_line]: 18,
-        [_Location_file]: null
-      });
-    },
-    get C20() {
-      return C[20] = dart.constList([C[21] || CT.C21, C[22] || CT.C22], widget_inspector._Location);
     },
     get C19() {
       return C[19] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 29,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 29,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20], widget_inspector._Location);
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
         [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 13,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/clothes.dart"
+        [_Location_column]: 27,
+        [_Location_line]: 55,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 10,
+        [EdgeInsets_right]: 10,
+        [EdgeInsets_top]: 10,
+        [EdgeInsets_left]: 10
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 62,
+        [_Location_line]: 66,
+        [_Location_file]: null
       });
     },
     get C25() {
       return C[25] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "width",
-        [_Location_column]: 7,
-        [_Location_line]: 11,
+        [_Location_name]: "style",
+        [_Location_column]: 35,
+        [_Location_line]: 67,
         [_Location_file]: null
       });
     },
-    get C26() {
-      return C[26] = dart.const({
+    get C23() {
+      return C[23] = dart.constList([C[24] || CT.C24, C[25] || CT.C25], widget_inspector._Location);
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[23] || CT.C23,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 65,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "height",
-        [_Location_column]: 7,
-        [_Location_line]: 12,
+        [_Location_column]: 35,
+        [_Location_line]: 74,
         [_Location_file]: null
       });
     },
     get C27() {
-      return C[27] = dart.const({
+      return C[27] = dart.constList([C[28] || CT.C28], widget_inspector._Location);
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 73,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 13,
+        [_Location_name]: "data",
+        [_Location_column]: 64,
+        [_Location_line]: 79,
         [_Location_file]: null
       });
     },
-    get C24() {
-      return C[24] = dart.constList([C[25] || CT.C25, C[26] || CT.C26, C[27] || CT.C27], widget_inspector._Location);
-    },
-    get C23() {
-      return C[23] = dart.const({
+    get C32() {
+      return C[32] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "maxLines",
+        [_Location_column]: 37,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 37,
+        [_Location_line]: 81,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32, C[33] || CT.C33], widget_inspector._Location);
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 78,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 35,
+        [_Location_line]: 77,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 35,
+        [_Location_line]: 78,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37], widget_inspector._Location);
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 76,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 67,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 41,
+        [_Location_line]: 92,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.constList([C[40] || CT.C40, C[41] || CT.C41], widget_inspector._Location);
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[39] || CT.C39,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 91,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 37,
+        [_Location_line]: 86,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 37,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44, C[45] || CT.C45], widget_inspector._Location);
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 85,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 31,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 31,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48, C[49] || CT.C49], widget_inspector._Location);
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 62,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 29,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 29,
+        [_Location_line]: 62,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.constList([C[52] || CT.C52, C[53] || CT.C53], widget_inspector._Location);
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[51] || CT.C51,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 60,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.constList([C[56] || CT.C56], widget_inspector._Location);
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[55] || CT.C55,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.constList([C[59] || CT.C59], widget_inspector._Location);
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[58] || CT.C58,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 21,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.constList([C[62] || CT.C62, C[63] || CT.C63], widget_inspector._Location);
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[61] || CT.C61,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemCount",
+        [_Location_column]: 17,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 17,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.constList([C[66] || CT.C66, C[67] || CT.C67], widget_inspector._Location);
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[65] || CT.C65,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "stream",
+        [_Location_column]: 13,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 13,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.constList([C[70] || CT.C70, C[71] || CT.C71], widget_inspector._Location);
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[69] || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "floatingActionButton",
+        [_Location_column]: 9,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 9,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 9,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.constList([C[74] || CT.C74, C[75] || CT.C75, C[76] || CT.C76], widget_inspector._Location);
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[73] || CT.C73,
         [_Location_name]: null,
         [_Location_column]: 12,
-        [_Location_line]: 10,
-        [_Location_file]: "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/clothes.dart"
+        [_Location_line]: 18,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
       });
     }
   }, false);
-  var C = Array(28).fill(void 0);
+  var C = Array(77).fill(void 0);
   var I = [
-    "file:///C:/Users/mmase/OneDrive/Documents/SD/AIShop/AI-Shopping-System/lib/widgets/clothes.dart",
-    "package:aishop/widgets/clothes.dart"
+    "package:aishop/components/pastpurchase.dart",
+    "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/components/pastpurchase.dart"
   ];
+  pastpurchase.PastPurchase = class PastPurchase extends framework.StatefulWidget {
+    createState() {
+      return new pastpurchase.PastPurchaseState.new();
+    }
+  };
+  (pastpurchase.PastPurchase.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    pastpurchase.PastPurchase.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = pastpurchase.PastPurchase.prototype;
+  dart.addTypeTests(pastpurchase.PastPurchase);
+  dart.addTypeCaches(pastpurchase.PastPurchase);
+  dart.setMethodSignature(pastpurchase.PastPurchase, () => ({
+    __proto__: dart.getMethods(pastpurchase.PastPurchase.__proto__),
+    createState: dart.fnType(pastpurchase.PastPurchaseState, [])
+  }));
+  dart.setLibraryUri(pastpurchase.PastPurchase, I[0]);
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
   var _Location_column = dart.privateName(widget_inspector, "_Location.column");
   var _Location_line = dart.privateName(widget_inspector, "_Location.line");
   var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  clothes.Clothes = class Clothes extends framework.StatelessWidget {
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  pastpurchase.PastPurchaseState = class PastPurchaseState extends framework.State$(pastpurchase.PastPurchase) {
     build(context) {
-      if (context == null) dart.nullFailed(I[0], 9, 29, "context");
-      return new container.Container.new({width: 0.0, height: 400.0, child: new (T.StreamBuilderOfQuerySnapshotOfObjectN()).new({stream: cloud_firestore.FirebaseFirestore.instance.collection("Products").where("category", {isEqualTo: "Clothing"}).snapshots(), builder: dart.fn((context, snapshot) => {
-            if (context == null) dart.nullFailed(I[0], 18, 19, "context");
-            if (snapshot == null) dart.nullFailed(I[0], 18, 28, "snapshot");
+      if (context == null) dart.nullFailed(I[1], 17, 29, "context");
+      return new scaffold.Scaffold.new({floatingActionButton: null, appBar: new app_bar.AppBar.new({title: new text.Text.new("Past Transactions", {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), elevation: 0.0, backgroundColor: colors.Colors.black, $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), body: new (T.StreamBuilderOfQuerySnapshotOfMapOfString$dynamic()).new({stream: cloud_firestore.FirebaseFirestore.instance.collection("Users").doc(authentication.uid).collection("Purchases").snapshots(), builder: dart.fn((context, snapshot) => {
+            if (context == null) dart.nullFailed(I[1], 31, 31, "context");
+            if (snapshot == null) dart.nullFailed(I[1], 31, 69, "snapshot");
             if (!dart.test(snapshot.hasData)) {
-              return new basic.SizedBox.new({child: new progress_indicator.CircularProgressIndicator.new({backgroundColor: theme.lightgrey, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
-            } else {
-              return new scroll_view.GridView.builder({scrollDirection: basic_types.Axis.horizontal, gridDelegate: new sliver_grid.SliverGridDelegateWithFixedCrossAxisCount.new({crossAxisCount: 1, childAspectRatio: 3 / 2, mainAxisSpacing: 0.0}), itemBuilder: dart.fn((context, index) => {
-                  if (context == null) dart.nullFailed(I[0], 32, 29, "context");
-                  if (index == null) dart.nullFailed(I[0], 32, 38, "index");
-                  return new product_model.ProductCard.new(dart.nullCheck(snapshot.data).docs[$_get](index).id, core.String.as(dart.nullCheck(snapshot.data).docs[$_get](index).get("url")), core.String.as(dart.nullCheck(snapshot.data).docs[$_get](index).get("name")), core.String.as(dart.nullCheck(snapshot.data).docs[$_get](index).get("description")), dart.toString(dart.nullCheck(snapshot.data).docs[$_get](index).get("price")), {$creationLocationd_0dea112b090073317d4: C[6] || CT.C6});
-                }, T.BuildContextAndintToProductCard()), itemCount: dart.nullCheck(snapshot.data).docs[$length], $creationLocationd_0dea112b090073317d4: C[13] || CT.C13});
+              return new basic.Center.new({child: new progress_indicator.CircularProgressIndicator.new({$creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), $creationLocationd_0dea112b090073317d4: C[10] || CT.C10});
             }
-          }, T.BuildContextAndAsyncSnapshotOfQuerySnapshotOfObjectNToWidget()), $creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), $creationLocationd_0dea112b090073317d4: C[23] || CT.C23});
+            return new scroll_view.ListView.builder({itemCount: dart.nullCheck(snapshot.data).docs[$length], itemBuilder: dart.fn((context, index) => {
+                if (context == null) dart.nullFailed(I[1], 39, 31, "context");
+                if (index == null) dart.nullFailed(I[1], 39, 40, "index");
+                return new ink_well.InkWell.new({onTap: dart.fn(() => {
+                    modal_model.Modal(context, dart.nullCheck(snapshot.data).docs[$_get](index).id, dart.nullCheck(snapshot.data).docs[$_get](index).get("url"), dart.nullCheck(snapshot.data).docs[$_get](index).get("name"), dart.nullCheck(snapshot.data).docs[$_get](index).get("description"), dart.toString(dart.nullCheck(snapshot.data).docs[$_get](index).get("price")));
+                  }, T.VoidTovoid()), child: new card.Card.new({child: new basic.Row.new({children: T.JSArrayOfWidget().of([new container.Container.new({child: new image.Image.network(core.String.as(dart.nullCheck(snapshot.data).docs[$_get](index).get("url")), {$creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), width: 100.0, height: 100.0, $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), new basic.Padding.new({padding: C[21] || CT.C21, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new text.Text.new(core.String.as(dart.nullCheck(snapshot.data).docs[$_get](index).get("name")), {style: new text_style.TextStyle.new({fontSize: 25.0, color: colors.Colors.black, fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C[22] || CT.C22}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), new container.Container.new({width: 500.0, child: new text.Text.new(core.String.as(dart.nullCheck(snapshot.data).docs[$_get](index).get("description")), {maxLines: 2, style: new text_style.TextStyle.new({fontSize: 15.0, color: colors.Colors.grey._get(500)}), $creationLocationd_0dea112b090073317d4: C[29] || CT.C29}), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34}), new container.Container.new({margin: new edge_insets.EdgeInsets.only({left: 800.0, top: 0.0, bottom: 12.0, right: 0.0}), child: new text.Text.new("Purchased on : " + dart.notNull(dart.toString(dart.dsend(dart.nullCheck(snapshot.data).docs[$_get](index).get("date"), 'toDate', []))), {style: new text_style.TextStyle.new({color: theme.lightblack, fontWeight: ui.FontWeight.normal, fontSize: 20.0}), $creationLocationd_0dea112b090073317d4: C[38] || CT.C38}), $creationLocationd_0dea112b090073317d4: C[42] || CT.C42})]), $creationLocationd_0dea112b090073317d4: C[46] || CT.C46}), $creationLocationd_0dea112b090073317d4: C[50] || CT.C50})]), $creationLocationd_0dea112b090073317d4: C[54] || CT.C54}), $creationLocationd_0dea112b090073317d4: C[57] || CT.C57}), $creationLocationd_0dea112b090073317d4: C[60] || CT.C60});
+              }, T.BuildContextAndintToInkWell()), $creationLocationd_0dea112b090073317d4: C[64] || CT.C64});
+          }, T.BuildContextAndAsyncSnapshotOfQuerySnapshotOfObjectNToWidget()), $creationLocationd_0dea112b090073317d4: C[68] || CT.C68}), $creationLocationd_0dea112b090073317d4: C[72] || CT.C72});
     }
   };
-  (clothes.Clothes.new = function(opts) {
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    clothes.Clothes.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+  (pastpurchase.PastPurchaseState.new = function() {
+    pastpurchase.PastPurchaseState.__proto__.new.call(this);
     ;
-  }).prototype = clothes.Clothes.prototype;
-  dart.addTypeTests(clothes.Clothes);
-  dart.addTypeCaches(clothes.Clothes);
-  dart.setMethodSignature(clothes.Clothes, () => ({
-    __proto__: dart.getMethods(clothes.Clothes.__proto__),
+  }).prototype = pastpurchase.PastPurchaseState.prototype;
+  dart.addTypeTests(pastpurchase.PastPurchaseState);
+  dart.addTypeCaches(pastpurchase.PastPurchaseState);
+  dart.setMethodSignature(pastpurchase.PastPurchaseState, () => ({
+    __proto__: dart.getMethods(pastpurchase.PastPurchaseState.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(clothes.Clothes, I[1]);
-  dart.trackLibraries("packages/aishop/widgets/clothes.dart", {
-    "package:aishop/widgets/clothes.dart": clothes
+  dart.setLibraryUri(pastpurchase.PastPurchaseState, I[0]);
+  dart.trackLibraries("packages/aishop/components/pastpurchase.dart", {
+    "package:aishop/components/pastpurchase.dart": pastpurchase
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["clothes.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAQ4B;AACxB,YAAO,qCACE,aACC,cACD,6DACqB,AACrB,AACA,AACA,sDAFW,kBACL,wBAAuB,mCAEzB,SAAC,SAAS;gBAAT;gBAAS;AACjB,2BAAK,AAAS,QAAD;AACX,oBAAO,gCACE,uEACY;;AAIrB,oBAAgB,oDACQ,2CACR,+EACM,qBACE,AAAE,IAAE,oBACL,oBACR,SAAC,SAAS;sBAAT;sBAAS;AACrB,wBAAO,mCACQ,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,qBACZ,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,wBAClB,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,yBAClB,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,iBACS,cAA3B,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM;oEAGX,AAAE,AAAK,eAApB,AAAS,QAAD;;;IAM/B;;;;;;EACF","file":"../../../../../../../../../packages/aishop/widgets/clothes.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["pastpurchase.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAWqC;IAAmB;;;;;;EACxD;;;;;;;;;;;;;;;;;;;UAI4B;AACxB,YAAO,kDACmB,cACd,+BACC,kBACL,0FAES,sBACa,oFAEpB,yEACwB,AAAS,AAAoB,AACrD,AAAwB,sDADoB,aAAa,+BAC9C,mCAET,SAAc,SAAsC;gBAAtC;gBAAsC;AACtD,2BAAK,AAAS,QAAD;AACX,oBAAO,8BACE;;AAGX,kBAAgB,8CACU,AAAE,AAAK,eAApB,AAAS,QAAD,mCACN,SAAC,SAAS;oBAAT;oBAAS;AAErB,sBAAO,kCACE;AAOJ,oBAND,kBAAM,OAAO,EACI,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MACZ,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,QAClB,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,SAClB,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,gBACS,cAA3B,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM;6CAI9B,0BACE,6BACa,wBAChB,oCACe,uCAAqB,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,4EAC7C,eACC,kEAEV,wDAES,0CACkC,yCACrB,wBAChB,iCACe,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,kBACxB,wCACK,aACI,iCACS,iFAG3B,gCACU,iEAEV,oCACS,cACA,iCACQ,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,4BACrB,UACH,wCACO,aAAkB,AAAI,wBAAC,8HAGzC,qCACuB,uCACT,YACD,aACG,aACD,cACJ,kBAAK,AAAkB,iCAAkD,cAAT,WAA1B,AAAE,AAAI,AAAQ,eAA3B,AAAS,QAAD,mBAAY,KAAK,MAAM,kCAChD,qCACA,8BACgB,gCACb;;;IAapD;;;;;EACF","file":"../../../../../../packages/aishop/components/pastpurchase.dart.lib.js"}');
   // Exports:
   return {
-    widgets__clothes: clothes
+    components__pastpurchase: pastpurchase
   };
 }));
 
-//# sourceMappingURL=clothes.dart.lib.js.map
+//# sourceMappingURL=pastpurchase.dart.lib.js.map

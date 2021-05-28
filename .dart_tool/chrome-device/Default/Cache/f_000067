@@ -1,68 +1,36 @@
-define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/painting/_network_image_web.dart', 'packages/flutter/src/painting/decoration.dart', 'packages/flutter/src/rendering/table_border.dart'], (function load__packages__flutter__src__rendering__table_dart(dart_sdk, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__foundation__object$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__painting___network_image_web$46dart, packages__flutter__src__painting__decoration$46dart, packages__flutter__src__rendering__table_border$46dart) {
+define(['dart_sdk', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/semantics/binding.dart', 'packages/flutter/src/scheduler/ticker.dart', 'packages/flutter/src/physics/spring_simulation.dart', 'packages/flutter/src/physics/simulation.dart', 'packages/flutter/src/physics/tolerance.dart'], (function load__packages__flutter__src__animation__animation_controller_dart(dart_sdk, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__semantics__binding$46dart, packages__flutter__src__scheduler__ticker$46dart, packages__flutter__src__physics__spring_simulation$46dart, packages__flutter__src__physics__simulation$46dart, packages__flutter__src__physics__tolerance$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const math = dart_sdk.math;
+  const _internal = dart_sdk._internal;
   const _interceptors = dart_sdk._interceptors;
-  const _js_helper = dart_sdk._js_helper;
-  const collection = dart_sdk.collection;
   const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const object$ = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  const debug = packages__flutter__src__foundation__debug$46dart.src__foundation__debug;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const listener_helpers = packages__flutter__src__animation__listener_helpers$46dart.src__animation__listener_helpers;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
   const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const image_provider = packages__flutter__src__painting___network_image_web$46dart.src__painting__image_provider;
-  const decoration = packages__flutter__src__painting__decoration$46dart.src__painting__decoration;
-  const table_border = packages__flutter__src__rendering__table_border$46dart.src__rendering__table_border;
-  var table = Object.create(dart.library);
-  var $toStringAsFixed = dartx.toStringAsFixed;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const binding = packages__flutter__src__semantics__binding$46dart.src__semantics__binding;
+  const ticker = packages__flutter__src__scheduler__ticker$46dart.src__scheduler__ticker;
+  const spring_simulation = packages__flutter__src__physics__spring_simulation$46dart.src__physics__spring_simulation;
+  const simulation = packages__flutter__src__physics__simulation$46dart.src__physics__simulation;
+  const tolerance = packages__flutter__src__physics__tolerance$46dart.src__physics__tolerance;
+  var animation_controller = Object.create(dart.library);
+  var $toDouble = dartx.toDouble;
+  var $clamp = dartx.clamp;
   var $isFinite = dartx.isFinite;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $length = dartx.length;
-  var $first = dartx.first;
-  var $forEach = dartx.forEach;
-  var $_get = dartx._get;
-  var $_set = dartx._set;
-  var $isEmpty = dartx.isEmpty;
-  var $clear = dartx.clear;
+  var $abs = dartx.abs;
+  var $runtimeType = dartx.runtimeType;
+  var $toStringAsFixed = dartx.toStringAsFixed;
   var $modulo = dartx['%'];
+  var $isOdd = dartx.isOdd;
   var $truncate = dartx.truncate;
-  var $addAll = dartx.addAll;
-  var $fold = dartx.fold;
-  var $reversed = dartx.reversed;
-  var $last = dartx.last;
-  var $add = dartx.add;
-  var $getRange = dartx.getRange;
-  var $skip = dartx.skip;
-  var $map = dartx.map;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    RenderBoxN: () => (T.RenderBoxN = dart.constFn(dart.nullable(box.RenderBox)))(),
-    JSArrayOfdouble: () => (T.JSArrayOfdouble = dart.constFn(_interceptors.JSArray$(core.double)))(),
-    IdentityMapOfint$TableColumnWidth: () => (T.IdentityMapOfint$TableColumnWidth = dart.constFn(_js_helper.IdentityMap$(core.int, table.TableColumnWidth)))(),
-    JSArrayOfRenderBoxN: () => (T.JSArrayOfRenderBoxN = dart.constFn(_interceptors.JSArray$(T.RenderBoxN())))(),
-    ListOfRenderBoxN: () => (T.ListOfRenderBoxN = dart.constFn(core.List$(T.RenderBoxN())))(),
-    MapOfint$TableColumnWidth: () => (T.MapOfint$TableColumnWidth = dart.constFn(core.Map$(core.int, table.TableColumnWidth)))(),
-    ListOfDecoration: () => (T.ListOfDecoration = dart.constFn(core.List$(decoration.Decoration)))(),
-    BoxPainterN: () => (T.BoxPainterN = dart.constFn(dart.nullable(decoration.BoxPainter)))(),
-    ListOfBoxPainterN: () => (T.ListOfBoxPainterN = dart.constFn(core.List$(T.BoxPainterN())))(),
-    _HashSetOfRenderBox: () => (T._HashSetOfRenderBox = dart.constFn(collection._HashSet$(box.RenderBox)))(),
-    SyncIterableOfRenderBox: () => (T.SyncIterableOfRenderBox = dart.constFn(_js_helper.SyncIterable$(box.RenderBox)))(),
-    ListOfdouble: () => (T.ListOfdouble = dart.constFn(core.List$(core.double)))(),
-    doubleN: () => (T.doubleN = dart.constFn(dart.nullable(core.double)))(),
-    ListOfdoubleN: () => (T.ListOfdoubleN = dart.constFn(core.List$(T.doubleN())))(),
-    doubleAnddoubleTodouble: () => (T.doubleAnddoubleTodouble = dart.constFn(dart.fnType(core.double, [core.double, core.double])))(),
-    OffsetN: () => (T.OffsetN = dart.constFn(dart.nullable(ui.Offset)))(),
-    BoxHitTestResultAndOffsetNTobool: () => (T.BoxHitTestResultAndOffsetNTobool = dart.constFn(dart.fnType(core.bool, [box.BoxHitTestResult, T.OffsetN()])))(),
-    DiagnosticsPropertyOfTableBorder: () => (T.DiagnosticsPropertyOfTableBorder = dart.constFn(diagnostics.DiagnosticsProperty$(table_border.TableBorder)))(),
-    DiagnosticsPropertyOfMapOfint$TableColumnWidth: () => (T.DiagnosticsPropertyOfMapOfint$TableColumnWidth = dart.constFn(diagnostics.DiagnosticsProperty$(T.MapOfint$TableColumnWidth())))(),
-    DiagnosticsPropertyOfTableColumnWidth: () => (T.DiagnosticsPropertyOfTableColumnWidth = dart.constFn(diagnostics.DiagnosticsProperty$(table.TableColumnWidth)))(),
-    IterablePropertyOfString: () => (T.IterablePropertyOfString = dart.constFn(diagnostics.IterableProperty$(core.String)))(),
-    doubleNToString: () => (T.doubleNToString = dart.constFn(dart.fnType(core.String, [T.doubleN()])))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
-    DiagnosticsPropertyOfObject: () => (T.DiagnosticsPropertyOfObject = dart.constFn(diagnostics.DiagnosticsProperty$(core.Object)))()
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    DiagnosticsPropertyOfAnimationController: () => (T.DiagnosticsPropertyOfAnimationController = dart.constFn(diagnostics.DiagnosticsProperty$(animation_controller.AnimationController)))(),
+    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -79,1336 +47,730 @@ define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutt
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: table.TableCellVerticalAlignment.prototype,
-        [_name$]: "TableCellVerticalAlignment.top",
+        __proto__: animation_controller._AnimationDirection.prototype,
+        [_name$]: "_AnimationDirection.forward",
         index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: table.TableCellVerticalAlignment.prototype,
-        [_name$]: "TableCellVerticalAlignment.middle",
+        __proto__: animation_controller._AnimationDirection.prototype,
+        [_name$]: "_AnimationDirection.reverse",
         index: 1
       });
     },
     get C2() {
-      return C[2] = dart.const({
-        __proto__: table.TableCellVerticalAlignment.prototype,
-        [_name$]: "TableCellVerticalAlignment.bottom",
-        index: 2
-      });
+      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], animation_controller._AnimationDirection);
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: table.TableCellVerticalAlignment.prototype,
-        [_name$]: "TableCellVerticalAlignment.baseline",
-        index: 3
+        __proto__: animation_controller.AnimationBehavior.prototype,
+        [_name$]: "AnimationBehavior.normal",
+        index: 0
       });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: table.TableCellVerticalAlignment.prototype,
-        [_name$]: "TableCellVerticalAlignment.fill",
-        index: 4
+        __proto__: animation_controller.AnimationBehavior.prototype,
+        [_name$]: "AnimationBehavior.preserve",
+        index: 1
       });
     },
     get C5() {
-      return C[5] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], table.TableCellVerticalAlignment);
+      return C[5] = dart.constList([C[3] || CT.C3, C[4] || CT.C4], animation_controller.AnimationBehavior);
     },
     get C6() {
       return C[6] = dart.const({
-        __proto__: table.FlexColumnWidth.prototype,
-        [value$1]: 1
+        __proto__: curves._Linear.prototype
       });
     },
     get C7() {
       return C[7] = dart.const({
-        __proto__: image_provider.ImageConfiguration.prototype,
-        [ImageConfiguration_platform]: null,
-        [ImageConfiguration_size]: null,
-        [ImageConfiguration_textDirection]: null,
-        [ImageConfiguration_locale]: null,
-        [ImageConfiguration_devicePixelRatio]: null,
-        [ImageConfiguration_bundle]: null
+        __proto__: tolerance.Tolerance.prototype,
+        [Tolerance_velocity]: 1 / 0,
+        [Tolerance_time]: 0.001,
+        [Tolerance_distance]: 0.01
       });
-    },
-    get C8() {
-      return C[8] = dart.constList([], T.RenderBoxN());
-    },
-    get C9() {
-      return C[9] = dart.constList([], decoration.Decoration);
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name]: "TextDirection.rtl",
-        index: 0
-      });
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name]: "TextDirection.ltr",
-        index: 1
-      });
-    },
-    get C12() {
-      return C[12] = dart.constList([], core.double);
-    },
-    get C13() {
-      return C[13] = dart.fn(debug.debugFormatDouble, T.doubleNToString());
     }
   }, false);
-  var C = Array(14).fill(void 0);
+  var C = Array(8).fill(void 0);
   var I = [
-    "package:flutter/src/rendering/table.dart",
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/packages/flutter/lib/src/rendering/table.dart"
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/animation/animation_controller.dart",
+    "package:flutter/src/animation/animation_controller.dart"
   ];
-  var verticalAlignment = dart.privateName(table, "TableCellParentData.verticalAlignment");
-  var x = dart.privateName(table, "TableCellParentData.x");
-  var y = dart.privateName(table, "TableCellParentData.y");
-  table.TableCellParentData = class TableCellParentData extends box.BoxParentData {
-    get verticalAlignment() {
-      return this[verticalAlignment];
-    }
-    set verticalAlignment(value) {
-      this[verticalAlignment] = value;
-    }
-    get x() {
-      return this[x];
-    }
-    set x(value) {
-      this[x] = value;
-    }
-    get y() {
-      return this[y];
-    }
-    set y(value) {
-      this[y] = value;
-    }
-    toString() {
-      return dart.str(super.toString()) + "; " + (this.verticalAlignment == null ? "default vertical alignment" : dart.str(this.verticalAlignment));
-    }
-  };
-  (table.TableCellParentData.new = function() {
-    this[verticalAlignment] = null;
-    this[x] = null;
-    this[y] = null;
-    table.TableCellParentData.__proto__.new.call(this);
-    ;
-  }).prototype = table.TableCellParentData.prototype;
-  dart.addTypeTests(table.TableCellParentData);
-  dart.addTypeCaches(table.TableCellParentData);
-  dart.setLibraryUri(table.TableCellParentData, I[0]);
-  dart.setFieldSignature(table.TableCellParentData, () => ({
-    __proto__: dart.getFields(table.TableCellParentData.__proto__),
-    verticalAlignment: dart.fieldType(dart.nullable(table.TableCellVerticalAlignment)),
-    x: dart.fieldType(dart.nullable(core.int)),
-    y: dart.fieldType(dart.nullable(core.int))
-  }));
-  dart.defineExtensionMethods(table.TableCellParentData, ['toString']);
-  table.TableColumnWidth = class TableColumnWidth extends core.Object {
-    flex(cells) {
-      if (cells == null) dart.nullFailed(I[1], 78, 36, "cells");
-      return null;
-    }
-    toString() {
-      return object$.objectRuntimeType(this, "TableColumnWidth");
-    }
-  };
-  (table.TableColumnWidth.new = function() {
-    ;
-  }).prototype = table.TableColumnWidth.prototype;
-  dart.addTypeTests(table.TableColumnWidth);
-  dart.addTypeCaches(table.TableColumnWidth);
-  dart.setMethodSignature(table.TableColumnWidth, () => ({
-    __proto__: dart.getMethods(table.TableColumnWidth.__proto__),
-    flex: dart.fnType(dart.nullable(core.double), [core.Iterable$(box.RenderBox)])
-  }));
-  dart.setLibraryUri(table.TableColumnWidth, I[0]);
-  dart.defineExtensionMethods(table.TableColumnWidth, ['toString']);
-  var _flex = dart.privateName(table, "IntrinsicColumnWidth._flex");
-  var _flex$ = dart.privateName(table, "_flex");
-  table.IntrinsicColumnWidth = class IntrinsicColumnWidth extends table.TableColumnWidth {
-    get [_flex$]() {
-      return this[_flex];
-    }
-    set [_flex$](value) {
-      super[_flex$] = value;
-    }
-    minIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 104, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 104, 62, "containerWidth");
-      let result = 0.0;
-      for (let cell of cells)
-        result = math.max(core.double, result, cell.getMinIntrinsicWidth(1 / 0));
-      return result;
-    }
-    maxIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 112, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 112, 62, "containerWidth");
-      let result = 0.0;
-      for (let cell of cells)
-        result = math.max(core.double, result, cell.getMaxIntrinsicWidth(1 / 0));
-      return result;
-    }
-    flex(cells) {
-      if (cells == null) dart.nullFailed(I[1], 122, 36, "cells");
-      return this[_flex$];
-    }
-    toString() {
-      let t0;
-      return dart.str(object$.objectRuntimeType(this, "IntrinsicColumnWidth")) + "(flex: " + dart.str((t0 = this[_flex$], t0 == null ? null : t0[$toStringAsFixed](1))) + ")";
-    }
-  };
-  (table.IntrinsicColumnWidth.new = function(opts) {
-    let flex = opts && 'flex' in opts ? opts.flex : null;
-    this[_flex] = flex;
-    table.IntrinsicColumnWidth.__proto__.new.call(this);
-    ;
-  }).prototype = table.IntrinsicColumnWidth.prototype;
-  dart.addTypeTests(table.IntrinsicColumnWidth);
-  dart.addTypeCaches(table.IntrinsicColumnWidth);
-  dart.setMethodSignature(table.IntrinsicColumnWidth, () => ({
-    __proto__: dart.getMethods(table.IntrinsicColumnWidth.__proto__),
-    minIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double]),
-    maxIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double])
-  }));
-  dart.setLibraryUri(table.IntrinsicColumnWidth, I[0]);
-  dart.setFieldSignature(table.IntrinsicColumnWidth, () => ({
-    __proto__: dart.getFields(table.IntrinsicColumnWidth.__proto__),
-    [_flex$]: dart.finalFieldType(dart.nullable(core.double))
-  }));
-  dart.defineExtensionMethods(table.IntrinsicColumnWidth, ['toString']);
-  var value$ = dart.privateName(table, "FixedColumnWidth.value");
-  table.FixedColumnWidth = class FixedColumnWidth extends table.TableColumnWidth {
-    get value() {
-      return this[value$];
-    }
-    set value(value) {
-      super.value = value;
-    }
-    minIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 141, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 141, 62, "containerWidth");
-      return this.value;
-    }
-    maxIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 146, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 146, 62, "containerWidth");
-      return this.value;
-    }
-    toString() {
-      return dart.str(object$.objectRuntimeType(this, "FixedColumnWidth")) + "(" + dart.str(debug.debugFormatDouble(this.value)) + ")";
-    }
-  };
-  (table.FixedColumnWidth.new = function(value) {
-    if (value == null) dart.nullFailed(I[1], 135, 31, "value");
-    this[value$] = value;
-    if (!(value != null)) dart.assertFailed(null, I[1], 135, 47, "value != null");
-    table.FixedColumnWidth.__proto__.new.call(this);
-    ;
-  }).prototype = table.FixedColumnWidth.prototype;
-  dart.addTypeTests(table.FixedColumnWidth);
-  dart.addTypeCaches(table.FixedColumnWidth);
-  dart.setMethodSignature(table.FixedColumnWidth, () => ({
-    __proto__: dart.getMethods(table.FixedColumnWidth.__proto__),
-    minIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double]),
-    maxIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double])
-  }));
-  dart.setLibraryUri(table.FixedColumnWidth, I[0]);
-  dart.setFieldSignature(table.FixedColumnWidth, () => ({
-    __proto__: dart.getFields(table.FixedColumnWidth.__proto__),
-    value: dart.finalFieldType(core.double)
-  }));
-  dart.defineExtensionMethods(table.FixedColumnWidth, ['toString']);
-  var value$0 = dart.privateName(table, "FractionColumnWidth.value");
-  table.FractionColumnWidth = class FractionColumnWidth extends table.TableColumnWidth {
-    get value() {
-      return this[value$0];
-    }
-    set value(value) {
-      super.value = value;
-    }
-    minIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 169, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 169, 62, "containerWidth");
-      if (!containerWidth[$isFinite]) return 0.0;
-      return dart.notNull(this.value) * dart.notNull(containerWidth);
-    }
-    maxIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 176, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 176, 62, "containerWidth");
-      if (!containerWidth[$isFinite]) return 0.0;
-      return dart.notNull(this.value) * dart.notNull(containerWidth);
-    }
-    toString() {
-      return dart.str(object$.objectRuntimeType(this, "FractionColumnWidth")) + "(" + dart.str(this.value) + ")";
-    }
-  };
-  (table.FractionColumnWidth.new = function(value) {
-    if (value == null) dart.nullFailed(I[1], 162, 34, "value");
-    this[value$0] = value;
-    if (!(value != null)) dart.assertFailed(null, I[1], 162, 50, "value != null");
-    table.FractionColumnWidth.__proto__.new.call(this);
-    ;
-  }).prototype = table.FractionColumnWidth.prototype;
-  dart.addTypeTests(table.FractionColumnWidth);
-  dart.addTypeCaches(table.FractionColumnWidth);
-  dart.setMethodSignature(table.FractionColumnWidth, () => ({
-    __proto__: dart.getMethods(table.FractionColumnWidth.__proto__),
-    minIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double]),
-    maxIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double])
-  }));
-  dart.setLibraryUri(table.FractionColumnWidth, I[0]);
-  dart.setFieldSignature(table.FractionColumnWidth, () => ({
-    __proto__: dart.getFields(table.FractionColumnWidth.__proto__),
-    value: dart.finalFieldType(core.double)
-  }));
-  dart.defineExtensionMethods(table.FractionColumnWidth, ['toString']);
-  var value$1 = dart.privateName(table, "FlexColumnWidth.value");
-  table.FlexColumnWidth = class FlexColumnWidth extends table.TableColumnWidth {
-    get value() {
-      return this[value$1];
-    }
-    set value(value) {
-      super.value = value;
-    }
-    minIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 205, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 205, 62, "containerWidth");
-      return 0.0;
-    }
-    maxIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 210, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 210, 62, "containerWidth");
-      return 0.0;
-    }
-    flex(cells) {
-      if (cells == null) dart.nullFailed(I[1], 215, 35, "cells");
-      return this.value;
-    }
-    toString() {
-      return dart.str(object$.objectRuntimeType(this, "FlexColumnWidth")) + "(" + dart.str(debug.debugFormatDouble(this.value)) + ")";
-    }
-  };
-  (table.FlexColumnWidth.new = function(value = 1) {
-    if (value == null) dart.nullFailed(I[1], 198, 31, "value");
-    this[value$1] = value;
-    if (!(value != null)) dart.assertFailed(null, I[1], 198, 54, "value != null");
-    table.FlexColumnWidth.__proto__.new.call(this);
-    ;
-  }).prototype = table.FlexColumnWidth.prototype;
-  dart.addTypeTests(table.FlexColumnWidth);
-  dart.addTypeCaches(table.FlexColumnWidth);
-  dart.setMethodSignature(table.FlexColumnWidth, () => ({
-    __proto__: dart.getMethods(table.FlexColumnWidth.__proto__),
-    minIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double]),
-    maxIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double]),
-    flex: dart.fnType(core.double, [core.Iterable$(box.RenderBox)])
-  }));
-  dart.setLibraryUri(table.FlexColumnWidth, I[0]);
-  dart.setFieldSignature(table.FlexColumnWidth, () => ({
-    __proto__: dart.getFields(table.FlexColumnWidth.__proto__),
-    value: dart.finalFieldType(core.double)
-  }));
-  dart.defineExtensionMethods(table.FlexColumnWidth, ['toString']);
-  var a$ = dart.privateName(table, "MaxColumnWidth.a");
-  var b$ = dart.privateName(table, "MaxColumnWidth.b");
-  table.MaxColumnWidth = class MaxColumnWidth extends table.TableColumnWidth {
-    get a() {
-      return this[a$];
-    }
-    set a(value) {
-      super.a = value;
-    }
-    get b() {
-      return this[b$];
-    }
-    set b(value) {
-      super.b = value;
-    }
-    minIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 244, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 244, 62, "containerWidth");
-      return math.max(core.double, this.a.minIntrinsicWidth(cells, containerWidth), this.b.minIntrinsicWidth(cells, containerWidth));
-    }
-    maxIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 252, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 252, 62, "containerWidth");
-      return math.max(core.double, this.a.maxIntrinsicWidth(cells, containerWidth), this.b.maxIntrinsicWidth(cells, containerWidth));
-    }
-    flex(cells) {
-      if (cells == null) dart.nullFailed(I[1], 260, 36, "cells");
-      let aFlex = this.a.flex(cells);
-      if (aFlex == null) return this.b.flex(cells);
-      let bFlex = this.b.flex(cells);
-      if (bFlex == null) return null;
-      return math.max(core.double, aFlex, bFlex);
-    }
-    toString() {
-      return dart.str(object$.objectRuntimeType(this, "MaxColumnWidth")) + "(" + dart.str(this.a) + ", " + dart.str(this.b) + ")";
-    }
-  };
-  (table.MaxColumnWidth.new = function(a, b) {
-    if (a == null) dart.nullFailed(I[1], 235, 29, "a");
-    if (b == null) dart.nullFailed(I[1], 235, 37, "b");
-    this[a$] = a;
-    this[b$] = b;
-    table.MaxColumnWidth.__proto__.new.call(this);
-    ;
-  }).prototype = table.MaxColumnWidth.prototype;
-  dart.addTypeTests(table.MaxColumnWidth);
-  dart.addTypeCaches(table.MaxColumnWidth);
-  dart.setMethodSignature(table.MaxColumnWidth, () => ({
-    __proto__: dart.getMethods(table.MaxColumnWidth.__proto__),
-    minIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double]),
-    maxIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double])
-  }));
-  dart.setLibraryUri(table.MaxColumnWidth, I[0]);
-  dart.setFieldSignature(table.MaxColumnWidth, () => ({
-    __proto__: dart.getFields(table.MaxColumnWidth.__proto__),
-    a: dart.finalFieldType(table.TableColumnWidth),
-    b: dart.finalFieldType(table.TableColumnWidth)
-  }));
-  dart.defineExtensionMethods(table.MaxColumnWidth, ['toString']);
-  var a$0 = dart.privateName(table, "MinColumnWidth.a");
-  var b$0 = dart.privateName(table, "MinColumnWidth.b");
-  table.MinColumnWidth = class MinColumnWidth extends table.TableColumnWidth {
-    get a() {
-      return this[a$0];
-    }
-    set a(value) {
-      super.a = value;
-    }
-    get b() {
-      return this[b$0];
-    }
-    set b(value) {
-      super.b = value;
-    }
-    minIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 295, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 295, 62, "containerWidth");
-      return math.min(core.double, this.a.minIntrinsicWidth(cells, containerWidth), this.b.minIntrinsicWidth(cells, containerWidth));
-    }
-    maxIntrinsicWidth(cells, containerWidth) {
-      if (cells == null) dart.nullFailed(I[1], 303, 48, "cells");
-      if (containerWidth == null) dart.nullFailed(I[1], 303, 62, "containerWidth");
-      return math.min(core.double, this.a.maxIntrinsicWidth(cells, containerWidth), this.b.maxIntrinsicWidth(cells, containerWidth));
-    }
-    flex(cells) {
-      if (cells == null) dart.nullFailed(I[1], 311, 36, "cells");
-      let aFlex = this.a.flex(cells);
-      if (aFlex == null) return this.b.flex(cells);
-      let bFlex = this.b.flex(cells);
-      if (bFlex == null) return null;
-      return math.min(core.double, aFlex, bFlex);
-    }
-    toString() {
-      return dart.str(object$.objectRuntimeType(this, "MinColumnWidth")) + "(" + dart.str(this.a) + ", " + dart.str(this.b) + ")";
-    }
-  };
-  (table.MinColumnWidth.new = function(a, b) {
-    if (a == null) dart.nullFailed(I[1], 286, 29, "a");
-    if (b == null) dart.nullFailed(I[1], 286, 37, "b");
-    this[a$0] = a;
-    this[b$0] = b;
-    table.MinColumnWidth.__proto__.new.call(this);
-    ;
-  }).prototype = table.MinColumnWidth.prototype;
-  dart.addTypeTests(table.MinColumnWidth);
-  dart.addTypeCaches(table.MinColumnWidth);
-  dart.setMethodSignature(table.MinColumnWidth, () => ({
-    __proto__: dart.getMethods(table.MinColumnWidth.__proto__),
-    minIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double]),
-    maxIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double])
-  }));
-  dart.setLibraryUri(table.MinColumnWidth, I[0]);
-  dart.setFieldSignature(table.MinColumnWidth, () => ({
-    __proto__: dart.getFields(table.MinColumnWidth.__proto__),
-    a: dart.finalFieldType(table.TableColumnWidth),
-    b: dart.finalFieldType(table.TableColumnWidth)
-  }));
-  dart.defineExtensionMethods(table.MinColumnWidth, ['toString']);
-  var _name$ = dart.privateName(table, "_name");
-  table.TableCellVerticalAlignment = class TableCellVerticalAlignment extends core.Object {
+  var _name$ = dart.privateName(animation_controller, "_name");
+  animation_controller._AnimationDirection = class _AnimationDirection extends core.Object {
     toString() {
       return this[_name$];
     }
   };
-  (table.TableCellVerticalAlignment.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[1], 329, 6, "index");
-    if (_name == null) dart.nullFailed(I[1], 329, 6, "_name");
+  (animation_controller._AnimationDirection.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 25, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 25, 6, "_name");
     this.index = index;
     this[_name$] = _name;
     ;
-  }).prototype = table.TableCellVerticalAlignment.prototype;
-  dart.addTypeTests(table.TableCellVerticalAlignment);
-  dart.addTypeCaches(table.TableCellVerticalAlignment);
-  dart.setLibraryUri(table.TableCellVerticalAlignment, I[0]);
-  dart.setFieldSignature(table.TableCellVerticalAlignment, () => ({
-    __proto__: dart.getFields(table.TableCellVerticalAlignment.__proto__),
+  }).prototype = animation_controller._AnimationDirection.prototype;
+  dart.addTypeTests(animation_controller._AnimationDirection);
+  dart.addTypeCaches(animation_controller._AnimationDirection);
+  dart.setLibraryUri(animation_controller._AnimationDirection, I[1]);
+  dart.setFieldSignature(animation_controller._AnimationDirection, () => ({
+    __proto__: dart.getFields(animation_controller._AnimationDirection.__proto__),
     index: dart.finalFieldType(core.int),
     [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.defineExtensionMethods(table.TableCellVerticalAlignment, ['toString']);
-  table.TableCellVerticalAlignment.top = C[0] || CT.C0;
-  table.TableCellVerticalAlignment.middle = C[1] || CT.C1;
-  table.TableCellVerticalAlignment.bottom = C[2] || CT.C2;
-  table.TableCellVerticalAlignment.baseline = C[3] || CT.C3;
-  table.TableCellVerticalAlignment.fill = C[4] || CT.C4;
-  table.TableCellVerticalAlignment.values = C[5] || CT.C5;
-  var ImageConfiguration_platform = dart.privateName(image_provider, "ImageConfiguration.platform");
-  var ImageConfiguration_size = dart.privateName(image_provider, "ImageConfiguration.size");
-  var ImageConfiguration_textDirection = dart.privateName(image_provider, "ImageConfiguration.textDirection");
-  var ImageConfiguration_locale = dart.privateName(image_provider, "ImageConfiguration.locale");
-  var ImageConfiguration_devicePixelRatio = dart.privateName(image_provider, "ImageConfiguration.devicePixelRatio");
-  var ImageConfiguration_bundle = dart.privateName(image_provider, "ImageConfiguration.bundle");
-  var _children = dart.privateName(table, "_children");
-  var _rowDecorations = dart.privateName(table, "_rowDecorations");
-  var _rowDecorationPainters = dart.privateName(table, "_rowDecorationPainters");
-  var _baselineDistance = dart.privateName(table, "_baselineDistance");
-  var _rowTops = dart.privateName(table, "_rowTops");
-  var _columnLefts = dart.privateName(table, "_columnLefts");
-  var _textDirection = dart.privateName(table, "_textDirection");
-  var _columns = dart.privateName(table, "_columns");
-  var _rows = dart.privateName(table, "_rows");
-  var _columnWidths = dart.privateName(table, "_columnWidths");
-  var _defaultColumnWidth = dart.privateName(table, "_defaultColumnWidth");
-  var _border = dart.privateName(table, "_border");
-  var _textBaseline = dart.privateName(table, "_textBaseline");
-  var _defaultVerticalAlignment = dart.privateName(table, "_defaultVerticalAlignment");
-  var _configuration = dart.privateName(table, "_configuration");
-  var _computeColumnWidths = dart.privateName(table, "_computeColumnWidths");
-  var _name = dart.privateName(ui, "_name");
-  table.RenderTable = class RenderTable extends box.RenderBox {
-    get columns() {
-      return this[_columns];
-    }
-    set columns(value) {
-      if (value == null) dart.nullFailed(I[1], 413, 19, "value");
-      if (!(value != null)) dart.assertFailed(null, I[1], 414, 12, "value != null");
-      if (!(dart.notNull(value) >= 0)) dart.assertFailed(null, I[1], 415, 12, "value >= 0");
-      if (value == this.columns) return;
-      let oldColumns = this.columns;
-      let oldChildren = this[_children];
-      this[_columns] = value;
-      this[_children] = T.ListOfRenderBoxN().filled(dart.notNull(this.columns) * dart.notNull(this.rows), null, {growable: false});
-      let columnsToCopy = math.min(core.int, this.columns, oldColumns);
-      for (let y = 0; y < dart.notNull(this.rows); y = y + 1) {
-        for (let x = 0; x < columnsToCopy; x = x + 1)
-          this[_children][$_set](x + y * dart.notNull(this.columns), oldChildren[$_get](x + y * dart.notNull(oldColumns)));
-      }
-      if (dart.notNull(oldColumns) > dart.notNull(this.columns)) {
-        for (let y = 0; y < dart.notNull(this.rows); y = y + 1) {
-          for (let x = this.columns; dart.notNull(x) < dart.notNull(oldColumns); x = dart.notNull(x) + 1) {
-            let xy = dart.notNull(x) + y * dart.notNull(oldColumns);
-            if (oldChildren[$_get](xy) != null) this.dropChild(dart.nullCheck(oldChildren[$_get](xy)));
-          }
-        }
-      }
-      this.markNeedsLayout();
-    }
-    get rows() {
-      return this[_rows];
-    }
-    set rows(value) {
-      if (value == null) dart.nullFailed(I[1], 445, 16, "value");
-      if (!(value != null)) dart.assertFailed(null, I[1], 446, 12, "value != null");
-      if (!(dart.notNull(value) >= 0)) dart.assertFailed(null, I[1], 447, 12, "value >= 0");
-      if (value == this.rows) return;
-      if (dart.notNull(this[_rows]) > dart.notNull(value)) {
-        for (let xy = dart.notNull(this.columns) * dart.notNull(value); xy < dart.notNull(this[_children][$length]); xy = xy + 1) {
-          if (this[_children][$_get](xy) != null) this.dropChild(dart.nullCheck(this[_children][$_get](xy)));
-        }
-      }
-      this[_rows] = value;
-      this[_children][$length] = dart.notNull(this.columns) * dart.notNull(this.rows);
-      this.markNeedsLayout();
-    }
-    get columnWidths() {
-      return T.MapOfint$TableColumnWidth().unmodifiable(this[_columnWidths]);
-    }
-    set columnWidths(value) {
-      let t0;
-      if (dart.equals(this[_columnWidths], value)) return;
-      if (dart.test(this[_columnWidths][$isEmpty]) && value == null) return;
-      this[_columnWidths] = (t0 = value, t0 == null ? new (T.IdentityMapOfint$TableColumnWidth()).new() : t0);
-      this.markNeedsLayout();
-    }
-    setColumnWidth(column, value) {
-      if (column == null) dart.nullFailed(I[1], 486, 27, "column");
-      if (value == null) dart.nullFailed(I[1], 486, 52, "value");
-      if (dart.equals(this[_columnWidths][$_get](column), value)) return;
-      this[_columnWidths][$_set](column, value);
-      this.markNeedsLayout();
-    }
-    get defaultColumnWidth() {
-      return this[_defaultColumnWidth];
-    }
-    set defaultColumnWidth(value) {
-      if (value == null) dart.nullFailed(I[1], 499, 43, "value");
-      if (!(value != null)) dart.assertFailed(null, I[1], 500, 12, "value != null");
-      if (dart.equals(this.defaultColumnWidth, value)) return;
-      this[_defaultColumnWidth] = value;
-      this.markNeedsLayout();
-    }
-    get textDirection() {
-      return this[_textDirection];
-    }
-    set textDirection(value) {
-      if (value == null) dart.nullFailed(I[1], 510, 35, "value");
-      if (!(value != null)) dart.assertFailed(null, I[1], 511, 12, "value != null");
-      if (this[_textDirection] == value) return;
-      this[_textDirection] = value;
-      this.markNeedsLayout();
-    }
-    get border() {
-      return this[_border];
-    }
-    set border(value) {
-      if (dart.equals(this.border, value)) return;
-      this[_border] = value;
-      this.markNeedsPaint();
-    }
-    get rowDecorations() {
-      let t0;
-      return T.ListOfDecoration().unmodifiable((t0 = this[_rowDecorations], t0 == null ? C[9] || CT.C9 : t0));
-    }
-    set rowDecorations(value) {
-      let t0;
-      if (dart.equals(this[_rowDecorations], value)) return;
-      this[_rowDecorations] = value;
-      if (this[_rowDecorationPainters] != null) {
-        for (let painter of dart.nullCheck(this[_rowDecorationPainters])) {
-          t0 = painter;
-          t0 == null ? null : t0.dispose();
-        }
-      }
-      this[_rowDecorationPainters] = this[_rowDecorations] != null ? T.ListOfBoxPainterN().filled(dart.nullCheck(this[_rowDecorations])[$length], null, {growable: false}) : null;
-    }
-    get configuration() {
-      return this[_configuration];
-    }
-    set configuration(value) {
-      if (value == null) dart.nullFailed(I[1], 554, 40, "value");
-      if (!(value != null)) dart.assertFailed(null, I[1], 555, 12, "value != null");
-      if (dart.equals(value, this[_configuration])) return;
-      this[_configuration] = value;
-      this.markNeedsPaint();
-    }
-    get defaultVerticalAlignment() {
-      return this[_defaultVerticalAlignment];
-    }
-    set defaultVerticalAlignment(value) {
-      if (value == null) dart.nullFailed(I[1], 565, 59, "value");
-      if (!(value != null)) dart.assertFailed(null, I[1], 566, 12, "value != null");
-      if (this[_defaultVerticalAlignment] == value) return;
-      this[_defaultVerticalAlignment] = value;
-      this.markNeedsLayout();
-    }
-    get textBaseline() {
-      return this[_textBaseline];
-    }
-    set textBaseline(value) {
-      if (this[_textBaseline] == value) return;
-      this[_textBaseline] = value;
-      this.markNeedsLayout();
-    }
-    setupParentData(child) {
-      object.RenderObject.as(child);
-      if (child == null) dart.nullFailed(I[1], 584, 37, "child");
-      if (!table.TableCellParentData.is(child.parentData)) child.parentData = new table.TableCellParentData.new();
-    }
-    setFlatChildren(columns, cells) {
-      if (columns == null) dart.nullFailed(I[1], 597, 28, "columns");
-      if (cells == null) dart.nullFailed(I[1], 597, 54, "cells");
-      if (dart.equals(cells, this[_children]) && columns == this[_columns]) return;
-      if (!(dart.notNull(columns) >= 0)) dart.assertFailed(null, I[1], 600, 12, "columns >= 0");
-      if (columns === 0 || dart.test(cells[$isEmpty])) {
-        if (!(cells == null || dart.test(cells[$isEmpty]))) dart.assertFailed(null, I[1], 603, 14, "cells == null || cells.isEmpty");
-        this[_columns] = columns;
-        if (dart.test(this[_children][$isEmpty])) {
-          if (!(this[_rows] === 0)) dart.assertFailed(null, I[1], 606, 16, "_rows == 0");
-          return;
-        }
-        for (let oldChild of this[_children]) {
-          if (oldChild != null) this.dropChild(oldChild);
-        }
-        this[_rows] = 0;
-        this[_children][$clear]();
-        this.markNeedsLayout();
-        return;
-      }
-      if (!(cells != null)) dart.assertFailed(null, I[1], 618, 12, "cells != null");
-      if (!(cells[$length][$modulo](columns) === 0)) dart.assertFailed(null, I[1], 619, 12, "cells.length % columns == 0");
-      let lostChildren = new (T._HashSetOfRenderBox()).new();
-      for (let y = 0; y < dart.notNull(this[_rows]); y = y + 1) {
-        for (let x = 0; x < dart.notNull(this[_columns]); x = x + 1) {
-          let xyOld = x + y * dart.notNull(this[_columns]);
-          let xyNew = x + y * dart.notNull(columns);
-          if (this[_children][$_get](xyOld) != null && (x >= dart.notNull(columns) || xyNew >= dart.notNull(cells[$length]) || !dart.equals(this[_children][$_get](xyOld), cells[$_get](xyNew)))) lostChildren.add(dart.nullCheck(this[_children][$_get](xyOld)));
-        }
-      }
-      let y = 0;
-      while (y * dart.notNull(columns) < dart.notNull(cells[$length])) {
-        for (let x = 0; x < dart.notNull(columns); x = x + 1) {
-          let xyNew = x + y * dart.notNull(columns);
-          let xyOld = x + y * dart.notNull(this[_columns]);
-          if (cells[$_get](xyNew) != null && (x >= dart.notNull(this[_columns]) || y >= dart.notNull(this[_rows]) || !dart.equals(this[_children][$_get](xyOld), cells[$_get](xyNew)))) {
-            if (!dart.test(lostChildren.remove(cells[$_get](xyNew)))) this.adoptChild(dart.nullCheck(cells[$_get](xyNew)));
-          }
-        }
-        y = y + 1;
-      }
-      lostChildren[$forEach](dart.bind(this, 'dropChild'));
-      this[_columns] = columns;
-      this[_rows] = (dart.notNull(cells[$length]) / dart.notNull(columns))[$truncate]();
-      this[_children] = T.ListOfRenderBoxN().from(cells);
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(columns))) dart.assertFailed(null, I[1], 651, 12, "_children.length == rows * columns");
-      this.markNeedsLayout();
-    }
-    setChildren(cells) {
-      if (cells == null) {
-        this.setFlatChildren(0, C[8] || CT.C8);
-        return;
-      }
-      for (let oldChild of this[_children]) {
-        if (oldChild != null) this.dropChild(oldChild);
-      }
-      this[_children][$clear]();
-      this[_columns] = dart.test(cells[$isNotEmpty]) ? cells[$first][$length] : 0;
-      this[_rows] = 0;
-      cells[$forEach](dart.bind(this, 'addRow'));
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(this.columns))) dart.assertFailed(null, I[1], 670, 12, "_children.length == rows * columns");
-    }
-    addRow(cells) {
-      if (cells == null) dart.nullFailed(I[1], 676, 32, "cells");
-      if (!(cells[$length] == this.columns)) dart.assertFailed(null, I[1], 677, 12, "cells.length == columns");
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(this.columns))) dart.assertFailed(null, I[1], 678, 12, "_children.length == rows * columns");
-      this[_rows] = dart.notNull(this[_rows]) + 1;
-      this[_children][$addAll](cells);
-      for (let cell of cells) {
-        if (cell != null) this.adoptChild(cell);
-      }
-      this.markNeedsLayout();
-    }
-    setChild(x, y, value) {
-      if (x == null) dart.nullFailed(I[1], 693, 21, "x");
-      if (y == null) dart.nullFailed(I[1], 693, 28, "y");
-      if (!(x != null)) dart.assertFailed(null, I[1], 694, 12, "x != null");
-      if (!(y != null)) dart.assertFailed(null, I[1], 695, 12, "y != null");
-      if (!(dart.notNull(x) >= 0 && dart.notNull(x) < dart.notNull(this.columns) && dart.notNull(y) >= 0 && dart.notNull(y) < dart.notNull(this.rows))) dart.assertFailed(null, I[1], 696, 12, "x >= 0 && x < columns && y >= 0 && y < rows");
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(this.columns))) dart.assertFailed(null, I[1], 697, 12, "_children.length == rows * columns");
-      let xy = dart.notNull(x) + dart.notNull(y) * dart.notNull(this.columns);
-      let oldChild = this[_children][$_get](xy);
-      if (dart.equals(oldChild, value)) return;
-      if (oldChild != null) this.dropChild(oldChild);
-      this[_children][$_set](xy, value);
-      if (value != null) this.adoptChild(value);
-    }
-    attach(owner) {
-      let t0;
-      object.PipelineOwner.as(owner);
-      if (owner == null) dart.nullFailed(I[1], 710, 29, "owner");
-      super.attach(owner);
-      for (let child of this[_children]) {
-        t0 = child;
-        t0 == null ? null : t0.attach(owner);
-      }
-    }
-    detach() {
-      let t0, t0$;
-      super.detach();
-      if (this[_rowDecorationPainters] != null) {
-        for (let painter of dart.nullCheck(this[_rowDecorationPainters])) {
-          t0 = painter;
-          t0 == null ? null : t0.dispose();
-        }
-        this[_rowDecorationPainters] = T.ListOfBoxPainterN().filled(dart.nullCheck(this[_rowDecorations])[$length], null, {growable: false});
-      }
-      for (let child of this[_children]) {
-        t0$ = child;
-        t0$ == null ? null : t0$.detach();
-      }
-    }
-    visitChildren(visitor) {
-      if (visitor == null) dart.nullFailed(I[1], 729, 42, "visitor");
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(this.columns))) dart.assertFailed(null, I[1], 730, 12, "_children.length == rows * columns");
-      for (let child of this[_children]) {
-        if (child != null) visitor(child);
-      }
-    }
-    computeMinIntrinsicWidth(height) {
-      let t0;
-      if (height == null) dart.nullFailed(I[1], 738, 42, "height");
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(this.columns))) dart.assertFailed(null, I[1], 739, 12, "_children.length == rows * columns");
-      let totalMinWidth = 0.0;
-      for (let x = 0; x < dart.notNull(this.columns); x = x + 1) {
-        let columnWidth = (t0 = this[_columnWidths][$_get](x), t0 == null ? this.defaultColumnWidth : t0);
-        let columnCells = this.column(x);
-        totalMinWidth = totalMinWidth + dart.notNull(columnWidth.minIntrinsicWidth(columnCells, 1 / 0));
-      }
-      return totalMinWidth;
-    }
-    computeMaxIntrinsicWidth(height) {
-      let t0;
-      if (height == null) dart.nullFailed(I[1], 750, 42, "height");
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(this.columns))) dart.assertFailed(null, I[1], 751, 12, "_children.length == rows * columns");
-      let totalMaxWidth = 0.0;
-      for (let x = 0; x < dart.notNull(this.columns); x = x + 1) {
-        let columnWidth = (t0 = this[_columnWidths][$_get](x), t0 == null ? this.defaultColumnWidth : t0);
-        let columnCells = this.column(x);
-        totalMaxWidth = totalMaxWidth + dart.notNull(columnWidth.maxIntrinsicWidth(columnCells, 1 / 0));
-      }
-      return totalMaxWidth;
-    }
-    computeMinIntrinsicHeight(width) {
-      if (width == null) dart.nullFailed(I[1], 762, 43, "width");
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(this.columns))) dart.assertFailed(null, I[1], 765, 12, "_children.length == rows * columns");
-      let widths = this[_computeColumnWidths](new box.BoxConstraints.tightForFinite({width: width}));
-      let rowTop = 0.0;
-      for (let y = 0; y < dart.notNull(this.rows); y = y + 1) {
-        let rowHeight = 0.0;
-        for (let x = 0; x < dart.notNull(this.columns); x = x + 1) {
-          let xy = x + y * dart.notNull(this.columns);
-          let child = this[_children][$_get](xy);
-          if (child != null) rowHeight = math.max(core.double, rowHeight, child.getMaxIntrinsicHeight(widths[$_get](x)));
-        }
-        rowTop = rowTop + rowHeight;
-      }
-      return rowTop;
-    }
-    computeMaxIntrinsicHeight(width) {
-      if (width == null) dart.nullFailed(I[1], 782, 43, "width");
-      return this.computeMinIntrinsicHeight(width);
-    }
-    computeDistanceToActualBaseline(baseline) {
-      if (baseline == null) dart.nullFailed(I[1], 788, 56, "baseline");
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, I[1], 790, 12, "!debugNeedsLayout");
-      return this[_baselineDistance];
-    }
-    column(x) {
-      if (x == null) dart.nullFailed(I[1], 798, 34, "x");
-      return new (T.SyncIterableOfRenderBox()).new((function* column() {
-        for (let y = 0; y < dart.notNull(this.rows); y = y + 1) {
-          let xy = dart.notNull(x) + y * dart.notNull(this.columns);
-          let child = this[_children][$_get](xy);
-          if (child != null) yield child;
-        }
-      }).bind(this));
-    }
-    row(y) {
-      if (y == null) dart.nullFailed(I[1], 811, 31, "y");
-      return new (T.SyncIterableOfRenderBox()).new((function* row() {
-        let start = dart.notNull(y) * dart.notNull(this.columns);
-        let end = (dart.notNull(y) + 1) * dart.notNull(this.columns);
-        for (let xy = start; xy < end; xy = xy + 1) {
-          let child = this[_children][$_get](xy);
-          if (child != null) yield child;
-        }
-      }).bind(this));
-    }
-    [_computeColumnWidths](constraints) {
-      let t0;
-      if (constraints == null) dart.nullFailed(I[1], 821, 52, "constraints");
-      if (!(constraints != null)) dart.assertFailed(null, I[1], 822, 12, "constraints != null");
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(this.columns))) dart.assertFailed(null, I[1], 823, 12, "_children.length == rows * columns");
-      let widths = T.ListOfdouble().filled(this.columns, 0.0, {growable: false});
-      let minWidths = T.ListOfdouble().filled(this.columns, 0.0, {growable: false});
-      let flexes = T.ListOfdoubleN().filled(this.columns, null, {growable: false});
-      let tableWidth = 0.0;
-      let unflexedTableWidth = 0.0;
-      let totalFlex = 0.0;
-      for (let x = 0; x < dart.notNull(this.columns); x = x + 1) {
-        let columnWidth = (t0 = this[_columnWidths][$_get](x), t0 == null ? this.defaultColumnWidth : t0);
-        let columnCells = this.column(x);
-        let maxIntrinsicWidth = columnWidth.maxIntrinsicWidth(columnCells, constraints.maxWidth);
-        if (!maxIntrinsicWidth[$isFinite]) dart.assertFailed(null, I[1], 846, 14, "maxIntrinsicWidth.isFinite");
-        if (!(dart.notNull(maxIntrinsicWidth) >= 0.0)) dart.assertFailed(null, I[1], 847, 14, "maxIntrinsicWidth >= 0.0");
-        widths[$_set](x, maxIntrinsicWidth);
-        tableWidth = dart.notNull(tableWidth) + dart.notNull(maxIntrinsicWidth);
-        let minIntrinsicWidth = columnWidth.minIntrinsicWidth(columnCells, constraints.maxWidth);
-        if (!minIntrinsicWidth[$isFinite]) dart.assertFailed(null, I[1], 852, 14, "minIntrinsicWidth.isFinite");
-        if (!(dart.notNull(minIntrinsicWidth) >= 0.0)) dart.assertFailed(null, I[1], 853, 14, "minIntrinsicWidth >= 0.0");
-        minWidths[$_set](x, minIntrinsicWidth);
-        if (!(dart.notNull(maxIntrinsicWidth) >= dart.notNull(minIntrinsicWidth))) dart.assertFailed(null, I[1], 855, 14, "maxIntrinsicWidth >= minIntrinsicWidth");
-        let flex = columnWidth.flex(columnCells);
-        if (flex != null) {
-          if (!flex[$isFinite]) dart.assertFailed(null, I[1], 859, 16, "flex.isFinite");
-          if (!(dart.notNull(flex) > 0.0)) dart.assertFailed(null, I[1], 860, 16, "flex > 0.0");
-          flexes[$_set](x, flex);
-          totalFlex = totalFlex + dart.notNull(flex);
-        } else {
-          unflexedTableWidth = unflexedTableWidth + dart.notNull(maxIntrinsicWidth);
-        }
-      }
-      let maxWidthConstraint = constraints.maxWidth;
-      let minWidthConstraint = constraints.minWidth;
-      if (totalFlex > 0.0) {
-        let targetWidth = null;
-        if (maxWidthConstraint[$isFinite]) {
-          targetWidth = maxWidthConstraint;
-        } else {
-          targetWidth = minWidthConstraint;
-        }
-        if (dart.notNull(tableWidth) < dart.notNull(targetWidth)) {
-          let remainingWidth = dart.notNull(targetWidth) - unflexedTableWidth;
-          if (!remainingWidth[$isFinite]) dart.assertFailed(null, I[1], 883, 16, "remainingWidth.isFinite");
-          if (!(remainingWidth >= 0.0)) dart.assertFailed(null, I[1], 884, 16, "remainingWidth >= 0.0");
-          for (let x = 0; x < dart.notNull(this.columns); x = x + 1) {
-            if (flexes[$_get](x) != null) {
-              let flexedWidth = remainingWidth * dart.nullCheck(flexes[$_get](x)) / totalFlex;
-              if (!flexedWidth[$isFinite]) dart.assertFailed(null, I[1], 888, 20, "flexedWidth.isFinite");
-              if (!(flexedWidth >= 0.0)) dart.assertFailed(null, I[1], 889, 20, "flexedWidth >= 0.0");
-              if (dart.notNull(widths[$_get](x)) < flexedWidth) {
-                let delta = flexedWidth - dart.notNull(widths[$_get](x));
-                tableWidth = dart.notNull(tableWidth) + delta;
-                widths[$_set](x, flexedWidth);
-              }
-            }
-          }
-          if (!(dart.notNull(tableWidth) + 1e-10 >= dart.notNull(targetWidth))) dart.assertFailed(null, I[1], 897, 16, "tableWidth + precisionErrorTolerance >= targetWidth");
-        }
-      } else if (dart.notNull(tableWidth) < dart.notNull(minWidthConstraint)) {
-        let delta = (dart.notNull(minWidthConstraint) - dart.notNull(tableWidth)) / dart.notNull(this.columns);
-        for (let x = 0; x < dart.notNull(this.columns); x = x + 1)
-          widths[$_set](x, dart.notNull(widths[$_get](x)) + delta);
-        tableWidth = minWidthConstraint;
-      }
-      if (dart.notNull(tableWidth) > dart.notNull(maxWidthConstraint)) {
-        let deficit = dart.notNull(tableWidth) - dart.notNull(maxWidthConstraint);
-        let availableColumns = this.columns;
-        while (deficit > 1e-10 && totalFlex > 1e-10) {
-          let newTotalFlex = 0.0;
-          for (let x = 0; x < dart.notNull(this.columns); x = x + 1) {
-            if (flexes[$_get](x) != null) {
-              let newWidth = dart.notNull(widths[$_get](x)) - deficit * dart.nullCheck(flexes[$_get](x)) / totalFlex;
-              if (!newWidth[$isFinite]) dart.assertFailed(null, I[1], 938, 20, "newWidth.isFinite");
-              if (newWidth <= dart.notNull(minWidths[$_get](x))) {
-                deficit = deficit - (dart.notNull(widths[$_get](x)) - dart.notNull(minWidths[$_get](x)));
-                widths[$_set](x, minWidths[$_get](x));
-                flexes[$_set](x, null);
-                availableColumns = dart.notNull(availableColumns) - 1;
-              } else {
-                deficit = deficit - (dart.notNull(widths[$_get](x)) - newWidth);
-                widths[$_set](x, newWidth);
-                newTotalFlex = newTotalFlex + dart.nullCheck(flexes[$_get](x));
-              }
-              if (!(dart.notNull(widths[$_get](x)) >= 0.0)) dart.assertFailed(null, I[1], 950, 20, "widths[x] >= 0.0");
-            }
-          }
-          totalFlex = newTotalFlex;
-        }
-        while (deficit > 1e-10 && dart.notNull(availableColumns) > 0) {
-          let delta = deficit / dart.notNull(availableColumns);
-          if (!(delta !== 0)) dart.assertFailed(null, I[1], 962, 16, "delta != 0");
-          let newAvailableColumns = 0;
-          for (let x = 0; x < dart.notNull(this.columns); x = x + 1) {
-            let availableDelta = dart.notNull(widths[$_get](x)) - dart.notNull(minWidths[$_get](x));
-            if (availableDelta > 0.0) {
-              if (availableDelta <= delta) {
-                deficit = deficit - (dart.notNull(widths[$_get](x)) - dart.notNull(minWidths[$_get](x)));
-                widths[$_set](x, minWidths[$_get](x));
-              } else {
-                deficit = deficit - delta;
-                widths[$_set](x, dart.notNull(widths[$_get](x)) - delta);
-                newAvailableColumns = newAvailableColumns + 1;
-              }
-            }
-          }
-          availableColumns = newAvailableColumns;
-        }
-      }
-      return widths;
-    }
-    getRowBox(row) {
-      if (row == null) dart.nullFailed(I[1], 995, 22, "row");
-      if (!(dart.notNull(row) >= 0)) dart.assertFailed(null, I[1], 996, 12, "row >= 0");
-      if (!(dart.notNull(row) < dart.notNull(this.rows))) dart.assertFailed(null, I[1], 997, 12, "row < rows");
-      if (!!dart.test(this.debugNeedsLayout)) dart.assertFailed(null, I[1], 998, 12, "!debugNeedsLayout");
-      return new ui.Rect.fromLTRB(0.0, this[_rowTops][$_get](row), this.size.width, this[_rowTops][$_get](dart.notNull(row) + 1));
-    }
-    computeDryLayout(constraints) {
-      let t0;
-      if (constraints == null) dart.nullFailed(I[1], 1003, 40, "constraints");
-      if (dart.notNull(this.rows) * dart.notNull(this.columns) === 0) {
-        return constraints.constrain(ui.Size.zero);
-      }
-      let widths = this[_computeColumnWidths](constraints);
-      let tableWidth = widths[$fold](core.double, 0.0, dart.fn((a, b) => {
-        if (a == null) dart.nullFailed(I[1], 1008, 56, "a");
-        if (b == null) dart.nullFailed(I[1], 1008, 66, "b");
-        return dart.notNull(a) + dart.notNull(b);
-      }, T.doubleAnddoubleTodouble()));
-      let rowTop = 0.0;
-      for (let y = 0; y < dart.notNull(this.rows); y = y + 1) {
-        let rowHeight = 0.0;
-        for (let x = 0; x < dart.notNull(this.columns); x = x + 1) {
-          let xy = x + y * dart.notNull(this.columns);
-          let child = this[_children][$_get](xy);
-          if (child != null) {
-            let childParentData = table.TableCellParentData.as(dart.nullCheck(child.parentData));
-            if (!(childParentData !== null)) dart.assertFailed(null, I[1], 1017, 18, "childParentData != null");
-            switch (t0 = childParentData.verticalAlignment, t0 == null ? this.defaultVerticalAlignment : t0) {
-              case C[3] || CT.C3:
-              {
-                if (!dart.test(this.debugCannotComputeDryLayout({reason: "TableCellVerticalAlignment.baseline requires a full layout for baseline metrics to be available."}))) dart.assertFailed(null, I[1], 1020, 22, "debugCannotComputeDryLayout(\r\n                reason: 'TableCellVerticalAlignment.baseline requires a full layout for baseline metrics to be available.'\r\n              )");
-                return ui.Size.zero;
-              }
-              case C[0] || CT.C0:
-              case C[1] || CT.C1:
-              case C[2] || CT.C2:
-              {
-                let childSize = child.getDryLayout(new box.BoxConstraints.tightFor({width: widths[$_get](x)}));
-                rowHeight = math.max(core.double, rowHeight, childSize.height);
-                break;
-              }
-              case C[4] || CT.C4:
-              {
-                break;
-              }
-            }
-          }
-        }
-        rowTop = rowTop + rowHeight;
-      }
-      return constraints.constrain(new ui.Size.new(tableWidth, rowTop));
-    }
-    performLayout() {
-      let t0, t0$;
-      let constraints = this.constraints;
-      let rows = this.rows;
-      let columns = this.columns;
-      if (!(this[_children][$length] === dart.notNull(rows) * dart.notNull(columns))) dart.assertFailed(null, I[1], 1045, 12, "_children.length == rows * columns");
-      if (dart.notNull(rows) * dart.notNull(columns) === 0) {
-        this.size = constraints.constrain(ui.Size.zero);
-        return;
-      }
-      let widths = this[_computeColumnWidths](constraints);
-      let positions = T.ListOfdouble().filled(columns, 0.0, {growable: false});
-      let tableWidth = null;
-      switch (this.textDirection) {
-        case C[10] || CT.C10:
-        {
-          positions[$_set](dart.notNull(columns) - 1, 0.0);
-          for (let x = dart.notNull(columns) - 2; x >= 0; x = x - 1)
-            positions[$_set](x, dart.notNull(positions[$_get](x + 1)) + dart.notNull(widths[$_get](x + 1)));
-          this[_columnLefts] = positions[$reversed];
-          tableWidth = dart.notNull(positions[$first]) + dart.notNull(widths[$first]);
-          break;
-        }
-        case C[11] || CT.C11:
-        {
-          positions[$_set](0, 0.0);
-          for (let x = 1; x < dart.notNull(columns); x = x + 1)
-            positions[$_set](x, dart.notNull(positions[$_get](x - 1)) + dart.notNull(widths[$_get](x - 1)));
-          this[_columnLefts] = positions;
-          tableWidth = dart.notNull(positions[$last]) + dart.notNull(widths[$last]);
-          break;
-        }
-      }
-      this[_rowTops][$clear]();
-      this[_baselineDistance] = null;
-      let rowTop = 0.0;
-      for (let y = 0; y < dart.notNull(rows); y = y + 1) {
-        this[_rowTops][$add](rowTop);
-        let rowHeight = 0.0;
-        let haveBaseline = false;
-        let beforeBaselineDistance = 0.0;
-        let afterBaselineDistance = 0.0;
-        let baselines = T.ListOfdouble().filled(columns, 0.0, {growable: false});
-        for (let x = 0; x < dart.notNull(columns); x = x + 1) {
-          let xy = x + y * dart.notNull(columns);
-          let child = this[_children][$_get](xy);
-          if (child != null) {
-            let childParentData = table.TableCellParentData.as(dart.nullCheck(child.parentData));
-            if (!(childParentData !== null)) dart.assertFailed(null, I[1], 1087, 18, "childParentData != null");
-            childParentData.x = x;
-            childParentData.y = y;
-            switch (t0 = childParentData.verticalAlignment, t0 == null ? this.defaultVerticalAlignment : t0) {
-              case C[3] || CT.C3:
-              {
-                if (!(this.textBaseline != null)) dart.assertFailed("An explicit textBaseline is required when using baseline alignment.", I[1], 1092, 22, "textBaseline != null");
-                child.layout(new box.BoxConstraints.tightFor({width: widths[$_get](x)}), {parentUsesSize: true});
-                let childBaseline = child.getDistanceToBaseline(dart.nullCheck(this.textBaseline), {onlyReal: true});
-                if (childBaseline != null) {
-                  beforeBaselineDistance = math.max(core.double, beforeBaselineDistance, childBaseline);
-                  afterBaselineDistance = math.max(core.double, afterBaselineDistance, dart.notNull(child.size.height) - dart.notNull(childBaseline));
-                  baselines[$_set](x, childBaseline);
-                  haveBaseline = true;
-                } else {
-                  rowHeight = math.max(core.double, rowHeight, child.size.height);
-                  childParentData.offset = new ui.Offset.new(positions[$_get](x), rowTop);
-                }
-                break;
-              }
-              case C[0] || CT.C0:
-              case C[1] || CT.C1:
-              case C[2] || CT.C2:
-              {
-                child.layout(new box.BoxConstraints.tightFor({width: widths[$_get](x)}), {parentUsesSize: true});
-                rowHeight = math.max(core.double, rowHeight, child.size.height);
-                break;
-              }
-              case C[4] || CT.C4:
-              {
-                break;
-              }
-            }
-          }
-        }
-        if (haveBaseline) {
-          if (y === 0) this[_baselineDistance] = beforeBaselineDistance;
-          rowHeight = math.max(core.double, rowHeight, beforeBaselineDistance + afterBaselineDistance);
-        }
-        for (let x = 0; x < dart.notNull(columns); x = x + 1) {
-          let xy = x + y * dart.notNull(columns);
-          let child = this[_children][$_get](xy);
-          if (child != null) {
-            let childParentData = table.TableCellParentData.as(dart.nullCheck(child.parentData));
-            switch (t0$ = childParentData.verticalAlignment, t0$ == null ? this.defaultVerticalAlignment : t0$) {
-              case C[3] || CT.C3:
-              {
-                childParentData.offset = new ui.Offset.new(positions[$_get](x), rowTop + beforeBaselineDistance - dart.notNull(baselines[$_get](x)));
-                break;
-              }
-              case C[0] || CT.C0:
-              {
-                childParentData.offset = new ui.Offset.new(positions[$_get](x), rowTop);
-                break;
-              }
-              case C[1] || CT.C1:
-              {
-                childParentData.offset = new ui.Offset.new(positions[$_get](x), rowTop + (rowHeight - dart.notNull(child.size.height)) / 2.0);
-                break;
-              }
-              case C[2] || CT.C2:
-              {
-                childParentData.offset = new ui.Offset.new(positions[$_get](x), rowTop + rowHeight - dart.notNull(child.size.height));
-                break;
-              }
-              case C[4] || CT.C4:
-              {
-                child.layout(new box.BoxConstraints.tightFor({width: widths[$_get](x), height: rowHeight}));
-                childParentData.offset = new ui.Offset.new(positions[$_get](x), rowTop);
-                break;
-              }
-            }
-          }
-        }
-        rowTop = rowTop + rowHeight;
-      }
-      this[_rowTops][$add](rowTop);
-      this.size = constraints.constrain(new ui.Size.new(tableWidth, rowTop));
-      if (!(this[_rowTops][$length] === dart.notNull(rows) + 1)) dart.assertFailed(null, I[1], 1150, 12, "_rowTops.length == rows + 1");
-    }
-    hitTestChildren(result, opts) {
-      if (result == null) dart.nullFailed(I[1], 1154, 41, "result");
-      let position = opts && 'position' in opts ? opts.position : null;
-      if (position == null) dart.nullFailed(I[1], 1154, 67, "position");
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(this.columns))) dart.assertFailed(null, I[1], 1155, 12, "_children.length == rows * columns");
-      for (let index = dart.notNull(this[_children][$length]) - 1; index >= 0; index = index - 1) {
-        let child = this[_children][$_get](index);
-        if (child != null) {
-          let childParentData = box.BoxParentData.as(dart.nullCheck(child.parentData));
-          let isHit = result.addWithPaintOffset({offset: childParentData.offset, position: position, hitTest: dart.fn((result, transformed) => {
-              if (result == null) dart.nullFailed(I[1], 1163, 38, "result");
-              if (!dart.equals(transformed, position['-'](childParentData.offset))) dart.assertFailed(null, I[1], 1164, 20, "transformed == position - childParentData.offset");
-              return child.hitTest(result, {position: dart.nullCheck(transformed)});
-            }, T.BoxHitTestResultAndOffsetNTobool())});
-          if (dart.test(isHit)) return true;
-        }
-      }
-      return false;
-    }
-    paint(context, offset) {
-      let t1, t0;
-      if (context == null) dart.nullFailed(I[1], 1176, 30, "context");
-      if (offset == null) dart.nullFailed(I[1], 1176, 46, "offset");
-      if (!(this[_children][$length] === dart.notNull(this.rows) * dart.notNull(this.columns))) dart.assertFailed(null, I[1], 1177, 12, "_children.length == rows * columns");
-      if (dart.notNull(this.rows) * dart.notNull(this.columns) === 0) {
-        if (this.border != null) {
-          let borderRect = new ui.Rect.fromLTWH(offset.dx, offset.dy, this.size.width, 0.0);
-          dart.nullCheck(this.border).paint(context.canvas, borderRect, {rows: C[12] || CT.C12, columns: C[12] || CT.C12});
-        }
-        return;
-      }
-      if (!(this[_rowTops][$length] === dart.notNull(this.rows) + 1)) dart.assertFailed(null, I[1], 1185, 12, "_rowTops.length == rows + 1");
-      if (this[_rowDecorations] != null) {
-        if (!(dart.nullCheck(this[_rowDecorations])[$length] == dart.nullCheck(this[_rowDecorationPainters])[$length])) dart.assertFailed(null, I[1], 1187, 14, "_rowDecorations!.length == _rowDecorationPainters!.length");
-        let canvas = context.canvas;
-        for (let y = 0; y < dart.notNull(this.rows); y = y + 1) {
-          if (dart.notNull(dart.nullCheck(this[_rowDecorations])[$length]) <= y) break;
-          if (dart.nullCheck(this[_rowDecorations])[$_get](y) != null) {
-            t0 = dart.nullCheck(this[_rowDecorationPainters]);
-            t1 = y;
-            t0[$_get](t1) == null ? t0[$_set](t1, dart.nullCheck(dart.nullCheck(this[_rowDecorations])[$_get](y)).createBoxPainter(dart.bind(this, 'markNeedsPaint'))) : null;
-            dart.nullCheck(dart.nullCheck(this[_rowDecorationPainters])[$_get](y)).paint(canvas, new ui.Offset.new(offset.dx, dart.notNull(offset.dy) + dart.notNull(this[_rowTops][$_get](y))), this.configuration.copyWith({size: new ui.Size.new(this.size.width, dart.notNull(this[_rowTops][$_get](y + 1)) - dart.notNull(this[_rowTops][$_get](y)))}));
-          }
-        }
-      }
-      for (let index = 0; index < dart.notNull(this[_children][$length]); index = index + 1) {
-        let child = this[_children][$_get](index);
-        if (child != null) {
-          let childParentData = box.BoxParentData.as(dart.nullCheck(child.parentData));
-          context.paintChild(child, childParentData.offset['+'](offset));
-        }
-      }
-      if (!(this[_rows] === dart.notNull(this[_rowTops][$length]) - 1)) dart.assertFailed(null, I[1], 1209, 12, "_rows == _rowTops.length - 1");
-      if (!(this[_columns] == dart.nullCheck(this[_columnLefts])[$length])) dart.assertFailed(null, I[1], 1210, 12, "_columns == _columnLefts!.length");
-      if (this.border != null) {
-        let borderRect = new ui.Rect.fromLTWH(offset.dx, offset.dy, this.size.width, this[_rowTops][$last]);
-        let rows = this[_rowTops][$getRange](1, dart.notNull(this[_rowTops][$length]) - 1);
-        let columns = dart.nullCheck(this[_columnLefts])[$skip](1);
-        dart.nullCheck(this.border).paint(context.canvas, borderRect, {rows: rows, columns: columns});
-      }
-    }
-    debugFillProperties(properties) {
-      let t0;
-      if (properties == null) dart.nullFailed(I[1], 1223, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new (T.DiagnosticsPropertyOfTableBorder()).new("border", this.border, {defaultValue: null}));
-      properties.add(new (T.DiagnosticsPropertyOfMapOfint$TableColumnWidth()).new("specified column widths", this[_columnWidths], {level: dart.test(this[_columnWidths][$isEmpty]) ? diagnostics.DiagnosticLevel.hidden : diagnostics.DiagnosticLevel.info}));
-      properties.add(new (T.DiagnosticsPropertyOfTableColumnWidth()).new("default column width", this.defaultColumnWidth));
-      properties.add(new diagnostics.MessageProperty.new("table size", dart.str(this.columns) + "×" + dart.str(this.rows)));
-      properties.add(new (T.IterablePropertyOfString()).new("column offsets", (t0 = this[_columnLefts], t0 == null ? null : t0[$map](core.String, C[13] || CT.C13)), {ifNull: "unknown"}));
-      properties.add(new (T.IterablePropertyOfString()).new("row offsets", this[_rowTops][$map](core.String, C[13] || CT.C13), {ifNull: "unknown"}));
-    }
-    debugDescribeChildren() {
-      if (dart.test(this[_children][$isEmpty])) {
-        return T.JSArrayOfDiagnosticsNode().of([diagnostics.DiagnosticsNode.message("table is empty")]);
-      }
-      let children = T.JSArrayOfDiagnosticsNode().of([]);
-      for (let y = 0; y < dart.notNull(this.rows); y = y + 1) {
-        for (let x = 0; x < dart.notNull(this.columns); x = x + 1) {
-          let xy = x + y * dart.notNull(this.columns);
-          let child = this[_children][$_get](xy);
-          let name = "child (" + dart.str(x) + ", " + dart.str(y) + ")";
-          if (child != null)
-            children[$add](child.toDiagnosticsNode({name: name}));
-          else
-            children[$add](new (T.DiagnosticsPropertyOfObject()).new(name, null, {ifNull: "is null", showSeparator: false}));
-        }
-      }
-      return children;
+  dart.defineExtensionMethods(animation_controller._AnimationDirection, ['toString']);
+  animation_controller._AnimationDirection.forward = C[0] || CT.C0;
+  animation_controller._AnimationDirection.reverse = C[1] || CT.C1;
+  animation_controller._AnimationDirection.values = C[2] || CT.C2;
+  animation_controller.AnimationBehavior = class AnimationBehavior extends core.Object {
+    toString() {
+      return this[_name$];
     }
   };
-  (table.RenderTable.new = function(opts) {
-    let t0, t0$, t0$0, t0$1, t0$2;
-    let columns = opts && 'columns' in opts ? opts.columns : null;
-    let rows = opts && 'rows' in opts ? opts.rows : null;
-    let columnWidths = opts && 'columnWidths' in opts ? opts.columnWidths : null;
-    let defaultColumnWidth = opts && 'defaultColumnWidth' in opts ? opts.defaultColumnWidth : C[6] || CT.C6;
-    if (defaultColumnWidth == null) dart.nullFailed(I[1], 372, 22, "defaultColumnWidth");
-    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-    if (textDirection == null) dart.nullFailed(I[1], 373, 28, "textDirection");
-    let border = opts && 'border' in opts ? opts.border : null;
-    let rowDecorations = opts && 'rowDecorations' in opts ? opts.rowDecorations : null;
-    let configuration = opts && 'configuration' in opts ? opts.configuration : C[7] || CT.C7;
-    if (configuration == null) dart.nullFailed(I[1], 376, 24, "configuration");
-    let defaultVerticalAlignment = opts && 'defaultVerticalAlignment' in opts ? opts.defaultVerticalAlignment : C[0] || CT.C0;
-    if (defaultVerticalAlignment == null) dart.nullFailed(I[1], 377, 32, "defaultVerticalAlignment");
-    let textBaseline = opts && 'textBaseline' in opts ? opts.textBaseline : null;
-    let children = opts && 'children' in opts ? opts.children : null;
-    this[_children] = C[8] || CT.C8;
-    this[_rowDecorations] = null;
-    this[_rowDecorationPainters] = null;
-    this[_baselineDistance] = null;
-    this[_rowTops] = T.JSArrayOfdouble().of([]);
-    this[_columnLefts] = null;
-    if (!(columns == null || dart.notNull(columns) >= 0)) dart.assertFailed(null, I[1], 380, 15, "columns == null || columns >= 0");
-    if (!(rows == null || dart.notNull(rows) >= 0)) dart.assertFailed(null, I[1], 381, 15, "rows == null || rows >= 0");
-    if (!(rows == null || children == null)) dart.assertFailed(null, I[1], 382, 15, "rows == null || children == null");
-    if (!(defaultColumnWidth != null)) dart.assertFailed(null, I[1], 383, 15, "defaultColumnWidth != null");
-    if (!(textDirection != null)) dart.assertFailed(null, I[1], 384, 15, "textDirection != null");
-    if (!(configuration != null)) dart.assertFailed(null, I[1], 385, 15, "configuration != null");
-    this[_textDirection] = textDirection;
-    this[_columns] = (t0 = columns, t0 == null ? children != null && dart.test(children[$isNotEmpty]) ? children[$first][$length] : 0 : t0);
-    this[_rows] = (t0$ = rows, t0$ == null ? 0 : t0$);
-    this[_columnWidths] = (t0$0 = columnWidths, t0$0 == null ? new (T.IdentityMapOfint$TableColumnWidth()).new() : t0$0);
-    this[_defaultColumnWidth] = defaultColumnWidth;
-    this[_border] = border;
-    this[_textBaseline] = textBaseline;
-    this[_defaultVerticalAlignment] = defaultVerticalAlignment;
-    this[_configuration] = configuration;
-    table.RenderTable.__proto__.new.call(this);
-    this[_children] = (t0$1 = T.JSArrayOfRenderBoxN().of([]), (() => {
-      t0$1[$length] = dart.notNull(this[_columns]) * dart.notNull(this[_rows]);
-      return t0$1;
-    })());
-    this.rowDecorations = rowDecorations;
-    t0$2 = children;
-    t0$2 == null ? null : t0$2[$forEach](dart.bind(this, 'addRow'));
-  }).prototype = table.RenderTable.prototype;
-  dart.addTypeTests(table.RenderTable);
-  dart.addTypeCaches(table.RenderTable);
-  dart.setMethodSignature(table.RenderTable, () => ({
-    __proto__: dart.getMethods(table.RenderTable.__proto__),
-    setColumnWidth: dart.fnType(dart.void, [core.int, table.TableColumnWidth]),
-    setFlatChildren: dart.fnType(dart.void, [core.int, core.List$(dart.nullable(box.RenderBox))]),
-    setChildren: dart.fnType(dart.void, [dart.nullable(core.List$(core.List$(box.RenderBox)))]),
-    addRow: dart.fnType(dart.void, [core.List$(dart.nullable(box.RenderBox))]),
-    setChild: dart.fnType(dart.void, [core.int, core.int, dart.nullable(box.RenderBox)]),
-    column: dart.fnType(core.Iterable$(box.RenderBox), [core.int]),
-    row: dart.fnType(core.Iterable$(box.RenderBox), [core.int]),
-    [_computeColumnWidths]: dart.fnType(core.List$(core.double), [box.BoxConstraints]),
-    getRowBox: dart.fnType(ui.Rect, [core.int])
+  (animation_controller.AnimationBehavior.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 56, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 56, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = animation_controller.AnimationBehavior.prototype;
+  dart.addTypeTests(animation_controller.AnimationBehavior);
+  dart.addTypeCaches(animation_controller.AnimationBehavior);
+  dart.setLibraryUri(animation_controller.AnimationBehavior, I[1]);
+  dart.setFieldSignature(animation_controller.AnimationBehavior, () => ({
+    __proto__: dart.getFields(animation_controller.AnimationBehavior.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.setGetterSignature(table.RenderTable, () => ({
-    __proto__: dart.getGetters(table.RenderTable.__proto__),
-    columns: core.int,
-    rows: core.int,
-    columnWidths: dart.nullable(core.Map$(core.int, table.TableColumnWidth)),
-    defaultColumnWidth: table.TableColumnWidth,
-    textDirection: ui.TextDirection,
-    border: dart.nullable(table_border.TableBorder),
-    rowDecorations: core.List$(decoration.Decoration),
-    configuration: image_provider.ImageConfiguration,
-    defaultVerticalAlignment: table.TableCellVerticalAlignment,
-    textBaseline: dart.nullable(ui.TextBaseline)
+  dart.defineExtensionMethods(animation_controller.AnimationBehavior, ['toString']);
+  animation_controller.AnimationBehavior.normal = C[3] || CT.C3;
+  animation_controller.AnimationBehavior.preserve = C[4] || CT.C4;
+  animation_controller.AnimationBehavior.values = C[5] || CT.C5;
+  var lowerBound$ = dart.privateName(animation_controller, "AnimationController.lowerBound");
+  var upperBound$ = dart.privateName(animation_controller, "AnimationController.upperBound");
+  var debugLabel$ = dart.privateName(animation_controller, "AnimationController.debugLabel");
+  var animationBehavior$ = dart.privateName(animation_controller, "AnimationController.animationBehavior");
+  var duration$ = dart.privateName(animation_controller, "AnimationController.duration");
+  var reverseDuration$ = dart.privateName(animation_controller, "AnimationController.reverseDuration");
+  var _ticker = dart.privateName(animation_controller, "_ticker");
+  var _simulation = dart.privateName(animation_controller, "_simulation");
+  var __AnimationController__value = dart.privateName(animation_controller, "_#AnimationController#_value");
+  var _lastElapsedDuration = dart.privateName(animation_controller, "_lastElapsedDuration");
+  var __AnimationController__status = dart.privateName(animation_controller, "_#AnimationController#_status");
+  var _lastReportedStatus = dart.privateName(animation_controller, "_lastReportedStatus");
+  var _direction = dart.privateName(animation_controller, "_direction");
+  var _tick = dart.privateName(animation_controller, "_tick");
+  var _internalSetValue = dart.privateName(animation_controller, "_internalSetValue");
+  var _value = dart.privateName(animation_controller, "_value");
+  var _checkStatusChanged = dart.privateName(animation_controller, "_checkStatusChanged");
+  var _status = dart.privateName(animation_controller, "_status");
+  var _animateToInternal = dart.privateName(animation_controller, "_animateToInternal");
+  var _startSimulation = dart.privateName(animation_controller, "_startSimulation");
+  var _directionSetter = dart.privateName(animation_controller, "_directionSetter");
+  const Animation_AnimationEagerListenerMixin$36 = class Animation_AnimationEagerListenerMixin extends animation.Animation$(core.double) {};
+  (Animation_AnimationEagerListenerMixin$36.new = function() {
+    Animation_AnimationEagerListenerMixin$36.__proto__.new.call(this);
+  }).prototype = Animation_AnimationEagerListenerMixin$36.prototype;
+  dart.applyMixin(Animation_AnimationEagerListenerMixin$36, listener_helpers.AnimationEagerListenerMixin);
+  const Animation_AnimationLocalListenersMixin$36 = class Animation_AnimationLocalListenersMixin extends Animation_AnimationEagerListenerMixin$36 {};
+  (Animation_AnimationLocalListenersMixin$36.new = function() {
+    listener_helpers.AnimationLocalListenersMixin[dart.mixinNew].call(this);
+    Animation_AnimationLocalListenersMixin$36.__proto__.new.call(this);
+  }).prototype = Animation_AnimationLocalListenersMixin$36.prototype;
+  dart.applyMixin(Animation_AnimationLocalListenersMixin$36, listener_helpers.AnimationLocalListenersMixin);
+  const Animation_AnimationLocalStatusListenersMixin$36 = class Animation_AnimationLocalStatusListenersMixin extends Animation_AnimationLocalListenersMixin$36 {};
+  (Animation_AnimationLocalStatusListenersMixin$36.new = function() {
+    listener_helpers.AnimationLocalStatusListenersMixin[dart.mixinNew].call(this);
+    Animation_AnimationLocalStatusListenersMixin$36.__proto__.new.call(this);
+  }).prototype = Animation_AnimationLocalStatusListenersMixin$36.prototype;
+  dart.applyMixin(Animation_AnimationLocalStatusListenersMixin$36, listener_helpers.AnimationLocalStatusListenersMixin);
+  animation_controller.AnimationController = class AnimationController extends Animation_AnimationLocalStatusListenersMixin$36 {
+    get lowerBound() {
+      return this[lowerBound$];
+    }
+    set lowerBound(value) {
+      super.lowerBound = value;
+    }
+    get upperBound() {
+      return this[upperBound$];
+    }
+    set upperBound(value) {
+      super.upperBound = value;
+    }
+    get debugLabel() {
+      return this[debugLabel$];
+    }
+    set debugLabel(value) {
+      super.debugLabel = value;
+    }
+    get animationBehavior() {
+      return this[animationBehavior$];
+    }
+    set animationBehavior(value) {
+      super.animationBehavior = value;
+    }
+    get duration() {
+      return this[duration$];
+    }
+    set duration(value) {
+      this[duration$] = value;
+    }
+    get reverseDuration() {
+      return this[reverseDuration$];
+    }
+    set reverseDuration(value) {
+      this[reverseDuration$] = value;
+    }
+    get view() {
+      return this;
+    }
+    resync(vsync) {
+      if (vsync == null) dart.nullFailed(I[0], 322, 30, "vsync");
+      let oldTicker = dart.nullCheck(this[_ticker]);
+      this[_ticker] = vsync.createTicker(dart.bind(this, _tick));
+      dart.nullCheck(this[_ticker]).absorbTicker(oldTicker);
+    }
+    get value() {
+      return this[_value];
+    }
+    get [_value]() {
+      let t0;
+      t0 = this[__AnimationController__value];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_value")) : t0;
+    }
+    set [_value](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 340, 15, "null");
+      this[__AnimationController__value] = t0;
+    }
+    set value(newValue) {
+      if (newValue == null) dart.nullFailed(I[0], 362, 20, "newValue");
+      if (!(newValue != null)) dart.assertFailed(null, I[0], 363, 12, "newValue != null");
+      this.stop();
+      this[_internalSetValue](newValue);
+      this.notifyListeners();
+      this[_checkStatusChanged]();
+    }
+    reset() {
+      this.value = this.lowerBound;
+    }
+    get velocity() {
+      if (!dart.test(this.isAnimating)) return 0.0;
+      return dart.nullCheck(this[_simulation]).dx(dart.nullCheck(this.lastElapsedDuration).inMicroseconds[$toDouble]() / 1000000);
+    }
+    [_internalSetValue](newValue) {
+      if (newValue == null) dart.nullFailed(I[0], 398, 33, "newValue");
+      this[_value] = newValue[$clamp](this.lowerBound, this.upperBound);
+      if (this[_value] == this.lowerBound) {
+        this[_status] = animation.AnimationStatus.dismissed;
+      } else if (this[_value] == this.upperBound) {
+        this[_status] = animation.AnimationStatus.completed;
+      } else {
+        this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.forward : animation.AnimationStatus.reverse;
+      }
+    }
+    get lastElapsedDuration() {
+      return this[_lastElapsedDuration];
+    }
+    get isAnimating() {
+      return this[_ticker] != null && dart.test(dart.nullCheck(this[_ticker]).isActive);
+    }
+    get status() {
+      return this[_status];
+    }
+    get [_status]() {
+      let t1;
+      t1 = this[__AnimationController__status];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_status")) : t1;
+    }
+    set [_status](t1) {
+      if (t1 == null) dart.nullFailed(I[0], 430, 24, "null");
+      this[__AnimationController__status] = t1;
+    }
+    forward(opts) {
+      let from = opts && 'from' in opts ? opts.from : null;
+      if (!dart.test(dart.fn(() => {
+        if (this.duration == null) {
+          dart.throw(assertions.FlutterError.new("AnimationController.forward() called with no default duration.\n" + "The \"duration\" property should be set, either in the constructor or later, before " + "calling the forward() function."));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 444, 12, "() {\r\n      if (duration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.forward() called with no default duration.\\n'\r\n          'The \"duration\" property should be set, either in the constructor or later, before '\r\n          'calling the forward() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.forward() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 455, 7, "_ticker != null");
+      this[_direction] = animation_controller._AnimationDirection.forward;
+      if (from != null) this.value = from;
+      return this[_animateToInternal](this.upperBound);
+    }
+    reverse(opts) {
+      let from = opts && 'from' in opts ? opts.from : null;
+      if (!dart.test(dart.fn(() => {
+        if (this.duration == null && this.reverseDuration == null) {
+          dart.throw(assertions.FlutterError.new("AnimationController.reverse() called with no default duration or reverseDuration.\n" + "The \"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before " + "calling the reverse() function."));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 477, 12, "() {\r\n      if (duration == null && reverseDuration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.reverse() called with no default duration or reverseDuration.\\n'\r\n          'The \"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before '\r\n          'calling the reverse() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.reverse() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 488, 7, "_ticker != null");
+      this[_direction] = animation_controller._AnimationDirection.reverse;
+      if (from != null) this.value = from;
+      return this[_animateToInternal](this.lowerBound);
+    }
+    animateTo(target, opts) {
+      if (target == null) dart.nullFailed(I[0], 514, 33, "target");
+      let duration = opts && 'duration' in opts ? opts.duration : null;
+      let curve = opts && 'curve' in opts ? opts.curve : C[6] || CT.C6;
+      if (curve == null) dart.nullFailed(I[0], 514, 69, "curve");
+      if (!dart.test(dart.fn(() => {
+        if (this.duration == null && duration == null) {
+          dart.throw(assertions.FlutterError.new("AnimationController.animateTo() called with no explicit duration and no default duration.\n" + "Either the \"duration\" argument to the animateTo() method should be provided, or the " + "\"duration\" property should be set, either in the constructor or later, before " + "calling the animateTo() function."));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 515, 12, "() {\r\n      if (this.duration == null && duration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.animateTo() called with no explicit duration and no default duration.\\n'\r\n          'Either the \"duration\" argument to the animateTo() method should be provided, or the '\r\n          '\"duration\" property should be set, either in the constructor or later, before '\r\n          'calling the animateTo() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.animateTo() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 527, 7, "_ticker != null");
+      this[_direction] = animation_controller._AnimationDirection.forward;
+      return this[_animateToInternal](target, {duration: duration, curve: curve});
+    }
+    animateBack(target, opts) {
+      if (target == null) dart.nullFailed(I[0], 547, 35, "target");
+      let duration = opts && 'duration' in opts ? opts.duration : null;
+      let curve = opts && 'curve' in opts ? opts.curve : C[6] || CT.C6;
+      if (curve == null) dart.nullFailed(I[0], 547, 71, "curve");
+      if (!dart.test(dart.fn(() => {
+        if (this.duration == null && this.reverseDuration == null && duration == null) {
+          dart.throw(assertions.FlutterError.new("AnimationController.animateBack() called with no explicit duration and no default duration or reverseDuration.\n" + "Either the \"duration\" argument to the animateBack() method should be provided, or the " + "\"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before " + "calling the animateBack() function."));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 548, 12, "() {\r\n      if (this.duration == null && reverseDuration == null && duration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.animateBack() called with no explicit duration and no default duration or reverseDuration.\\n'\r\n          'Either the \"duration\" argument to the animateBack() method should be provided, or the '\r\n          '\"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before '\r\n          'calling the animateBack() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.animateBack() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 560, 7, "_ticker != null");
+      this[_direction] = animation_controller._AnimationDirection.reverse;
+      return this[_animateToInternal](target, {duration: duration, curve: curve});
+    }
+    [_animateToInternal](target, opts) {
+      if (target == null) dart.nullFailed(I[0], 568, 42, "target");
+      let duration = opts && 'duration' in opts ? opts.duration : null;
+      let curve = opts && 'curve' in opts ? opts.curve : C[6] || CT.C6;
+      if (curve == null) dart.nullFailed(I[0], 568, 78, "curve");
+      let scale = 1.0;
+      if (dart.test(dart.nullCheck(binding.SemanticsBinding.instance).disableAnimations)) {
+        switch (this.animationBehavior) {
+          case C[3] || CT.C3:
+          {
+            scale = 0.05;
+            break;
+          }
+          case C[4] || CT.C4:
+          {
+            break;
+          }
+        }
+      }
+      let simulationDuration = duration;
+      if (simulationDuration == null) {
+        if (!!(this.duration == null && this[_direction] == animation_controller._AnimationDirection.forward)) dart.assertFailed(null, I[0], 584, 14, "!(this.duration == null && _direction == _AnimationDirection.forward)");
+        if (!!(this.duration == null && this[_direction] == animation_controller._AnimationDirection.reverse && this.reverseDuration == null)) dart.assertFailed(null, I[0], 585, 14, "!(this.duration == null && _direction == _AnimationDirection.reverse && reverseDuration == null)");
+        let range = dart.notNull(this.upperBound) - dart.notNull(this.lowerBound);
+        let remainingFraction = range[$isFinite] ? (dart.notNull(target) - dart.notNull(this[_value]))[$abs]() / range : 1.0;
+        let directionDuration = this[_direction] == animation_controller._AnimationDirection.reverse && this.reverseDuration != null ? dart.nullCheck(this.reverseDuration) : dart.nullCheck(this.duration);
+        simulationDuration = directionDuration['*'](remainingFraction);
+      } else if (target == this.value) {
+        simulationDuration = core.Duration.zero;
+      }
+      this.stop();
+      if (dart.equals(simulationDuration, core.Duration.zero)) {
+        if (this.value != target) {
+          this[_value] = target[$clamp](this.lowerBound, this.upperBound);
+          this.notifyListeners();
+        }
+        this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.completed : animation.AnimationStatus.dismissed;
+        this[_checkStatusChanged]();
+        return new ticker.TickerFuture.complete();
+      }
+      if (!dart.test(simulationDuration['>'](core.Duration.zero))) dart.assertFailed(null, I[0], 609, 12, "simulationDuration > Duration.zero");
+      if (!!dart.test(this.isAnimating)) dart.assertFailed(null, I[0], 610, 12, "!isAnimating");
+      return this[_startSimulation](new animation_controller._InterpolationSimulation.new(this[_value], target, simulationDuration, curve, scale));
+    }
+    repeat(opts) {
+      let min = opts && 'min' in opts ? opts.min : null;
+      let max = opts && 'max' in opts ? opts.max : null;
+      let reverse = opts && 'reverse' in opts ? opts.reverse : false;
+      if (reverse == null) dart.nullFailed(I[0], 635, 56, "reverse");
+      let period = opts && 'period' in opts ? opts.period : null;
+      min == null ? min = this.lowerBound : null;
+      max == null ? max = this.upperBound : null;
+      period == null ? period = this.duration : null;
+      if (!dart.test(dart.fn(() => {
+        if (period == null) {
+          dart.throw(assertions.FlutterError.new("AnimationController.repeat() called without an explicit period and with no default Duration.\n" + "Either the \"period\" argument to the repeat() method should be provided, or the " + "\"duration\" property should be set, either in the constructor or later, before " + "calling the repeat() function."));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 639, 12, "() {\r\n      if (period == null) {\r\n        throw FlutterError(\r\n          'AnimationController.repeat() called without an explicit period and with no default Duration.\\n'\r\n          'Either the \"period\" argument to the repeat() method should be provided, or the '\r\n          '\"duration\" property should be set, either in the constructor or later, before '\r\n          'calling the repeat() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      if (!(dart.notNull(max) >= dart.notNull(min))) dart.assertFailed(null, I[0], 650, 12, "max >= min");
+      if (!(dart.notNull(max) <= dart.notNull(this.upperBound) && dart.notNull(min) >= dart.notNull(this.lowerBound))) dart.assertFailed(null, I[0], 651, 12, "max <= upperBound && min >= lowerBound");
+      if (!(reverse != null)) dart.assertFailed(null, I[0], 652, 12, "reverse != null");
+      this.stop();
+      return this[_startSimulation](new animation_controller._RepeatingSimulation.new(this[_value], min, max, reverse, dart.nullCheck(period), dart.bind(this, _directionSetter)));
+    }
+    [_directionSetter](direction) {
+      if (direction == null) dart.nullFailed(I[0], 657, 45, "direction");
+      this[_direction] = direction;
+      this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.forward : animation.AnimationStatus.reverse;
+      this[_checkStatusChanged]();
+    }
+    fling(opts) {
+      let t2, t2$;
+      let velocity = opts && 'velocity' in opts ? opts.velocity : 1;
+      if (velocity == null) dart.nullFailed(I[0], 684, 31, "velocity");
+      let springDescription = opts && 'springDescription' in opts ? opts.springDescription : null;
+      let animationBehavior = opts && 'animationBehavior' in opts ? opts.animationBehavior : null;
+      springDescription == null ? springDescription = animation_controller._kFlingSpringDescription : null;
+      this[_direction] = dart.notNull(velocity) < 0.0 ? animation_controller._AnimationDirection.reverse : animation_controller._AnimationDirection.forward;
+      let target = dart.notNull(velocity) < 0.0 ? dart.notNull(this.lowerBound) - dart.notNull(animation_controller._kFlingTolerance.distance) : dart.notNull(this.upperBound) + dart.notNull(animation_controller._kFlingTolerance.distance);
+      let scale = 1.0;
+      let behavior = (t2 = animationBehavior, t2 == null ? this.animationBehavior : t2);
+      if (dart.test(dart.nullCheck(binding.SemanticsBinding.instance).disableAnimations)) {
+        switch (behavior) {
+          case C[3] || CT.C3:
+          {
+            scale = 200.0;
+            break;
+          }
+          case C[4] || CT.C4:
+          {
+            break;
+          }
+        }
+      }
+      let simulation = (t2$ = new spring_simulation.SpringSimulation.new(springDescription, this.value, target, dart.notNull(velocity) * scale), (() => {
+        t2$.tolerance = animation_controller._kFlingTolerance;
+        return t2$;
+      })());
+      if (!(simulation.type != spring_simulation.SpringType.underDamped)) dart.assertFailed("The resulting spring simulation is of type SpringType.underDamped.\n" + "This can lead to unexpected look of the animation, please adjust the springDescription parameter", I[0], 705, 7, "simulation.type != SpringType.underDamped");
+      this.stop();
+      return this[_startSimulation](simulation);
+    }
+    animateWith(simulation) {
+      if (simulation == null) dart.nullFailed(I[0], 727, 39, "simulation");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.animateWith() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 729, 7, "_ticker != null");
+      this.stop();
+      this[_direction] = animation_controller._AnimationDirection.forward;
+      return this[_startSimulation](simulation);
+    }
+    [_startSimulation](simulation) {
+      if (simulation == null) dart.nullFailed(I[0], 738, 44, "simulation");
+      if (!(simulation != null)) dart.assertFailed(null, I[0], 739, 12, "simulation != null");
+      if (!!dart.test(this.isAnimating)) dart.assertFailed(null, I[0], 740, 12, "!isAnimating");
+      this[_simulation] = simulation;
+      this[_lastElapsedDuration] = core.Duration.zero;
+      this[_value] = simulation.x(0.0)[$clamp](this.lowerBound, this.upperBound);
+      let result = dart.nullCheck(this[_ticker]).start();
+      this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.forward : animation.AnimationStatus.reverse;
+      this[_checkStatusChanged]();
+      return result;
+    }
+    stop(opts) {
+      let canceled = opts && 'canceled' in opts ? opts.canceled : true;
+      if (canceled == null) dart.nullFailed(I[0], 769, 20, "canceled");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.stop() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 771, 7, "_ticker != null");
+      this[_simulation] = null;
+      this[_lastElapsedDuration] = null;
+      dart.nullCheck(this[_ticker]).stop({canceled: canceled});
+    }
+    dispose() {
+      if (!dart.test(dart.fn(() => {
+        if (this[_ticker] == null) {
+          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("AnimationController.dispose() called more than once."), new assertions.ErrorDescription.new("A given " + dart.str(this[$runtimeType]) + " cannot be disposed more than once.\n"), new (T.DiagnosticsPropertyOfAnimationController()).new("The following " + dart.str(this[$runtimeType]) + " object was disposed multiple times", this, {style: diagnostics.DiagnosticsTreeStyle.errorProperty})])));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 788, 12, "() {\r\n      if (_ticker == null) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary('AnimationController.dispose() called more than once.'),\r\n          ErrorDescription('A given $runtimeType cannot be disposed more than once.\\n'),\r\n          DiagnosticsProperty<AnimationController>(\r\n            'The following $runtimeType object was disposed multiple times',\r\n            this,\r\n            style: DiagnosticsTreeStyle.errorProperty,\r\n          ),\r\n        ]);\r\n      }\r\n      return true;\r\n    }()");
+      dart.nullCheck(this[_ticker]).dispose();
+      this[_ticker] = null;
+      super.dispose();
+    }
+    [_checkStatusChanged]() {
+      let newStatus = this.status;
+      if (this[_lastReportedStatus] != newStatus) {
+        this[_lastReportedStatus] = newStatus;
+        this.notifyStatusListeners(newStatus);
+      }
+    }
+    [_tick](elapsed) {
+      if (elapsed == null) dart.nullFailed(I[0], 816, 23, "elapsed");
+      this[_lastElapsedDuration] = elapsed;
+      let elapsedInSeconds = elapsed.inMicroseconds[$toDouble]() / 1000000;
+      if (!(elapsedInSeconds >= 0.0)) dart.assertFailed(null, I[0], 819, 12, "elapsedInSeconds >= 0.0");
+      this[_value] = dart.nullCheck(this[_simulation]).x(elapsedInSeconds)[$clamp](this.lowerBound, this.upperBound);
+      if (dart.test(dart.nullCheck(this[_simulation]).isDone(elapsedInSeconds))) {
+        this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.completed : animation.AnimationStatus.dismissed;
+        this.stop({canceled: false});
+      }
+      this.notifyListeners();
+      this[_checkStatusChanged]();
+    }
+    toStringDetails() {
+      let paused = dart.test(this.isAnimating) ? "" : "; paused";
+      let ticker = this[_ticker] == null ? "; DISPOSED" : dart.test(dart.nullCheck(this[_ticker]).muted) ? "; silenced" : "";
+      let label = this.debugLabel == null ? "" : "; for " + dart.str(this.debugLabel);
+      let more = dart.str(super.toStringDetails()) + " " + this.value[$toStringAsFixed](3);
+      return more + paused + ticker + label;
+    }
+  };
+  (animation_controller.AnimationController.new = function(opts) {
+    let t0;
+    let value = opts && 'value' in opts ? opts.value : null;
+    let duration = opts && 'duration' in opts ? opts.duration : null;
+    let reverseDuration = opts && 'reverseDuration' in opts ? opts.reverseDuration : null;
+    let debugLabel = opts && 'debugLabel' in opts ? opts.debugLabel : null;
+    let lowerBound = opts && 'lowerBound' in opts ? opts.lowerBound : 0;
+    if (lowerBound == null) dart.nullFailed(I[0], 238, 10, "lowerBound");
+    let upperBound = opts && 'upperBound' in opts ? opts.upperBound : 1;
+    if (upperBound == null) dart.nullFailed(I[0], 239, 10, "upperBound");
+    let animationBehavior = opts && 'animationBehavior' in opts ? opts.animationBehavior : C[3] || CT.C3;
+    if (animationBehavior == null) dart.nullFailed(I[0], 240, 10, "animationBehavior");
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    if (vsync == null) dart.nullFailed(I[0], 241, 29, "vsync");
+    this[_ticker] = null;
+    this[_simulation] = null;
+    this[__AnimationController__value] = null;
+    this[_lastElapsedDuration] = null;
+    this[__AnimationController__status] = null;
+    this[_lastReportedStatus] = animation.AnimationStatus.dismissed;
+    this[duration$] = duration;
+    this[reverseDuration$] = reverseDuration;
+    this[debugLabel$] = debugLabel;
+    this[lowerBound$] = lowerBound;
+    this[upperBound$] = upperBound;
+    this[animationBehavior$] = animationBehavior;
+    if (!(lowerBound != null)) dart.assertFailed(null, I[0], 242, 15, "lowerBound != null");
+    if (!(upperBound != null)) dart.assertFailed(null, I[0], 243, 15, "upperBound != null");
+    if (!(dart.notNull(upperBound) >= dart.notNull(lowerBound))) dart.assertFailed(null, I[0], 244, 15, "upperBound >= lowerBound");
+    if (!(vsync != null)) dart.assertFailed(null, I[0], 245, 15, "vsync != null");
+    this[_direction] = animation_controller._AnimationDirection.forward;
+    animation_controller.AnimationController.__proto__.new.call(this);
+    this[_ticker] = vsync.createTicker(dart.bind(this, _tick));
+    this[_internalSetValue]((t0 = value, t0 == null ? this.lowerBound : t0));
+  }).prototype = animation_controller.AnimationController.prototype;
+  (animation_controller.AnimationController.unbounded = function(opts) {
+    let value = opts && 'value' in opts ? opts.value : 0;
+    if (value == null) dart.nullFailed(I[0], 269, 12, "value");
+    let duration = opts && 'duration' in opts ? opts.duration : null;
+    let reverseDuration = opts && 'reverseDuration' in opts ? opts.reverseDuration : null;
+    let debugLabel = opts && 'debugLabel' in opts ? opts.debugLabel : null;
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    if (vsync == null) dart.nullFailed(I[0], 273, 29, "vsync");
+    let animationBehavior = opts && 'animationBehavior' in opts ? opts.animationBehavior : C[4] || CT.C4;
+    if (animationBehavior == null) dart.nullFailed(I[0], 274, 10, "animationBehavior");
+    this[_ticker] = null;
+    this[_simulation] = null;
+    this[__AnimationController__value] = null;
+    this[_lastElapsedDuration] = null;
+    this[__AnimationController__status] = null;
+    this[_lastReportedStatus] = animation.AnimationStatus.dismissed;
+    this[duration$] = duration;
+    this[reverseDuration$] = reverseDuration;
+    this[debugLabel$] = debugLabel;
+    this[animationBehavior$] = animationBehavior;
+    if (!(value != null)) dart.assertFailed(null, I[0], 275, 15, "value != null");
+    if (!(vsync != null)) dart.assertFailed(null, I[0], 276, 15, "vsync != null");
+    this[lowerBound$] = -1 / 0;
+    this[upperBound$] = 1 / 0;
+    this[_direction] = animation_controller._AnimationDirection.forward;
+    animation_controller.AnimationController.__proto__.new.call(this);
+    this[_ticker] = vsync.createTicker(dart.bind(this, _tick));
+    this[_internalSetValue](value);
+  }).prototype = animation_controller.AnimationController.prototype;
+  dart.addTypeTests(animation_controller.AnimationController);
+  dart.addTypeCaches(animation_controller.AnimationController);
+  dart.setMethodSignature(animation_controller.AnimationController, () => ({
+    __proto__: dart.getMethods(animation_controller.AnimationController.__proto__),
+    resync: dart.fnType(dart.void, [ticker.TickerProvider]),
+    reset: dart.fnType(dart.void, []),
+    [_internalSetValue]: dart.fnType(dart.void, [core.double]),
+    forward: dart.fnType(ticker.TickerFuture, [], {from: dart.nullable(core.double)}, {}),
+    reverse: dart.fnType(ticker.TickerFuture, [], {from: dart.nullable(core.double)}, {}),
+    animateTo: dart.fnType(ticker.TickerFuture, [core.double], {curve: curves.Curve, duration: dart.nullable(core.Duration)}, {}),
+    animateBack: dart.fnType(ticker.TickerFuture, [core.double], {curve: curves.Curve, duration: dart.nullable(core.Duration)}, {}),
+    [_animateToInternal]: dart.fnType(ticker.TickerFuture, [core.double], {curve: curves.Curve, duration: dart.nullable(core.Duration)}, {}),
+    repeat: dart.fnType(ticker.TickerFuture, [], {max: dart.nullable(core.double), min: dart.nullable(core.double), period: dart.nullable(core.Duration), reverse: core.bool}, {}),
+    [_directionSetter]: dart.fnType(dart.void, [animation_controller._AnimationDirection]),
+    fling: dart.fnType(ticker.TickerFuture, [], {animationBehavior: dart.nullable(animation_controller.AnimationBehavior), springDescription: dart.nullable(spring_simulation.SpringDescription), velocity: core.double}, {}),
+    animateWith: dart.fnType(ticker.TickerFuture, [simulation.Simulation]),
+    [_startSimulation]: dart.fnType(ticker.TickerFuture, [simulation.Simulation]),
+    stop: dart.fnType(dart.void, [], {canceled: core.bool}, {}),
+    [_checkStatusChanged]: dart.fnType(dart.void, []),
+    [_tick]: dart.fnType(dart.void, [core.Duration])
   }));
-  dart.setSetterSignature(table.RenderTable, () => ({
-    __proto__: dart.getSetters(table.RenderTable.__proto__),
-    columns: core.int,
-    rows: core.int,
-    columnWidths: dart.nullable(core.Map$(core.int, table.TableColumnWidth)),
-    defaultColumnWidth: table.TableColumnWidth,
-    textDirection: ui.TextDirection,
-    border: dart.nullable(table_border.TableBorder),
-    rowDecorations: dart.nullable(core.List$(dart.nullable(decoration.Decoration))),
-    configuration: image_provider.ImageConfiguration,
-    defaultVerticalAlignment: table.TableCellVerticalAlignment,
-    textBaseline: dart.nullable(ui.TextBaseline)
+  dart.setGetterSignature(animation_controller.AnimationController, () => ({
+    __proto__: dart.getGetters(animation_controller.AnimationController.__proto__),
+    view: animation.Animation$(core.double),
+    value: core.double,
+    [_value]: core.double,
+    velocity: core.double,
+    lastElapsedDuration: dart.nullable(core.Duration),
+    isAnimating: core.bool,
+    status: animation.AnimationStatus,
+    [_status]: animation.AnimationStatus
   }));
-  dart.setLibraryUri(table.RenderTable, I[0]);
-  dart.setFieldSignature(table.RenderTable, () => ({
-    __proto__: dart.getFields(table.RenderTable.__proto__),
-    [_children]: dart.fieldType(core.List$(dart.nullable(box.RenderBox))),
-    [_columns]: dart.fieldType(core.int),
-    [_rows]: dart.fieldType(core.int),
-    [_columnWidths]: dart.fieldType(core.Map$(core.int, table.TableColumnWidth)),
-    [_defaultColumnWidth]: dart.fieldType(table.TableColumnWidth),
-    [_textDirection]: dart.fieldType(ui.TextDirection),
-    [_border]: dart.fieldType(dart.nullable(table_border.TableBorder)),
-    [_rowDecorations]: dart.fieldType(dart.nullable(core.List$(dart.nullable(decoration.Decoration)))),
-    [_rowDecorationPainters]: dart.fieldType(dart.nullable(core.List$(dart.nullable(decoration.BoxPainter)))),
-    [_configuration]: dart.fieldType(image_provider.ImageConfiguration),
-    [_defaultVerticalAlignment]: dart.fieldType(table.TableCellVerticalAlignment),
-    [_textBaseline]: dart.fieldType(dart.nullable(ui.TextBaseline)),
-    [_baselineDistance]: dart.fieldType(dart.nullable(core.double)),
-    [_rowTops]: dart.finalFieldType(core.List$(core.double)),
-    [_columnLefts]: dart.fieldType(dart.nullable(core.Iterable$(core.double)))
+  dart.setSetterSignature(animation_controller.AnimationController, () => ({
+    __proto__: dart.getSetters(animation_controller.AnimationController.__proto__),
+    [_value]: core.double,
+    value: core.double,
+    [_status]: animation.AnimationStatus
   }));
-  dart.trackLibraries("packages/flutter/src/rendering/table.dart", {
-    "package:flutter/src/rendering/table.dart": table
+  dart.setLibraryUri(animation_controller.AnimationController, I[1]);
+  dart.setFieldSignature(animation_controller.AnimationController, () => ({
+    __proto__: dart.getFields(animation_controller.AnimationController.__proto__),
+    lowerBound: dart.finalFieldType(core.double),
+    upperBound: dart.finalFieldType(core.double),
+    debugLabel: dart.finalFieldType(dart.nullable(core.String)),
+    animationBehavior: dart.finalFieldType(animation_controller.AnimationBehavior),
+    duration: dart.fieldType(dart.nullable(core.Duration)),
+    reverseDuration: dart.fieldType(dart.nullable(core.Duration)),
+    [_ticker]: dart.fieldType(dart.nullable(ticker.Ticker)),
+    [_simulation]: dart.fieldType(dart.nullable(simulation.Simulation)),
+    [__AnimationController__value]: dart.fieldType(dart.nullable(core.double)),
+    [_lastElapsedDuration]: dart.fieldType(dart.nullable(core.Duration)),
+    [_direction]: dart.fieldType(animation_controller._AnimationDirection),
+    [__AnimationController__status]: dart.fieldType(dart.nullable(animation.AnimationStatus)),
+    [_lastReportedStatus]: dart.fieldType(animation.AnimationStatus)
+  }));
+  var _begin$ = dart.privateName(animation_controller, "_begin");
+  var _end$ = dart.privateName(animation_controller, "_end");
+  var _curve$ = dart.privateName(animation_controller, "_curve");
+  var _durationInSeconds = dart.privateName(animation_controller, "_durationInSeconds");
+  animation_controller._InterpolationSimulation = class _InterpolationSimulation extends simulation.Simulation {
+    x(timeInSeconds) {
+      if (timeInSeconds == null) dart.nullFailed(I[0], 854, 19, "timeInSeconds");
+      let t = (dart.notNull(timeInSeconds) / dart.notNull(this[_durationInSeconds]))[$clamp](0.0, 1.0);
+      if (t === 0.0)
+        return this[_begin$];
+      else if (t === 1.0)
+        return this[_end$];
+      else
+        return dart.notNull(this[_begin$]) + (dart.notNull(this[_end$]) - dart.notNull(this[_begin$])) * dart.notNull(this[_curve$].transform(t));
+    }
+    dx(timeInSeconds) {
+      if (timeInSeconds == null) dart.nullFailed(I[0], 865, 20, "timeInSeconds");
+      let epsilon = this.tolerance.time;
+      return (dart.notNull(this.x(dart.notNull(timeInSeconds) + dart.notNull(epsilon))) - dart.notNull(this.x(dart.notNull(timeInSeconds) - dart.notNull(epsilon)))) / (2 * dart.notNull(epsilon));
+    }
+    isDone(timeInSeconds) {
+      if (timeInSeconds == null) dart.nullFailed(I[0], 871, 22, "timeInSeconds");
+      return dart.notNull(timeInSeconds) > dart.notNull(this[_durationInSeconds]);
+    }
+  };
+  (animation_controller._InterpolationSimulation.new = function(_begin, _end, duration, _curve, scale) {
+    if (_begin == null) dart.nullFailed(I[0], 842, 33, "_begin");
+    if (_end == null) dart.nullFailed(I[0], 842, 46, "_end");
+    if (duration == null) dart.nullFailed(I[0], 842, 61, "duration");
+    if (_curve == null) dart.nullFailed(I[0], 842, 76, "_curve");
+    if (scale == null) dart.nullFailed(I[0], 842, 91, "scale");
+    this[_begin$] = _begin;
+    this[_end$] = _end;
+    this[_curve$] = _curve;
+    if (!(_begin != null)) dart.assertFailed(null, I[0], 843, 14, "_begin != null");
+    if (!(_end != null)) dart.assertFailed(null, I[0], 844, 14, "_end != null");
+    if (!(duration != null && dart.notNull(duration.inMicroseconds) > 0)) dart.assertFailed(null, I[0], 845, 14, "duration != null && duration.inMicroseconds > 0");
+    this[_durationInSeconds] = dart.notNull(duration.inMicroseconds) * dart.notNull(scale) / 1000000;
+    animation_controller._InterpolationSimulation.__proto__.new.call(this);
+    ;
+  }).prototype = animation_controller._InterpolationSimulation.prototype;
+  dart.addTypeTests(animation_controller._InterpolationSimulation);
+  dart.addTypeCaches(animation_controller._InterpolationSimulation);
+  dart.setMethodSignature(animation_controller._InterpolationSimulation, () => ({
+    __proto__: dart.getMethods(animation_controller._InterpolationSimulation.__proto__),
+    x: dart.fnType(core.double, [core.double]),
+    dx: dart.fnType(core.double, [core.double]),
+    isDone: dart.fnType(core.bool, [core.double])
+  }));
+  dart.setLibraryUri(animation_controller._InterpolationSimulation, I[1]);
+  dart.setFieldSignature(animation_controller._InterpolationSimulation, () => ({
+    __proto__: dart.getFields(animation_controller._InterpolationSimulation.__proto__),
+    [_durationInSeconds]: dart.finalFieldType(core.double),
+    [_begin$]: dart.finalFieldType(core.double),
+    [_end$]: dart.finalFieldType(core.double),
+    [_curve$]: dart.finalFieldType(curves.Curve)
+  }));
+  var _periodInSeconds = dart.privateName(animation_controller, "_periodInSeconds");
+  var _initialT = dart.privateName(animation_controller, "_initialT");
+  animation_controller._RepeatingSimulation = class _RepeatingSimulation extends simulation.Simulation {
+    x(timeInSeconds) {
+      let t2, t2$;
+      if (timeInSeconds == null) dart.nullFailed(I[0], 893, 19, "timeInSeconds");
+      if (!(dart.notNull(timeInSeconds) >= 0.0)) dart.assertFailed(null, I[0], 894, 12, "timeInSeconds >= 0.0");
+      let totalTimeInSeconds = dart.notNull(timeInSeconds) + dart.notNull(this[_initialT]);
+      let t = (totalTimeInSeconds / dart.notNull(this[_periodInSeconds]))[$modulo](1.0);
+      let _isPlayingReverse = (totalTimeInSeconds / dart.notNull(this[_periodInSeconds]))[$truncate]()[$isOdd];
+      if (dart.test(this.reverse) && _isPlayingReverse) {
+        t2 = animation_controller._AnimationDirection.reverse;
+        this.directionSetter(t2);
+        return dart.nullCheck(ui.lerpDouble(this.max, this.min, t));
+      } else {
+        t2$ = animation_controller._AnimationDirection.forward;
+        this.directionSetter(t2$);
+        return dart.nullCheck(ui.lerpDouble(this.min, this.max, t));
+      }
+    }
+    dx(timeInSeconds) {
+      if (timeInSeconds == null) dart.nullFailed(I[0], 910, 20, "timeInSeconds");
+      return (dart.notNull(this.max) - dart.notNull(this.min)) / dart.notNull(this[_periodInSeconds]);
+    }
+    isDone(timeInSeconds) {
+      if (timeInSeconds == null) dart.nullFailed(I[0], 913, 22, "timeInSeconds");
+      return false;
+    }
+  };
+  (animation_controller._RepeatingSimulation.new = function(initialValue, min, max, reverse, period, directionSetter) {
+    if (initialValue == null) dart.nullFailed(I[0], 877, 31, "initialValue");
+    if (min == null) dart.nullFailed(I[0], 877, 50, "min");
+    if (max == null) dart.nullFailed(I[0], 877, 60, "max");
+    if (reverse == null) dart.nullFailed(I[0], 877, 70, "reverse");
+    if (period == null) dart.nullFailed(I[0], 877, 88, "period");
+    if (directionSetter == null) dart.nullFailed(I[0], 877, 101, "directionSetter");
+    this.min = min;
+    this.max = max;
+    this.reverse = reverse;
+    this.directionSetter = directionSetter;
+    this[_periodInSeconds] = dart.notNull(period.inMicroseconds) / 1000000;
+    this[_initialT] = max == min ? 0.0 : dart.notNull(initialValue) / (dart.notNull(max) - dart.notNull(min)) * (dart.notNull(period.inMicroseconds) / 1000000);
+    animation_controller._RepeatingSimulation.__proto__.new.call(this);
+    if (!(dart.notNull(this[_periodInSeconds]) > 0.0)) dart.assertFailed(null, I[0], 880, 12, "_periodInSeconds > 0.0");
+    if (!(dart.notNull(this[_initialT]) >= 0.0)) dart.assertFailed(null, I[0], 881, 12, "_initialT >= 0.0");
+  }).prototype = animation_controller._RepeatingSimulation.prototype;
+  dart.addTypeTests(animation_controller._RepeatingSimulation);
+  dart.addTypeCaches(animation_controller._RepeatingSimulation);
+  dart.setMethodSignature(animation_controller._RepeatingSimulation, () => ({
+    __proto__: dart.getMethods(animation_controller._RepeatingSimulation.__proto__),
+    x: dart.fnType(core.double, [core.double]),
+    dx: dart.fnType(core.double, [core.double]),
+    isDone: dart.fnType(core.bool, [core.double])
+  }));
+  dart.setLibraryUri(animation_controller._RepeatingSimulation, I[1]);
+  dart.setFieldSignature(animation_controller._RepeatingSimulation, () => ({
+    __proto__: dart.getFields(animation_controller._RepeatingSimulation.__proto__),
+    min: dart.finalFieldType(core.double),
+    max: dart.finalFieldType(core.double),
+    reverse: dart.finalFieldType(core.bool),
+    directionSetter: dart.finalFieldType(dart.fnType(dart.void, [animation_controller._AnimationDirection])),
+    [_periodInSeconds]: dart.finalFieldType(core.double),
+    [_initialT]: dart.finalFieldType(core.double)
+  }));
+  var Tolerance_velocity = dart.privateName(tolerance, "Tolerance.velocity");
+  var Tolerance_time = dart.privateName(tolerance, "Tolerance.time");
+  var Tolerance_distance = dart.privateName(tolerance, "Tolerance.distance");
+  dart.defineLazy(animation_controller, {
+    /*animation_controller._kFlingSpringDescription*/get _kFlingSpringDescription() {
+      return new spring_simulation.SpringDescription.withDampingRatio({mass: 1.0, stiffness: 500.0, ratio: 1.0});
+    },
+    /*animation_controller._kFlingTolerance*/get _kFlingTolerance() {
+      return C[7] || CT.C7;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/animation/animation_controller.dart", {
+    "package:flutter/src/animation/animation_controller.dart": animation_controller
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["table.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../packages/flutter/src/rendering/table.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["animation_controller.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/animation/animation_controller.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__table: table
+    src__animation__animation_controller: animation_controller
   };
 }));
 
-//# sourceMappingURL=table.dart.lib.js.map
+//# sourceMappingURL=animation_controller.dart.lib.js.map

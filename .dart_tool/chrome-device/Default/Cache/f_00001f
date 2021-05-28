@@ -1,37 +1,29 @@
-define(['dart_sdk', 'packages/typed_data/src/typed_buffer.dart'], (function load__packages__flutter__src__foundation__serialization_dart(dart_sdk, packages__typed_data__src__typed_buffer$46dart) {
+define(['dart_sdk', 'packages/google_sign_in_platform_interface/src/types.dart', 'packages/google_sign_in_platform_interface/src/utils.dart', 'packages/google_sign_in/src/common.dart', 'packages/flutter/src/services/system_channels.dart'], (function load__packages__google_sign_in__google_sign_in_dart(dart_sdk, packages__google_sign_in_platform_interface__src__types$46dart, packages__google_sign_in_platform_interface__src__utils$46dart, packages__google_sign_in__src__common$46dart, packages__flutter__src__services__system_channels$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _native_typed_data = dart_sdk._native_typed_data;
-  const _internal = dart_sdk._internal;
-  const typed_data = dart_sdk.typed_data;
+  const async = dart_sdk.async;
+  const _js_helper = dart_sdk._js_helper;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const typed_buffer = packages__typed_data__src__typed_buffer$46dart.src__typed_buffer;
-  var serialization = Object.create(dart.library);
-  var $buffer = dartx.buffer;
-  var $asUint8List = dartx.asUint8List;
-  var $setUint16 = dartx.setUint16;
-  var $setUint32 = dartx.setUint32;
-  var $setInt32 = dartx.setInt32;
-  var $setInt64 = dartx.setInt64;
-  var $setFloat64 = dartx.setFloat64;
-  var $offsetInBytes = dartx.offsetInBytes;
-  var $length = dartx.length;
-  var $modulo = dartx['%'];
-  var $asByteData = dartx.asByteData;
-  var $lengthInBytes = dartx.lengthInBytes;
-  var $getUint8 = dartx.getUint8;
-  var $getUint16 = dartx.getUint16;
-  var $getUint32 = dartx.getUint32;
-  var $getInt32 = dartx.getInt32;
-  var $getInt64 = dartx.getInt64;
-  var $getFloat64 = dartx.getFloat64;
-  var $asInt32List = dartx.asInt32List;
-  var $asInt64List = dartx.asInt64List;
-  var $asFloat64List = dartx.asFloat64List;
+  const types = packages__google_sign_in_platform_interface__src__types$46dart.src__types;
+  const google_sign_in_platform_interface = packages__google_sign_in_platform_interface__src__utils$46dart.google_sign_in_platform_interface;
+  const common = packages__google_sign_in__src__common$46dart.src__common;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  var google_sign_in = Object.create(dart.library);
+  var $_equals = dartx._equals;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    _: () => T
+    IdentityMapOfString$String: () => (T.IdentityMapOfString$String = dart.constFn(_js_helper.IdentityMap$(core.String, core.String)))(),
+    MapOfString$String: () => (T.MapOfString$String = dart.constFn(core.Map$(core.String, core.String)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    GoogleSignInAccountN: () => (T.GoogleSignInAccountN = dart.constFn(dart.nullable(google_sign_in.GoogleSignInAccount)))(),
+    StreamControllerOfGoogleSignInAccountN: () => (T.StreamControllerOfGoogleSignInAccountN = dart.constFn(async.StreamController$(T.GoogleSignInAccountN())))(),
+    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
+    CompleterOfvoid: () => (T.CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))(),
+    FutureOrOfGoogleSignInAccountN: () => (T.FutureOrOfGoogleSignInAccountN = dart.constFn(async.FutureOr$(T.GoogleSignInAccountN())))(),
+    voidToFutureOrOfGoogleSignInAccountN: () => (T.voidToFutureOrOfGoogleSignInAccountN = dart.constFn(dart.fnType(T.FutureOrOfGoogleSignInAccountN(), [dart.void])))(),
+    dynamicTobool: () => (T.dynamicTobool = dart.constFn(dart.fnType(core.bool, [dart.dynamic])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -45,263 +37,395 @@ define(['dart_sdk', 'packages/typed_data/src/typed_buffer.dart'], (function load
   const CT = Object.create({
     _: () => (C, CT)
   });
-  var C = [];
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: types.SignInOption.prototype,
+        [_name]: "SignInOption.standard",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([], core.String);
+    }
+  }, false);
+  var C = Array(2).fill(void 0);
   var I = [
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/foundation/serialization.dart",
-    "package:flutter/src/foundation/serialization.dart"
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-5.0.2/lib/google_sign_in.dart",
+    "package:google_sign_in/google_sign_in.dart"
   ];
-  var __WriteBuffer__eightBytesAsList = dart.privateName(serialization, "_#WriteBuffer#_eightBytesAsList");
-  var _buffer = dart.privateName(serialization, "_buffer");
-  var _eightBytes = dart.privateName(serialization, "_eightBytes");
-  var _eightBytesAsList = dart.privateName(serialization, "_eightBytesAsList");
-  var _alignTo = dart.privateName(serialization, "_alignTo");
-  serialization.WriteBuffer = class WriteBuffer extends core.Object {
-    get [_eightBytesAsList]() {
-      let t0;
-      t0 = this[__WriteBuffer__eightBytesAsList];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_eightBytesAsList")) : t0;
+  var _data$ = dart.privateName(google_sign_in, "_data");
+  google_sign_in.GoogleSignInAuthentication = class GoogleSignInAuthentication extends core.Object {
+    get idToken() {
+      return this[_data$].idToken;
     }
-    set [_eightBytesAsList](t0) {
-      if (t0 == null) dart.nullFailed(I[0], 25, 18, "null");
-      this[__WriteBuffer__eightBytesAsList] = t0;
+    get accessToken() {
+      return this[_data$].accessToken;
     }
-    putUint8(byte) {
-      if (byte == null) dart.nullFailed(I[0], 28, 21, "byte");
-      dart.nullCheck(this[_buffer]).add(byte);
+    get serverAuthCode() {
+      return this[_data$].serverAuthCode;
     }
-    putUint16(value, opts) {
-      let t1;
-      if (value == null) dart.nullFailed(I[0], 33, 22, "value");
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_eightBytes][$setUint16](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 2);
-    }
-    putUint32(value, opts) {
-      let t1;
-      if (value == null) dart.nullFailed(I[0], 39, 22, "value");
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_eightBytes][$setUint32](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 4);
-    }
-    putInt32(value, opts) {
-      let t1;
-      if (value == null) dart.nullFailed(I[0], 45, 21, "value");
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_eightBytes][$setInt32](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 4);
-    }
-    putInt64(value, opts) {
-      let t1;
-      if (value == null) dart.nullFailed(I[0], 51, 21, "value");
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_eightBytes][$setInt64](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 8);
-    }
-    putFloat64(value, opts) {
-      let t1;
-      if (value == null) dart.nullFailed(I[0], 57, 26, "value");
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_alignTo](8);
-      this[_eightBytes][$setFloat64](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList]);
-    }
-    putUint8List(list) {
-      if (list == null) dart.nullFailed(I[0], 64, 31, "list");
-      dart.nullCheck(this[_buffer]).addAll(list);
-    }
-    putInt32List(list) {
-      if (list == null) dart.nullFailed(I[0], 69, 31, "list");
-      this[_alignTo](4);
-      dart.nullCheck(this[_buffer]).addAll(list[$buffer][$asUint8List](list[$offsetInBytes], 4 * dart.notNull(list[$length])));
-    }
-    putInt64List(list) {
-      if (list == null) dart.nullFailed(I[0], 75, 31, "list");
-      this[_alignTo](8);
-      dart.nullCheck(this[_buffer]).addAll(list[$buffer][$asUint8List](list[$offsetInBytes], 8 * dart.notNull(list[$length])));
-    }
-    putFloat64List(list) {
-      if (list == null) dart.nullFailed(I[0], 81, 35, "list");
-      this[_alignTo](8);
-      dart.nullCheck(this[_buffer]).addAll(list[$buffer][$asUint8List](list[$offsetInBytes], 8 * dart.notNull(list[$length])));
-    }
-    [_alignTo](alignment) {
-      if (alignment == null) dart.nullFailed(I[0], 86, 21, "alignment");
-      let mod = dart.nullCheck(this[_buffer]).length[$modulo](alignment);
-      if (mod !== 0) {
-        for (let i = 0; i < dart.notNull(alignment) - mod; i = i + 1)
-          dart.nullCheck(this[_buffer]).add(0);
-      }
-    }
-    done() {
-      let result = dart.nullCheck(this[_buffer]).buffer[$asByteData](0, dart.nullCheck(this[_buffer]).lengthInBytes);
-      this[_buffer] = null;
-      return result;
+    toString() {
+      return "GoogleSignInAuthentication:" + dart.str(this[_data$]);
     }
   };
-  (serialization.WriteBuffer.new = function() {
-    this[__WriteBuffer__eightBytesAsList] = null;
-    this[_buffer] = new typed_buffer.Uint8Buffer.new();
-    this[_eightBytes] = _native_typed_data.NativeByteData.new(8);
-    this[_eightBytesAsList] = this[_eightBytes][$buffer][$asUint8List]();
-  }).prototype = serialization.WriteBuffer.prototype;
-  dart.addTypeTests(serialization.WriteBuffer);
-  dart.addTypeCaches(serialization.WriteBuffer);
-  dart.setMethodSignature(serialization.WriteBuffer, () => ({
-    __proto__: dart.getMethods(serialization.WriteBuffer.__proto__),
-    putUint8: dart.fnType(dart.void, [core.int]),
-    putUint16: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
-    putUint32: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
-    putInt32: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
-    putInt64: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
-    putFloat64: dart.fnType(dart.void, [core.double], {endian: dart.nullable(typed_data.Endian)}, {}),
-    putUint8List: dart.fnType(dart.void, [typed_data.Uint8List]),
-    putInt32List: dart.fnType(dart.void, [typed_data.Int32List]),
-    putInt64List: dart.fnType(dart.void, [typed_data.Int64List]),
-    putFloat64List: dart.fnType(dart.void, [typed_data.Float64List]),
-    [_alignTo]: dart.fnType(dart.void, [core.int]),
-    done: dart.fnType(typed_data.ByteData, [])
-  }));
-  dart.setGetterSignature(serialization.WriteBuffer, () => ({
-    __proto__: dart.getGetters(serialization.WriteBuffer.__proto__),
-    [_eightBytesAsList]: typed_data.Uint8List
-  }));
-  dart.setSetterSignature(serialization.WriteBuffer, () => ({
-    __proto__: dart.getSetters(serialization.WriteBuffer.__proto__),
-    [_eightBytesAsList]: typed_data.Uint8List
-  }));
-  dart.setLibraryUri(serialization.WriteBuffer, I[1]);
-  dart.setFieldSignature(serialization.WriteBuffer, () => ({
-    __proto__: dart.getFields(serialization.WriteBuffer.__proto__),
-    [_buffer]: dart.fieldType(dart.nullable(typed_buffer.Uint8Buffer)),
-    [_eightBytes]: dart.finalFieldType(typed_data.ByteData),
-    [__WriteBuffer__eightBytesAsList]: dart.fieldType(dart.nullable(typed_data.Uint8List))
-  }));
-  var data$ = dart.privateName(serialization, "ReadBuffer.data");
-  var _position = dart.privateName(serialization, "_position");
-  serialization.ReadBuffer = class ReadBuffer extends core.Object {
-    get data() {
-      return this[data$];
-    }
-    set data(value) {
-      super.data = value;
-    }
-    get hasRemaining() {
-      return dart.notNull(this[_position]) < dart.notNull(this.data[$lengthInBytes]);
-    }
-    getUint8() {
-      let t1;
-      return this.data[$getUint8]((t1 = this[_position], this[_position] = dart.notNull(t1) + 1, t1));
-    }
-    getUint16(opts) {
-      let t1;
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      let value = this.data[$getUint16](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      this[_position] = dart.notNull(this[_position]) + 2;
-      return value;
-    }
-    getUint32(opts) {
-      let t1;
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      let value = this.data[$getUint32](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      this[_position] = dart.notNull(this[_position]) + 4;
-      return value;
-    }
-    getInt32(opts) {
-      let t1;
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      let value = this.data[$getInt32](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      this[_position] = dart.notNull(this[_position]) + 4;
-      return value;
-    }
-    getInt64(opts) {
-      let t1;
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      let value = this.data[$getInt64](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      this[_position] = dart.notNull(this[_position]) + 8;
-      return value;
-    }
-    getFloat64(opts) {
-      let t1;
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_alignTo](8);
-      let value = this.data[$getFloat64](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      this[_position] = dart.notNull(this[_position]) + 8;
-      return value;
-    }
-    getUint8List(length) {
-      if (length == null) dart.nullFailed(I[0], 161, 30, "length");
-      let list = this.data[$buffer][$asUint8List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
-      this[_position] = dart.notNull(this[_position]) + dart.notNull(length);
-      return list;
-    }
-    getInt32List(length) {
-      if (length == null) dart.nullFailed(I[0], 168, 30, "length");
-      this[_alignTo](4);
-      let list = this.data[$buffer][$asInt32List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
-      this[_position] = dart.notNull(this[_position]) + 4 * dart.notNull(length);
-      return list;
-    }
-    getInt64List(length) {
-      if (length == null) dart.nullFailed(I[0], 176, 30, "length");
-      this[_alignTo](8);
-      let list = this.data[$buffer][$asInt64List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
-      this[_position] = dart.notNull(this[_position]) + 8 * dart.notNull(length);
-      return list;
-    }
-    getFloat64List(length) {
-      if (length == null) dart.nullFailed(I[0], 184, 34, "length");
-      this[_alignTo](8);
-      let list = this.data[$buffer][$asFloat64List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
-      this[_position] = dart.notNull(this[_position]) + 8 * dart.notNull(length);
-      return list;
-    }
-    [_alignTo](alignment) {
-      if (alignment == null) dart.nullFailed(I[0], 191, 21, "alignment");
-      let mod = this[_position][$modulo](alignment);
-      if (mod !== 0) this[_position] = dart.notNull(this[_position]) + (dart.notNull(alignment) - mod);
-    }
-  };
-  (serialization.ReadBuffer.new = function(data) {
-    if (data == null) dart.nullFailed(I[0], 107, 19, "data");
-    this[_position] = 0;
-    this[data$] = data;
-    if (!(data != null)) dart.assertFailed(null, I[0], 108, 14, "data != null");
+  (google_sign_in.GoogleSignInAuthentication.__ = function(_data) {
+    if (_data == null) dart.nullFailed(I[0], 20, 37, "_data");
+    this[_data$] = _data;
     ;
-  }).prototype = serialization.ReadBuffer.prototype;
-  dart.addTypeTests(serialization.ReadBuffer);
-  dart.addTypeCaches(serialization.ReadBuffer);
-  dart.setMethodSignature(serialization.ReadBuffer, () => ({
-    __proto__: dart.getMethods(serialization.ReadBuffer.__proto__),
-    getUint8: dart.fnType(core.int, []),
-    getUint16: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
-    getUint32: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
-    getInt32: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
-    getInt64: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
-    getFloat64: dart.fnType(core.double, [], {endian: dart.nullable(typed_data.Endian)}, {}),
-    getUint8List: dart.fnType(typed_data.Uint8List, [core.int]),
-    getInt32List: dart.fnType(typed_data.Int32List, [core.int]),
-    getInt64List: dart.fnType(typed_data.Int64List, [core.int]),
-    getFloat64List: dart.fnType(typed_data.Float64List, [core.int]),
-    [_alignTo]: dart.fnType(dart.void, [core.int])
+  }).prototype = google_sign_in.GoogleSignInAuthentication.prototype;
+  dart.addTypeTests(google_sign_in.GoogleSignInAuthentication);
+  dart.addTypeCaches(google_sign_in.GoogleSignInAuthentication);
+  dart.setGetterSignature(google_sign_in.GoogleSignInAuthentication, () => ({
+    __proto__: dart.getGetters(google_sign_in.GoogleSignInAuthentication.__proto__),
+    idToken: dart.nullable(core.String),
+    accessToken: dart.nullable(core.String),
+    serverAuthCode: dart.nullable(core.String)
   }));
-  dart.setGetterSignature(serialization.ReadBuffer, () => ({
-    __proto__: dart.getGetters(serialization.ReadBuffer.__proto__),
-    hasRemaining: core.bool
+  dart.setLibraryUri(google_sign_in.GoogleSignInAuthentication, I[1]);
+  dart.setFieldSignature(google_sign_in.GoogleSignInAuthentication, () => ({
+    __proto__: dart.getFields(google_sign_in.GoogleSignInAuthentication.__proto__),
+    [_data$]: dart.finalFieldType(types.GoogleSignInTokenData)
   }));
-  dart.setLibraryUri(serialization.ReadBuffer, I[1]);
-  dart.setFieldSignature(serialization.ReadBuffer, () => ({
-    __proto__: dart.getFields(serialization.ReadBuffer.__proto__),
-    data: dart.finalFieldType(typed_data.ByteData),
-    [_position]: dart.fieldType(core.int)
+  dart.defineExtensionMethods(google_sign_in.GoogleSignInAuthentication, ['toString']);
+  var displayName = dart.privateName(google_sign_in, "GoogleSignInAccount.displayName");
+  var email = dart.privateName(google_sign_in, "GoogleSignInAccount.email");
+  var id = dart.privateName(google_sign_in, "GoogleSignInAccount.id");
+  var photoUrl = dart.privateName(google_sign_in, "GoogleSignInAccount.photoUrl");
+  var _googleSignIn$ = dart.privateName(google_sign_in, "_googleSignIn");
+  var _idToken = dart.privateName(google_sign_in, "_idToken");
+  google_sign_in.GoogleSignInAccount = class GoogleSignInAccount extends core.Object {
+    get displayName() {
+      return this[displayName];
+    }
+    set displayName(value) {
+      super.displayName = value;
+    }
+    get email() {
+      return this[email];
+    }
+    set email(value) {
+      super.email = value;
+    }
+    get id() {
+      return this[id];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get photoUrl() {
+      return this[photoUrl];
+    }
+    set photoUrl(value) {
+      super.photoUrl = value;
+    }
+    get authentication() {
+      return async.async(google_sign_in.GoogleSignInAuthentication, (function* authentication() {
+        if (!dart.equals(this[_googleSignIn$].currentUser, this)) {
+          dart.throw(new core.StateError.new("User is no longer signed in."));
+        }
+        let response = (yield google_sign_in_platform_interface.GoogleSignInPlatform.instance.getTokens({email: this.email, shouldRecoverAuth: true}));
+        if (response.idToken == null) {
+          response.idToken = this[_idToken];
+        }
+        return new google_sign_in.GoogleSignInAuthentication.__(response);
+      }).bind(this));
+    }
+    get authHeaders() {
+      return async.async(T.MapOfString$String(), (function* authHeaders() {
+        let token = (yield this.authentication).accessToken;
+        return new (T.IdentityMapOfString$String()).from(["Authorization", "Bearer " + dart.str(token), "X-Goog-AuthUser", "0"]);
+      }).bind(this));
+    }
+    clearAuthCache() {
+      return async.async(dart.void, (function* clearAuthCache() {
+        let token = dart.nullCheck((yield this.authentication).accessToken);
+        yield google_sign_in_platform_interface.GoogleSignInPlatform.instance.clearAuthCache({token: token});
+      }).bind(this));
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!google_sign_in.GoogleSignInAccount.is(other)) return false;
+      let otherAccount = other;
+      return this.displayName == otherAccount.displayName && this.email == otherAccount.email && this.id == otherAccount.id && this.photoUrl == otherAccount.photoUrl && this[_idToken] == otherAccount[_idToken];
+    }
+    get hashCode() {
+      return ui.hashValues(this.displayName, this.email, this.id, this.photoUrl, this[_idToken]);
+    }
+    toString() {
+      let data = new (T.IdentityMapOfString$dynamic()).from(["displayName", this.displayName, "email", this.email, "id", this.id, "photoUrl", this.photoUrl]);
+      return "GoogleSignInAccount:" + dart.str(data);
+    }
+  };
+  (google_sign_in.GoogleSignInAccount.__ = function(_googleSignIn, data) {
+    if (_googleSignIn == null) dart.nullFailed(I[0], 42, 30, "_googleSignIn");
+    if (data == null) dart.nullFailed(I[0], 42, 66, "data");
+    this[_googleSignIn$] = _googleSignIn;
+    this[displayName] = data.displayName;
+    this[email] = data.email;
+    this[id] = data.id;
+    this[photoUrl] = data.photoUrl;
+    this[_idToken] = data.idToken;
+    if (!(this.id != null)) dart.assertFailed(null, I[0], 48, 12, "id != null");
+  }).prototype = google_sign_in.GoogleSignInAccount.prototype;
+  dart.addTypeTests(google_sign_in.GoogleSignInAccount);
+  dart.addTypeCaches(google_sign_in.GoogleSignInAccount);
+  google_sign_in.GoogleSignInAccount[dart.implements] = () => [common.GoogleIdentity];
+  dart.setMethodSignature(google_sign_in.GoogleSignInAccount, () => ({
+    __proto__: dart.getMethods(google_sign_in.GoogleSignInAccount.__proto__),
+    clearAuthCache: dart.fnType(async.Future$(dart.void), []),
+    _equals: dart.fnType(core.bool, [dart.dynamic]),
+    [$_equals]: dart.fnType(core.bool, [dart.dynamic])
   }));
-  dart.trackLibraries("packages/flutter/src/foundation/serialization.dart", {
-    "package:flutter/src/foundation/serialization.dart": serialization
+  dart.setGetterSignature(google_sign_in.GoogleSignInAccount, () => ({
+    __proto__: dart.getGetters(google_sign_in.GoogleSignInAccount.__proto__),
+    authentication: async.Future$(google_sign_in.GoogleSignInAuthentication),
+    authHeaders: async.Future$(core.Map$(core.String, core.String))
+  }));
+  dart.setLibraryUri(google_sign_in.GoogleSignInAccount, I[1]);
+  dart.setFieldSignature(google_sign_in.GoogleSignInAccount, () => ({
+    __proto__: dart.getFields(google_sign_in.GoogleSignInAccount.__proto__),
+    displayName: dart.finalFieldType(dart.nullable(core.String)),
+    email: dart.finalFieldType(core.String),
+    id: dart.finalFieldType(core.String),
+    photoUrl: dart.finalFieldType(dart.nullable(core.String)),
+    [_idToken]: dart.finalFieldType(dart.nullable(core.String)),
+    [_googleSignIn$]: dart.finalFieldType(google_sign_in.GoogleSignIn)
+  }));
+  dart.defineExtensionMethods(google_sign_in.GoogleSignInAccount, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(google_sign_in.GoogleSignInAccount, ['hashCode']);
+  dart.defineLazy(google_sign_in.GoogleSignInAccount, {
+    /*google_sign_in.GoogleSignInAccount.kFailedToRecoverAuthError*/get kFailedToRecoverAuthError() {
+      return "failed_to_recover_auth";
+    },
+    /*google_sign_in.GoogleSignInAccount.kUserRecoverableAuthError*/get kUserRecoverableAuthError() {
+      return "user_recoverable_auth";
+    }
+  }, false);
+  var signInOption$ = dart.privateName(google_sign_in, "GoogleSignIn.signInOption");
+  var scopes$ = dart.privateName(google_sign_in, "GoogleSignIn.scopes");
+  var hostedDomain$ = dart.privateName(google_sign_in, "GoogleSignIn.hostedDomain");
+  var clientId$ = dart.privateName(google_sign_in, "GoogleSignIn.clientId");
+  var _name = dart.privateName(types, "_name");
+  var _currentUserController = dart.privateName(google_sign_in, "_currentUserController");
+  var _initialization = dart.privateName(google_sign_in, "_initialization");
+  var _lastMethodCall = dart.privateName(google_sign_in, "_lastMethodCall");
+  var _currentUser = dart.privateName(google_sign_in, "_currentUser");
+  var _ensureInitialized = dart.privateName(google_sign_in, "_ensureInitialized");
+  var _setCurrentUser = dart.privateName(google_sign_in, "_setCurrentUser");
+  var _callMethod = dart.privateName(google_sign_in, "_callMethod");
+  var _addMethodCall = dart.privateName(google_sign_in, "_addMethodCall");
+  google_sign_in.GoogleSignIn = class GoogleSignIn extends core.Object {
+    get signInOption() {
+      return this[signInOption$];
+    }
+    set signInOption(value) {
+      super.signInOption = value;
+    }
+    get scopes() {
+      return this[scopes$];
+    }
+    set scopes(value) {
+      super.scopes = value;
+    }
+    get hostedDomain() {
+      return this[hostedDomain$];
+    }
+    set hostedDomain(value) {
+      super.hostedDomain = value;
+    }
+    get clientId() {
+      return this[clientId$];
+    }
+    set clientId(value) {
+      super.clientId = value;
+    }
+    static standard(opts) {
+      let scopes = opts && 'scopes' in opts ? opts.scopes : C[1] || CT.C1;
+      if (scopes == null) dart.nullFailed(I[0], 176, 18, "scopes");
+      let hostedDomain = opts && 'hostedDomain' in opts ? opts.hostedDomain : null;
+      return new google_sign_in.GoogleSignIn.new({signInOption: types.SignInOption.standard, scopes: scopes, hostedDomain: hostedDomain});
+    }
+    static games() {
+      return new google_sign_in.GoogleSignIn.new({signInOption: types.SignInOption.games});
+    }
+    get onCurrentUserChanged() {
+      return this[_currentUserController].stream;
+    }
+    [_callMethod](method) {
+      if (method == null) dart.nullFailed(I[0], 230, 53, "method");
+      return async.async(T.GoogleSignInAccountN(), (function* _callMethod() {
+        yield this[_ensureInitialized]();
+        let response = (yield dart.dcall(method, []));
+        return this[_setCurrentUser](response != null && types.GoogleSignInUserData.is(response) ? new google_sign_in.GoogleSignInAccount.__(this, response) : null);
+      }).bind(this));
+    }
+    [_setCurrentUser](currentUser) {
+      if (!dart.equals(currentUser, this[_currentUser])) {
+        this[_currentUser] = currentUser;
+        this[_currentUserController].add(this[_currentUser]);
+      }
+      return this[_currentUser];
+    }
+    [_ensureInitialized]() {
+      let t1, t0;
+      t0 = this[_initialization];
+      return t0 == null ? this[_initialization] = (t1 = google_sign_in_platform_interface.GoogleSignInPlatform.instance.init({signInOption: this.signInOption, scopes: this.scopes, hostedDomain: this.hostedDomain, clientId: this.clientId}), (() => {
+        t1.catchError(dart.fn(_ => {
+          this[_initialization] = null;
+        }, T.dynamicToNull()));
+        return t1;
+      })()) : t0;
+    }
+    static _waitFor(future) {
+      if (future == null) dart.nullFailed(I[0], 265, 45, "future");
+      let completer = T.CompleterOfvoid().new();
+      future.whenComplete(dart.bind(completer, 'complete')).catchError(dart.fn(_ => {
+      }, T.dynamicToNull()));
+      return completer.future;
+    }
+    [_addMethodCall](method, opts) {
+      if (method == null) dart.nullFailed(I[0], 283, 14, "method");
+      let canSkipCall = opts && 'canSkipCall' in opts ? opts.canSkipCall : false;
+      if (canSkipCall == null) dart.nullFailed(I[0], 284, 10, "canSkipCall");
+      return async.async(T.GoogleSignInAccountN(), (function* _addMethodCall() {
+        let response = null;
+        if (this[_lastMethodCall] == null) {
+          response = this[_callMethod](method);
+        } else {
+          response = dart.nullCheck(this[_lastMethodCall]).then(T.GoogleSignInAccountN(), dart.fn(_ => {
+            if (dart.test(canSkipCall) && this[_currentUser] != null) {
+              return this[_currentUser];
+            }
+            return this[_callMethod](method);
+          }, T.voidToFutureOrOfGoogleSignInAccountN()));
+        }
+        this[_lastMethodCall] = google_sign_in.GoogleSignIn._waitFor(response);
+        return response;
+      }).bind(this));
+    }
+    get currentUser() {
+      return this[_currentUser];
+    }
+    signInSilently(opts) {
+      let suppressErrors = opts && 'suppressErrors' in opts ? opts.suppressErrors : true;
+      if (suppressErrors == null) dart.nullFailed(I[0], 327, 10, "suppressErrors");
+      return async.async(T.GoogleSignInAccountN(), (function* signInSilently() {
+        try {
+          return yield this[_addMethodCall](dart.bind(google_sign_in_platform_interface.GoogleSignInPlatform.instance, 'signInSilently'), {canSkipCall: true});
+        } catch (e) {
+          let _ = dart.getThrown(e);
+          if (core.Object.is(_)) {
+            if (dart.test(suppressErrors)) {
+              return null;
+            } else {
+              dart.rethrow(e);
+            }
+          } else
+            throw e;
+        }
+      }).bind(this));
+    }
+    isSignedIn() {
+      return async.async(core.bool, (function* isSignedIn() {
+        yield this[_ensureInitialized]();
+        return google_sign_in_platform_interface.GoogleSignInPlatform.instance.isSignedIn();
+      }).bind(this));
+    }
+    signIn() {
+      let result = this[_addMethodCall](dart.bind(google_sign_in_platform_interface.GoogleSignInPlatform.instance, 'signIn'), {canSkipCall: true});
+      function isCanceled(error) {
+        return message_codec.PlatformException.is(error) && error.code === "sign_in_canceled";
+      }
+      dart.fn(isCanceled, T.dynamicTobool());
+      return result.catchError(dart.fn(_ => null, T.dynamicToNull()), {test: isCanceled});
+    }
+    signOut() {
+      return this[_addMethodCall](dart.bind(google_sign_in_platform_interface.GoogleSignInPlatform.instance, 'signOut'));
+    }
+    disconnect() {
+      return this[_addMethodCall](dart.bind(google_sign_in_platform_interface.GoogleSignInPlatform.instance, 'disconnect'));
+    }
+    requestScopes(scopes) {
+      if (scopes == null) dart.nullFailed(I[0], 375, 43, "scopes");
+      return async.async(core.bool, (function* requestScopes() {
+        yield this[_ensureInitialized]();
+        return google_sign_in_platform_interface.GoogleSignInPlatform.instance.requestScopes(scopes);
+      }).bind(this));
+    }
+  };
+  (google_sign_in.GoogleSignIn.new = function(opts) {
+    let signInOption = opts && 'signInOption' in opts ? opts.signInOption : C[0] || CT.C0;
+    if (signInOption == null) dart.nullFailed(I[0], 168, 10, "signInOption");
+    let scopes = opts && 'scopes' in opts ? opts.scopes : C[1] || CT.C1;
+    if (scopes == null) dart.nullFailed(I[0], 169, 10, "scopes");
+    let hostedDomain = opts && 'hostedDomain' in opts ? opts.hostedDomain : null;
+    let clientId = opts && 'clientId' in opts ? opts.clientId : null;
+    this[_currentUserController] = T.StreamControllerOfGoogleSignInAccountN().broadcast();
+    this[_initialization] = null;
+    this[_lastMethodCall] = null;
+    this[_currentUser] = null;
+    this[signInOption$] = signInOption;
+    this[scopes$] = scopes;
+    this[hostedDomain$] = hostedDomain;
+    this[clientId$] = clientId;
+    ;
+  }).prototype = google_sign_in.GoogleSignIn.prototype;
+  dart.addTypeTests(google_sign_in.GoogleSignIn);
+  dart.addTypeCaches(google_sign_in.GoogleSignIn);
+  dart.setMethodSignature(google_sign_in.GoogleSignIn, () => ({
+    __proto__: dart.getMethods(google_sign_in.GoogleSignIn.__proto__),
+    [_callMethod]: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), [core.Function]),
+    [_setCurrentUser]: dart.fnType(dart.nullable(google_sign_in.GoogleSignInAccount), [dart.nullable(google_sign_in.GoogleSignInAccount)]),
+    [_ensureInitialized]: dart.fnType(async.Future$(dart.void), []),
+    [_addMethodCall]: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), [core.Function], {canSkipCall: core.bool}, {}),
+    signInSilently: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), [], {suppressErrors: core.bool}, {}),
+    isSignedIn: dart.fnType(async.Future$(core.bool), []),
+    signIn: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), []),
+    signOut: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), []),
+    disconnect: dart.fnType(async.Future$(dart.nullable(google_sign_in.GoogleSignInAccount)), []),
+    requestScopes: dart.fnType(async.Future$(core.bool), [core.List$(core.String)])
+  }));
+  dart.setGetterSignature(google_sign_in.GoogleSignIn, () => ({
+    __proto__: dart.getGetters(google_sign_in.GoogleSignIn.__proto__),
+    onCurrentUserChanged: async.Stream$(dart.nullable(google_sign_in.GoogleSignInAccount)),
+    currentUser: dart.nullable(google_sign_in.GoogleSignInAccount)
+  }));
+  dart.setLibraryUri(google_sign_in.GoogleSignIn, I[1]);
+  dart.setFieldSignature(google_sign_in.GoogleSignIn, () => ({
+    __proto__: dart.getFields(google_sign_in.GoogleSignIn.__proto__),
+    signInOption: dart.finalFieldType(types.SignInOption),
+    scopes: dart.finalFieldType(core.List$(core.String)),
+    hostedDomain: dart.finalFieldType(dart.nullable(core.String)),
+    clientId: dart.finalFieldType(dart.nullable(core.String)),
+    [_currentUserController]: dart.fieldType(async.StreamController$(dart.nullable(google_sign_in.GoogleSignInAccount))),
+    [_initialization]: dart.fieldType(dart.nullable(async.Future$(dart.void))),
+    [_lastMethodCall]: dart.fieldType(dart.nullable(async.Future$(dart.void))),
+    [_currentUser]: dart.fieldType(dart.nullable(google_sign_in.GoogleSignInAccount))
+  }));
+  dart.defineLazy(google_sign_in.GoogleSignIn, {
+    /*google_sign_in.GoogleSignIn.kSignInRequiredError*/get kSignInRequiredError() {
+      return "sign_in_required";
+    },
+    /*google_sign_in.GoogleSignIn.kSignInCanceledError*/get kSignInCanceledError() {
+      return "sign_in_canceled";
+    },
+    /*google_sign_in.GoogleSignIn.kNetworkError*/get kNetworkError() {
+      return "network_error";
+    },
+    /*google_sign_in.GoogleSignIn.kSignInFailedError*/get kSignInFailedError() {
+      return "sign_in_failed";
+    }
+  }, false);
+  dart.trackLibraries("packages/google_sign_in/google_sign_in.dart", {
+    "package:google_sign_in/google_sign_in.dart": google_sign_in
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["serialization.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/foundation/serialization.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["google_sign_in.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/google_sign_in/google_sign_in.dart.lib.js"}');
   // Exports:
   return {
-    src__foundation__serialization: serialization
+    google_sign_in: google_sign_in
   };
 }));
 
-//# sourceMappingURL=serialization.dart.lib.js.map
+//# sourceMappingURL=google_sign_in.dart.lib.js.map

@@ -86,7 +86,7 @@ define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter
         [_Location_name]: null,
         [_Location_column]: 37,
         [_Location_line]: 46,
-        [_Location_file]: "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
       });
     },
     get C6() {
@@ -135,7 +135,7 @@ define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter
         [_Location_name]: null,
         [_Location_column]: 13,
         [_Location_line]: 172,
-        [_Location_file]: "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
       });
     },
     get C14() {
@@ -178,13 +178,13 @@ define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 167,
-        [_Location_file]: "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
+        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
       });
     }
   }, false);
   var C = Array(17).fill(void 0);
   var I = [
-    "file:///C:/Users/mmase/Apps/flutter/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart",
+    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart",
     "package:animated_text_kit/src/animated_text.dart"
   ];
   var text$ = dart.privateName(animated_text, "AnimatedText.text");
@@ -596,7 +596,7 @@ define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter
   dart.trackLibraries("packages/animated_text_kit/src/animated_text.dart", {
     "package:animated_text_kit/src/animated_text.dart": animated_text
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["animated_text.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../../packages/animated_text_kit/src/animated_text.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["animated_text.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/animated_text_kit/src/animated_text.dart.lib.js"}');
   // Exports:
   return {
     src__animated_text: animated_text

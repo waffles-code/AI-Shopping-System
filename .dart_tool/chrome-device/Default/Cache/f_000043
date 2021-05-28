@@ -1,40 +1,38 @@
-define(['dart_sdk', 'packages/flutter/src/gestures/recognizer.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/gestures/tap.dart', 'packages/flutter/src/gestures/monodrag.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/services/haptic_feedback.dart', 'packages/flutter/src/foundation/_platform_web.dart', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/flutter/src/gestures/drag_details.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/cupertino/thumb_painter.dart', 'packages/flutter/src/painting/box_shadow.dart', 'packages/flutter/src/rendering/proxy_box.dart'], (function load__packages__flutter__src__cupertino__switch_dart(dart_sdk, packages__flutter__src__gestures__recognizer$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__gestures__tap$46dart, packages__flutter__src__gestures__monodrag$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__services__haptic_feedback$46dart, packages__flutter__src__foundation___platform_web$46dart, packages__flutter__src__cupertino__text_theme$46dart, packages__flutter__src__gestures__drag_details$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__cupertino__thumb_painter$46dart, packages__flutter__src__painting__box_shadow$46dart, packages__flutter__src__rendering__proxy_box$46dart) {
+define(['dart_sdk', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/aishop/icons/icons.dart', 'packages/aishop/utils/wishlist.dart', 'packages/flutter/src/material/elevated_button.dart', 'packages/aishop/utils/cart.dart', 'packages/flutter/src/material/icons.dart'], (function load__packages__aishop__widgets__modal_model_dart(dart_sdk, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__widgets__icon$46dart, packages__aishop__icons__icons$46dart, packages__aishop__utils__wishlist$46dart, packages__flutter__src__material__elevated_button$46dart, packages__aishop__utils__cart$46dart, packages__flutter__src__material__icons$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
-  const _internal = dart_sdk._internal;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const dialog = packages__flutter__src__material__icon_button$46dart.src__material__dialog;
+  const material = packages__flutter__src__material__icon_button$46dart.src__material__material;
+  const icon_button = packages__flutter__src__material__icon_button$46dart.src__material__icon_button;
   const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
   const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
   const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
-  const tap = packages__flutter__src__gestures__tap$46dart.src__gestures__tap;
-  const monodrag = packages__flutter__src__gestures__monodrag$46dart.src__gestures__monodrag;
-  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
-  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
-  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
-  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
-  const haptic_feedback = packages__flutter__src__services__haptic_feedback$46dart.src__services__haptic_feedback;
-  const platform = packages__flutter__src__foundation___platform_web$46dart.src__foundation__platform;
-  const colors = packages__flutter__src__cupertino__text_theme$46dart.src__cupertino__colors;
-  const drag_details = packages__flutter__src__gestures__drag_details$46dart.src__gestures__drag_details;
-  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const layer = packages__flutter__src__rendering__layer$46dart.src__rendering__layer;
-  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
-  const thumb_painter = packages__flutter__src__cupertino__thumb_painter$46dart.src__cupertino__thumb_painter;
-  const box_shadow = packages__flutter__src__painting__box_shadow$46dart.src__painting__box_shadow;
-  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
-  var $switch = Object.create(dart.library);
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__aishop__icons__icons$46dart.icons__icons;
+  const wishlist = packages__aishop__utils__wishlist$46dart.utils__wishlist;
+  const elevated_button = packages__flutter__src__material__elevated_button$46dart.src__material__elevated_button;
+  const cart = packages__aishop__utils__cart$46dart.utils__cart;
+  const icons$ = packages__flutter__src__material__icons$46dart.src__material__icons;
+  var modal_model = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    boolTovoid: () => (T.boolTovoid = dart.constFn(dart.fnType(dart.void, [core.bool])))(),
-    ObjectFlagPropertyOfboolTovoid: () => (T.ObjectFlagPropertyOfboolTovoid = dart.constFn(diagnostics.ObjectFlagProperty$(T.boolTovoid())))(),
     VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    PaintingContextAndOffsetTovoid: () => (T.PaintingContextAndOffsetTovoid = dart.constFn(dart.fnType(dart.void, [object.PaintingContext, ui.Offset])))()
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    BuildContextToCenter: () => (T.BuildContextToCenter = dart.constFn(dart.fnType(basic.Center, [framework.BuildContext])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -49,106 +47,112 @@ define(['dart_sdk', 'packages/flutter/src/gestures/recognizer.dart', 'packages/f
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: recognizer.DragStartBehavior.prototype,
-        [_name]: "DragStartBehavior.start",
-        index: 1
-      });
-    },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name$]: "TextDirection.rtl",
-        index: 0
-      });
-    },
     get C2() {
       return C[2] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name$]: "TextDirection.ltr",
-        index: 1
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "src",
+        [_Location_column]: 25,
+        [_Location_line]: 33,
+        [_Location_file]: null
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: platform.TargetPlatform.prototype,
-        [_name$0]: "TargetPlatform.iOS",
-        index: 2
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 25,
+        [_Location_line]: 34,
+        [_Location_file]: null
       });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: platform.TargetPlatform.prototype,
-        [_name$0]: "TargetPlatform.android",
-        index: 0
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 25,
+        [_Location_line]: 35,
+        [_Location_file]: null
       });
     },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: platform.TargetPlatform.prototype,
-        [_name$0]: "TargetPlatform.fuchsia",
-        index: 1
-      });
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], widget_inspector._Location);
     },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: platform.TargetPlatform.prototype,
-        [_name$0]: "TargetPlatform.linux",
-        index: 3
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
       });
     },
     get C7() {
       return C[7] = dart.const({
-        __proto__: platform.TargetPlatform.prototype,
-        [_name$0]: "TargetPlatform.macOS",
-        index: 4
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "borderRadius",
+        [_Location_column]: 23,
+        [_Location_line]: 31,
+        [_Location_file]: null
       });
     },
     get C8() {
       return C[8] = dart.const({
-        __proto__: platform.TargetPlatform.prototype,
-        [_name$0]: "TargetPlatform.windows",
-        index: 5
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.constList([C[7] || CT.C7, C[8] || CT.C8], widget_inspector._Location);
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[6] || CT.C6,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
       });
     },
     get C11() {
       return C[11] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "value",
-        [_Location_column]: 9,
-        [_Location_line]: 298,
+        [_Location_name]: "height",
+        [_Location_column]: 23,
+        [_Location_line]: 39,
         [_Location_file]: null
       });
     },
-    get C12() {
-      return C[12] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "activeColor",
-        [_Location_column]: 9,
-        [_Location_line]: 299,
-        [_Location_file]: null
-      });
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11], widget_inspector._Location);
     },
-    get C13() {
-      return C[13] = dart.const({
+    get C9() {
+      return C[9] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "trackColor",
-        [_Location_column]: 9,
-        [_Location_line]: 303,
-        [_Location_file]: null
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 38,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
       });
     },
     get C14() {
       return C[14] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "onChanged",
-        [_Location_column]: 9,
-        [_Location_line]: 304,
+        [_Location_name]: "data",
+        [_Location_column]: 32,
+        [_Location_line]: 42,
         [_Location_file]: null
       });
     },
@@ -156,870 +160,709 @@ define(['dart_sdk', 'packages/flutter/src/gestures/recognizer.dart', 'packages/f
       return C[15] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "textDirection",
-        [_Location_column]: 9,
-        [_Location_line]: 305,
+        [_Location_name]: "style",
+        [_Location_column]: 23,
+        [_Location_line]: 43,
         [_Location_file]: null
       });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 23,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18], widget_inspector._Location);
     },
     get C16() {
       return C[16] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "state",
-        [_Location_column]: 9,
-        [_Location_line]: 306,
-        [_Location_file]: null
-      });
-    },
-    get C10() {
-      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16], widget_inspector._Location);
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_parameterLocations]: C[17] || CT.C17,
         [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 297,
-        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/cupertino/switch.dart"
-      });
-    },
-    get C19() {
-      return C[19] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "opacity",
-        [_Location_column]: 7,
-        [_Location_line]: 296,
-        [_Location_file]: null
-      });
-    },
-    get C20() {
-      return C[20] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 297,
-        [_Location_file]: null
-      });
-    },
-    get C18() {
-      return C[18] = dart.constList([C[19] || CT.C19, C[20] || CT.C20], widget_inspector._Location);
-    },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[18] || CT.C18,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 295,
-        [_Location_file]: "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/cupertino/switch.dart"
+        [_Location_column]: 21,
+        [_Location_line]: 48,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
       });
     },
     get C21() {
       return C[21] = dart.const({
-        __proto__: box.BoxConstraints.prototype,
-        [BoxConstraints_maxHeight]: 39,
-        [BoxConstraints_minHeight]: 39,
-        [BoxConstraints_maxWidth]: 59,
-        [BoxConstraints_minWidth]: 59
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 38,
+        [_Location_line]: 51,
+        [_Location_file]: null
       });
     },
     get C22() {
       return C[22] = dart.const({
-        __proto__: ui.Radius.prototype,
-        [Radius_y]: 15.5,
-        [Radius_x]: 15.5
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 25,
+        [_Location_line]: 52,
+        [_Location_file]: null
       });
     },
-    get C26() {
-      return C[26] = dart.const({
-        __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: 3,
-        [OffsetBase__dx]: 0
-      });
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21, C[22] || CT.C22], widget_inspector._Location);
     },
-    get C27() {
-      return C[27] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 637534208
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 51,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
       });
     },
     get C25() {
       return C[25] = dart.const({
-        __proto__: box_shadow.BoxShadow.prototype,
-        [Shadow_blurRadius]: 8,
-        [Shadow_offset]: C[26] || CT.C26,
-        [Shadow_color]: C[27] || CT.C27,
-        [BoxShadow_spreadRadius]: 0
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 23,
+        [_Location_line]: 57,
+        [_Location_file]: null
       });
     },
-    get C29() {
-      return C[29] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 251658240
+    get C24() {
+      return C[24] = dart.constList([C[25] || CT.C25], widget_inspector._Location);
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 56,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
       });
     },
     get C28() {
       return C[28] = dart.const({
-        __proto__: box_shadow.BoxShadow.prototype,
-        [Shadow_blurRadius]: 1,
-        [Shadow_offset]: C[26] || CT.C26,
-        [Shadow_color]: C[29] || CT.C29,
-        [BoxShadow_spreadRadius]: 0
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 42,
+        [_Location_line]: 59,
+        [_Location_file]: null
       });
     },
-    get C24() {
-      return C[24] = dart.constList([C[25] || CT.C25, C[28] || CT.C28], box_shadow.BoxShadow);
-    },
-    get C30() {
-      return C[30] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294967295.0
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 25,
+        [_Location_line]: 60,
+        [_Location_file]: null
       });
     },
-    get C23() {
-      return C[23] = dart.const({
-        __proto__: thumb_painter.CupertinoThumbPainter.prototype,
-        [CupertinoThumbPainter_shadows]: C[24] || CT.C24,
-        [CupertinoThumbPainter_color]: C[30] || CT.C30
-      });
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28, C[29] || CT.C29], widget_inspector._Location);
     },
-    get C31() {
-      return C[31] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 300000
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 59,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
       });
     },
     get C32() {
       return C[32] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 200000
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 23,
+        [_Location_line]: 65,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.constList([C[32] || CT.C32], widget_inspector._Location);
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[31] || CT.C31,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 64,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 50,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 50
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 70,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36], widget_inspector._Location);
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 69,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 25,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 35,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 27,
+        [_Location_line]: 76,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 27,
+        [_Location_line]: 77,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.constList([C[40] || CT.C40, C[41] || CT.C41, C[42] || CT.C42], widget_inspector._Location);
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[39] || CT.C39,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 74,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 73,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 25,
+        [_Location_line]: 74,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 25,
+        [_Location_line]: 79,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.constList([C[45] || CT.C45, C[46] || CT.C46, C[47] || CT.C47], widget_inspector._Location);
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[44] || CT.C44,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 72,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 25,
+        [_Location_line]: 85,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.constList([C[50] || CT.C50], widget_inspector._Location);
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[49] || CT.C49,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 84,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 33,
+        [_Location_line]: 95,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 27,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 27,
+        [_Location_line]: 97,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.constList([C[53] || CT.C53, C[54] || CT.C54, C[55] || CT.C55], widget_inspector._Location);
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[52] || CT.C52,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 94,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 27,
+        [_Location_line]: 100,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 27,
+        [_Location_line]: 101,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.constList([C[58] || CT.C58, C[59] || CT.C59], widget_inspector._Location);
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[57] || CT.C57,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 99,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 25,
+        [_Location_line]: 88,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 25,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 25,
+        [_Location_line]: 94,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "label",
+        [_Location_column]: 25,
+        [_Location_line]: 99,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.constList([C[62] || CT.C62, C[63] || CT.C63, C[64] || CT.C64, C[65] || CT.C65], widget_inspector._Location);
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[61] || CT.C61,
+        [_Location_name]: null,
+        [_Location_column]: 38,
+        [_Location_line]: 87,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 50,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 108,
+        [_Location_file]: null
+      });
+    },
+    get C68() {
+      return C[68] = dart.constList([C[69] || CT.C69], widget_inspector._Location);
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[68] || CT.C68,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 107,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 37,
+        [_Location_line]: 68,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.constList([C[72] || CT.C72], widget_inspector._Location);
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[71] || CT.C71,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 68,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 68,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.constList([C[75] || CT.C75], widget_inspector._Location);
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[74] || CT.C74,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 67,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 19,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 19,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.constList([C[78] || CT.C78, C[79] || CT.C79], widget_inspector._Location);
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[77] || CT.C77,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 15,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 15,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 15,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 15,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.constList([C[82] || CT.C82, C[83] || CT.C83, C[84] || CT.C84, C[85] || CT.C85, C[86] || CT.C86], widget_inspector._Location);
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[81] || CT.C81,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 21,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 13,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "borderRadius",
+        [_Location_column]: 13,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.constList([C[89] || CT.C89, C[90] || CT.C90, C[91] || CT.C91], widget_inspector._Location);
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[88] || CT.C88,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
+      });
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C93() {
+      return C[93] = dart.constList([C[94] || CT.C94], widget_inspector._Location);
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[93] || CT.C93,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"
       });
     }
   }, false);
-  var C = Array(33).fill(void 0);
-  var I = [
-    "file:///C:/Src/flutter_windows_2.0.4-stable/flutter/packages/flutter/lib/src/cupertino/switch.dart",
-    "package:flutter/src/cupertino/switch.dart"
-  ];
-  var value$ = dart.privateName($switch, "CupertinoSwitch.value");
-  var onChanged$ = dart.privateName($switch, "CupertinoSwitch.onChanged");
-  var activeColor$ = dart.privateName($switch, "CupertinoSwitch.activeColor");
-  var trackColor$ = dart.privateName($switch, "CupertinoSwitch.trackColor");
-  var dragStartBehavior$ = dart.privateName($switch, "CupertinoSwitch.dragStartBehavior");
-  var _name = dart.privateName(recognizer, "_name");
-  $switch.CupertinoSwitch = class CupertinoSwitch extends framework.StatefulWidget {
-    get value() {
-      return this[value$];
-    }
-    set value(value) {
-      super.value = value;
-    }
-    get onChanged() {
-      return this[onChanged$];
-    }
-    set onChanged(value) {
-      super.onChanged = value;
-    }
-    get activeColor() {
-      return this[activeColor$];
-    }
-    set activeColor(value) {
-      super.activeColor = value;
-    }
-    get trackColor() {
-      return this[trackColor$];
-    }
-    set trackColor(value) {
-      super.trackColor = value;
-    }
-    get dragStartBehavior() {
-      return this[dragStartBehavior$];
-    }
-    set dragStartBehavior(value) {
-      super.dragStartBehavior = value;
-    }
-    createState() {
-      return new $switch._CupertinoSwitchState.new();
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 135, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new diagnostics.FlagProperty.new("value", {value: this.value, ifTrue: "on", ifFalse: "off", showName: true}));
-      properties.add(new (T.ObjectFlagPropertyOfboolTovoid()).new("onChanged", this.onChanged, {ifNull: "disabled"}));
-    }
-  };
-  ($switch.CupertinoSwitch.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let value = opts && 'value' in opts ? opts.value : null;
-    if (value == null) dart.nullFailed(I[0], 60, 19, "value");
-    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
-    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : null;
-    let trackColor = opts && 'trackColor' in opts ? opts.trackColor : null;
-    let dragStartBehavior = opts && 'dragStartBehavior' in opts ? opts.dragStartBehavior : C[0] || CT.C0;
-    if (dragStartBehavior == null) dart.nullFailed(I[0], 64, 10, "dragStartBehavior");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[value$] = value;
-    this[onChanged$] = onChanged;
-    this[activeColor$] = activeColor;
-    this[trackColor$] = trackColor;
-    this[dragStartBehavior$] = dragStartBehavior;
-    if (!(value != null)) dart.assertFailed(null, I[0], 65, 15, "value != null");
-    if (!(dragStartBehavior != null)) dart.assertFailed(null, I[0], 66, 15, "dragStartBehavior != null");
-    $switch.CupertinoSwitch.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = $switch.CupertinoSwitch.prototype;
-  dart.addTypeTests($switch.CupertinoSwitch);
-  dart.addTypeCaches($switch.CupertinoSwitch);
-  dart.setMethodSignature($switch.CupertinoSwitch, () => ({
-    __proto__: dart.getMethods($switch.CupertinoSwitch.__proto__),
-    createState: dart.fnType($switch._CupertinoSwitchState, [])
-  }));
-  dart.setLibraryUri($switch.CupertinoSwitch, I[1]);
-  dart.setFieldSignature($switch.CupertinoSwitch, () => ({
-    __proto__: dart.getFields($switch.CupertinoSwitch.__proto__),
-    value: dart.finalFieldType(core.bool),
-    onChanged: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.bool]))),
-    activeColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    trackColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    dragStartBehavior: dart.finalFieldType(recognizer.DragStartBehavior)
-  }));
-  var ___CupertinoSwitchState__tap = dart.privateName($switch, "_#_CupertinoSwitchState#_tap");
-  var ___CupertinoSwitchState__drag = dart.privateName($switch, "_#_CupertinoSwitchState#_drag");
-  var ___CupertinoSwitchState__positionController = dart.privateName($switch, "_#_CupertinoSwitchState#_positionController");
-  var ___CupertinoSwitchState_position = dart.privateName($switch, "_#_CupertinoSwitchState#position");
-  var ___CupertinoSwitchState__reactionController = dart.privateName($switch, "_#_CupertinoSwitchState#_reactionController");
-  var ___CupertinoSwitchState__reaction = dart.privateName($switch, "_#_CupertinoSwitchState#_reaction");
-  var _tap = dart.privateName($switch, "_tap");
-  var _drag = dart.privateName($switch, "_drag");
-  var _positionController = dart.privateName($switch, "_positionController");
-  var _reactionController = dart.privateName($switch, "_reactionController");
-  var _reaction = dart.privateName($switch, "_reaction");
-  var _handleTapDown = dart.privateName($switch, "_handleTapDown");
-  var _handleTapUp = dart.privateName($switch, "_handleTapUp");
-  var _handleTap = dart.privateName($switch, "_handleTap");
-  var _handleTapCancel = dart.privateName($switch, "_handleTapCancel");
-  var _handleDragStart = dart.privateName($switch, "_handleDragStart");
-  var _handleDragUpdate = dart.privateName($switch, "_handleDragUpdate");
-  var _handleDragEnd = dart.privateName($switch, "_handleDragEnd");
-  var _resumePositionAnimation = dart.privateName($switch, "_resumePositionAnimation");
-  var _emitVibration = dart.privateName($switch, "_emitVibration");
-  var _name$ = dart.privateName(ui, "_name");
-  var _name$0 = dart.privateName(platform, "_name");
+  var C = Array(95).fill(void 0);
+  var I = ["file:///C:/Users/Mmasehume/Music/AI-Shopping-System/lib/widgets/modal_model.dart"];
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
   var _Location_column = dart.privateName(widget_inspector, "_Location.column");
   var _Location_line = dart.privateName(widget_inspector, "_Location.line");
   var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  const State_TickerProviderStateMixin$36 = class State_TickerProviderStateMixin extends framework.State$($switch.CupertinoSwitch) {};
-  (State_TickerProviderStateMixin$36.new = function() {
-    ticker_provider.TickerProviderStateMixin$($switch.CupertinoSwitch)[dart.mixinNew].call(this);
-    State_TickerProviderStateMixin$36.__proto__.new.call(this);
-  }).prototype = State_TickerProviderStateMixin$36.prototype;
-  dart.applyMixin(State_TickerProviderStateMixin$36, ticker_provider.TickerProviderStateMixin$($switch.CupertinoSwitch));
-  $switch._CupertinoSwitchState = class _CupertinoSwitchState extends State_TickerProviderStateMixin$36 {
-    get [_tap]() {
-      let t0;
-      t0 = this[___CupertinoSwitchState__tap];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_tap")) : t0;
-    }
-    set [_tap](t0) {
-      if (t0 == null) dart.nullFailed(I[0], 143, 29, "null");
-      this[___CupertinoSwitchState__tap] = t0;
-    }
-    get [_drag]() {
-      let t1;
-      t1 = this[___CupertinoSwitchState__drag];
-      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_drag")) : t1;
-    }
-    set [_drag](t1) {
-      if (t1 == null) dart.nullFailed(I[0], 144, 40, "null");
-      this[___CupertinoSwitchState__drag] = t1;
-    }
-    get [_positionController]() {
-      let t2;
-      t2 = this[___CupertinoSwitchState__positionController];
-      return t2 == null ? dart.throw(new _internal.LateError.fieldNI("_positionController")) : t2;
-    }
-    set [_positionController](t2) {
-      if (t2 == null) dart.nullFailed(I[0], 146, 28, "null");
-      this[___CupertinoSwitchState__positionController] = t2;
-    }
-    get position() {
-      let t3;
-      t3 = this[___CupertinoSwitchState_position];
-      return t3 == null ? dart.throw(new _internal.LateError.fieldNI("position")) : t3;
-    }
-    set position(t3) {
-      if (t3 == null) dart.nullFailed(I[0], 147, 24, "null");
-      this[___CupertinoSwitchState_position] = t3;
-    }
-    get [_reactionController]() {
-      let t4;
-      t4 = this[___CupertinoSwitchState__reactionController];
-      return t4 == null ? dart.throw(new _internal.LateError.fieldNI("_reactionController")) : t4;
-    }
-    set [_reactionController](t4) {
-      if (t4 == null) dart.nullFailed(I[0], 149, 28, "null");
-      this[___CupertinoSwitchState__reactionController] = t4;
-    }
-    get [_reaction]() {
-      let t5;
-      t5 = this[___CupertinoSwitchState__reaction];
-      return t5 == null ? dart.throw(new _internal.LateError.fieldNI("_reaction")) : t5;
-    }
-    set [_reaction](t5) {
-      if (t5 == null) dart.nullFailed(I[0], 150, 26, "null");
-      this[___CupertinoSwitchState__reaction] = t5;
-    }
-    get isInteractive() {
-      return this.widget.onChanged != null;
-    }
-    initState() {
-      let t6, t6$;
-      super.initState();
-      this[_tap] = (t6 = new tap.TapGestureRecognizer.new(), (() => {
-        t6.onTapDown = dart.bind(this, _handleTapDown);
-        t6.onTapUp = dart.bind(this, _handleTapUp);
-        t6.onTap = dart.bind(this, _handleTap);
-        t6.onTapCancel = dart.bind(this, _handleTapCancel);
-        return t6;
-      })());
-      this[_drag] = (t6$ = new monodrag.HorizontalDragGestureRecognizer.new(), (() => {
-        t6$.onStart = dart.bind(this, _handleDragStart);
-        t6$.onUpdate = dart.bind(this, _handleDragUpdate);
-        t6$.onEnd = dart.bind(this, _handleDragEnd);
-        t6$.dragStartBehavior = this.widget.dragStartBehavior;
-        return t6$;
-      })());
-      this[_positionController] = new animation_controller.AnimationController.new({duration: $switch._kToggleDuration, value: dart.test(this.widget.value) ? 1.0 : 0.0, vsync: this});
-      this.position = new animations.CurvedAnimation.new({parent: this[_positionController], curve: curves.Curves.linear});
-      this[_reactionController] = new animation_controller.AnimationController.new({duration: $switch._kReactionDuration, vsync: this});
-      this[_reaction] = new animations.CurvedAnimation.new({parent: this[_reactionController], curve: curves.Curves.ease});
-    }
-    didUpdateWidget(oldWidget) {
-      $switch.CupertinoSwitch.as(oldWidget);
-      if (oldWidget == null) dart.nullFailed(I[0], 193, 40, "oldWidget");
-      super.didUpdateWidget(oldWidget);
-      this[_drag].dragStartBehavior = this.widget.dragStartBehavior;
-      if (dart.test(this.needsPositionAnimation) || oldWidget.value != this.widget.value) this[_resumePositionAnimation]({isLinear: this.needsPositionAnimation});
-    }
-    [_resumePositionAnimation](opts) {
-      let t6;
-      let isLinear = opts && 'isLinear' in opts ? opts.isLinear : true;
-      if (isLinear == null) dart.nullFailed(I[0], 207, 40, "isLinear");
-      this.needsPositionAnimation = false;
-      t6 = this.position;
-      (() => {
-        t6.curve = dart.test(isLinear) ? curves.Curves.linear : curves.Curves.ease;
-        t6.reverseCurve = dart.test(isLinear) ? curves.Curves.linear : curves.Curves.ease.flipped;
-        return t6;
-      })();
-      if (dart.test(this.widget.value))
-        this[_positionController].forward();
-      else
-        this[_positionController].reverse();
-    }
-    [_handleTapDown](details) {
-      if (details == null) dart.nullFailed(I[0], 218, 38, "details");
-      if (dart.test(this.isInteractive)) this.needsPositionAnimation = false;
-      this[_reactionController].forward();
-    }
-    [_handleTap]() {
-      if (dart.test(this.isInteractive)) {
-        dart.nullCheck(this.widget.onChanged)(!dart.test(this.widget.value));
-        this[_emitVibration]();
-      }
-    }
-    [_handleTapUp](details) {
-      if (details == null) dart.nullFailed(I[0], 231, 34, "details");
-      if (dart.test(this.isInteractive)) {
-        this.needsPositionAnimation = false;
-        this[_reactionController].reverse();
-      }
-    }
-    [_handleTapCancel]() {
-      if (dart.test(this.isInteractive)) this[_reactionController].reverse();
-    }
-    [_handleDragStart](details) {
-      if (details == null) dart.nullFailed(I[0], 243, 42, "details");
-      if (dart.test(this.isInteractive)) {
-        this.needsPositionAnimation = false;
-        this[_reactionController].forward();
-        this[_emitVibration]();
-      }
-    }
-    [_handleDragUpdate](details) {
-      let t6, t6$, t6$0;
-      if (details == null) dart.nullFailed(I[0], 251, 44, "details");
-      if (dart.test(this.isInteractive)) {
-        t6 = this.position;
-        (() => {
-          t6.curve = curves.Curves.linear;
-          t6.reverseCurve = curves.Curves.linear;
-          return t6;
-        })();
-        let delta = dart.nullCheck(details.primaryDelta) / 20;
-        switch (basic.Directionality.of(this.context)) {
-          case C[1] || CT.C1:
-          {
-            t6$ = this[_positionController];
-            t6$.value = dart.notNull(t6$.value) - delta;
-            break;
-          }
-          case C[2] || CT.C2:
-          {
-            t6$0 = this[_positionController];
-            t6$0.value = dart.notNull(t6$0.value) + delta;
-            break;
-          }
-        }
-      }
-    }
-    [_handleDragEnd](details) {
-      if (details == null) dart.nullFailed(I[0], 268, 38, "details");
-      this.setState(dart.fn(() => {
-        this.needsPositionAnimation = true;
-      }, T.VoidTovoid()));
-      if (dart.notNull(this.position.value) >= 0.5 !== this.widget.value) dart.nullCheck(this.widget.onChanged)(!dart.test(this.widget.value));
-      this[_reactionController].reverse();
-    }
-    [_emitVibration]() {
-      switch (platform.defaultTargetPlatform) {
-        case C[3] || CT.C3:
-        {
-          haptic_feedback.HapticFeedback.lightImpact();
-          break;
-        }
-        case C[4] || CT.C4:
-        case C[5] || CT.C5:
-        case C[6] || CT.C6:
-        case C[7] || CT.C7:
-        case C[8] || CT.C8:
-        {
-          break;
-        }
-      }
-    }
-    build(context) {
-      let t6, t6$;
-      if (context == null) dart.nullFailed(I[0], 292, 29, "context");
-      if (dart.test(this.needsPositionAnimation)) this[_resumePositionAnimation]();
-      return new basic.Opacity.new({opacity: this.widget.onChanged == null ? 0.5 : 1.0, child: new $switch._CupertinoSwitchRenderObjectWidget.new({value: this.widget.value, activeColor: colors.CupertinoDynamicColor.resolve((t6 = this.widget.activeColor, t6 == null ? colors.CupertinoColors.systemGreen : t6), context), trackColor: colors.CupertinoDynamicColor.resolve((t6$ = this.widget.trackColor, t6$ == null ? colors.CupertinoColors.secondarySystemFill : t6$), context), onChanged: this.widget.onChanged, textDirection: basic.Directionality.of(context), state: this, $creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), $creationLocationd_0dea112b090073317d4: C[17] || CT.C17});
-    }
-    dispose() {
-      this[_tap].dispose();
-      this[_drag].dispose();
-      this[_positionController].dispose();
-      this[_reactionController].dispose();
-      super.dispose();
-    }
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  modal_model.Modal = function Modal(context, id, imgUrl, name, description, price) {
+    return dialog.showDialog(dart.dynamic, {context: framework.BuildContext.as(context), builder: dart.fn(context => {
+        if (context == null) dart.nullFailed(I[0], 15, 17, "context");
+        return new basic.Center.new({child: new material.Material.new({color: colors.Colors.black, borderRadius: new border_radius.BorderRadius.circular(10.0), child: new container.Container.new({decoration: new box_decoration.BoxDecoration.new({borderRadius: new border_radius.BorderRadius.circular(10.0), color: colors.Colors.black}), padding: new edge_insets.EdgeInsets.all(15.0), width: dart.notNull(media_query.MediaQuery.of(context).size.width) * 0.7, height: 600.0, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new basic.ClipRRect.new({borderRadius: new border_radius.BorderRadius.circular(5.0), child: new image.Image.network(core.String.as(imgUrl), {width: 250.0, height: 250.0, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[5] || CT.C5}), new basic.SizedBox.new({height: 3.0, $creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), new text.Text.new("Name: " + dart.notNull(core.String.as(name)), {style: new text_style.TextStyle.new({fontSize: 20.0, fontWeight: ui.FontWeight.bold, color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), new basic.SizedBox.new({height: 5.0, $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), new text.Text.new("Price: R " + dart.notNull(core.String.as(price)), {style: new text_style.TextStyle.new({fontSize: 20.0, fontWeight: ui.FontWeight.bold, color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), new basic.SizedBox.new({height: 5.0, $creationLocationd_0dea112b090073317d4: C[23] || CT.C23}), new text.Text.new("Description: " + dart.notNull(core.String.as(description)), {style: new text_style.TextStyle.new({fontSize: 15.0, fontWeight: ui.FontWeight.bold, color: colors.Colors.white70}), $creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), new basic.SizedBox.new({height: 15.0, $creationLocationd_0dea112b090073317d4: C[30] || CT.C30}), new basic.Center.new({child: new basic.Wrap.new({children: T.JSArrayOfWidget().of([new basic.Padding.new({padding: C[33] || CT.C33, $creationLocationd_0dea112b090073317d4: C[34] || CT.C34}), new icon_button.IconButton.new({padding: C[37] || CT.C37, icon: new icon.Icon.new(icons.AIicons.wishlist, {color: colors.Colors.white, size: 35.0, $creationLocationd_0dea112b090073317d4: C[38] || CT.C38}), onPressed: dart.fn(() => {
+                            new wishlist.Wishlist.addToCart(id, imgUrl, description, name, price);
+                          }, T.VoidTovoid()), $creationLocationd_0dea112b090073317d4: C[43] || CT.C43}), new basic.SizedBox.new({width: 15.0, $creationLocationd_0dea112b090073317d4: C[48] || CT.C48}), new elevated_button._ElevatedButtonWithIcon.new({onPressed: dart.fn(() => {
+                            new cart.Cart.addToCart(id, imgUrl, name, description, price);
+                          }, T.VoidTovoid()), style: elevated_button.ElevatedButton.styleFrom({primary: colors.Colors.grey}), icon: new icon.Icon.new(icons$.Icons.add_shopping_cart_rounded, {size: 20.0, color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[51] || CT.C51}), label: new text.Text.new("ADD TO CART", {style: new text_style.TextStyle.new({fontSize: 15.0, fontWeight: ui.FontWeight.bold, color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C[56] || CT.C56}), $creationLocationd_0dea112b090073317d4: C[60] || CT.C60}), new basic.Padding.new({padding: C[66] || CT.C66, $creationLocationd_0dea112b090073317d4: C[67] || CT.C67})]), $creationLocationd_0dea112b090073317d4: C[70] || CT.C70}), $creationLocationd_0dea112b090073317d4: C[73] || CT.C73})]), $creationLocationd_0dea112b090073317d4: C[76] || CT.C76}), $creationLocationd_0dea112b090073317d4: C[80] || CT.C80}), $creationLocationd_0dea112b090073317d4: C[87] || CT.C87}), $creationLocationd_0dea112b090073317d4: C[92] || CT.C92});
+      }, T.BuildContextToCenter())});
   };
-  ($switch._CupertinoSwitchState.new = function() {
-    this[___CupertinoSwitchState__tap] = null;
-    this[___CupertinoSwitchState__drag] = null;
-    this[___CupertinoSwitchState__positionController] = null;
-    this[___CupertinoSwitchState_position] = null;
-    this[___CupertinoSwitchState__reactionController] = null;
-    this[___CupertinoSwitchState__reaction] = null;
-    this.needsPositionAnimation = false;
-    $switch._CupertinoSwitchState.__proto__.new.call(this);
-    ;
-  }).prototype = $switch._CupertinoSwitchState.prototype;
-  dart.addTypeTests($switch._CupertinoSwitchState);
-  dart.addTypeCaches($switch._CupertinoSwitchState);
-  dart.setMethodSignature($switch._CupertinoSwitchState, () => ({
-    __proto__: dart.getMethods($switch._CupertinoSwitchState.__proto__),
-    [_resumePositionAnimation]: dart.fnType(dart.void, [], {isLinear: core.bool}, {}),
-    [_handleTapDown]: dart.fnType(dart.void, [tap.TapDownDetails]),
-    [_handleTap]: dart.fnType(dart.void, []),
-    [_handleTapUp]: dart.fnType(dart.void, [tap.TapUpDetails]),
-    [_handleTapCancel]: dart.fnType(dart.void, []),
-    [_handleDragStart]: dart.fnType(dart.void, [drag_details.DragStartDetails]),
-    [_handleDragUpdate]: dart.fnType(dart.void, [drag_details.DragUpdateDetails]),
-    [_handleDragEnd]: dart.fnType(dart.void, [drag_details.DragEndDetails]),
-    [_emitVibration]: dart.fnType(dart.void, []),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setGetterSignature($switch._CupertinoSwitchState, () => ({
-    __proto__: dart.getGetters($switch._CupertinoSwitchState.__proto__),
-    [_tap]: tap.TapGestureRecognizer,
-    [_drag]: monodrag.HorizontalDragGestureRecognizer,
-    [_positionController]: animation_controller.AnimationController,
-    position: animations.CurvedAnimation,
-    [_reactionController]: animation_controller.AnimationController,
-    [_reaction]: animation.Animation$(core.double),
-    isInteractive: core.bool
-  }));
-  dart.setSetterSignature($switch._CupertinoSwitchState, () => ({
-    __proto__: dart.getSetters($switch._CupertinoSwitchState.__proto__),
-    [_tap]: tap.TapGestureRecognizer,
-    [_drag]: monodrag.HorizontalDragGestureRecognizer,
-    [_positionController]: animation_controller.AnimationController,
-    position: animations.CurvedAnimation,
-    [_reactionController]: animation_controller.AnimationController,
-    [_reaction]: animation.Animation$(core.double)
-  }));
-  dart.setLibraryUri($switch._CupertinoSwitchState, I[1]);
-  dart.setFieldSignature($switch._CupertinoSwitchState, () => ({
-    __proto__: dart.getFields($switch._CupertinoSwitchState.__proto__),
-    [___CupertinoSwitchState__tap]: dart.fieldType(dart.nullable(tap.TapGestureRecognizer)),
-    [___CupertinoSwitchState__drag]: dart.fieldType(dart.nullable(monodrag.HorizontalDragGestureRecognizer)),
-    [___CupertinoSwitchState__positionController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
-    [___CupertinoSwitchState_position]: dart.fieldType(dart.nullable(animations.CurvedAnimation)),
-    [___CupertinoSwitchState__reactionController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
-    [___CupertinoSwitchState__reaction]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
-    needsPositionAnimation: dart.fieldType(core.bool)
-  }));
-  var value$0 = dart.privateName($switch, "_CupertinoSwitchRenderObjectWidget.value");
-  var activeColor$0 = dart.privateName($switch, "_CupertinoSwitchRenderObjectWidget.activeColor");
-  var trackColor$0 = dart.privateName($switch, "_CupertinoSwitchRenderObjectWidget.trackColor");
-  var onChanged$0 = dart.privateName($switch, "_CupertinoSwitchRenderObjectWidget.onChanged");
-  var state$ = dart.privateName($switch, "_CupertinoSwitchRenderObjectWidget.state");
-  var textDirection$ = dart.privateName($switch, "_CupertinoSwitchRenderObjectWidget.textDirection");
-  $switch._CupertinoSwitchRenderObjectWidget = class _CupertinoSwitchRenderObjectWidget extends framework.LeafRenderObjectWidget {
-    get value() {
-      return this[value$0];
-    }
-    set value(value) {
-      super.value = value;
-    }
-    get activeColor() {
-      return this[activeColor$0];
-    }
-    set activeColor(value) {
-      super.activeColor = value;
-    }
-    get trackColor() {
-      return this[trackColor$0];
-    }
-    set trackColor(value) {
-      super.trackColor = value;
-    }
-    get onChanged() {
-      return this[onChanged$0];
-    }
-    set onChanged(value) {
-      super.onChanged = value;
-    }
-    get state() {
-      return this[state$];
-    }
-    set state(value) {
-      super.state = value;
-    }
-    get textDirection() {
-      return this[textDirection$];
-    }
-    set textDirection(value) {
-      super.textDirection = value;
-    }
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 341, 58, "context");
-      return new $switch._RenderCupertinoSwitch.new({value: this.value, activeColor: this.activeColor, trackColor: this.trackColor, onChanged: this.onChanged, textDirection: this.textDirection, state: this.state});
-    }
-    updateRenderObject(context, renderObject) {
-      let t6;
-      if (context == null) dart.nullFailed(I[0], 353, 40, "context");
-      $switch._RenderCupertinoSwitch.as(renderObject);
-      if (renderObject == null) dart.nullFailed(I[0], 353, 72, "renderObject");
-      t6 = renderObject;
-      (() => {
-        t6.value = this.value;
-        t6.activeColor = this.activeColor;
-        t6.trackColor = this.trackColor;
-        t6.onChanged = this.onChanged;
-        t6.textDirection = this.textDirection;
-        return t6;
-      })();
-    }
-  };
-  ($switch._CupertinoSwitchRenderObjectWidget.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let value = opts && 'value' in opts ? opts.value : null;
-    if (value == null) dart.nullFailed(I[0], 325, 19, "value");
-    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : null;
-    if (activeColor == null) dart.nullFailed(I[0], 326, 19, "activeColor");
-    let trackColor = opts && 'trackColor' in opts ? opts.trackColor : null;
-    if (trackColor == null) dart.nullFailed(I[0], 327, 19, "trackColor");
-    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
-    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-    if (textDirection == null) dart.nullFailed(I[0], 329, 19, "textDirection");
-    let state = opts && 'state' in opts ? opts.state : null;
-    if (state == null) dart.nullFailed(I[0], 330, 19, "state");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[value$0] = value;
-    this[activeColor$0] = activeColor;
-    this[trackColor$0] = trackColor;
-    this[onChanged$0] = onChanged;
-    this[textDirection$] = textDirection;
-    this[state$] = state;
-    $switch._CupertinoSwitchRenderObjectWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = $switch._CupertinoSwitchRenderObjectWidget.prototype;
-  dart.addTypeTests($switch._CupertinoSwitchRenderObjectWidget);
-  dart.addTypeCaches($switch._CupertinoSwitchRenderObjectWidget);
-  dart.setMethodSignature($switch._CupertinoSwitchRenderObjectWidget, () => ({
-    __proto__: dart.getMethods($switch._CupertinoSwitchRenderObjectWidget.__proto__),
-    createRenderObject: dart.fnType($switch._RenderCupertinoSwitch, [framework.BuildContext])
-  }));
-  dart.setLibraryUri($switch._CupertinoSwitchRenderObjectWidget, I[1]);
-  dart.setFieldSignature($switch._CupertinoSwitchRenderObjectWidget, () => ({
-    __proto__: dart.getFields($switch._CupertinoSwitchRenderObjectWidget.__proto__),
-    value: dart.finalFieldType(core.bool),
-    activeColor: dart.finalFieldType(ui.Color),
-    trackColor: dart.finalFieldType(ui.Color),
-    onChanged: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.bool]))),
-    state: dart.finalFieldType($switch._CupertinoSwitchState),
-    textDirection: dart.finalFieldType(ui.TextDirection)
-  }));
-  var _clipRRectLayer = dart.privateName($switch, "_clipRRectLayer");
-  var _value = dart.privateName($switch, "_value");
-  var _activeColor = dart.privateName($switch, "_activeColor");
-  var _trackColor = dart.privateName($switch, "_trackColor");
-  var _onChanged = dart.privateName($switch, "_onChanged");
-  var _textDirection = dart.privateName($switch, "_textDirection");
-  var _state = dart.privateName($switch, "_state");
-  var BoxConstraints_maxHeight = dart.privateName(box, "BoxConstraints.maxHeight");
-  var BoxConstraints_minHeight = dart.privateName(box, "BoxConstraints.minHeight");
-  var BoxConstraints_maxWidth = dart.privateName(box, "BoxConstraints.maxWidth");
-  var BoxConstraints_minWidth = dart.privateName(box, "BoxConstraints.minWidth");
-  var Radius_y = dart.privateName(ui, "Radius.y");
-  var Radius_x = dart.privateName(ui, "Radius.x");
-  var Shadow_blurRadius = dart.privateName(ui, "Shadow.blurRadius");
-  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
-  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
-  var Shadow_offset = dart.privateName(ui, "Shadow.offset");
-  var Color_value = dart.privateName(ui, "Color.value");
-  var Shadow_color = dart.privateName(ui, "Shadow.color");
-  var BoxShadow_spreadRadius = dart.privateName(box_shadow, "BoxShadow.spreadRadius");
-  var CupertinoThumbPainter_shadows = dart.privateName(thumb_painter, "CupertinoThumbPainter.shadows");
-  var CupertinoThumbPainter_color = dart.privateName(thumb_painter, "CupertinoThumbPainter.color");
-  $switch._RenderCupertinoSwitch = class _RenderCupertinoSwitch extends proxy_box.RenderConstrainedBox {
-    get value() {
-      return this[_value];
-    }
-    set value(value) {
-      if (value == null) dart.nullFailed(I[0], 403, 18, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 404, 12, "value != null");
-      if (value == this[_value]) return;
-      this[_value] = value;
-      this.markNeedsSemanticsUpdate();
-    }
-    get activeColor() {
-      return this[_activeColor];
-    }
-    set activeColor(value) {
-      if (value == null) dart.nullFailed(I[0], 413, 25, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 414, 12, "value != null");
-      if (dart.equals(value, this[_activeColor])) return;
-      this[_activeColor] = value;
-      this.markNeedsPaint();
-    }
-    get trackColor() {
-      return this[_trackColor];
-    }
-    set trackColor(value) {
-      if (value == null) dart.nullFailed(I[0], 423, 24, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 424, 12, "value != null");
-      if (dart.equals(value, this[_trackColor])) return;
-      this[_trackColor] = value;
-      this.markNeedsPaint();
-    }
-    get onChanged() {
-      return this[_onChanged];
-    }
-    set onChanged(value) {
-      if (dart.equals(value, this[_onChanged])) return;
-      let wasInteractive = this.isInteractive;
-      this[_onChanged] = value;
-      if (wasInteractive != this.isInteractive) {
-        this.markNeedsPaint();
-        this.markNeedsSemanticsUpdate();
-      }
-    }
-    get textDirection() {
-      return this[_textDirection];
-    }
-    set textDirection(value) {
-      if (value == null) dart.nullFailed(I[0], 446, 35, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 447, 12, "value != null");
-      if (this[_textDirection] == value) return;
-      this[_textDirection] = value;
-      this.markNeedsPaint();
-    }
-    get isInteractive() {
-      return this.onChanged != null;
-    }
-    hitTestSelf(position) {
-      if (position == null) dart.nullFailed(I[0], 457, 27, "position");
-      return true;
-    }
-    handleEvent(event, entry) {
-      if (event == null) dart.nullFailed(I[0], 460, 33, "event");
-      box.BoxHitTestEntry.as(entry);
-      if (entry == null) dart.nullFailed(I[0], 460, 56, "entry");
-      if (!dart.test(this.debugHandleEvent(event, entry))) dart.assertFailed(null, I[0], 461, 12, "debugHandleEvent(event, entry)");
-      if (events.PointerDownEvent.is(event) && dart.test(this.isInteractive)) {
-        this[_state][_drag].addPointer(event);
-        this[_state][_tap].addPointer(event);
-      }
-    }
-    describeSemanticsConfiguration(config) {
-      if (config == null) dart.nullFailed(I[0], 469, 62, "config");
-      super.describeSemanticsConfiguration(config);
-      if (dart.test(this.isInteractive)) config.onTap = dart.bind(this[_state], _handleTap);
-      config.isEnabled = this.isInteractive;
-      config.isToggled = this[_value];
-    }
-    paint(context, offset) {
-      let t6;
-      if (context == null) dart.nullFailed(I[0], 480, 30, "context");
-      if (offset == null) dart.nullFailed(I[0], 480, 46, "offset");
-      let canvas = context.canvas;
-      let currentValue = this[_state].position.value;
-      let currentReactionValue = this[_state][_reaction].value;
-      let visualPosition = null;
-      switch (this.textDirection) {
-        case C[1] || CT.C1:
-        {
-          visualPosition = 1.0 - dart.notNull(currentValue);
-          break;
-        }
-        case C[2] || CT.C2:
-        {
-          visualPosition = currentValue;
-          break;
-        }
-      }
-      let paint = (t6 = ui.Paint.new(), (() => {
-        t6.color = dart.nullCheck(ui.Color.lerp(this.trackColor, this.activeColor, currentValue));
-        return t6;
-      })());
-      let trackRect = new ui.Rect.fromLTWH(dart.notNull(offset.dx) + (dart.notNull(this.size.width) - 51) / 2.0, dart.notNull(offset.dy) + (dart.notNull(this.size.height) - 31) / 2.0, 51, 31);
-      let trackRRect = new ui.RRect.fromRectAndRadius(trackRect, C[22] || CT.C22);
-      canvas.drawRRect(trackRRect, paint);
-      let currentThumbExtension = 7 * dart.notNull(currentReactionValue);
-      let thumbLeft = dart.nullCheck(ui.lerpDouble(dart.notNull(trackRect.left) + 15.5 - 14, dart.notNull(trackRect.left) + 35.5 - 14 - currentThumbExtension, visualPosition));
-      let thumbRight = dart.nullCheck(ui.lerpDouble(dart.notNull(trackRect.left) + 15.5 + 14 + currentThumbExtension, dart.notNull(trackRect.left) + 35.5 + 14, visualPosition));
-      let thumbCenterY = dart.notNull(offset.dy) + dart.notNull(this.size.height) / 2.0;
-      let thumbBounds = new ui.Rect.fromLTRB(thumbLeft, thumbCenterY - 14, thumbRight, thumbCenterY + 14);
-      this[_clipRRectLayer] = context.pushClipRRect(this.needsCompositing, ui.Offset.zero, thumbBounds, trackRRect, dart.fn((innerContext, offset) => {
-        if (innerContext == null) dart.nullFailed(I[0], 527, 118, "innerContext");
-        if (offset == null) dart.nullFailed(I[0], 527, 139, "offset");
-        (C[23] || CT.C23).paint(innerContext.canvas, thumbBounds);
-      }, T.PaintingContextAndOffsetTovoid()), {oldLayer: this[_clipRRectLayer]});
-    }
-    debugFillProperties(description) {
-      if (description == null) dart.nullFailed(I[0], 535, 56, "description");
-      super.debugFillProperties(description);
-      description.add(new diagnostics.FlagProperty.new("value", {value: this.value, ifTrue: "checked", ifFalse: "unchecked", showName: true}));
-      description.add(new diagnostics.FlagProperty.new("isInteractive", {value: this.isInteractive, ifTrue: "enabled", ifFalse: "disabled", showName: true, defaultValue: true}));
-    }
-  };
-  ($switch._RenderCupertinoSwitch.new = function(opts) {
-    let value = opts && 'value' in opts ? opts.value : null;
-    if (value == null) dart.nullFailed(I[0], 379, 19, "value");
-    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : null;
-    if (activeColor == null) dart.nullFailed(I[0], 380, 20, "activeColor");
-    let trackColor = opts && 'trackColor' in opts ? opts.trackColor : null;
-    if (trackColor == null) dart.nullFailed(I[0], 381, 20, "trackColor");
-    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
-    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-    if (textDirection == null) dart.nullFailed(I[0], 383, 28, "textDirection");
-    let state = opts && 'state' in opts ? opts.state : null;
-    if (state == null) dart.nullFailed(I[0], 384, 36, "state");
-    this[_clipRRectLayer] = null;
-    if (!(value != null)) dart.assertFailed(null, I[0], 385, 15, "value != null");
-    if (!(activeColor != null)) dart.assertFailed(null, I[0], 386, 15, "activeColor != null");
-    if (!(state != null)) dart.assertFailed(null, I[0], 387, 15, "state != null");
-    this[_value] = value;
-    this[_activeColor] = activeColor;
-    this[_trackColor] = trackColor;
-    this[_onChanged] = onChanged;
-    this[_textDirection] = textDirection;
-    this[_state] = state;
-    $switch._RenderCupertinoSwitch.__proto__.new.call(this, {additionalConstraints: C[21] || CT.C21});
-    state.position.addListener(dart.bind(this, 'markNeedsPaint'));
-    state[_reaction].addListener(dart.bind(this, 'markNeedsPaint'));
-  }).prototype = $switch._RenderCupertinoSwitch.prototype;
-  dart.addTypeTests($switch._RenderCupertinoSwitch);
-  dart.addTypeCaches($switch._RenderCupertinoSwitch);
-  dart.setGetterSignature($switch._RenderCupertinoSwitch, () => ({
-    __proto__: dart.getGetters($switch._RenderCupertinoSwitch.__proto__),
-    value: core.bool,
-    activeColor: ui.Color,
-    trackColor: ui.Color,
-    onChanged: dart.nullable(dart.fnType(dart.void, [core.bool])),
-    textDirection: ui.TextDirection,
-    isInteractive: core.bool
-  }));
-  dart.setSetterSignature($switch._RenderCupertinoSwitch, () => ({
-    __proto__: dart.getSetters($switch._RenderCupertinoSwitch.__proto__),
-    value: core.bool,
-    activeColor: ui.Color,
-    trackColor: ui.Color,
-    onChanged: dart.nullable(dart.fnType(dart.void, [core.bool])),
-    textDirection: ui.TextDirection
-  }));
-  dart.setLibraryUri($switch._RenderCupertinoSwitch, I[1]);
-  dart.setFieldSignature($switch._RenderCupertinoSwitch, () => ({
-    __proto__: dart.getFields($switch._RenderCupertinoSwitch.__proto__),
-    [_state]: dart.finalFieldType($switch._CupertinoSwitchState),
-    [_value]: dart.fieldType(core.bool),
-    [_activeColor]: dart.fieldType(ui.Color),
-    [_trackColor]: dart.fieldType(ui.Color),
-    [_onChanged]: dart.fieldType(dart.nullable(dart.fnType(dart.void, [core.bool]))),
-    [_textDirection]: dart.fieldType(ui.TextDirection),
-    [_clipRRectLayer]: dart.fieldType(dart.nullable(layer.ClipRRectLayer))
-  }));
-  var Duration__duration = dart.privateName(core, "Duration._duration");
-  dart.defineLazy($switch, {
-    /*$switch._kTrackWidth*/get _kTrackWidth() {
-      return 51;
-    },
-    /*$switch._kTrackHeight*/get _kTrackHeight() {
-      return 31;
-    },
-    /*$switch._kTrackRadius*/get _kTrackRadius() {
-      return 15.5;
-    },
-    /*$switch._kTrackInnerStart*/get _kTrackInnerStart() {
-      return 15.5;
-    },
-    /*$switch._kTrackInnerEnd*/get _kTrackInnerEnd() {
-      return 35.5;
-    },
-    /*$switch._kTrackInnerLength*/get _kTrackInnerLength() {
-      return 20;
-    },
-    /*$switch._kSwitchWidth*/get _kSwitchWidth() {
-      return 59;
-    },
-    /*$switch._kSwitchHeight*/get _kSwitchHeight() {
-      return 39;
-    },
-    /*$switch._kCupertinoSwitchDisabledOpacity*/get _kCupertinoSwitchDisabledOpacity() {
-      return 0.5;
-    },
-    /*$switch._kReactionDuration*/get _kReactionDuration() {
-      return C[31] || CT.C31;
-    },
-    /*$switch._kToggleDuration*/get _kToggleDuration() {
-      return C[32] || CT.C32;
-    }
-  }, false);
-  dart.trackLibraries("packages/flutter/src/cupertino/switch.dart", {
-    "package:flutter/src/cupertino/switch.dart": $switch
+  dart.trackLibraries("packages/aishop/widgets/modal_model.dart", {
+    "package:aishop/widgets/modal_model.dart": modal_model
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["switch.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/cupertino/switch.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["modal_model.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;qCAWM,SAAS,IAAI,QAAQ,MAAM,aAAa;AAC5C,UAAO,qEACM,OAAO,YACP;YAAC;AACR,cAAO,8BACE,kCACS,mCACa,wCAAS,cAE7B,yCACO,oDACmB,wCAAS,cAAmB,gCACvC,+BAAI,cACiB,aAAvB,AAAY,AAAK,0BAAd,OAAO,gBAAe,aACnC,cACD,0CACoC,0CACrB,wBAChB,uCAC6B,wCAAS,aACvB,uCACX,MAAM,WACC,eACC,yHAGZ,gCACU,8DAEV,kBACE,AAAS,uCAAE,IAAI,YACR,wCACO,kBACa,2BACT,kFAEpB,gCACU,gEAEV,kBAAK,AAAY,0CAAE,KAAK,YACb,wCACO,kBACa,2BACT,kFACtB,gCACU,gEAEV,kBAAK,AAAgB,8CAAE,WAAW,YACvB,wCACO,kBACa,2BACT,oFACtB,gCACU,iEAEV,6BACW,8BAAuB,wBAChC,4GAGA,gEAEQ,kBACI,gCACM,2BACR,4EAEG;AAEgC,4BADhC,gCACL,EAAE,EAAE,MAAM,EAAE,WAAW,EAAE,IAAI,EAAE,KAAK;yGAG5C,+BACS,iEAEM,4DACF;AAC2C,4BAA/C,wBAAU,EAAE,EAAE,MAAM,EAAE,IAAI,EAAE,WAAW,EAAE,KAAK;qDAE/B,mDACJ,4BAEZ,kBACE,+CACA,aACQ,uFAET,kBACL,uBACO,wCACO,kBACa,2BACT,6IAGtB;;EAStB","file":"../../../../../../packages/aishop/widgets/modal_model.dart.lib.js"}');
   // Exports:
   return {
-    src__cupertino__switch: $switch
+    widgets__modal_model: modal_model
   };
 }));
 
-//# sourceMappingURL=switch.dart.lib.js.map
+//# sourceMappingURL=modal_model.dart.lib.js.map
