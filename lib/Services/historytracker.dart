@@ -74,7 +74,7 @@ class HistoryTracker {
 
 void addToPurchases() {
   DateTime now = new DateTime.now();
-  DateTime date = new DateTime(now.year, now.month, now.day);
+  DateTime date = new DateTime(now.year, now.month, now.day, now.hour, now.minute);
 
   FirebaseFirestore.instance
       .collection('Users')
@@ -99,6 +99,13 @@ void addToPurchases() {
                 'name': productid.get("name"),
                 'description': productid.get("description"),
                 'price': productid.get("price"),
+              }
+          ),
+
+          FirebaseFirestore.instance.collection('Users').doc(uid).collection(
+              "Purchases").doc(productid.id).collection("info").doc(date.toString()).set(
+              {
+                'quantity': 1,
                 'date': date
               }
           ),
@@ -113,6 +120,15 @@ void addToPurchases() {
               );
             }
           )
+        }
+        else{
+          FirebaseFirestore.instance.collection('Users').doc(uid).collection(
+              "Purchases").doc(productid.id).collection("info").doc(date.toString()).set(
+              {
+                'quantity': 1,
+                'date': date
+              }
+          ),
         },
         productid.reference.delete()
       });
