@@ -1,5 +1,6 @@
 import 'package:aishop/screens/loginscreen.dart';
 import 'package:aishop/theme.dart';
+import 'package:aishop/utils/authentication.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -137,8 +138,48 @@ class _SettingsPageState extends State<SettingsPage> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => LoginScreen()));
+                  signOut().then((response) => {
+                    if(response == "User signed out"){
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: new Text("Success!"),
+                            content: new Text(response),
+                            actions: <Widget>[
+                              ElevatedButton(
+                                child: new Text("OK"),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (BuildContext context) => LoginScreen()));
+                                },
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+
+                    }
+                    else
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: new Text("Error!!"),
+                            content: new Text(response),
+                            actions: <Widget>[
+                              ElevatedButton(
+                                child: new Text("OK"),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
+                          );
+                        },
+                      )
+                  });
                 },
                 child: Text(
                   "Sign Out",

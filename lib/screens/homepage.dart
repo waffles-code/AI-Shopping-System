@@ -3,9 +3,10 @@ import 'dart:ui';
 import 'package:aishop/components/databasemanager.dart';
 import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
-// import 'package:aishop/screens/wishlist.dart';
+
 import 'package:aishop/screens/wishlistscreen.dart';
 import 'package:aishop/settings.dart';
+import 'package:aishop/utils/authentication.dart';
 import 'package:aishop/widgets/beauty.dart';
 import 'package:aishop/widgets/recommendations.dart';
 import 'package:aishop/widgets/books.dart';
@@ -14,11 +15,13 @@ import 'package:aishop/widgets/clothes.dart';
 import 'package:aishop/widgets/kitchen.dart';
 import 'package:aishop/widgets/tech.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutter/material.dart';
 import 'package:aishop/widgets/modal_model.dart';
 import 'package:aishop/screens/checkout.dart';
 import 'package:aishop/components/order_review.dart';
 import '../theme.dart';
+import 'loginscreen.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -85,51 +88,51 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: lightblack,
               title: !isSearching
                   ? Text(
-                      "AI Shopping",
-                      style:
-                          TextStyle(color: white, fontWeight: FontWeight.bold),
-                    )
+                "AI Shopping",
+                style:
+                TextStyle(color: white, fontWeight: FontWeight.bold),
+              )
                   : TextField(
-                      onChanged: (val) {
-                        initiateSearch(val);
-                      },
-                      style: TextStyle(color: white),
-                      decoration: InputDecoration(
-                          icon: Icon(
-                            Icons.search_rounded,
-                            color: white,
-                          ),
-                          hintText: "Search",
-                          hintStyle: TextStyle(color: white)),
+                onChanged: (val) {
+                  initiateSearch(val);
+                },
+                style: TextStyle(color: white),
+                decoration: InputDecoration(
+                    icon: Icon(
+                      Icons.search_rounded,
+                      color: white,
                     ),
+                    hintText: "Search",
+                    hintStyle: TextStyle(color: white)),
+              ),
               actions: [
                 isSearching
                     ? IconButton(
-                        icon: Icon(
-                          Icons.cancel,
-                          color: white,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            tempSearchStore.clear();
-                            this.isSearching = false;
-                          });
-                        },
-                      )
+                  icon: Icon(
+                    Icons.cancel,
+                    color: white,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      tempSearchStore.clear();
+                      this.isSearching = false;
+                    });
+                  },
+                )
                     : IconButton(
-                        icon: Icon(
-                          AIicons.search,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            this.isSearching = true;
-                            // Navigator.of(context).push(MaterialPageRoute(
-                            //     builder: (BuildContext context) => SearchBar()));
-                          });
-                        },
-                      ),
+                  icon: Icon(
+                    AIicons.search,
+                    color: Colors.white,
+                    size: 25,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      this.isSearching = true;
+                      // Navigator.of(context).push(MaterialPageRoute(
+                      //     builder: (BuildContext context) => SearchBar()));
+                    });
+                  },
+                ),
                 IconButton(
                   icon: Icon(
                     AIicons.wishlist,
@@ -191,7 +194,50 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.white,
                           size: 25,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          signOut().then((response) => {
+                            if(response == "User signed out"){
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: new Text("Success!"),
+                                    content: new Text(response),
+                                    actions: <Widget>[
+                                      ElevatedButton(
+                                        child: new Text("OK"),
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                          Navigator.of(context).push(MaterialPageRoute(
+                                              builder: (BuildContext context) => LoginScreen()));
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
+
+                            }
+                            else
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: new Text("Error!!"),
+                                  content: new Text(response),
+                                  actions: <Widget>[
+                                    ElevatedButton(
+                                      child: new Text("OK"),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            )
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -203,115 +249,115 @@ class _HomePageState extends State<HomePage> {
         //Body of the home page
         body: !isSearching
             ? ListView(
-                children: <Widget>[
-                  SizedBox(
-                    height: 10,
-                  ),
-                  //category
-                  Center(
-                    child: Text(
-                      "Categories",
-                      style: TextStyle(fontSize: 40),
-                    ),
-                  ),
-                  Category(),
-                  SizedBox(
-                    height: 10,
-                  ),
+          children: <Widget>[
+            SizedBox(
+              height: 10,
+            ),
+            //category
+            Center(
+              child: Text(
+                "Categories",
+                style: TextStyle(fontSize: 40),
+              ),
+            ),
+            Category(),
+            SizedBox(
+              height: 10,
+            ),
 
-                  //Products
-                  Center(
-                    child: Text(
-                      "Recommendations",
-                      style: TextStyle(fontSize: 40),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Recommendations(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Center(
-                      child: Text(
-                    "Books",
-                    style: TextStyle(fontSize: 40),
-                  )),
+            //Products
+            Center(
+              child: Text(
+                "Recommendations",
+                style: TextStyle(fontSize: 40),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Recommendations(),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+                child: Text(
+                  "Books",
+                  style: TextStyle(fontSize: 40),
+                )),
 
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Books(),
+            SizedBox(
+              height: 10,
+            ),
+            Books(),
 
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Center(
-                      child: Text(
-                    "Clothes",
-                    style: TextStyle(fontSize: 40),
-                  )),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+                child: Text(
+                  "Clothes",
+                  style: TextStyle(fontSize: 40),
+                )),
 
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Clothes(),
+            SizedBox(
+              height: 10,
+            ),
+            Clothes(),
 
-                  SizedBox(
-                    height: 10,
-                  ),
+            SizedBox(
+              height: 10,
+            ),
 
-                  Center(
-                      child: Text(
-                    "Shoes",
-                    style: TextStyle(fontSize: 40),
-                  )),
-                  Beauty(),
-                  SizedBox(
-                    height: 10,
-                  ),
+            Center(
+                child: Text(
+                  "Shoes",
+                  style: TextStyle(fontSize: 40),
+                )),
+            Beauty(),
+            SizedBox(
+              height: 10,
+            ),
 
-                  Center(
-                      child: Text(
-                    "Kitchen",
-                    style: TextStyle(fontSize: 40),
-                  )),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Kitchen(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Center(
-                      child: Text(
-                    "Tech",
-                    style: TextStyle(fontSize: 40),
-                  )),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Tech(),
+            Center(
+                child: Text(
+                  "Kitchen",
+                  style: TextStyle(fontSize: 40),
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            Kitchen(),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+                child: Text(
+                  "Tech",
+                  style: TextStyle(fontSize: 40),
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            Tech(),
 
-                  SizedBox(
-                    height: 10,
-                  ),
-                ],
-              )
+            SizedBox(
+              height: 10,
+            ),
+          ],
+        )
             : ListView(children: <Widget>[
-                SizedBox(height: 10.0),
-                GridView.count(
-                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                    crossAxisCount: 4,
-                    crossAxisSpacing: 4.0,
-                    mainAxisSpacing: 4.0,
-                    primary: false,
-                    shrinkWrap: true,
-                    children: tempSearchStore.map((element) {
-                      return buildResultCard(context, element);
-                    }).toList())
-              ]));
+          SizedBox(height: 10.0),
+          GridView.count(
+              padding: EdgeInsets.only(left: 20.0, right: 20.0),
+              crossAxisCount: 4,
+              crossAxisSpacing: 4.0,
+              mainAxisSpacing: 4.0,
+              primary: false,
+              shrinkWrap: true,
+              children: tempSearchStore.map((element) {
+                return buildResultCard(context, element);
+              }).toList())
+        ]));
   }
 }
 
@@ -324,7 +370,7 @@ Widget buildResultCard(BuildContext context, data) {
       },
       splashColor: Colors.white30,
       customBorder:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
@@ -360,7 +406,7 @@ Widget buildResultCard(BuildContext context, data) {
                     Text(
                       "Name: " + data['name'],
                       style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       height: 5,

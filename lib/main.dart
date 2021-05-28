@@ -1,3 +1,4 @@
+import 'package:aishop/screens/homepage.dart';
 import 'package:aishop/screens/loginscreen.dart';
 import 'package:aishop/utils/authentication.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  bool auto = false;
+
   void initState() {
     getUserInfo();
     super.initState();
@@ -24,7 +28,11 @@ class _MyAppState extends State<MyApp> {
   //get user info if logged in.
   Future getUserInfo() async {
     await getUser();
-    setState(() {});
+    setState(() {
+      if(uid != null){
+      auto = true;
+    }
+    });
     print(uid);
   }
 
@@ -32,7 +40,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginScreen(),
+      home: auto == false ? LoginScreen() : HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }

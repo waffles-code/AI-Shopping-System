@@ -3,7 +3,6 @@ import 'package:aishop/components/checkoutdelivary.dart';
 import 'package:aishop/components/pastpurchase.dart';
 import 'package:aishop/components/textlink.dart';
 import 'package:aishop/screens/homepage.dart';
-import 'package:aishop/utils/authentication.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/components/order_review.dart';
@@ -11,6 +10,7 @@ import 'checkoutdelivary.dart';
 
 import '../theme.dart';
 
+// ignore: must_be_immutable
 class CheckOutPayment extends StatelessWidget {
   CollectionReference users = FirebaseFirestore.instance.collection('Users');
 

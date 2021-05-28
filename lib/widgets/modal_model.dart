@@ -4,11 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/icons/icons.dart';
 
-import '../theme.dart';
-
 //model for modal pop up
 //displays image , price, name, description
 
+// ignore: non_constant_identifier_names
 Modal(context, id, imgUrl, name, description, price) {
   return showDialog(
       context: context,

@@ -192,7 +192,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                               builder: (context) =>
                                                   HomePage()));
                                     });
-                                    print(result);
                                   }
                                 }).catchError((error) {
                                   print('Sign in Error: $error');

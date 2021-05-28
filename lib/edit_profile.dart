@@ -29,7 +29,6 @@ class _EditProfilePage extends State<EditProfilePage> {
             }
           else
             {
-              print("Collected: " + documentSnapshot.data().toString()),
               setState(() {
                 userFirstNameController.text = documentSnapshot.get("fname");
                 userLastNameController.text = documentSnapshot.get("lname");

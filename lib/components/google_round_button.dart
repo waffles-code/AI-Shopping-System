@@ -57,7 +57,6 @@ class _GoogleButtonState extends State<GoogleRoundButton> {
             ),
             onPressed: () async {
               await signInWithGoogle().then((result) {
-                print(result);
                 if (result != null) {
                   Navigator.push(context, new MaterialPageRoute(builder: (context) => HomePage()
                     ),

@@ -7,13 +7,9 @@ import 'package:aishop/utils/cart.dart';
 import 'package:aishop/widgets/modal_model.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/utils/wishlist.dart';
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import '../theme.dart';
-import 'checkout.dart';
-
 class W extends StatefulWidget {
   @override
   _W createState() => _W();
@@ -82,6 +78,7 @@ class _W extends State<W> {
   }
 }
 
+// ignore: camel_case_types
 class wishlist extends StatefulWidget {
   final prodname;
   final prodpicture;

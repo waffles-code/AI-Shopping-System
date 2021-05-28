@@ -362,7 +362,6 @@ class _RegisterScreenState extends State <RegisterScreen>{
 																							userLastNameController.text
 																					)));
 																				});
-																				print(result);
 																			}
 																		}).catchError((error) {
 																			print('Registering Error: $error');

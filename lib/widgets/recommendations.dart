@@ -16,6 +16,7 @@ class _Recommendations extends State<Recommendations> {
   Widget build(BuildContext context) {
     // TODO: implement build
     List<DocumentSnapshot> recommendations = [];
+    // ignore: non_constant_identifier_names
     List<DocumentSnapshot> Purchases = [];
     return Container(
         height: 400,
@@ -52,8 +53,6 @@ class _Recommendations extends State<Recommendations> {
                             if (recommendations.length > 3) {
                               recommendations..shuffle();
                               for (var i = 0; i < recommendations.length; i++) {
-                                //recommendations.remove(randomItem);
-                                print(recommendations.length);
                                 return GridView.builder(
                                   scrollDirection: Axis.horizontal,
                                   gridDelegate:
@@ -77,7 +76,6 @@ class _Recommendations extends State<Recommendations> {
                               }
                             } else {
                               for (var i = 0; i < recommendations.length; i++) {
-                                print(recommendations[i].id);
                                 return GridView.builder(
                                   scrollDirection: Axis.horizontal,
                                   gridDelegate:

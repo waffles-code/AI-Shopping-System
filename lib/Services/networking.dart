@@ -9,7 +9,6 @@ class NetworkHelper {
   String cityname="";
 
    getData() async{
-    print("stepped into getData()");
     Uri myUri = Uri.parse(url);
     Response response = await get(myUri);
 

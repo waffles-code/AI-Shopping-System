@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:aishop/components/checkoutaddress.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:aishop/components/order_review.dart';
 
 import '../theme.dart';
 
@@ -36,9 +35,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
   getUsers() {
     usersRef.get().then((QuerySnapshot snapshot) {
       for (int i = 0; i < snapshot.docs.length; ++i) {
-        print('name: $snapshot');
         productsoncart.add(snapshot.docs[i].data());
-        print(snapshot.docs[i].data());
       }
     });
   }

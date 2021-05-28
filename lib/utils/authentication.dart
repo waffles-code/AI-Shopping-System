@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-late FirebaseAuth _auth = FirebaseAuth.instance;
+FirebaseAuth _auth = FirebaseAuth.instance;
 
 String? uid;
 String? userEmail;
@@ -75,18 +75,26 @@ Future<User?> signInWithEmailPassword(String email, String password) async {
 }
 
 Future<String> signOut() async {
-    await googleSignIn.signOut();
-    await _auth.signOut();
+  try {
+    await _auth.signOut().then((value) => {
+    if(uid != null)
+      uid = null,
+    if(userEmail != null)
+      userEmail = null,
+    if(name != null)
+      name = null,
+    if(imageUrl != null)
+      imageUrl = null
+  });
 
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setBool('auth', false);
-
-  uid = null;
-  userEmail = null;
-  name = null;
-  imageUrl = null;
-
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool('auth', false);
   return 'User signed out';
+  }
+  catch (e) {
+    print("Sign out error: $e");
+    return 'Error signing out. Try again.';
+  }
 }
 
 Future<User?> signInWithGoogle() async {
@@ -144,7 +152,6 @@ Future<User?> signInWithGoogle() async {
 
 void signOutGoogle() async {
   await googleSignIn.signOut();
-  await _auth.signOut();
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
   prefs.setBool('auth', false);
