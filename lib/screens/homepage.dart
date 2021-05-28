@@ -25,14 +25,6 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class constants {
-  static const String profile = 'Profile';
-  static const String settings = 'Settings';
-  static const String signout = 'Signout';
-
-  static const List<String> choices = <String>[profile, settings, signout];
-}
-
 class _HomePageState extends State<HomePage> {
   bool isSearching = false;
 
@@ -80,82 +72,69 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     updateCartTotal();
-
-    void choiceAction(String choice) {
-      if (choice == constants.profile) {
-        Navigator.push(context,
-            new MaterialPageRoute(builder: (context) => EditProfilePage()));
-      } else if (choice == constants.settings) {
-        Navigator.push(context,
-            new MaterialPageRoute(builder: (context) => SettingsPage()));
-      } else if (choice == constants.signout) {}
-    }
-
     return Scaffold(
         backgroundColor: lightestgrey,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
           child: AppBar(
+              leading: Icon(
+                AIicons.chip,
+                color: Colors.white,
+                size: 30,
+              ),
               backgroundColor: lightblack,
-              titleSpacing: 0.0,
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Icon(
-                    AIicons.chip,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Text(
-                    "AI Shopping",
-                    style: TextStyle(color: white, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  isSearching
-                      ? IconButton(
+              title: !isSearching
+                  ? Text(
+                      "AI Shopping",
+                      style:
+                          TextStyle(color: white, fontWeight: FontWeight.bold),
+                    )
+                  : TextField(
+                      onChanged: (val) {
+                        initiateSearch(val);
+                      },
+                      style: TextStyle(color: white),
+                      decoration: InputDecoration(
                           icon: Icon(
-                            Icons.cancel,
+                            Icons.search_rounded,
                             color: white,
                           ),
-                          onPressed: () {
-                            setState(() {
-                              tempSearchStore.clear();
-                              this.isSearching = false;
-                            });
-                          },
-                        )
-                      : IconButton(
-                          icon: Icon(
-                            AIicons.search,
-                            color: Colors.white,
-                            size: 25,
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              this.isSearching = true;
-                              // Navigator.of(context).push(MaterialPageRoute(
-                              //     builder: (BuildContext context) => SearchBar()));
-                            });
-                          },
-                        ),
-                ],
-              ),
-              automaticallyImplyLeading: false,
+                          hintText: "Search",
+                          hintStyle: TextStyle(color: white)),
+                    ),
               actions: [
+                isSearching
+                    ? IconButton(
+                        icon: Icon(
+                          Icons.cancel,
+                          color: white,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            tempSearchStore.clear();
+                            this.isSearching = false;
+                          });
+                        },
+                      )
+                    : IconButton(
+                        icon: Icon(
+                          AIicons.search,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            this.isSearching = true;
+                            // Navigator.of(context).push(MaterialPageRoute(
+                            //     builder: (BuildContext context) => SearchBar()));
+                          });
+                        },
+                      ),
                 IconButton(
                   icon: Icon(
                     AIicons.wishlist,
                     color: Colors.white,
-                    size: 30,
+                    size: 25,
                   ),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
@@ -163,37 +142,58 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                    child: IconButton(
-                      icon: Icon(
-                        AIicons.cart,
-                        color: Colors.white,
-                        size: 30,
+                  padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          AIicons.cart,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => CheckOutPage()));
+                        },
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => CheckOutPage()));
-                      },
-                    )),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(5, 0, 20, 0),
-                  child: PopupMenuButton<String>(
-                    child: Center(
-                        child: Icon(
-                      AIicons.profile,
-                      size: 30,
-                    )),
-                    itemBuilder: (context) {
-                      return constants.choices.map((String choice) {
-                        return PopupMenuItem<String>(
-                          child: Text(choice),
-                          value: choice,
-                        );
-                      }).toList();
-                    },
-                    onSelected: choiceAction,
+                      IconButton(
+                        icon: Icon(
+                          AIicons.profile,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => EditProfilePage()));
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          AIicons.settings,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => SettingsPage()));
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          AIicons.signout,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        onPressed: () {},
+                      ),
+                    ],
                   ),
                 )
               ],
