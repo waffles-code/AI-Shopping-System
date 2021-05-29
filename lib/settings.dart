@@ -1,6 +1,7 @@
 import 'package:aishop/screens/loginscreen.dart';
 import 'package:aishop/theme.dart';
 import 'package:aishop/utils/authentication.dart';
+import 'package:aishop/widgets/appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,23 +14,12 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: lightblack,
-          elevation: 1,
-          title: Text(
-            'AI SHOPPING SYSTEM',
-            style: TextStyle(color: white),
-          ),
-          automaticallyImplyLeading: false,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: white,
-            ),
-          )),
+      appBar: MyAppBar(
+        title: Text(
+          'Settings',
+          style: TextStyle(color: white),
+        ),
+      ),
       body: Container(
         padding: EdgeInsets.only(left: 16, top: 20, right: 16),
         child: ListView(
@@ -114,10 +104,9 @@ class _SettingsPageState extends State<SettingsPage> {
                 Text(
                   "Account activity",
                   style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: lightgrey
-                  ),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: lightgrey),
                 ),
                 Transform.scale(
                     scale: 0.7,
@@ -139,47 +128,50 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 onPressed: () {
                   signOut().then((response) => {
-                    if(response == "User signed out"){
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: new Text("Success!"),
-                            content: new Text(response),
-                            actions: <Widget>[
-                              ElevatedButton(
-                                child: new Text("OK"),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (BuildContext context) => LoginScreen()));
-                                },
-                              ),
-                            ],
-                          );
-                        },
-                      ),
-
-                    }
-                    else
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: new Text("Error!!"),
-                            content: new Text(response),
-                            actions: <Widget>[
-                              ElevatedButton(
-                                child: new Text("OK"),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                            ],
-                          );
-                        },
-                      )
-                  });
+                        if (response == "User signed out")
+                          {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: new Text("Success!"),
+                                  content: new Text(response),
+                                  actions: <Widget>[
+                                    ElevatedButton(
+                                      child: new Text("OK"),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        LoginScreen()));
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
+                          }
+                        else
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: new Text("Error!!"),
+                                content: new Text(response),
+                                actions: <Widget>[
+                                  ElevatedButton(
+                                    child: new Text("OK"),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                ],
+                              );
+                            },
+                          )
+                      });
                 },
                 child: Text(
                   "Sign Out",

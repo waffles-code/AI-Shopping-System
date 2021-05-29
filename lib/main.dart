@@ -16,7 +16,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   bool auto = false;
 
   void initState() {
@@ -29,9 +28,9 @@ class _MyAppState extends State<MyApp> {
   Future getUserInfo() async {
     await getUser();
     setState(() {
-      if(uid != null){
-      auto = true;
-    }
+      if (uid != null) {
+        auto = true;
+      }
     });
     print(uid);
   }

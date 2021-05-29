@@ -4,12 +4,14 @@ import 'package:aishop/components/order_review.dart';
 import 'package:aishop/icons/icons.dart';
 import 'package:aishop/theme.dart';
 import 'package:aishop/utils/cart.dart';
+import 'package:aishop/widgets/appbar.dart';
 import 'package:aishop/widgets/modal_model.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/utils/wishlist.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../theme.dart';
+
 class W extends StatefulWidget {
   @override
   _W createState() => _W();
@@ -29,24 +31,24 @@ class _W extends State<W> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white,
-      appBar: AppBar(
+      appBar: MyAppBar(
         title: Text(
           'My Wish List',
         ),
-        backgroundColor: Colors.black,
-        actions: [
-          IconButton(
-              padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
-              icon: Icon(
-                AIicons.cart,
-                color: Colors.white,
-                size: 30,
-              ),
-              onPressed: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => OrderReview()));
-              })
-        ],
+        // backgroundColor: Colors.black,
+        // actions: [
+        //   IconButton(
+        //       padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
+        //       icon: Icon(
+        //         AIicons.cart,
+        //         color: Colors.white,
+        //         size: 30,
+        //       ),
+        //       onPressed: () {
+        //         Navigator.push(context,
+        //             new MaterialPageRoute(builder: (context) => OrderReview()));
+        //       })
+        // ],
       ),
       body: new StreamBuilder<QuerySnapshot>(
         stream: usersRef.snapshots(),

@@ -1,0 +1,18 @@
+2021/05/29-15:31:23.643 3f6c Creating DB C:\Users\MMASEH~1\AppData\Local\Temp\flutter_tools.b8ba584a\flutter_tools_chrome_device.729afc84\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb since it was missing.
+2021/05/29-15:31:23.649 3f6c Reusing MANIFEST C:\Users\MMASEH~1\AppData\Local\Temp\flutter_tools.b8ba584a\flutter_tools_chrome_device.729afc84\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/29-15:31:26.397 2fc4 Level-0 table #5: started
+2021/05/29-15:31:26.402 2fc4 Level-0 table #5: 21952 bytes OK
+2021/05/29-15:31:26.405 2fc4 Delete type=0 #3
+2021/05/29-15:31:26.406 2fc4 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2021/05/29-15:48:29.806 16f8 Level-0 table #7: started
+2021/05/29-15:48:29.811 16f8 Level-0 table #7: 77350 bytes OK
+2021/05/29-15:48:29.814 16f8 Delete type=0 #4
+2021/05/29-15:48:29.815 16f8 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/05/29-15:48:29.815 16f8 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x08\x01 \x03\x00\x00\x00\x00\x00\x00\xf0?\x00\x04\x02\x01\x16\x00s\x00e\x00r\x00v\x00i\x00c\x00e\x00:\x00g\x00u\x00i\x00d\x00e\x00:\x00f\x00a\x00l\x00l\x00b\x00a\x00c\x00k\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 1452 : 1
+2021/05/29-15:48:29.815 16f8 Compacting 1@1 + 1@2 files
+2021/05/29-15:48:29.820 16f8 Generated table #8@1: 247 keys, 11411 bytes
+2021/05/29-15:48:29.820 16f8 Compacted 1@1 + 1@2 files => 11411 bytes
+2021/05/29-15:48:29.822 16f8 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/05/29-15:48:29.823 16f8 Delete type=2 #5
+2021/05/29-15:48:29.823 16f8 Delete type=2 #7
+2021/05/29-15:48:29.824 16f8 Manual compaction at level-1 from '\x00\x08\x01 \x03\x00\x00\x00\x00\x00\x00\xf0?\x00\x04\x02\x01\x16\x00s\x00e\x00r\x00v\x00i\x00c\x00e\x00:\x00g\x00u\x00i\x00d\x00e\x00:\x00f\x00a\x00l\x00l\x00b\x00a\x00c\x00k\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 1452 : 1 .. (end); will stop at (end)

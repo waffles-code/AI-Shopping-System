@@ -28,6 +28,14 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
+class constants {
+  static const String profile = 'Profile';
+  static const String settings = 'Settings';
+  static const String signout = 'Signout';
+
+  static const List<String> choices = <String>[profile, settings, signout];
+}
+
 class _HomePageState extends State<HomePage> {
   bool isSearching = false;
 
@@ -75,69 +83,125 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     updateCartTotal();
+    void choiceAction(String choice) {
+      if (choice == constants.profile) {
+        Navigator.push(context,
+            new MaterialPageRoute(builder: (context) => EditProfilePage()));
+      } else if (choice == constants.settings) {
+        Navigator.push(context,
+            new MaterialPageRoute(builder: (context) => SettingsPage()));
+      } else if (choice == constants.signout) {
+        signOut().then((response) => {
+              if (response == "User signed out")
+                {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: new Text("Success!"),
+                        content: new Text(response),
+                        actions: <Widget>[
+                          ElevatedButton(
+                            child: new Text("OK"),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      LoginScreen()));
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                }
+              else
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: new Text("Error!!"),
+                      content: new Text(response),
+                      actions: <Widget>[
+                        ElevatedButton(
+                          child: new Text("OK"),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                )
+            });
+      }
+    }
+
     return Scaffold(
         backgroundColor: lightestgrey,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
           child: AppBar(
-              leading: Icon(
-                AIicons.chip,
-                color: Colors.white,
-                size: 30,
-              ),
               backgroundColor: lightblack,
-              title: !isSearching
-                  ? Text(
-                "AI Shopping",
-                style:
-                TextStyle(color: white, fontWeight: FontWeight.bold),
-              )
-                  : TextField(
-                onChanged: (val) {
-                  initiateSearch(val);
-                },
-                style: TextStyle(color: white),
-                decoration: InputDecoration(
-                    icon: Icon(
-                      Icons.search_rounded,
-                      color: white,
-                    ),
-                    hintText: "Search",
-                    hintStyle: TextStyle(color: white)),
-              ),
-              actions: [
-                isSearching
-                    ? IconButton(
-                  icon: Icon(
-                    Icons.cancel,
-                    color: white,
+              titleSpacing: 0.0,
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(
+                    width: 8,
                   ),
-                  onPressed: () {
-                    setState(() {
-                      tempSearchStore.clear();
-                      this.isSearching = false;
-                    });
-                  },
-                )
-                    : IconButton(
-                  icon: Icon(
-                    AIicons.search,
+                  Icon(
+                    AIicons.chip,
                     color: Colors.white,
-                    size: 25,
+                    size: 30,
                   ),
-                  onPressed: () {
-                    setState(() {
-                      this.isSearching = true;
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (BuildContext context) => SearchBar()));
-                    });
-                  },
-                ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Text(
+                    "AI Shopping",
+                    style: TextStyle(color: white, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  isSearching
+                      ? IconButton(
+                          icon: Icon(
+                            Icons.cancel,
+                            color: white,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              tempSearchStore.clear();
+                              this.isSearching = false;
+                            });
+                          },
+                        )
+                      : IconButton(
+                          icon: Icon(
+                            AIicons.search,
+                            color: Colors.white,
+                            size: 25,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              this.isSearching = true;
+                              // Navigator.of(context).push(MaterialPageRoute(
+                              //     builder: (BuildContext context) => SearchBar()));
+                            });
+                          },
+                        ),
+                ],
+              ),
+              automaticallyImplyLeading: false,
+              actions: [
                 IconButton(
                   icon: Icon(
                     AIicons.wishlist,
                     color: Colors.white,
-                    size: 25,
+                    size: 30,
                   ),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
@@ -145,103 +209,39 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      IconButton(
-                        icon: Icon(
-                          AIicons.cart,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              new MaterialPageRoute(
-                                  builder: (context) => CheckOutPage()));
-                        },
+                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: IconButton(
+                      icon: Icon(
+                        AIicons.cart,
+                        color: Colors.white,
+                        size: 30,
                       ),
-                      IconButton(
-                        icon: Icon(
-                          AIicons.profile,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              new MaterialPageRoute(
-                                  builder: (context) => EditProfilePage()));
-                        },
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          AIicons.settings,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              new MaterialPageRoute(
-                                  builder: (context) => SettingsPage()));
-                        },
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          AIicons.signout,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        onPressed: () {
-                          signOut().then((response) => {
-                            if(response == "User signed out"){
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: new Text("Success!"),
-                                    content: new Text(response),
-                                    actions: <Widget>[
-                                      ElevatedButton(
-                                        child: new Text("OK"),
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                          Navigator.of(context).push(MaterialPageRoute(
-                                              builder: (BuildContext context) => LoginScreen()));
-                                        },
-                                      ),
-                                    ],
-                                  );
-                                },
-                              ),
-
-                            }
-                            else
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: new Text("Error!!"),
-                                  content: new Text(response),
-                                  actions: <Widget>[
-                                    ElevatedButton(
-                                      child: new Text("OK"),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ],
-                                );
-                              },
-                            )
-                          });
-                        },
-                      ),
-                    ],
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => CheckOutPage()));
+                      },
+                    )),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(5, 0, 20, 0),
+                  child: PopupMenuButton<String>(
+                    child: Center(
+                        child: Icon(
+                      AIicons.profile,
+                      size: 30,
+                    )),
+                    itemBuilder: (context) {
+                      return constants.choices.map((String choice) {
+                        return PopupMenuItem<String>(
+                          child: Text(choice),
+                          value: choice,
+                        );
+                      }).toList();
+                    },
+                    onSelected: choiceAction,
                   ),
-                )
+                ),
               ],
               iconTheme: IconThemeData(color: white)),
         ),
@@ -249,115 +249,115 @@ class _HomePageState extends State<HomePage> {
         //Body of the home page
         body: !isSearching
             ? ListView(
-          children: <Widget>[
-            SizedBox(
-              height: 10,
-            ),
-            //category
-            Center(
-              child: Text(
-                "Categories",
-                style: TextStyle(fontSize: 40),
-              ),
-            ),
-            Category(),
-            SizedBox(
-              height: 10,
-            ),
+                children: <Widget>[
+                  SizedBox(
+                    height: 10,
+                  ),
+                  //category
+                  Center(
+                    child: Text(
+                      "Categories",
+                      style: TextStyle(fontSize: 40),
+                    ),
+                  ),
+                  Category(),
+                  SizedBox(
+                    height: 10,
+                  ),
 
-            //Products
-            Center(
-              child: Text(
-                "Recommendations",
-                style: TextStyle(fontSize: 40),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Recommendations(),
-            SizedBox(
-              height: 10,
-            ),
-            Center(
-                child: Text(
-                  "Books",
-                  style: TextStyle(fontSize: 40),
-                )),
+                  //Products
+                  Center(
+                    child: Text(
+                      "Recommendations",
+                      style: TextStyle(fontSize: 40),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Recommendations(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Center(
+                      child: Text(
+                    "Books",
+                    style: TextStyle(fontSize: 40),
+                  )),
 
-            SizedBox(
-              height: 10,
-            ),
-            Books(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Books(),
 
-            SizedBox(
-              height: 10,
-            ),
-            Center(
-                child: Text(
-                  "Clothes",
-                  style: TextStyle(fontSize: 40),
-                )),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Center(
+                      child: Text(
+                    "Clothes",
+                    style: TextStyle(fontSize: 40),
+                  )),
 
-            SizedBox(
-              height: 10,
-            ),
-            Clothes(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Clothes(),
 
-            SizedBox(
-              height: 10,
-            ),
+                  SizedBox(
+                    height: 10,
+                  ),
 
-            Center(
-                child: Text(
-                  "Shoes",
-                  style: TextStyle(fontSize: 40),
-                )),
-            Beauty(),
-            SizedBox(
-              height: 10,
-            ),
+                  Center(
+                      child: Text(
+                    "Shoes",
+                    style: TextStyle(fontSize: 40),
+                  )),
+                  Beauty(),
+                  SizedBox(
+                    height: 10,
+                  ),
 
-            Center(
-                child: Text(
-                  "Kitchen",
-                  style: TextStyle(fontSize: 40),
-                )),
-            SizedBox(
-              height: 10,
-            ),
-            Kitchen(),
-            SizedBox(
-              height: 10,
-            ),
-            Center(
-                child: Text(
-                  "Tech",
-                  style: TextStyle(fontSize: 40),
-                )),
-            SizedBox(
-              height: 10,
-            ),
-            Tech(),
+                  Center(
+                      child: Text(
+                    "Kitchen",
+                    style: TextStyle(fontSize: 40),
+                  )),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Kitchen(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Center(
+                      child: Text(
+                    "Tech",
+                    style: TextStyle(fontSize: 40),
+                  )),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Tech(),
 
-            SizedBox(
-              height: 10,
-            ),
-          ],
-        )
+                  SizedBox(
+                    height: 10,
+                  ),
+                ],
+              )
             : ListView(children: <Widget>[
-          SizedBox(height: 10.0),
-          GridView.count(
-              padding: EdgeInsets.only(left: 20.0, right: 20.0),
-              crossAxisCount: 4,
-              crossAxisSpacing: 4.0,
-              mainAxisSpacing: 4.0,
-              primary: false,
-              shrinkWrap: true,
-              children: tempSearchStore.map((element) {
-                return buildResultCard(context, element);
-              }).toList())
-        ]));
+                SizedBox(height: 10.0),
+                GridView.count(
+                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                    crossAxisCount: 4,
+                    crossAxisSpacing: 4.0,
+                    mainAxisSpacing: 4.0,
+                    primary: false,
+                    shrinkWrap: true,
+                    children: tempSearchStore.map((element) {
+                      return buildResultCard(context, element);
+                    }).toList())
+              ]));
   }
 }
 
@@ -370,7 +370,7 @@ Widget buildResultCard(BuildContext context, data) {
       },
       splashColor: Colors.white30,
       customBorder:
-      RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
@@ -406,7 +406,7 @@ Widget buildResultCard(BuildContext context, data) {
                     Text(
                       "Name: " + data['name'],
                       style:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       height: 5,

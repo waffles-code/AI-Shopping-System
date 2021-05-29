@@ -19,15 +19,15 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "q47DLvlxyZ01CfWyFNSu8A==";
+    window.$dartAppId = "8iwDInfVnUJe/3vTDD3YQw==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "7.1.1";
-window.$dwdsDevHandlerPath = "http://localhost:49580/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:50281/$dwdsSseHandler";
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:49582/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:50283/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -625,10 +625,9 @@ let modulePaths = {
  "packages/firebase_auth_web/src/firebase_auth_web_recaptcha_verifier_factory.dart": "packages/firebase_auth_web/src/firebase_auth_web_recaptcha_verifier_factory.dart.lib",
  "packages/cloud_firestore_web/src/write_batch_web.dart": "packages/cloud_firestore_web/src/write_batch_web.dart.lib",
  "packages/cloud_firestore_web/src/interop/utils/utils.dart": "packages/cloud_firestore_web/src/interop/utils/utils.dart.lib",
- "packages/cloud_firestore_web/src/interop/firestore_interop.dart": "packages/cloud_firestore_web/src/interop/firestore_interop.dart.lib",
- "packages/cloud_firestore_web/src/interop/firebase_interop.dart": "packages/cloud_firestore_web/src/interop/firebase_interop.dart.lib",
  "packages/cloud_firestore_web/src/field_value_web.dart": "packages/cloud_firestore_web/src/field_value_web.dart.lib",
- "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_write_batch.dart": "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_write_batch.dart.lib",
+ "packages/cloud_firestore_platform_interface/src/platform_interface/utils/load_bundle_task_state.dart": "packages/cloud_firestore_platform_interface/src/platform_interface/utils/load_bundle_task_state.dart.lib",
+ "packages/cloud_firestore_platform_interface/src/load_bundle_task_state.dart": "packages/cloud_firestore_platform_interface/src/load_bundle_task_state.dart.lib",
  "packages/cloud_firestore_platform_interface/src/persistence_settings.dart": "packages/cloud_firestore_platform_interface/src/persistence_settings.dart.lib",
  "packages/cloud_firestore_platform_interface/src/set_options.dart": "packages/cloud_firestore_platform_interface/src/set_options.dart.lib",
  "packages/cloud_firestore_platform_interface/src/field_path.dart": "packages/cloud_firestore_platform_interface/src/field_path.dart.lib",
@@ -638,6 +637,7 @@ let modulePaths = {
  "packages/cloud_firestore_platform_interface/src/settings.dart": "packages/cloud_firestore_platform_interface/src/settings.dart.lib",
  "packages/cloud_firestore_platform_interface/src/timestamp.dart": "packages/cloud_firestore_platform_interface/src/timestamp.dart.lib",
  "packages/cloud_firestore_platform_interface/src/snapshot_metadata.dart": "packages/cloud_firestore_platform_interface/src/snapshot_metadata.dart.lib",
+ "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_load_bundle_task.dart": "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_load_bundle_task.dart.lib",
  "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_field_value.dart": "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_field_value.dart.lib",
  "packages/cloud_firestore_platform_interface/src/internal/pointer.dart": "packages/cloud_firestore_platform_interface/src/internal/pointer.dart.lib",
  "packages/cloud_firestore_platform_interface/src/method_channel/utils/exception.dart": "packages/cloud_firestore_platform_interface/src/method_channel/utils/exception.dart.lib",
@@ -646,8 +646,9 @@ let modulePaths = {
  "packages/cloud_firestore_platform_interface/src/geo_point.dart": "packages/cloud_firestore_platform_interface/src/geo_point.dart.lib",
  "packages/cloud_firestore_platform_interface/src/blob.dart": "packages/cloud_firestore_platform_interface/src/blob.dart.lib",
  "packages/cloud_firestore_web/src/internals.dart": "packages/cloud_firestore_web/src/internals.dart.lib",
+ "packages/cloud_firestore_web/src/load_bundle_task_web.dart": "packages/cloud_firestore_web/src/load_bundle_task_web.dart.lib",
  "packages/aishop/main.dart": "packages/aishop/main.dart.lib",
- "packages/aishop/screens/verifyscreen.dart": "packages/aishop/screens/verifyscreen.dart.lib",
+ "packages/aishop/widgets/tech.dart": "packages/aishop/widgets/tech.dart.lib",
  "packages/rflutter_alert/rflutter_alert.dart": "packages/rflutter_alert/rflutter_alert.dart.lib",
  "packages/rflutter_alert/src/dialog_button.dart": "packages/rflutter_alert/src/dialog_button.dart.lib",
  "packages/rflutter_alert/src/constants.dart": "packages/rflutter_alert/src/constants.dart.lib",
@@ -719,6 +720,7 @@ let modulePaths = {
  "packages/aishop/components/round_textfield.dart": "packages/aishop/components/round_textfield.dart.lib",
  "packages/aishop/components/icon_button.dart": "packages/aishop/components/icon_button.dart.lib",
  "packages/aishop/components/searchservice.dart": "packages/aishop/components/searchservice.dart.lib",
+ "packages/aishop/widgets/appbar.dart": "packages/aishop/widgets/appbar.dart.lib",
  "packages/aishop/components/title.dart": "packages/aishop/components/title.dart.lib",
  "packages/aishop/components/sidepanel.dart": "packages/aishop/components/sidepanel.dart.lib",
  "packages/aishop/components/round_passwordfield.dart": "packages/aishop/components/round_passwordfield.dart.lib",
@@ -1271,10 +1273,9 @@ let moduleNames = {
  "packages/firebase_auth_web/src/firebase_auth_web_recaptcha_verifier_factory.dart.lib": "packages/firebase_auth_web/src/firebase_auth_web_recaptcha_verifier_factory.dart",
  "packages/cloud_firestore_web/src/write_batch_web.dart.lib": "packages/cloud_firestore_web/src/write_batch_web.dart",
  "packages/cloud_firestore_web/src/interop/utils/utils.dart.lib": "packages/cloud_firestore_web/src/interop/utils/utils.dart",
- "packages/cloud_firestore_web/src/interop/firestore_interop.dart.lib": "packages/cloud_firestore_web/src/interop/firestore_interop.dart",
- "packages/cloud_firestore_web/src/interop/firebase_interop.dart.lib": "packages/cloud_firestore_web/src/interop/firebase_interop.dart",
  "packages/cloud_firestore_web/src/field_value_web.dart.lib": "packages/cloud_firestore_web/src/field_value_web.dart",
- "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_write_batch.dart.lib": "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_write_batch.dart",
+ "packages/cloud_firestore_platform_interface/src/platform_interface/utils/load_bundle_task_state.dart.lib": "packages/cloud_firestore_platform_interface/src/platform_interface/utils/load_bundle_task_state.dart",
+ "packages/cloud_firestore_platform_interface/src/load_bundle_task_state.dart.lib": "packages/cloud_firestore_platform_interface/src/load_bundle_task_state.dart",
  "packages/cloud_firestore_platform_interface/src/persistence_settings.dart.lib": "packages/cloud_firestore_platform_interface/src/persistence_settings.dart",
  "packages/cloud_firestore_platform_interface/src/set_options.dart.lib": "packages/cloud_firestore_platform_interface/src/set_options.dart",
  "packages/cloud_firestore_platform_interface/src/field_path.dart.lib": "packages/cloud_firestore_platform_interface/src/field_path.dart",
@@ -1284,6 +1285,7 @@ let moduleNames = {
  "packages/cloud_firestore_platform_interface/src/settings.dart.lib": "packages/cloud_firestore_platform_interface/src/settings.dart",
  "packages/cloud_firestore_platform_interface/src/timestamp.dart.lib": "packages/cloud_firestore_platform_interface/src/timestamp.dart",
  "packages/cloud_firestore_platform_interface/src/snapshot_metadata.dart.lib": "packages/cloud_firestore_platform_interface/src/snapshot_metadata.dart",
+ "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_load_bundle_task.dart.lib": "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_load_bundle_task.dart",
  "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_field_value.dart.lib": "packages/cloud_firestore_platform_interface/src/platform_interface/platform_interface_field_value.dart",
  "packages/cloud_firestore_platform_interface/src/internal/pointer.dart.lib": "packages/cloud_firestore_platform_interface/src/internal/pointer.dart",
  "packages/cloud_firestore_platform_interface/src/method_channel/utils/exception.dart.lib": "packages/cloud_firestore_platform_interface/src/method_channel/utils/exception.dart",
@@ -1292,8 +1294,9 @@ let moduleNames = {
  "packages/cloud_firestore_platform_interface/src/geo_point.dart.lib": "packages/cloud_firestore_platform_interface/src/geo_point.dart",
  "packages/cloud_firestore_platform_interface/src/blob.dart.lib": "packages/cloud_firestore_platform_interface/src/blob.dart",
  "packages/cloud_firestore_web/src/internals.dart.lib": "packages/cloud_firestore_web/src/internals.dart",
+ "packages/cloud_firestore_web/src/load_bundle_task_web.dart.lib": "packages/cloud_firestore_web/src/load_bundle_task_web.dart",
  "packages/aishop/main.dart.lib": "packages/aishop/main.dart",
- "packages/aishop/screens/verifyscreen.dart.lib": "packages/aishop/screens/verifyscreen.dart",
+ "packages/aishop/widgets/tech.dart.lib": "packages/aishop/widgets/tech.dart",
  "packages/rflutter_alert/rflutter_alert.dart.lib": "packages/rflutter_alert/rflutter_alert.dart",
  "packages/rflutter_alert/src/dialog_button.dart.lib": "packages/rflutter_alert/src/dialog_button.dart",
  "packages/rflutter_alert/src/constants.dart.lib": "packages/rflutter_alert/src/constants.dart",
@@ -1365,6 +1368,7 @@ let moduleNames = {
  "packages/aishop/components/round_textfield.dart.lib": "packages/aishop/components/round_textfield.dart",
  "packages/aishop/components/icon_button.dart.lib": "packages/aishop/components/icon_button.dart",
  "packages/aishop/components/searchservice.dart.lib": "packages/aishop/components/searchservice.dart",
+ "packages/aishop/widgets/appbar.dart.lib": "packages/aishop/widgets/appbar.dart",
  "packages/aishop/components/title.dart.lib": "packages/aishop/components/title.dart",
  "packages/aishop/components/sidepanel.dart.lib": "packages/aishop/components/sidepanel.dart",
  "packages/aishop/components/round_passwordfield.dart.lib": "packages/aishop/components/round_passwordfield.dart",

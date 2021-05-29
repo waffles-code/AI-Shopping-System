@@ -1,7 +1,7 @@
 import 'package:aishop/components/checkoutdelivary.dart';
 import 'package:aishop/components/textlink.dart';
+import 'package:aishop/widgets/appbar.dart';
 import 'package:flutter/material.dart';
-
 
 import '../theme.dart';
 
@@ -9,21 +9,10 @@ class FirstDelivaryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: lightblack,
-        elevation: 1,
+      appBar: MyAppBar(
         title: Text(
-          'AI SHOPPING SYSTEM',
+          'Add Address',
           style: TextStyle(color: white),
-        ),
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: white,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
         ),
       ),
       body: Row(
@@ -66,8 +55,8 @@ class FirstDelivaryPage extends StatelessWidget {
                               ),
                               alignment: Alignment(-0.7, 0),
                             ),
-                            leading: Icon(Icons.house,
-                                size: 20, color: lightblack),
+                            leading:
+                                Icon(Icons.house, size: 20, color: lightblack),
                           ),
                           Divider(
                             height: 10,
