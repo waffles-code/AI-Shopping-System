@@ -1,12 +1,14 @@
 import 'dart:ui';
 
 import 'package:aishop/components/databasemanager.dart';
+import 'package:aishop/components/pastpurchase.dart';
 import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
 
 import 'package:aishop/screens/wishlistscreen.dart';
 import 'package:aishop/settings.dart';
 import 'package:aishop/utils/authentication.dart';
+import 'package:aishop/widgets/appbar.dart';
 import 'package:aishop/widgets/beauty.dart';
 import 'package:aishop/widgets/recommendations.dart';
 import 'package:aishop/widgets/books.dart';
@@ -28,13 +30,13 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class constants {
-  static const String profile = 'Profile';
-  static const String settings = 'Settings';
-  static const String signout = 'Signout';
+// class constants {
+//   static const String profile = 'Profile';
+//   static const String settings = 'Settings';
+//   static const String signout = 'Signout';
 
-  static const List<String> choices = <String>[profile, settings, signout];
-}
+//   static const List<String> choices = <String>[profile, settings, signout];
+// }
 
 class _HomePageState extends State<HomePage> {
   bool isSearching = false;
@@ -90,6 +92,9 @@ class _HomePageState extends State<HomePage> {
       } else if (choice == constants.settings) {
         Navigator.push(context,
             new MaterialPageRoute(builder: (context) => SettingsPage()));
+      } else if (choice == constants.orders) {
+        Navigator.push(context,
+            new MaterialPageRoute(builder: (context) => PastPurchase()));
       } else if (choice == constants.signout) {
         signOut().then((response) => {
               if (response == "User signed out")
