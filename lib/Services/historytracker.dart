@@ -129,6 +129,16 @@ void addToPurchases() {
                 'date': date
               }
           ),
+          FirebaseFirestore.instance.collection('Products')
+              .doc(productid.id)
+              .get()
+              .then((prodshot) {
+            FirebaseFirestore.instance.collection('Products').doc(
+                productid.id).update(
+                {'Purchased by': FieldValue.increment(1)}
+            );
+          }
+          )
         },
         productid.reference.delete()
       });
