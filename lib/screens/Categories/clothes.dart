@@ -1,14 +1,10 @@
 import 'dart:ui';
 
 import 'package:aishop/components/order_review.dart';
-import 'package:aishop/screens/search.dart';
-import 'package:aishop/edit_profile.dart';
-import 'package:aishop/icons/icons.dart';
-import 'package:aishop/settings.dart';
+import 'package:aishop/widgets/appbar.dart';
 import 'package:aishop/widgets/product_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:aishop/screens/checkout.dart';
 
 import '../../theme.dart';
 
@@ -26,93 +22,7 @@ class _ClothesScreen extends State<ClothesScreen> {
       backgroundColor: lightestgrey,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
-        child: AppBar(
-            backgroundColor: lightblack,
-            title:
-            Text(
-              "AI Shopping",
-              style:
-              TextStyle(color: white, fontWeight: FontWeight.bold),
-            ),
-            actions: [
-              IconButton(
-                icon: Icon(
-                  AIicons.search,
-                  color: Colors.white,
-                  size: 25,
-                ),
-                onPressed: () {
-                  setState(() {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => Search()));
-                  });
-                },
-              ),
-              IconButton(
-                icon: Icon(
-                  AIicons.wishlist,
-                  color: Colors.white,
-                  size: 25,
-                ),
-                onPressed: () {},
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    IconButton(
-                      icon: Icon(
-                        AIicons.cart,
-                        color: Colors.white,
-                        size: 25,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => CheckOutPage()));
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        AIicons.profile,
-                        color: Colors.white,
-                        size: 25,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => EditProfilePage()));
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        AIicons.settings,
-                        color: Colors.white,
-                        size: 25,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => SettingsPage()));
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        AIicons.signout,
-                        color: Colors.white,
-                        size: 25,
-                      ),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-              )
-            ],
-            iconTheme: IconThemeData(color: white)),
+        child: MyAppBar(title: Text("Clothes")),
       ),
 
       //Body of the home page

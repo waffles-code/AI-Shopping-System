@@ -114,11 +114,11 @@ void addToPurchases() {
               .doc(productid.id)
               .get()
               .then((prodshot) {
-              FirebaseFirestore.instance.collection('Products').doc(
-                  productid.id).update(
-                  {'Purchased by': FieldValue.increment(1)}
-              );
-            }
+            FirebaseFirestore.instance.collection('Products').doc(
+                productid.id).update(
+                {'Purchased by': FieldValue.increment(1)}
+            );
+          }
           )
         }
         else{

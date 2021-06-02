@@ -16,6 +16,7 @@ import 'package:aishop/widgets/category.dart';
 import 'package:aishop/widgets/clothes.dart';
 import 'package:aishop/widgets/kitchen.dart';
 import 'package:aishop/widgets/tech.dart';
+import 'package:badges/badges.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
@@ -203,10 +204,15 @@ class _HomePageState extends State<HomePage> {
               automaticallyImplyLeading: false,
               actions: [
                 IconButton(
-                  icon: Icon(
-                    AIicons.wishlist,
-                    color: Colors.white,
-                    size: 30,
+                  icon: Badge(
+                    badgeContent: Num_Of_Prod_in_Wishlist(),
+                    toAnimate: true,
+                    animationType: BadgeAnimationType.scale,
+                    child: Icon(
+                      AIicons.wishlist,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   ),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
@@ -216,10 +222,15 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                     padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: IconButton(
-                      icon: Icon(
-                        AIicons.cart,
-                        color: Colors.white,
-                        size: 30,
+                      icon: Badge(
+                        toAnimate: true,
+                        animationType: BadgeAnimationType.scale,
+                        badgeContent: Num_Of_Prod_in_Cart(),
+                        child: Icon(
+                          AIicons.cart,
+                          color: Colors.white,
+                          size: 30,
+                        ),
                       ),
                       onPressed: () {
                         Navigator.push(
@@ -364,6 +375,53 @@ class _HomePageState extends State<HomePage> {
                     }).toList())
               ]));
   }
+
+  // ignore: non_constant_identifier_names
+  Widget Num_Of_Prod_in_Cart(){
+    // ignore: non_constant_identifier_names
+    var NumOfProd = 0;
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance
+          .collection("Users")
+          .doc(uid)
+          .collection("Cart")
+          .snapshots(),
+    builder: (context, snapshot) {
+        if(snapshot.hasData){
+          NumOfProd = snapshot.data!.docs.length;
+          return Text(NumOfProd.toString());
+        }
+        else{
+          return Text(NumOfProd.toString());
+        }
+    }
+    );
+
+  }
+
+  // ignore: non_constant_identifier_names
+  Widget Num_Of_Prod_in_Wishlist(){
+    // ignore: non_constant_identifier_names
+    var NumOfProd = 0;
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection("Users")
+            .doc(uid)
+            .collection("Wishlist")
+            .snapshots(),
+        builder: (context, snapshot) {
+          if(snapshot.hasData){
+            NumOfProd = snapshot.data!.docs.length;
+            return Text(NumOfProd.toString());
+          }
+          else{
+            return Text(NumOfProd.toString());
+          }
+        }
+    );
+
+  }
+
 }
 
 Widget buildResultCard(BuildContext context, data) {

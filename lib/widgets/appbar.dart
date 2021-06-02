@@ -1,6 +1,7 @@
 import 'package:aishop/icons/icons.dart';
-import 'package:aishop/screens/checkout.dart';
-import 'package:aishop/screens/wishlistscreen.dart';
+import 'package:aishop/utils/authentication.dart';
+import 'package:badges/badges.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
@@ -27,10 +28,15 @@ class MyAppBar extends AppBar {
             backgroundColor: lightblack,
             actions: <Widget>[
               IconButton(
-                icon: Icon(
-                  AIicons.wishlist,
-                  color: Colors.white,
-                  size: 30,
+                icon: Badge(
+                  badgeContent: Num_Of_Prod_in_Wishlist(),
+                  toAnimate: true,
+                  animationType: BadgeAnimationType.scale,
+                  child: Icon(
+                    AIicons.wishlist,
+                    color: Colors.white,
+                    size: 30,
+                  ),
                 ),
                 onPressed: () {
                   // Get.to(W());
@@ -41,10 +47,15 @@ class MyAppBar extends AppBar {
               Padding(
                   padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                   child: IconButton(
-                    icon: Icon(
-                      AIicons.cart,
-                      color: Colors.white,
-                      size: 30,
+                    icon: Badge(
+                      toAnimate: true,
+                      animationType: BadgeAnimationType.scale,
+                      badgeContent: Num_Of_Prod_in_Cart(),
+                      child: Icon(
+                        AIicons.cart,
+                        color: Colors.white,
+                        size: 30,
+                      ),
                     ),
                     onPressed: () {
                       // Get.to(CheckOutPage());
@@ -74,4 +85,51 @@ class MyAppBar extends AppBar {
                 ),
               ),
             ]);
+
+  // ignore: non_constant_identifier_names
+ static Widget Num_Of_Prod_in_Cart(){
+    // ignore: non_constant_identifier_names
+    var NumOfProd = 0;
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection("Users")
+            .doc(uid)
+            .collection("Cart")
+            .snapshots(),
+        builder: (context, snapshot) {
+          if(snapshot.hasData){
+            NumOfProd = snapshot.data!.docs.length;
+            return Text(NumOfProd.toString());
+          }
+          else{
+            return Text(NumOfProd.toString());
+          }
+        }
+    );
+
+  }
+
+  // ignore: non_constant_identifier_names
+ static Widget Num_Of_Prod_in_Wishlist(){
+    // ignore: non_constant_identifier_names
+    var NumOfProd = 0;
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection("Users")
+            .doc(uid)
+            .collection("Wishlist")
+            .snapshots(),
+        builder: (context, snapshot) {
+          if(snapshot.hasData){
+            NumOfProd = snapshot.data!.docs.length;
+            return Text(NumOfProd.toString());
+          }
+          else{
+            return Text(NumOfProd.toString());
+          }
+        }
+    );
+
+  }
+
 }
