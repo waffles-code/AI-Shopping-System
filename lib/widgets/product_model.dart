@@ -151,7 +151,7 @@ class _ProductCard extends State<ProductCard> {
                                   widget.imgUrl,
                                   widget.description,
                                   widget.name,
-                                  widget.price);
+                                  widget.price,1);
                               HistoryTracker.addToHistory(
                                   widget.id,
                                   widget.imgUrl,
@@ -165,7 +165,7 @@ class _ProductCard extends State<ProductCard> {
                                   widget.imgUrl,
                                   widget.description,
                                   widget.name,
-                                  widget.price);
+                                  widget.price,1);
                             updateCartTotal();
                           },
                           style: ElevatedButton.styleFrom(

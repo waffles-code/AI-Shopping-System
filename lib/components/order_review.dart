@@ -19,7 +19,9 @@ void updateCartTotal() async {
       .get()
       .then((value) {
     value.docs.forEach((element) {
-      total += double.parse(element.data()['price']);
+      total +=  double.parse(element.data()['price'])*element.data()['quantity'];
+
+
     });
   });
   g = total;
@@ -27,7 +29,8 @@ void updateCartTotal() async {
 
 // ignore: must_be_immutable
 class OrderReview extends StatefulWidget {
-  //User _user = FirebaseAuth.instance.currentUser!;
+
+
   @override
   _OrderReviewState createState() => _OrderReviewState();
 }
@@ -44,9 +47,8 @@ class _OrderReviewState extends State<OrderReview> {
 
   @override
   Widget build(BuildContext context) {
-    setState(() {
-      updateCartTotal();
-    });
+    updateCartTotal();
+
     return Scaffold(
         backgroundColor: lightblack,
         appBar: AppBar(
@@ -55,7 +57,7 @@ class _OrderReviewState extends State<OrderReview> {
           title: Text(
             'Order Review',
             style: TextStyle(
-                fontSize: 25, color: lightblack, fontWeight: FontWeight.bold,),
+              fontSize: 25, color: lightblack, fontWeight: FontWeight.bold,),
           ),
           toolbarHeight: 105,
           backgroundColor: Colors.white60,
@@ -76,10 +78,11 @@ class _OrderReviewState extends State<OrderReview> {
                     cartid: snapshot.data!.docs[index].id,
                     prodname: snapshot.data!.docs[index].get('name'),
                     prodpicture: snapshot.data!.docs[index].get('url'),
-                    // prodquantity: snapshot.data!.docs[index].get('quantity'),
+                    prodquantity:snapshot.data!.docs[index].get('quantity'),
                     proddescription:
-                        snapshot.data!.docs[index].get('description'),
+                    snapshot.data!.docs[index].get('description'),
                     prodprice: snapshot.data!.docs[index].get('price'),
+                    prodindex:index,
                   );
                 },
                 itemCount: snapshot.data!.docs.length,
@@ -93,15 +96,15 @@ class _OrderReviewState extends State<OrderReview> {
             children: <Widget>[
               Expanded(
                   child: ListTile(
-                title: new Text(
-                  "ORDER SUBTOTAL                      R $g\n                             ",
-                  style: TextStyle(color: white),
-                ),
-                subtitle: new Text(
-                  " \n TOTAL                                R $g",
-                  style: TextStyle(color: white, fontSize: 19.0),
-                ),
-              ))
+                    title: new Text(
+                      "ORDER SUBTOTAL                      R $g\n                             ",
+                      style: TextStyle(color: white),
+                    ),
+                    subtitle: new Text(
+                      " \n TOTAL                                R $g",
+                      style: TextStyle(color: white, fontSize: 19.0),
+                    ),
+                  ))
             ],
           ),
         ));
@@ -112,17 +115,19 @@ class SingleCartProduct extends StatefulWidget {
   final prodname;
   final prodpicture;
   final prodprice;
-  // final prodquantity;
+  final prodquantity;
   final proddescription;
   final cartid;
+  final prodindex;
 
   SingleCartProduct(
       {this.prodname,
-      this.prodpicture,
-      this.prodprice,
-      // this.prodquantity,
-      this.proddescription,
-      this.cartid});
+        this.prodpicture,
+        this.prodprice,
+        this.prodquantity,
+        this.proddescription,
+        this.prodindex,
+        this.cartid});
 
   @override
   _SingleCartProductState createState() => _SingleCartProductState();
@@ -131,6 +136,7 @@ class SingleCartProduct extends StatefulWidget {
 class _SingleCartProductState extends State<SingleCartProduct> {
   @override
   Widget build(BuildContext context) {
+
     return Card(
       color: Color(0xB7242424),
       child: ListTile(
@@ -165,44 +171,82 @@ class _SingleCartProductState extends State<SingleCartProduct> {
 
             new Row(
               children: [
-                Container(
-                  width: 20,
-                  height: 20,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.yellow)),
-                  child: Center(
-                      child: Icon(
-                    Icons.remove,
-                    size: 10,
-                    color: Colors.yellowAccent,
-                  )),
-                ),
+                GestureDetector(
+                  child: Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.yellow)),
+                    child: Center(
+                        child: Icon(
+                          Icons.remove,
+                          size: 10,
+                          color: Colors.yellowAccent,
+                        )),
+                  ),
+                  onTap: ()async{
+                    await  FirebaseFirestore.instance
+                        .collection('Users')
+                        .doc(FirebaseAuth.instance.currentUser!.uid)
+                        .collection("Cart").where('name',isEqualTo: widget.prodname).get().then((value) => value.docs.forEach((element)=>{ element.reference.update({"quantity":FieldValue.increment(-1)})}));
+
+                    setState(() {
+                      g-=double.parse(widget.prodprice);
+                      updateCartTotal();
+                      Navigator.pushReplacement(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => CheckOutPage()));
+                    });
+
+
+                  },),
                 SizedBox(
                   height: 5,
                   width: 10,
                 ),
                 Text(
-                  "1",
+                  "${widget.prodquantity}",
                   style: TextStyle(fontSize: 10, color: Colors.yellowAccent),
                 ),
                 SizedBox(
                   height: 5,
                   width: 10,
                 ),
-                Container(
-                  width: 20,
-                  height: 20,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.yellow)),
-                  child: Center(
-                      child: Icon(
-                    Icons.add,
-                    size: 10,
-                    color: Colors.yellowAccent,
-                  )),
-                ),
+                GestureDetector(
+                  child: Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.yellow)),
+                    child: Center(
+                        child: Icon(
+                          Icons.add,
+                          size: 10,
+                          color: Colors.yellowAccent,
+                        )),
+                  ),
+                  onTap: ()async{
+
+                    await FirebaseFirestore.instance
+                        .collection('Users')
+                        .doc(FirebaseAuth.instance.currentUser!.uid)
+                        .collection("Cart").where('name',isEqualTo: widget.prodname).get().then((value) => value.docs.forEach((element)=>{ element.reference.update({"quantity":FieldValue.increment(1)})}));
+
+                    setState(() {
+                      g+=double.parse(widget.prodprice);
+                      updateCartTotal();
+                      Navigator.pushReplacement(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => CheckOutPage()));
+
+                    });
+
+
+                  },),
               ],
             ),
 
@@ -223,49 +267,50 @@ class _SingleCartProductState extends State<SingleCartProduct> {
               children: <Widget>[
                 Expanded(
                     child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-                  child: Row(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 0,
-                        width: 0,
+                      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+                      child: Row(
+                        children: <Widget>[
+                          SizedBox(
+                            height: 0,
+                            width: 0,
+                          ),
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              Cart.removeFromCart(
+                                  widget.cartid,
+                                  widget.prodpicture,
+                                  widget.proddescription,
+                                  widget.prodname,
+                                  widget.prodprice,
+                                  widget.prodquantity);
+                              setState(() {
+                                g -= double.parse(widget.prodprice)*widget.prodquantity;
+                                Navigator.pushReplacement(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) => CheckOutPage()));
+                                updateCartTotal();
+                              });
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.grey,
+                            ),
+                            icon: Icon(
+                              Icons.delete_outline_rounded,
+                              size: 15,
+                              color: Colors.black,
+                            ),
+                            label: Text(
+                              "Remove",
+                              style: TextStyle(
+                                  fontSize: 10.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.yellowAccent),
+                            ),
+                          ),
+                        ],
                       ),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          Cart.removeFromCart(
-                              widget.cartid,
-                              widget.prodpicture,
-                              widget.proddescription,
-                              widget.prodname,
-                              widget.prodprice);
-                          setState(() {
-                            g -= double.parse(widget.prodprice);
-                            Navigator.pushReplacement(
-                                context,
-                                new MaterialPageRoute(
-                                    builder: (context) => CheckOutPage()));
-                            updateCartTotal();
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.grey,
-                        ),
-                        icon: Icon(
-                          Icons.delete_outline_rounded,
-                          size: 15,
-                          color: Colors.black,
-                        ),
-                        label: Text(
-                          "Remove",
-                          style: TextStyle(
-                              fontSize: 10.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.yellowAccent),
-                        ),
-                      ),
-                    ],
-                  ),
-                ))
+                    ))
               ],
             ),
           ],
