@@ -87,13 +87,15 @@ class wishlist extends StatefulWidget {
   final prodprice;
   final proddescription;
   final cartid;
+  final prodquantity;
 
   wishlist(
       {this.prodname,
       this.prodpicture,
       this.prodprice,
       this.proddescription,
-      this.cartid});
+      this.cartid,
+      this.prodquantity});
 
   @override
   _Wishlist createState() => _Wishlist();
@@ -162,7 +164,8 @@ class _Wishlist extends State<wishlist> {
                             widget.prodpicture,
                             widget.proddescription,
                             widget.prodname,
-                            widget.prodprice);
+                            widget.prodprice,
+                            widget.prodquantity);
                         HistoryTracker.addToHistory(
                             widget.cartid,
                             widget.prodpicture,
