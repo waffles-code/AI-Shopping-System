@@ -14,7 +14,6 @@ class KitchenScreen extends StatefulWidget {
 }
 
 class _KitchenScreen extends State<KitchenScreen> {
-
   @override
   Widget build(BuildContext context) {
     updateCartTotal();
@@ -22,57 +21,57 @@ class _KitchenScreen extends State<KitchenScreen> {
       backgroundColor: lightestgrey,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
-        child: MyAppBar(title: Text("Kitchen")),
+        child: MyAppBar(
+          title: Text("Kitchen"),
+          context: context,
+        ),
       ),
 
       //Body of the home page
-      body:
-      ListView(
-          children: <Widget>[
-            //category
-            Center(
-              child: Text(
-                "Kitchen",
-                style: TextStyle(fontSize: 40),
-              ),
-            ),
-            Container(
-              height: 800,
-              child: StreamBuilder<QuerySnapshot>(
-                stream: FirebaseFirestore.instance
-                    .collection("Products")
-                    .where("category", isEqualTo: "Kitchen")
-                    .snapshots(),
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData) {
-                    return SizedBox(
-                      child: CircularProgressIndicator(
-                        backgroundColor: lightgrey,
-                      ),
+      body: ListView(children: <Widget>[
+        //category
+        Center(
+          child: Text(
+            "Kitchen",
+            style: TextStyle(fontSize: 40),
+          ),
+        ),
+        Container(
+          height: 800,
+          child: StreamBuilder<QuerySnapshot>(
+            stream: FirebaseFirestore.instance
+                .collection("Products")
+                .where("category", isEqualTo: "Kitchen")
+                .snapshots(),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                return SizedBox(
+                  child: CircularProgressIndicator(
+                    backgroundColor: lightgrey,
+                  ),
+                );
+              } else {
+                return GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 5,
+                      childAspectRatio: 2 / 3,
+                      mainAxisSpacing: 0),
+                  itemBuilder: (context, index) {
+                    return ProductCard(
+                      snapshot.data!.docs[index].id,
+                      snapshot.data!.docs[index].get('url'),
+                      snapshot.data!.docs[index].get('name'),
+                      snapshot.data!.docs[index].get('description'),
+                      snapshot.data!.docs[index].get('price').toString(),
                     );
-                  } else {
-                    return GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 5,
-                          childAspectRatio: 2 / 3,
-                          mainAxisSpacing: 0),
-                      itemBuilder: (context, index) {
-                        return ProductCard(
-                          snapshot.data!.docs[index].id,
-                          snapshot.data!.docs[index].get('url'),
-                          snapshot.data!.docs[index].get('name'),
-                          snapshot.data!.docs[index].get('description'),
-                          snapshot.data!.docs[index].get('price').toString(),
-                        );
-                      },
-                      itemCount: snapshot.data!.docs.length,
-                    );
-                  }
-                },
-              ),
-            ),
-          ]
-      ),
+                  },
+                  itemCount: snapshot.data!.docs.length,
+                );
+              }
+            },
+          ),
+        ),
+      ]),
     );
   }
 }

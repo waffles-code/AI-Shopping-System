@@ -14,7 +14,6 @@ class BooksScreen extends StatefulWidget {
 }
 
 class _BooksScreen extends State<BooksScreen> {
-
   @override
   Widget build(BuildContext context) {
     updateCartTotal();
@@ -22,20 +21,21 @@ class _BooksScreen extends State<BooksScreen> {
       backgroundColor: lightestgrey,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
-        child: MyAppBar(title: Text("Books")),
+        child: MyAppBar(
+          title: Text("Books"),
+          context: context,
+        ),
       ),
 
       //Body of the home page
-      body:
-      ListView(
-        children: <Widget>[
-          //category
-          Center(
-            child: Text(
-              "Books",
-              style: TextStyle(fontSize: 40),
-            ),
+      body: ListView(children: <Widget>[
+        //category
+        Center(
+          child: Text(
+            "Books",
+            style: TextStyle(fontSize: 40),
           ),
+        ),
         Container(
           height: 800,
           child: StreamBuilder<QuerySnapshot>(
@@ -71,8 +71,7 @@ class _BooksScreen extends State<BooksScreen> {
             },
           ),
         ),
-          ]
-      ),
+      ]),
     );
   }
 }

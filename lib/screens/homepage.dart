@@ -18,7 +18,7 @@ import 'package:aishop/widgets/kitchen.dart';
 import 'package:aishop/widgets/tech.dart';
 import 'package:badges/badges.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'package:aishop/Services/prod_num_badges.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/widgets/modal_model.dart';
 import 'package:aishop/screens/checkout.dart';
@@ -216,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => W()));
+                        builder: (BuildContext context) => WishlistPage()));
                   },
                 ),
                 Padding(
@@ -377,30 +377,27 @@ class _HomePageState extends State<HomePage> {
   }
 
   // ignore: non_constant_identifier_names
-  Widget Num_Of_Prod_in_Cart(){
+  Widget Num_Of_Prod_in_Cart() {
     // ignore: non_constant_identifier_names
     var NumOfProd = 0;
     return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance
-          .collection("Users")
-          .doc(uid)
-          .collection("Cart")
-          .snapshots(),
-    builder: (context, snapshot) {
-        if(snapshot.hasData){
-          NumOfProd = snapshot.data!.docs.length;
-          return Text(NumOfProd.toString());
-        }
-        else{
-          return Text(NumOfProd.toString());
-        }
-    }
-    );
-
+        stream: FirebaseFirestore.instance
+            .collection("Users")
+            .doc(uid)
+            .collection("Cart")
+            .snapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            NumOfProd = snapshot.data!.docs.length;
+            return Text(NumOfProd.toString());
+          } else {
+            return Text(NumOfProd.toString());
+          }
+        });
   }
 
   // ignore: non_constant_identifier_names
-  Widget Num_Of_Prod_in_Wishlist(){
+  Widget Num_Of_Prod_in_Wishlist() {
     // ignore: non_constant_identifier_names
     var NumOfProd = 0;
     return StreamBuilder<QuerySnapshot>(
@@ -410,18 +407,14 @@ class _HomePageState extends State<HomePage> {
             .collection("Wishlist")
             .snapshots(),
         builder: (context, snapshot) {
-          if(snapshot.hasData){
+          if (snapshot.hasData) {
             NumOfProd = snapshot.data!.docs.length;
             return Text(NumOfProd.toString());
-          }
-          else{
+          } else {
             return Text(NumOfProd.toString());
           }
-        }
-    );
-
+        });
   }
-
 }
 
 Widget buildResultCard(BuildContext context, data) {
