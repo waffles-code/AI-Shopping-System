@@ -19,6 +19,7 @@ class PastPurchaseState extends State<PastPurchase> {
           title: Text(
             "Past Transactions",
           ),
+          context: context,
         ),
         body: StreamBuilder(
             stream: FirebaseFirestore.instance

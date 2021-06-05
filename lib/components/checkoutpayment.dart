@@ -23,6 +23,7 @@ class CheckOutPayment extends StatelessWidget {
           title: Text(
             "Delivery Method",
           ),
+          context: context,
         ),
         body: StreamBuilder(
             stream: FirebaseFirestore.instance.collection('Users').snapshots(),

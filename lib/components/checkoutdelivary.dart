@@ -21,6 +21,7 @@ class _CheckOutDelivery extends State<CheckOutDelivery> {
           title: Text(
             "Check Out Delivery Payment",
           ),
+          context: context,
         ),
         body: Container(
             child: ListView(children: <Widget>[

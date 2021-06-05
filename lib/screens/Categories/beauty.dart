@@ -21,7 +21,10 @@ class _ShoesScreen extends State<ShoesScreen> {
       backgroundColor: lightestgrey,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
-        child: MyAppBar(title: Text("Beauty")),
+        child: MyAppBar(
+          title: Text("Beauty"),
+          context: context,
+        ),
       ),
 
       //Body of the home page
