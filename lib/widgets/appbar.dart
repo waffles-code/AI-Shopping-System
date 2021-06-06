@@ -1,28 +1,76 @@
 import 'package:aishop/Services/prod_num_badges.dart';
+import 'package:aishop/components/pastpurchase.dart';
+import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
 import 'package:aishop/screens/checkout.dart';
+import 'package:aishop/screens/loginscreen.dart';
 import 'package:aishop/screens/wishlistscreen.dart';
+import 'package:aishop/settings.dart';
 import 'package:aishop/utils/authentication.dart';
 import 'package:badges/badges.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-// import 'package:/flutter/widgets.dart';
-
+import 'package:aishop/addons/popup_menu_consts.dart';
 import '../theme.dart';
 
-class constants {
-  static const String profile = 'Profile';
-  static const String orders = 'Orders';
-  static const String settings = 'Settings';
-  static const String signout = 'Signout';
-
-  static const List<String> choices = <String>[
-    profile,
-    orders,
-    settings,
-    signout
-  ];
+void choiceAction(String choice) {
+  if (choice == constants.profile) {
+    Navigator.push(
+        contxt, new MaterialPageRoute(builder: (context) => EditProfilePage()));
+  } else if (choice == constants.settings) {
+    Navigator.push(
+        contxt, new MaterialPageRoute(builder: (context) => SettingsPage()));
+  } else if (choice == constants.orders) {
+    Navigator.push(
+        contxt, new MaterialPageRoute(builder: (context) => PastPurchase()));
+  } else if (choice == constants.signout) {
+    signOut().then((response) => {
+          if (response == "User signed out")
+            {
+              showDialog(
+                context: contxt,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: new Text("Success!"),
+                    content: new Text(response),
+                    actions: <Widget>[
+                      ElevatedButton(
+                        child: new Text("OK"),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  LoginScreen()));
+                        },
+                      ),
+                    ],
+                  );
+                },
+              ),
+            }
+          else
+            showDialog(
+              context: contxt,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: new Text("Error!!"),
+                  content: new Text(response),
+                  actions: <Widget>[
+                    ElevatedButton(
+                      child: new Text("OK"),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ],
+                );
+              },
+            )
+        });
+  }
 }
+
+BuildContext contxt = "" as BuildContext;
 
 class MyAppBar extends AppBar {
   MyAppBar({Key? key, Widget? title, required BuildContext context})
@@ -77,6 +125,7 @@ class MyAppBar extends AppBar {
                     size: 30,
                   )),
                   itemBuilder: (context) {
+                    contxt = context;
                     return constants.choices.map((String choice) {
                       return PopupMenuItem<String>(
                         child: Text(choice),
@@ -84,19 +133,8 @@ class MyAppBar extends AppBar {
                       );
                     }).toList();
                   },
-                  // onSelected: choiceAction,
+                  onSelected: choiceAction,
                 ),
               ),
             ]);
 }
-
-// class app {
-//   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-//   Future<dynamic> navigateTo(String routeName) {
-//     return navigatorKey.currentState!.pushNamed(routeName);
-//   }
-
-//   bool goBack() {
-//     return navigatorKey.currentState.pop();
-//   }
-// }
