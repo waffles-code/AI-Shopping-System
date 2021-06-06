@@ -94,7 +94,8 @@ class _WishlistModel extends State<wishlistModel> {
                             widget.proddescription,
                             widget.prodname,
                             widget.prodprice,
-                            widget.prodquantity);
+                            widget.prodquantity,
+                            widget.stockamt);
                         HistoryTracker.addToHistory(
                             widget.cartid,
                             widget.prodpicture,

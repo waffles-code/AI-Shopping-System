@@ -79,8 +79,7 @@ class _OrderReviewState extends State<OrderReview> {
                     prodname: snapshot.data!.docs[index].get('name'),
                     prodpicture: snapshot.data!.docs[index].get('url'),
                     prodquantity:snapshot.data!.docs[index].get('quantity'),
-                    proddescription:
-                    snapshot.data!.docs[index].get('description'),
+                    proddescription: snapshot.data!.docs[index].get('description'),
                     prodprice: snapshot.data!.docs[index].get('price'),
                     prodindex:index,
                   );
@@ -119,6 +118,7 @@ class SingleCartProduct extends StatefulWidget {
   final proddescription;
   final cartid;
   final prodindex;
+  final stockamt;
 
   SingleCartProduct(
       {this.prodname,
@@ -127,7 +127,8 @@ class SingleCartProduct extends StatefulWidget {
         this.prodquantity,
         this.proddescription,
         this.prodindex,
-        this.cartid});
+        this.cartid,
+        this.stockamt});
 
   @override
   _SingleCartProductState createState() => _SingleCartProductState();
@@ -282,7 +283,8 @@ class _SingleCartProductState extends State<SingleCartProduct> {
                                   widget.proddescription,
                                   widget.prodname,
                                   widget.prodprice,
-                                  widget.prodquantity);
+                                  widget.prodquantity,
+                                  widget.stockamt);
                               setState(() {
                                 g -= double.parse(widget.prodprice)*widget.prodquantity;
                                 Navigator.pushReplacement(

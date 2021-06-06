@@ -38,6 +38,7 @@ class HistoryTracker {
               'name': name,
               'description': description,
               'price': price,
+              'stockamt': stockamt,
               'click count': 1,
               'index': 0
             }
@@ -98,6 +99,7 @@ void addToPurchases() {
                 'url': productid.get("url"),
                 'name': productid.get("name"),
                 'description': productid.get("description"),
+                'stockamt': productid.get("stockamt"),
                 'price': productid.get("price"),
               }
           ),

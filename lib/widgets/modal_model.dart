@@ -88,7 +88,7 @@ Modal(context, id, imgUrl, name, description, price,stockamt) {
                           (amount>0) ? ElevatedButton.icon(
                         onPressed: () {
                           double quantity=1;
-                          Cart.addToCart(id, imgUrl, name, description, price,quantity);
+                          Cart.addToCart(id, imgUrl, name, description, price,quantity,stockamt);
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.grey,
