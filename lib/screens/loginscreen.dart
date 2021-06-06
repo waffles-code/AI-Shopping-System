@@ -98,6 +98,8 @@ class _LoginScreenState extends State<LoginScreen> {
     cityname = networkHelper.cityname;
   }
 
+//test keys
+  static const notRegisteredTextKey = Key('notRegisteredTextKey');
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -278,6 +280,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             GoogleRoundButton(),
                             //==========================================
                             TextLink(
+                                key: notRegisteredTextKey,
                                 text: "Not Registered?",
                                 align: Alignment.center,
                                 press: () => {
