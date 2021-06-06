@@ -4,7 +4,7 @@ import 'package:aishop/components/databasemanager.dart';
 import 'package:aishop/components/pastpurchase.dart';
 import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
-
+import 'package:aishop/addons/popup_menu_consts.dart';
 import 'package:aishop/screens/wishlistscreen.dart';
 import 'package:aishop/settings.dart';
 import 'package:aishop/utils/authentication.dart';
@@ -374,46 +374,6 @@ class _HomePageState extends State<HomePage> {
                       return buildResultCard(context, element);
                     }).toList())
               ]));
-  }
-
-  // ignore: non_constant_identifier_names
-  Widget Num_Of_Prod_in_Cart() {
-    // ignore: non_constant_identifier_names
-    var NumOfProd = 0;
-    return StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance
-            .collection("Users")
-            .doc(uid)
-            .collection("Cart")
-            .snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            NumOfProd = snapshot.data!.docs.length;
-            return Text(NumOfProd.toString());
-          } else {
-            return Text(NumOfProd.toString());
-          }
-        });
-  }
-
-  // ignore: non_constant_identifier_names
-  Widget Num_Of_Prod_in_Wishlist() {
-    // ignore: non_constant_identifier_names
-    var NumOfProd = 0;
-    return StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance
-            .collection("Users")
-            .doc(uid)
-            .collection("Wishlist")
-            .snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            NumOfProd = snapshot.data!.docs.length;
-            return Text(NumOfProd.toString());
-          } else {
-            return Text(NumOfProd.toString());
-          }
-        });
   }
 }
 
