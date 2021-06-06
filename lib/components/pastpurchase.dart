@@ -45,7 +45,8 @@ class PastPurchaseState extends State<PastPurchase> {
                           snapshot.data!.docs[index].get('url'),
                           snapshot.data!.docs[index].get('name'),
                           snapshot.data!.docs[index].get('description'),
-                          snapshot.data!.docs[index].get('price').toString());
+                          snapshot.data!.docs[index].get('price').toString(),
+                          snapshot.data!.docs[index].get('stockamt'));
                     },
                     // Card Which Holds Layout Of ListView Item
                     child: Card(

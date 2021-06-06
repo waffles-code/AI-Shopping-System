@@ -52,8 +52,8 @@ class _Recommendations extends State<Recommendations> {
                             .snapshots(),
                         builder: (context, snapshot3) {
                           if (snapshot3.hasData) {
-                              //taking the 10 most purchased products
-                                Most_Purchased = snapshot3.data!.docs;
+                            //taking the 10 most purchased products
+                            Most_Purchased = snapshot3.data!.docs;
                           }
                           return StreamBuilder<QuerySnapshot>(
                               stream: FirebaseFirestore.instance
@@ -66,81 +66,107 @@ class _Recommendations extends State<Recommendations> {
                                   Purchases = snapshot2.data!.docs;
                                 }
                                 //New users
-                                if (Wishlist.isEmpty && recommendations.isEmpty && Purchases.isEmpty) {
+                                if (Wishlist.isEmpty &&
+                                    recommendations.isEmpty &&
+                                    Purchases.isEmpty) {
                                   recommendations = Most_Purchased;
                                 }
                                 //recommending based of history
-                                if (recommendations.isNotEmpty && Purchases.isNotEmpty) {
-                                  for (var i = 0; i < recommendations.length; i++) {
+                                if (recommendations.isNotEmpty &&
+                                    Purchases.isNotEmpty) {
+                                  for (var i = 0;
+                                      i < recommendations.length;
+                                      i++) {
                                     for (var j = 0; j < Purchases.length; j++) {
-                                      if (recommendations[i].id == Purchases[j].id) {
-                                        recommendations.remove(recommendations[i]);
-                                        if(i == recommendations.length)
+                                      if (recommendations[i].id ==
+                                          Purchases[j].id) {
+                                        recommendations
+                                            .remove(recommendations[i]);
+                                        if (i == recommendations.length)
                                           i = i - 1;
                                       }
                                     }
                                   }
                                 }
                                 //recommending based on items in a wishlist
-                                if (recommendations.isNotEmpty && Wishlist.isNotEmpty) {
-                                  for (var i = 0; i < recommendations.length; i++) {
+                                if (recommendations.isNotEmpty &&
+                                    Wishlist.isNotEmpty) {
+                                  for (var i = 0;
+                                      i < recommendations.length;
+                                      i++) {
                                     for (var j = 0; j < Wishlist.length; j++) {
-                                      if (recommendations[i].id == Wishlist[j].id) {
+                                      if (recommendations[i].id ==
+                                          Wishlist[j].id) {
                                         Wishlist.remove(Wishlist[j]);
-                                        if(j == Wishlist.length)
-                                          j = j - 1;
+                                        if (j == Wishlist.length) j = j - 1;
                                       }
                                     }
                                   }
-                                  for (var count = 0; count < Wishlist.length; count++) {
+                                  for (var count = 0;
+                                      count < Wishlist.length;
+                                      count++) {
                                     recommendations.add(Wishlist[count]);
                                   }
                                 }
                                 //recommending based on most purchased
-                                if(recommendations.isNotEmpty && Most_Purchased.isNotEmpty){
-                                  for(var i = 0; i < recommendations.length; i++){
-                                    for(var j = 0; j < Most_Purchased.length; j++){
-                                      if(recommendations[i].id == Most_Purchased[j].id){
+                                if (recommendations.isNotEmpty &&
+                                    Most_Purchased.isNotEmpty) {
+                                  for (var i = 0;
+                                      i < recommendations.length;
+                                      i++) {
+                                    for (var j = 0;
+                                        j < Most_Purchased.length;
+                                        j++) {
+                                      if (recommendations[i].id ==
+                                          Most_Purchased[j].id) {
                                         //recommendations.removeAt(i);
-                                        Most_Purchased.remove(Most_Purchased[j]);
-                                        if(j == Most_Purchased.length)
+                                        Most_Purchased.remove(
+                                            Most_Purchased[j]);
+                                        if (j == Most_Purchased.length)
                                           j = j - 1;
                                       }
                                     }
                                   }
-                                  for (var count = 0; count < Most_Purchased.length; count++) {
+                                  for (var count = 0;
+                                      count < Most_Purchased.length;
+                                      count++) {
                                     recommendations.add(Most_Purchased[count]);
                                   }
                                 }
 
                                 if (recommendations.length != 0) {
-                                 //recommendations..shuffle();
-                                  for (var i = 0; i < recommendations.length; i++) {
+                                  //recommendations..shuffle();
+                                  for (var i = 0;
+                                      i < recommendations.length;
+                                      i++) {
                                     return GridView.builder(
                                       scrollDirection: Axis.horizontal,
                                       gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
-                                          crossAxisCount: 1,
-                                          childAspectRatio: 3 / 2,
-                                          mainAxisSpacing: 0),
+                                          SliverGridDelegateWithFixedCrossAxisCount(
+                                              crossAxisCount: 1,
+                                              childAspectRatio: 3 / 2,
+                                              mainAxisSpacing: 0),
                                       itemBuilder: (context, index) {
-                                        while(index < recommendations.length){
+                                        while (index < recommendations.length) {
                                           return ProductCard(
                                             recommendations[index].id,
                                             recommendations[index].get('url'),
                                             recommendations[index].get('name'),
-                                            recommendations[index].get('description'),
-                                            recommendations[index].get('price').toString(),
+                                            recommendations[index]
+                                                .get('description'),
+                                            recommendations[index]
+                                                .get('price')
+                                                .toString(),
+                                            recommendations[index]
+                                                .get('stockamt'),
                                           );
-
                                         }
-                                        throw'';
+                                        throw '';
                                       },
                                       itemCount: recommendations.length,
                                     );
                                   }
-                                }
-                                else {
+                                } else {
                                   return Text("No Recommendations yet");
                                 }
                                 throw '';

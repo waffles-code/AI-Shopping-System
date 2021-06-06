@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:aishop/widgets/product_model.dart';
 
 import '../theme.dart';
+
 class Tech extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,15 +26,17 @@ class Tech extends StatelessWidget {
             return GridView.builder(
               scrollDirection: Axis.horizontal,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1, childAspectRatio: 3/2, mainAxisSpacing: 0),
+                  crossAxisCount: 1,
+                  childAspectRatio: 3 / 2,
+                  mainAxisSpacing: 0),
               itemBuilder: (context, index) {
                 return ProductCard(
-                  snapshot.data!.docs[index].id,
-                  snapshot.data!.docs[index].get('url'),
-                  snapshot.data!.docs[index].get('name'),
-                  snapshot.data!.docs[index].get('description'),
-                  snapshot.data!.docs[index].get('price').toString(),
-                );
+                    snapshot.data!.docs[index].id,
+                    snapshot.data!.docs[index].get('url'),
+                    snapshot.data!.docs[index].get('name'),
+                    snapshot.data!.docs[index].get('description'),
+                    snapshot.data!.docs[index].get('price').toString(),
+                    snapshot.data!.docs[index].get('stockamt'));
               },
               itemCount: snapshot.data!.docs.length,
             );

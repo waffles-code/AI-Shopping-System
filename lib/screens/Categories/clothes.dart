@@ -63,6 +63,7 @@ class _ClothesScreen extends State<ClothesScreen> {
                       snapshot.data!.docs[index].get('name'),
                       snapshot.data!.docs[index].get('description'),
                       snapshot.data!.docs[index].get('price').toString(),
+                      snapshot.data!.docs[index].get('stockamt'),
                     );
                   },
                   itemCount: snapshot.data!.docs.length,

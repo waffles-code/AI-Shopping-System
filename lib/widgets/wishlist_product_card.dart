@@ -12,6 +12,7 @@ class wishlistModel extends StatefulWidget {
   final proddescription;
   final cartid;
   final prodquantity;
+  final int stockamt;
 
   wishlistModel(
       {this.prodname,
@@ -19,7 +20,8 @@ class wishlistModel extends StatefulWidget {
       this.prodprice,
       this.proddescription,
       this.cartid,
-      this.prodquantity});
+      this.prodquantity,
+      required this.stockamt});
 
   @override
   _WishlistModel createState() => _WishlistModel();
@@ -33,8 +35,14 @@ class _WishlistModel extends State<wishlistModel> {
       shadowColor: Colors.blueGrey,
       child: ListTile(
           onTap: () {
-            Modal(context, widget.cartid, widget.prodpicture,
-                widget.proddescription, widget.prodname, widget.prodprice);
+            Modal(
+                context,
+                widget.cartid,
+                widget.prodpicture,
+                widget.proddescription,
+                widget.prodname,
+                widget.prodprice,
+                widget.stockamt);
           },
           leading: new Image.network(
             widget.prodpicture,
@@ -69,7 +77,8 @@ class _WishlistModel extends State<wishlistModel> {
                       widget.prodpicture,
                       widget.proddescription,
                       widget.prodname,
-                      widget.prodprice);
+                      widget.prodprice,
+                      widget.stockamt);
                 },
               ),
             ),
@@ -95,7 +104,8 @@ class _WishlistModel extends State<wishlistModel> {
                             widget.prodpicture,
                             widget.proddescription,
                             widget.prodname,
-                            widget.prodprice);
+                            widget.prodprice,
+                            widget.stockamt);
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black54,

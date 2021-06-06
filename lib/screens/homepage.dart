@@ -31,57 +31,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-// class constants {
-//   static const String profile = 'Profile';
-//   static const String settings = 'Settings';
-//   static const String signout = 'Signout';
-
-//   static const List<String> choices = <String>[profile, settings, signout];
-// }
-
 class _HomePageState extends State<HomePage> {
   bool isSearching = false;
-
-  var queryResultSet = [];
-  var tempSearchStore = [];
-
-  initiateSearch(value) {
-    if (value.length == 0) {
-      setState(() {
-        queryResultSet = [];
-        tempSearchStore = [];
-      });
-    }
-
-    var capitalizedValue =
-        value.substring(0, 1).toUpperCase() + value.substring(1);
-
-    if (queryResultSet.length == 0 && value.length == 1) {
-      DataService().searchByName(capitalizedValue).then((QuerySnapshot mydocs) {
-        for (int i = 0; i < mydocs.docs.length; ++i) {
-          queryResultSet.add(mydocs.docs[i].data());
-          setState(() {
-            tempSearchStore.add(queryResultSet[i]);
-          });
-        }
-      });
-    } else {
-      tempSearchStore = [];
-      queryResultSet.forEach((element) {
-        if (element['name'].toLowerCase().contains(value.toLowerCase()) ==
-            true) {
-          if (element["name"].toLowerCase().indexOf(value.toLowerCase()) == 0) {
-            setState(() {
-              tempSearchStore.add(element);
-            });
-          }
-        }
-      });
-    }
-    if (tempSearchStore.length == 0 && value.length > 1) {
-      setState(() {});
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -180,7 +131,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              tempSearchStore.clear();
                               this.isSearching = false;
                             });
                           },
@@ -263,175 +213,102 @@ class _HomePageState extends State<HomePage> {
         ),
 
         //Body of the home page
-        body: !isSearching
-            ? ListView(
-                children: <Widget>[
-                  SizedBox(
-                    height: 10,
-                  ),
-                  //category
-                  Center(
-                    child: Text(
-                      "Categories",
-                      style: TextStyle(fontSize: 40),
-                    ),
-                  ),
-                  Category(),
-                  SizedBox(
-                    height: 10,
-                  ),
+        body: ListView(
+          children: <Widget>[
+            SizedBox(
+              height: 10,
+            ),
+            //category
+            Center(
+              child: Text(
+                "Categories",
+                style: TextStyle(fontSize: 40),
+              ),
+            ),
+            Category(),
+            SizedBox(
+              height: 10,
+            ),
 
-                  //Products
-                  Center(
-                    child: Text(
-                      "Recommendations",
-                      style: TextStyle(fontSize: 40),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Recommendations(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Center(
-                      child: Text(
-                    "Books",
-                    style: TextStyle(fontSize: 40),
-                  )),
+            //Products
+            Center(
+              child: Text(
+                "Recommendations",
+                style: TextStyle(fontSize: 40),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Recommendations(),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+                child: Text(
+              "Books",
+              style: TextStyle(fontSize: 40),
+            )),
 
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Books(),
+            SizedBox(
+              height: 10,
+            ),
+            Books(),
 
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Center(
-                      child: Text(
-                    "Clothes",
-                    style: TextStyle(fontSize: 40),
-                  )),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+                child: Text(
+              "Clothes",
+              style: TextStyle(fontSize: 40),
+            )),
 
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Clothes(),
+            SizedBox(
+              height: 10,
+            ),
+            Clothes(),
 
-                  SizedBox(
-                    height: 10,
-                  ),
+            SizedBox(
+              height: 10,
+            ),
 
-                  Center(
-                      child: Text(
-                    "Shoes",
-                    style: TextStyle(fontSize: 40),
-                  )),
-                  Beauty(),
-                  SizedBox(
-                    height: 10,
-                  ),
+            Center(
+                child: Text(
+              "Shoes",
+              style: TextStyle(fontSize: 40),
+            )),
+            Beauty(),
+            SizedBox(
+              height: 10,
+            ),
 
-                  Center(
-                      child: Text(
-                    "Kitchen",
-                    style: TextStyle(fontSize: 40),
-                  )),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Kitchen(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Center(
-                      child: Text(
-                    "Tech",
-                    style: TextStyle(fontSize: 40),
-                  )),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Tech(),
+            Center(
+                child: Text(
+              "Kitchen",
+              style: TextStyle(fontSize: 40),
+            )),
+            SizedBox(
+              height: 10,
+            ),
+            Kitchen(),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+                child: Text(
+              "Tech",
+              style: TextStyle(fontSize: 40),
+            )),
+            SizedBox(
+              height: 10,
+            ),
+            Tech(),
 
-                  SizedBox(
-                    height: 10,
-                  ),
-                ],
-              )
-            : ListView(children: <Widget>[
-                SizedBox(height: 10.0),
-                GridView.count(
-                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                    crossAxisCount: 4,
-                    crossAxisSpacing: 4.0,
-                    mainAxisSpacing: 4.0,
-                    primary: false,
-                    shrinkWrap: true,
-                    children: tempSearchStore.map((element) {
-                      return buildResultCard(context, element);
-                    }).toList())
-              ]));
+            SizedBox(
+              height: 10,
+            ),
+          ],
+        ));
   }
-}
-
-Widget buildResultCard(BuildContext context, data) {
-  return InkWell(
-      onTap: () {
-        DataService().increment(data['name']);
-        Modal(context, data['id'], data['url'], data['name'],
-            data['description'], data['price']);
-      },
-      splashColor: Colors.white30,
-      customBorder:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Container(
-              decoration: BoxDecoration(
-                  color: white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.blueGrey,
-                      blurRadius: 5,
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(20)),
-              width: 100,
-              child: Padding(
-                padding: EdgeInsets.all(0.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 10,
-                    ),
-                    //image from db
-                    Image.network(
-                      data['url'],
-                      width: 180,
-                      height: 200,
-                      fit: BoxFit.cover,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    //text
-                    Text(
-                      "Name: " + data['name'],
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    //price
-                    Text("Price: R " + data['price'],
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold)),
-                  ],
-                ),
-              ))));
 }
