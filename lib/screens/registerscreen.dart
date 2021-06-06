@@ -91,11 +91,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
     value = value.trim();
 //check user enters a strong enough password.
     if (userPasswordController.text.isNotEmpty) {
-      if (value.isEmpty) {
-        return 'Please enter password';
-      } else if (!value.contains(RegExp(
-          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$'))) {
-        return 'Enter a valid password';
+      if (value.length < 8) {
+        return 'password length is less than 8';
+      } else {
+        return 'Password is valid';
       }
     }
 
@@ -106,11 +105,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
     value = value.trim();
 //check that passwords are matching.
     if (userConfirmPasswordController.text.isNotEmpty) {
-      if (value.isEmpty) {
-        return 'Please repeat password';
-      } else if (userConfirmPasswordController.text !=
-          userPasswordController.text) {
-        return 'Passwords do not match';
+      if (userConfirmPasswordController.text != userPasswordController.text) {
+        return 'Passward dont match';
+      } else {
+        return 'Password Confirmed';
       }
     }
     return null;
@@ -303,9 +301,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     errorText: _isEditingpassword
                                         ? _validatePassword(
                                             userPasswordController.text)
-                                        : "Password too short",
+                                        : "  ",
                                     errorstyle:
-                                        TextStyle(color: Colors.redAccent),
+                                        TextStyle(color: Colors.yellowAccent),
                                   )),
                                   //====================================================================================row
                                   Expanded(
@@ -313,20 +311,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     autofocus: false,
                                     icon: Icon(LineIcons.key),
                                     margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                                    text: "Password",
+                                    text: "Confirm Password",
                                     control: userConfirmPasswordController,
                                     focusNode: textFocusNodeConfirmPassword,
                                     onSubmitted: (value) {
                                       textFocusNodeConfirmPassword.unfocus();
                                       FocusScope.of(context)
-                                          .requestFocus(textFocusNodeLocation);
+                                          .requestFocus(textFocusNodePassword);
+                                    },
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _isEditingpassword = true;
+                                      });
                                     },
                                     errorText: _isEditingpassword
                                         ? _checkRepeatedPassword(
                                             userConfirmPasswordController.text)
-                                        : "password Don't match",
+                                        : " ",
                                     errorstyle:
-                                        TextStyle(color: Colors.redAccent),
+                                        TextStyle(color: Colors.greenAccent),
                                   ))
                                 ]),
                             //==================================================
