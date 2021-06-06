@@ -237,12 +237,13 @@ class CheckOutPayment extends StatelessWidget {
                                         builder: (BuildContext context) =>
                                             AlertDialog(
                                           title: const Text('Purchase'),
-                                          content:
-                                              const Text('Your Was  Succeful '),
+                                          content: const Text(
+                                              'Your purchase was  succesful '),
                                           actions: <Widget>[
-                                            FlatButton(
+                                            TextButton(
                                               child: Text('OK'),
                                               onPressed: () {
+                                                addToPurchases();
                                                 Navigator.of(context).push(
                                                     MaterialPageRoute(
                                                         builder: (BuildContext
