@@ -100,7 +100,7 @@ class SearchState extends State<Search> {
                 primary: false,
                 shrinkWrap: true,
                 children: tempSearchStore.map((element) {
-                  return ProductCard(element.id.toString(), element.data()['url'].toString(), element.data()['name'].toString(), element.data()['description'].toString(), element.data()['price'].toString());
+                  return ProductCard(element.id.toString(), element.data()['url'].toString(), element.data()['name'].toString(), element.data()['description'].toString(), element.data()['price'].toString(),element.data()['stockamt']);
                 }).toList())
           ]
         ): new Text("")

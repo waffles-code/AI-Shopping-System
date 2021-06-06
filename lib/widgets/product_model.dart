@@ -18,6 +18,7 @@ class ProductCard extends StatefulWidget {
   final String name;
   final String description;
   final String price;
+  final int stockamt;
 
   ProductCard(
     this.id,
@@ -25,6 +26,7 @@ class ProductCard extends StatefulWidget {
     this.name,
     this.description,
     this.price,
+    this.stockamt
   );
 
   @override
@@ -42,6 +44,7 @@ class _ProductCard extends State<ProductCard> {
 
   @override
   Widget build(BuildContext context) {
+    int amount = widget.stockamt;
     return Padding(
       padding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
       child: Container(
@@ -63,10 +66,10 @@ class _ProductCard extends State<ProductCard> {
                 onTap: () {
                   //add to history clicks
                   HistoryTracker.addToHistory(widget.id, widget.imgUrl,
-                      widget.description, widget.name, widget.price);
+                      widget.description, widget.name, widget.price,widget.stockamt);
                   //on tap modal pop up
                   Modal(context, widget.id, widget.imgUrl, widget.name,
-                      widget.description, widget.price);
+                      widget.description, widget.price,widget.stockamt);
                   DataService().increment(widget.name);
                 },
                 splashColor: Colors.white30,
@@ -95,6 +98,7 @@ class _ProductCard extends State<ProductCard> {
                             padding: const EdgeInsets.all(4.0),
                             child: Text(
                               widget.name,
+                              maxLines: 1,
                               style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
@@ -108,7 +112,7 @@ class _ProductCard extends State<ProductCard> {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w900,
-                                color: Colors.orange,
+                                color: Colors.blueGrey,
                               )),
                         ],
                       ),
@@ -129,18 +133,18 @@ class _ProductCard extends State<ProductCard> {
                         });
                         if (toggle) {
                           Wishlist.addToCart(widget.id, widget.imgUrl,
-                              widget.description, widget.name, widget.price);
+                              widget.description, widget.name, widget.price,widget.stockamt);
                           HistoryTracker.addToHistory(widget.id, widget.imgUrl,
-                              widget.description, widget.name, widget.price);
+                              widget.description, widget.name, widget.price,widget.stockamt);
                         } else
                           Wishlist.removeFromCart(widget.id, widget.imgUrl,
-                              widget.description, widget.name, widget.price);
+                              widget.description, widget.name, widget.price,widget.stockamt);
                       },
                     ),
                   ),
                   Padding(
                       padding: const EdgeInsets.fromLTRB(5.0, 20.0, 5.0, 10.0),
-                      child: ElevatedButton.icon(
+                      child: (amount>0) ? ElevatedButton.icon(
                           onPressed: () {
                             setState(() {
                               add = !add;
@@ -157,7 +161,8 @@ class _ProductCard extends State<ProductCard> {
                                   widget.imgUrl,
                                   widget.description,
                                   widget.name,
-                                  widget.price);
+                                  widget.price,
+                                  widget.stockamt);
                               updateCartTotal();
                             } else
                               Cart.removeFromCart(
@@ -192,10 +197,32 @@ class _ProductCard extends State<ProductCard> {
                                       fontSize: 15.0,
                                       fontWeight: FontWeight.bold,
                                       color: white),
-                                ))),
+                                )):new Text('OUT OF STOCK',
+                                    style : TextStyle(fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Nunito Sans",
+                                      color: Colors.red,
+                                    ))
+                  ),
                 ],
               ),
-            )
+            ),
+                Center(
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                            child: (amount<50 && amount!=0) ?
+                            new Text('LOW IN STOCK',
+                                style : TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Nunito Sans",
+                                  color: Colors.orange,
+                                )):new Text(''),
+                          )
+                        ])),
           ])),
     );
   }

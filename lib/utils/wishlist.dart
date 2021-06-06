@@ -4,9 +4,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'authentication.dart';
 
 class Wishlist  {
-  final id, imgUrl, description, name, price;
+  final id, imgUrl, description, name, price,stockamt;
 
-  Wishlist.addToCart(this.id, this.imgUrl, this.description, this.name, this.price) {
+  Wishlist.addToCart(this.id, this.imgUrl, this.description, this.name, this.price, this.stockamt) {
     FirebaseFirestore.instance.collection('Users').doc(uid).collection("Wishlist").doc(id).set(
         {
           'url': imgUrl,
@@ -17,7 +17,7 @@ class Wishlist  {
     );
   }
 
-  Wishlist.removeFromCart(this.id, this.imgUrl, this.description, this.name, this.price){
+  Wishlist.removeFromCart(this.id, this.imgUrl, this.description, this.name, this.price, this.stockamt){
           FirebaseFirestore.instance.collection('Users').doc(uid).collection("Wishlist").doc(id).delete();
       }
 }

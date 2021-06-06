@@ -131,6 +131,7 @@ class _Recommendations extends State<Recommendations> {
                                             recommendations[index].get('name'),
                                             recommendations[index].get('description'),
                                             recommendations[index].get('price').toString(),
+                                            recommendations[index].get('stockamt'),
                                           );
 
                                         }

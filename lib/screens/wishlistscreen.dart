@@ -57,6 +57,7 @@ class _Wishlist extends State<WishlistPage> {
                   proddescription:
                       snapshot.data!.docs[index].get('description'),
                   prodprice: snapshot.data!.docs[index].get('price'),
+                    stockamt: snapshot.data!.docs[index].get('stockamt'),
                 );
               },
               itemCount: snapshot.data!.docs.length,

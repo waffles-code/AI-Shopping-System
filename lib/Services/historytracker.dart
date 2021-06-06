@@ -2,9 +2,9 @@ import 'package:aishop/utils/authentication.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HistoryTracker {
-  final id, imgUrl, description, name, price;
+  final id, imgUrl, description, name, price,stockamt;
   HistoryTracker.addToHistory(this.id, this.imgUrl, this.description, this.name,
-      this.price) {
+      this.price,this.stockamt) {
     int index;
     FirebaseFirestore.instance
         .collection('Users')
