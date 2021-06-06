@@ -1,4 +1,4 @@
-class constants {
+class Constants {
   static const String profile = 'Profile';
   static const String orders = 'Orders';
   static const String settings = 'Settings';
