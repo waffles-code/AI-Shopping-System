@@ -14,16 +14,16 @@ import 'package:aishop/addons/popup_menu_consts.dart';
 import '../theme.dart';
 
 void choiceAction(String choice) {
-  if (choice == constants.profile) {
+  if (choice == Constants.profile) {
     Navigator.push(
         contxt, new MaterialPageRoute(builder: (context) => EditProfilePage()));
-  } else if (choice == constants.settings) {
+  } else if (choice == Constants.settings) {
     Navigator.push(
         contxt, new MaterialPageRoute(builder: (context) => SettingsPage()));
-  } else if (choice == constants.orders) {
+  } else if (choice == Constants.orders) {
     Navigator.push(
         contxt, new MaterialPageRoute(builder: (context) => PastPurchase()));
-  } else if (choice == constants.signout) {
+  } else if (choice == Constants.signout) {
     signOut().then((response) => {
           if (response == "User signed out")
             {
@@ -126,7 +126,7 @@ class MyAppBar extends AppBar {
                   )),
                   itemBuilder: (context) {
                     contxt = context;
-                    return constants.choices.map((String choice) {
+                    return Constants.choices.map((String choice) {
                       return PopupMenuItem<String>(
                         child: Text(choice),
                         value: choice,
