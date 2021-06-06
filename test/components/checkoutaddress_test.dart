@@ -10,7 +10,7 @@ void main() {
   }
 
   testWidgets('check out ...', (tester) async {
-    CheckOutAddress cat = CheckOutAddress();
-    await tester.pumpWidget(makeTestableWidget(child: cat));
+    CheckOutAddress checkOutAddress = CheckOutAddress();
+    await tester.pumpWidget(makeTestableWidget(child: checkOutAddress));
   });
 }
