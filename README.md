@@ -27,7 +27,7 @@ products that are available.
 
 ## About the project
 
-###Login and Registration pages
+## Login and Registration pages
 
 *Text form fields were used to allow the user to enter their personal information such as their first name, last names, email, 
 date of birth, location and create a password. The buttons available are the sign up and the sign up with google is the user 
