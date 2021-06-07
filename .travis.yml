@@ -16,7 +16,7 @@ script:
   - ./flutter/bin/flutter test --coverage
 
 after_success:
-  - coveralls-lcov --repo-token "bMtV5Rej244tmxGfnP8QfJLW7IJc1cAbK" coverage/lcov.info
+  - coveralls-lcov --repo-token "PfcG49tXvKV1QlhkpfhRmAl0Nvoqr70cz" coverage/lcov.info
   
 cache:
   directories:
