@@ -5,6 +5,7 @@ import 'package:aishop/utils/wishlist.dart';
 import 'package:aishop/widgets/modal_model.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class wishlistModel extends StatefulWidget {
   final prodname;
   final prodpicture;
@@ -98,7 +99,8 @@ class _WishlistModel extends State<wishlistModel> {
                             widget.proddescription,
                             widget.prodname,
                             widget.prodprice,
-                            widget.prodquantity);
+                            widget.prodquantity,
+                            widget.stockamt);
                         HistoryTracker.addToHistory(
                             widget.cartid,
                             widget.prodpicture,

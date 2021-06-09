@@ -171,6 +171,7 @@ class _ProductCard extends State<ProductCard> {
                                       widget.description,
                                       widget.name,
                                       widget.price,
+                                      widget.stockamt,
                                       1);
                                   HistoryTracker.addToHistory(
                                       widget.id,
@@ -187,6 +188,7 @@ class _ProductCard extends State<ProductCard> {
                                       widget.description,
                                       widget.name,
                                       widget.price,
+                                      widget.stockamt,
                                       1);
                                 updateCartTotal();
                               },

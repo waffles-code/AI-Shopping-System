@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // ignore: non_constant_identifier_names
 Widget Num_Of_Prod_in_Cart() {
   // ignore: non_constant_identifier_names
-  var NumOfProd = 0;
+  num NumOfProd = 0;
   return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance
           .collection("Users")
@@ -14,7 +14,10 @@ Widget Num_Of_Prod_in_Cart() {
           .snapshots(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          NumOfProd = snapshot.data!.docs.length;
+          NumOfProd = 0;
+          for(var i = 0; i < snapshot.data!.docs.length; i++){
+            NumOfProd = NumOfProd + snapshot.data!.docs[i].get('quantity');
+          }
           return Text(NumOfProd.toString());
         } else {
           return Text(NumOfProd.toString());

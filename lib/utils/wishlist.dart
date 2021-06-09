@@ -17,6 +17,7 @@ class Wishlist {
       'name': name,
       'description': description,
       'price': price,
+      'stockamt': stockamt
     });
   }
 

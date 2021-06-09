@@ -45,7 +45,8 @@ class HistoryTracker {
                     'description': description,
                     'price': price,
                     'click count': 1,
-                    'index': 0
+                    'index': 0,
+                    'stockamt': stockamt
                   }),
                 }
               else if (snapshot.get('click count') < 5)
