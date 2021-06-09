@@ -231,16 +231,16 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //Products
-            Center(
-              child: Text(
-                "Recommendations",
-                style: TextStyle(fontSize: 40),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Recommendations(),
+            // Center(
+            //   child: Text(
+            //     "Recommendations",
+            //     style: TextStyle(fontSize: 40),
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            // Recommendations(),
             SizedBox(
               height: 10,
             ),
