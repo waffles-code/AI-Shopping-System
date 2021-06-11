@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class AIicons {
+  
+  // coverage: false
   AIicons._();
 
   static const _kFontFam = 'AIicons';
