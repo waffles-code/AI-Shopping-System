@@ -1,7 +1,13 @@
-2021/05/29-16:00:47.189 1ab4 Reusing MANIFEST C:\Users\MMASEH~1\AppData\Local\Temp\flutter_tools.7732500\flutter_tools_chrome_device.1245b01a\Default\Site Characteristics Database/MANIFEST-000001
-2021/05/29-16:00:47.190 1ab4 Recovering log #3
-2021/05/29-16:00:47.190 1ab4 Level-0 table #6: started
-2021/05/29-16:00:47.194 1ab4 Level-0 table #6: 368 bytes OK
-2021/05/29-16:00:47.194 1ab4 Recovering log #6
-2021/05/29-16:00:47.195 1ab4 Reusing old log C:\Users\MMASEH~1\AppData\Local\Temp\flutter_tools.7732500\flutter_tools_chrome_device.1245b01a\Default\Site Characteristics Database/000006.log 
-2021/05/29-16:00:47.198 1ab4 Delete type=0 #3
+2021/06/11-21:29:56.626 11f0 Reusing MANIFEST C:\Users\vmoyo\AppData\Local\Temp\flutter_tools.dab26371\flutter_tools_chrome_device.16f93894\Default\Site Characteristics Database/MANIFEST-000001
+2021/06/11-21:29:56.627 11f0 Recovering log #3
+2021/06/11-21:29:56.627 11f0 Level-0 table #13: started
+2021/06/11-21:29:56.777 11f0 Level-0 table #13: 368 bytes OK
+2021/06/11-21:29:56.777 11f0 Recovering log #6
+2021/06/11-21:29:56.777 11f0 Level-0 table #14: started
+2021/06/11-21:29:56.921 11f0 Level-0 table #14: 543 bytes OK
+2021/06/11-21:29:56.929 11f0 Recovering log #10
+2021/06/11-21:29:56.930 11f0 Reusing old log C:\Users\vmoyo\AppData\Local\Temp\flutter_tools.dab26371\flutter_tools_chrome_device.16f93894\Default\Site Characteristics Database/000010.log 
+2021/06/11-21:29:57.005 11f0 Delete type=0 #3
+2021/06/11-21:29:57.005 11f0 Delete type=2 #4
+2021/06/11-21:29:57.005 11f0 Delete type=2 #6
+2021/06/11-21:29:57.005 11f0 Delete type=0 #6
