@@ -1,43 +1,30 @@
-define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/colors.dart', 'packages/animated_text_kit/src/animated_text.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/painting/placeholder_span.dart', 'packages/flutter/src/rendering/custom_paint.dart'], (function load__packages__animated_text_kit__src__wavy_dart(dart_sdk, packages__characters__src__extensions$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__colors$46dart, packages__animated_text_kit__src__animated_text$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__painting__placeholder_span$46dart, packages__flutter__src__rendering__custom_paint$46dart) {
+define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/characters/src/characters_impl.dart', 'packages/flutter/src/rendering/proxy_box.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/listener_helpers.dart'], (function load__packages__animated_text_kit__src__animated_text_dart(dart_sdk, packages__characters__src__extensions$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__strut_style$46dart, packages__characters__src__characters_impl$46dart, packages__flutter__src__rendering__proxy_box$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__listener_helpers$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
   const _internal = dart_sdk._internal;
-  const _interceptors = dart_sdk._interceptors;
+  const async = dart_sdk.async;
   const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
   const extensions = packages__characters__src__extensions$46dart.src__extensions;
-  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
-  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
   const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
-  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
-  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
   const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
   const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const gesture_detector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__gesture_detector;
+  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
   const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
-  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
-  const animated_text = packages__animated_text_kit__src__animated_text$46dart.src__animated_text;
+  const characters = packages__characters__src__characters_impl$46dart.src__characters;
+  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
   const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
-  const text_painter = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_painter;
-  const text_span = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_span;
-  const custom_paint = packages__flutter__src__rendering__custom_paint$46dart.src__rendering__custom_paint;
-  var wavy = Object.create(dart.library);
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  var animated_text = Object.create(dart.library);
   var $length = dartx.length;
-  var $map = dartx.map;
-  var $toList = dartx.toList;
-  var $isEmpty = dartx.isEmpty;
   var $_get = dartx._get;
-  var $floor = dartx.floor;
-  var $isNegative = dartx.isNegative;
-  var $abs = dartx.abs;
-  var $clear = dartx.clear;
-  var $add = dartx.add;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))(),
-    StringToWavyAnimatedText: () => (T.StringToWavyAnimatedText = dart.constFn(dart.fnType(wavy.WavyAnimatedText, [core.String])))(),
-    JSArrayOf_TextLayoutInfo: () => (T.JSArrayOf_TextLayoutInfo = dart.constFn(_interceptors.JSArray$(wavy._TextLayoutInfo)))()
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -59,18 +46,22 @@ define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter
         index: 4
       });
     },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 300000
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 9,
+        [_Location_line]: 47,
+        [_Location_file]: null
       });
     },
     get C4() {
       return C[4] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "data",
-        [_Location_column]: 11,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 9,
         [_Location_line]: 48,
         [_Location_file]: null
       });
@@ -80,41 +71,37 @@ define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
-        [_Location_column]: 11,
+        [_Location_column]: 9,
         [_Location_line]: 49,
         [_Location_file]: null
       });
     },
-    get C6() {
-      return C[6] = dart.const({
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C1() {
+      return C[1] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "textScaleFactor",
-        [_Location_column]: 11,
-        [_Location_line]: 52,
-        [_Location_file]: null
+        [_Location_parameterLocations]: C[2] || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 37,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
       });
     },
-    get C3() {
-      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6], widget_inspector._Location);
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[3] || CT.C3,
-        [_Location_name]: null,
-        [_Location_column]: 16,
-        [_Location_line]: 47,
-        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart"
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 1000000
       });
     },
     get C9() {
       return C[9] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "painter",
-        [_Location_column]: 9,
-        [_Location_line]: 41,
+        [_Location_name]: "animation",
+        [_Location_column]: 15,
+        [_Location_line]: 173,
         [_Location_file]: null
       });
     },
@@ -122,348 +109,498 @@ define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter
       return C[10] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 15,
+        [_Location_line]: 174,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
         [_Location_name]: "child",
-        [_Location_column]: 9,
-        [_Location_line]: 47,
+        [_Location_column]: 15,
+        [_Location_line]: 175,
         [_Location_file]: null
       });
     },
     get C8() {
-      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10], widget_inspector._Location);
+      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11], widget_inspector._Location);
     },
     get C7() {
       return C[7] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C[8] || CT.C8,
         [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 40,
-        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart"
-      });
-    },
-    get C13() {
-      return C[13] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 40,
-        [_Location_file]: null
-      });
-    },
-    get C12() {
-      return C[12] = dart.constList([C[13] || CT.C13], widget_inspector._Location);
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[12] || CT.C12,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 39,
-        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart"
+        [_Location_column]: 13,
+        [_Location_line]: 172,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
       });
     },
     get C14() {
       return C[14] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 1000000
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "behavior",
+        [_Location_column]: 7,
+        [_Location_line]: 168,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 7,
+        [_Location_line]: 169,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 170,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 167,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart"
       });
     }
   }, false);
-  var C = Array(15).fill(void 0);
+  var C = Array(17).fill(void 0);
   var I = [
-    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart",
-    "package:animated_text_kit/src/wavy.dart"
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/animated_text.dart",
+    "package:animated_text_kit/src/animated_text.dart"
   ];
-  var speed$ = dart.privateName(wavy, "WavyAnimatedText.speed");
+  var text$ = dart.privateName(animated_text, "AnimatedText.text");
+  var textAlign$ = dart.privateName(animated_text, "AnimatedText.textAlign");
+  var textStyle$ = dart.privateName(animated_text, "AnimatedText.textStyle");
+  var duration$ = dart.privateName(animated_text, "AnimatedText.duration");
+  var textCharacters = dart.privateName(animated_text, "AnimatedText.textCharacters");
   var _name = dart.privateName(ui, "_name");
-  var Duration__duration = dart.privateName(core, "Duration._duration");
-  var __WavyAnimatedText__waveAnim = dart.privateName(wavy, "_#WavyAnimatedText#_waveAnim");
-  var _waveAnim = dart.privateName(wavy, "_waveAnim");
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
   var _Location_column = dart.privateName(widget_inspector, "_Location.column");
   var _Location_line = dart.privateName(widget_inspector, "_Location.line");
   var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  wavy.WavyAnimatedText = class WavyAnimatedText extends animated_text.AnimatedText {
-    get speed() {
-      return this[speed$];
+  animated_text.AnimatedText = class AnimatedText extends core.Object {
+    get text() {
+      return this[text$];
     }
-    set speed(value) {
-      super.speed = value;
+    set text(value) {
+      super.text = value;
     }
-    get [_waveAnim]() {
-      let t0;
-      t0 = this[__WavyAnimatedText__waveAnim];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_waveAnim")) : t0;
+    get textAlign() {
+      return this[textAlign$];
     }
-    set [_waveAnim](t0) {
-      if (t0 == null) dart.nullFailed(I[0], 27, 26, "null");
-      this[__WavyAnimatedText__waveAnim] = t0;
+    set textAlign(value) {
+      super.textAlign = value;
     }
-    initAnimation(controller) {
-      if (controller == null) dart.nullFailed(I[0], 30, 42, "controller");
-      this[_waveAnim] = new (T.TweenOfdouble()).new({begin: 0.0, end: dart.notNull(this.textCharacters[$length]) / 2 + 0.52}).animate(controller);
+    get textStyle() {
+      return this[textStyle$];
     }
-    animatedBuilder(context, child) {
-      if (context == null) dart.nullFailed(I[0], 36, 39, "context");
-      let defaultTextStyle = text.DefaultTextStyle.of(context).style;
-      let scaleFactor = media_query.MediaQuery.of(context).textScaleFactor;
-      return new basic.RepaintBoundary.new({child: new basic.CustomPaint.new({painter: new wavy._WTextPainter.new({progress: this[_waveAnim].value, text: this.text, textStyle: defaultTextStyle.merge(this.textStyle), scaleFactor: scaleFactor}), child: new text.Text.new(this.text, {style: defaultTextStyle.merge(this.textStyle).merge(new text_style.TextStyle.new({color: colors.Colors.transparent})), textScaleFactor: scaleFactor, $creationLocationd_0dea112b090073317d4: C[2] || CT.C2}), $creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), $creationLocationd_0dea112b090073317d4: C[11] || CT.C11});
+    set textStyle(value) {
+      super.textStyle = value;
     }
-  };
-  (wavy.WavyAnimatedText.new = function(text, opts) {
-    if (text == null) dart.nullFailed(I[0], 16, 12, "text");
-    let textAlign = opts && 'textAlign' in opts ? opts.textAlign : C[0] || CT.C0;
-    if (textAlign == null) dart.nullFailed(I[0], 17, 15, "textAlign");
-    let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
-    let speed = opts && 'speed' in opts ? opts.speed : C[1] || CT.C1;
-    if (speed == null) dart.nullFailed(I[0], 19, 10, "speed");
-    this[__WavyAnimatedText__waveAnim] = null;
-    this[speed$] = speed;
-    wavy.WavyAnimatedText.__proto__.new.call(this, {text: text, textAlign: textAlign, textStyle: textStyle, duration: speed['*'](extensions['StringCharacters|get#characters'](text)[$length])});
-    ;
-  }).prototype = wavy.WavyAnimatedText.prototype;
-  dart.addTypeTests(wavy.WavyAnimatedText);
-  dart.addTypeCaches(wavy.WavyAnimatedText);
-  dart.setMethodSignature(wavy.WavyAnimatedText, () => ({
-    __proto__: dart.getMethods(wavy.WavyAnimatedText.__proto__),
-    initAnimation: dart.fnType(dart.void, [animation_controller.AnimationController]),
-    animatedBuilder: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
-  }));
-  dart.setGetterSignature(wavy.WavyAnimatedText, () => ({
-    __proto__: dart.getGetters(wavy.WavyAnimatedText.__proto__),
-    [_waveAnim]: animation.Animation$(core.double)
-  }));
-  dart.setSetterSignature(wavy.WavyAnimatedText, () => ({
-    __proto__: dart.getSetters(wavy.WavyAnimatedText.__proto__),
-    [_waveAnim]: animation.Animation$(core.double)
-  }));
-  dart.setLibraryUri(wavy.WavyAnimatedText, I[1]);
-  dart.setFieldSignature(wavy.WavyAnimatedText, () => ({
-    __proto__: dart.getFields(wavy.WavyAnimatedText.__proto__),
-    speed: dart.finalFieldType(core.Duration),
-    [__WavyAnimatedText__waveAnim]: dart.fieldType(dart.nullable(animation.Animation$(core.double)))
-  }));
-  wavy.WavyAnimatedTextKit = class WavyAnimatedTextKit extends animated_text.AnimatedTextKit {
-    static _animatedTexts(text, textAlign, textStyle, speed) {
-      if (text == null) dart.nullFailed(I[0], 97, 18, "text");
-      if (textAlign == null) dart.nullFailed(I[0], 98, 15, "textAlign");
-      if (speed == null) dart.nullFailed(I[0], 100, 14, "speed");
-      return text[$map](wavy.WavyAnimatedText, dart.fn(_ => {
-        if (_ == null) dart.nullFailed(I[0], 103, 17, "_");
-        return new wavy.WavyAnimatedText.new(_, {textAlign: textAlign, textStyle: textStyle, speed: speed});
-      }, T.StringToWavyAnimatedText()))[$toList]();
+    get duration() {
+      return this[duration$];
+    }
+    set duration(value) {
+      super.duration = value;
+    }
+    get textCharacters() {
+      return this[textCharacters];
+    }
+    set textCharacters(value) {
+      super.textCharacters = value;
+    }
+    get remaining() {
+      return null;
+    }
+    textWidget(data) {
+      if (data == null) dart.nullFailed(I[0], 46, 28, "data");
+      return new text.Text.new(data, {textAlign: this.textAlign, style: this.textStyle, $creationLocationd_0dea112b090073317d4: C[1] || CT.C1});
+    }
+    completeText(context) {
+      if (context == null) dart.nullFailed(I[0], 54, 36, "context");
+      return this.textWidget(this.text);
     }
   };
-  (wavy.WavyAnimatedTextKit.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
+  (animated_text.AnimatedText.new = function(opts) {
     let text = opts && 'text' in opts ? opts.text : null;
-    if (text == null) dart.nullFailed(I[0], 67, 27, "text");
+    if (text == null) dart.nullFailed(I[0], 32, 19, "text");
     let textAlign = opts && 'textAlign' in opts ? opts.textAlign : C[0] || CT.C0;
-    if (textAlign == null) dart.nullFailed(I[0], 68, 15, "textAlign");
+    if (textAlign == null) dart.nullFailed(I[0], 33, 10, "textAlign");
     let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
-    let speed = opts && 'speed' in opts ? opts.speed : C[1] || CT.C1;
-    if (speed == null) dart.nullFailed(I[0], 70, 14, "speed");
-    let pause = opts && 'pause' in opts ? opts.pause : C[14] || CT.C14;
-    if (pause == null) dart.nullFailed(I[0], 71, 14, "pause");
+    let duration = opts && 'duration' in opts ? opts.duration : null;
+    if (duration == null) dart.nullFailed(I[0], 35, 19, "duration");
+    this[text$] = text;
+    this[textAlign$] = textAlign;
+    this[textStyle$] = textStyle;
+    this[duration$] = duration;
+    this[textCharacters] = extensions['StringCharacters|get#characters'](text);
+    ;
+  }).prototype = animated_text.AnimatedText.prototype;
+  dart.addTypeTests(animated_text.AnimatedText);
+  dart.addTypeCaches(animated_text.AnimatedText);
+  dart.setMethodSignature(animated_text.AnimatedText, () => ({
+    __proto__: dart.getMethods(animated_text.AnimatedText.__proto__),
+    textWidget: dart.fnType(framework.Widget, [core.String]),
+    completeText: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(animated_text.AnimatedText, () => ({
+    __proto__: dart.getGetters(animated_text.AnimatedText.__proto__),
+    remaining: dart.nullable(core.Duration)
+  }));
+  dart.setLibraryUri(animated_text.AnimatedText, I[1]);
+  dart.setFieldSignature(animated_text.AnimatedText, () => ({
+    __proto__: dart.getFields(animated_text.AnimatedText.__proto__),
+    text: dart.finalFieldType(core.String),
+    textAlign: dart.finalFieldType(ui.TextAlign),
+    textStyle: dart.finalFieldType(dart.nullable(text_style.TextStyle)),
+    duration: dart.finalFieldType(core.Duration),
+    textCharacters: dart.finalFieldType(characters.Characters)
+  }));
+  var animatedTexts$ = dart.privateName(animated_text, "AnimatedTextKit.animatedTexts");
+  var pause$ = dart.privateName(animated_text, "AnimatedTextKit.pause");
+  var displayFullTextOnTap$ = dart.privateName(animated_text, "AnimatedTextKit.displayFullTextOnTap");
+  var stopPauseOnTap$ = dart.privateName(animated_text, "AnimatedTextKit.stopPauseOnTap");
+  var onTap$ = dart.privateName(animated_text, "AnimatedTextKit.onTap");
+  var onFinished$ = dart.privateName(animated_text, "AnimatedTextKit.onFinished");
+  var onNext$ = dart.privateName(animated_text, "AnimatedTextKit.onNext");
+  var onNextBeforePause$ = dart.privateName(animated_text, "AnimatedTextKit.onNextBeforePause");
+  var isRepeatingAnimation$ = dart.privateName(animated_text, "AnimatedTextKit.isRepeatingAnimation");
+  var repeatForever$ = dart.privateName(animated_text, "AnimatedTextKit.repeatForever");
+  var totalRepeatCount$ = dart.privateName(animated_text, "AnimatedTextKit.totalRepeatCount");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  animated_text.AnimatedTextKit = class AnimatedTextKit extends framework.StatefulWidget {
+    get animatedTexts() {
+      return this[animatedTexts$];
+    }
+    set animatedTexts(value) {
+      super.animatedTexts = value;
+    }
+    get pause() {
+      return this[pause$];
+    }
+    set pause(value) {
+      super.pause = value;
+    }
+    get displayFullTextOnTap() {
+      return this[displayFullTextOnTap$];
+    }
+    set displayFullTextOnTap(value) {
+      super.displayFullTextOnTap = value;
+    }
+    get stopPauseOnTap() {
+      return this[stopPauseOnTap$];
+    }
+    set stopPauseOnTap(value) {
+      super.stopPauseOnTap = value;
+    }
+    get onTap() {
+      return this[onTap$];
+    }
+    set onTap(value) {
+      super.onTap = value;
+    }
+    get onFinished() {
+      return this[onFinished$];
+    }
+    set onFinished(value) {
+      super.onFinished = value;
+    }
+    get onNext() {
+      return this[onNext$];
+    }
+    set onNext(value) {
+      super.onNext = value;
+    }
+    get onNextBeforePause() {
+      return this[onNextBeforePause$];
+    }
+    set onNextBeforePause(value) {
+      super.onNextBeforePause = value;
+    }
+    get isRepeatingAnimation() {
+      return this[isRepeatingAnimation$];
+    }
+    set isRepeatingAnimation(value) {
+      super.isRepeatingAnimation = value;
+    }
+    get repeatForever() {
+      return this[repeatForever$];
+    }
+    set repeatForever(value) {
+      super.repeatForever = value;
+    }
+    get totalRepeatCount() {
+      return this[totalRepeatCount$];
+    }
+    set totalRepeatCount(value) {
+      super.totalRepeatCount = value;
+    }
+    createState() {
+      return new animated_text._AnimatedTextKitState.new();
+    }
+  };
+  (animated_text.AnimatedTextKit.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let animatedTexts = opts && 'animatedTexts' in opts ? opts.animatedTexts : null;
+    if (animatedTexts == null) dart.nullFailed(I[0], 116, 19, "animatedTexts");
+    let pause = opts && 'pause' in opts ? opts.pause : C[6] || CT.C6;
+    if (pause == null) dart.nullFailed(I[0], 117, 10, "pause");
+    let displayFullTextOnTap = opts && 'displayFullTextOnTap' in opts ? opts.displayFullTextOnTap : false;
+    if (displayFullTextOnTap == null) dart.nullFailed(I[0], 118, 10, "displayFullTextOnTap");
+    let stopPauseOnTap = opts && 'stopPauseOnTap' in opts ? opts.stopPauseOnTap : false;
+    if (stopPauseOnTap == null) dart.nullFailed(I[0], 119, 10, "stopPauseOnTap");
     let onTap = opts && 'onTap' in opts ? opts.onTap : null;
     let onNext = opts && 'onNext' in opts ? opts.onNext : null;
     let onNextBeforePause = opts && 'onNextBeforePause' in opts ? opts.onNextBeforePause : null;
     let onFinished = opts && 'onFinished' in opts ? opts.onFinished : null;
     let isRepeatingAnimation = opts && 'isRepeatingAnimation' in opts ? opts.isRepeatingAnimation : true;
-    if (isRepeatingAnimation == null) dart.nullFailed(I[0], 76, 10, "isRepeatingAnimation");
+    if (isRepeatingAnimation == null) dart.nullFailed(I[0], 124, 10, "isRepeatingAnimation");
     let totalRepeatCount = opts && 'totalRepeatCount' in opts ? opts.totalRepeatCount : 3;
-    if (totalRepeatCount == null) dart.nullFailed(I[0], 77, 9, "totalRepeatCount");
-    let repeatForever = opts && 'repeatForever' in opts ? opts.repeatForever : true;
-    if (repeatForever == null) dart.nullFailed(I[0], 78, 10, "repeatForever");
-    let displayFullTextOnTap = opts && 'displayFullTextOnTap' in opts ? opts.displayFullTextOnTap : false;
-    if (displayFullTextOnTap == null) dart.nullFailed(I[0], 79, 10, "displayFullTextOnTap");
-    let stopPauseOnTap = opts && 'stopPauseOnTap' in opts ? opts.stopPauseOnTap : false;
-    if (stopPauseOnTap == null) dart.nullFailed(I[0], 80, 10, "stopPauseOnTap");
+    if (totalRepeatCount == null) dart.nullFailed(I[0], 125, 10, "totalRepeatCount");
+    let repeatForever = opts && 'repeatForever' in opts ? opts.repeatForever : false;
+    if (repeatForever == null) dart.nullFailed(I[0], 126, 10, "repeatForever");
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    wavy.WavyAnimatedTextKit.__proto__.new.call(this, {key: key, animatedTexts: wavy.WavyAnimatedTextKit._animatedTexts(text, textAlign, textStyle, speed), pause: pause, displayFullTextOnTap: displayFullTextOnTap, stopPauseOnTap: stopPauseOnTap, onTap: onTap, onNext: onNext, onNextBeforePause: onNextBeforePause, onFinished: onFinished, isRepeatingAnimation: isRepeatingAnimation, totalRepeatCount: totalRepeatCount, repeatForever: repeatForever, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    this[animatedTexts$] = animatedTexts;
+    this[pause$] = pause;
+    this[displayFullTextOnTap$] = displayFullTextOnTap;
+    this[stopPauseOnTap$] = stopPauseOnTap;
+    this[onTap$] = onTap;
+    this[onNext$] = onNext;
+    this[onNextBeforePause$] = onNextBeforePause;
+    this[onFinished$] = onFinished;
+    this[isRepeatingAnimation$] = isRepeatingAnimation;
+    this[totalRepeatCount$] = totalRepeatCount;
+    this[repeatForever$] = repeatForever;
+    if (!(dart.notNull(animatedTexts[$length]) > 0)) dart.assertFailed(null, I[0], 127, 16, "animatedTexts.length > 0");
+    if (!(!dart.test(isRepeatingAnimation) || dart.notNull(totalRepeatCount) > 0 || dart.test(repeatForever))) dart.assertFailed(null, I[0], 128, 16, "!isRepeatingAnimation || totalRepeatCount > 0 || repeatForever");
+    if (!(onFinished == null || !dart.test(repeatForever))) dart.assertFailed(null, I[0], 129, 16, "null == onFinished || !repeatForever");
+    animated_text.AnimatedTextKit.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = wavy.WavyAnimatedTextKit.prototype;
-  dart.addTypeTests(wavy.WavyAnimatedTextKit);
-  dart.addTypeCaches(wavy.WavyAnimatedTextKit);
-  dart.setLibraryUri(wavy.WavyAnimatedTextKit, I[1]);
-  var _textLayoutInfo = dart.privateName(wavy, "_textLayoutInfo");
-  wavy._WTextPainter = class _WTextPainter extends custom_paint.CustomPainter {
-    paint(canvas, size) {
-      if (canvas == null) dart.nullFailed(I[0], 126, 21, "canvas");
-      if (size == null) dart.nullFailed(I[0], 126, 34, "size");
-      if (dart.test(this[_textLayoutInfo][$isEmpty])) {
-        this.calculateLayoutInfo(this.text, this[_textLayoutInfo]);
-      }
-      canvas.save();
-      for (let textLayout of this[_textLayoutInfo]) {
-        let centerOffset = new ui.Offset.new(dart.notNull(size.width) / 2, dart.notNull(size.height) / 2 - dart.notNull(textLayout.height) / 2);
-        if (dart.test(textLayout.isMoving)) {
-          let p = math.min(core.double, dart.notNull(this.progress) * 2, 1.0);
-          this.drawText(canvas, textLayout.text, new ui.Offset.new(textLayout.offsetX, dart.notNull(textLayout.offsetY) - (dart.notNull(textLayout.offsetY) - dart.notNull(textLayout.riseHeight)) * p)['+'](centerOffset), textLayout);
+  }).prototype = animated_text.AnimatedTextKit.prototype;
+  dart.addTypeTests(animated_text.AnimatedTextKit);
+  dart.addTypeCaches(animated_text.AnimatedTextKit);
+  dart.setMethodSignature(animated_text.AnimatedTextKit, () => ({
+    __proto__: dart.getMethods(animated_text.AnimatedTextKit.__proto__),
+    createState: dart.fnType(animated_text._AnimatedTextKitState, [])
+  }));
+  dart.setLibraryUri(animated_text.AnimatedTextKit, I[1]);
+  dart.setFieldSignature(animated_text.AnimatedTextKit, () => ({
+    __proto__: dart.getFields(animated_text.AnimatedTextKit.__proto__),
+    animatedTexts: dart.finalFieldType(core.List$(animated_text.AnimatedText)),
+    pause: dart.finalFieldType(core.Duration),
+    displayFullTextOnTap: dart.finalFieldType(core.bool),
+    stopPauseOnTap: dart.finalFieldType(core.bool),
+    onTap: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, []))),
+    onFinished: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, []))),
+    onNext: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.int, core.bool]))),
+    onNextBeforePause: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.int, core.bool]))),
+    isRepeatingAnimation: dart.finalFieldType(core.bool),
+    repeatForever: dart.finalFieldType(core.bool),
+    totalRepeatCount: dart.finalFieldType(core.int)
+  }));
+  var ___AnimatedTextKitState__controller = dart.privateName(animated_text, "_#_AnimatedTextKitState#_controller");
+  var ___AnimatedTextKitState__currentAnimatedText = dart.privateName(animated_text, "_#_AnimatedTextKitState#_currentAnimatedText");
+  var _currentRepeatCount = dart.privateName(animated_text, "_currentRepeatCount");
+  var _index = dart.privateName(animated_text, "_index");
+  var _isCurrentlyPausing = dart.privateName(animated_text, "_isCurrentlyPausing");
+  var _timer = dart.privateName(animated_text, "_timer");
+  var _controller = dart.privateName(animated_text, "_controller");
+  var _currentAnimatedText = dart.privateName(animated_text, "_currentAnimatedText");
+  var _initAnimation = dart.privateName(animated_text, "_initAnimation");
+  var _onTap = dart.privateName(animated_text, "_onTap");
+  var _isLast = dart.privateName(animated_text, "_isLast");
+  var _nextAnimation = dart.privateName(animated_text, "_nextAnimation");
+  var _animationEndCallback = dart.privateName(animated_text, "_animationEndCallback");
+  var _setPause = dart.privateName(animated_text, "_setPause");
+  const State_TickerProviderStateMixin$36 = class State_TickerProviderStateMixin extends framework.State$(animated_text.AnimatedTextKit) {};
+  (State_TickerProviderStateMixin$36.new = function() {
+    ticker_provider.TickerProviderStateMixin$(animated_text.AnimatedTextKit)[dart.mixinNew].call(this);
+    State_TickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_TickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_TickerProviderStateMixin$36, ticker_provider.TickerProviderStateMixin$(animated_text.AnimatedTextKit));
+  animated_text._AnimatedTextKitState = class _AnimatedTextKitState extends State_TickerProviderStateMixin$36 {
+    get [_controller]() {
+      let t0;
+      t0 = this[___AnimatedTextKitState__controller];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_controller")) : t0;
+    }
+    set [_controller](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 139, 28, "null");
+      this[___AnimatedTextKitState__controller] = t0;
+    }
+    get [_currentAnimatedText]() {
+      let t1;
+      t1 = this[___AnimatedTextKitState__currentAnimatedText];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_currentAnimatedText")) : t1;
+    }
+    set [_currentAnimatedText](t1) {
+      if (t1 == null) dart.nullFailed(I[0], 141, 21, "null");
+      this[___AnimatedTextKitState__currentAnimatedText] = t1;
+    }
+    initState() {
+      super.initState();
+      this[_initAnimation]();
+    }
+    dispose() {
+      let t2;
+      t2 = this[_timer];
+      t2 == null ? null : t2.cancel();
+      this[_controller].dispose();
+      super.dispose();
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 165, 29, "context");
+      let completeText = this[_currentAnimatedText].completeText(context);
+      return new gesture_detector.GestureDetector.new({behavior: proxy_box.HitTestBehavior.opaque, onTap: dart.bind(this, _onTap), child: dart.test(this[_isCurrentlyPausing]) || !dart.test(this[_controller].isAnimating) ? completeText : new transitions.AnimatedBuilder.new({animation: this[_controller], builder: dart.bind(this[_currentAnimatedText], 'animatedBuilder'), child: completeText, $creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12});
+    }
+    get [_isLast]() {
+      return this[_index] === dart.notNull(this.widget.animatedTexts[$length]) - 1;
+    }
+    [_nextAnimation]() {
+      let t2, t2$;
+      let isLast = this[_isLast];
+      this[_isCurrentlyPausing] = false;
+      t2 = this.widget.onNext;
+      t2 == null ? null : t2(this[_index], isLast);
+      if (dart.test(isLast)) {
+        if (dart.test(this.widget.isRepeatingAnimation) && (dart.test(this.widget.repeatForever) || this[_currentRepeatCount] !== dart.notNull(this.widget.totalRepeatCount) - 1)) {
+          this[_index] = 0;
+          if (!dart.test(this.widget.repeatForever)) {
+            this[_currentRepeatCount] = dart.notNull(this[_currentRepeatCount]) + 1;
+          }
         } else {
-          this.drawText(canvas, textLayout.text, new ui.Offset.new(textLayout.offsetX, textLayout.offsetY)['+'](centerOffset), textLayout);
+          t2$ = this.widget.onFinished;
+          t2$ == null ? null : t2$();
+          return;
+        }
+      } else {
+        this[_index] = dart.notNull(this[_index]) + 1;
+      }
+      if (dart.test(this.mounted)) this.setState(dart.fn(() => {
+      }, T.VoidTovoid()));
+      this[_controller].dispose();
+      this[_initAnimation]();
+    }
+    [_initAnimation]() {
+      let t2;
+      this[_currentAnimatedText] = this.widget.animatedTexts[$_get](this[_index]);
+      this[_controller] = new animation_controller.AnimationController.new({duration: this[_currentAnimatedText].duration, vsync: this});
+      this[_currentAnimatedText].initAnimation(this[_controller]);
+      t2 = this[_controller];
+      (() => {
+        t2.addStatusListener(dart.bind(this, _animationEndCallback));
+        t2.forward();
+        return t2;
+      })();
+    }
+    [_setPause]() {
+      let t2;
+      let isLast = this[_isLast];
+      this[_isCurrentlyPausing] = true;
+      if (dart.test(this.mounted)) this.setState(dart.fn(() => {
+      }, T.VoidTovoid()));
+      t2 = this.widget.onNextBeforePause;
+      t2 == null ? null : t2(this[_index], isLast);
+    }
+    [_animationEndCallback](state) {
+      if (state == null) dart.nullFailed(I[0], 239, 46, "state");
+      if (state == animation.AnimationStatus.completed) {
+        this[_setPause]();
+        if (!(this[_timer] == null || !dart.test(dart.nullCheck(this[_timer]).isActive))) dart.assertFailed(null, I[0], 242, 14, "null == _timer || !_timer!.isActive");
+        this[_timer] = async.Timer.new(this.widget.pause, dart.bind(this, _nextAnimation));
+      }
+    }
+    [_onTap]() {
+      let t2, t2$, t2$0;
+      if (dart.test(this.widget.displayFullTextOnTap)) {
+        if (dart.test(this[_isCurrentlyPausing])) {
+          if (dart.test(this.widget.stopPauseOnTap)) {
+            t2 = this[_timer];
+            t2 == null ? null : t2.cancel();
+            this[_nextAnimation]();
+          }
+        } else {
+          let left = (t2$ = this[_currentAnimatedText].remaining, t2$ == null ? this[_currentAnimatedText].duration : t2$).inMilliseconds;
+          this[_controller].stop();
+          this[_setPause]();
+          if (!(this[_timer] == null || !dart.test(dart.nullCheck(this[_timer]).isActive))) dart.assertFailed(null, I[0], 263, 16, "null == _timer || !_timer!.isActive");
+          this[_timer] = async.Timer.new(new core.Duration.new({milliseconds: math.max(core.int, this.widget.pause.inMilliseconds, left)}), dart.bind(this, _nextAnimation));
         }
       }
-      canvas.restore();
-    }
-    shouldRepaint(oldDelegate) {
-      wavy._WTextPainter.as(oldDelegate);
-      if (oldDelegate == null) dart.nullFailed(I[0], 165, 36, "oldDelegate");
-      if (oldDelegate.progress != this.progress) {
-        this.calculateLayoutInfo(this.text, this[_textLayoutInfo]);
-        this.calculateMove();
-        return true;
-      }
-      return false;
-    }
-    calculateMove() {
-      let height = this[_textLayoutInfo][$_get](0).height;
-      let txtInMoInd = this.progress[$floor]();
-      let percent = dart.notNull(this.progress) - txtInMoInd;
-      let txtInMoOdd = (dart.notNull(this.progress) - 0.5)[$floor]();
-      let txtInMoEven = txtInMoInd * 2;
-      if (txtInMoOdd < (this.text.length - 1) / 2 && !txtInMoOdd[$isNegative]) {
-        this[_textLayoutInfo][$_get](txtInMoOdd + (txtInMoOdd + 1)).isMoving = true;
-        this[_textLayoutInfo][$_get](txtInMoOdd + (txtInMoOdd + 1)).riseHeight = dart.notNull(this.progress) < 0.5 ? 0.0 : -1.3 * dart.notNull(height) * math.sin((dart.notNull(this.progress) - 0.5) * 3.141592653589793)[$abs]();
-      }
-      if (txtInMoEven < this.text.length) {
-        this[_textLayoutInfo][$_get](txtInMoEven).isMoving = true;
-        this[_textLayoutInfo][$_get](txtInMoEven).riseHeight = -1.3 * dart.notNull(height) * math.sin(percent * 3.141592653589793);
-      }
-    }
-    drawText(canvas, text, offset, textLayoutInfo) {
-      let t1;
-      if (canvas == null) dart.nullFailed(I[0], 199, 24, "canvas");
-      if (text == null) dart.nullFailed(I[0], 199, 39, "text");
-      if (offset == null) dart.nullFailed(I[0], 199, 52, "offset");
-      if (textLayoutInfo == null) dart.nullFailed(I[0], 200, 23, "textLayoutInfo");
-      let textPainter = (t1 = new text_painter.TextPainter.new({text: new text_span.TextSpan.new({text: text, style: this.textStyle}), textDirection: ui.TextDirection.ltr, textScaleFactor: this.scaleFactor}), (() => {
-        t1.layout();
-        return t1;
-      })());
-      textPainter.paint(canvas, new ui.Offset.new(dart.notNull(offset.dx) - dart.notNull(textLayoutInfo.width) / 2, dart.notNull(offset.dy) + (dart.notNull(textLayoutInfo.height) - dart.notNull(textPainter.height)) / 2));
-    }
-    calculateLayoutInfo(text, list) {
-      if (text == null) dart.nullFailed(I[0], 219, 35, "text");
-      if (list == null) dart.nullFailed(I[0], 219, 63, "list");
-      list[$clear]();
-      let textPainter = new text_painter.TextPainter.new({text: new text_span.TextSpan.new({text: text, style: this.textStyle}), textDirection: ui.TextDirection.ltr, maxLines: 1, textScaleFactor: this.scaleFactor});
-      textPainter.layout();
-      for (let i = 0; i < text.length; i = i + 1) {
-        let forCaret = textPainter.getOffsetForCaret(new ui.TextPosition.new({offset: i}), ui.Rect.zero);
-        let offsetX = forCaret.dx;
-        if (i > 0 && offsetX === 0) {
-          break;
-        }
-        let textLayoutInfo = new wavy._TextLayoutInfo.new({text: text[$_get](i), offsetX: offsetX, offsetY: forCaret.dy, width: textPainter.width, height: textPainter.height, baseline: textPainter.computeDistanceToActualBaseline(ui.TextBaseline.ideographic)});
-        list[$add](textLayoutInfo);
-      }
+      t2$0 = this.widget.onTap;
+      t2$0 == null ? null : t2$0();
     }
   };
-  (wavy._WTextPainter.new = function(opts) {
-    let progress = opts && 'progress' in opts ? opts.progress : null;
-    if (progress == null) dart.nullFailed(I[0], 114, 19, "progress");
-    let text = opts && 'text' in opts ? opts.text : null;
-    if (text == null) dart.nullFailed(I[0], 115, 19, "text");
-    let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
-    if (textStyle == null) dart.nullFailed(I[0], 116, 19, "textStyle");
-    let scaleFactor = opts && 'scaleFactor' in opts ? opts.scaleFactor : null;
-    if (scaleFactor == null) dart.nullFailed(I[0], 117, 19, "scaleFactor");
-    this[_textLayoutInfo] = T.JSArrayOf_TextLayoutInfo().of([]);
-    this.progress = progress;
-    this.text = text;
-    this.textStyle = textStyle;
-    this.scaleFactor = scaleFactor;
-    wavy._WTextPainter.__proto__.new.call(this);
+  (animated_text._AnimatedTextKitState.new = function() {
+    this[___AnimatedTextKitState__controller] = null;
+    this[___AnimatedTextKitState__currentAnimatedText] = null;
+    this[_currentRepeatCount] = 0;
+    this[_index] = 0;
+    this[_isCurrentlyPausing] = false;
+    this[_timer] = null;
+    animated_text._AnimatedTextKitState.__proto__.new.call(this);
     ;
-  }).prototype = wavy._WTextPainter.prototype;
-  dart.addTypeTests(wavy._WTextPainter);
-  dart.addTypeCaches(wavy._WTextPainter);
-  dart.setMethodSignature(wavy._WTextPainter, () => ({
-    __proto__: dart.getMethods(wavy._WTextPainter.__proto__),
-    paint: dart.fnType(dart.void, [ui.Canvas, ui.Size]),
-    shouldRepaint: dart.fnType(core.bool, [dart.nullable(core.Object)]),
-    calculateMove: dart.fnType(dart.void, []),
-    drawText: dart.fnType(dart.void, [ui.Canvas, core.String, ui.Offset, wavy._TextLayoutInfo]),
-    calculateLayoutInfo: dart.fnType(dart.void, [core.String, core.List$(wavy._TextLayoutInfo)])
+  }).prototype = animated_text._AnimatedTextKitState.prototype;
+  dart.addTypeTests(animated_text._AnimatedTextKitState);
+  dart.addTypeCaches(animated_text._AnimatedTextKitState);
+  dart.setMethodSignature(animated_text._AnimatedTextKitState, () => ({
+    __proto__: dart.getMethods(animated_text._AnimatedTextKitState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_nextAnimation]: dart.fnType(dart.void, []),
+    [_initAnimation]: dart.fnType(dart.void, []),
+    [_setPause]: dart.fnType(dart.void, []),
+    [_animationEndCallback]: dart.fnType(dart.void, [animation.AnimationStatus]),
+    [_onTap]: dart.fnType(dart.void, [])
   }));
-  dart.setLibraryUri(wavy._WTextPainter, I[1]);
-  dart.setFieldSignature(wavy._WTextPainter, () => ({
-    __proto__: dart.getFields(wavy._WTextPainter.__proto__),
-    progress: dart.finalFieldType(core.double),
-    scaleFactor: dart.finalFieldType(core.double),
-    text: dart.finalFieldType(core.String),
-    [_textLayoutInfo]: dart.finalFieldType(core.List$(wavy._TextLayoutInfo)),
-    textStyle: dart.finalFieldType(text_style.TextStyle)
+  dart.setGetterSignature(animated_text._AnimatedTextKitState, () => ({
+    __proto__: dart.getGetters(animated_text._AnimatedTextKitState.__proto__),
+    [_controller]: animation_controller.AnimationController,
+    [_currentAnimatedText]: animated_text.AnimatedText,
+    [_isLast]: core.bool
   }));
-  var ___TextLayoutInfo_riseHeight = dart.privateName(wavy, "_#_TextLayoutInfo#riseHeight");
-  wavy._TextLayoutInfo = class _TextLayoutInfo extends core.Object {
-    get riseHeight() {
-      let t1;
-      t1 = this[___TextLayoutInfo_riseHeight];
-      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("riseHeight")) : t1;
-    }
-    set riseHeight(t1) {
-      if (t1 == null) dart.nullFailed(I[0], 267, 15, "null");
-      this[___TextLayoutInfo_riseHeight] = t1;
-    }
-  };
-  (wavy._TextLayoutInfo.new = function(opts) {
-    let text = opts && 'text' in opts ? opts.text : null;
-    if (text == null) dart.nullFailed(I[0], 271, 19, "text");
-    let offsetX = opts && 'offsetX' in opts ? opts.offsetX : null;
-    if (offsetX == null) dart.nullFailed(I[0], 272, 19, "offsetX");
-    let offsetY = opts && 'offsetY' in opts ? opts.offsetY : null;
-    if (offsetY == null) dart.nullFailed(I[0], 273, 19, "offsetY");
-    let width = opts && 'width' in opts ? opts.width : null;
-    if (width == null) dart.nullFailed(I[0], 274, 19, "width");
-    let height = opts && 'height' in opts ? opts.height : null;
-    if (height == null) dart.nullFailed(I[0], 275, 19, "height");
-    let baseline = opts && 'baseline' in opts ? opts.baseline : null;
-    if (baseline == null) dart.nullFailed(I[0], 276, 19, "baseline");
-    this[___TextLayoutInfo_riseHeight] = null;
-    this.isMoving = false;
-    this.text = text;
-    this.offsetX = offsetX;
-    this.offsetY = offsetY;
-    this.width = width;
-    this.height = height;
-    this.baseline = baseline;
-    ;
-  }).prototype = wavy._TextLayoutInfo.prototype;
-  dart.addTypeTests(wavy._TextLayoutInfo);
-  dart.addTypeCaches(wavy._TextLayoutInfo);
-  dart.setGetterSignature(wavy._TextLayoutInfo, () => ({
-    __proto__: dart.getGetters(wavy._TextLayoutInfo.__proto__),
-    riseHeight: core.double
+  dart.setSetterSignature(animated_text._AnimatedTextKitState, () => ({
+    __proto__: dart.getSetters(animated_text._AnimatedTextKitState.__proto__),
+    [_controller]: animation_controller.AnimationController,
+    [_currentAnimatedText]: animated_text.AnimatedText
   }));
-  dart.setSetterSignature(wavy._TextLayoutInfo, () => ({
-    __proto__: dart.getSetters(wavy._TextLayoutInfo.__proto__),
-    riseHeight: core.double
+  dart.setLibraryUri(animated_text._AnimatedTextKitState, I[1]);
+  dart.setFieldSignature(animated_text._AnimatedTextKitState, () => ({
+    __proto__: dart.getFields(animated_text._AnimatedTextKitState.__proto__),
+    [___AnimatedTextKitState__controller]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [___AnimatedTextKitState__currentAnimatedText]: dart.fieldType(dart.nullable(animated_text.AnimatedText)),
+    [_currentRepeatCount]: dart.fieldType(core.int),
+    [_index]: dart.fieldType(core.int),
+    [_isCurrentlyPausing]: dart.fieldType(core.bool),
+    [_timer]: dart.fieldType(dart.nullable(async.Timer))
   }));
-  dart.setLibraryUri(wavy._TextLayoutInfo, I[1]);
-  dart.setFieldSignature(wavy._TextLayoutInfo, () => ({
-    __proto__: dart.getFields(wavy._TextLayoutInfo.__proto__),
-    text: dart.finalFieldType(core.String),
-    offsetX: dart.finalFieldType(core.double),
-    offsetY: dart.finalFieldType(core.double),
-    width: dart.finalFieldType(core.double),
-    height: dart.finalFieldType(core.double),
-    baseline: dart.finalFieldType(core.double),
-    [___TextLayoutInfo_riseHeight]: dart.fieldType(dart.nullable(core.double)),
-    isMoving: dart.fieldType(core.bool)
-  }));
-  dart.trackLibraries("packages/animated_text_kit/src/wavy.dart", {
-    "package:animated_text_kit/src/wavy.dart": wavy
+  dart.trackLibraries("packages/animated_text_kit/src/animated_text.dart", {
+    "package:animated_text_kit/src/animated_text.dart": animated_text
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["wavy.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/animated_text_kit/src/wavy.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["animated_text.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/animated_text_kit/src/animated_text.dart.lib.js"}');
   // Exports:
   return {
-    src__wavy: wavy
+    src__animated_text: animated_text
   };
 }));
 
-//# sourceMappingURL=wavy.dart.lib.js.map
+//# sourceMappingURL=animated_text.dart.lib.js.map

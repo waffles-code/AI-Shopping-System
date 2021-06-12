@@ -1,40 +1,43 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/material/text_form_field.dart', 'packages/flutter/src/services/text_input.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/aishop/theme.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/input_border.dart', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/border_radius.dart'], (function load__packages__aishop__components__round_textfield_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__material__text_form_field$46dart, packages__flutter__src__services__text_input$46dart, packages__flutter__src__material__icon_button$46dart, packages__aishop__theme$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__input_border$46dart, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__border_radius$46dart) {
+define(['dart_sdk', 'packages/characters/src/extensions.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/colors.dart', 'packages/animated_text_kit/src/animated_text.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/painting/placeholder_span.dart', 'packages/flutter/src/rendering/custom_paint.dart'], (function load__packages__animated_text_kit__src__wavy_dart(dart_sdk, packages__characters__src__extensions$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__colors$46dart, packages__animated_text_kit__src__animated_text$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__painting__placeholder_span$46dart, packages__flutter__src__rendering__custom_paint$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const _interceptors = dart_sdk._interceptors;
+  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
+  const extensions = packages__characters__src__extensions$46dart.src__extensions;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
   const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
-  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
-  const focus_manager = packages__flutter__src__widgets__widget_span$46dart.src__widgets__focus_manager;
-  const editable_text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__editable_text;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
   const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
-  const text_form_field = packages__flutter__src__material__text_form_field$46dart.src__material__text_form_field;
-  const text_input = packages__flutter__src__services__text_input$46dart.src__services__text_input;
-  const input_decorator = packages__flutter__src__material__icon_button$46dart.src__material__input_decorator;
-  const theme = packages__aishop__theme$46dart.theme;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
   const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
-  const input_border = packages__flutter__src__material__input_border$46dart.src__material__input_border;
-  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
-  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
-  var round_textfield = Object.create(dart.library);
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const animated_text = packages__animated_text_kit__src__animated_text$46dart.src__animated_text;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const text_painter = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_painter;
+  const text_span = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_span;
+  const custom_paint = packages__flutter__src__rendering__custom_paint$46dart.src__rendering__custom_paint;
+  var wavy = Object.create(dart.library);
+  var $length = dartx.length;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $isEmpty = dartx.isEmpty;
+  var $_get = dartx._get;
+  var $floor = dartx.floor;
+  var $isNegative = dartx.isNegative;
+  var $abs = dartx.abs;
+  var $clear = dartx.clear;
+  var $add = dartx.add;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    EdgeInsetsGeometryN: () => (T.EdgeInsetsGeometryN = dart.constFn(dart.nullable(edge_insets.EdgeInsetsGeometry)))(),
-    FocusNodeN: () => (T.FocusNodeN = dart.constFn(dart.nullable(focus_manager.FocusNode)))(),
-    TextInputTypeN: () => (T.TextInputTypeN = dart.constFn(dart.nullable(text_input.TextInputType)))(),
-    TextInputActionN: () => (T.TextInputActionN = dart.constFn(dart.nullable(text_input.TextInputAction)))(),
-    StringTovoid: () => (T.StringTovoid = dart.constFn(dart.fnType(dart.void, [core.String])))(),
-    StringToNvoid: () => (T.StringToNvoid = dart.constFn(dart.nullable(T.StringTovoid())))(),
-    TextEditingControllerN: () => (T.TextEditingControllerN = dart.constFn(dart.nullable(editable_text.TextEditingController)))(),
-    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    VoidToNvoid: () => (T.VoidToNvoid = dart.constFn(dart.nullable(T.VoidTovoid())))(),
-    WidgetN: () => (T.WidgetN = dart.constFn(dart.nullable(framework.Widget)))(),
-    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
-    TextStyleN: () => (T.TextStyleN = dart.constFn(dart.nullable(text_style.TextStyle)))(),
-    InputBorderN: () => (T.InputBorderN = dart.constFn(dart.nullable(input_border.InputBorder)))()
+    TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))(),
+    StringToWavyAnimatedText: () => (T.StringToWavyAnimatedText = dart.constFn(dart.fnType(wavy.WavyAnimatedText, [core.String])))(),
+    JSArrayOf_TextLayoutInfo: () => (T.JSArrayOf_TextLayoutInfo = dart.constFn(_interceptors.JSArray$(wavy._TextLayoutInfo)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -51,64 +54,67 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4279769112.0
+        __proto__: ui.TextAlign.prototype,
+        [_name]: "TextAlign.start",
+        index: 4
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294967295.0
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: borders.BorderStyle.prototype,
-        [_name]: "BorderStyle.solid",
-        index: 1
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 300000
       });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278190080.0
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 48,
+        [_Location_file]: null
       });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textScaleFactor",
+        [_Location_column]: 11,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6], widget_inspector._Location);
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: borders.BorderSide.prototype,
-        [BorderSide_style]: C[3] || CT.C3,
-        [BorderSide_width]: 2,
-        [BorderSide_color]: C[4] || CT.C4
-      });
-    },
-    get C7() {
-      return C[7] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "focusNode",
-        [_Location_column]: 11,
-        [_Location_line]: 60,
-        [_Location_file]: null
-      });
-    },
-    get C8() {
-      return C[8] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "keyboardType",
-        [_Location_column]: 11,
-        [_Location_line]: 61,
-        [_Location_file]: null
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 47,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart"
       });
     },
     get C9() {
       return C[9] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "textInputAction",
-        [_Location_column]: 11,
-        [_Location_line]: 62,
+        [_Location_name]: "painter",
+        [_Location_column]: 9,
+        [_Location_line]: 41,
         [_Location_file]: null
       });
     },
@@ -116,375 +122,348 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
       return C[10] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "autofocus",
-        [_Location_column]: 11,
-        [_Location_line]: 63,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 47,
         [_Location_file]: null
       });
     },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "onChanged",
-        [_Location_column]: 11,
-        [_Location_line]: 64,
-        [_Location_file]: null
-      });
+    get C8() {
+      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10], widget_inspector._Location);
     },
-    get C12() {
-      return C[12] = dart.const({
+    get C7() {
+      return C[7] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "controller",
-        [_Location_column]: 11,
-        [_Location_line]: 65,
-        [_Location_file]: null
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart"
       });
     },
     get C13() {
       return C[13] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "onTap",
-        [_Location_column]: 11,
-        [_Location_line]: 66,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 40,
         [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[13] || CT.C13], widget_inspector._Location);
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[12] || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart"
       });
     },
     get C14() {
       return C[14] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "onFieldSubmitted",
-        [_Location_column]: 11,
-        [_Location_line]: 67,
-        [_Location_file]: null
-      });
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "decoration",
-        [_Location_column]: 11,
-        [_Location_line]: 68,
-        [_Location_file]: null
-      });
-    },
-    get C16() {
-      return C[16] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "style",
-        [_Location_column]: 11,
-        [_Location_line]: 115,
-        [_Location_file]: null
-      });
-    },
-    get C6() {
-      return C[6] = dart.constList([C[7] || CT.C7, C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16], widget_inspector._Location);
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[6] || CT.C6,
-        [_Location_name]: null,
-        [_Location_column]: 9,
-        [_Location_line]: 59,
-        [_Location_file]: "file:///C:/Users/vmoyo/Documents/My%20Web%20Sites/AI-Shopping-System/lib/components/round_textfield.dart"
-      });
-    },
-    get C19() {
-      return C[19] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "width",
-        [_Location_column]: 9,
-        [_Location_line]: 56,
-        [_Location_file]: null
-      });
-    },
-    get C20() {
-      return C[20] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "margin",
-        [_Location_column]: 9,
-        [_Location_line]: 57,
-        [_Location_file]: null
-      });
-    },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 9,
-        [_Location_line]: 58,
-        [_Location_file]: null
-      });
-    },
-    get C18() {
-      return C[18] = dart.constList([C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21], widget_inspector._Location);
-    },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[18] || CT.C18,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 55,
-        [_Location_file]: "file:///C:/Users/vmoyo/Documents/My%20Web%20Sites/AI-Shopping-System/lib/components/round_textfield.dart"
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 1000000
       });
     }
   }, false);
-  var C = Array(22).fill(void 0);
+  var C = Array(15).fill(void 0);
   var I = [
-    "file:///C:/Users/vmoyo/Documents/My%20Web%20Sites/AI-Shopping-System/lib/components/round_textfield.dart",
-    "package:aishop/components/round_textfield.dart"
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib/src/wavy.dart",
+    "package:animated_text_kit/src/wavy.dart"
   ];
-  var text$ = dart.privateName(round_textfield, "RoundTextField.text");
-  var press$ = dart.privateName(round_textfield, "RoundTextField.press");
-  var color$ = dart.privateName(round_textfield, "RoundTextField.color");
-  var textColor$ = dart.privateName(round_textfield, "RoundTextField.textColor");
-  var control$ = dart.privateName(round_textfield, "RoundTextField.control");
-  var margin$ = dart.privateName(round_textfield, "RoundTextField.margin");
-  var preicon$ = dart.privateName(round_textfield, "RoundTextField.preicon");
-  var tap$ = dart.privateName(round_textfield, "RoundTextField.tap");
-  var suficon$ = dart.privateName(round_textfield, "RoundTextField.suficon");
-  var submitted$ = dart.privateName(round_textfield, "RoundTextField.submitted");
-  var errorText$ = dart.privateName(round_textfield, "RoundTextField.errorText");
-  var errorborder$ = dart.privateName(round_textfield, "RoundTextField.errorborder");
-  var errorstyle$ = dart.privateName(round_textfield, "RoundTextField.errorstyle");
-  var validate$ = dart.privateName(round_textfield, "RoundTextField.validate");
-  var focusNode$ = dart.privateName(round_textfield, "RoundTextField.focusNode");
-  var keyboardType$ = dart.privateName(round_textfield, "RoundTextField.keyboardType");
-  var textInputAction$ = dart.privateName(round_textfield, "RoundTextField.textInputAction");
-  var autofocus$ = dart.privateName(round_textfield, "RoundTextField.autofocus");
-  var onChanged$ = dart.privateName(round_textfield, "RoundTextField.onChanged");
-  var onSubmitted$ = dart.privateName(round_textfield, "RoundTextField.onSubmitted");
-  var Color_value = dart.privateName(ui, "Color.value");
-  var _name = dart.privateName(borders, "_name");
-  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
-  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
-  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
+  var speed$ = dart.privateName(wavy, "WavyAnimatedText.speed");
+  var _name = dart.privateName(ui, "_name");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var __WavyAnimatedText__waveAnim = dart.privateName(wavy, "_#WavyAnimatedText#_waveAnim");
+  var _waveAnim = dart.privateName(wavy, "_waveAnim");
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
   var _Location_column = dart.privateName(widget_inspector, "_Location.column");
   var _Location_line = dart.privateName(widget_inspector, "_Location.line");
   var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  round_textfield.RoundTextField = class RoundTextField extends framework.StatelessWidget {
-    get text() {
-      return this[text$];
+  wavy.WavyAnimatedText = class WavyAnimatedText extends animated_text.AnimatedText {
+    get speed() {
+      return this[speed$];
     }
-    set text(value) {
-      super.text = value;
+    set speed(value) {
+      super.speed = value;
     }
-    get press() {
-      return this[press$];
+    get [_waveAnim]() {
+      let t0;
+      t0 = this[__WavyAnimatedText__waveAnim];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_waveAnim")) : t0;
     }
-    set press(value) {
-      super.press = value;
+    set [_waveAnim](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 27, 26, "null");
+      this[__WavyAnimatedText__waveAnim] = t0;
     }
-    get color() {
-      return this[color$];
+    initAnimation(controller) {
+      if (controller == null) dart.nullFailed(I[0], 30, 42, "controller");
+      this[_waveAnim] = new (T.TweenOfdouble()).new({begin: 0.0, end: dart.notNull(this.textCharacters[$length]) / 2 + 0.52}).animate(controller);
     }
-    set color(value) {
-      super.color = value;
-    }
-    get textColor() {
-      return this[textColor$];
-    }
-    set textColor(value) {
-      super.textColor = value;
-    }
-    get control() {
-      return this[control$];
-    }
-    set control(value) {
-      super.control = value;
-    }
-    get margin() {
-      return this[margin$];
-    }
-    set margin(value) {
-      super.margin = value;
-    }
-    get preicon() {
-      return this[preicon$];
-    }
-    set preicon(value) {
-      super.preicon = value;
-    }
-    get tap() {
-      return this[tap$];
-    }
-    set tap(value) {
-      super.tap = value;
-    }
-    get suficon() {
-      return this[suficon$];
-    }
-    set suficon(value) {
-      super.suficon = value;
-    }
-    get submitted() {
-      return this[submitted$];
-    }
-    set submitted(value) {
-      super.submitted = value;
-    }
-    get errorText() {
-      return this[errorText$];
-    }
-    set errorText(value) {
-      super.errorText = value;
-    }
-    get errorborder() {
-      return this[errorborder$];
-    }
-    set errorborder(value) {
-      super.errorborder = value;
-    }
-    get errorstyle() {
-      return this[errorstyle$];
-    }
-    set errorstyle(value) {
-      super.errorstyle = value;
-    }
-    get validate() {
-      return this[validate$];
-    }
-    set validate(value) {
-      super.validate = value;
-    }
-    get focusNode() {
-      return this[focusNode$];
-    }
-    set focusNode(value) {
-      super.focusNode = value;
-    }
-    get keyboardType() {
-      return this[keyboardType$];
-    }
-    set keyboardType(value) {
-      super.keyboardType = value;
-    }
-    get textInputAction() {
-      return this[textInputAction$];
-    }
-    set textInputAction(value) {
-      super.textInputAction = value;
-    }
-    get autofocus() {
-      return this[autofocus$];
-    }
-    set autofocus(value) {
-      super.autofocus = value;
-    }
-    get onChanged() {
-      return this[onChanged$];
-    }
-    set onChanged(value) {
-      super.onChanged = value;
-    }
-    get onSubmitted() {
-      return this[onSubmitted$];
-    }
-    set onSubmitted(value) {
-      super.onSubmitted = value;
-    }
-    build(context) {
-      if (context == null) dart.nullFailed(I[0], 53, 29, "context");
-      let size = media_query.MediaQuery.of(context).size;
-      return new container.Container.new({width: dart.notNull(size.width) * 0.8, margin: T.EdgeInsetsGeometryN().as(this.margin), child: new text_form_field.TextFormField.new({focusNode: T.FocusNodeN().as(this.focusNode), keyboardType: T.TextInputTypeN().as(this.keyboardType), textInputAction: T.TextInputActionN().as(this.textInputAction), autofocus: core.bool.as(this.autofocus), onChanged: T.StringToNvoid().as(this.onChanged), controller: T.TextEditingControllerN().as(this.control), onTap: T.VoidToNvoid().as(this.tap), onFieldSubmitted: T.StringToNvoid().as(this.submitted), decoration: new input_decorator.InputDecoration.new({enabled: true, prefixIcon: T.WidgetN().as(this.preicon), suffixIcon: T.WidgetN().as(this.suficon), fillColor: theme.white, hintText: T.StringN().as(this.text), errorText: T.StringN().as(this.errorText), errorStyle: T.TextStyleN().as(this.errorstyle), focusedErrorBorder: T.InputBorderN().as(this.errorborder), enabledBorder: new input_border.OutlineInputBorder.new({borderSide: C[2] || CT.C2, borderRadius: new border_radius.BorderRadius.circular(100.0)}), focusedBorder: new input_border.OutlineInputBorder.new({borderSide: C[2] || CT.C2, borderRadius: new border_radius.BorderRadius.circular(100.0)}), border: new input_border.OutlineInputBorder.new({borderSide: C[2] || CT.C2, borderRadius: new border_radius.BorderRadius.circular(100.0)}), errorBorder: new input_border.OutlineInputBorder.new({borderSide: C[2] || CT.C2, borderRadius: new border_radius.BorderRadius.circular(100.0)})}), style: new text_style.TextStyle.new({fontFamily: "Nunito Sans", fontWeight: ui.FontWeight.w300}), $creationLocationd_0dea112b090073317d4: C[5] || CT.C5}), $creationLocationd_0dea112b090073317d4: C[17] || CT.C17});
+    animatedBuilder(context, child) {
+      if (context == null) dart.nullFailed(I[0], 36, 39, "context");
+      let defaultTextStyle = text.DefaultTextStyle.of(context).style;
+      let scaleFactor = media_query.MediaQuery.of(context).textScaleFactor;
+      return new basic.RepaintBoundary.new({child: new basic.CustomPaint.new({painter: new wavy._WTextPainter.new({progress: this[_waveAnim].value, text: this.text, textStyle: defaultTextStyle.merge(this.textStyle), scaleFactor: scaleFactor}), child: new text.Text.new(this.text, {style: defaultTextStyle.merge(this.textStyle).merge(new text_style.TextStyle.new({color: colors.Colors.transparent})), textScaleFactor: scaleFactor, $creationLocationd_0dea112b090073317d4: C[2] || CT.C2}), $creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), $creationLocationd_0dea112b090073317d4: C[11] || CT.C11});
     }
   };
-  (round_textfield.RoundTextField.new = function(opts) {
+  (wavy.WavyAnimatedText.new = function(text, opts) {
+    if (text == null) dart.nullFailed(I[0], 16, 12, "text");
+    let textAlign = opts && 'textAlign' in opts ? opts.textAlign : C[0] || CT.C0;
+    if (textAlign == null) dart.nullFailed(I[0], 17, 15, "textAlign");
+    let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
+    let speed = opts && 'speed' in opts ? opts.speed : C[1] || CT.C1;
+    if (speed == null) dart.nullFailed(I[0], 19, 10, "speed");
+    this[__WavyAnimatedText__waveAnim] = null;
+    this[speed$] = speed;
+    wavy.WavyAnimatedText.__proto__.new.call(this, {text: text, textAlign: textAlign, textStyle: textStyle, duration: speed['*'](extensions['StringCharacters|get#characters'](text)[$length])});
+    ;
+  }).prototype = wavy.WavyAnimatedText.prototype;
+  dart.addTypeTests(wavy.WavyAnimatedText);
+  dart.addTypeCaches(wavy.WavyAnimatedText);
+  dart.setMethodSignature(wavy.WavyAnimatedText, () => ({
+    __proto__: dart.getMethods(wavy.WavyAnimatedText.__proto__),
+    initAnimation: dart.fnType(dart.void, [animation_controller.AnimationController]),
+    animatedBuilder: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
+  }));
+  dart.setGetterSignature(wavy.WavyAnimatedText, () => ({
+    __proto__: dart.getGetters(wavy.WavyAnimatedText.__proto__),
+    [_waveAnim]: animation.Animation$(core.double)
+  }));
+  dart.setSetterSignature(wavy.WavyAnimatedText, () => ({
+    __proto__: dart.getSetters(wavy.WavyAnimatedText.__proto__),
+    [_waveAnim]: animation.Animation$(core.double)
+  }));
+  dart.setLibraryUri(wavy.WavyAnimatedText, I[1]);
+  dart.setFieldSignature(wavy.WavyAnimatedText, () => ({
+    __proto__: dart.getFields(wavy.WavyAnimatedText.__proto__),
+    speed: dart.finalFieldType(core.Duration),
+    [__WavyAnimatedText__waveAnim]: dart.fieldType(dart.nullable(animation.Animation$(core.double)))
+  }));
+  wavy.WavyAnimatedTextKit = class WavyAnimatedTextKit extends animated_text.AnimatedTextKit {
+    static _animatedTexts(text, textAlign, textStyle, speed) {
+      if (text == null) dart.nullFailed(I[0], 97, 18, "text");
+      if (textAlign == null) dart.nullFailed(I[0], 98, 15, "textAlign");
+      if (speed == null) dart.nullFailed(I[0], 100, 14, "speed");
+      return text[$map](wavy.WavyAnimatedText, dart.fn(_ => {
+        if (_ == null) dart.nullFailed(I[0], 103, 17, "_");
+        return new wavy.WavyAnimatedText.new(_, {textAlign: textAlign, textStyle: textStyle, speed: speed});
+      }, T.StringToWavyAnimatedText()))[$toList]();
+    }
+  };
+  (wavy.WavyAnimatedTextKit.new = function(opts) {
     let key = opts && 'key' in opts ? opts.key : null;
     let text = opts && 'text' in opts ? opts.text : null;
-    let press = opts && 'press' in opts ? opts.press : null;
-    let color = opts && 'color' in opts ? opts.color : C[0] || CT.C0;
-    let textColor = opts && 'textColor' in opts ? opts.textColor : C[1] || CT.C1;
-    let control = opts && 'control' in opts ? opts.control : null;
-    let margin = opts && 'margin' in opts ? opts.margin : null;
-    let preicon = opts && 'preicon' in opts ? opts.preicon : null;
-    let tap = opts && 'tap' in opts ? opts.tap : null;
-    let suficon = opts && 'suficon' in opts ? opts.suficon : null;
-    let submitted = opts && 'submitted' in opts ? opts.submitted : null;
-    let errorText = opts && 'errorText' in opts ? opts.errorText : null;
-    let errorborder = opts && 'errorborder' in opts ? opts.errorborder : null;
-    let errorstyle = opts && 'errorstyle' in opts ? opts.errorstyle : null;
-    let validate = opts && 'validate' in opts ? opts.validate : null;
-    let focusNode = opts && 'focusNode' in opts ? opts.focusNode : null;
-    let keyboardType = opts && 'keyboardType' in opts ? opts.keyboardType : null;
-    let textInputAction = opts && 'textInputAction' in opts ? opts.textInputAction : null;
-    let autofocus = opts && 'autofocus' in opts ? opts.autofocus : null;
-    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
-    let onSubmitted = opts && 'onSubmitted' in opts ? opts.onSubmitted : null;
+    if (text == null) dart.nullFailed(I[0], 67, 27, "text");
+    let textAlign = opts && 'textAlign' in opts ? opts.textAlign : C[0] || CT.C0;
+    if (textAlign == null) dart.nullFailed(I[0], 68, 15, "textAlign");
+    let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
+    let speed = opts && 'speed' in opts ? opts.speed : C[1] || CT.C1;
+    if (speed == null) dart.nullFailed(I[0], 70, 14, "speed");
+    let pause = opts && 'pause' in opts ? opts.pause : C[14] || CT.C14;
+    if (pause == null) dart.nullFailed(I[0], 71, 14, "pause");
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    let onNext = opts && 'onNext' in opts ? opts.onNext : null;
+    let onNextBeforePause = opts && 'onNextBeforePause' in opts ? opts.onNextBeforePause : null;
+    let onFinished = opts && 'onFinished' in opts ? opts.onFinished : null;
+    let isRepeatingAnimation = opts && 'isRepeatingAnimation' in opts ? opts.isRepeatingAnimation : true;
+    if (isRepeatingAnimation == null) dart.nullFailed(I[0], 76, 10, "isRepeatingAnimation");
+    let totalRepeatCount = opts && 'totalRepeatCount' in opts ? opts.totalRepeatCount : 3;
+    if (totalRepeatCount == null) dart.nullFailed(I[0], 77, 9, "totalRepeatCount");
+    let repeatForever = opts && 'repeatForever' in opts ? opts.repeatForever : true;
+    if (repeatForever == null) dart.nullFailed(I[0], 78, 10, "repeatForever");
+    let displayFullTextOnTap = opts && 'displayFullTextOnTap' in opts ? opts.displayFullTextOnTap : false;
+    if (displayFullTextOnTap == null) dart.nullFailed(I[0], 79, 10, "displayFullTextOnTap");
+    let stopPauseOnTap = opts && 'stopPauseOnTap' in opts ? opts.stopPauseOnTap : false;
+    if (stopPauseOnTap == null) dart.nullFailed(I[0], 80, 10, "stopPauseOnTap");
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[text$] = text;
-    this[press$] = press;
-    this[color$] = color;
-    this[textColor$] = textColor;
-    this[control$] = control;
-    this[margin$] = margin;
-    this[preicon$] = preicon;
-    this[tap$] = tap;
-    this[suficon$] = suficon;
-    this[submitted$] = submitted;
-    this[errorText$] = errorText;
-    this[errorborder$] = errorborder;
-    this[errorstyle$] = errorstyle;
-    this[validate$] = validate;
-    this[focusNode$] = focusNode;
-    this[keyboardType$] = keyboardType;
-    this[textInputAction$] = textInputAction;
-    this[autofocus$] = autofocus;
-    this[onChanged$] = onChanged;
-    this[onSubmitted$] = onSubmitted;
-    round_textfield.RoundTextField.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    wavy.WavyAnimatedTextKit.__proto__.new.call(this, {key: key, animatedTexts: wavy.WavyAnimatedTextKit._animatedTexts(text, textAlign, textStyle, speed), pause: pause, displayFullTextOnTap: displayFullTextOnTap, stopPauseOnTap: stopPauseOnTap, onTap: onTap, onNext: onNext, onNextBeforePause: onNextBeforePause, onFinished: onFinished, isRepeatingAnimation: isRepeatingAnimation, totalRepeatCount: totalRepeatCount, repeatForever: repeatForever, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = round_textfield.RoundTextField.prototype;
-  dart.addTypeTests(round_textfield.RoundTextField);
-  dart.addTypeCaches(round_textfield.RoundTextField);
-  dart.setMethodSignature(round_textfield.RoundTextField, () => ({
-    __proto__: dart.getMethods(round_textfield.RoundTextField.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }).prototype = wavy.WavyAnimatedTextKit.prototype;
+  dart.addTypeTests(wavy.WavyAnimatedTextKit);
+  dart.addTypeCaches(wavy.WavyAnimatedTextKit);
+  dart.setLibraryUri(wavy.WavyAnimatedTextKit, I[1]);
+  var _textLayoutInfo = dart.privateName(wavy, "_textLayoutInfo");
+  wavy._WTextPainter = class _WTextPainter extends custom_paint.CustomPainter {
+    paint(canvas, size) {
+      if (canvas == null) dart.nullFailed(I[0], 126, 21, "canvas");
+      if (size == null) dart.nullFailed(I[0], 126, 34, "size");
+      if (dart.test(this[_textLayoutInfo][$isEmpty])) {
+        this.calculateLayoutInfo(this.text, this[_textLayoutInfo]);
+      }
+      canvas.save();
+      for (let textLayout of this[_textLayoutInfo]) {
+        let centerOffset = new ui.Offset.new(dart.notNull(size.width) / 2, dart.notNull(size.height) / 2 - dart.notNull(textLayout.height) / 2);
+        if (dart.test(textLayout.isMoving)) {
+          let p = math.min(core.double, dart.notNull(this.progress) * 2, 1.0);
+          this.drawText(canvas, textLayout.text, new ui.Offset.new(textLayout.offsetX, dart.notNull(textLayout.offsetY) - (dart.notNull(textLayout.offsetY) - dart.notNull(textLayout.riseHeight)) * p)['+'](centerOffset), textLayout);
+        } else {
+          this.drawText(canvas, textLayout.text, new ui.Offset.new(textLayout.offsetX, textLayout.offsetY)['+'](centerOffset), textLayout);
+        }
+      }
+      canvas.restore();
+    }
+    shouldRepaint(oldDelegate) {
+      wavy._WTextPainter.as(oldDelegate);
+      if (oldDelegate == null) dart.nullFailed(I[0], 165, 36, "oldDelegate");
+      if (oldDelegate.progress != this.progress) {
+        this.calculateLayoutInfo(this.text, this[_textLayoutInfo]);
+        this.calculateMove();
+        return true;
+      }
+      return false;
+    }
+    calculateMove() {
+      let height = this[_textLayoutInfo][$_get](0).height;
+      let txtInMoInd = this.progress[$floor]();
+      let percent = dart.notNull(this.progress) - txtInMoInd;
+      let txtInMoOdd = (dart.notNull(this.progress) - 0.5)[$floor]();
+      let txtInMoEven = txtInMoInd * 2;
+      if (txtInMoOdd < (this.text.length - 1) / 2 && !txtInMoOdd[$isNegative]) {
+        this[_textLayoutInfo][$_get](txtInMoOdd + (txtInMoOdd + 1)).isMoving = true;
+        this[_textLayoutInfo][$_get](txtInMoOdd + (txtInMoOdd + 1)).riseHeight = dart.notNull(this.progress) < 0.5 ? 0.0 : -1.3 * dart.notNull(height) * math.sin((dart.notNull(this.progress) - 0.5) * 3.141592653589793)[$abs]();
+      }
+      if (txtInMoEven < this.text.length) {
+        this[_textLayoutInfo][$_get](txtInMoEven).isMoving = true;
+        this[_textLayoutInfo][$_get](txtInMoEven).riseHeight = -1.3 * dart.notNull(height) * math.sin(percent * 3.141592653589793);
+      }
+    }
+    drawText(canvas, text, offset, textLayoutInfo) {
+      let t1;
+      if (canvas == null) dart.nullFailed(I[0], 199, 24, "canvas");
+      if (text == null) dart.nullFailed(I[0], 199, 39, "text");
+      if (offset == null) dart.nullFailed(I[0], 199, 52, "offset");
+      if (textLayoutInfo == null) dart.nullFailed(I[0], 200, 23, "textLayoutInfo");
+      let textPainter = (t1 = new text_painter.TextPainter.new({text: new text_span.TextSpan.new({text: text, style: this.textStyle}), textDirection: ui.TextDirection.ltr, textScaleFactor: this.scaleFactor}), (() => {
+        t1.layout();
+        return t1;
+      })());
+      textPainter.paint(canvas, new ui.Offset.new(dart.notNull(offset.dx) - dart.notNull(textLayoutInfo.width) / 2, dart.notNull(offset.dy) + (dart.notNull(textLayoutInfo.height) - dart.notNull(textPainter.height)) / 2));
+    }
+    calculateLayoutInfo(text, list) {
+      if (text == null) dart.nullFailed(I[0], 219, 35, "text");
+      if (list == null) dart.nullFailed(I[0], 219, 63, "list");
+      list[$clear]();
+      let textPainter = new text_painter.TextPainter.new({text: new text_span.TextSpan.new({text: text, style: this.textStyle}), textDirection: ui.TextDirection.ltr, maxLines: 1, textScaleFactor: this.scaleFactor});
+      textPainter.layout();
+      for (let i = 0; i < text.length; i = i + 1) {
+        let forCaret = textPainter.getOffsetForCaret(new ui.TextPosition.new({offset: i}), ui.Rect.zero);
+        let offsetX = forCaret.dx;
+        if (i > 0 && offsetX === 0) {
+          break;
+        }
+        let textLayoutInfo = new wavy._TextLayoutInfo.new({text: text[$_get](i), offsetX: offsetX, offsetY: forCaret.dy, width: textPainter.width, height: textPainter.height, baseline: textPainter.computeDistanceToActualBaseline(ui.TextBaseline.ideographic)});
+        list[$add](textLayoutInfo);
+      }
+    }
+  };
+  (wavy._WTextPainter.new = function(opts) {
+    let progress = opts && 'progress' in opts ? opts.progress : null;
+    if (progress == null) dart.nullFailed(I[0], 114, 19, "progress");
+    let text = opts && 'text' in opts ? opts.text : null;
+    if (text == null) dart.nullFailed(I[0], 115, 19, "text");
+    let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
+    if (textStyle == null) dart.nullFailed(I[0], 116, 19, "textStyle");
+    let scaleFactor = opts && 'scaleFactor' in opts ? opts.scaleFactor : null;
+    if (scaleFactor == null) dart.nullFailed(I[0], 117, 19, "scaleFactor");
+    this[_textLayoutInfo] = T.JSArrayOf_TextLayoutInfo().of([]);
+    this.progress = progress;
+    this.text = text;
+    this.textStyle = textStyle;
+    this.scaleFactor = scaleFactor;
+    wavy._WTextPainter.__proto__.new.call(this);
+    ;
+  }).prototype = wavy._WTextPainter.prototype;
+  dart.addTypeTests(wavy._WTextPainter);
+  dart.addTypeCaches(wavy._WTextPainter);
+  dart.setMethodSignature(wavy._WTextPainter, () => ({
+    __proto__: dart.getMethods(wavy._WTextPainter.__proto__),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Size]),
+    shouldRepaint: dart.fnType(core.bool, [dart.nullable(core.Object)]),
+    calculateMove: dart.fnType(dart.void, []),
+    drawText: dart.fnType(dart.void, [ui.Canvas, core.String, ui.Offset, wavy._TextLayoutInfo]),
+    calculateLayoutInfo: dart.fnType(dart.void, [core.String, core.List$(wavy._TextLayoutInfo)])
   }));
-  dart.setLibraryUri(round_textfield.RoundTextField, I[1]);
-  dart.setFieldSignature(round_textfield.RoundTextField, () => ({
-    __proto__: dart.getFields(round_textfield.RoundTextField.__proto__),
-    text: dart.finalFieldType(dart.dynamic),
-    press: dart.finalFieldType(dart.dynamic),
-    color: dart.finalFieldType(dart.dynamic),
-    textColor: dart.finalFieldType(dart.dynamic),
-    control: dart.finalFieldType(dart.dynamic),
-    margin: dart.finalFieldType(dart.dynamic),
-    preicon: dart.finalFieldType(dart.dynamic),
-    tap: dart.finalFieldType(dart.dynamic),
-    suficon: dart.finalFieldType(dart.dynamic),
-    submitted: dart.finalFieldType(dart.dynamic),
-    errorText: dart.finalFieldType(dart.dynamic),
-    errorborder: dart.finalFieldType(dart.dynamic),
-    errorstyle: dart.finalFieldType(dart.dynamic),
-    validate: dart.finalFieldType(dart.dynamic),
-    focusNode: dart.finalFieldType(dart.dynamic),
-    keyboardType: dart.finalFieldType(dart.dynamic),
-    textInputAction: dart.finalFieldType(dart.dynamic),
-    autofocus: dart.finalFieldType(dart.dynamic),
-    onChanged: dart.finalFieldType(dart.dynamic),
-    onSubmitted: dart.finalFieldType(dart.dynamic)
+  dart.setLibraryUri(wavy._WTextPainter, I[1]);
+  dart.setFieldSignature(wavy._WTextPainter, () => ({
+    __proto__: dart.getFields(wavy._WTextPainter.__proto__),
+    progress: dart.finalFieldType(core.double),
+    scaleFactor: dart.finalFieldType(core.double),
+    text: dart.finalFieldType(core.String),
+    [_textLayoutInfo]: dart.finalFieldType(core.List$(wavy._TextLayoutInfo)),
+    textStyle: dart.finalFieldType(text_style.TextStyle)
   }));
-  dart.trackLibraries("packages/aishop/components/round_textfield.dart", {
-    "package:aishop/components/round_textfield.dart": round_textfield
+  var ___TextLayoutInfo_riseHeight = dart.privateName(wavy, "_#_TextLayoutInfo#riseHeight");
+  wavy._TextLayoutInfo = class _TextLayoutInfo extends core.Object {
+    get riseHeight() {
+      let t1;
+      t1 = this[___TextLayoutInfo_riseHeight];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("riseHeight")) : t1;
+    }
+    set riseHeight(t1) {
+      if (t1 == null) dart.nullFailed(I[0], 267, 15, "null");
+      this[___TextLayoutInfo_riseHeight] = t1;
+    }
+  };
+  (wavy._TextLayoutInfo.new = function(opts) {
+    let text = opts && 'text' in opts ? opts.text : null;
+    if (text == null) dart.nullFailed(I[0], 271, 19, "text");
+    let offsetX = opts && 'offsetX' in opts ? opts.offsetX : null;
+    if (offsetX == null) dart.nullFailed(I[0], 272, 19, "offsetX");
+    let offsetY = opts && 'offsetY' in opts ? opts.offsetY : null;
+    if (offsetY == null) dart.nullFailed(I[0], 273, 19, "offsetY");
+    let width = opts && 'width' in opts ? opts.width : null;
+    if (width == null) dart.nullFailed(I[0], 274, 19, "width");
+    let height = opts && 'height' in opts ? opts.height : null;
+    if (height == null) dart.nullFailed(I[0], 275, 19, "height");
+    let baseline = opts && 'baseline' in opts ? opts.baseline : null;
+    if (baseline == null) dart.nullFailed(I[0], 276, 19, "baseline");
+    this[___TextLayoutInfo_riseHeight] = null;
+    this.isMoving = false;
+    this.text = text;
+    this.offsetX = offsetX;
+    this.offsetY = offsetY;
+    this.width = width;
+    this.height = height;
+    this.baseline = baseline;
+    ;
+  }).prototype = wavy._TextLayoutInfo.prototype;
+  dart.addTypeTests(wavy._TextLayoutInfo);
+  dart.addTypeCaches(wavy._TextLayoutInfo);
+  dart.setGetterSignature(wavy._TextLayoutInfo, () => ({
+    __proto__: dart.getGetters(wavy._TextLayoutInfo.__proto__),
+    riseHeight: core.double
+  }));
+  dart.setSetterSignature(wavy._TextLayoutInfo, () => ({
+    __proto__: dart.getSetters(wavy._TextLayoutInfo.__proto__),
+    riseHeight: core.double
+  }));
+  dart.setLibraryUri(wavy._TextLayoutInfo, I[1]);
+  dart.setFieldSignature(wavy._TextLayoutInfo, () => ({
+    __proto__: dart.getFields(wavy._TextLayoutInfo.__proto__),
+    text: dart.finalFieldType(core.String),
+    offsetX: dart.finalFieldType(core.double),
+    offsetY: dart.finalFieldType(core.double),
+    width: dart.finalFieldType(core.double),
+    height: dart.finalFieldType(core.double),
+    baseline: dart.finalFieldType(core.double),
+    [___TextLayoutInfo_riseHeight]: dart.fieldType(dart.nullable(core.double)),
+    isMoving: dart.fieldType(core.bool)
+  }));
+  dart.trackLibraries("packages/animated_text_kit/src/wavy.dart", {
+    "package:animated_text_kit/src/wavy.dart": wavy
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["round_textfield.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAMQ;;;;;;IACC;;;;;;IACA;;;;;;IAAO;;;;;;IACP;;;;;;IACD;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;;UA4BoB;AACnB,iBAAkB,AAAY,0BAAT,OAAO;AACjC,YAAO,qCACe,aAAX,AAAK,IAAD,UAAS,wCACZ,qBAER,oEACa,qDACG,6DACG,+CACN,iDACA,2DACC,yCACL,kDACW,6BAElB,kDACW,iCACK,0CACA,0BACD,sCACD,sCACC,+CACC,0DACQ,kCAEpB,kFAOiB,wCAAS,yBAG1B,kFAOiB,wCAAS,kBAEpB,kFAMS,wCAAS,uBAEb,kFAMI,wCAAS,mBAI5B,0CACgB,2BACW;IAInC;;;QA7FO;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;;IAnBA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;AACF,kEAAW,GAAG;;EAAC","file":"../../../../../../../packages/aishop/components/round_textfield.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["wavy.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/animated_text_kit/src/wavy.dart.lib.js"}');
   // Exports:
   return {
-    components__round_textfield: round_textfield
+    src__wavy: wavy
   };
 }));
 
-//# sourceMappingURL=round_textfield.dart.lib.js.map
+//# sourceMappingURL=wavy.dart.lib.js.map

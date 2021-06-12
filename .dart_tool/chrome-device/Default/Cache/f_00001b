@@ -1,34 +1,29 @@
-define(['dart_sdk', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__foundation__stack_frame_dart(dart_sdk, packages__flutter__src__foundation__object$46dart) {
+define(['dart_sdk', 'packages/google_sign_in_platform_interface/src/types.dart', 'packages/flutter/src/services/system_channels.dart'], (function load__packages__google_sign_in_platform_interface__src__utils_dart(dart_sdk, packages__google_sign_in_platform_interface__src__types$46dart, packages__flutter__src__services__system_channels$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
+  const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  var stack_frame = Object.create(dart.library);
-  var $trim = dartx.trim;
-  var $split = dartx.split;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $where = dartx.where;
-  var $map = dartx.map;
-  var $whereType = dartx.whereType;
-  var $toList = dartx.toList;
-  var $startsWith = dartx.startsWith;
+  const types = packages__google_sign_in_platform_interface__src__types$46dart.src__types;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
+  var utils = Object.create(dart.library);
+  var method_channel_google_sign_in = Object.create(dart.library);
+  var google_sign_in_platform_interface = Object.create(dart.library);
   var $_get = dartx._get;
-  var $replaceFirst = dartx.replaceFirst;
-  var $length = dartx.length;
-  var $first = dartx.first;
-  var $skip = dartx.skip;
-  var $join = dartx.join;
-  var $single = dartx.single;
-  var $replaceAll = dartx.replaceAll;
-  var $contains = dartx.contains;
-  var $runtimeType = dartx.runtimeType;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    StringTobool: () => (T.StringTobool = dart.constFn(dart.fnType(core.bool, [core.String])))(),
-    StackFrameN: () => (T.StackFrameN = dart.constFn(dart.nullable(stack_frame.StackFrame)))(),
-    StringToStackFrameN: () => (T.StringToStackFrameN = dart.constFn(dart.fnType(T.StackFrameN(), [core.String])))()
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    GoogleSignInUserDataN: () => (T.GoogleSignInUserDataN = dart.constFn(dart.nullable(types.GoogleSignInUserData)))(),
+    MapOfString$dynamic: () => (T.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
+    MapNOfString$dynamic: () => (T.MapNOfString$dynamic = dart.constFn(dart.nullable(T.MapOfString$dynamic())))(),
+    MapNOfString$dynamicToGoogleSignInUserDataN: () => (T.MapNOfString$dynamicToGoogleSignInUserDataN = dart.constFn(dart.fnType(T.GoogleSignInUserDataN(), [T.MapNOfString$dynamic()])))(),
+    MapNOfString$dynamicToGoogleSignInTokenData: () => (T.MapNOfString$dynamicToGoogleSignInTokenData = dart.constFn(dart.fnType(types.GoogleSignInTokenData, [T.MapNOfString$dynamic()])))(),
+    IdentityMapOfString$StringN: () => (T.IdentityMapOfString$StringN = dart.constFn(_js_helper.IdentityMap$(core.String, T.StringN())))(),
+    ListOfString: () => (T.ListOfString = dart.constFn(core.List$(core.String)))(),
+    IdentityMapOfString$ListOfString: () => (T.IdentityMapOfString$ListOfString = dart.constFn(_js_helper.IdentityMap$(core.String, T.ListOfString())))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -43,301 +38,252 @@ define(['dart_sdk', 'packages/flutter/src/foundation/object.dart'], (function lo
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.fn(stack_frame.StackFrame.fromStackTraceLine, T.StringToStackFrameN());
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: message_codecs.StandardMessageCodec.prototype
+      });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: stack_frame.StackFrame.prototype,
-        [isConstructor$]: false,
-        [method$]: "asynchronous suspension",
-        [className$]: "",
-        [column$]: -1,
-        [line$]: -1,
-        [packagePath$]: "",
-        [$package$]: "",
-        [packageScheme$]: "",
-        [number$]: -1,
-        [source$]: "<asynchronous suspension>"
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C[2] || CT.C2
       });
     },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: stack_frame.StackFrame.prototype,
-        [isConstructor$]: false,
-        [method$]: "...",
-        [className$]: "",
-        [column$]: -1,
-        [line$]: -1,
-        [packagePath$]: "",
-        [$package$]: "",
-        [packageScheme$]: "",
-        [number$]: -1,
-        [source$]: "..."
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C[1] || CT.C1,
+        [MethodChannel_name]: "plugins.flutter.io/google_sign_in"
       });
+    },
+    get C3() {
+      return C[3] = dart.constList([], core.String);
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: types.SignInOption.prototype,
+        [_name]: "SignInOption.standard",
+        index: 0
+      });
+    },
+    get C5() {
+      return C[5] = dart.fn(utils.getUserDataFromMap, T.MapNOfString$dynamicToGoogleSignInUserDataN());
     }
   }, false);
-  var C = Array(3).fill(void 0);
+  var C = Array(6).fill(void 0);
   var I = [
-    "file:///C:/Users/vmoyo/Downloads/flutter/packages/flutter/lib/src/foundation/stack_frame.dart",
-    "package:flutter/src/foundation/stack_frame.dart"
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_platform_interface-2.0.1/lib/src/utils.dart",
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_platform_interface-2.0.1/lib/src/method_channel_google_sign_in.dart",
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_platform_interface-2.0.1/lib/google_sign_in_platform_interface.dart",
+    "package:google_sign_in_platform_interface/google_sign_in_platform_interface.dart",
+    "package:google_sign_in_platform_interface/src/method_channel_google_sign_in.dart"
   ];
-  var source$ = dart.privateName(stack_frame, "StackFrame.source");
-  var number$ = dart.privateName(stack_frame, "StackFrame.number");
-  var packageScheme$ = dart.privateName(stack_frame, "StackFrame.packageScheme");
-  var $package$ = dart.privateName(stack_frame, "StackFrame.package");
-  var packagePath$ = dart.privateName(stack_frame, "StackFrame.packagePath");
-  var line$ = dart.privateName(stack_frame, "StackFrame.line");
-  var column$ = dart.privateName(stack_frame, "StackFrame.column");
-  var className$ = dart.privateName(stack_frame, "StackFrame.className");
-  var method$ = dart.privateName(stack_frame, "StackFrame.method");
-  var isConstructor$ = dart.privateName(stack_frame, "StackFrame.isConstructor");
-  stack_frame.StackFrame = class StackFrame extends core.Object {
-    get source() {
-      return this[source$];
+  utils.getUserDataFromMap = function getUserDataFromMap(data) {
+    if (data == null) {
+      return null;
     }
-    set source(value) {
-      super.source = value;
+    return new types.GoogleSignInUserData.new({email: core.String.as(dart.nullCheck(data[$_get]("email"))), id: core.String.as(dart.nullCheck(data[$_get]("id"))), displayName: T.StringN().as(data[$_get]("displayName")), photoUrl: T.StringN().as(data[$_get]("photoUrl")), idToken: T.StringN().as(data[$_get]("idToken"))});
+  };
+  utils.getTokenDataFromMap = function getTokenDataFromMap(data) {
+    if (data == null) dart.nullFailed(I[0], 21, 64, "data");
+    return new types.GoogleSignInTokenData.new({idToken: T.StringN().as(data[$_get]("idToken")), accessToken: T.StringN().as(data[$_get]("accessToken")), serverAuthCode: T.StringN().as(data[$_get]("serverAuthCode"))});
+  };
+  var channel = dart.privateName(method_channel_google_sign_in, "MethodChannelGoogleSignIn.channel");
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  var _name = dart.privateName(types, "_name");
+  var _verifyProvidesDefaultImplementations = dart.privateName(google_sign_in_platform_interface, "_verifyProvidesDefaultImplementations");
+  google_sign_in_platform_interface.GoogleSignInPlatform = class GoogleSignInPlatform extends core.Object {
+    get isMock() {
+      return false;
     }
-    get number() {
-      return this[number$];
+    static get instance() {
+      return google_sign_in_platform_interface.GoogleSignInPlatform._instance;
     }
-    set number(value) {
-      super.number = value;
-    }
-    get packageScheme() {
-      return this[packageScheme$];
-    }
-    set packageScheme(value) {
-      super.packageScheme = value;
-    }
-    get package() {
-      return this[$package$];
-    }
-    set package(value) {
-      super.package = value;
-    }
-    get packagePath() {
-      return this[packagePath$];
-    }
-    set packagePath(value) {
-      super.packagePath = value;
-    }
-    get line() {
-      return this[line$];
-    }
-    set line(value) {
-      super.line = value;
-    }
-    get column() {
-      return this[column$];
-    }
-    set column(value) {
-      super.column = value;
-    }
-    get className() {
-      return this[className$];
-    }
-    set className(value) {
-      super.className = value;
-    }
-    get method() {
-      return this[method$];
-    }
-    set method(value) {
-      super.method = value;
-    }
-    get isConstructor() {
-      return this[isConstructor$];
-    }
-    set isConstructor(value) {
-      super.isConstructor = value;
-    }
-    static fromStackTrace(stack) {
-      if (stack == null) dart.nullFailed(I[0], 78, 53, "stack");
-      if (!(stack != null)) dart.assertFailed(null, I[0], 79, 12, "stack != null");
-      return stack_frame.StackFrame.fromStackString(dart.toString(stack));
-    }
-    static fromStackString(stack) {
-      if (stack == null) dart.nullFailed(I[0], 84, 50, "stack");
-      if (!(stack != null)) dart.assertFailed(null, I[0], 85, 12, "stack != null");
-      return stack[$trim]()[$split]("\n")[$where](dart.fn(line => {
-        if (line == null) dart.nullFailed(I[0], 89, 24, "line");
-        return line[$isNotEmpty];
-      }, T.StringTobool()))[$map](T.StackFrameN(), C[0] || CT.C0)[$whereType](stack_frame.StackFrame)[$toList]();
-    }
-    static _parseWebFrame(line) {
-      if (line == null) dart.nullFailed(I[0], 98, 44, "line");
-      if (true) {
-        return stack_frame.StackFrame._parseWebDebugFrame(line);
-      } else {
-        return stack_frame.StackFrame._parseWebNonDebugFrame(line);
-      }
-    }
-    static _parseWebDebugFrame(line) {
-      if (line == null) dart.nullFailed(I[0], 106, 48, "line");
-      let hasPackage = line[$startsWith]("package");
-      let parser = hasPackage ? core.RegExp.new("^(package.+) (\\d+):(\\d+)\\s+(.+)$") : core.RegExp.new("^(.+) (\\d+):(\\d+)\\s+(.+)$");
-      let match = parser.firstMatch(line);
-      if (!(match != null)) dart.assertFailed("Expected " + dart.str(line) + " to match " + dart.str(parser) + ".", I[0], 114, 12, "match != null");
-      match = dart.nullCheck(match);
-      let $package = "<unknown>";
-      let packageScheme = "<unknown>";
-      let packagePath = "<unknown>";
-      if (hasPackage) {
-        packageScheme = "package";
-        let packageUri = core.Uri.parse(dart.nullCheck(match.group(1)));
-        $package = packageUri.pathSegments[$_get](0);
-        packagePath = packageUri.path[$replaceFirst](dart.notNull(packageUri.pathSegments[$_get](0)) + "/", "");
-      }
-      return new stack_frame.StackFrame.new({number: -1, packageScheme: packageScheme, package: $package, packagePath: packagePath, line: core.int.parse(dart.nullCheck(match.group(2))), column: core.int.parse(dart.nullCheck(match.group(3))), className: "<unknown>", method: dart.nullCheck(match.group(4)), source: line});
-    }
-    static _parseWebNonDebugFrame(line) {
-      if (line == null) dart.nullFailed(I[0], 148, 52, "line");
-      let match = stack_frame.StackFrame._webNonDebugFramePattern.firstMatch(line);
-      if (match == null) {
-        return null;
-      }
-      let classAndMethod = dart.nullCheck(match.group(1))[$split](".");
-      let className = dart.notNull(classAndMethod[$length]) > 1 ? classAndMethod[$first] : "<unknown>";
-      let method = dart.notNull(classAndMethod[$length]) > 1 ? classAndMethod[$skip](1)[$join](".") : classAndMethod[$single];
-      return new stack_frame.StackFrame.new({number: -1, packageScheme: "<unknown>", package: "<unknown>", packagePath: "<unknown>", line: -1, column: -1, className: className, method: method, source: line});
-    }
-    static fromStackTraceLine(line) {
-      if (line == null) dart.nullFailed(I[0], 185, 48, "line");
-      if (!(line != null)) dart.assertFailed(null, I[0], 186, 12, "line != null");
-      if (line === "<asynchronous suspension>") {
-        return stack_frame.StackFrame.asynchronousSuspension;
-      } else if (line === "...") {
-        return stack_frame.StackFrame.stackOverFlowElision;
-      }
-      if (!(line !== "===== asynchronous gap ===========================")) dart.assertFailed("Got a stack frame from package:stack_trace, where a vm or web frame was expected. " + "This can happen if FlutterError.demangleStackTrace was not set in an environment " + "that propagates non-standard stack traces to the framework, such as during tests.", I[0], 194, 7, "line != '===== asynchronous gap ==========================='");
-      if (!line[$startsWith]("#")) {
-        return stack_frame.StackFrame._parseWebFrame(line);
-      }
-      let parser = core.RegExp.new("^#(\\d+) +(.+) \\((.+?):?(\\d+){0,1}:?(\\d+){0,1}\\)$");
-      let match = parser.firstMatch(line);
-      if (!(match != null)) dart.assertFailed("Expected " + dart.str(line) + " to match " + dart.str(parser) + ".", I[0], 207, 12, "match != null");
-      match = dart.nullCheck(match);
-      let isConstructor = false;
-      let className = "";
-      let method = dart.nullCheck(match.group(2))[$replaceAll](".<anonymous closure>", "");
-      if (method[$startsWith]("new")) {
-        let methodParts = method[$split](" ");
-        className = dart.notNull(methodParts[$length]) > 1 ? method[$split](" ")[$_get](1) : "<unknown>";
-        method = "";
-        if (className[$contains](".")) {
-          let parts = className[$split](".");
-          className = parts[$_get](0);
-          method = parts[$_get](1);
+    static set instance(instance) {
+      if (instance == null) dart.nullFailed(I[2], 43, 44, "instance");
+      if (!dart.test(instance.isMock)) {
+        try {
+          instance[_verifyProvidesDefaultImplementations]();
+        } catch (e) {
+          let _ = dart.getThrown(e);
+          if (core.NoSuchMethodError.is(_)) {
+            dart.throw(new core.AssertionError.new("Platform interfaces must not be implemented with `implements`"));
+          } else
+            throw e;
         }
-        isConstructor = true;
-      } else if (method[$contains](".")) {
-        let parts = method[$split](".");
-        className = parts[$_get](0);
-        method = parts[$_get](1);
       }
-      let packageUri = core.Uri.parse(dart.nullCheck(match.group(3)));
-      let $package = "<unknown>";
-      let packagePath = packageUri.path;
-      if (packageUri.scheme === "dart" || packageUri.scheme === "package") {
-        $package = packageUri.pathSegments[$_get](0);
-        packagePath = packageUri.path[$replaceFirst](dart.notNull(packageUri.pathSegments[$_get](0)) + "/", "");
-      }
-      return new stack_frame.StackFrame.new({number: core.int.parse(dart.nullCheck(match.group(1))), className: className, method: method, packageScheme: packageUri.scheme, package: $package, packagePath: packagePath, line: match.group(4) == null ? -1 : core.int.parse(dart.nullCheck(match.group(4))), column: match.group(5) == null ? -1 : core.int.parse(dart.nullCheck(match.group(5))), isConstructor: isConstructor, source: line});
+      google_sign_in_platform_interface.GoogleSignInPlatform._instance = instance;
     }
-    get hashCode() {
-      return ui.hashValues(this.number, this.package, this.line, this.column, this.className, this.method, this.source);
+    [_verifyProvidesDefaultImplementations]() {
     }
-    _equals(other) {
-      if (other == null) return false;
-      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
-      return stack_frame.StackFrame.is(other) && other.number == this.number && other.package == this.package && other.line == this.line && other.column == this.column && other.className == this.className && other.method == this.method && other.source == this.source;
+    init(opts) {
+      let scopes = opts && 'scopes' in opts ? opts.scopes : C[3] || CT.C3;
+      if (scopes == null) dart.nullFailed(I[2], 82, 18, "scopes");
+      let signInOption = opts && 'signInOption' in opts ? opts.signInOption : C[4] || CT.C4;
+      if (signInOption == null) dart.nullFailed(I[2], 83, 18, "signInOption");
+      let hostedDomain = opts && 'hostedDomain' in opts ? opts.hostedDomain : null;
+      let clientId = opts && 'clientId' in opts ? opts.clientId : null;
+      return async.async(dart.void, function* init() {
+        dart.throw(new core.UnimplementedError.new("init() has not been implemented."));
+      });
     }
-    toString() {
-      return dart.str(object.objectRuntimeType(this, "StackFrame")) + "(#" + dart.str(this.number) + ", " + dart.str(this.packageScheme) + ":" + dart.str(this.package) + "/" + dart.str(this.packagePath) + ":" + dart.str(this.line) + ":" + dart.str(this.column) + ", className: " + dart.str(this.className) + ", method: " + dart.str(this.method) + ")";
+    signInSilently() {
+      return async.async(T.GoogleSignInUserDataN(), function* signInSilently() {
+        dart.throw(new core.UnimplementedError.new("signInSilently() has not been implemented."));
+      });
+    }
+    signIn() {
+      return async.async(T.GoogleSignInUserDataN(), function* signIn() {
+        dart.throw(new core.UnimplementedError.new("signIn() has not been implemented."));
+      });
+    }
+    getTokens(opts) {
+      let email = opts && 'email' in opts ? opts.email : null;
+      if (email == null) dart.nullFailed(I[2], 102, 24, "email");
+      let shouldRecoverAuth = opts && 'shouldRecoverAuth' in opts ? opts.shouldRecoverAuth : null;
+      return async.async(types.GoogleSignInTokenData, function* getTokens() {
+        dart.throw(new core.UnimplementedError.new("getTokens() has not been implemented."));
+      });
+    }
+    signOut() {
+      return async.async(dart.void, function* signOut() {
+        dart.throw(new core.UnimplementedError.new("signOut() has not been implemented."));
+      });
+    }
+    disconnect() {
+      return async.async(dart.void, function* disconnect() {
+        dart.throw(new core.UnimplementedError.new("disconnect() has not been implemented."));
+      });
+    }
+    isSignedIn() {
+      return async.async(core.bool, function* isSignedIn() {
+        dart.throw(new core.UnimplementedError.new("isSignedIn() has not been implemented."));
+      });
+    }
+    clearAuthCache(opts) {
+      let token = opts && 'token' in opts ? opts.token : null;
+      if (token == null) dart.nullFailed(I[2], 122, 48, "token");
+      return async.async(dart.void, function* clearAuthCache() {
+        dart.throw(new core.UnimplementedError.new("clearAuthCache() has not been implemented."));
+      });
+    }
+    requestScopes(scopes) {
+      if (scopes == null) dart.nullFailed(I[2], 130, 43, "scopes");
+      return async.async(core.bool, function* requestScopes() {
+        dart.throw(new core.UnimplementedError.new("requestScopes() has not been implmented."));
+      });
     }
   };
-  (stack_frame.StackFrame.new = function(opts) {
-    let number = opts && 'number' in opts ? opts.number : null;
-    if (number == null) dart.nullFailed(I[0], 30, 19, "number");
-    let column = opts && 'column' in opts ? opts.column : null;
-    if (column == null) dart.nullFailed(I[0], 31, 19, "column");
-    let line = opts && 'line' in opts ? opts.line : null;
-    if (line == null) dart.nullFailed(I[0], 32, 19, "line");
-    let packageScheme = opts && 'packageScheme' in opts ? opts.packageScheme : null;
-    if (packageScheme == null) dart.nullFailed(I[0], 33, 19, "packageScheme");
-    let $package = opts && 'package' in opts ? opts.package : null;
-    if ($package == null) dart.nullFailed(I[0], 34, 19, "package");
-    let packagePath = opts && 'packagePath' in opts ? opts.packagePath : null;
-    if (packagePath == null) dart.nullFailed(I[0], 35, 19, "packagePath");
-    let className = opts && 'className' in opts ? opts.className : "";
-    if (className == null) dart.nullFailed(I[0], 36, 10, "className");
-    let method = opts && 'method' in opts ? opts.method : null;
-    if (method == null) dart.nullFailed(I[0], 37, 19, "method");
-    let isConstructor = opts && 'isConstructor' in opts ? opts.isConstructor : false;
-    if (isConstructor == null) dart.nullFailed(I[0], 38, 10, "isConstructor");
-    let source = opts && 'source' in opts ? opts.source : null;
-    if (source == null) dart.nullFailed(I[0], 39, 19, "source");
-    this[number$] = number;
-    this[column$] = column;
-    this[line$] = line;
-    this[packageScheme$] = packageScheme;
-    this[$package$] = $package;
-    this[packagePath$] = packagePath;
-    this[className$] = className;
-    this[method$] = method;
-    this[isConstructor$] = isConstructor;
-    this[source$] = source;
-    if (!(number != null)) dart.assertFailed(null, I[0], 40, 16, "number != null");
-    if (!(column != null)) dart.assertFailed(null, I[0], 41, 16, "column != null");
-    if (!(line != null)) dart.assertFailed(null, I[0], 42, 16, "line != null");
-    if (!(method != null)) dart.assertFailed(null, I[0], 43, 16, "method != null");
-    if (!(packageScheme != null)) dart.assertFailed(null, I[0], 44, 16, "packageScheme != null");
-    if (!($package != null)) dart.assertFailed(null, I[0], 45, 16, "package != null");
-    if (!(packagePath != null)) dart.assertFailed(null, I[0], 46, 16, "packagePath != null");
-    if (!(className != null)) dart.assertFailed(null, I[0], 47, 16, "className != null");
-    if (!(isConstructor != null)) dart.assertFailed(null, I[0], 48, 16, "isConstructor != null");
-    if (!(source != null)) dart.assertFailed(null, I[0], 49, 16, "source != null");
+  (google_sign_in_platform_interface.GoogleSignInPlatform.new = function() {
     ;
-  }).prototype = stack_frame.StackFrame.prototype;
-  dart.addTypeTests(stack_frame.StackFrame);
-  dart.addTypeCaches(stack_frame.StackFrame);
-  dart.setLibraryUri(stack_frame.StackFrame, I[1]);
-  dart.setFieldSignature(stack_frame.StackFrame, () => ({
-    __proto__: dart.getFields(stack_frame.StackFrame.__proto__),
-    source: dart.finalFieldType(core.String),
-    number: dart.finalFieldType(core.int),
-    packageScheme: dart.finalFieldType(core.String),
-    package: dart.finalFieldType(core.String),
-    packagePath: dart.finalFieldType(core.String),
-    line: dart.finalFieldType(core.int),
-    column: dart.finalFieldType(core.int),
-    className: dart.finalFieldType(core.String),
-    method: dart.finalFieldType(core.String),
-    isConstructor: dart.finalFieldType(core.bool)
+  }).prototype = google_sign_in_platform_interface.GoogleSignInPlatform.prototype;
+  dart.addTypeTests(google_sign_in_platform_interface.GoogleSignInPlatform);
+  dart.addTypeCaches(google_sign_in_platform_interface.GoogleSignInPlatform);
+  dart.setMethodSignature(google_sign_in_platform_interface.GoogleSignInPlatform, () => ({
+    __proto__: dart.getMethods(google_sign_in_platform_interface.GoogleSignInPlatform.__proto__),
+    [_verifyProvidesDefaultImplementations]: dart.fnType(dart.void, []),
+    init: dart.fnType(async.Future$(dart.void), [], {clientId: dart.nullable(core.String), hostedDomain: dart.nullable(core.String), scopes: core.List$(core.String), signInOption: types.SignInOption}, {}),
+    signInSilently: dart.fnType(async.Future$(dart.nullable(types.GoogleSignInUserData)), []),
+    signIn: dart.fnType(async.Future$(dart.nullable(types.GoogleSignInUserData)), []),
+    getTokens: dart.fnType(async.Future$(types.GoogleSignInTokenData), [], {shouldRecoverAuth: dart.nullable(core.bool)}, {email: core.String}),
+    signOut: dart.fnType(async.Future$(dart.void), []),
+    disconnect: dart.fnType(async.Future$(dart.void), []),
+    isSignedIn: dart.fnType(async.Future$(core.bool), []),
+    clearAuthCache: dart.fnType(async.Future$(dart.void), [], {}, {token: core.String}),
+    requestScopes: dart.fnType(async.Future$(core.bool), [core.List$(core.String)])
   }));
-  dart.defineExtensionMethods(stack_frame.StackFrame, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(stack_frame.StackFrame, ['hashCode']);
-  dart.defineLazy(stack_frame.StackFrame, {
-    /*stack_frame.StackFrame.asynchronousSuspension*/get asynchronousSuspension() {
-      return C[1] || CT.C1;
+  dart.setGetterSignature(google_sign_in_platform_interface.GoogleSignInPlatform, () => ({
+    __proto__: dart.getGetters(google_sign_in_platform_interface.GoogleSignInPlatform.__proto__),
+    isMock: core.bool
+  }));
+  dart.setLibraryUri(google_sign_in_platform_interface.GoogleSignInPlatform, I[3]);
+  dart.defineLazy(google_sign_in_platform_interface.GoogleSignInPlatform, {
+    /*google_sign_in_platform_interface.GoogleSignInPlatform._instance*/get _instance() {
+      return new method_channel_google_sign_in.MethodChannelGoogleSignIn.new();
     },
-    /*stack_frame.StackFrame.stackOverFlowElision*/get stackOverFlowElision() {
-      return C[2] || CT.C2;
-    },
-    /*stack_frame.StackFrame._webNonDebugFramePattern*/get _webNonDebugFramePattern() {
-      return core.RegExp.new("^\\s*at ([^\\s]+).*$");
-    }
+    set _instance(_) {}
   }, false);
-  dart.trackLibraries("packages/flutter/src/foundation/stack_frame.dart", {
-    "package:flutter/src/foundation/stack_frame.dart": stack_frame
+  method_channel_google_sign_in.MethodChannelGoogleSignIn = class MethodChannelGoogleSignIn extends google_sign_in_platform_interface.GoogleSignInPlatform {
+    get channel() {
+      return this[channel];
+    }
+    set channel(value) {
+      this[channel] = value;
+    }
+    init(opts) {
+      let scopes = opts && 'scopes' in opts ? opts.scopes : C[3] || CT.C3;
+      if (scopes == null) dart.nullFailed(I[1], 24, 18, "scopes");
+      let signInOption = opts && 'signInOption' in opts ? opts.signInOption : C[4] || CT.C4;
+      if (signInOption == null) dart.nullFailed(I[1], 25, 18, "signInOption");
+      let hostedDomain = opts && 'hostedDomain' in opts ? opts.hostedDomain : null;
+      let clientId = opts && 'clientId' in opts ? opts.clientId : null;
+      return this.channel.invokeMethod(dart.void, "init", new (T.IdentityMapOfString$dynamic()).from(["signInOption", dart.toString(signInOption), "scopes", scopes, "hostedDomain", hostedDomain, "clientId", clientId]));
+    }
+    signInSilently() {
+      return this.channel.invokeMapMethod(core.String, dart.dynamic, "signInSilently").then(T.GoogleSignInUserDataN(), C[5] || CT.C5);
+    }
+    signIn() {
+      return this.channel.invokeMapMethod(core.String, dart.dynamic, "signIn").then(T.GoogleSignInUserDataN(), C[5] || CT.C5);
+    }
+    getTokens(opts) {
+      let email = opts && 'email' in opts ? opts.email : null;
+      if (email == null) dart.nullFailed(I[1], 53, 24, "email");
+      let shouldRecoverAuth = opts && 'shouldRecoverAuth' in opts ? opts.shouldRecoverAuth : true;
+      return this.channel.invokeMapMethod(core.String, dart.dynamic, "getTokens", new (T.IdentityMapOfString$dynamic()).from(["email", email, "shouldRecoverAuth", shouldRecoverAuth])).then(types.GoogleSignInTokenData, dart.fn(result => utils.getTokenDataFromMap(dart.nullCheck(result)), T.MapNOfString$dynamicToGoogleSignInTokenData()));
+    }
+    signOut() {
+      return this.channel.invokeMapMethod(core.String, dart.dynamic, "signOut");
+    }
+    disconnect() {
+      return this.channel.invokeMapMethod(core.String, dart.dynamic, "disconnect");
+    }
+    isSignedIn() {
+      return async.async(core.bool, (function* isSignedIn() {
+        return dart.nullCheck(yield this.channel.invokeMethod(core.bool, "isSignedIn"));
+      }).bind(this));
+    }
+    clearAuthCache(opts) {
+      let token = opts && 'token' in opts ? opts.token : null;
+      return this.channel.invokeMethod(dart.void, "clearAuthCache", new (T.IdentityMapOfString$StringN()).from(["token", token]));
+    }
+    requestScopes(scopes) {
+      if (scopes == null) dart.nullFailed(I[1], 85, 43, "scopes");
+      return async.async(core.bool, (function* requestScopes() {
+        return dart.nullCheck(yield this.channel.invokeMethod(core.bool, "requestScopes", new (T.IdentityMapOfString$ListOfString()).from(["scopes", scopes])));
+      }).bind(this));
+    }
+  };
+  (method_channel_google_sign_in.MethodChannelGoogleSignIn.new = function() {
+    this[channel] = C[0] || CT.C0;
+    ;
+  }).prototype = method_channel_google_sign_in.MethodChannelGoogleSignIn.prototype;
+  dart.addTypeTests(method_channel_google_sign_in.MethodChannelGoogleSignIn);
+  dart.addTypeCaches(method_channel_google_sign_in.MethodChannelGoogleSignIn);
+  dart.setMethodSignature(method_channel_google_sign_in.MethodChannelGoogleSignIn, () => ({
+    __proto__: dart.getMethods(method_channel_google_sign_in.MethodChannelGoogleSignIn.__proto__),
+    clearAuthCache: dart.fnType(async.Future$(dart.void), [], {token: dart.nullable(core.String)}, {})
+  }));
+  dart.setLibraryUri(method_channel_google_sign_in.MethodChannelGoogleSignIn, I[4]);
+  dart.setFieldSignature(method_channel_google_sign_in.MethodChannelGoogleSignIn, () => ({
+    __proto__: dart.getFields(method_channel_google_sign_in.MethodChannelGoogleSignIn.__proto__),
+    channel: dart.fieldType(platform_channel.MethodChannel)
+  }));
+  dart.trackLibraries("packages/google_sign_in_platform_interface/src/utils.dart", {
+    "package:google_sign_in_platform_interface/src/utils.dart": utils,
+    "package:google_sign_in_platform_interface/src/method_channel_google_sign_in.dart": method_channel_google_sign_in,
+    "package:google_sign_in_platform_interface/google_sign_in_platform_interface.dart": google_sign_in_platform_interface
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["stack_frame.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/flutter/src/foundation/stack_frame.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["utils.dart","../google_sign_in_platform_interface.dart","method_channel_google_sign_in.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;yDAO+D;AAC7D,QAAI,AAAK,IAAD;AACN,YAAO;;AAET,UAAO,2DACiB,eAAb,AAAI,IAAA,QAAC,+BACE,eAAV,AAAI,IAAA,QAAC,qCACI,AAAI,IAAA,QAAC,0CACR,AAAI,IAAA,QAAC,sCACN,AAAI,IAAA,QAAC;EACpB;;QAG+D;AAC7D,UAAO,8DACI,AAAI,IAAA,QAAC,yCACD,AAAI,IAAA,QAAC,gDACF,AAAI,IAAA,QAAC;EAEzB;;;;;;;;;;ACCqB;IAAK;;AASoB;IAAS;;UAMZ;AACvC,qBAAK,AAAS,QAAD;AACX;AACkD,UAAhD,AAAS,QAAD;;cACoB;AAA5B;AAEoE,YADpE,WAAM,4BACF;;;;;AAGY,MAApB,mEAAY,QAAQ;IACtB;;IAS8C;;UAoB/B;;UACA;;UACL;UACA;AAJO;AAM6C,QAA5D,WAAM,gCAAmB;MAC3B;;;AAG4C;AAC4B,QAAtE,WAAM,gCAAmB;MAC3B;;;AAGoC;AAC4B,QAA9D,WAAM,gCAAmB;MAC3B;;;UAIqB;;UAAa;AADK;AAE4B,QAAjE,WAAM,gCAAmB;MAC3B;;;AAGoB;AAC6C,QAA/D,WAAM,gCAAmB;MAC3B;;;AAGuB;AAC6C,QAAlE,WAAM,gCAAmB;MAC3B;;;AAGuB;AAC6C,QAAlE,WAAM,gCAAmB;MAC3B;;;UAG6C;;AAAlB;AAC6C,QAAtE,WAAM,gCAAmB;MAC3B;;;UAMwC;AAAd;AAC4C,QAApE,WAAM,gCAAmB;MAC3B;;;;;EACF;;;;;;;;;;;;;;;;;;;;;;MA9F8B,gEAAS;YAAG;;;;;ICpB1B;;;;;;;UAKC;;UACA;;UACL;UACA;AAER,YAAO,AAAQ,sCAAmB,QAAyB,4CACzD,gBAA6B,cAAb,YAAY,GAC5B,UAAU,MAAM,EAChB,gBAAgB,YAAY,EAC5B,YAAY,QAAQ;IAExB;;AAIE,YAAO,AACF,AACA,yDADiC;IAExC;;AAIE,YAAO,AACF,AACA,yDADiC;IAExC;;UAIqB;;UAAa;AAChC,YAAO,AACF,AAGF,yDAHmC,aAA8B,4CAClE,SAAS,KAAK,EACd,qBAAqB,iBAAiB,sCAChC,QAAC,UAAW,0BAA0B,eAAN,MAAM;IAChD;;AAIE,YAAO,AAAQ,yDAAiC;IAClD;;AAIE,YAAO,AAAQ,yDAAiC;IAClD;;AAGuB;AACrB,cAAuD,gBAA/C,MAAM,AAAQ,qCAAmB;MAC3C;;;UAGqC;AACnC,YAAO,AAAQ,sCACb,kBACiB,4CAAC,SAAS,KAAK;IAEpC;;UAGwC;AAAd;AACxB,cAGE,gBAHM,MAAM,AAAQ,qCACpB,iBACsB,iDAAC,UAAU,MAAM;MAE3C;;;;IAvEc;;EAwEhB","file":"../../../../../../../../../../packages/google_sign_in_platform_interface/src/utils.dart.lib.js"}');
   // Exports:
   return {
-    src__foundation__stack_frame: stack_frame
+    src__utils: utils,
+    src__method_channel_google_sign_in: method_channel_google_sign_in,
+    google_sign_in_platform_interface: google_sign_in_platform_interface
   };
 }));
 
-//# sourceMappingURL=stack_frame.dart.lib.js.map
+//# sourceMappingURL=utils.dart.lib.js.map
