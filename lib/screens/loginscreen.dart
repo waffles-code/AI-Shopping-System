@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
         return 'Please enter password';
       } else if (!value.contains(RegExp(
           r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$'))) {
-        return 'Enter a valid password';
+        return ' ';
       }
     }
 
@@ -193,27 +193,81 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   HomePage()));
                                     });
                                   } else {
-                                    showDialog<String>(
-                                      context: context,
-                                      builder: (BuildContext context) =>
-                                          AlertDialog(
-                                        title: const Text('error occurs'),
-                                        content: const Text(
-                                            'Your Password / Username is invalid',
-                                            style: TextStyle(
-                                                color: Colors.redAccent)),
-                                        actions: <Widget>[
-                                          FlatButton(
-                                            child: Text('OK',
-                                                style: TextStyle(
-                                                    color: Colors.black)),
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                    );
+                                    showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return AlertDialog(
+                                            
+                                            shape: RoundedRectangleBorder(
+                                       
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(32.0))),
+                                            contentPadding:
+                                                EdgeInsets.only(top: 10.0),
+                                                
+                                            content: Container(
+                                              width: 300.0,
+                                              // height: 30,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.stretch,
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: <Widget>[
+                                                  SizedBox(
+                                                    height: 3,
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: <Widget>[
+                                                      Text(
+                                                        "Error has occured",
+                                                        style: TextStyle(
+                                                            fontSize: 24.0),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  SizedBox(
+                                                    height: 8,
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: <Widget>[
+                                                      Text(
+                                                        "Your Password/Email is incorrect",
+                                                        style: TextStyle(
+                                                            fontSize: 13.0,
+                                                            color: Colors.red),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  FlatButton(
+                                                    child: Text('OK',
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.black)),
+                                                    onPressed: () {
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          );
+                                        });
                                   }
                                 }).catchError((error) {
                                   print('Sign in Error: $error');

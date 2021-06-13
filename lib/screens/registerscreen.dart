@@ -40,24 +40,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String loginStatus = "";
   late Color loginStringColor;
 
-  bool isPasswordCompliant(String password, [int minLength = 6]) {
-    if (password == null || password.isEmpty) {
-      return false;
-    }
-    bool hasUppercase = password.contains(new RegExp(r'[A-Z]'));
-    bool hasDigits = password.contains(new RegExp(r'[0-9]'));
-    bool hasLowercase = password.contains(new RegExp(r'[a-z]'));
-    bool hasSpecialCharacters =
-        password.contains(new RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
-    bool hasMinLength = password.length >= minLength;
-
-    return hasDigits &
-        hasUppercase &
-        hasLowercase &
-        hasSpecialCharacters &
-        hasMinLength;
-  }
-
 //use Regular Expression to validate the structure
 
   late TextEditingController userConfirmPasswordController;
@@ -134,17 +116,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return null;
   }
 
-/*if (value.contains(RegExp(r'^(?=.*?[A-Z])$'))) {
-          return 'Contains upper case';
-        } else if (!value.contains(RegExp(r'^(?=.*?[a-z])$'))) {
-          return 'Contains Lower case';
-        } else if (!value.contains(RegExp(r'^(?=.*?[0-9])$'))) {
-          return 'Contains number';
-        } else if (!value.contains(RegExp(r'^(?=.*?[!@#\$&*~])$'))) {
-          return 'Contains numbers';
-        } else {
-          return null;
-        }*/
   String? _checkRepeatedPassword(String value) {
     value = value.trim();
 //check that passwords are matching.
@@ -427,7 +398,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                             contentPadding:
                                                 EdgeInsets.only(top: 10.0),
                                             content: Container(
-                                              width: 300.0,
+                                              width: 330.0,
                                               // height: 30,
                                               child: Column(
                                                 mainAxisAlignment:
@@ -464,7 +435,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                         MainAxisSize.min,
                                                     children: <Widget>[
                                                       Text(
-                                                        "The account already exist",
+                                                        "This account already exist/There's unfilled fields",
                                                         style: TextStyle(
                                                             fontSize: 15.0,
                                                             color: Colors.red),
