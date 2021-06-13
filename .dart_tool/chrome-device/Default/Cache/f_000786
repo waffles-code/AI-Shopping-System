@@ -1,0 +1,1253 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/colors.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/rendering/stack.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/painting/circle_border.dart', 'packages/flutter/src/painting/rounded_rectangle_border.dart', 'packages/flutter/src/widgets/implicit_animations.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/icon.dart'], (function load__packages__badges__src__badge_shape_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__colors$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__borders$46dart, packages__flutter__src__rendering__stack$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__painting__circle_border$46dart, packages__flutter__src__painting__rounded_rectangle_border$46dart, packages__flutter__src__widgets__implicit_animations$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__icon$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const colors$ = packages__flutter__src__painting__colors$46dart.src__painting__colors;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const stack = packages__flutter__src__rendering__stack$46dart.src__rendering__stack;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const circle_border = packages__flutter__src__painting__circle_border$46dart.src__painting__circle_border;
+  const rounded_rectangle_border = packages__flutter__src__painting__rounded_rectangle_border$46dart.src__painting__rounded_rectangle_border;
+  const implicit_animations = packages__flutter__src__widgets__implicit_animations$46dart.src__widgets__implicit_animations;
+  const material = packages__flutter__src__material__icon_button$46dart.src__material__material;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  var badge_shape = Object.create(dart.library);
+  var badge_positioned = Object.create(dart.library);
+  var badge_position = Object.create(dart.library);
+  var badge_animation_type = Object.create(dart.library);
+  var badge = Object.create(dart.library);
+  var badges = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    TweenOfOffset: () => (T.TweenOfOffset = dart.constFn(tween.Tween$(ui.Offset)))(),
+    TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    VoidToWidget: () => (T.VoidToWidget = dart.constFn(dart.fnType(framework.Widget, [])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: badge_shape.BadgeShape.prototype,
+        [_name$]: "BadgeShape.circle",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: badge_shape.BadgeShape.prototype,
+        [_name$]: "BadgeShape.square",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], badge_shape.BadgeShape);
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "top",
+        [_Location_column]: 9,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "end",
+        [_Location_column]: 9,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7], widget_inspector._Location);
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge_positioned.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "top",
+        [_Location_column]: 7,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "end",
+        [_Location_column]: 7,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottom",
+        [_Location_column]: 7,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "start",
+        [_Location_column]: 7,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14], widget_inspector._Location);
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge_positioned.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: badge_animation_type.BadgeAnimationType.prototype,
+        [_name$0]: "BadgeAnimationType.slide",
+        index: 0
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: badge_animation_type.BadgeAnimationType.prototype,
+        [_name$0]: "BadgeAnimationType.scale",
+        index: 1
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: badge_animation_type.BadgeAnimationType.prototype,
+        [_name$0]: "BadgeAnimationType.fade",
+        index: 2
+      });
+    },
+    get C18() {
+      return C[18] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17], badge_animation_type.BadgeAnimationType);
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294962158.0
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294954450.0
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293892762.0
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293227379.0
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293874512.0
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294198070.0
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293212469.0
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292030255.0
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4291176488.0
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4290190364.0
+      });
+    },
+    get C20() {
+      return C[20] = dart.constMap(core.int, ui.Color, [50, C[21] || CT.C21, 100, C[22] || CT.C22, 200, C[23] || CT.C23, 300, C[24] || CT.C24, 400, C[25] || CT.C25, 500, C[26] || CT.C26, 600, C[27] || CT.C27, 700, C[28] || CT.C28, 800, C[29] || CT.C29, 900, C[30] || CT.C30]);
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: colors.MaterialColor.prototype,
+        [Color_value]: 4294198070.0,
+        [ColorSwatch__swatch]: C[20] || CT.C20
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 5,
+        [EdgeInsets_right]: 5,
+        [EdgeInsets_top]: 5,
+        [EdgeInsets_left]: 5
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 500000
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 0,
+        [Radius_x]: 0
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: border_radius.BorderRadius.prototype,
+        [BorderRadius_bottomRight]: C[34] || CT.C34,
+        [BorderRadius_bottomLeft]: C[34] || CT.C34,
+        [BorderRadius_topRight]: C[34] || CT.C34,
+        [BorderRadius_topLeft]: C[34] || CT.C34
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [Alignment_y]: 0,
+        [Alignment_x]: 0
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.none",
+        index: 0
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: borders.BorderSide.prototype,
+        [BorderSide_style]: C[37] || CT.C37,
+        [BorderSide_width]: 0,
+        [BorderSide_color]: C[38] || CT.C38
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: stack.StackFit.prototype,
+        [_name$1]: "StackFit.loose",
+        index: 0
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 0.9,
+        [OffsetBase__dx]: -0.5
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 0,
+        [OffsetBase__dx]: 0
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 33,
+        [_Location_line]: 186,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44], widget_inspector._Location);
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 186,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge.dart"
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "position",
+        [_Location_column]: 13,
+        [_Location_line]: 184,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 185,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.constList([C[47] || CT.C47, C[48] || CT.C48], widget_inspector._Location);
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[46] || CT.C46,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 183,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fit",
+        [_Location_column]: 9,
+        [_Location_line]: 178,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 9,
+        [_Location_line]: 179,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "clipBehavior",
+        [_Location_column]: 9,
+        [_Location_line]: 180,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 181,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51, C[52] || CT.C52, C[53] || CT.C53, C[54] || CT.C54], widget_inspector._Location);
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 177,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge.dart"
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 13,
+        [_Location_line]: 209,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 210,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.constList([C[57] || CT.C57, C[58] || CT.C58], widget_inspector._Location);
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[56] || CT.C56,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 208,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge.dart"
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shape",
+        [_Location_column]: 11,
+        [_Location_line]: 205,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elevation",
+        [_Location_column]: 11,
+        [_Location_line]: 206,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 11,
+        [_Location_line]: 207,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 208,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.constList([C[61] || CT.C61, C[62] || CT.C62, C[63] || CT.C63, C[64] || CT.C64], widget_inspector._Location);
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[60] || CT.C60,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 204,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge.dart"
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 204,
+        [_Location_file]: null
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "opacity",
+        [_Location_column]: 9,
+        [_Location_line]: 213,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "duration",
+        [_Location_column]: 9,
+        [_Location_line]: 214,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.constList([C[67] || CT.C67, C[68] || CT.C68, C[69] || CT.C69], widget_inspector._Location);
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[66] || CT.C66,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 203,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge.dart"
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "position",
+        [_Location_column]: 11,
+        [_Location_line]: 221,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 222,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.constList([C[72] || CT.C72, C[73] || CT.C73], widget_inspector._Location);
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[71] || CT.C71,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 220,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge.dart"
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "scale",
+        [_Location_column]: 11,
+        [_Location_line]: 226,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 227,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C[75] = dart.constList([C[76] || CT.C76, C[77] || CT.C77], widget_inspector._Location);
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[75] || CT.C75,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 225,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge.dart"
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "opacity",
+        [_Location_column]: 11,
+        [_Location_line]: 231,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 232,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C[79] = dart.constList([C[80] || CT.C80, C[81] || CT.C81], widget_inspector._Location);
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[79] || CT.C79,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 230,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge.dart"
+      });
+    }
+  }, false);
+  var C = Array(82).fill(void 0);
+  var I = [
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge_shape.dart",
+    "package:badges/src/badge_shape.dart",
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge_positioned.dart",
+    "package:badges/src/badge_positioned.dart",
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge_position.dart",
+    "package:badges/src/badge_position.dart",
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge_animation_type.dart",
+    "package:badges/src/badge_animation_type.dart",
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.1/lib/src/badge.dart",
+    "package:badges/src/badge.dart"
+  ];
+  var _name$ = dart.privateName(badge_shape, "_name");
+  badge_shape.BadgeShape = class BadgeShape extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (badge_shape.BadgeShape.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 5, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 5, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = badge_shape.BadgeShape.prototype;
+  dart.addTypeTests(badge_shape.BadgeShape);
+  dart.addTypeCaches(badge_shape.BadgeShape);
+  dart.setLibraryUri(badge_shape.BadgeShape, I[1]);
+  dart.setFieldSignature(badge_shape.BadgeShape, () => ({
+    __proto__: dart.getFields(badge_shape.BadgeShape.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(badge_shape.BadgeShape, ['toString']);
+  badge_shape.BadgeShape.circle = C[0] || CT.C0;
+  badge_shape.BadgeShape.square = C[1] || CT.C1;
+  badge_shape.BadgeShape.values = C[2] || CT.C2;
+  var position$ = dart.privateName(badge_positioned, "BadgePositioned.position");
+  var child$ = dart.privateName(badge_positioned, "BadgePositioned.child");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  badge_positioned.BadgePositioned = class BadgePositioned extends framework.StatelessWidget {
+    get position() {
+      return this[position$];
+    }
+    set position(value) {
+      super.position = value;
+    }
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[2], 24, 29, "context");
+      let position = this.position;
+      if (position == null) {
+        let topRight = badge_position.BadgePosition.topEnd();
+        return new basic.PositionedDirectional.new({top: topRight.top, end: topRight.end, child: this.child, $creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
+      }
+      return new basic.PositionedDirectional.new({top: position.top, end: position.end, bottom: position.bottom, start: position.start, child: this.child, $creationLocationd_0dea112b090073317d4: C[8] || CT.C8});
+    }
+  };
+  (badge_positioned.BadgePositioned.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let position = opts && 'position' in opts ? opts.position : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    if (child == null) dart.nullFailed(I[2], 20, 65, "child");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[position$] = position;
+    this[child$] = child;
+    badge_positioned.BadgePositioned.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = badge_positioned.BadgePositioned.prototype;
+  dart.addTypeTests(badge_positioned.BadgePositioned);
+  dart.addTypeCaches(badge_positioned.BadgePositioned);
+  dart.setMethodSignature(badge_positioned.BadgePositioned, () => ({
+    __proto__: dart.getMethods(badge_positioned.BadgePositioned.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(badge_positioned.BadgePositioned, I[3]);
+  dart.setFieldSignature(badge_positioned.BadgePositioned, () => ({
+    __proto__: dart.getFields(badge_positioned.BadgePositioned.__proto__),
+    position: dart.finalFieldType(dart.nullable(badge_position.BadgePosition)),
+    child: dart.finalFieldType(framework.Widget)
+  }));
+  var top$ = dart.privateName(badge_position, "BadgePosition.top");
+  var end$ = dart.privateName(badge_position, "BadgePosition.end");
+  var start$ = dart.privateName(badge_position, "BadgePosition.start");
+  var bottom$ = dart.privateName(badge_position, "BadgePosition.bottom");
+  badge_position.BadgePosition = class BadgePosition extends core.Object {
+    get top() {
+      return this[top$];
+    }
+    set top(value) {
+      super.top = value;
+    }
+    get end() {
+      return this[end$];
+    }
+    set end(value) {
+      super.end = value;
+    }
+    get start() {
+      return this[start$];
+    }
+    set start(value) {
+      super.start = value;
+    }
+    get bottom() {
+      return this[bottom$];
+    }
+    set bottom(value) {
+      super.bottom = value;
+    }
+    static topStart(opts) {
+      let top = opts && 'top' in opts ? opts.top : -5;
+      if (top == null) dart.nullFailed(I[4], 24, 42, "top");
+      let start = opts && 'start' in opts ? opts.start : -10;
+      if (start == null) dart.nullFailed(I[4], 24, 59, "start");
+      return new badge_position.BadgePosition.new({top: top, start: start});
+    }
+    static topEnd(opts) {
+      let top = opts && 'top' in opts ? opts.top : -8;
+      if (top == null) dart.nullFailed(I[4], 30, 40, "top");
+      let end = opts && 'end' in opts ? opts.end : -10;
+      if (end == null) dart.nullFailed(I[4], 30, 57, "end");
+      return new badge_position.BadgePosition.new({top: top, end: end});
+    }
+    static bottomEnd(opts) {
+      let bottom = opts && 'bottom' in opts ? opts.bottom : -8;
+      if (bottom == null) dart.nullFailed(I[4], 36, 43, "bottom");
+      let end = opts && 'end' in opts ? opts.end : -10;
+      if (end == null) dart.nullFailed(I[4], 36, 63, "end");
+      return new badge_position.BadgePosition.new({bottom: bottom, end: end});
+    }
+    static bottomStart(opts) {
+      let bottom = opts && 'bottom' in opts ? opts.bottom : -8;
+      if (bottom == null) dart.nullFailed(I[4], 42, 45, "bottom");
+      let start = opts && 'start' in opts ? opts.start : -10;
+      if (start == null) dart.nullFailed(I[4], 42, 65, "start");
+      return new badge_position.BadgePosition.new({bottom: bottom, start: start});
+    }
+  };
+  (badge_position.BadgePosition.new = function(opts) {
+    let top = opts && 'top' in opts ? opts.top : null;
+    let end = opts && 'end' in opts ? opts.end : null;
+    let bottom = opts && 'bottom' in opts ? opts.bottom : null;
+    let start = opts && 'start' in opts ? opts.start : null;
+    this[top$] = top;
+    this[end$] = end;
+    this[bottom$] = bottom;
+    this[start$] = start;
+    ;
+  }).prototype = badge_position.BadgePosition.prototype;
+  dart.addTypeTests(badge_position.BadgePosition);
+  dart.addTypeCaches(badge_position.BadgePosition);
+  dart.setLibraryUri(badge_position.BadgePosition, I[5]);
+  dart.setFieldSignature(badge_position.BadgePosition, () => ({
+    __proto__: dart.getFields(badge_position.BadgePosition.__proto__),
+    top: dart.finalFieldType(dart.nullable(core.double)),
+    end: dart.finalFieldType(dart.nullable(core.double)),
+    start: dart.finalFieldType(dart.nullable(core.double)),
+    bottom: dart.finalFieldType(dart.nullable(core.double))
+  }));
+  var _name$0 = dart.privateName(badge_animation_type, "_name");
+  badge_animation_type.BadgeAnimationType = class BadgeAnimationType extends core.Object {
+    toString() {
+      return this[_name$0];
+    }
+  };
+  (badge_animation_type.BadgeAnimationType.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[6], 5, 6, "index");
+    if (_name == null) dart.nullFailed(I[6], 5, 6, "_name");
+    this.index = index;
+    this[_name$0] = _name;
+    ;
+  }).prototype = badge_animation_type.BadgeAnimationType.prototype;
+  dart.addTypeTests(badge_animation_type.BadgeAnimationType);
+  dart.addTypeCaches(badge_animation_type.BadgeAnimationType);
+  dart.setLibraryUri(badge_animation_type.BadgeAnimationType, I[7]);
+  dart.setFieldSignature(badge_animation_type.BadgeAnimationType, () => ({
+    __proto__: dart.getFields(badge_animation_type.BadgeAnimationType.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$0]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(badge_animation_type.BadgeAnimationType, ['toString']);
+  badge_animation_type.BadgeAnimationType.slide = C[15] || CT.C15;
+  badge_animation_type.BadgeAnimationType.scale = C[16] || CT.C16;
+  badge_animation_type.BadgeAnimationType.fade = C[17] || CT.C17;
+  badge_animation_type.BadgeAnimationType.values = C[18] || CT.C18;
+  var child$0 = dart.privateName(badge, "Badge.child");
+  var alignment$ = dart.privateName(badge, "Badge.alignment");
+  var position$0 = dart.privateName(badge, "Badge.position");
+  var badgeContent$ = dart.privateName(badge, "Badge.badgeContent");
+  var ignorePointer$ = dart.privateName(badge, "Badge.ignorePointer");
+  var badgeColor$ = dart.privateName(badge, "Badge.badgeColor");
+  var elevation$ = dart.privateName(badge, "Badge.elevation");
+  var toAnimate$ = dart.privateName(badge, "Badge.toAnimate");
+  var animationDuration$ = dart.privateName(badge, "Badge.animationDuration");
+  var animationType$ = dart.privateName(badge, "Badge.animationType");
+  var shape$ = dart.privateName(badge, "Badge.shape");
+  var borderSide$ = dart.privateName(badge, "Badge.borderSide");
+  var stackFit$ = dart.privateName(badge, "Badge.stackFit");
+  var borderRadius$ = dart.privateName(badge, "Badge.borderRadius");
+  var padding$ = dart.privateName(badge, "Badge.padding");
+  var showBadge$ = dart.privateName(badge, "Badge.showBadge");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var ColorSwatch__swatch = dart.privateName(colors$, "ColorSwatch._swatch");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var Radius_y = dart.privateName(ui, "Radius.y");
+  var Radius_x = dart.privateName(ui, "Radius.x");
+  var BorderRadius_bottomRight = dart.privateName(border_radius, "BorderRadius.bottomRight");
+  var BorderRadius_bottomLeft = dart.privateName(border_radius, "BorderRadius.bottomLeft");
+  var BorderRadius_topRight = dart.privateName(border_radius, "BorderRadius.topRight");
+  var BorderRadius_topLeft = dart.privateName(border_radius, "BorderRadius.topLeft");
+  var Alignment_y = dart.privateName(alignment, "Alignment.y");
+  var Alignment_x = dart.privateName(alignment, "Alignment.x");
+  var _name = dart.privateName(borders, "_name");
+  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
+  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
+  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
+  var _name$1 = dart.privateName(stack, "_name");
+  badge.Badge = class Badge extends framework.StatefulWidget {
+    get child() {
+      return this[child$0];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    get alignment() {
+      return this[alignment$];
+    }
+    set alignment(value) {
+      super.alignment = value;
+    }
+    get position() {
+      return this[position$0];
+    }
+    set position(value) {
+      super.position = value;
+    }
+    get badgeContent() {
+      return this[badgeContent$];
+    }
+    set badgeContent(value) {
+      super.badgeContent = value;
+    }
+    get ignorePointer() {
+      return this[ignorePointer$];
+    }
+    set ignorePointer(value) {
+      super.ignorePointer = value;
+    }
+    get badgeColor() {
+      return this[badgeColor$];
+    }
+    set badgeColor(value) {
+      super.badgeColor = value;
+    }
+    get elevation() {
+      return this[elevation$];
+    }
+    set elevation(value) {
+      super.elevation = value;
+    }
+    get toAnimate() {
+      return this[toAnimate$];
+    }
+    set toAnimate(value) {
+      super.toAnimate = value;
+    }
+    get animationDuration() {
+      return this[animationDuration$];
+    }
+    set animationDuration(value) {
+      super.animationDuration = value;
+    }
+    get animationType() {
+      return this[animationType$];
+    }
+    set animationType(value) {
+      super.animationType = value;
+    }
+    get shape() {
+      return this[shape$];
+    }
+    set shape(value) {
+      super.shape = value;
+    }
+    get borderSide() {
+      return this[borderSide$];
+    }
+    set borderSide(value) {
+      super.borderSide = value;
+    }
+    get stackFit() {
+      return this[stackFit$];
+    }
+    set stackFit(value) {
+      super.stackFit = value;
+    }
+    get borderRadius() {
+      return this[borderRadius$];
+    }
+    set borderRadius(value) {
+      super.borderRadius = value;
+    }
+    get padding() {
+      return this[padding$];
+    }
+    set padding(value) {
+      super.padding = value;
+    }
+    get showBadge() {
+      return this[showBadge$];
+    }
+    set showBadge(value) {
+      super.showBadge = value;
+    }
+    createState() {
+      return new badge.BadgeState.new();
+    }
+  };
+  (badge.Badge.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let badgeContent = opts && 'badgeContent' in opts ? opts.badgeContent : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let badgeColor = opts && 'badgeColor' in opts ? opts.badgeColor : C[19] || CT.C19;
+    if (badgeColor == null) dart.nullFailed(I[8], 24, 10, "badgeColor");
+    let elevation = opts && 'elevation' in opts ? opts.elevation : 2;
+    if (elevation == null) dart.nullFailed(I[8], 25, 10, "elevation");
+    let toAnimate = opts && 'toAnimate' in opts ? opts.toAnimate : true;
+    if (toAnimate == null) dart.nullFailed(I[8], 26, 10, "toAnimate");
+    let position = opts && 'position' in opts ? opts.position : null;
+    let shape = opts && 'shape' in opts ? opts.shape : C[0] || CT.C0;
+    if (shape == null) dart.nullFailed(I[8], 28, 10, "shape");
+    let padding = opts && 'padding' in opts ? opts.padding : C[31] || CT.C31;
+    if (padding == null) dart.nullFailed(I[8], 29, 10, "padding");
+    let animationDuration = opts && 'animationDuration' in opts ? opts.animationDuration : C[32] || CT.C32;
+    if (animationDuration == null) dart.nullFailed(I[8], 30, 10, "animationDuration");
+    let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : C[33] || CT.C33;
+    if (borderRadius == null) dart.nullFailed(I[8], 31, 10, "borderRadius");
+    let alignment = opts && 'alignment' in opts ? opts.alignment : C[35] || CT.C35;
+    if (alignment == null) dart.nullFailed(I[8], 32, 10, "alignment");
+    let animationType = opts && 'animationType' in opts ? opts.animationType : C[15] || CT.C15;
+    if (animationType == null) dart.nullFailed(I[8], 33, 10, "animationType");
+    let showBadge = opts && 'showBadge' in opts ? opts.showBadge : true;
+    if (showBadge == null) dart.nullFailed(I[8], 34, 10, "showBadge");
+    let ignorePointer = opts && 'ignorePointer' in opts ? opts.ignorePointer : false;
+    if (ignorePointer == null) dart.nullFailed(I[8], 35, 10, "ignorePointer");
+    let borderSide = opts && 'borderSide' in opts ? opts.borderSide : C[36] || CT.C36;
+    if (borderSide == null) dart.nullFailed(I[8], 36, 10, "borderSide");
+    let stackFit = opts && 'stackFit' in opts ? opts.stackFit : C[39] || CT.C39;
+    if (stackFit == null) dart.nullFailed(I[8], 37, 10, "stackFit");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[badgeContent$] = badgeContent;
+    this[child$0] = child;
+    this[badgeColor$] = badgeColor;
+    this[elevation$] = elevation;
+    this[toAnimate$] = toAnimate;
+    this[position$0] = position;
+    this[shape$] = shape;
+    this[padding$] = padding;
+    this[animationDuration$] = animationDuration;
+    this[borderRadius$] = borderRadius;
+    this[alignment$] = alignment;
+    this[animationType$] = animationType;
+    this[showBadge$] = showBadge;
+    this[ignorePointer$] = ignorePointer;
+    this[borderSide$] = borderSide;
+    this[stackFit$] = stackFit;
+    badge.Badge.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = badge.Badge.prototype;
+  dart.addTypeTests(badge.Badge);
+  dart.addTypeCaches(badge.Badge);
+  dart.setMethodSignature(badge.Badge, () => ({
+    __proto__: dart.getMethods(badge.Badge.__proto__),
+    createState: dart.fnType(badge.BadgeState, [])
+  }));
+  dart.setLibraryUri(badge.Badge, I[9]);
+  dart.setFieldSignature(badge.Badge, () => ({
+    __proto__: dart.getFields(badge.Badge.__proto__),
+    child: dart.finalFieldType(dart.nullable(framework.Widget)),
+    alignment: dart.finalFieldType(alignment.AlignmentGeometry),
+    position: dart.finalFieldType(dart.nullable(badge_position.BadgePosition)),
+    badgeContent: dart.finalFieldType(dart.nullable(framework.Widget)),
+    ignorePointer: dart.finalFieldType(core.bool),
+    badgeColor: dart.finalFieldType(ui.Color),
+    elevation: dart.finalFieldType(core.double),
+    toAnimate: dart.finalFieldType(core.bool),
+    animationDuration: dart.finalFieldType(core.Duration),
+    animationType: dart.finalFieldType(badge_animation_type.BadgeAnimationType),
+    shape: dart.finalFieldType(badge_shape.BadgeShape),
+    borderSide: dart.finalFieldType(borders.BorderSide),
+    stackFit: dart.finalFieldType(stack.StackFit),
+    borderRadius: dart.finalFieldType(border_radius.BorderRadiusGeometry),
+    padding: dart.finalFieldType(edge_insets.EdgeInsetsGeometry),
+    showBadge: dart.finalFieldType(core.bool)
+  }));
+  var __BadgeState__animationController = dart.privateName(badge, "_#BadgeState#_animationController");
+  var __BadgeState__animation = dart.privateName(badge, "_#BadgeState#_animation");
+  var _positionTween = dart.privateName(badge, "_positionTween");
+  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
+  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
+  var _scaleTween = dart.privateName(badge, "_scaleTween");
+  var _animationController = dart.privateName(badge, "_animationController");
+  var _animation = dart.privateName(badge, "_animation");
+  var _getBadge = dart.privateName(badge, "_getBadge");
+  const State_SingleTickerProviderStateMixin$36 = class State_SingleTickerProviderStateMixin extends framework.State$(badge.Badge) {};
+  (State_SingleTickerProviderStateMixin$36.new = function() {
+    ticker_provider.SingleTickerProviderStateMixin$(badge.Badge)[dart.mixinNew].call(this);
+    State_SingleTickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_SingleTickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_SingleTickerProviderStateMixin$36, ticker_provider.SingleTickerProviderStateMixin$(badge.Badge));
+  badge.BadgeState = class BadgeState extends State_SingleTickerProviderStateMixin$36 {
+    get [_animationController]() {
+      let t0;
+      t0 = this[__BadgeState__animationController];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_animationController")) : t0;
+    }
+    set [_animationController](t0) {
+      if (t0 == null) dart.nullFailed(I[8], 142, 28, "null");
+      this[__BadgeState__animationController] = t0;
+    }
+    get [_animation]() {
+      let t1;
+      t1 = this[__BadgeState__animation];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_animation")) : t1;
+    }
+    set [_animation](t1) {
+      if (t1 == null) dart.nullFailed(I[8], 143, 26, "null");
+      this[__BadgeState__animation] = t1;
+    }
+    initState() {
+      super.initState();
+      this[_animationController] = new animation_controller.AnimationController.new({duration: this.widget.animationDuration, vsync: this});
+      if (this.widget.animationType == badge_animation_type.BadgeAnimationType.slide) {
+        this[_animation] = new animations.CurvedAnimation.new({parent: this[_animationController], curve: curves.Curves.elasticOut});
+      } else if (this.widget.animationType == badge_animation_type.BadgeAnimationType.scale) {
+        this[_animation] = this[_scaleTween].animate(this[_animationController]);
+      } else if (this.widget.animationType == badge_animation_type.BadgeAnimationType.fade) {
+        this[_animation] = new animations.CurvedAnimation.new({parent: this[_animationController], curve: curves.Curves.easeIn});
+      }
+      this[_animationController].forward();
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[8], 173, 29, "context");
+      if (this.widget.child == null) {
+        return this[_getBadge]();
+      } else {
+        return new basic.Stack.new({fit: this.widget.stackFit, alignment: this.widget.alignment, clipBehavior: ui.Clip.none, children: T.JSArrayOfWidget().of([dart.nullCheck(this.widget.child), new badge_positioned.BadgePositioned.new({position: this.widget.position, child: dart.test(this.widget.ignorePointer) ? new basic.IgnorePointer.new({child: this[_getBadge](), $creationLocationd_0dea112b090073317d4: C[42] || CT.C42}) : this[_getBadge](), $creationLocationd_0dea112b090073317d4: C[45] || CT.C45})]), $creationLocationd_0dea112b090073317d4: C[49] || CT.C49});
+      }
+    }
+    [_getBadge]() {
+      let border = this.widget.shape == badge_shape.BadgeShape.circle ? new circle_border.CircleBorder.new({side: this.widget.borderSide}) : new rounded_rectangle_border.RoundedRectangleBorder.new({side: this.widget.borderSide, borderRadius: this.widget.borderRadius});
+      const _badgeView = () => {
+        return new implicit_animations.AnimatedOpacity.new({child: new material.Material.new({shape: border, elevation: this.widget.elevation, color: this.widget.badgeColor, child: new basic.Padding.new({padding: this.widget.padding, child: this.widget.badgeContent, $creationLocationd_0dea112b090073317d4: C[55] || CT.C55}), $creationLocationd_0dea112b090073317d4: C[59] || CT.C59}), opacity: dart.test(this.widget.showBadge) ? 1.0 : 0.0, duration: new core.Duration.new({milliseconds: 200}), $creationLocationd_0dea112b090073317d4: C[65] || CT.C65});
+      };
+      dart.fn(_badgeView, T.VoidToWidget());
+      if (dart.test(this.widget.toAnimate)) {
+        if (this.widget.animationType == badge_animation_type.BadgeAnimationType.slide) {
+          return new transitions.SlideTransition.new({position: this[_positionTween].animate(this[_animation]), child: _badgeView(), $creationLocationd_0dea112b090073317d4: C[70] || CT.C70});
+        } else if (this.widget.animationType == badge_animation_type.BadgeAnimationType.scale) {
+          return new transitions.ScaleTransition.new({scale: this[_animation], child: _badgeView(), $creationLocationd_0dea112b090073317d4: C[74] || CT.C74});
+        } else if (this.widget.animationType == badge_animation_type.BadgeAnimationType.fade) {
+          return new transitions.FadeTransition.new({opacity: this[_animation], child: _badgeView(), $creationLocationd_0dea112b090073317d4: C[78] || CT.C78});
+        }
+      }
+      return _badgeView();
+    }
+    didUpdateWidget(oldWidget) {
+      badge.Badge.as(oldWidget);
+      if (oldWidget == null) dart.nullFailed(I[8], 241, 30, "oldWidget");
+      if (text.Text.is(this.widget.badgeContent) && text.Text.is(oldWidget.badgeContent)) {
+        let newText = text.Text.as(this.widget.badgeContent);
+        let oldText = text.Text.as(oldWidget.badgeContent);
+        if (newText.data != oldText.data) {
+          this[_animationController].reset();
+          this[_animationController].forward();
+        }
+      }
+      if (icon.Icon.is(this.widget.badgeContent) && icon.Icon.is(oldWidget.badgeContent)) {
+        let newIcon = icon.Icon.as(this.widget.badgeContent);
+        let oldIcon = icon.Icon.as(oldWidget.badgeContent);
+        if (!dart.equals(newIcon.icon, oldIcon.icon)) {
+          this[_animationController].reset();
+          this[_animationController].forward();
+        }
+      }
+      super.didUpdateWidget(oldWidget);
+    }
+    dispose() {
+      this[_animationController].dispose();
+      super.dispose();
+    }
+  };
+  (badge.BadgeState.new = function() {
+    this[__BadgeState__animationController] = null;
+    this[__BadgeState__animation] = null;
+    this[_positionTween] = new (T.TweenOfOffset()).new({begin: C[40] || CT.C40, end: C[41] || CT.C41});
+    this[_scaleTween] = new (T.TweenOfdouble()).new({begin: 0.1, end: 1.0});
+    badge.BadgeState.__proto__.new.call(this);
+    ;
+  }).prototype = badge.BadgeState.prototype;
+  dart.addTypeTests(badge.BadgeState);
+  dart.addTypeCaches(badge.BadgeState);
+  dart.setMethodSignature(badge.BadgeState, () => ({
+    __proto__: dart.getMethods(badge.BadgeState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_getBadge]: dart.fnType(framework.Widget, [])
+  }));
+  dart.setGetterSignature(badge.BadgeState, () => ({
+    __proto__: dart.getGetters(badge.BadgeState.__proto__),
+    [_animationController]: animation_controller.AnimationController,
+    [_animation]: animation.Animation$(core.double)
+  }));
+  dart.setSetterSignature(badge.BadgeState, () => ({
+    __proto__: dart.getSetters(badge.BadgeState.__proto__),
+    [_animationController]: animation_controller.AnimationController,
+    [_animation]: animation.Animation$(core.double)
+  }));
+  dart.setLibraryUri(badge.BadgeState, I[9]);
+  dart.setFieldSignature(badge.BadgeState, () => ({
+    __proto__: dart.getFields(badge.BadgeState.__proto__),
+    [__BadgeState__animationController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [__BadgeState__animation]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
+    [_positionTween]: dart.finalFieldType(tween.Tween$(ui.Offset)),
+    [_scaleTween]: dart.finalFieldType(tween.Tween$(core.double))
+  }));
+  dart.trackLibraries("packages/badges/src/badge_shape.dart", {
+    "package:badges/src/badge_shape.dart": badge_shape,
+    "package:badges/src/badge_positioned.dart": badge_positioned,
+    "package:badges/src/badge_position.dart": badge_position,
+    "package:badges/src/badge_animation_type.dart": badge_animation_type,
+    "package:badges/src/badge.dart": badge,
+    "package:badges/badges.dart": badges
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["badge_shape.dart","badge_positioned.dart","badge_position.dart","badge_animation_type.dart","badge.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/badges/src/badge_shape.dart.lib.js"}');
+  // Exports:
+  return {
+    src__badge_shape: badge_shape,
+    src__badge_positioned: badge_positioned,
+    src__badge_position: badge_position,
+    src__badge_animation_type: badge_animation_type,
+    src__badge: badge,
+    badges: badges
+  };
+}));
+
+//# sourceMappingURL=badge_shape.dart.lib.js.map

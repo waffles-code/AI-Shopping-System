@@ -2,6 +2,8 @@ import 'package:aishop/components/checkoutdelivary.dart';
 import 'package:aishop/components/first_delivary_page.dart';
 import 'package:aishop/components/textlink.dart';
 import 'package:flutter/material.dart';
+import 'package:aishop/screens/homepage.dart';
+import 'order_review.dart';
 
 import '../theme.dart';
 
@@ -54,10 +56,52 @@ class CheckOutAddress extends StatelessWidget {
                                         "11 Maclaren st,MarshallTown,Johannesburg ",
                                     align: Alignment.center,
                                     press: () => {
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (BuildContext context) =>
-                                                  CheckOutDelivery()))
+                                      if (!(g == 0))
+                                        {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder:
+                                                      (BuildContext context) =>
+                                                          CheckOutDelivery()))
+                                        }
+                                      else
+                                        {
+                                          showDialog<String>(
+                                            context: context,
+                                            builder: (BuildContext context) =>
+                                                AlertDialog(
+                                              title: const Text(
+                                                  'Your Cart Is Empty'),
+                                              content: const Text(
+                                                  'Please Add Items to cart',
+                                                  style: TextStyle(
+                                                      color:
+                                                          Colors.greenAccent)),
+                                              actions: <Widget>[
+                                                TextButton(
+                                                  child: Text('Browse Products',
+                                                      style: TextStyle(
+                                                          color: Colors.black)),
+                                                  onPressed: () {
+                                                    Navigator.of(context).push(
+                                                        MaterialPageRoute(
+                                                            builder: (BuildContext
+                                                                    context) =>
+                                                                HomePage()));
+                                                  },
+                                                ),
+                                                TextButton(
+                                                  child: Text('Cancel',
+                                                      style: TextStyle(
+                                                          color: Colors.black)),
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        }
                                     },
                                   ),
                                 ),
@@ -91,16 +135,62 @@ class CheckOutAddress extends StatelessWidget {
                                     )),
                                 WidgetSpan(
                                   child: TextLink(
-                                    text:
-                                        "104 Stiemens st , Braamfontein , Johannesburg ",
-                                    align: Alignment.center,
-                                    press: () => {
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (BuildContext context) =>
-                                                  CheckOutDelivery()))
-                                    },
-                                  ),
+                                      text:
+                                          "104 Stiemens st , Braamfontein , Johannesburg ",
+                                      align: Alignment.center,
+                                      press: () => {
+                                            if (!(g == 0))
+                                              {
+                                                Navigator.of(context).push(
+                                                    MaterialPageRoute(
+                                                        builder: (BuildContext
+                                                                context) =>
+                                                            CheckOutDelivery()))
+                                              }
+                                            else
+                                              {
+                                                showDialog<String>(
+                                                  context: context,
+                                                  builder:
+                                                      (BuildContext context) =>
+                                                          AlertDialog(
+                                                    title: const Text(
+                                                        'Your Cart Is Empty'),
+                                                    content: const Text(
+                                                        'Please Add Items to cart',
+                                                        style: TextStyle(
+                                                            color: Colors
+                                                                .greenAccent)),
+                                                    actions: <Widget>[
+                                                      TextButton(
+                                                        child: Text(
+                                                            'Browse Products',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black)),
+                                                        onPressed: () {
+                                                          Navigator.of(context).push(
+                                                              MaterialPageRoute(
+                                                                  builder: (BuildContext
+                                                                          context) =>
+                                                                      HomePage()));
+                                                        },
+                                                      ),
+                                                      TextButton(
+                                                        child: Text('Cancel',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black)),
+                                                        onPressed: () {
+                                                          Navigator.of(context)
+                                                              .pop();
+                                                        },
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              },
+                                          }),
                                 ),
                               ],
                             ),
