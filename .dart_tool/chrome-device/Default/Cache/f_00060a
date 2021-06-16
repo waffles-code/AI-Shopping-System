@@ -1,0 +1,1791 @@
+define(['dart_sdk', 'packages/rflutter_alert/src/alert_style.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/rflutter_alert/src/constants.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/widgets/single_child_scroll_view.dart', 'packages/flutter/src/foundation/key.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/widgets/will_pop_scope.dart', 'packages/flutter/src/painting/fractional_offset.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/decoration_image.dart', 'packages/flutter/src/painting/image_resolution.dart', 'packages/rflutter_alert/src/dialog_button.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/rounded_rectangle_border.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/painting/borders.dart', 'packages/rflutter_alert/src/animation_transition.dart'], (function load__packages__rflutter_alert__src__alert_dart(dart_sdk, packages__rflutter_alert__src__alert_style$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__rflutter_alert__src__constants$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__widgets__single_child_scroll_view$46dart, packages__flutter__src__foundation__key$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__widgets__will_pop_scope$46dart, packages__flutter__src__painting__fractional_offset$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__decoration_image$46dart, packages__flutter__src__painting__image_resolution$46dart, packages__rflutter_alert__src__dialog_button$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__rounded_rectangle_border$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__painting__borders$46dart, packages__rflutter_alert__src__animation_transition$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const async = dart_sdk.async;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const alert_style = packages__rflutter_alert__src__alert_style$46dart.src__alert_style;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const constants = packages__rflutter_alert__src__constants$46dart.src__constants;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const routes = packages__flutter__src__widgets__widget_span$46dart.src__widgets__routes;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const gesture_detector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__gesture_detector;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const material_localizations = packages__flutter__src__material__icon_button$46dart.src__material__material_localizations;
+  const dialog = packages__flutter__src__material__icon_button$46dart.src__material__dialog;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const single_child_scroll_view = packages__flutter__src__widgets__single_child_scroll_view$46dart.src__widgets__single_child_scroll_view;
+  const key = packages__flutter__src__foundation__key$46dart.src__foundation__key;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const will_pop_scope = packages__flutter__src__widgets__will_pop_scope$46dart.src__widgets__will_pop_scope;
+  const fractional_offset = packages__flutter__src__painting__fractional_offset$46dart.src__painting__fractional_offset;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const decoration_image = packages__flutter__src__painting__decoration_image$46dart.src__painting__decoration_image;
+  const image_resolution = packages__flutter__src__painting__image_resolution$46dart.src__painting__image_resolution;
+  const dialog_button = packages__rflutter_alert__src__dialog_button$46dart.src__dialog_button;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const rounded_rectangle_border = packages__flutter__src__painting__rounded_rectangle_border$46dart.src__painting__rounded_rectangle_border;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const animation_transition = packages__rflutter_alert__src__animation_transition$46dart.src__animation_transition;
+  var alert = Object.create(dart.library);
+  var $length = dartx.length;
+  var $add = dartx.add;
+  var $forEach = dartx.forEach;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    AnimationOfdouble: () => (T.AnimationOfdouble = dart.constFn(animation.Animation$(core.double)))(),
+    BuildContextAndAnimationOfdoubleAndAnimationOfdoubleToWidget: () => (T.BuildContextAndAnimationOfdoubleAndAnimationOfdoubleToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, T.AnimationOfdouble(), T.AnimationOfdouble()])))(),
+    BuildContextAndAnimationOfdoubleAndAnimationOfdouble__ToWidget: () => (T.BuildContextAndAnimationOfdoubleAndAnimationOfdouble__ToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, T.AnimationOfdouble(), T.AnimationOfdouble(), framework.Widget])))(),
+    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))(),
+    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    ValueKeyOfString: () => (T.ValueKeyOfString = dart.constFn(key.ValueKey$(core.String)))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    FutureOfbool: () => (T.FutureOfbool = dart.constFn(async.Future$(core.bool)))(),
+    VoidToFutureOfbool: () => (T.VoidToFutureOfbool = dart.constFn(dart.fnType(T.FutureOfbool(), [])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    DialogButtonTovoid: () => (T.DialogButtonTovoid = dart.constFn(dart.fnType(dart.void, [dialog_button.DialogButton])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [Alignment_y]: 0,
+        [Alignment_x]: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 24,
+        [EdgeInsets_right]: 40,
+        [EdgeInsets_top]: 24,
+        [EdgeInsets_left]: 40
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: constants.ButtonsDirection.prototype,
+        [_name]: "ButtonsDirection.row",
+        index: 0
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 20,
+        [EdgeInsets_right]: 20,
+        [EdgeInsets_top]: 20,
+        [EdgeInsets_left]: 20
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: ui.TextAlign.prototype,
+        [_name$]: "TextAlign.center",
+        index: 2
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.FontStyle.prototype,
+        [_name$]: "FontStyle.normal",
+        index: 0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: ui.FontWeight.prototype,
+        [FontWeight_index]: 3
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: C[7] || CT.C7,
+        [TextStyle_fontWeight]: C[8] || CT.C8,
+        [TextStyle_fontSize]: null,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[9] || CT.C9,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: ui.FontWeight.prototype,
+        [FontWeight_index]: 4
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: C[7] || CT.C7,
+        [TextStyle_fontWeight]: C[11] || CT.C11,
+        [TextStyle_fontSize]: null,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[9] || CT.C9,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 3707764736.0
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 200000
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: constants.AnimationType.prototype,
+        [_name]: "AnimationType.fromBottom",
+        index: 3
+      });
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: alert_style.AlertStyle.prototype,
+        [AlertStyle_alertAlignment]: C[1] || CT.C1,
+        [AlertStyle_alertPadding]: C[2] || CT.C2,
+        [AlertStyle_alertElevation]: null,
+        [AlertStyle_buttonsDirection]: C[3] || CT.C3,
+        [AlertStyle_constraints]: null,
+        [AlertStyle_buttonAreaPadding]: C[4] || CT.C4,
+        [AlertStyle_descTextAlign]: C[5] || CT.C5,
+        [AlertStyle_titleTextAlign]: C[5] || CT.C5,
+        [AlertStyle_descStyle]: C[6] || CT.C6,
+        [AlertStyle_titleStyle]: C[10] || CT.C10,
+        [AlertStyle_overlayColor]: C[12] || CT.C12,
+        [AlertStyle_backgroundColor]: null,
+        [AlertStyle_isOverlayTapDismiss]: true,
+        [AlertStyle_isCloseButton]: true,
+        [AlertStyle_isButtonVisible]: true,
+        [AlertStyle_alertBorder]: null,
+        [AlertStyle_animationDuration]: C[13] || CT.C13,
+        [AlertStyle_animationType]: C[14] || CT.C14
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([], widget_inspector._Location);
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 48,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: basic.SizedBox.prototype,
+        [Widget__location]: C[16] || CT.C16,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: null,
+        [SizedBox_width]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 31,
+        [_Location_line]: 118,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21], widget_inspector._Location);
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 117,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 31,
+        [_Location_line]: 121,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 31,
+        [_Location_line]: 122,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 31,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.constList([C[24] || CT.C24, C[25] || CT.C25, C[26] || CT.C26], widget_inspector._Location);
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[23] || CT.C23,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 120,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 31,
+        [_Location_line]: 126,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList([C[29] || CT.C29], widget_inspector._Location);
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[28] || CT.C28,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 125,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 129,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 41,
+        [_Location_line]: 131,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 37,
+        [_Location_line]: 132,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 37,
+        [_Location_line]: 133,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35], widget_inspector._Location);
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 130,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 27,
+        [_Location_line]: 115,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.constList([C[38] || CT.C38], widget_inspector._Location);
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[37] || CT.C37,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 114,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 112,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 114,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.constList([C[41] || CT.C41, C[42] || CT.C42], widget_inspector._Location);
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[40] || CT.C40,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 111,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 21,
+        [_Location_line]: 108,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 21,
+        [_Location_line]: 109,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.constList([C[45] || CT.C45, C[46] || CT.C46], widget_inspector._Location);
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[44] || CT.C44,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 107,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 107,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.constList([C[49] || CT.C49], widget_inspector._Location);
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[48] || CT.C48,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 106,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 106,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.constList([C[52] || CT.C52], widget_inspector._Location);
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[51] || CT.C51,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 105,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 23,
+        [_Location_line]: 146,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 23,
+        [_Location_line]: 147,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.constList([C[55] || CT.C55, C[56] || CT.C56], widget_inspector._Location);
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[54] || CT.C54,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 145,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisSize",
+        [_Location_column]: 23,
+        [_Location_line]: 150,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 23,
+        [_Location_line]: 151,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 23,
+        [_Location_line]: 152,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 23,
+        [_Location_line]: 153,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.constList([C[59] || CT.C59, C[60] || CT.C60, C[61] || CT.C61, C[62] || CT.C62], widget_inspector._Location);
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[58] || CT.C58,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 149,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 15,
+        [_Location_line]: 98,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 15,
+        [_Location_line]: 99,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shape",
+        [_Location_column]: 15,
+        [_Location_line]: 101,
+        [_Location_file]: null
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "insetPadding",
+        [_Location_column]: 15,
+        [_Location_line]: 102,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elevation",
+        [_Location_column]: 15,
+        [_Location_line]: 103,
+        [_Location_file]: null
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "titlePadding",
+        [_Location_column]: 15,
+        [_Location_line]: 104,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 15,
+        [_Location_line]: 105,
+        [_Location_file]: null
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "contentPadding",
+        [_Location_column]: 15,
+        [_Location_line]: 143,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "content",
+        [_Location_column]: 15,
+        [_Location_line]: 144,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.constList([C[65] || CT.C65, C[66] || CT.C66, C[67] || CT.C67, C[68] || CT.C68, C[69] || CT.C69, C[70] || CT.C70, C[71] || CT.C71, C[72] || CT.C72, C[73] || CT.C73], widget_inspector._Location);
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[64] || CT.C64,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 97,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 97,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C[75] = dart.constList([C[76] || CT.C76], widget_inspector._Location);
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[75] || CT.C75,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 96,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 9,
+        [_Location_line]: 95,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.constList([C[79] || CT.C79, C[80] || CT.C80], widget_inspector._Location);
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[78] || CT.C78,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 94,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "constraints",
+        [_Location_column]: 7,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 94,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.constList([C[83] || CT.C83, C[84] || CT.C84], widget_inspector._Location);
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[82] || CT.C82,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 90,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onWillPop",
+        [_Location_column]: 24,
+        [_Location_line]: 159,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 54,
+        [_Location_line]: 159,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.constList([C[87] || CT.C87, C[88] || CT.C88], widget_inspector._Location);
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[86] || CT.C86,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 159,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 10,
+        [EdgeInsets_top]: 10,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 33,
+        [_Location_line]: 179,
+        [_Location_file]: null
+      });
+    },
+    get C91() {
+      return C[91] = dart.constList([C[92] || CT.C92], widget_inspector._Location);
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[91] || CT.C91,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 179,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 25,
+        [_Location_line]: 181,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 25,
+        [_Location_line]: 182,
+        [_Location_file]: null
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 25,
+        [_Location_line]: 183,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.constList([C[95] || CT.C95, C[96] || CT.C96, C[97] || CT.C97], widget_inspector._Location);
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[94] || CT.C94,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 180,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 17,
+        [_Location_line]: 177,
+        [_Location_file]: null
+      });
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 178,
+        [_Location_file]: null
+      });
+    },
+    get C99() {
+      return C[99] = dart.constList([C[100] || CT.C100, C[101] || CT.C101], widget_inspector._Location);
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[99] || CT.C99,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 176,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 15,
+        [_Location_line]: 169,
+        [_Location_file]: null
+      });
+    },
+    get C105() {
+      return C[105] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 176,
+        [_Location_file]: null
+      });
+    },
+    get C103() {
+      return C[103] = dart.constList([C[104] || CT.C104, C[105] || CT.C105], widget_inspector._Location);
+    },
+    get C102() {
+      return C[102] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[103] || CT.C103,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 168,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C108() {
+      return C[108] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 13,
+        [_Location_line]: 167,
+        [_Location_file]: null
+      });
+    },
+    get C109() {
+      return C[109] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 168,
+        [_Location_file]: null
+      });
+    },
+    get C107() {
+      return C[107] = dart.constList([C[108] || CT.C108, C[109] || CT.C109], widget_inspector._Location);
+    },
+    get C106() {
+      return C[106] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[107] || CT.C107,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 166,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C110() {
+      return C[110] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 195,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C111() {
+      return C[111] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 2,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 2
+      });
+    },
+    get C114() {
+      return C[114] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 15,
+        [_Location_line]: 206,
+        [_Location_file]: null
+      });
+    },
+    get C115() {
+      return C[115] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 207,
+        [_Location_file]: null
+      });
+    },
+    get C113() {
+      return C[113] = dart.constList([C[114] || CT.C114, C[115] || CT.C115], widget_inspector._Location);
+    },
+    get C112() {
+      return C[112] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[113] || CT.C113,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 205,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C118() {
+      return C[118] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 214,
+        [_Location_file]: null
+      });
+    },
+    get C117() {
+      return C[117] = dart.constList([C[118] || CT.C118], widget_inspector._Location);
+    },
+    get C116() {
+      return C[116] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[117] || CT.C117,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 213,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C121() {
+      return C[121] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 13,
+        [_Location_line]: 222,
+        [_Location_file]: null
+      });
+    },
+    get C122() {
+      return C[122] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 13,
+        [_Location_line]: 223,
+        [_Location_file]: null
+      });
+    },
+    get C120() {
+      return C[120] = dart.constList([C[121] || CT.C121, C[122] || CT.C122], widget_inspector._Location);
+    },
+    get C119() {
+      return C[119] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[120] || CT.C120,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 221,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C125() {
+      return C[125] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 221,
+        [_Location_file]: null
+      });
+    },
+    get C126() {
+      return C[126] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 11,
+        [_Location_line]: 225,
+        [_Location_file]: null
+      });
+    },
+    get C124() {
+      return C[124] = dart.constList([C[125] || CT.C125, C[126] || CT.C126], widget_inspector._Location);
+    },
+    get C123() {
+      return C[123] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[124] || CT.C124,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 220,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C129() {
+      return C[129] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 229,
+        [_Location_file]: null
+      });
+    },
+    get C128() {
+      return C[128] = dart.constList([C[129] || CT.C129], widget_inspector._Location);
+    },
+    get C127() {
+      return C[127] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[128] || CT.C128,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 228,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C130() {
+      return C[130] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 250,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C133() {
+      return C[133] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 41,
+        [_Location_line]: 254,
+        [_Location_file]: null
+      });
+    },
+    get C134() {
+      return C[134] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "package",
+        [_Location_column]: 11,
+        [_Location_line]: 255,
+        [_Location_file]: null
+      });
+    },
+    get C132() {
+      return C[132] = dart.constList([C[133] || CT.C133, C[134] || CT.C134], widget_inspector._Location);
+    },
+    get C131() {
+      return C[131] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[132] || CT.C132,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 253,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C135() {
+      return C[135] = dart.const({
+        __proto__: constants.AlertType.prototype,
+        [_name]: "AlertType.success",
+        index: 1
+      });
+    },
+    get C138() {
+      return C[138] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 39,
+        [_Location_line]: 260,
+        [_Location_file]: null
+      });
+    },
+    get C139() {
+      return C[139] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "package",
+        [_Location_column]: 11,
+        [_Location_line]: 261,
+        [_Location_file]: null
+      });
+    },
+    get C137() {
+      return C[137] = dart.constList([C[138] || CT.C138, C[139] || CT.C139], widget_inspector._Location);
+    },
+    get C136() {
+      return C[136] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[137] || CT.C137,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 259,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C140() {
+      return C[140] = dart.const({
+        __proto__: constants.AlertType.prototype,
+        [_name]: "AlertType.error",
+        index: 0
+      });
+    },
+    get C143() {
+      return C[143] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 38,
+        [_Location_line]: 266,
+        [_Location_file]: null
+      });
+    },
+    get C144() {
+      return C[144] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "package",
+        [_Location_column]: 11,
+        [_Location_line]: 267,
+        [_Location_file]: null
+      });
+    },
+    get C142() {
+      return C[142] = dart.constList([C[143] || CT.C143, C[144] || CT.C144], widget_inspector._Location);
+    },
+    get C141() {
+      return C[141] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[142] || CT.C142,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 265,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C145() {
+      return C[145] = dart.const({
+        __proto__: constants.AlertType.prototype,
+        [_name]: "AlertType.info",
+        index: 2
+      });
+    },
+    get C148() {
+      return C[148] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 41,
+        [_Location_line]: 272,
+        [_Location_file]: null
+      });
+    },
+    get C149() {
+      return C[149] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "package",
+        [_Location_column]: 11,
+        [_Location_line]: 273,
+        [_Location_file]: null
+      });
+    },
+    get C147() {
+      return C[147] = dart.constList([C[148] || CT.C148, C[149] || CT.C149], widget_inspector._Location);
+    },
+    get C146() {
+      return C[146] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[147] || CT.C147,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 271,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C150() {
+      return C[150] = dart.const({
+        __proto__: constants.AlertType.prototype,
+        [_name]: "AlertType.warning",
+        index: 3
+      });
+    },
+    get C151() {
+      return C[151] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 278,
+        [_Location_file]: "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart"
+      });
+    },
+    get C152() {
+      return C[152] = dart.const({
+        __proto__: constants.AlertType.prototype,
+        [_name]: "AlertType.none",
+        index: 4
+      });
+    },
+    get C153() {
+      return C[153] = dart.const({
+        __proto__: constants.AnimationType.prototype,
+        [_name]: "AnimationType.fromRight",
+        index: 0
+      });
+    },
+    get C154() {
+      return C[154] = dart.const({
+        __proto__: constants.AnimationType.prototype,
+        [_name]: "AnimationType.fromLeft",
+        index: 1
+      });
+    },
+    get C155() {
+      return C[155] = dart.const({
+        __proto__: constants.AnimationType.prototype,
+        [_name]: "AnimationType.grow",
+        index: 4
+      });
+    },
+    get C156() {
+      return C[156] = dart.const({
+        __proto__: constants.AnimationType.prototype,
+        [_name]: "AnimationType.shrink",
+        index: 5
+      });
+    },
+    get C157() {
+      return C[157] = dart.const({
+        __proto__: constants.AnimationType.prototype,
+        [_name]: "AnimationType.fromTop",
+        index: 2
+      });
+    }
+  }, false);
+  var C = Array(158).fill(void 0);
+  var I = [
+    "file:///C:/Users/vmoyo/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-2.0.2/lib/src/alert.dart",
+    "package:rflutter_alert/src/alert.dart"
+  ];
+  var id$ = dart.privateName(alert, "Alert.id");
+  var context$ = dart.privateName(alert, "Alert.context");
+  var type$ = dart.privateName(alert, "Alert.type");
+  var style$ = dart.privateName(alert, "Alert.style");
+  var image$ = dart.privateName(alert, "Alert.image");
+  var title$ = dart.privateName(alert, "Alert.title");
+  var desc$ = dart.privateName(alert, "Alert.desc");
+  var content$ = dart.privateName(alert, "Alert.content");
+  var buttons$ = dart.privateName(alert, "Alert.buttons");
+  var closeFunction$ = dart.privateName(alert, "Alert.closeFunction");
+  var closeIcon$ = dart.privateName(alert, "Alert.closeIcon");
+  var onWillPopActive$ = dart.privateName(alert, "Alert.onWillPopActive");
+  var useRootNavigator$ = dart.privateName(alert, "Alert.useRootNavigator");
+  var alertAnimation$ = dart.privateName(alert, "Alert.alertAnimation");
+  var Alignment_y = dart.privateName(alignment, "Alignment.y");
+  var Alignment_x = dart.privateName(alignment, "Alignment.x");
+  var AlertStyle_alertAlignment = dart.privateName(alert_style, "AlertStyle.alertAlignment");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var AlertStyle_alertPadding = dart.privateName(alert_style, "AlertStyle.alertPadding");
+  var AlertStyle_alertElevation = dart.privateName(alert_style, "AlertStyle.alertElevation");
+  var _name = dart.privateName(constants, "_name");
+  var AlertStyle_buttonsDirection = dart.privateName(alert_style, "AlertStyle.buttonsDirection");
+  var AlertStyle_constraints = dart.privateName(alert_style, "AlertStyle.constraints");
+  var AlertStyle_buttonAreaPadding = dart.privateName(alert_style, "AlertStyle.buttonAreaPadding");
+  var _name$ = dart.privateName(ui, "_name");
+  var AlertStyle_descTextAlign = dart.privateName(alert_style, "AlertStyle.descTextAlign");
+  var AlertStyle_titleTextAlign = dart.privateName(alert_style, "AlertStyle.titleTextAlign");
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  var AlertStyle_descStyle = dart.privateName(alert_style, "AlertStyle.descStyle");
+  var AlertStyle_titleStyle = dart.privateName(alert_style, "AlertStyle.titleStyle");
+  var AlertStyle_overlayColor = dart.privateName(alert_style, "AlertStyle.overlayColor");
+  var AlertStyle_backgroundColor = dart.privateName(alert_style, "AlertStyle.backgroundColor");
+  var AlertStyle_isOverlayTapDismiss = dart.privateName(alert_style, "AlertStyle.isOverlayTapDismiss");
+  var AlertStyle_isCloseButton = dart.privateName(alert_style, "AlertStyle.isCloseButton");
+  var AlertStyle_isButtonVisible = dart.privateName(alert_style, "AlertStyle.isButtonVisible");
+  var AlertStyle_alertBorder = dart.privateName(alert_style, "AlertStyle.alertBorder");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var AlertStyle_animationDuration = dart.privateName(alert_style, "AlertStyle.animationDuration");
+  var AlertStyle_animationType = dart.privateName(alert_style, "AlertStyle.animationType");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
+  var SizedBox_height = dart.privateName(basic, "SizedBox.height");
+  var SizedBox_width = dart.privateName(basic, "SizedBox.width");
+  var _buildDialog = dart.privateName(alert, "_buildDialog");
+  var _showAnimation = dart.privateName(alert, "_showAnimation");
+  var _defaultShape = dart.privateName(alert, "_defaultShape");
+  var _getCloseButton = dart.privateName(alert, "_getCloseButton");
+  var _getImage = dart.privateName(alert, "_getImage");
+  var _getButtons = dart.privateName(alert, "_getButtons");
+  alert.Alert = class Alert extends core.Object {
+    get id() {
+      return this[id$];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get context() {
+      return this[context$];
+    }
+    set context(value) {
+      super.context = value;
+    }
+    get type() {
+      return this[type$];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get style() {
+      return this[style$];
+    }
+    set style(value) {
+      super.style = value;
+    }
+    get image() {
+      return this[image$];
+    }
+    set image(value) {
+      super.image = value;
+    }
+    get title() {
+      return this[title$];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    get desc() {
+      return this[desc$];
+    }
+    set desc(value) {
+      super.desc = value;
+    }
+    get content() {
+      return this[content$];
+    }
+    set content(value) {
+      super.content = value;
+    }
+    get buttons() {
+      return this[buttons$];
+    }
+    set buttons(value) {
+      super.buttons = value;
+    }
+    get closeFunction() {
+      return this[closeFunction$];
+    }
+    set closeFunction(value) {
+      super.closeFunction = value;
+    }
+    get closeIcon() {
+      return this[closeIcon$];
+    }
+    set closeIcon(value) {
+      super.closeIcon = value;
+    }
+    get onWillPopActive() {
+      return this[onWillPopActive$];
+    }
+    set onWillPopActive(value) {
+      super.onWillPopActive = value;
+    }
+    get useRootNavigator() {
+      return this[useRootNavigator$];
+    }
+    set useRootNavigator(value) {
+      super.useRootNavigator = value;
+    }
+    get alertAnimation() {
+      return this[alertAnimation$];
+    }
+    set alertAnimation(value) {
+      super.alertAnimation = value;
+    }
+    show() {
+      return async.async(T.boolN(), (function* show() {
+        return yield routes.showGeneralDialog(core.bool, {context: this.context, pageBuilder: dart.fn((buildContext, animation, secondaryAnimation) => {
+            if (buildContext == null) dart.nullFailed(I[0], 61, 36, "buildContext");
+            if (animation == null) dart.nullFailed(I[0], 61, 68, "animation");
+            if (secondaryAnimation == null) dart.nullFailed(I[0], 62, 31, "secondaryAnimation");
+            return this[_buildDialog]();
+          }, T.BuildContextAndAnimationOfdoubleAndAnimationOfdoubleToWidget()), barrierDismissible: this.style.isOverlayTapDismiss, barrierLabel: material_localizations.MaterialLocalizations.of(this.context).modalBarrierDismissLabel, barrierColor: this.style.overlayColor, useRootNavigator: this.useRootNavigator, transitionDuration: this.style.animationDuration, transitionBuilder: dart.fn((context, animation, secondaryAnimation, child) => {
+            if (context == null) dart.nullFailed(I[0], 72, 24, "context");
+            if (animation == null) dart.nullFailed(I[0], 73, 29, "animation");
+            if (secondaryAnimation == null) dart.nullFailed(I[0], 74, 29, "secondaryAnimation");
+            if (child == null) dart.nullFailed(I[0], 75, 18, "child");
+            return framework.Widget.as(this.alertAnimation == null ? this[_showAnimation](animation, secondaryAnimation, child) : dart.nullCheck(this.alertAnimation)(context, animation, secondaryAnimation, child));
+          }, T.BuildContextAndAnimationOfdoubleAndAnimationOfdouble__ToWidget())});
+      }).bind(this));
+    }
+    dismiss() {
+      return async.async(dart.void, (function* dismiss() {
+        navigator.Navigator.of(this.context, {rootNavigator: this.useRootNavigator}).pop(T.ObjectN());
+      }).bind(this));
+    }
+    [_buildDialog]() {
+      let t0, t0$, t0$0;
+      let _child = new basic.ConstrainedBox.new({constraints: (t0 = this.style.constraints, t0 == null ? new box.BoxConstraints.expand({width: 1 / 0, height: 1 / 0}) : t0), child: new basic.Align.new({alignment: this.style.alertAlignment, child: new single_child_scroll_view.SingleChildScrollView.new({child: new dialog.AlertDialog.new({key: this.id == null ? null : new (T.ValueKeyOfString()).new(dart.nullCheck(this.id)), backgroundColor: (t0$ = this.style.backgroundColor, t0$ == null ? theme.Theme.of(this.context).dialogBackgroundColor : t0$), shape: (t0$0 = this.style.alertBorder, t0$0 == null ? this[_defaultShape]() : t0$0), insetPadding: this.style.alertPadding, elevation: this.style.alertElevation, titlePadding: C[18] || CT.C18, title: new container.Container.new({child: new basic.Center.new({child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidget().of([this[_getCloseButton](), new basic.Padding.new({padding: new edge_insets.EdgeInsets.fromLTRB(20.0, dart.test(this.style.isCloseButton) ? 0.0 : 10.0, 20.0, 0.0), child: new basic.Column.new({children: T.JSArrayOfWidget().of([this[_getImage](), new basic.SizedBox.new({height: 15.0, $creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), new text.Text.new(this.title, {style: this.style.titleStyle, textAlign: this.style.titleTextAlign, $creationLocationd_0dea112b090073317d4: C[22] || CT.C22}), new basic.SizedBox.new({height: this.desc == null ? 5.0 : 10.0, $creationLocationd_0dea112b090073317d4: C[27] || CT.C27}), this.desc == null ? new container.Container.new({$creationLocationd_0dea112b090073317d4: C[30] || CT.C30}) : new text.Text.new(dart.nullCheck(this.desc), {style: this.style.descStyle, textAlign: this.style.descTextAlign, $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), this.content]), $creationLocationd_0dea112b090073317d4: C[36] || CT.C36}), $creationLocationd_0dea112b090073317d4: C[39] || CT.C39})]), $creationLocationd_0dea112b090073317d4: C[43] || CT.C43}), $creationLocationd_0dea112b090073317d4: C[47] || CT.C47}), $creationLocationd_0dea112b090073317d4: C[50] || CT.C50}), contentPadding: this.style.buttonAreaPadding, content: this.style.buttonsDirection == constants.ButtonsDirection.row ? new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceEvenly, children: this[_getButtons](), $creationLocationd_0dea112b090073317d4: C[53] || CT.C53}) : new basic.Column.new({mainAxisSize: flex.MainAxisSize.min, crossAxisAlignment: flex.CrossAxisAlignment.center, mainAxisAlignment: flex.MainAxisAlignment.spaceEvenly, children: this[_getButtons](), $creationLocationd_0dea112b090073317d4: C[57] || CT.C57}), $creationLocationd_0dea112b090073317d4: C[63] || CT.C63}), $creationLocationd_0dea112b090073317d4: C[74] || CT.C74}), $creationLocationd_0dea112b090073317d4: C[77] || CT.C77}), $creationLocationd_0dea112b090073317d4: C[81] || CT.C81});
+      return dart.test(this.onWillPopActive) ? new will_pop_scope.WillPopScope.new({onWillPop: dart.fn(() => async.async(core.bool, function*() {
+          return false;
+        }), T.VoidToFutureOfbool()), child: _child, $creationLocationd_0dea112b090073317d4: C[85] || CT.C85}) : _child;
+    }
+    [_getCloseButton]() {
+      return dart.test(this.style.isCloseButton) ? new basic.Padding.new({padding: C[89] || CT.C89, child: new gesture_detector.GestureDetector.new({onTap: dart.fn(() => {
+            if (this.closeFunction == null) {
+              navigator.Navigator.of(this.context, {rootNavigator: this.useRootNavigator}).pop(T.ObjectN());
+            } else {
+              dart.dcall(dart.nullCheck(this.closeFunction), []);
+            }
+          }, T.VoidTovoid()), child: new container.Container.new({alignment: fractional_offset.FractionalOffset.topRight, child: this.closeIcon != null ? new container.Container.new({child: this.closeIcon, $creationLocationd_0dea112b090073317d4: C[90] || CT.C90}) : new container.Container.new({width: 20.0, height: 20.0, decoration: new box_decoration.BoxDecoration.new({image: new decoration_image.DecorationImage.new({image: new image_resolution.AssetImage.new("assets/images" + "/close.png", {package: "rflutter_alert"})})}), $creationLocationd_0dea112b090073317d4: C[93] || CT.C93}), $creationLocationd_0dea112b090073317d4: C[98] || CT.C98}), $creationLocationd_0dea112b090073317d4: C[102] || CT.C102}), $creationLocationd_0dea112b090073317d4: C[106] || CT.C106}) : new container.Container.new({$creationLocationd_0dea112b090073317d4: C[110] || CT.C110});
+    }
+    [_getButtons]() {
+      let expandedButtons = T.JSArrayOfWidget().of([]);
+      if (dart.test(this.style.isButtonVisible)) {
+        if (this.buttons != null) {
+          dart.nullCheck(this.buttons)[$forEach](dart.fn(button => {
+            if (button == null) dart.nullFailed(I[0], 204, 12, "button");
+            let buttonWidget = new basic.Padding.new({padding: C[111] || CT.C111, child: button, $creationLocationd_0dea112b090073317d4: C[112] || CT.C112});
+            if (button.width != null && dart.nullCheck(this.buttons)[$length] === 1 || this.style.buttonsDirection == constants.ButtonsDirection.column) {
+              expandedButtons[$add](buttonWidget);
+            } else {
+              expandedButtons[$add](new basic.Expanded.new({child: buttonWidget, $creationLocationd_0dea112b090073317d4: C[116] || CT.C116}));
+            }
+          }, T.DialogButtonTovoid()));
+        } else {
+          let cancelButton = new dialog_button.DialogButton.new({child: new text.Text.new("CANCEL", {style: new text_style.TextStyle.new({color: colors.Colors.white, fontSize: 20.0}), $creationLocationd_0dea112b090073317d4: C[119] || CT.C119}), onPressed: dart.fn(() => navigator.Navigator.pop(T.ObjectN(), this.context), T.VoidTovoid()), $creationLocationd_0dea112b090073317d4: C[123] || CT.C123});
+          if (this.style.buttonsDirection == constants.ButtonsDirection.row) {
+            cancelButton = new basic.Expanded.new({child: cancelButton, $creationLocationd_0dea112b090073317d4: C[127] || CT.C127});
+          }
+          expandedButtons[$add](cancelButton);
+        }
+      }
+      return expandedButtons;
+    }
+    [_defaultShape]() {
+      return new rounded_rectangle_border.RoundedRectangleBorder.new({borderRadius: new border_radius.BorderRadius.circular(10.0), side: new borders.BorderSide.new({color: colors.Colors.blueGrey})});
+    }
+    [_getImage]() {
+      let t0;
+      let response = (t0 = this.image, t0 == null ? new container.Container.new({$creationLocationd_0dea112b090073317d4: C[130] || CT.C130}) : t0);
+      switch (this.type) {
+        case C[135] || CT.C135:
+        {
+          response = new image.Image.asset("assets/images" + "/icon_success.png", {package: "rflutter_alert", $creationLocationd_0dea112b090073317d4: C[131] || CT.C131});
+          break;
+        }
+        case C[140] || CT.C140:
+        {
+          response = new image.Image.asset("assets/images" + "/icon_error.png", {package: "rflutter_alert", $creationLocationd_0dea112b090073317d4: C[136] || CT.C136});
+          break;
+        }
+        case C[145] || CT.C145:
+        {
+          response = new image.Image.asset("assets/images" + "/icon_info.png", {package: "rflutter_alert", $creationLocationd_0dea112b090073317d4: C[141] || CT.C141});
+          break;
+        }
+        case C[150] || CT.C150:
+        {
+          response = new image.Image.asset("assets/images" + "/icon_warning.png", {package: "rflutter_alert", $creationLocationd_0dea112b090073317d4: C[146] || CT.C146});
+          break;
+        }
+        case C[152] || CT.C152:
+        default:
+        {
+          response = new container.Container.new({$creationLocationd_0dea112b090073317d4: C[151] || CT.C151});
+          break;
+        }
+      }
+      return response;
+    }
+    [_showAnimation](animation, secondaryAnimation, child) {
+      switch (this.style.animationType) {
+        case C[153] || CT.C153:
+        {
+          return animation_transition.AnimationTransition.fromRight(T.AnimationOfdouble().as(animation), T.AnimationOfdouble().as(secondaryAnimation), framework.Widget.as(child));
+        }
+        case C[154] || CT.C154:
+        {
+          return animation_transition.AnimationTransition.fromLeft(T.AnimationOfdouble().as(animation), T.AnimationOfdouble().as(secondaryAnimation), framework.Widget.as(child));
+        }
+        case C[14] || CT.C14:
+        {
+          return animation_transition.AnimationTransition.fromBottom(T.AnimationOfdouble().as(animation), T.AnimationOfdouble().as(secondaryAnimation), framework.Widget.as(child));
+        }
+        case C[155] || CT.C155:
+        {
+          return animation_transition.AnimationTransition.grow(T.AnimationOfdouble().as(animation), T.AnimationOfdouble().as(secondaryAnimation), framework.Widget.as(child));
+        }
+        case C[156] || CT.C156:
+        {
+          return animation_transition.AnimationTransition.shrink(T.AnimationOfdouble().as(animation), T.AnimationOfdouble().as(secondaryAnimation), framework.Widget.as(child));
+        }
+        case C[157] || CT.C157:
+        {
+          return animation_transition.AnimationTransition.fromTop(T.AnimationOfdouble().as(animation), T.AnimationOfdouble().as(secondaryAnimation), framework.Widget.as(child));
+        }
+      }
+    }
+  };
+  (alert.Alert.new = function(opts) {
+    let context = opts && 'context' in opts ? opts.context : null;
+    if (context == null) dart.nullFailed(I[0], 41, 19, "context");
+    let id = opts && 'id' in opts ? opts.id : null;
+    let type = opts && 'type' in opts ? opts.type : null;
+    let style = opts && 'style' in opts ? opts.style : C[0] || CT.C0;
+    if (style == null) dart.nullFailed(I[0], 44, 10, "style");
+    let image = opts && 'image' in opts ? opts.image : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    if (title == null) dart.nullFailed(I[0], 46, 19, "title");
+    let desc = opts && 'desc' in opts ? opts.desc : null;
+    let content = opts && 'content' in opts ? opts.content : C[15] || CT.C15;
+    if (content == null) dart.nullFailed(I[0], 48, 10, "content");
+    let buttons = opts && 'buttons' in opts ? opts.buttons : null;
+    let closeFunction = opts && 'closeFunction' in opts ? opts.closeFunction : null;
+    let closeIcon = opts && 'closeIcon' in opts ? opts.closeIcon : null;
+    let onWillPopActive = opts && 'onWillPopActive' in opts ? opts.onWillPopActive : false;
+    if (onWillPopActive == null) dart.nullFailed(I[0], 52, 10, "onWillPopActive");
+    let alertAnimation = opts && 'alertAnimation' in opts ? opts.alertAnimation : null;
+    let useRootNavigator = opts && 'useRootNavigator' in opts ? opts.useRootNavigator : true;
+    if (useRootNavigator == null) dart.nullFailed(I[0], 54, 10, "useRootNavigator");
+    this[context$] = context;
+    this[id$] = id;
+    this[type$] = type;
+    this[style$] = style;
+    this[image$] = image;
+    this[title$] = title;
+    this[desc$] = desc;
+    this[content$] = content;
+    this[buttons$] = buttons;
+    this[closeFunction$] = closeFunction;
+    this[closeIcon$] = closeIcon;
+    this[onWillPopActive$] = onWillPopActive;
+    this[alertAnimation$] = alertAnimation;
+    this[useRootNavigator$] = useRootNavigator;
+    ;
+  }).prototype = alert.Alert.prototype;
+  dart.addTypeTests(alert.Alert);
+  dart.addTypeCaches(alert.Alert);
+  dart.setMethodSignature(alert.Alert, () => ({
+    __proto__: dart.getMethods(alert.Alert.__proto__),
+    show: dart.fnType(async.Future$(dart.nullable(core.bool)), []),
+    dismiss: dart.fnType(async.Future$(dart.void), []),
+    [_buildDialog]: dart.fnType(framework.Widget, []),
+    [_getCloseButton]: dart.fnType(framework.Widget, []),
+    [_getButtons]: dart.fnType(core.List$(framework.Widget), []),
+    [_defaultShape]: dart.fnType(borders.ShapeBorder, []),
+    [_getImage]: dart.fnType(framework.Widget, []),
+    [_showAnimation]: dart.fnType(dart.dynamic, [dart.dynamic, dart.dynamic, dart.dynamic])
+  }));
+  dart.setLibraryUri(alert.Alert, I[1]);
+  dart.setFieldSignature(alert.Alert, () => ({
+    __proto__: dart.getFields(alert.Alert.__proto__),
+    id: dart.finalFieldType(dart.nullable(core.String)),
+    context: dart.finalFieldType(framework.BuildContext),
+    type: dart.finalFieldType(dart.nullable(constants.AlertType)),
+    style: dart.finalFieldType(alert_style.AlertStyle),
+    image: dart.finalFieldType(dart.nullable(framework.Widget)),
+    title: dart.finalFieldType(core.String),
+    desc: dart.finalFieldType(dart.nullable(core.String)),
+    content: dart.finalFieldType(framework.Widget),
+    buttons: dart.finalFieldType(dart.nullable(core.List$(dialog_button.DialogButton))),
+    closeFunction: dart.finalFieldType(dart.nullable(core.Function)),
+    closeIcon: dart.finalFieldType(dart.nullable(framework.Widget)),
+    onWillPopActive: dart.finalFieldType(core.bool),
+    useRootNavigator: dart.finalFieldType(core.bool),
+    alertAnimation: dart.finalFieldType(dart.nullable(dart.fnType(framework.Widget, [framework.BuildContext, animation.Animation$(core.double), animation.Animation$(core.double), framework.Widget])))
+  }));
+  dart.trackLibraries("packages/rflutter_alert/src/alert.dart", {
+    "package:rflutter_alert/src/alert.dart": alert
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["alert.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAqBgB;;;;;;IACK;;;;;;IACF;;;;;;IACA;;;;;;IACH;;;;;;IACD;;;;;;IACC;;;;;;IACD;;;;;;IACa;;;;;;IACV;;;;;;IACF;;;;;;IACH;;;;;;IACA;;;;;;IACW;;;;;;;AAuBJ;AAChB,cAAO,OAAM,8CACA,2BACI,SAAc,cAAgC,WACrC;gBADK;gBAAgC;gBACrC;AACpB,kBAAO;oGAEW,AAAM,8CAEA,AAAY,gDAAT,sDACf,AAAM,2CACF,2CACE,AAAM,iDACP,SACJ,SACK,WACA,oBACX;gBAHM;gBACK;gBACA;gBACX;AAEL,kBACI,qBADJ,AAAe,8BACT,qBAAe,SAAS,EAAE,kBAAkB,EAAE,KAAK,IACrC,AAAC,eAAf,qBACE,OAAO,EAAE,SAAS,EAAE,kBAAkB,EAAE,KAAK;;MAC/D;;;AAGoB;AAC0C,QAAlD,AAA6C,uBAA1C,8BAAwB;MACvC;;;;AAIe,mBAAS,4CACW,KAAlB,AAAM,wBAAA,aACA,2EAEZ,gCACM,AAAM,kCACV,+DACE,iCACE,AAAG,kBAAU,OAAO,+BAAM,eAAF,6BACU,MAAtB,AAAM,4BAAA,cACb,AAAY,eAAT,oDACY,OAAlB,AAAM,wBAAA,eAAe,6CACd,AAAM,oCACT,AAAM,iEAEV,oCACE,6BACE,yCACgC,yCACnB,wBAChB,yBACA,gCACsB,oCAChB,gBAAK,AAAM,4BAAgB,MAAI,MAAK,MAAI,aACrC,gCACa,wBAChB,mBACA,gCACU,iEAEV,kBACE,oBACO,AAAM,kCACF,AAAM,sFAEnB,gCACU,AAAK,oBAAU,MAAI,iEAE7B,AAAK,oBACC,yFACA,kBACM,eAAJ,oBACO,AAAM,iCACF,AAAM,qFAEzB,yUAQE,AAAM,uCACb,AAAM,AAAiB,+BAAoB,iCAC9C,sCACuC,8CAC3B,iFAEZ,oCAC6B,2CACY,mDACF,8CAC3B;AAK5B,uBAAO,wBACD,gDAAwB;AAAY;QAAK,oCAAS,MAAM,8DACxD,MAAM;IACd;;AAIE,uBAAO,AAAM,4BACP,wDAES,iDACE;AACL,gBAAI,AAAc;AAC4C,cAAlD,AAA6C,uBAA1C,8BAAwB;;AAErB,cAAF,WAAD,eAAb;;qCAGG,wCACuB,oDAChB,AAAU,yBAChB,oCAAsB,4EACtB,oCACS,cACC,kBACI,6CACH,iDACE,oCACkB,kBAAX,wBACH,yQAQ7B;IACR;;AAIe,4BAAkB;AAC/B,oBAAI,AAAM;AACR,YAAI,AAAQ;AAgBT,UAfM,AAAE,eAAT,wBACE;gBAAC;AACK,+BAAe,0DAEV,MAAM;AAEf,gBAAK,AAAO,AAAM,MAAP,kBAAyB,AAAE,AAAO,eAAhB,2BAAmB,KAC5C,AAAM,AAAiB,+BAAoB;AACZ,cAAjC,AAAgB,eAAD,OAAK,YAAY;;AAI9B,cAFF,AAAgB,eAAD,OAAK,+BACX,YAAY;;;;AAMpB,6BAAe,2CACb,kBACL,kBACO,qCAAwB,+BAAiB,gFAEvC,cAAgB,qCAAI;AAEjC,cAAI,AAAM,AAAiB,+BAAoB;AAG5C,YAFD,eAAe,+BACN,YAAY;;AAGU,UAAjC,AAAgB,eAAD,OAAK,YAAY;;;AAGpC,YAAO,gBAAe;IACxB;;AAIE,YAAO,wEACsB,wCAAS,aAC9B,mCACU;IAGpB;;;AAIS,sBAAiB,iBAAN,aAAS;AAC3B,cAAQ;;;AAKH,UAHD,WAAiB,sBACe,kBAAlB,+BACH;AAEX;;;;AAKC,UAHD,WAAiB,sBACa,kBAAhB,6BACH;AAEX;;;;AAKC,UAHD,WAAiB,sBACY,kBAAf,4BACH;AAEX;;;;AAKC,UAHD,WAAiB,sBACe,kBAAlB,+BACH;AAEX;;;;;AAGsB,UAAtB,WAAW;AACX;;;AAEJ,YAAO,SAAQ;IACjB;qBAGe,WAAW,oBAAoB;AAC5C,cAAQ,AAAM;;;AAEV,gBAA2B,6EACvB,SAAS,4BAAE,kBAAkB,uBAAE,KAAK;;;;AAExC,gBAA2B,4EACvB,SAAS,4BAAE,kBAAkB,uBAAE,KAAK;;;;AAExC,gBAA2B,8EACvB,SAAS,4BAAE,kBAAkB,uBAAE,KAAK;;;;AAExC,gBAA2B,wEAAK,SAAS,4BAAE,kBAAkB,uBAAE,KAAK;;;;AAEpE,gBAA2B,0EAAO,SAAS,4BAAE,kBAAkB,uBAAE,KAAK;;;;AAEtE,gBAA2B,2EACvB,SAAS,4BAAE,kBAAkB,uBAAE,KAAK;;;IAE9C;;;QAvQgB;;QACT;QACA;QACA;;QACA;QACS;;QACT;QACA;;QACA;QACA;QACA;QACA;;QACA;QACA;;IAbS;IACT;IACA;IACA;IACA;IACS;IACT;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACL","file":"../../../../../../../../../../packages/rflutter_alert/src/alert.dart.lib.js"}');
+  // Exports:
+  return {
+    src__alert: alert
+  };
+}));
+
+//# sourceMappingURL=alert.dart.lib.js.map

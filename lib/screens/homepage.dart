@@ -1,14 +1,13 @@
 import 'dart:ui';
 
-import 'package:aishop/components/databasemanager.dart';
 import 'package:aishop/components/pastpurchase.dart';
 import 'package:aishop/edit_profile.dart';
 import 'package:aishop/icons/icons.dart';
 import 'package:aishop/addons/popup_menu_consts.dart';
+import 'package:aishop/screens/search.dart';
 import 'package:aishop/screens/wishlistscreen.dart';
 import 'package:aishop/settings.dart';
 import 'package:aishop/utils/authentication.dart';
-import 'package:aishop/widgets/appbar.dart';
 import 'package:aishop/widgets/beauty.dart';
 import 'package:aishop/widgets/recommendations.dart';
 import 'package:aishop/widgets/books.dart';
@@ -17,10 +16,8 @@ import 'package:aishop/widgets/clothes.dart';
 import 'package:aishop/widgets/kitchen.dart';
 import 'package:aishop/widgets/tech.dart';
 import 'package:badges/badges.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:aishop/Services/prod_num_badges.dart';
 import 'package:flutter/material.dart';
-import 'package:aishop/widgets/modal_model.dart';
 import 'package:aishop/screens/checkout.dart';
 import 'package:aishop/components/order_review.dart';
 import '../theme.dart';
@@ -122,20 +119,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(
                     width: 5,
-                  ),
-                  isSearching
-                      ? IconButton(
-                          icon: Icon(
-                            Icons.cancel,
-                            color: white,
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              this.isSearching = false;
-                            });
-                          },
-                        )
-                      : IconButton(
+                  ),IconButton(
                           icon: Icon(
                             AIicons.search,
                             color: Colors.white,
@@ -144,8 +128,8 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             setState(() {
                               this.isSearching = true;
-                              // Navigator.of(context).push(MaterialPageRoute(
-                              //     builder: (BuildContext context) => SearchBar()));
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (BuildContext context) => Search()));
                             });
                           },
                         ),

@@ -1,7 +1,8 @@
-2021/06/11-21:29:59.302 2cbc Reusing MANIFEST C:\Users\vmoyo\AppData\Local\Temp\flutter_tools.dab26371\flutter_tools_chrome_device.16f93894\Default\File System\Origins/MANIFEST-000001
-2021/06/11-21:29:59.303 2cbc Recovering log #3
-2021/06/11-21:29:59.303 2cbc Level-0 table #6: started
-2021/06/11-21:29:59.411 2cbc Level-0 table #6: 179 bytes OK
-2021/06/11-21:29:59.412 2cbc Recovering log #6
-2021/06/11-21:29:59.412 2cbc Reusing old log C:\Users\vmoyo\AppData\Local\Temp\flutter_tools.dab26371\flutter_tools_chrome_device.16f93894\Default\File System\Origins/000006.log 
-2021/06/11-21:29:59.519 2cbc Delete type=0 #3
+2021/06/13-17:23:04.906 750 Reusing MANIFEST C:\Users\vmoyo\AppData\Local\Temp\flutter_tools.30fc9697\flutter_tools_chrome_device.fd9d1341\Default\File System\Origins/MANIFEST-000001
+2021/06/13-17:23:04.906 750 Recovering log #10
+2021/06/13-17:23:04.907 750 Reusing old log C:\Users\vmoyo\AppData\Local\Temp\flutter_tools.30fc9697\flutter_tools_chrome_device.fd9d1341\Default\File System\Origins/000010.log 
+2021/06/13-17:23:04.907 750 Delete type=0 #3
+2021/06/13-17:23:04.907 750 Delete type=2 #4
+2021/06/13-17:23:04.907 750 Delete type=2 #6
+2021/06/13-17:23:04.907 750 Delete type=0 #6
+2021/06/13-17:23:04.907 750 Delete type=2 #7

@@ -187,25 +187,44 @@ class _SingleCartProductState extends State<SingleCartProduct> {
                     )),
                   ),
                   onTap: () async {
-                    await FirebaseFirestore.instance
-                        .collection('Users')
-                        .doc(FirebaseAuth.instance.currentUser!.uid)
-                        .collection("Cart")
-                        .where('name', isEqualTo: widget.prodname)
-                        .get()
-                        .then((value) => value.docs.forEach((element) => {
-                              element.reference.update(
-                                  {"quantity": FieldValue.increment(-1)})
-                            }));
+                    if (widget.prodquantity > 1) {
+                      await FirebaseFirestore.instance
+                          .collection('Users')
+                          .doc(FirebaseAuth.instance.currentUser!.uid)
+                          .collection("Cart")
+                          .where('name', isEqualTo: widget.prodname)
+                          .get()
+                          .then((value) => value.docs.forEach((element) => {
+                                element.reference.update(
+                                    {"quantity": FieldValue.increment(-1)})
+                              }));
 
-                    setState(() {
-                      g -= double.parse(widget.prodprice);
-                      updateCartTotal();
-                      Navigator.pushReplacement(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => CheckOutPage()));
-                    });
+                      setState(() {
+                        g -= double.parse(widget.prodprice);
+                        updateCartTotal();
+                        Navigator.pushReplacement(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => CheckOutPage()));
+                      });
+                    } else if (widget.prodquantity == 1) {
+                      Cart.removeFromCart(
+                          widget.cartid,
+                          widget.prodpicture,
+                          widget.proddescription,
+                          widget.prodname,
+                          widget.prodprice,
+                          widget.prodquantity,
+                          widget.stockamt);
+                      setState(() {
+                        g -= double.parse(widget.prodprice);
+                        updateCartTotal();
+                        Navigator.pushReplacement(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => CheckOutPage()));
+                      });
+                    }
                   },
                 ),
                 SizedBox(
@@ -266,8 +285,8 @@ class _SingleCartProductState extends State<SingleCartProduct> {
               alignment: Alignment.bottomRight,
               child: new Text(
                   "R" +
-                      (double.parse(widget.prodprice) *
-                                widget.prodquantity).toString(),
+                      (double.parse(widget.prodprice) * widget.prodquantity)
+                          .toString(),
                   style: TextStyle(color: Color(0xFFFDD835))),
             ),
 
