@@ -40,6 +40,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String loginStatus = "";
   late Color loginStringColor;
 
+//use Regular Expression to validate the structure
+
   late TextEditingController userConfirmPasswordController;
   late FocusNode textFocusNodeConfirmPassword = FocusNode();
 
@@ -91,10 +93,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
     value = value.trim();
 //check user enters a strong enough password.
     if (userPasswordController.text.isNotEmpty) {
-      if (value.length < 8) {
-        return 'password length is less than 8';
+      print(value);
+      if (value.isEmpty) {
+        return 'Please enter password';
       } else {
-        return 'Password is valid';
+        if (value.contains(new RegExp(r'[0-9]'))) {
+          return ' Contains digits ';
+        }
+
+        if (value.contains(new RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+          return ' Contains symbols';
+        }
+        if (value.contains(new RegExp(r'[a-z]'))) {
+          return 'Contains Lower case';
+        }
+        if (value.contains(new RegExp(r'[A-Z]'))) {
+          return ' Contains upper case';
+        }
       }
     }
 
@@ -301,9 +316,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     errorText: _isEditingpassword
                                         ? _validatePassword(
                                             userPasswordController.text)
-                                        : "  ",
-                                    errorstyle:
-                                        TextStyle(color: Colors.yellowAccent),
+                                        : " ",
+                                    errorstyle: TextStyle(color: Colors.green),
                                   )),
                                   //====================================================================================row
                                   Expanded(
@@ -328,8 +342,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         ? _checkRepeatedPassword(
                                             userConfirmPasswordController.text)
                                         : " ",
-                                    errorstyle:
-                                        TextStyle(color: Colors.greenAccent),
+                                    errorstyle: TextStyle(color: Colors.green),
                                   ))
                                 ]),
                             //==================================================
@@ -375,27 +388,78 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                           .text)));
                                     });
                                   } else {
-                                    showDialog<String>(
-                                      context: context,
-                                      builder: (BuildContext context) =>
-                                          AlertDialog(
-                                        title: const Text('error occurs'),
-                                        content: const Text(
-                                            ' Fill all the fields',
-                                            style: TextStyle(
-                                                color: Colors.redAccent)),
-                                        actions: <Widget>[
-                                          FlatButton(
-                                            child: Text('OK',
-                                                style: TextStyle(
-                                                    color: Colors.black)),
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                    );
+                                    showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return AlertDialog(
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(32.0))),
+                                            contentPadding:
+                                                EdgeInsets.only(top: 10.0),
+                                            content: Container(
+                                              width: 330.0,
+                                              // height: 30,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.stretch,
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: <Widget>[
+                                                  SizedBox(
+                                                    height: 3,
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: <Widget>[
+                                                      Text(
+                                                        "Error has occured !!",
+                                                        style: TextStyle(
+                                                            fontSize: 24.0),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: <Widget>[
+                                                      Text(
+                                                        "This account already exist/There's something wrong",
+                                                        style: TextStyle(
+                                                            fontSize: 15.0,
+                                                            color: Colors.red),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  SizedBox(
+                                                    height: 15,
+                                                  ),
+                                                  FlatButton(
+                                                    child: Text('OK',
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.black)),
+                                                    onPressed: () {
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          );
+                                        });
                                   }
                                 }).catchError((error) {
                                   print('Sign in Error: $error');
