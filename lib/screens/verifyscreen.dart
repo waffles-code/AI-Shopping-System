@@ -66,17 +66,9 @@ class _VerifyScreenState extends State<VerifyScreen> {
   }
 
   Future<void> checkVerification() async {
-    final _firestore =FirebaseFirestore.instance;
     user = auth.currentUser!;
     await user.reload();
     if (user.emailVerified) {
-      _firestore.collection('Users').doc(uid).collection("info").doc(uid).set({
-        'bday': birthday,
-        'email':email,
-        'fname':firstname,
-        'location':location,
-        'lname': lastname
-      });
       timer.cancel();
       Navigator.push(
           context,

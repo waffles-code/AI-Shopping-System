@@ -9,6 +9,7 @@ import 'package:aishop/components/title.dart';
 import 'package:aishop/screens/loginscreen.dart';
 import 'package:aishop/screens/verifyscreen.dart';
 import 'package:aishop/utils/authentication.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -369,7 +370,33 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         userPasswordController.text)
                                     .then((result) {
                                   if (result != null) {
-                                    setState(() {
+                                    setState(() async{
+                                      final _firestore =FirebaseFirestore.instance;
+                                      DocumentReference doc_ref=_firestore.collection("Users").doc(uid).collection("info").doc();
+                                      DocumentSnapshot docSnap = await doc_ref.get();
+                                      var doc_id2 = docSnap.reference.id;
+                                      if(userLocationController.text=="") {
+                                        _firestore.collection('Users').doc(uid)
+                                            .collection("info").doc(doc_id2)
+                                            .set({
+                                          'bday': userBirthdayController.text,
+                                          'email': userEmailController.text,
+                                          'fname': userFirstNameController.text,
+                                          'location': widget.cityName,
+                                          'lname': userLastNameController.text
+                                        });
+                                      }
+                                      else{
+                                        _firestore.collection('Users').doc(uid)
+                                            .collection("info").doc(doc_id2)
+                                            .set({
+                                          'bday': userBirthdayController.text,
+                                          'email': userEmailController.text,
+                                          'fname': userFirstNameController.text,
+                                          'location': userLocationController.text,
+                                          'lname': userLastNameController.text
+                                        });
+                                      }
                                       loginStatus =
                                           'You have registered successfully';
                                       loginStringColor = Colors.green;
