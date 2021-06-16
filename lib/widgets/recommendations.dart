@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:aishop/utils/authentication.dart';
 import 'package:aishop/widgets/product_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -48,11 +50,20 @@ class _Recommendations extends State<Recommendations> {
                         stream: FirebaseFirestore.instance
                             .collection("Products")
                             .where("Purchased by", isGreaterThan: 0)
+                            .orderBy("Purchased by", descending: false)
                             .snapshots(),
                         builder: (context, snapshot3) {
                           if (snapshot3.hasData) {
-                            //taking the 10 most purchased products
-                            Most_Purchased = snapshot3.data!.docs;
+                            //taking the 20 most purchased products
+                            if(snapshot3.data!.docs.length >= 20){
+                              Most_Purchased.clear();
+                              for(var i = 0; i < 20; i++){
+                                Most_Purchased.add(snapshot3.data!.docs[i]);
+                              }
+                            }
+                            else{
+                              Most_Purchased = snapshot3.data!.docs;
+                            }
                           }
                           return StreamBuilder<QuerySnapshot>(
                               stream: FirebaseFirestore.instance
@@ -66,7 +77,7 @@ class _Recommendations extends State<Recommendations> {
                                 }
                                 //New users
                                 if (Wishlist.isEmpty && recommendations.isEmpty && Purchases.isEmpty) {
-                                  recommendations = Most_Purchased;
+                                  recommendations = randoms(Most_Purchased);
                                 }
                                 //recommending based of history
                                 if (recommendations.isNotEmpty && Purchases.isNotEmpty) {
@@ -136,13 +147,58 @@ class _Recommendations extends State<Recommendations> {
                                       },
                                       itemCount: recommendations.length,
                                     );
-                                }} else {
+                                  }
+
+                                } else {
                                   return Text("No Recommendations yet");
                                 }
-                                throw '';
+                                throw'';
                               });
                         });
                   });
             }));
+  }
+  List<DocumentSnapshot> randoms(List<DocumentSnapshot> MostPurchased){
+    List<DocumentSnapshot> randomized = [];
+    for(var i = 0; i < MostPurchased.length; i++){
+      var cat = MostPurchased[i].get("category");
+      Stream<QuerySnapshot> stream = FirebaseFirestore.instance.collection("Products").where("category", isEqualTo: cat).snapshots();
+      stream.forEach((element) {
+        if(element != null){
+          element.docs..shuffle();
+          element.docs..reversed;
+          element.docs..shuffle();
+          element.docs..shuffle();
+          element.docs..reversed;
+          element.docs..shuffle();
+          final _random = new Random();
+          final doc = element.docs[_random.nextInt(element.docs.length)];
+          if(randomized.length <= 20){
+            if(randomized.length == 0){
+              randomized.add(doc);
+            }
+            else{
+              if(!_contains(randomized, doc)){
+                randomized.add(doc);
+              }
+            }
+          }
+        }
+      });
+    }
+    return randomized;
+  }
+  bool _contains(List<DocumentSnapshot> list, QueryDocumentSnapshot<Object?> documentSnapshot){
+    var counter = 0;
+    var state = false;
+    for(var i = 0; i < list.length; i++){
+      if(list[i].data() == documentSnapshot.data()){
+        counter++;
+      }
+    }
+    if(counter > 0){
+      state =  true;
+    }
+    return state;
   }
 }
