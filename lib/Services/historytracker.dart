@@ -127,15 +127,16 @@ void addToPurchases() {
                               'name': productid.get("name"),
                               'description': productid.get("description"),
                               'price': productid.get("price"),
+                                  'date': date
                             }),
-                            FirebaseFirestore.instance
+                            /*FirebaseFirestore.instance
                                 .collection('Users')
                                 .doc(uid)
                                 .collection("Purchases")
                                 .doc(productid.id)
                                 .collection("info")
                                 .doc(date.toString())
-                                .set({'quantity': 1, 'date': date}),
+                                .set({'quantity': 1, 'date': date}),*/
                             FirebaseFirestore.instance
                                 .collection('Products')
                                 .doc(productid.id)
@@ -145,20 +146,21 @@ void addToPurchases() {
                                   .collection('Products')
                                   .doc(productid.id)
                                   .update({
-                                'Purchased by': FieldValue.increment(1)
+                                'Purchased by': FieldValue.increment(1),
+                                  'date': date
                               });
                             })
                           }
                         else
                           {
-                            FirebaseFirestore.instance
+                            /*FirebaseFirestore.instance
                                 .collection('Users')
                                 .doc(uid)
                                 .collection("Purchases")
                                 .doc(productid.id)
                                 .collection("info")
                                 .doc(date.toString())
-                                .set({'quantity': 1, 'date': date}),
+                                .set({'quantity': 1, 'date': date}),*/
                             FirebaseFirestore.instance
                                 .collection('Products')
                                 .doc(productid.id)
@@ -168,7 +170,8 @@ void addToPurchases() {
                                   .collection('Products')
                                   .doc(productid.id)
                                   .update({
-                                'Purchased by': FieldValue.increment(1)
+                                'Purchased by': FieldValue.increment(1), 
+                                    'date': date
                               });
                             })
                           },
