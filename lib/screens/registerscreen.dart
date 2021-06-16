@@ -435,7 +435,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                         MainAxisSize.min,
                                                     children: <Widget>[
                                                       Text(
-                                                        "This account already exist/There's unfilled fields",
+                                                        "This account already exist/There's something wrong",
                                                         style: TextStyle(
                                                             fontSize: 15.0,
                                                             color: Colors.red),
