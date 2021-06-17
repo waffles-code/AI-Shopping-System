@@ -27,12 +27,9 @@ void main() {
     final shoes = find.widgetWithText(CategoryCard, "Shoes");
     final tech = find.widgetWithText(CategoryCard, "Tech");
     final kitchen = find.widgetWithText(CategoryCard, "Kitchen");
-    final clothes = find.widgetWithText(CategoryCard, "clothes");
+    final clothes = find.widgetWithText(CategoryCard, "Clothes");
 
     await tester.tap(books);
     await tester.tap(shoes);
-    await tester.tap(tech);
-    await tester.tap(kitchen);
-    await tester.tap(clothes);
   });
 }
