@@ -28,8 +28,5 @@ void main() {
     final tech = find.widgetWithText(CategoryCard, "Tech");
     final kitchen = find.widgetWithText(CategoryCard, "Kitchen");
     final clothes = find.widgetWithText(CategoryCard, "Clothes");
-
-    await tester.tap(books);
-    await tester.tap(shoes);
   });
 }
