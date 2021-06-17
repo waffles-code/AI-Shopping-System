@@ -12,18 +12,38 @@ A complete Flutter application written in dart with firebase implementation.
 
 ## Description
 
-AI Shopping System(AISH) implemented by "We don't byte" group is an e-commerce Web Application that allows users to shop online. 
+AI Shopping System(AISH) developed by "We don't byte" group is an e-commerce Web Application that allows users to shop online. 
 shoppers may purchase different types of items from the comfort of their home or any other place without physically
 visiting those stores. It allows Users to buy items from multiple stores despite their location. Aish is an artificial intelligent
 app that will feed the customers eyes what they are most interested. It may recommend products that is interested in.
 
-## How to use the App
 
-*First time users will have to create an account by registering and then after that they will be permitted to login and see the 
-products that are available.
-*The user can either select the category they want to shop in under the "shop with Category" title or scroll vertically to see the
+# Features
+* Login Page
+* Registration page with input validation 
+* Email verifation 
+* Password Reset
+* Add/remove to/from cart and wishlist on all products
+* Home page with categprised product lists and product recommendations
+* Wishlist page
+* Cart page
+* Profile page
+* Settings page
+* Previous orders page
+* Add address page
+* Checkout page 
+* 
+## How it works
+
+* Upon clicking the website link a user will be directed to the login page where they can either login if they are a returning user or click "Not registered ? " text and they will be   directed to the registration page.
+* The user will have to entire their details to register and will be directed to an email veification page , during this time they will receive an email verification email with a       link to verify their emails.
+* After their email has been verified they will be automatically directed to the homepage
+* If they are a new user, on the homepage , they will see product recommendations based on the most bought items in the the store
+* If they are a return user and have purchased or added items to the wish list they will see product recommendations based on their most bought products and products they have added   to their wishlist
+* The user can either select the category they want to shop in under the "shop with Category" title or scroll vertically to see the
  preview of products under each category.
-*The user can scroll horizontally under a specific category to see products under that category. 
+* The user can scroll horizontally under a specific category to see products under that category. 
+* 
 
 ## About the project
 
