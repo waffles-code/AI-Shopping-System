@@ -47,6 +47,7 @@ class _KitchenScreen extends State<KitchenScreen> {
               if (!snapshot.hasData) {
                 return SizedBox(
                   child: CircularProgressIndicator(
+                    valueColor: new AlwaysStoppedAnimation<Color>(grey),
                     backgroundColor: lightgrey,
                   ),
                 );

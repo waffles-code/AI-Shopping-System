@@ -47,6 +47,7 @@ class _TechScreen extends State<TechScreen> {
               if (!snapshot.hasData) {
                 return SizedBox(
                   child: CircularProgressIndicator(
+                    valueColor: new AlwaysStoppedAnimation<Color>(grey),
                     backgroundColor: lightgrey,
                   ),
                 );

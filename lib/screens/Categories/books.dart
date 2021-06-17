@@ -47,6 +47,7 @@ class _BooksScreen extends State<BooksScreen> {
               if (!snapshot.hasData) {
                 return SizedBox(
                   child: CircularProgressIndicator(
+                    valueColor: new AlwaysStoppedAnimation<Color>(grey),
                     backgroundColor: lightgrey,
                   ),
                 );

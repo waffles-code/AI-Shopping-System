@@ -48,6 +48,7 @@ class _ClothesScreen extends State<ClothesScreen> {
                 return SizedBox(
                   child: CircularProgressIndicator(
                     backgroundColor: lightgrey,
+                    valueColor: new AlwaysStoppedAnimation<Color>(grey),
                   ),
                 );
               } else {

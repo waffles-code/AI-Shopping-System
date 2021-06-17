@@ -19,6 +19,7 @@ class Clothes extends StatelessWidget {
           if (!snapshot.hasData) {
             return SizedBox(
               child: CircularProgressIndicator(
+                valueColor: new AlwaysStoppedAnimation<Color>(grey),
                 backgroundColor: lightgrey,
               ),
             );

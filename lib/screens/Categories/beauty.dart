@@ -47,6 +47,7 @@ class _ShoesScreen extends State<ShoesScreen> {
               if (!snapshot.hasData) {
                 return SizedBox(
                   child: CircularProgressIndicator(
+                    valueColor: new AlwaysStoppedAnimation<Color>(grey),
                     backgroundColor: lightgrey,
                   ),
                 );
