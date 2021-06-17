@@ -34,7 +34,7 @@ app that will feed the customers eyes what they are most interested. It recommen
 * Add address page
 * Checkout page
 * page for each category
-* Adress page
+* Address page
 
 ## How to use the App
 
