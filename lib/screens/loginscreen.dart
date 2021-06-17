@@ -76,9 +76,6 @@ class _LoginScreenState extends State<LoginScreen> {
     if (userPasswordController.text.isNotEmpty) {
       if (value.isEmpty) {
         return 'Please enter password';
-      } else if (!value.contains(RegExp(
-          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$'))) {
-        return ' ';
       }
     }
 
@@ -148,7 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ? _validateEmail(userEmailController.text)
                                   : "",
                               errorstyle: TextStyle(
-                                color: Colors.redAccent,
+                                color: Colors.black54,
                               ),
                             ),
                             //=============================================
@@ -170,7 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ? _validatePassword(
                                       userPasswordController.text)
                                   : "",
-                              errorstyle: TextStyle(color: Colors.redAccent),
+                              errorstyle: TextStyle(color: Colors.black54),
                             ),
                             //=============================================
                             //login button
@@ -197,14 +194,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                         context: context,
                                         builder: (BuildContext context) {
                                           return AlertDialog(
-                                            
                                             shape: RoundedRectangleBorder(
-                                       
                                                 borderRadius: BorderRadius.all(
                                                     Radius.circular(32.0))),
                                             contentPadding:
                                                 EdgeInsets.only(top: 10.0),
-                                                
                                             content: Container(
                                               width: 300.0,
                                               // height: 30,

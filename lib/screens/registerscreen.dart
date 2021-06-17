@@ -98,19 +98,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
       if (value.isEmpty) {
         return 'Please enter password';
       } else {
-        if (value.contains(new RegExp(r'[0-9]'))) {
-          return ' Contains digits ';
+        if (!value.contains(new RegExp(r'[0-9]'))) {
+          return ' Password must contain atleast one digit ';
         }
 
-        if (value.contains(new RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
-          return ' Contains symbols';
+        if (!value.contains(new RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+          return 'Password must contain at least on special character';
         }
-        if (value.contains(new RegExp(r'[a-z]'))) {
-          return 'Contains Lower case';
+        if (!value.contains(new RegExp(r'[a-z]'))) {
+          return 'Password must contain at least one lower case letter';
         }
-        if (value.contains(new RegExp(r'[A-Z]'))) {
-          return ' Contains upper case';
-        }
+
+        // if (value.contains(new RegExp(r'[A-Z]'))) {
+        //   return 'Password must contain at least one upper case letter';
+        // }
       }
     }
 
@@ -122,7 +123,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 //check that passwords are matching.
     if (userConfirmPasswordController.text.isNotEmpty) {
       if (userConfirmPasswordController.text != userPasswordController.text) {
-        return 'Passward dont match';
+        return 'Passwords do not match';
       } else {
         return 'Password Confirmed';
       }
@@ -227,7 +228,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                 userEmailController.text)
                                             : null,
                                         errorstyle:
-                                            TextStyle(color: Colors.redAccent),
+                                            TextStyle(color: Colors.black54),
                                       )),
                                   //====================================================================================row
                                   Expanded(
@@ -318,7 +319,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         ? _validatePassword(
                                             userPasswordController.text)
                                         : " ",
-                                    errorstyle: TextStyle(color: Colors.green),
+                                    errorstyle:
+                                        TextStyle(color: Colors.black54),
                                   )),
                                   //====================================================================================row
                                   Expanded(
@@ -343,7 +345,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         ? _checkRepeatedPassword(
                                             userConfirmPasswordController.text)
                                         : " ",
-                                    errorstyle: TextStyle(color: Colors.green),
+                                    errorstyle:
+                                        TextStyle(color: Colors.black54),
                                   ))
                                 ]),
                             //==================================================
@@ -370,14 +373,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         userPasswordController.text)
                                     .then((result) {
                                   if (result != null) {
-                                    setState(() async{
-                                      final _firestore =FirebaseFirestore.instance;
-                                      DocumentReference doc_ref=_firestore.collection("Users").doc(uid).collection("info").doc();
-                                      DocumentSnapshot docSnap = await doc_ref.get();
+                                    setState(() async {
+                                      final _firestore =
+                                          FirebaseFirestore.instance;
+                                      DocumentReference doc_ref = _firestore
+                                          .collection("Users")
+                                          .doc(uid)
+                                          .collection("info")
+                                          .doc();
+                                      DocumentSnapshot docSnap =
+                                          await doc_ref.get();
                                       var doc_id2 = docSnap.reference.id;
-                                      if(userLocationController.text=="") {
-                                        _firestore.collection('Users').doc(uid)
-                                            .collection("info").doc(doc_id2)
+                                      if (userLocationController.text == "") {
+                                        _firestore
+                                            .collection('Users')
+                                            .doc(uid)
+                                            .collection("info")
+                                            .doc(doc_id2)
                                             .set({
                                           'bday': userBirthdayController.text,
                                           'email': userEmailController.text,
@@ -385,15 +397,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           'location': widget.cityName,
                                           'lname': userLastNameController.text
                                         });
-                                      }
-                                      else{
-                                        _firestore.collection('Users').doc(uid)
-                                            .collection("info").doc(doc_id2)
+                                      } else {
+                                        _firestore
+                                            .collection('Users')
+                                            .doc(uid)
+                                            .collection("info")
+                                            .doc(doc_id2)
                                             .set({
                                           'bday': userBirthdayController.text,
                                           'email': userEmailController.text,
                                           'fname': userFirstNameController.text,
-                                          'location': userLocationController.text,
+                                          'location':
+                                              userLocationController.text,
                                           'lname': userLastNameController.text
                                         });
                                       }
@@ -425,7 +440,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                             contentPadding:
                                                 EdgeInsets.only(top: 10.0),
                                             content: Container(
-                                              width: 330.0,
+                                              width: 370.0,
                                               // height: 30,
                                               child: Column(
                                                 mainAxisAlignment:
@@ -445,7 +460,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                         MainAxisSize.min,
                                                     children: <Widget>[
                                                       Text(
-                                                        "Error has occured !!",
+                                                        "Error has occured !",
                                                         style: TextStyle(
                                                             fontSize: 24.0),
                                                       ),
@@ -472,7 +487,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                   SizedBox(
                                                     height: 15,
                                                   ),
-                                                  FlatButton(
+                                                  TextButton(
                                                     child: Text('OK',
                                                         style: TextStyle(
                                                             color:
@@ -498,7 +513,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         new MaterialPageRoute(
                                             builder: (context) =>
                                                 LoginScreen()));
-                                    loginStringColor = Colors.red;
+                                    loginStringColor = Colors.black54;
                                   });
                                 });
                               },
