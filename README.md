@@ -34,14 +34,14 @@ app that will feed the customers eyes what they are most interested. It may reco
 
 ## How to use the App
 
-*First time users will have to create an account by registering and then after that they will be permitted to login and see the 
+* First time users will have to create an account by registering and then after that they will be permitted to login and see the 
 products that are available.
-*The user can either select the category they want to shop in under the "Category" title or scroll vertically to see the
+* The user can either select the category they want to shop in under the "Category" title or scroll vertically to see the
  preview of products under each category and those that are recommended to them.
-*The user can scroll horizontally under a specific category including recommendations to see products under that section.
-*The user can either tap the product they like to read the description of that product or tap to add it to their wishlist or tap it to add it to the cart.
-*On the menu bar, the user can either tab the search icon to search a specific product or tab the wishlist icon to see the products in the wishlist of wich they can decide to remove them or add them to the cart, or tab the cart icon to checkout/buy the items or remove item from  the cart or increment/decrement the quantity number, or you can tab the profile icon to go to your order history, profile, settings or to signout from the web app.
-*One your way to checkout, you will be able to choose or add the delivery address.
+* The user can scroll horizontally under a specific category including recommendations to see products under that section.
+* The user can either tap the product they like to read the description of that product or tap to add it to their wishlist or tap it to add it to the cart.
+* On the menu bar, the user can either tab the search icon to search a specific product or tab the wishlist icon to see the products in the wishlist of wich they can decide to remove them or add them to the cart, or tab the cart icon to checkout/buy the items or remove item from  the cart or increment/decrement the quantity number, or you can tab the profile icon to go to your order history, profile, settings or to signout from the web app.
+* One your way to checkout, you will be able to choose or add the delivery address.
 
 ### Future Scope
 
