@@ -1,13 +1,52 @@
 import 'package:aishop/components/checkoutdelivary.dart';
 import 'package:aishop/components/first_delivary_page.dart';
+import 'package:aishop/components/round_textfield.dart';
 import 'package:aishop/components/textlink.dart';
+import 'package:aishop/utils/authentication.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:aishop/screens/homepage.dart';
+import 'package:line_icons/line_icons.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'order_review.dart';
 
 import '../theme.dart';
 
-class CheckOutAddress extends StatelessWidget {
+class CheckOutAddress extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _CheckOutAddress();
+  }
+}
+
+class _CheckOutAddress extends State<CheckOutAddress> {
+  Future getUserInfofromdb() async {
+    FirebaseFirestore _firestore = FirebaseFirestore.instance;
+    CollectionReference _collectionReference = _firestore.collection("Users");
+    DocumentReference _doc = _collectionReference.doc(uid);
+    DocumentReference _documentReference = _doc.collection("info").doc(uid);
+
+    _documentReference.get().then((documentSnapshot) => {
+          if (!documentSnapshot.exists)
+            {
+              print("Sorry, User profile not found."),
+            }
+          else
+            {
+              setState(() {
+                userLocationController.text = documentSnapshot.get("location");
+              })
+            }
+        });
+  }
+
+  late TextEditingController userLocationController = TextEditingController();
+
+  void initState() {
+    getUserInfofromdb();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,58 +91,151 @@ class CheckOutAddress extends StatelessWidget {
                                     )),
                                 WidgetSpan(
                                   child: TextLink(
-                                    text:
-                                        "11 Maclaren st,MarshallTown,Johannesburg ",
-                                    align: Alignment.center,
-                                    press: () => {
-                                      if (!(g == 0))
-                                        {
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                  builder:
-                                                      (BuildContext context) =>
-                                                          CheckOutDelivery()))
-                                        }
-                                      else
-                                        {
-                                          showDialog<String>(
-                                            context: context,
-                                            builder: (BuildContext context) =>
-                                                AlertDialog(
-                                              title: const Text(
-                                                  'Your Cart Is Empty'),
-                                              content: const Text(
-                                                  'Please Add Items to cart',
-                                                  style: TextStyle(
-                                                      color:
-                                                          Colors.greenAccent)),
-                                              actions: <Widget>[
-                                                TextButton(
-                                                  child: Text('Browse Products',
-                                                      style: TextStyle(
-                                                          color: Colors.black)),
-                                                  onPressed: () {
-                                                    Navigator.of(context).push(
-                                                        MaterialPageRoute(
-                                                            builder: (BuildContext
-                                                                    context) =>
-                                                                HomePage()));
-                                                  },
+                                      text: " Use Your Home Address ",
+                                      align: Alignment.center,
+                                      press: () => {
+                                            Alert(
+                                                context: context,
+                                                title: "Enter home address",
+                                                content: Column(
+                                                  children: <Widget>[
+                                                    RoundTextField(
+                                                      autofocus: false,
+                                                      preicon: Icon(
+                                                          Icons.location_pin),
+                                                      text: "Location",
+                                                      control:
+                                                          userLocationController,
+                                                    ),
+                                                  ],
                                                 ),
-                                                TextButton(
-                                                  child: Text('Cancel',
+                                                buttons: [
+                                                  DialogButton(
+                                                    onPressed: () {
+                                                      if (!(g == 0)) {
+                                                        Navigator.of(context).push(
+                                                            MaterialPageRoute(
+                                                                builder: (BuildContext
+                                                                        context) =>
+                                                                    CheckOutDelivery()));
+                                                      } else {
+                                                        showDialog<String>(
+                                                          context: context,
+                                                          builder: (BuildContext
+                                                                  context) =>
+                                                              AlertDialog(
+                                                            title: const Text(
+                                                                'Your Cart Is Empty'),
+                                                            content: const Text(
+                                                                'Please Add Items to cart',
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .greenAccent)),
+                                                            actions: <Widget>[
+                                                              TextButton(
+                                                                child: Text(
+                                                                    'Browse Products',
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .black)),
+                                                                onPressed: () {
+                                                                  Navigator.of(
+                                                                          context)
+                                                                      .push(MaterialPageRoute(
+                                                                          builder: (BuildContext context) =>
+                                                                              HomePage()));
+                                                                },
+                                                              ),
+                                                              TextButton(
+                                                                child: Text(
+                                                                    'Cancel',
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .black)),
+                                                                onPressed: () {
+                                                                  Navigator.of(
+                                                                          context)
+                                                                      .pop();
+                                                                },
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        );
+                                                      }
+                                                      ;
+                                                    },
+                                                    child: Text(
+                                                      "Add",
                                                       style: TextStyle(
-                                                          color: Colors.black)),
-                                                  onPressed: () {
-                                                    Navigator.of(context).pop();
-                                                  },
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        }
-                                    },
-                                  ),
+                                                          color: white,
+                                                          fontSize: 20),
+                                                    ),
+                                                    color: lightblack,
+                                                  ),
+                                                  DialogButton(
+                                                    onPressed: () {
+                                                      if (!(g == 0)) {
+                                                        Navigator.of(context).push(
+                                                            MaterialPageRoute(
+                                                                builder: (BuildContext
+                                                                        context) =>
+                                                                    CheckOutDelivery()));
+                                                      } else {
+                                                        showDialog<String>(
+                                                          context: context,
+                                                          builder: (BuildContext
+                                                                  context) =>
+                                                              AlertDialog(
+                                                            title: const Text(
+                                                                'Your Cart Is Empty'),
+                                                            content: const Text(
+                                                                'Please Add Items to cart',
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .greenAccent)),
+                                                            actions: <Widget>[
+                                                              TextButton(
+                                                                child: Text(
+                                                                    'Browse Products',
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .black)),
+                                                                onPressed: () {
+                                                                  Navigator.of(
+                                                                          context)
+                                                                      .push(MaterialPageRoute(
+                                                                          builder: (BuildContext context) =>
+                                                                              HomePage()));
+                                                                },
+                                                              ),
+                                                              TextButton(
+                                                                child: Text(
+                                                                    'Cancel',
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .black)),
+                                                                onPressed: () {
+                                                                  Navigator.of(
+                                                                          context)
+                                                                      .pop();
+                                                                },
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        );
+                                                      }
+                                                      ;
+                                                    },
+                                                    child: Text(
+                                                      "Already Added",
+                                                      style: TextStyle(
+                                                          color: white,
+                                                          fontSize: 20),
+                                                    ),
+                                                    color: lightblack,
+                                                  )
+                                                ]).show(),
+                                          }),
                                 ),
                               ],
                             ),
@@ -135,61 +267,150 @@ class CheckOutAddress extends StatelessWidget {
                                     )),
                                 WidgetSpan(
                                   child: TextLink(
-                                      text:
-                                          "104 Stiemens st , Braamfontein , Johannesburg ",
+                                      text: " Use Your Work Address ",
                                       align: Alignment.center,
                                       press: () => {
-                                            if (!(g == 0))
-                                              {
-                                                Navigator.of(context).push(
-                                                    MaterialPageRoute(
-                                                        builder: (BuildContext
-                                                                context) =>
-                                                            CheckOutDelivery()))
-                                              }
-                                            else
-                                              {
-                                                showDialog<String>(
-                                                  context: context,
-                                                  builder:
-                                                      (BuildContext context) =>
-                                                          AlertDialog(
-                                                    title: const Text(
-                                                        'Your Cart Is Empty'),
-                                                    content: const Text(
-                                                        'Please Add Items to cart',
-                                                        style: TextStyle(
-                                                            color: Colors
-                                                                .greenAccent)),
-                                                    actions: <Widget>[
-                                                      TextButton(
-                                                        child: Text(
-                                                            'Browse Products',
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .black)),
-                                                        onPressed: () {
-                                                          Navigator.of(context).push(
-                                                              MaterialPageRoute(
-                                                                  builder: (BuildContext
-                                                                          context) =>
-                                                                      HomePage()));
-                                                        },
-                                                      ),
-                                                      TextButton(
-                                                        child: Text('Cancel',
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .black)),
-                                                        onPressed: () {
-                                                          Navigator.of(context)
-                                                              .pop();
-                                                        },
-                                                      ),
-                                                    ],
-                                                  ),
+                                            Alert(
+                                                context: context,
+                                                title: "Enter Work address",
+                                                content: Column(
+                                                  children: <Widget>[
+                                                    RoundTextField(
+                                                      autofocus: false,
+                                                      preicon: Icon(
+                                                          Icons.location_pin),
+                                                      text: "Location",
+                                                      control:
+                                                          userLocationController,
+                                                    ),
+                                                  ],
                                                 ),
-                                              },
+                                                buttons: [
+                                                  DialogButton(
+                                                    onPressed: () {
+                                                      if (!(g == 0)) {
+                                                        Navigator.of(context).push(
+                                                            MaterialPageRoute(
+                                                                builder: (BuildContext
+                                                                        context) =>
+                                                                    CheckOutDelivery()));
+                                                      } else {
+                                                        showDialog<String>(
+                                                          context: context,
+                                                          builder: (BuildContext
+                                                                  context) =>
+                                                              AlertDialog(
+                                                            title: const Text(
+                                                                'Your Cart Is Empty'),
+                                                            content: const Text(
+                                                                'Please Add Items to cart',
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .greenAccent)),
+                                                            actions: <Widget>[
+                                                              TextButton(
+                                                                child: Text(
+                                                                    'Browse Products',
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .black)),
+                                                                onPressed: () {
+                                                                  Navigator.of(
+                                                                          context)
+                                                                      .push(MaterialPageRoute(
+                                                                          builder: (BuildContext context) =>
+                                                                              HomePage()));
+                                                                },
+                                                              ),
+                                                              TextButton(
+                                                                child: Text(
+                                                                    'Cancel',
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .black)),
+                                                                onPressed: () {
+                                                                  Navigator.of(
+                                                                          context)
+                                                                      .pop();
+                                                                },
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        );
+                                                      }
+                                                      ;
+                                                    },
+                                                    child: Text(
+                                                      "Add",
+                                                      style: TextStyle(
+                                                          color: white,
+                                                          fontSize: 20),
+                                                    ),
+                                                    color: lightblack,
+                                                  ),
+                                                  DialogButton(
+                                                    onPressed: () {
+                                                      if (!(g == 0)) {
+                                                        Navigator.of(context).push(
+                                                            MaterialPageRoute(
+                                                                builder: (BuildContext
+                                                                        context) =>
+                                                                    CheckOutDelivery()));
+                                                      } else {
+                                                        showDialog<String>(
+                                                          context: context,
+                                                          builder: (BuildContext
+                                                                  context) =>
+                                                              AlertDialog(
+                                                            title: const Text(
+                                                                'Your Cart Is Empty'),
+                                                            content: const Text(
+                                                                'Please Add Items to cart',
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .greenAccent)),
+                                                            actions: <Widget>[
+                                                              TextButton(
+                                                                child: Text(
+                                                                    'Browse Products',
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .black)),
+                                                                onPressed: () {
+                                                                  Navigator.of(
+                                                                          context)
+                                                                      .push(MaterialPageRoute(
+                                                                          builder: (BuildContext context) =>
+                                                                              HomePage()));
+                                                                },
+                                                              ),
+                                                              TextButton(
+                                                                child: Text(
+                                                                    'Cancel',
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .black)),
+                                                                onPressed: () {
+                                                                  Navigator.of(
+                                                                          context)
+                                                                      .pop();
+                                                                },
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        );
+                                                      }
+                                                      ;
+                                                    },
+                                                    child: Text(
+                                                      "Already Added",
+                                                      style: TextStyle(
+                                                          color: white,
+                                                          fontSize: 20),
+                                                    ),
+                                                    color: lightblack,
+                                                  )
+                                                ]).show(),
                                           }),
                                 ),
                               ],
