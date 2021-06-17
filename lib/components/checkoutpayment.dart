@@ -40,24 +40,24 @@ class CheckOutPayment extends StatelessWidget {
                           SizedBox(
                             height: 30,
                           ),
-                          Container(
-                            child: Center(
-                              child: TextLink(
-                                text: 'Load Credits',
-                                align: Alignment.center,
-                                press: () => {},
-                              ),
-                            ),
-                            width: double.infinity,
-                            height: 50,
-                          ),
-                          Divider(
-                            height: 10,
-                            thickness: 2,
-                            indent: 10,
-                            endIndent: 10,
-                            color: lightblack,
-                          ),
+                          // Container(
+                          //   child: Center(
+                          //     child: TextLink(
+                          //       text: 'Load Credits',
+                          //       align: Alignment.center,
+                          //       press: () => {},
+                          //     ),
+                          //   ),
+                          //   width: double.infinity,
+                          //   height: 50,
+                          // ),
+                          // Divider(
+                          //   height: 10,
+                          //   thickness: 2,
+                          //   indent: 10,
+                          //   endIndent: 10,
+                          //   color: lightblack,
+                          // ),
                           Container(
                             child: Center(
                               child: TextLink(
@@ -240,12 +240,15 @@ class CheckOutPayment extends StatelessWidget {
                                           content: const Text(
                                               'Your purchase was  succesful ',
                                               style: TextStyle(
-                                                  color: Colors.greenAccent)),
+                                                  color: Colors.black54)),
                                           actions: <Widget>[
-                                            TextButton(
+                                            ElevatedButton(
                                               child: Text('OK',
                                                   style: TextStyle(
                                                       color: Colors.black)),
+                                              style: ElevatedButton.styleFrom(
+                                                primary: Colors.black,
+                                              ),
                                               onPressed: () {
                                                 addToPurchases();
                                                 Navigator.of(context).push(
