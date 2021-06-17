@@ -89,77 +89,80 @@ class SearchState extends State<Search> {
       ),
       // iconTheme: IconThemeData(color: Colors.white)),
       //Body of the home page
-      body: capitalizedValue.length == 1 ?
-      Container(
-        height: 800,
-        child: StreamBuilder<QuerySnapshot>(
-          stream: FirebaseFirestore.instance
-              .collection("Products")
-              .snapshots(),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return SizedBox(
-                child: CircularProgressIndicator(
-                  backgroundColor: lightgrey,
-                ),
-              );
-            } else {
-              return GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 5,
-                    childAspectRatio: 2 / 3,
-                    mainAxisSpacing: 0),
-                itemBuilder: (context, index) {
-                  return ProductCard(
-                    snapshot.data!.docs[index].id,
-                    snapshot.data!.docs[index].get('url'),
-                    snapshot.data!.docs[index].get('name'),
-                    snapshot.data!.docs[index].get('description'),
-                    snapshot.data!.docs[index].get('price').toString(),
-                    snapshot.data!.docs[index].get('stockamt'),
-                  );
+      body: capitalizedValue.length == 1
+          ? Container(
+              height: 800,
+              child: StreamBuilder<QuerySnapshot>(
+                stream: FirebaseFirestore.instance
+                    .collection("Products")
+                    .snapshots(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    return SizedBox(
+                      child: CircularProgressIndicator(
+                        valueColor: new AlwaysStoppedAnimation<Color>(grey),
+                        backgroundColor: lightgrey,
+                      ),
+                    );
+                  } else {
+                    return GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 5,
+                          childAspectRatio: 2 / 3,
+                          mainAxisSpacing: 0),
+                      itemBuilder: (context, index) {
+                        return ProductCard(
+                          snapshot.data!.docs[index].id,
+                          snapshot.data!.docs[index].get('url'),
+                          snapshot.data!.docs[index].get('name'),
+                          snapshot.data!.docs[index].get('description'),
+                          snapshot.data!.docs[index].get('price').toString(),
+                          snapshot.data!.docs[index].get('stockamt'),
+                        );
+                      },
+                      itemCount: snapshot.data!.docs.length,
+                    );
+                  }
                 },
-                itemCount: snapshot.data!.docs.length,
-              );
-            }
-          },
-        ),
-      ): tempSearchStore.isNotEmpty&&capitalizedValue.length > 1 ?
-      ListView(children: <Widget>[
-        SizedBox(height: 15.0, width: 10.0),
-        GridView.count(
-            padding: EdgeInsets.only(
-                left: 10.0, right: 10.0, top: 10.0, bottom: 10),
-            crossAxisCount: 5,
-            childAspectRatio: (200 / 300),
-            crossAxisSpacing: 4.0,
-            mainAxisSpacing: 4.0,
-            primary: false,
-            shrinkWrap: true,
-            children: tempSearchStore.map((element) {
-              return ProductCard(
-                  element.id.toString(),
-                  element.data()['url'].toString(),
-                  element.data()['name'].toString(),
-                  element.data()['description'].toString(),
-                  element.data()['price'].toString(),
-                  element.data()['stockamt']);
-            }).toList())
-      ])
-          : tempSearchStore.isEmpty && capitalizedValue.length > 1 ?
-      Container(
-        color: Colors.redAccent,
-        height: 50.0,
-        child: Center(
-          child: Text(
-            "No Results Found",
-            style: TextStyle(
-              fontSize: 18.0,
-              color: Colors.white,
-            ),
-          ),
-        ),
-      ):new Text(''),
+              ),
+            )
+          : tempSearchStore.isNotEmpty && capitalizedValue.length > 1
+              ? ListView(children: <Widget>[
+                  SizedBox(height: 15.0, width: 10.0),
+                  GridView.count(
+                      padding: EdgeInsets.only(
+                          left: 10.0, right: 10.0, top: 10.0, bottom: 10),
+                      crossAxisCount: 5,
+                      childAspectRatio: (200 / 300),
+                      crossAxisSpacing: 4.0,
+                      mainAxisSpacing: 4.0,
+                      primary: false,
+                      shrinkWrap: true,
+                      children: tempSearchStore.map((element) {
+                        return ProductCard(
+                            element.id.toString(),
+                            element.data()['url'].toString(),
+                            element.data()['name'].toString(),
+                            element.data()['description'].toString(),
+                            element.data()['price'].toString(),
+                            element.data()['stockamt']);
+                      }).toList())
+                ])
+              : tempSearchStore.isEmpty && capitalizedValue.length > 1
+                  ? Container(
+                      color: Colors.redAccent,
+                      height: 50.0,
+                      child: Center(
+                        child: Text(
+                          "No Results Found",
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    )
+                  : new Text(''),
     );
   }
 }
