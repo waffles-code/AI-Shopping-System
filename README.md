@@ -16,6 +16,9 @@ shoppers may purchase different types of items from the comfort of their home or
 visiting those stores. It allows Users to buy items from multiple stores despite their location. Aish is an artificial intelligent
 app that will feed the customers eyes what they are most interested. It recommends products that the user might be interested in.
 
+## Documentation 
+[Documentation](https://docs.google.com/document/d/1AKr1GYukMDojsRTm7WP46ISAUXLAP63J9X5FbgBhxuw/edit?usp=sharing)
+
 # Features
 * Login Page
 * Registration page with input validation 
@@ -35,14 +38,14 @@ app that will feed the customers eyes what they are most interested. It recommen
 
 ## How to use the App
 
-#Loging and registration
+# Loging and registration
 
 * First time users will have to create an account by entering their personal details, their name, surname, email, password, date of birth and location.
 * Before the user will have access to the system they will have to verify their account by clicking on a link that will be sent to their email adress.
 * Then after that they will be permitted to login
 * After signing in the user will be redirected to the home page where they will be able to see the products that are available.
 
-#Home page
+# Home page
 
 * The user can either select the category they want to shop in under the "Category" title or scroll vertically to see the
  preview of products under each category and those that are recommended to them.
@@ -51,7 +54,7 @@ app that will feed the customers eyes what they are most interested. It recommen
 * The user will be able to see if the items are available, low on stock and not available.
 * The user is not permitted to add items that are not available to their cart.
 
-#App bar
+# App bar
 
 * On the App bar, when the user taps on the search button they get redirected to a seach page where they can see all the products and they can enter their search text to filter the results.
 * when the user taps on the wishlist button they get redirected to a page where they can view the items that they added to their wishlist.
