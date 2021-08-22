@@ -93,6 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
         'http://api.positionstack.com/v1/reverse?access_key=5e65a2bf717cff420bade43bf75f0cec&query=$latitude,$longitude');
     await networkHelper.getData();
     cityname = networkHelper.cityname;
+
   }
 
 //test keys
@@ -344,6 +345,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   RegisterScreen(
                                                     cityName:
                                                         cityname.toString(),
+                                                    longitude: longitude,
+                                                    latitude: latitude,
                                                   ))),
                                     })
                             //=====================================================
