@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:aishop/theme.dart';
-import 'package:aishop/widgets/appbar.dart';
+import 'package:aishop/widgets/appbaradmin.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:draw_graph/draw_graph.dart';
@@ -44,9 +44,11 @@ class _AdminPage extends State<AdminPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white,
-      appBar: MyAppBar(
+      appBar: MyAppBarAdmin(
         title: Text(
-          'ACCURANCY PAGE',
+          'AI Accurancy Page',
+          textWidthBasis: TextWidthBasis.parent,
+          style: TextStyle(color: white),
         ),
         context: context,
       ),
@@ -56,8 +58,8 @@ class _AdminPage extends State<AdminPage> {
             height: 60,
           ),
           new CircularPercentIndicator(
-            radius: 120.0,
-            lineWidth: 13.0,
+            radius: 170.0,
+            lineWidth: 17.0,
             animation: true,
             percent: 0.7,
             center: new Text(
@@ -66,13 +68,20 @@ class _AdminPage extends State<AdminPage> {
             ),
             footer: new Text(
               "Product's Accurany ",
-              style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
+              style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 19.0),
             ),
             circularStrokeCap: CircularStrokeCap.round,
             progressColor: Colors.purple,
           ),
           SizedBox(
-            height: 15,
+            height: 20,
+          ),
+          Divider(
+            height: 5,
+            thickness: 2.5,
+            indent: 80,
+            endIndent: 80,
+            color: lightblack,
           ),
           Container(
             padding: EdgeInsets.all(20.0),
@@ -84,7 +93,7 @@ class _AdminPage extends State<AdminPage> {
                   child: Text(
                     "Category's Accurancy",
                     style: TextStyle(
-                      fontSize: 28,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 2,
                     ),
